@@ -4,6 +4,10 @@ import { Classification, StigWrapper } from "@/api/entities/Stig";
 import type { Stig as ChecklistStig } from "@/api/generated/Checklist";
 import { buttonClasses } from "@/app/components/ui/button";
 import { Field, Select } from "@/app/components/ui/field";
+import {
+    UploadStig,
+    useUploadedStigs,
+} from "@/app/components/client/upload_stig";
 import { useManifestContext } from "@/app/context/manifest";
 import { useMemo, useState } from "react";
 
@@ -15,6 +19,7 @@ type Props = {
 
 export const AddStig = ({ isOpen, existingStigNames, onAdd }: Props) => {
     const manifest = useManifestContext();
+    const { entries: uploads, reload } = useUploadedStigs();
     const [stigId, setStigId] = useState("");
     const [wrapper, setWrapper] = useState<StigWrapper | null>(null);
     const [classification, setClassification] = useState<Classification | "">(
@@ -113,6 +118,11 @@ export const AddStig = ({ isOpen, existingStigNames, onAdd }: Props) => {
                             {element.title} ({element.version})
                         </option>
                     ))}
+                    {uploads.map((entry) => (
+                        <option key={entry.stig_id} value={entry.stig_id}>
+                            {entry.title} ({entry.version})
+                        </option>
+                    ))}
                 </Select>
             </Field>
 
@@ -147,7 +157,14 @@ export const AddStig = ({ isOpen, existingStigNames, onAdd }: Props) => {
             )}
             {error && <p className="text-sm text-red-800 dark:text-red-300">{error}</p>}
 
-            <div className="flex justify-end">
+            <div className="flex justify-between items-center gap-4 flex-wrap">
+                <UploadStig
+                    label="Upload a STIG ⬆️"
+                    onImported={async (id) => {
+                        await reload();
+                        await onSelectStig(id);
+                    }}
+                />
                 <button
                     type="button"
                     onClick={onConfirm}

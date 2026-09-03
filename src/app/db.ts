@@ -1,6 +1,7 @@
 "use client";
 import { Checklist, Rule, Stig } from "@/api/generated/Checklist";
-export const version = 1;
+import type { LibraryStig } from "@/api/entities/upload";
+export const version = 2;
 let loader: Promise<IDBDatabase> | undefined;
 
 enum Table {
@@ -8,6 +9,7 @@ enum Table {
     STIGS = "stigs",
     RULES = "rules",
     CHECKLIST_STIGS = "checklist_stigs",
+    LIBRARY = "library",
 }
 
 if (typeof window !== "undefined") {
@@ -27,50 +29,78 @@ if (typeof window !== "undefined") {
             const db = event.target?.result as IDBDatabase;
 
             // Checklist store
-            const checklistStore = db.createObjectStore(Table.CHECKLISTS, {
-                keyPath: "id",
-            });
-            checklistStore.createIndex("title", "title", { unique: false });
-            checklistStore.createIndex("active", "active", { unique: false });
-            checklistStore.createIndex("mode", "mode", { unique: false });
+            if (!db.objectStoreNames.contains(Table.CHECKLISTS)) {
+                const checklistStore = db.createObjectStore(Table.CHECKLISTS, {
+                    keyPath: "id",
+                });
+                checklistStore.createIndex("title", "title", {
+                    unique: false,
+                });
+                checklistStore.createIndex("active", "active", {
+                    unique: false,
+                });
+                checklistStore.createIndex("mode", "mode", { unique: false });
+            }
 
             // STIG store
-            const stigStore = db.createObjectStore(Table.STIGS, {
-                keyPath: "uuid",
-            });
-            stigStore.createIndex("stig_id", "stig_id", { unique: false });
-            stigStore.createIndex("stig_name", "stig_name", { unique: false });
+            if (!db.objectStoreNames.contains(Table.STIGS)) {
+                const stigStore = db.createObjectStore(Table.STIGS, {
+                    keyPath: "uuid",
+                });
+                stigStore.createIndex("stig_id", "stig_id", { unique: false });
+                stigStore.createIndex("stig_name", "stig_name", {
+                    unique: false,
+                });
+            }
 
             // Rule store
-            const ruleStore = db.createObjectStore(Table.RULES, {
-                keyPath: "uuid",
-            });
-            ruleStore.createIndex("group_id", "group_id", { unique: false });
-            ruleStore.createIndex("rule_id", "rule_id", { unique: false });
-            ruleStore.createIndex("stig_uuid", "stig_uuid", { unique: false });
-            ruleStore.createIndex("status", "status", { unique: false });
-            ruleStore.createIndex("severity", "severity", { unique: false });
+            if (!db.objectStoreNames.contains(Table.RULES)) {
+                const ruleStore = db.createObjectStore(Table.RULES, {
+                    keyPath: "uuid",
+                });
+                ruleStore.createIndex("group_id", "group_id", {
+                    unique: false,
+                });
+                ruleStore.createIndex("rule_id", "rule_id", { unique: false });
+                ruleStore.createIndex("stig_uuid", "stig_uuid", {
+                    unique: false,
+                });
+                ruleStore.createIndex("status", "status", { unique: false });
+                ruleStore.createIndex("severity", "severity", {
+                    unique: false,
+                });
+            }
 
-            const checklistStigsStore = db.createObjectStore(
-                Table.CHECKLIST_STIGS,
-                {
-                    keyPath: "id",
-                    autoIncrement: true,
-                }
-            );
-            checklistStigsStore.createIndex("checklist_id", "checklist_id", {
-                unique: false,
-            });
-            checklistStigsStore.createIndex("stig_uuid", "stig_uuid", {
-                unique: false,
-            });
+            if (!db.objectStoreNames.contains(Table.CHECKLIST_STIGS)) {
+                const checklistStigsStore = db.createObjectStore(
+                    Table.CHECKLIST_STIGS,
+                    {
+                        keyPath: "id",
+                        autoIncrement: true,
+                    }
+                );
+                checklistStigsStore.createIndex("checklist_id", "checklist_id", {
+                    unique: false,
+                });
+                checklistStigsStore.createIndex("stig_uuid", "stig_uuid", {
+                    unique: false,
+                });
 
-            // Composite index for quick lookups
-            checklistStigsStore.createIndex(
-                "checklist_stig",
-                ["checklist_id", "stig_uuid"],
-                { unique: true }
-            );
+                // Composite index for quick lookups
+                checklistStigsStore.createIndex(
+                    "checklist_stig",
+                    ["checklist_id", "stig_uuid"],
+                    { unique: true }
+                );
+            }
+
+            // Uploaded-STIG library (added in v2)
+            if (!db.objectStoreNames.contains(Table.LIBRARY)) {
+                const libraryStore = db.createObjectStore(Table.LIBRARY, {
+                    keyPath: "stig_id",
+                });
+                libraryStore.createIndex("title", "title", { unique: false });
+            }
         };
     });
 }
@@ -245,6 +275,7 @@ export class IDB {
     static checklistStigs = new StoreWrapper<IDBChecklistStig>(
         Table.CHECKLIST_STIGS
     );
+    static library = new StoreWrapper<LibraryStig>(Table.LIBRARY);
 
     static version = version;
 

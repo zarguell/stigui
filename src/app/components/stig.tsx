@@ -91,12 +91,15 @@ const Button = ({
     setClassficationLevel,
     index,
     stigId,
+    href,
 }: {
     classfication: Classification;
     selectedClassfication: Classification;
     setClassficationLevel: (selectedClassfication: Classification) => void;
     index: number;
     stigId: string;
+    /** Null for imported STIGs, which have no static per-classification pages. */
+    href?: string | null;
 }) => {
     const isSelected = classfication === selectedClassfication;
     const selectedClassName = isSelected
@@ -105,11 +108,24 @@ const Button = ({
 
     const idxClassName = index === 0 ? "rounded-s-md" : "-ml-px";
     const idxClassName2 = index === 2 ? "rounded-e-md" : "";
+    const className = `px-4 py-2 text-sm font-medium border border-border-strong focus:z-10 transition-colors ${selectedClassName} ${idxClassName} ${idxClassName2}`;
+
+    if (!href) {
+        return (
+            <button
+                type="button"
+                className={className}
+                onClick={() => setClassficationLevel(classfication)}
+            >
+                {classfication}
+            </button>
+        );
+    }
 
     return (
         <Link
-            href={`/stigs/${stigId}/${classfication}`}
-            className={`px-4 py-2 text-sm font-medium border border-border-strong focus:z-10 transition-colors ${selectedClassName} ${idxClassName} ${idxClassName2}`}
+            href={href}
+            className={className}
             onClick={() => setClassficationLevel(classfication)}
         >
             {classfication}
@@ -119,9 +135,13 @@ const Button = ({
 export const StigView = ({
     stigId,
     classification,
+    uploaded,
 }: {
     stigId: string;
     classification?: Classification;
+    /** Present for imported STIGs: exports come from the local copy and
+     * links to static per-STIG pages are replaced by in-place controls. */
+    uploaded?: { xml: string; json: string };
 }) => {
     const stig = useStigContext();
     const router = useRouter();
@@ -192,24 +212,43 @@ export const StigView = ({
                         group.rule.description,
                     ],
                     columns: [
-                        <Link
-                            className="flex flex-col whitespace-nowrap font-medium text-accent hover:underline"
-                            href={`/stigs/${stigId}/groups/${group.id}`}
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            {group.id}
-                        </Link>,
-                        <SeverityBadge severity={group.rule.severity} />,
+                        uploaded ? (
+                            <span
+                                key="group-id"
+                                className="flex flex-col whitespace-nowrap font-medium"
+                            >
+                                {group.id}
+                            </span>
+                        ) : (
+                            <Link
+                                key="group-id"
+                                className="flex flex-col whitespace-nowrap font-medium text-accent hover:underline"
+                                href={`/stigs/${stigId}/groups/${group.id}`}
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                {group.id}
+                            </Link>
+                        ),
+                        <SeverityBadge
+                            key="severity"
+                            severity={group.rule.severity}
+                        />,
                         group.rule.title,
                         group.rule.description,
                     ],
                     classNames: [null, null, null, "max-lg:hidden"],
                 })),
-        [groups, stigId, severities, setRowIdx]
+        [groups, stigId, severities, setRowIdx, uploaded]
     );
 
     const classifications = useMemo(() => Object.values(Classification), []);
     const hasGroup = selectedIdx !== null && selectedIdx > -1 && !!group;
+
+    const downloadFromCopy = (content: string, name: string, type: string) => {
+        const url = URL.createObjectURL(new Blob([content], { type }));
+        download(url, name);
+        URL.revokeObjectURL(url);
+    };
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
@@ -218,27 +257,32 @@ export const StigView = ({
                 isOpen={hasGroup}
                 onClick={() => setRowIdx(null)}
                 headerText={
-                    hasGroup && (
+                    hasGroup &&
+                    (uploaded ? (
+                        group.id
+                    ) : (
                         <Link href={`/stigs/${stigId}/groups/${group.id}`}>
                             {group.id}
                         </Link>
-                    )
+                    ))
                 }
             >
                 {hasGroup && (
                     <>
                         <GroupInfo group={group} />
-                        <div className="flex flex-row justify-start items-center">
-                            <Link
-                                className={buttonClasses({
-                                    variant: "secondary",
-                                    size: "sm",
-                                })}
-                                href={`/stigs/${stigId}/groups/${group.id}`}
-                            >
-                                Go to {group.id}
-                            </Link>
-                        </div>
+                        {!uploaded && (
+                            <div className="flex flex-row justify-start items-center">
+                                <Link
+                                    className={buttonClasses({
+                                        variant: "secondary",
+                                        size: "sm",
+                                    })}
+                                    href={`/stigs/${stigId}/groups/${group.id}`}
+                                >
+                                    Go to {group.id}
+                                </Link>
+                            </div>
+                        )}
                     </>
                 )}
             </Sidebar>
@@ -257,6 +301,11 @@ export const StigView = ({
                             selectedClassfication={classificationLevel}
                             setClassficationLevel={setClassficationLevel}
                             index={index}
+                            href={
+                                uploaded
+                                    ? null
+                                    : `/stigs/${stigId}/${classification}`
+                            }
                         />
                     ))}
                 </aside>
@@ -288,34 +337,71 @@ export const StigView = ({
                     ))}
                 </div>
                 <div className="flex flex-wrap gap-2">
-                    <button
-                        onClick={() =>
-                            download(
-                                `/data/stigs/schema/${stig.id}.xml`,
-                                `${stig.id}.xml`
-                            )
-                        }
-                        className={buttonClasses({
-                            variant: "ghost",
-                            size: "sm",
-                        })}
-                    >
-                        XML ⬇️
-                    </button>
-                    <button
-                        onClick={() =>
-                            download(
-                                `/data/stigs/schema/${stig.id}.json`,
-                                `${stig.id}.json`
-                            )
-                        }
-                        className={buttonClasses({
-                            variant: "ghost",
-                            size: "sm",
-                        })}
-                    >
-                        JSON ⬇️
-                    </button>
+                    {uploaded ? (
+                        <>
+                            <button
+                                onClick={() =>
+                                    downloadFromCopy(
+                                        uploaded.xml,
+                                        `${stig.id}.xml`,
+                                        "application/xml"
+                                    )
+                                }
+                                className={buttonClasses({
+                                    variant: "ghost",
+                                    size: "sm",
+                                })}
+                            >
+                                XML ⬇️
+                            </button>
+                            <button
+                                onClick={() =>
+                                    downloadFromCopy(
+                                        uploaded.json,
+                                        `${stig.id}.json`,
+                                        "application/json"
+                                    )
+                                }
+                                className={buttonClasses({
+                                    variant: "ghost",
+                                    size: "sm",
+                                })}
+                            >
+                                JSON ⬇️
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <button
+                                onClick={() =>
+                                    download(
+                                        `/data/stigs/schema/${stig.id}.xml`,
+                                        `${stig.id}.xml`
+                                    )
+                                }
+                                className={buttonClasses({
+                                    variant: "ghost",
+                                    size: "sm",
+                                })}
+                            >
+                                XML ⬇️
+                            </button>
+                            <button
+                                onClick={() =>
+                                    download(
+                                        `/data/stigs/schema/${stig.id}.json`,
+                                        `${stig.id}.json`
+                                    )
+                                }
+                                className={buttonClasses({
+                                    variant: "ghost",
+                                    size: "sm",
+                                })}
+                            >
+                                JSON ⬇️
+                            </button>
+                        </>
+                    )}
                     <button
                         onClick={() => toCSV(stig)}
                         className={buttonClasses({
