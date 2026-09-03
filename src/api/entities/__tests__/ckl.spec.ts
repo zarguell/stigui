@@ -1,14 +1,18 @@
 import fs from 'fs';
+import os from 'os';
 import path from 'path';
 import Checklist from '../Checklist';
 import { Convert } from '../../generated/Checklist';
-import { cklToChecklist, InvalidCklError } from '../ckl';
+import { checklistToCkl, cklToChecklist, InvalidCklError } from '../ckl';
 
 const fixturePath = path.join(
     __dirname,
     'fixtures',
     'U_Microsoft_Skype_for_Business_2016_V1R1_STIG.ckl'
 );
+
+const corpusDir = path.join(os.homedir(), 'localcode', 'stigs', 'ckl');
+const hasCorpus = fs.existsSync(corpusDir);
 
 /** A synthetic CKL covering edge cases the DISA Viewer corpus exhibits */
 const SYNTHETIC_CKL = `<?xml version='1.0' encoding='UTF-8'?>
@@ -163,5 +167,82 @@ describe('CKL import', () => {
         expect(() =>
             cklToChecklist('<CHECKLIST><ASSET></ASSET><STIGS></STIGS></CHECKLIST>')
         ).toThrow(InvalidCklError);
+    });
+});
+
+describe('CKL export / round trip', () => {
+    /**
+     * Fidelity check: import → export → import must produce the same
+     * model. Fresh uuids are generated on every import, so they are
+     * stripped before comparison.
+     */
+    const stripVolatile = (checklist: Checklist) => {
+        const clone = JSON.parse(JSON.stringify(checklist));
+        delete clone.id;
+        for (const stig of clone.stigs) {
+            delete stig.uuid;
+            for (const rule of stig.rules) {
+                delete rule.uuid;
+                delete rule.stig_uuid;
+            }
+        }
+        return clone;
+    };
+
+    const roundTrip = (xml: string) =>
+        stripVolatile(cklToChecklist(checklistToCkl(cklToChecklist(xml))));
+
+    it.each(['U_Microsoft_Skype_for_Business_2016_V1R1_STIG.ckl', 'U_A10_Networks_ADC_ALG_V2R1_STIG.ckl'])(
+        'should round trip %s losslessly',
+        (fixture) => {
+            const xml = fs.readFileSync(
+                path.join(__dirname, 'fixtures', fixture),
+                'utf8'
+            );
+            const original = stripVolatile(cklToChecklist(xml));
+            expect(roundTrip(xml)).toEqual(original);
+        }
+    );
+
+    it('should round trip the synthetic checklist losslessly', () => {
+        const original = stripVolatile(cklToChecklist(SYNTHETIC_CKL));
+        expect(roundTrip(SYNTHETIC_CKL)).toEqual(original);
+    });
+
+    it('should emit required CKL structure', () => {
+        const xml = checklistToCkl(cklToChecklist(SYNTHETIC_CKL));
+        expect(xml).toContain('<CHECKLIST>');
+        expect(xml).toContain('<ASSET>');
+        expect(xml).toContain('<STIGS>');
+        expect(xml).toContain('<STIG_INFO>');
+        expect((xml.match(/<VULN>/g) ?? []).length).toBe(
+            stripVolatile(cklToChecklist(SYNTHETIC_CKL)).stigs.reduce(
+                (sum, stig) => sum + stig.size,
+                0
+            )
+        );
+        expect(xml).toContain('<STATUS>Open</STATUS>');
+        expect(xml).toContain('<SEVERITY_OVERRIDE>Medium</SEVERITY_OVERRIDE>');
+        expect(xml).toContain('<SEVERITY_JUSTIFICATION>because</SEVERITY_JUSTIFICATION>');
+        expect(xml).toContain('CCI-000001');
+        expect(xml).toContain('<STATUS>NotAFinding</STATUS>');
+        expect(xml).toContain('<STATUS>NotApplicable</STATUS>');
+    });
+
+    (hasCorpus ? describe : describe.skip)('full corpus round trip', () => {
+        const corpus = fs
+            .readdirSync(corpusDir)
+            .filter((f) => f.endsWith('.ckl'));
+
+        it('should have corpus files', () => {
+            expect(corpus.length).toBeGreaterThan(100);
+        });
+
+        it.each(corpus)('should round trip %s losslessly', (file) => {
+            const xml = fs.readFileSync(path.join(corpusDir, file), 'utf8');
+            const original = stripVolatile(cklToChecklist(xml));
+            const exported = checklistToCkl(cklToChecklist(xml));
+            expect(stripVolatile(cklToChecklist(exported))).toEqual(original);
+        });
     });
 });

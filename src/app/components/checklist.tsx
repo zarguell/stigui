@@ -14,6 +14,7 @@ import { Sidebar } from "@/app/components/sidebar";
 import { buttonClasses } from "@/app/components/ui/button";
 import { IDB, IDBChecklist } from "@/app/db";
 import { debounce, download } from "@/app/utils";
+import { checklistToCkl } from "@/api/entities/ckl";
 import { useRouter } from "next/navigation";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Breadcrumbs } from "./breadcrumbs";
@@ -65,6 +66,15 @@ const toCKLB = (checklist: Checklist) => {
     });
     const url = URL.createObjectURL(blob);
     download(url, `checklist-${checklist.id}.cklb`);
+    URL.revokeObjectURL(url);
+};
+
+const toCKL = (checklist: Checklist) => {
+    const blob = new Blob([checklistToCkl(checklist)], {
+        type: "text/xml",
+    });
+    const url = URL.createObjectURL(blob);
+    download(url, `${checklist.title || `checklist-${checklist.id}`}.ckl`);
     URL.revokeObjectURL(url);
 };
 
@@ -567,6 +577,16 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
                                 })}
                             >
                                 CKLB ⬇️
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => toCKL(checklist)}
+                                className={buttonClasses({
+                                    variant: "secondary",
+                                    size: "sm",
+                                })}
+                            >
+                                CKL ⬇️
                             </button>
                             <button
                                 type="button"

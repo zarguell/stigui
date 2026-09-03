@@ -3,12 +3,15 @@ import { v4 as uuidv4 } from "uuid";
 import {
     Checklist,
     Classification,
+    Name,
+    Role,
     Rule,
     Severity,
     Stig,
     Status,
+    TargetType,
+    TechnologyArea,
 } from "@/api/generated/Checklist";
-
 /**
  * Import for legacy `.ckl` checklists — the XML format written by
  * DISA STIG Viewer 2.x and read by eMASS. Produces the same Checklist
@@ -106,9 +109,10 @@ const ROLE_NAMES = [
     "Domain Controller",
 ];
 
-const toRole = (raw: string): string => {
+const toRole = (raw: string): Role => {
     const key = raw.trim().toLowerCase();
-    return ROLE_NAMES.find((role) => role.toLowerCase() === key) ?? "None";
+    return (ROLE_NAMES.find((role) => role.toLowerCase() === key) ??
+        "None") as Role;
 };
 
 const tokens = (raw: string): string[] =>
@@ -205,7 +209,7 @@ export const cklToChecklist = (xml: string): Checklist => {
                 check_content: one(kv, "Check_Content"),
                 check_content_ref: {
                     href: "",
-                    name: "M",
+                    name: "M" as Name,
                 },
                 classification: toClassification(one(kv, "Class")),
                 discussion: one(kv, "Vuln_Discuss"),
@@ -271,8 +275,8 @@ export const cklToChecklist = (xml: string): Checklist => {
         has_path: true,
         target_data: {
             target_type: /non[\s_-]?computing/i.test(assetOne("ASSET_TYPE"))
-                ? "Non-Computing"
-                : "Computing",
+                ? TargetType.NonComputing
+                : TargetType.Computing,
             host_name: hostName,
             ip_address: assetOne("HOST_IP"),
             mac_address: assetOne("HOST_MAC"),
@@ -280,7 +284,7 @@ export const cklToChecklist = (xml: string): Checklist => {
             comments: assetOne("TARGET_COMMENT"),
             role: toRole(assetOne("ROLE")),
             is_web_database: /^t/i.test(assetOne("WEB_OR_DATABASE")),
-            technology_area: assetOne("TECH_AREA"),
+            technology_area: assetOne("TECH_AREA") as TechnologyArea,
             web_db_site: assetOne("WEB_DB_SITE"),
             web_db_instance: assetOne("WEB_DB_INSTANCE"),
             // The CKLB validator only accepts null here, so the CKL's
@@ -289,4 +293,136 @@ export const cklToChecklist = (xml: string): Checklist => {
         },
         cklb_version: "1.0",
     };
+};
+
+/* ------------------------------------------------------------------ */
+/* Export: Checklist → legacy CKL XML                                  */
+/* ------------------------------------------------------------------ */
+
+const esc = (value: string): string =>
+    value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+
+const STATUS_TO_CKL: Record<Status, string> = {
+    [Status.Open]: "Open",
+    [Status.NotAFinding]: "NotAFinding",
+    [Status.NotApplicable]: "NotApplicable",
+    [Status.NotReviewed]: "Not_Reviewed",
+};
+
+const SEVERITY_TO_CKL: Record<Severity, string> = {
+    [Severity.High]: "High",
+    [Severity.Medium]: "Medium",
+    [Severity.Low]: "Low",
+    // CKL has no info severity; DISA Viewer writes "Unknown"
+    [Severity.Info]: "Unknown",
+};
+
+const CLASSIFICATION_TO_CKL: Record<Classification, string> = {
+    [Classification.Unclassified]: "Unclass",
+    [Classification.Classified]: "Classified",
+    [Classification.Sensitive]: "Sensitive",
+};
+
+const stigData = (attribute: string, data: string): string =>
+    `<STIG_DATA><VULN_ATTRIBUTE>${attribute}</VULN_ATTRIBUTE><ATTRIBUTE_DATA>${esc(
+        data
+    )}</ATTRIBUTE_DATA></STIG_DATA>`;
+
+const ruleToCkl = (rule: Rule): string => {
+    const overrideSeverity = rule.overrides?.severity?.severity;
+    const overrideReason = rule.overrides?.severity?.reason ?? "";
+    const parts: string[] = [];
+
+    parts.push(stigData("Vuln_Num", rule.group_id));
+    parts.push(stigData("Severity", SEVERITY_TO_CKL[rule.severity] ?? "Unknown"));
+    parts.push(stigData("Group_Title", rule.group_title));
+    parts.push(stigData("Rule_ID", rule.rule_id_src || `${rule.rule_id}_rule`));
+    parts.push(stigData("Rule_Ver", rule.rule_version));
+    parts.push(stigData("Rule_Title", rule.rule_title));
+    parts.push(stigData("Vuln_Discuss", rule.discussion));
+    parts.push(stigData("IA_Controls", rule.ia_controls));
+    parts.push(stigData("Check_Content", rule.check_content));
+    parts.push(stigData("Fix_Text", rule.fix_text));
+    parts.push(stigData("False_Positives", rule.false_positives));
+    parts.push(stigData("False_Negatives", rule.false_negatives));
+    parts.push(stigData("Documentable", rule.documentable));
+    parts.push(stigData("Mitigations", rule.mitigations));
+    parts.push(stigData("Potential_Impact", rule.potential_impacts));
+    parts.push(stigData("Third_Party_Tools", rule.third_party_tools));
+    parts.push(stigData("Mitigation_Control", rule.mitigation_control));
+    parts.push(stigData("Responsibility", rule.responsibility));
+    parts.push(stigData("Security_Override_Guidance", rule.security_override_guidance));
+    parts.push(stigData("Check_Content_Ref", rule.check_content_ref.name || "M"));
+    parts.push(stigData("Weight", rule.weight));
+    parts.push(stigData("Class", CLASSIFICATION_TO_CKL[rule.classification] ?? "Unclass"));
+    for (const legacyId of rule.legacy_ids) {
+        parts.push(stigData("LEGACY_ID", legacyId));
+    }
+    for (const cci of rule.ccis) {
+        parts.push(stigData("CCI_REF", cci));
+    }
+
+    parts.push(`<STATUS>${STATUS_TO_CKL[rule.status] ?? "Not_Reviewed"}</STATUS>`);
+    parts.push(`<FINDING_DETAILS>${esc(rule.finding_details)}</FINDING_DETAILS>`);
+    parts.push(`<COMMENTS>${esc(rule.comments)}</COMMENTS>`);
+    parts.push(
+        `<SEVERITY_OVERRIDE>${
+            overrideSeverity ? SEVERITY_TO_CKL[overrideSeverity] : ""
+        }</SEVERITY_OVERRIDE>`
+    );
+    parts.push(
+        `<SEVERITY_JUSTIFICATION>${esc(overrideReason)}</SEVERITY_JUSTIFICATION>`
+    );
+
+    return `<VULN>${parts.join("")}</VULN>`;
+};
+
+const stigToCkl = (stig: Stig): string => {
+    const sid = (name: string, data: string): string =>
+        `<SI_DATA><SID_NAME>${name}</SID_NAME>${
+            data.length > 0 ? `<SID_DATA>${esc(data)}</SID_DATA>` : ""
+        }</SI_DATA>`;
+
+    const info =
+        `<STIG_INFO>` +
+        sid("version", stig.version) +
+        sid("stigid", stig.stig_id) +
+        sid("releaseinfo", stig.release_info) +
+        sid("title", stig.stig_name) +
+        `</STIG_INFO>`;
+
+    const vulns = stig.rules.map(ruleToCkl).join("");
+
+    return `<iSTIG>${info}${vulns}</iSTIG>`;
+};
+
+/** Asset + checklist wrapper, mirroring the DISA STIG Viewer 2 layout */
+export const checklistToCkl = (checklist: Checklist): string => {
+    const target = checklist.target_data;
+    const asset =
+        `<ASSET>` +
+        `<ROLE>${esc(target.role || "None")}</ROLE>` +
+        `<ASSET_TYPE>${esc(target.target_type || "Computing")}</ASSET_TYPE>` +
+        `<HOST_NAME>${esc(target.host_name)}</HOST_NAME>` +
+        `<HOST_IP>${esc(target.ip_address)}</HOST_IP>` +
+        `<HOST_MAC>${esc(target.mac_address)}</HOST_MAC>` +
+        `<HOST_FQDN>${esc(target.fqdn)}</HOST_FQDN>` +
+        `<TARGET_COMMENT>${esc(target.comments)}</TARGET_COMMENT>` +
+        `<TECH_AREA>${esc(target.technology_area)}</TECH_AREA>` +
+        `<TARGET_KEY></TARGET_KEY>` +
+        `<WEB_OR_DATABASE>${target.is_web_database ? "true" : "false"}</WEB_OR_DATABASE>` +
+        `<WEB_DB_SITE>${esc(target.web_db_site)}</WEB_DB_SITE>` +
+        `<WEB_DB_INSTANCE>${esc(target.web_db_instance)}</WEB_DB_INSTANCE>` +
+        `</ASSET>`;
+
+    const stigs = checklist.stigs.map(stigToCkl).join("");
+
+    return (
+        `<?xml version='1.0' encoding='UTF-8'?>` +
+        `<CHECKLIST>${asset}<STIGS>${stigs}</STIGS></CHECKLIST>`
+    );
 };
