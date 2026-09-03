@@ -6,6 +6,7 @@ import {
     Select as ISelect,
     Stig as IStig,
 } from '@/api/generated/Stig';
+import { API_BASE } from '@/api/entities/api';
 
 // export const dynamic = 'force-dynamic';
 // export const fetchCache = 'force-no-store';
@@ -269,7 +270,7 @@ export default class Stig extends Convert {
             return this.cache.get(path);
         }
         const data = fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/data/stigs/schema/${path}?${process.env.NEXT_PUBLIC_MANIFEST_VERSION}`
+            `${API_BASE}/data/stigs/schema/${path}?${process.env.NEXT_PUBLIC_MANIFEST_VERSION}`
         ).then((r) => r.text());
         this.cache.set(path, data);
         return data;

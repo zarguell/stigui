@@ -7,6 +7,7 @@ import {
     Status,
 } from '@/api/generated/Checklist';
 import { Group, IdentElement, Profile, Stig } from '@/api/generated/Stig';
+import { API_BASE } from '@/api/entities/api';
 import { v4 as uuidv4 } from 'uuid';
 
 // export const dynamic = 'force-dynamic';
@@ -32,7 +33,7 @@ export default class Checklist extends Convert {
 
     static read = async (path: string) => {
         const data = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/data/stigs/checklist/${path}?${process.env.NEXT_PUBLIC_MANIFEST_VERSION}`
+            `${API_BASE}/data/stigs/checklist/${path}?${process.env.NEXT_PUBLIC_MANIFEST_VERSION}`
         );
         const checklist: IChecklist = Checklist.toChecklist(await data.text());
         return checklist;

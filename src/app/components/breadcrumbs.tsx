@@ -32,11 +32,13 @@ export const Breadcrumbs = ({ stigId, group, editor }: BreadcrumbsProps) => {
           ];
 
     if (stigId) {
-        const stig = manifest.byId(stigId);
-        links.push({
-            href: `/stigs/${stigId}`,
-            text: `${stig.title}`,
-        });
+        const stig = manifest.maybeById(stigId);
+        if (stig) {
+            links.push({
+                href: `/stigs/${stigId}`,
+                text: `${stig.title}`,
+            });
+        }
     }
 
     if (group) {

@@ -6,11 +6,33 @@ A simple web application for exploring and editing [DISA Security Technical Impl
 
 STIGUI lets you browse the full DISA STIG library, export individual STIGs, and build & edit checklists — all in your browser. Edits are stored locally in IndexedDB; there are **no external network requests** to any third-party tracker or analytics service, and the app ships as a fully static site.
 
+## About this fork
+
+This fork turns STIGUI into an **upload-first tool**:
+
+- The repo no longer ships the full DISA library (a multi-gigabyte data commit
+  upstream). It carries two small **fixture STIGs** (`AAA_Services`,
+  `Google_Chrome_Current_Windows`) for development and demos.
+- Instead, you **import your own STIGs**: click **Upload STIG** on the library
+  page (or inside the editor's *Add STIG* panel) and pick an XCCDF `.xml` or a
+  DISA library `.zip`. Imports are parsed client-side into exactly the same
+  shape the build pipeline produces (see `src/api/entities/upload.ts`), stored
+  in IndexedDB, and work everywhere a library STIG does — browsing, severity
+  filters, XML/JSON/CSV export, and checklist editing.
+- Imported STIGs are viewable at `/stigs/uploaded?id=<stig_id>`.
+- The scheduled daily library sync (`schedule.yml`) was removed; to regenerate
+  fixture or library data locally, the upstream `scripts/` pipeline still
+  works (`fetch-stigs.sh` + `create-json-stigs.sh`).
+- Client-side data fetches are same-origin and failure-tolerant (a missing
+  manifest no longer breaks hydration), so the static site works from any
+  host or subpath without extra configuration.
+
 ## Features
 
 ### Browse & explore STIGs
 
-- **Browse the library:** Search and sort the full collection of DISA STIGs (by id, title, version, and date).
+- **Browse the library:** Search and sort the collection of DISA STIGs (by id, title, version, and date).
+- **Import your own:** Upload an XCCDF `.xml` or DISA library `.zip`; imports persist in IndexedDB.
 - **View a STIG:** Inspect every rule with severity badges, filter rules by severity, and read the full check and fix text for any rule.
 - **Classifications:** Switch a STIG's view between **Public**, **Classified**, and **Sensitive** profiles.
 - **Export:** Download a STIG as **XML**, **JSON**, or **CSV**.
@@ -37,8 +59,9 @@ Create a checklist from any STIG (via **Edit** on a STIG page) and refine it in 
 
 | Route | Description |
 | --- | --- |
-| `/` and `/stigs` | Browse the full STIG library |
+| `/` and `/stigs` | Browse the STIG library; upload your own XCCDF/zip |
 | `/stigs/[stig_id]` | View a STIG's rules; filter, switch classification, export, or edit |
+| `/stigs/uploaded?id=<stig_id>` | View an imported STIG's rules |
 | `/stigs/[stig_id]/[classification]` | Classification-specific STIG view |
 | `/stigs/[stig_id]/groups/[group_id]` | Detail view for an individual rule/group |
 | `/editor` | List saved checklists; import a CKLB or delete a checklist |
@@ -53,20 +76,32 @@ Create a checklist from any STIG (via **Edit** on a STIG page) and refine it in 
 
 ## Getting Started
 
-Access the application at [stigui.com](https://stigui.com).
+Access the upstream project at [stigui.com](https://stigui.com). This fork is
+deployed from this repository's own GitHub Pages site.
 
 ## Local Development
 
-To run STIGUI locally:
+Requires **Node 22** (a `.node-version` file is included).
 
 ```bash
-git clone https://github.com/nealfennimore/stig.git
-cd stig
+git clone https://github.com/zarguell/stigui.git
+cd stigui
 npm install
 npm run dev
 ```
 
 Your local instance should now be running at [http://localhost:3000](http://localhost:3000).
+
+### Building the static site
+
+The static export (`out/`) prerenders the fixture STIGs, so the build needs a
+server serving `public/` while it runs — the same approach upstream CI uses:
+
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:3000 npm run dev &
+npm run build
+kill %1
+```
 
 ### Scripts
 
