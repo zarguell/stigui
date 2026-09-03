@@ -1,4 +1,4 @@
-import { APPNAME, URL as SITE_URL } from "@/app/constants";
+import { APPNAME, BASE_PATH, URL as SITE_URL } from "@/app/constants";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
@@ -66,8 +66,8 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <script src="/theme.js" />
-                <Script id="service-worker">{`"serviceWorker" in navigator && navigator.serviceWorker.register("/sw.js", { scope: "/" });`}</Script>
+                <script src={`${BASE_PATH}/theme.js`} />
+                <Script id="service-worker">{`"serviceWorker" in navigator && navigator.serviceWorker.register("${BASE_PATH}/sw.js", { scope: "${BASE_PATH}/" });`}</Script>
             </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-zinc-900 dark:text-zinc-100`}

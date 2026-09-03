@@ -2,6 +2,7 @@
 import Checklist from "@/api/entities/Checklist";
 import { Classification, StigWrapper } from "@/api/entities/Stig";
 import { Severity } from "@/api/generated/Checklist";
+import { BASE_PATH } from "@/app/constants";
 import { Sidebar } from "@/app/components/sidebar";
 import { buttonClasses } from "@/app/components/ui/button";
 import { TableCard } from "@/app/components/ui/card";
@@ -375,7 +376,7 @@ export const StigView = ({
                             <button
                                 onClick={() =>
                                     download(
-                                        `/data/stigs/schema/${stig.id}.xml`,
+                                        `${BASE_PATH}/data/stigs/schema/${stig.id}.xml`,
                                         `${stig.id}.xml`
                                     )
                                 }
@@ -389,7 +390,7 @@ export const StigView = ({
                             <button
                                 onClick={() =>
                                     download(
-                                        `/data/stigs/schema/${stig.id}.json`,
+                                        `${BASE_PATH}/data/stigs/schema/${stig.id}.json`,
                                         `${stig.id}.json`
                                     )
                                 }
