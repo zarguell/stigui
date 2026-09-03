@@ -1,4 +1,5 @@
 "use client";
+import { cklToChecklist, InvalidCklError } from "@/api/entities/ckl";
 import { Checklist, Convert } from "@/api/generated/Checklist";
 import {
     defaultFilter,
@@ -40,7 +41,10 @@ export const ChecklistsView = () => {
             return;
         }
         try {
-            const checklist = Convert.toChecklist(await file.text());
+            const text = await file.text();
+            const checklist = file.name.toLowerCase().endsWith(".ckl")
+                ? cklToChecklist(text)
+                : Convert.toChecklist(text);
             await IDB.importChecklist(checklist);
             const imported = (await IDB.exportChecklist(
                 checklist.id
@@ -52,7 +56,9 @@ export const ChecklistsView = () => {
         } catch (err) {
             console.error(err);
             window.alert(
-                "Could not import that file. Make sure it is a valid .cklb checklist."
+                err instanceof InvalidCklError
+                    ? `Could not import that checklist: ${err.message}`
+                    : "Could not import that file. Make sure it is a valid .cklb or .ckl checklist."
             );
         }
     };
@@ -144,7 +150,7 @@ export const ChecklistsView = () => {
                 <input
                     ref={fileInputRef}
                     type="file"
-                    accept=".cklb,application/json"
+                    accept=".cklb,.ckl,application/json,text/xml"
                     className="hidden"
                     onChange={onImport}
                 />
@@ -156,7 +162,7 @@ export const ChecklistsView = () => {
                         size: "sm",
                     })}
                 >
-                    Import CKLB ⬆️
+                    Import CKL / CKLB ⬆️
                 </button>
             </div>
             <TableCard>
