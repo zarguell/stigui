@@ -2,9 +2,19 @@
 data/stigs/*
 data/stigs.zip
 !data/stigs/.gitkeep
+
+# Generated STIG library data is not committed in this fork; only the
+# fixture STIGs below ship with the repo. Import your own STIGs in the app.
+public/data/stigs/schema/*
+!public/data/stigs/schema/AAA_Services.*
+!public/data/stigs/schema/Google_Chrome_Current_Windows.*
+
 result
 node_modules
 out
 .next
 *.tsbuildinfo
 .direnv
+
+# env files
+.env*
