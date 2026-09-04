@@ -13,7 +13,7 @@ import { RuleEdit } from "@/app/components/client/editor/rule";
 import { Sidebar } from "@/app/components/sidebar";
 import { buttonClasses } from "@/app/components/ui/button";
 import { IDB, IDBChecklist } from "@/app/db";
-import { debounce, download } from "@/app/utils";
+import { debounce, download, ruleMatchesSearch } from "@/app/utils";
 import { checklistToCkl } from "@/api/entities/ckl";
 import { useRouter } from "next/navigation";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
@@ -91,6 +91,7 @@ const StigTable = ({
     stig,
     severities,
     statuses,
+    search,
     onSelectRule,
     removeRule,
     onRemoveStig,
@@ -98,6 +99,7 @@ const StigTable = ({
     stig: Stig;
     severities: Set<Severity>;
     statuses: Set<Status>;
+    search: string;
     onSelectRule: (rule: Rule) => void;
     removeRule: (rule: Rule) => void;
     onRemoveStig: (stig: Stig) => void;
@@ -117,9 +119,9 @@ const StigTable = ({
             if (statuses.size > 0 && !statuses.has(status)) {
                 return false;
             }
-            return true;
+            return ruleMatchesSearch(rule, search);
         });
-    }, [stig.rules, severities, statuses]);
+    }, [stig.rules, severities, statuses, search]);
 
     const tableBody = useMemo(() => {
         return viewableRules.map((rule) => ({
@@ -259,6 +261,7 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
     const [addStigOpen, setAddStigOpen] = useState(false);
     const [severities, setSeverities] = useState<Set<Severity>>(new Set());
     const [statuses, setStatuses] = useState<Set<Status>>(new Set());
+    const [search, setSearch] = useState("");
     const router = useRouter();
 
     useEffect(() => {
@@ -621,6 +624,17 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
             </Sidebar>
 
             {checklist && (
+                <>
+                <div className="my-4">
+                    <input
+                        type="search"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        placeholder="Search rules — title, check, fix, discussion, ids…"
+                        aria-label="Search rules"
+                        className="w-full max-w-md text-sm text-foreground bg-surface px-3 py-2 border border-border-strong rounded-md transition-colors focus:border-accent focus-visible:outline-none focus:ring-2 focus:ring-ring/40 placeholder:text-subtle"
+                    />
+                </div>
                 <aside className="w-full flex justify-between items-center my-6 flex-wrap gap-2">
                     <div>
                         {counts.severity.map(([severity, count]) => (
@@ -667,6 +681,7 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
                         ))}
                     </div>
                 </aside>
+                </>
             )}
 
             {checklist?.stigs.map((stig) => (
@@ -675,6 +690,7 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
                     stig={stig}
                     severities={severities}
                     statuses={statuses}
+                    search={search}
                     onSelectRule={onSelectRule}
                     removeRule={removeRule}
                     onRemoveStig={removeStig}

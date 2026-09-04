@@ -45,6 +45,7 @@ Create a checklist from any STIG (via **Edit** on a STIG page) and refine it in 
 - **Statistics panel** — the severity × status matrix (Open / Not a Finding / N/A / Not Reviewed) per checklist and per STIG, updating live as rules are edited. Severity overrides are counted at their effective severity.
 - **Target metadata** — edit host name, IP/MAC, FQDN, role, technology area, web-DB details, comments, and classification in a collapsible Metadata panel.
 - **Per-STIG tables** — each STIG in the checklist gets its own collapsible (accordion) table showing its rules, version, and release info.
+- **Rule search** — free-text search across rule titles, discussions, check/fix text, ids, and reviewer notes, combinable with the severity and status filters.
 - **Top-level filtering** — filter by severity and status across **all** STIGs in the checklist at once.
 - **Edit rules** — set a rule's status (Open / Not a Finding / Not Applicable / Not Reviewed), override its severity (with a reason), and add comments and finding details.
 - **Add a STIG** — pull another STIG (by classification) into an existing checklist.
