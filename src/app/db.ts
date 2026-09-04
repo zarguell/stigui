@@ -337,8 +337,7 @@ export class IDB {
     static async addStig(
         checklistId: string,
         stigData: Stig
-    ): Promise<boolean> {
-        try {
+    ): Promise<boolean> {        try {
             const { rules: rulesData, ...stig } = stigData;
             await IDB.stigs.put(stig);
             await IDB.checklistStigs.put({
@@ -354,6 +353,32 @@ export class IDB {
             return true;
         } catch (error) {
             console.error("Error adding stig to checklist:", error);
+            return false;
+        }
+    }
+
+    /**
+     * Version migration: replaces a checklist STIG's rules and metadata
+     * with the migrated release's. Keeps the stig uuid so checklist
+     * links and export paths stay valid.
+     */
+    static async migrateStig(stig: Stig): Promise<boolean> {
+        try {
+            const oldRules = await new IndexWrapper<IDBRule>(
+                IDB.rules.table,
+                "stig_uuid"
+            ).getAll(stig.uuid);
+            for (const rule of oldRules) {
+                await IDB.rules.del(rule.uuid);
+            }
+            const { rules, ...stigRecord } = stig;
+            await IDB.stigs.put(stigRecord);
+            for (const rule of rules) {
+                await IDB.rules.put(rule);
+            }
+            return true;
+        } catch (error) {
+            console.error("Error migrating stig:", error);
             return false;
         }
     }

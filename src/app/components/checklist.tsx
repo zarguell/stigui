@@ -10,11 +10,20 @@ import {
 } from "@/api/generated/Checklist";
 import { AddStig } from "@/app/components/client/editor/add_stig";
 import { RuleEdit } from "@/app/components/client/editor/rule";
+import { MigrateStig } from "@/app/components/client/editor/migrate_stig";
+import { useUploadedStigs } from "@/app/components/client/upload_stig";
+import {
+    applyMigration,
+    findMigrationTarget,
+    planMigration,
+    type MigrationPlan,
+} from "@/api/entities/migration";
 import { Sidebar } from "@/app/components/sidebar";
 import { buttonClasses } from "@/app/components/ui/button";
 import { IDB, IDBChecklist } from "@/app/db";
 import { debounce, download, ruleMatchesSearch } from "@/app/utils";
 import { checklistToCkl } from "@/api/entities/ckl";
+import type { LibraryStig } from "@/api/entities/upload";
 import { useRouter } from "next/navigation";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Breadcrumbs } from "./breadcrumbs";
@@ -92,6 +101,8 @@ const StigTable = ({
     severities,
     statuses,
     search,
+    migrationTarget,
+    onMigrate,
     onSelectRule,
     removeRule,
     onRemoveStig,
@@ -100,6 +111,8 @@ const StigTable = ({
     severities: Set<Severity>;
     statuses: Set<Status>;
     search: string;
+    migrationTarget?: LibraryStig | null;
+    onMigrate?: (stig: Stig, target: LibraryStig) => void;
     onSelectRule: (rule: Rule) => void;
     removeRule: (rule: Rule) => void;
     onRemoveStig: (stig: Stig) => void;
@@ -205,6 +218,17 @@ const StigTable = ({
                         ></path>
                     </svg>
                 </button>
+                {migrationTarget && onMigrate && (
+                    <button
+                        type="button"
+                        aria-label={`Migrate from version ${stig.version} to ${migrationTarget.version}`}
+                        title={`Newer version available: V${stig.version} → V${migrationTarget.version} — review migration`}
+                        onClick={() => onMigrate(stig, migrationTarget)}
+                        className="shrink-0 self-stretch px-5 text-xs font-semibold uppercase tracking-wide text-accent hover:bg-surface transition-colors"
+                    >
+                        ⬆️ V{stig.version} → V{migrationTarget.version}
+                    </button>
+                )}
                 <button
                     type="button"
                     aria-label="Remove STIG from checklist"
@@ -262,7 +286,37 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
     const [severities, setSeverities] = useState<Set<Severity>>(new Set());
     const [statuses, setStatuses] = useState<Set<Status>>(new Set());
     const [search, setSearch] = useState("");
+    const [migration, setMigration] = useState<{
+        stig: ChecklistStig;
+        plan: MigrationPlan;
+    } | null>(null);
+    const { entries: libraryEntries } = useUploadedStigs();
     const router = useRouter();
+
+    const migrationTargets = useMemo(() => {
+        const targets: Record<string, LibraryStig> = {};
+        if (!checklist) {
+            return targets;
+        }
+        for (const stig of checklist.stigs) {
+            const target = findMigrationTarget(stig, libraryEntries);
+            if (target) {
+                targets[stig.uuid] = target;
+            }
+        }
+        return targets;
+    }, [checklist, libraryEntries]);
+
+    const handleMigrate = useMemo(
+        () => async (stig: ChecklistStig, plan: MigrationPlan) => {
+            const migrated = applyMigration(stig, plan);
+            await IDB.migrateStig(migrated);
+            const updated = await IDB.exportChecklist(checklistId);
+            setChecklist(updated);
+            setMigration(null);
+        },
+        [checklistId],
+    );
 
     useEffect(() => {
         (async () => {
@@ -623,6 +677,21 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
                 />
             </Sidebar>
 
+            <Sidebar
+                isOpen={migration !== null}
+                onClick={() => setMigration(null)}
+                headerText={`Migrate ${migration?.stig.display_name ?? "STIG"}`}
+            >
+                {migration && (
+                    <MigrateStig
+                        stig={migration.stig}
+                        plan={migration.plan}
+                        onApply={() => handleMigrate(migration.stig, migration.plan)}
+                        onCancel={() => setMigration(null)}
+                    />
+                )}
+            </Sidebar>
+
             {checklist && (
                 <>
                 <div className="my-4">
@@ -691,6 +760,10 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
                     severities={severities}
                     statuses={statuses}
                     search={search}
+                    migrationTarget={migrationTargets[stig.uuid]}
+                    onMigrate={(stig, target) =>
+                        setMigration({ stig, plan: planMigration(stig, target) })
+                    }
                     onSelectRule={onSelectRule}
                     removeRule={removeRule}
                     onRemoveStig={removeStig}
