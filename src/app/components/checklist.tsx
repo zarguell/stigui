@@ -18,6 +18,7 @@ import { checklistToCkl } from "@/api/entities/ckl";
 import { useRouter } from "next/navigation";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Breadcrumbs } from "./breadcrumbs";
+import { Statistics } from "./client/statistics";
 import { ChecklistTargetData } from "./checklist_target_data";
 import { SeverityBadge, bySeverity } from "./severity";
 import { StatusBadge, byStatus } from "./status";
@@ -604,6 +605,8 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
                     </section>
                 )}
             </form>
+
+            {checklist && <Statistics checklist={checklist} />}
 
             <Sidebar
                 isOpen={addStigOpen}

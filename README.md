@@ -42,6 +42,7 @@ This fork turns STIGUI into an **upload-first tool**:
 Create a checklist from any STIG (via **Edit** on a STIG page) and refine it in the editor:
 
 - **Editable title** — rename the checklist inline.
+- **Statistics panel** — the severity × status matrix (Open / Not a Finding / N/A / Not Reviewed) per checklist and per STIG, updating live as rules are edited. Severity overrides are counted at their effective severity.
 - **Target metadata** — edit host name, IP/MAC, FQDN, role, technology area, web-DB details, comments, and classification in a collapsible Metadata panel.
 - **Per-STIG tables** — each STIG in the checklist gets its own collapsible (accordion) table showing its rules, version, and release info.
 - **Top-level filtering** — filter by severity and status across **all** STIGs in the checklist at once.
