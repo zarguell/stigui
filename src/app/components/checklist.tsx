@@ -12,6 +12,8 @@ import { AddStig } from "@/app/components/client/editor/add_stig";
 import { RuleEdit } from "@/app/components/client/editor/rule";
 import { MigrateStig } from "@/app/components/client/editor/migrate_stig";
 import { useUploadedStigs } from "@/app/components/client/upload_stig";
+import { useCciMap } from "@/app/components/client/use-cci-map";
+import { controlsForCcis, EMPTY_CCI_MAP } from "@/api/entities/cci";
 import {
     applyMigration,
     findMigrationTarget,
@@ -24,6 +26,7 @@ import { IDB, IDBChecklist } from "@/app/db";
 import { debounce, download, ruleMatchesSearch } from "@/app/utils";
 import { checklistToCkl } from "@/api/entities/ckl";
 import type { LibraryStig } from "@/api/entities/upload";
+import type { Stig as ChecklistStig } from "@/api/generated/Checklist";
 import { useRouter } from "next/navigation";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Breadcrumbs } from "./breadcrumbs";
@@ -101,6 +104,8 @@ const StigTable = ({
     severities,
     statuses,
     search,
+    controlFilter,
+    cciMap,
     migrationTarget,
     onMigrate,
     onSelectRule,
@@ -111,6 +116,8 @@ const StigTable = ({
     severities: Set<Severity>;
     statuses: Set<Status>;
     search: string;
+    controlFilter: string;
+    cciMap: ReturnType<typeof useCciMap>;
     migrationTarget?: LibraryStig | null;
     onMigrate?: (stig: Stig, target: LibraryStig) => void;
     onSelectRule: (rule: Rule) => void;
@@ -132,9 +139,17 @@ const StigTable = ({
             if (statuses.size > 0 && !statuses.has(status)) {
                 return false;
             }
+            if (
+                controlFilter &&
+                !controlsForCcis(rule.ccis, cciMap ?? EMPTY_CCI_MAP).includes(
+                    controlFilter
+                )
+            ) {
+                return false;
+            }
             return ruleMatchesSearch(rule, search);
         });
-    }, [stig.rules, severities, statuses, search]);
+    }, [stig.rules, severities, statuses, search, controlFilter, cciMap]);
 
     const tableBody = useMemo(() => {
         return viewableRules.map((rule) => ({
@@ -291,7 +306,22 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
         plan: MigrationPlan;
     } | null>(null);
     const { entries: libraryEntries } = useUploadedStigs();
+    const cciMap = useCciMap();
+    const [controlFilter, setControlFilter] = useState("");
     const router = useRouter();
+
+    const availableControls = useMemo(() => {
+        if (!cciMap || !checklist) {
+            return [];
+        }
+        const controls = new Set<string>();
+        for (const rule of checklist.stigs.flatMap((stig) => stig.rules)) {
+            controlsForCcis(rule.ccis, cciMap).forEach((control) =>
+                controls.add(control)
+            );
+        }
+        return [...controls].sort();
+    }, [checklist, cciMap]);
 
     const migrationTargets = useMemo(() => {
         const targets: Record<string, LibraryStig> = {};
@@ -597,7 +627,7 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
                     onClick={() => setSelectedUuid(null)}
                     headerText={rule?.rule_title ?? "Rule Details"}
                 >
-                    <RuleEdit rule={rule} onRemove={removeRule} />
+                    <RuleEdit rule={rule} onRemove={removeRule} cciMap={cciMap} />
                 </Sidebar>
 
                 {checklist && (
@@ -694,7 +724,7 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
 
             {checklist && (
                 <>
-                <div className="my-4">
+                <div className="my-4 flex gap-3 flex-wrap items-center">
                     <input
                         type="search"
                         value={search}
@@ -703,6 +733,23 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
                         aria-label="Search rules"
                         className="w-full max-w-md text-sm text-foreground bg-surface px-3 py-2 border border-border-strong rounded-md transition-colors focus:border-accent focus-visible:outline-none focus:ring-2 focus:ring-ring/40 placeholder:text-subtle"
                     />
+                    {availableControls.length > 0 && (
+                        <select
+                            value={controlFilter}
+                            onChange={(e) => setControlFilter(e.target.value)}
+                            aria-label="Filter by 800-53 control"
+                            className="text-sm text-foreground bg-surface px-3 py-2 border border-border-strong rounded-md transition-colors focus:border-accent focus-visible:outline-none"
+                        >
+                            <option value="">
+                                All 800-53 controls ({availableControls.length})
+                            </option>
+                            {availableControls.map((control) => (
+                                <option key={control} value={control}>
+                                    {control}
+                                </option>
+                            ))}
+                        </select>
+                    )}
                 </div>
                 <aside className="w-full flex justify-between items-center my-6 flex-wrap gap-2">
                     <div>
@@ -760,6 +807,8 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
                     severities={severities}
                     statuses={statuses}
                     search={search}
+                    controlFilter={controlFilter}
+                    cciMap={cciMap}
                     migrationTarget={migrationTargets[stig.uuid]}
                     onMigrate={(stig, target) =>
                         setMigration({ stig, plan: planMigration(stig, target) })

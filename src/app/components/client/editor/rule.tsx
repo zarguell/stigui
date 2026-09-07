@@ -3,14 +3,17 @@ import type { Rule as IRule } from "@/api/generated/Checklist";
 import { Severity } from "@/api/generated/Checklist";
 import { buttonClasses } from "@/app/components/ui/button";
 import { Field, Input, Select, Textarea } from "@/app/components/ui/field";
+import { controlsForCcis, type CciMap } from "@/api/entities/cci";
 import { useState } from "react";
 
 type Props = {
     rule: IRule | null;
     onRemove?: (rule: IRule) => void;
+    /** Loaded CCI list, used to show the rule's NIST 800-53 controls */
+    cciMap?: CciMap | null;
 };
 
-export const RuleEdit = ({ rule, onRemove }: Props) => {
+export const RuleEdit = ({ rule, onRemove, cciMap }: Props) => {
     if (!rule) {
         return null;
     }
@@ -37,6 +40,35 @@ export const RuleEdit = ({ rule, onRemove }: Props) => {
                     {rule.fix_text}
                 </p>
             </div>
+            {cciMap && rule.ccis.length > 0 && (
+                <div>
+                    <h3 className="text-xs font-semibold tracking-wide uppercase text-muted mb-2">
+                        🧭 NIST 800-53 Controls
+                    </h3>
+                    <div className="flex flex-wrap gap-1.5">
+                        {controlsForCcis(rule.ccis, cciMap).map((control) => (
+                            <span
+                                key={control}
+                                className="px-2 py-1 rounded-md border border-border bg-surface text-xs font-medium text-foreground"
+                            >
+                                {control}
+                            </span>
+                        ))}
+                    </div>
+                    <ul className="mt-2 flex flex-col gap-1">
+                        {rule.ccis.map((cci) => (
+                            <li key={cci} className="text-xs text-muted">
+                                <span className="font-medium text-foreground">
+                                    {cci}
+                                </span>
+                                {cciMap.ccis[cci]?.d ? (
+                                    <span> — {cciMap.ccis[cci].d}</span>
+                                ) : null}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
             <div className="flex gap-6 items-end flex-wrap">
                 <Field label="Status" htmlFor="status">
                     <Select
