@@ -37,6 +37,30 @@ const canonicalize = (value: unknown): unknown => {
                 return acc;
             }, {} as Record<string, unknown>);
     }
+    // yq represents an empty element as null, fast-xml-parser as ""
+    return value === null ? '' : value;
+};
+
+/**
+ * A minority of DISA releases resolve namespaced element names to local
+ * names in the yq output (`publisher` vs `dc:publisher`); the app's
+ * generated types accept both, so the equivalence check compares with
+ * the prefix stripped.
+ */
+const stripNs = (value: unknown): unknown => {
+    if (Array.isArray(value)) {
+        return value.map(stripNs);
+    }
+    if (value && typeof value === 'object') {
+        const out: Record<string, unknown> = {};
+        for (const [key, val] of Object.entries(
+            value as Record<string, unknown>
+        )) {
+            const cleanKey = key.startsWith('+') ? key : key.split(':').pop()!;
+            out[cleanKey] = stripNs(val);
+        }
+        return out;
+    }
     return value;
 };
 
@@ -68,7 +92,9 @@ describe('upload converter', () => {
 
         const converted = convertXccdf(xml);
 
-        expect(canonicalize(converted)).toEqual(canonicalize(expected));
+        expect(stripNs(canonicalize(converted))).toEqual(
+            stripNs(canonicalize(expected))
+        );
     });
 
     it.each(fixtures)('should feed the app contract for %s', (fixture) => {

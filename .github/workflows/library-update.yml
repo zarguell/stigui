@@ -1,0 +1,51 @@
+name: Library update
+
+on:
+    workflow_dispatch:
+
+jobs:
+    refresh:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: STIG URL
+              run: |
+                  . scripts/get-stig-url.sh
+                  echo "URL=$URL" >> "$GITHUB_ENV"
+
+            # DISA publishes the quarterly library on its own timetable
+            - name: Check STIG library availability
+              id: available
+              run: |
+                  if curl -o /dev/null -fsL --retry 3 -r 0-0 "$URL"; then
+                      echo "available=true" >> "$GITHUB_OUTPUT"
+                  else
+                      echo "available=false" >> "$GITHUB_OUTPUT"
+                      echo "::notice::STIG library not published yet: $URL"
+                  fi
+
+            - name: Retrieve the cached "data" directory (if present)
+              uses: actions/cache@v4
+              id: data-cache
+              if: steps.available.outputs.available == 'true'
+              with:
+                  path: ./data
+                  key: ${{ env.URL }}
+
+            - name: Download STIG data
+              run: . scripts/fetch-stigs.sh
+              if: steps.available.outputs.available == 'true' && steps.data-cache.outputs.cache-hit != 'true'
+
+            - name: Create JSON STIG data
+              run: . scripts/create-json-stigs.sh
+              if: steps.available.outputs.available == 'true' && steps.data-cache.outputs.cache-hit != 'true'
+
+            - name: Commit updated library
+              if: steps.available.outputs.available == 'true'
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                  commit_message: Refresh DISA STIG library

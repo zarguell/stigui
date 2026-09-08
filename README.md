@@ -29,13 +29,16 @@ site:
 
 ## Features
 
-### STIG library — yours, not ours
+### STIG library — full catalog plus your own
 
-The site ships with a small fixture library; you **import your own STIGs** — an
-XCCDF `.xml` or a DISA library `.zip`, one at a time or by drag-and-drop. Imports
-are parsed client-side into the same structure the build pipeline produces and
-persist in your browser (IndexedDB), then behave like any library STIG: browse
-rules by severity and classification, export as XML/JSON/CSV, build checklists.
+The site ships with the **full DISA STIG/SRG library committed** (like upstream,
+ refreshed on demand via `scripts/`), and you can **import your own STIGs** on
+top of it — an XCCDF `.xml` or a DISA library `.zip`, one at a time or by
+drag-and-drop. Imports are parsed client-side into the same structure the build
+pipeline produces, persist in your browser (IndexedDB), and shadow same-id
+library entries — so importing a newer release upgrades your view. Imported
+STIGs behave like any library STIG: browse rules by severity and classification,
+export as XML/JSON/CSV, build checklists.
 
 ### Checklists
 
@@ -91,8 +94,8 @@ npm test           # unit + corpus tests
 ```
 
 To build the static site locally, see the build step in
-`.github/workflows/deploy.yml` (the export prerenders fixture pages, so a dev
-server runs during the build). To refresh the CCI → 800-53 map against a newer
+`.github/workflows/deploy.yml` (the export prerenders the whole library, so a
+dev server runs during the build — expect a several-minute build). To refresh the CCI → 800-53 map against a newer
 DISA list: `python3 scripts/build-cci-map.py <U_CCI_List.xml>`.
 
 ### CI
