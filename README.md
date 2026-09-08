@@ -56,6 +56,7 @@ Create a checklist from any STIG (via **Edit** on a STIG page) and refine it in 
 - **Import legacy CKL** — open STIG Viewer 2-era `.ckl` checklists (the format eMASS ingests). CKLs are self-contained, so the referenced STIG does not need to be in the library; imported checklists are fully editable.
 - **Export CKL** — download any checklist as legacy `.ckl`. Every fixture in the test suite round-trips import → export → import losslessly.
 - **Import / Export CKLB** — import a `.cklb` checklist file, or export your checklist to CKLB, compatible with [STIG Viewer 3](https://www.cyber.mil/stigs/srg-stig-tools).
+- **Findings report** — a print-ready report (checklist metadata, statistics, and full Open-finding detail) for package reviews, plus a POA&M-friendly findings CSV export.
 
 ### Privacy & storage
 

@@ -25,8 +25,10 @@ import { buttonClasses } from "@/app/components/ui/button";
 import { IDB, IDBChecklist } from "@/app/db";
 import { debounce, download, ruleMatchesSearch } from "@/app/utils";
 import { checklistToCkl } from "@/api/entities/ckl";
+import { findingsToCsv } from "@/api/entities/report";
 import type { LibraryStig } from "@/api/entities/upload";
 import type { Stig as ChecklistStig } from "@/api/generated/Checklist";
+import type { CciMap } from "@/api/entities/cci";
 import { useRouter } from "next/navigation";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Breadcrumbs } from "./breadcrumbs";
@@ -88,6 +90,15 @@ const toCKL = (checklist: Checklist) => {
     });
     const url = URL.createObjectURL(blob);
     download(url, `${checklist.title || `checklist-${checklist.id}`}.ckl`);
+    URL.revokeObjectURL(url);
+};
+
+const toFindingsCsv = (checklist: Checklist, cciMap: CciMap | null) => {
+    const blob = new Blob([findingsToCsv(checklist, cciMap)], {
+        type: "text/csv",
+    });
+    const url = URL.createObjectURL(blob);
+    download(url, `${checklist.title || `checklist-${checklist.id}`}-findings.csv`);
     URL.revokeObjectURL(url);
 };
 
@@ -675,6 +686,28 @@ export const ChecklistView = ({ checklistId }: { checklistId: string }) => {
                                 })}
                             >
                                 CKL ⬇️
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => toFindingsCsv(checklist, cciMap)}
+                                className={buttonClasses({
+                                    variant: "secondary",
+                                    size: "sm",
+                                })}
+                            >
+                                Findings CSV ⬇️
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    router.push(`/editor/report?id=${checklist.id}`)
+                                }
+                                className={buttonClasses({
+                                    variant: "secondary",
+                                    size: "sm",
+                                })}
+                            >
+                                Report 🖨️
                             </button>
                             <button
                                 type="button"

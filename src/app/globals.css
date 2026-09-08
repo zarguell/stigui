@@ -72,3 +72,35 @@
     line-height: 1.6;
     color: rgb(var(--muted));
 }
+
+/* Findings report printing: strip app chrome, print light. */
+@media print {
+    nav,
+    aside,
+    footer,
+    .no-print {
+        display: none !important;
+    }
+
+    html,
+    html.dark {
+        background: white !important;
+    }
+
+    body,
+    body.dark {
+        background: white !important;
+        color: black !important;
+    }
+
+    .print-report,
+    .print-report * {
+        color: black !important;
+        background: white !important;
+        border-color: #d4d4d8 !important;
+    }
+
+    .print-finding {
+        break-inside: avoid;
+    }
+}

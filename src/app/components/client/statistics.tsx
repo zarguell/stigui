@@ -16,7 +16,7 @@ const COLUMNS: Array<{ status: Status; label: string }> = [
     { status: Status.NotReviewed, label: "Not Reviewed" },
 ];
 
-const MatrixTable = ({ matrix }: { matrix: StatsMatrix }) => {
+export const MatrixTable = ({ matrix }: { matrix: StatsMatrix }) => {
     const ordered = [...matrix.rows]
         .sort((a, b) => bySeverity(b.severity, a.severity));
 
