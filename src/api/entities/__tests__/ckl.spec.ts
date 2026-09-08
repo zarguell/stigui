@@ -248,9 +248,10 @@ describe('CKL export / round trip', () => {
     });
 
     (hasCorpus ? describe : describe.skip)('full corpus round trip', () => {
-        const corpus = fs
-            .readdirSync(corpusDir)
-            .filter((f) => f.endsWith('.ckl'));
+        // describe.skip still collects its body, so guard the read too
+        const corpus = hasCorpus
+            ? fs.readdirSync(corpusDir).filter((f) => f.endsWith('.ckl'))
+            : [];
 
         it('should have corpus files', () => {
             expect(corpus.length).toBeGreaterThan(100);
