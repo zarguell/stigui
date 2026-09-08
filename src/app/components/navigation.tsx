@@ -1,5 +1,6 @@
 "use client";
 import { ThemeToggle } from "@/app/components/ui/theme";
+import { BASE_PATH } from "@/app/constants";
 import { APPNAME } from "@/app/constants";
 import { useEffect, useMemo, useRef, useState } from "react";
 
@@ -42,7 +43,7 @@ export const Navigation = () => {
         <nav className="bg-surface/90 backdrop-blur fixed w-full z-20 top-0 start-0 border-b border-border">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
                 <a
-                    href="/"
+                    href={`${BASE_PATH}/`}
                     className="flex items-center space-x-3 rtl:space-x-reverse"
                     tabIndex={100}
                 >
@@ -105,7 +106,7 @@ export const Navigation = () => {
                             >
                                 <div className="py-1" role="none">
                                     <a
-                                        href="/editor"
+                                        href={`${BASE_PATH}/editor`}
                                         className="flex flex-row items-center px-4 py-2 text-sm text-muted hover:bg-surface-muted hover:text-foreground transition-colors"
                                         tabIndex={100}
                                     >
@@ -114,7 +115,7 @@ export const Navigation = () => {
                                 </div>
                                 <div className="py-1" role="none">
                                     <a
-                                        href="https://github.com/nealfennimore/stig"
+                                        href="https://github.com/zarguell/stigui"
                                         className="flex flex-row items-center gap-2 px-4 py-2 text-sm text-muted hover:bg-surface-muted hover:text-foreground transition-colors"
                                         tabIndex={100}
                                     >

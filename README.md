@@ -1,6 +1,8 @@
  ![Logo](./public/stigui-border-150.png)
 
-A simple web application for exploring and editing [DISA Security Technical Implementation Guides (STIGs)](https://public.cyber.mil/stigs/compilations/).
+**zarguell/stigui** — a fork of [STIGUI](https://github.com/nealfennimore/stig) by
+Neal Fennimore, maintained by [Zach Arguelles](https://github.com/zarguell).
+A web application for exploring and editing [DISA Security Technical Implementation Guides (STIGs)](https://public.cyber.mil/stigs/compilations/).
 
 ![Demo](./public/stigui.gif)
 
