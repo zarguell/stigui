@@ -72,10 +72,13 @@ describe('converted CIS benchmarks', () => {
             expect(['high', 'medium', 'low', 'info']).toContain(
                 group.rule.severity
             );
-            expect(group.rule.check).toBeTruthy();
             expect(group.rule.fixText).toBeTruthy();
             expect(group.rule.description).toBeTruthy();
             expect(group.rule.version).toMatch(/^\d+(\.\d+)*$/);
+            // A few upstream recommendations ship an empty Audit section
+            // (e.g. PostgreSQL 7.3 — flagged by the converter report);
+            // the field must exist, its content mirrors the document.
+            expect(group.rule.check).toBeDefined();
         }
     });
 

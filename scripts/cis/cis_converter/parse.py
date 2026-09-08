@@ -67,6 +67,9 @@ BULLET_GLYPHS = "•\u25cf\uf0b7\uf06f\u25aa\u25a0\u2023\u25e6o-*\u2003\t "
 # TOC sub-entries ("32 Bit systems .... 448" under an audit-rule entry)
 # carry bare page-ish numbers; real top-level sections stay below this.
 MAX_TOP_LEVEL_SECTION = 20
+
+# Single-line TOC entry with a title (used for section recovery).
+TOC_TITLE_RE = re.compile(r"^(\d+(?:\.\d+)*)\s+(.+)$")
 # Version/date line: "v4.0.0 - 06-14-2023" (Docker) and
 # "v4.0.0 \u2013 05/23/2025" (Windows Server 2022) both occur.
 VERSION_DATE_RE = re.compile(
@@ -117,6 +120,7 @@ def parse(pages: list[Page]) -> ParseResult:
     _parse_front_matter(flat[:body_start], doc, result, body_font)
     _parse_toc(flat[:body_start], doc, result)
     _parse_body(flat[body_start:], doc, result, heading_style, body_font, body_size)
+    _recover_sections_from_toc(flat[body_start:], doc, result, heading_style)
 
     # Front matter outside the grammar is boilerplate (Terms of Use,
     # acknowledgements, ...): classify rather than flag. The body region
@@ -367,7 +371,14 @@ def _parse_toc(flat, doc: BenchmarkDoc, result: ParseResult) -> None:
             continue
         match = re.match(r"(\d+(?:\.\d+)*)[\s(]", line.text)
         if match and heading_number(line.text) and _toc_number_ok(match.group(1)):
-            doc.toc.append(TocEntry(number=match.group(1), title="", page=None))
+            number = match.group(1)
+            title_match = TOC_TITLE_RE.match(line.text)
+            title = (
+                STATUS_MARKER_RE.sub("", title_match.group(2)).strip()
+                if title_match
+                else ""
+            )
+            doc.toc.append(TocEntry(number=number, title=title, page=None))
 
     doc.toc = dedupe_toc(doc.toc)
     doc.has_toc = bool(doc.toc)
@@ -410,7 +421,13 @@ def _parse_body(flat, doc: BenchmarkDoc, result: ParseResult, heading_style, bod
         text = line.text
         run = line.dominant_run
 
-        if not body_ended and run is not None and _label_of(line) is None and not heading_number(text):
+        if (
+            not body_ended
+            and doc.recommendations
+            and run is not None
+            and _label_of(line) is None
+            and not heading_number(text)
+        ):
             # Unnumbered title-scale heading ("Appendix: Summary Table",
             # annex covers): the recommendation body is over. Table
             # artifacts inside CIS Controls tables also come out large
@@ -575,3 +592,24 @@ def _model_section(number: str, title: str) -> Section:
 
 def _parent_number(number: str) -> str:
     return number.rsplit(".", 1)[0] if "." in number else ""
+
+
+def _recover_sections_from_toc(flat, doc: BenchmarkDoc, result: ParseResult, heading_style) -> None:
+    """Cambria-era templates set section headings in plain body font, so
+    heading detection cannot see them. The TOC knows each section's
+    number and title; finding that exact line in the body registers the
+    section (used for group titles and reconciliation)."""
+    body_numbers = doc.rec_numbers() | set(doc.sections)
+    for entry in doc.toc:
+        number, title = entry.number, entry.title
+        if not title or number in body_numbers:
+            continue
+        prefix = f"{number} {title.split()[0]}"
+        for page, line in flat:
+            if line.role not in (None, "section-intro", "heading"):
+                continue
+            if line.text.startswith(prefix) and line.dominant_run:
+                doc.sections[number] = Section(number=number, title=title)
+                line.role = "heading"
+                body_numbers.add(number)
+                break
