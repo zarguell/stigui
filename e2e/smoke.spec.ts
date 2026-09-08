@@ -120,3 +120,40 @@ test("library and rule browsing render", async ({ page }) => {
         "() => document.body.innerText.includes('Group ID')"
     );
 });
+
+test("converted CIS benchmarks render like library STIGs", async ({ page }) => {
+    // The library lists the shipped CIS conversions...
+    await page.goto(`${BASE}/stigs.html`);
+    await waitFor(
+        page,
+        "() => document.body.innerText.includes('CIS Docker Benchmark')"
+    );
+    await page.locator('a[href*="CIS_Docker_Benchmark"]').first().click();
+
+    // ...and a CIS benchmark page renders its recommendations with the
+    // profile filter and rule detail fields intact.
+    await waitFor(
+        page,
+        "() => document.body.innerText.includes('Group ID')"
+    );
+    await waitFor(
+        page,
+        "() => document.body.innerText.includes('Level 1 - Docker - Linux')"
+    );
+    await waitFor(
+        page,
+        "() => document.body.innerText.includes('Ensure a separate partition for containers')"
+    );
+
+    const groupId = page
+        .locator('a[href*="/groups/"]')
+        .first();
+    await groupId.click();
+    await waitFor(
+        page,
+        "() => document.body.innerText.includes('Description')"
+    );
+    await expect(
+        page.locator("text=Ensure a separate partition for containers").first()
+    ).toBeVisible();
+});

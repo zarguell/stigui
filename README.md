@@ -40,6 +40,11 @@ library entries — so importing a newer release upgrades your view. Imported
 STIGs behave like any library STIG: browse rules by severity and classification,
 export as XML/JSON/CSV, build checklists.
 
+Three **CIS Benchmarks** (Docker, Debian Linux 11, Kubernetes V1.23) ship in the
+library too, converted from the public CIS PDFs by the grammar-driven parser in
+`scripts/cis/` — see that directory's README for the pipeline, its accuracy
+checks, and how to convert more benchmarks.
+
 ### Checklists
 
 - **Import legacy `.ckl`** (STIG Viewer 2 / eMASS format) **and `.cklb`** (STIG
@@ -96,12 +101,13 @@ npm test           # unit + corpus tests
 To build the static site locally, see the build step in
 `.github/workflows/deploy.yml` (the export prerenders the whole library, so a
 dev server runs during the build — expect a several-minute build). To refresh the CCI → 800-53 map against a newer
-DISA list: `python3 scripts/build-cci-map.py <U_CCI_List.xml>`.
+DISA list: `python3 scripts/build-cci-map.py <U_CCI_List.xml>`. To convert CIS
+Benchmark PDFs into the library: `scripts/cis/` (see its README).
 
 ### CI
 
-Every push runs the unit/corpus suite, a browser smoke test of the built site,
-and the Pages deployment.
+Every push runs the unit/corpus suite, the CIS converter's pytest suite, a
+browser smoke test of the built site, and the Pages deployment.
 
 ## Acknowledgments
 

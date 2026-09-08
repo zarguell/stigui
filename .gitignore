@@ -6,12 +6,20 @@ data/stigs.zip
 # The full DISA library lives here, committed like upstream
 # (see scripts/ to regenerate from a fresh DISA download).
 
+# CIS Benchmark source PDFs. CIS's license restricts redistribution of
+# the documents themselves, so only the converted STIG-format output in
+# public/data/stigs/ is committed. Drop downloaded PDFs here.
+data/cis/
+scripts/cis/.venv/
+__pycache__/
+
 result
 node_modules
 out
 .next
 *.tsbuildinfo
 .direnv
+.DS_Store
 
 # env files
 .env*
