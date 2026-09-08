@@ -1,139 +1,115 @@
- ![Logo](./public/stigui-border-150.png)
+# zarguell/stigui
 
-**zarguell/stigui** — a fork of [STIGUI](https://github.com/nealfennimore/stig) by
-Neal Fennimore, maintained by [Zach Arguelles](https://github.com/zarguell).
-A web application for exploring and editing [DISA Security Technical Implementation Guides (STIGs)](https://public.cyber.mil/stigs/compilations/).
+![Logo](./public/stigui-border-150.png)
 
-![Demo](./public/stigui.gif)
+**Open every STIG checklist in your browser. No install. No server. Nothing leaves your machine.**
 
-STIGUI lets you browse the full DISA STIG library, export individual STIGs, and build & edit checklists — all in your browser. Edits are stored locally in IndexedDB; there are **no external network requests** to any third-party tracker or analytics service, and the app ships as a fully static site.
+zarguell/stigui is a fork of [STIGUI](https://github.com/nealfennimore/stig) by Neal
+Fennimore, maintained by [Zach Arguelles](https://github.com/zarguell). It is a web
+application for exploring and editing [DISA Security Technical Implementation Guides
+(STIGs)](https://public.cyber.mil/stigs/compilations/) — the configuration standards
+used to harden DoD systems — built for RMF assessors and system owners who want STIG
+Viewer capabilities without installing anything.
 
-## About this fork
+**→ Use it at [zarguell.github.io/stigui](https://zarguell.github.io/stigui)**
 
-This fork turns STIGUI into an **upload-first tool**:
+## Why this exists
 
-- The repo no longer ships the full DISA library (a multi-gigabyte data commit
-  upstream). It carries two small **fixture STIGs** (`AAA_Services`,
-  `Google_Chrome_Current_Windows`) for development and demos.
-- Instead, you **import your own STIGs**: click **Upload STIG** on the library
-  page (or inside the editor's *Add STIG* panel) and pick an XCCDF `.xml` or a
-  DISA library `.zip`. Imports are parsed client-side into exactly the same
-  shape the build pipeline produces (see `src/api/entities/upload.ts`), stored
-  in IndexedDB, and work everywhere a library STIG does — browsing, severity
-  filters, XML/JSON/CSV export, and checklist editing.
-- Imported STIGs are viewable at `/stigs/uploaded?id=<stig_id>`.
-- The scheduled daily library sync (`schedule.yml`) was removed; to regenerate
-  fixture or library data locally, the upstream `scripts/` pipeline still
-  works (`fetch-stigs.sh` + `create-json-stigs.sh`).
-- Client-side data fetches are same-origin and failure-tolerant (a missing
-  manifest no longer breaks hydration), so the static site works from any
-  host or subpath without extra configuration.
+Working STIGs usually means one of three pains: DISA's STIG Viewer is a Java download
+with no macOS build, STIG Manager needs a server and a database, and checklists get
+emailed around as attachments. This tool runs entirely in your browser as a static
+site:
+
+- **Nothing to install** — works on Windows, macOS, Linux, even a tablet
+- **Nothing leaves your machine** — checklists are parsed, edited, and exported
+  locally; there is no backend, no account, and no telemetry
+- **eMASS in, eMASS out** — opens the `.ckl` checklists eMASS ingests and writes
+  them back with lossless round-trip fidelity, verified against a corpus of real
+  checklists on every commit
 
 ## Features
 
-### Browse & explore STIGs
+### STIG library — yours, not ours
 
-- **Browse the library:** Search and sort the collection of DISA STIGs (by id, title, version, and date).
-- **Import your own:** Upload an XCCDF `.xml` or DISA library `.zip`; imports persist in IndexedDB.
-- **View a STIG:** Inspect every rule with severity badges, filter rules by severity, and read the full check and fix text for any rule.
-- **Classifications:** Switch a STIG's view between **Public**, **Classified**, and **Sensitive** profiles.
-- **Export:** Download a STIG as **XML**, **JSON**, or **CSV**.
+The site ships with a small fixture library; you **import your own STIGs** — an
+XCCDF `.xml` or a DISA library `.zip`, one at a time or by drag-and-drop. Imports
+are parsed client-side into the same structure the build pipeline produces and
+persist in your browser (IndexedDB), then behave like any library STIG: browse
+rules by severity and classification, export as XML/JSON/CSV, build checklists.
 
-### Build & edit checklists
+### Checklists
 
-Create a checklist from any STIG (via **Edit** on a STIG page) and refine it in the editor:
+- **Import legacy `.ckl`** (STIG Viewer 2 / eMASS format) **and `.cklb`** (STIG
+  Viewer 3 JSON) — CKLs are self-contained, so the referenced STIG need not be
+  imported
+- **Edit** — per-rule status (Open / Not a Finding / N/A / Not Reviewed), severity
+  overrides with justification, comments, and finding details, with target/asset
+  metadata
+- **Export** — CKLB for STIG Viewer 3, and **legacy CKL for eMASS**, with
+  round-trip fidelity proven by corpus tests
 
-- **Editable title** — rename the checklist inline.
-- **Statistics panel** — the severity × status matrix (Open / Not a Finding / N/A / Not Reviewed) per checklist and per STIG, updating live as rules are edited. Severity overrides are counted at their effective severity.
-- **Target metadata** — edit host name, IP/MAC, FQDN, role, technology area, web-DB details, comments, and classification in a collapsible Metadata panel.
-- **Per-STIG tables** — each STIG in the checklist gets its own collapsible (accordion) table showing its rules, version, and release info.
-- **Rule search** — free-text search across rule titles, discussions, check/fix text, ids, and reviewer notes, combinable with the severity and status filters.
-- **Top-level filtering** — filter by severity and status across **all** STIGs in the checklist at once.
-- **Edit rules** — set a rule's status (Open / Not a Finding / Not Applicable / Not Reviewed), override its severity (with a reason), and add comments and finding details.
-- **Add a STIG** — pull another STIG (by classification) into an existing checklist.
-- **Remove rules / STIGs / checklists** — delete individual rules, an entire STIG, or a whole checklist.
-- **STIG version migration** — upload a newer release of a STIG you already have a checklist for, and the editor offers a one-click migration: review data (statuses, comments, findings, overrides) carries over to matched rules, rules renumbered between releases are matched by rule id, brand-new rules are added as Not Reviewed, and dropped rules are reported before anything changes.
-- **Import legacy CKL** — open STIG Viewer 2-era `.ckl` checklists (the format eMASS ingests). CKLs are self-contained, so the referenced STIG does not need to be in the library; imported checklists are fully editable.
-- **Export CKL** — download any checklist as legacy `.ckl`. Every fixture in the test suite round-trips import → export → import losslessly.
-- **Import / Export CKLB** — import a `.cklb` checklist file, or export your checklist to CKLB, compatible with [STIG Viewer 3](https://www.cyber.mil/stigs/srg-stig-tools).
-- **Findings report** — a print-ready report (checklist metadata, statistics, and full Open-finding detail) for package reviews, plus a POA&M-friendly findings CSV export.
+### STIG version migration
 
-### Privacy & storage
+Upload a newer release of a STIG you already have a checklist against and the
+editor offers a one-click migration with a **reviewable diff**: review data
+carries over to matched rules (matched by vulnerability id, with rule-id fallback
+for renumbering), changed rules show word-level diffs of exactly what DISA
+changed, new rules arrive as Not Reviewed, and dropped rules are reported before
+anything is applied.
 
-- All checklists and edits are stored locally in your browser using **IndexedDB** (normalized into checklists, STIGs, rules, and their relationships).
-- No accounts, no servers, no third-party tracking or analytics.
+### Review tooling
 
-## Routes
+- **Statistics** — the severity × status matrix, per checklist and per STIG,
+  updating live as you work
+- **Rule search** — free-text search across titles, discussions, check/fix text,
+  ids, and reviewer notes
+- **800-53 control mapping** — every rule's CCIs mapped to NIST controls
+  (Revisions 4 and 5), with a control filter for traceability
+- **Findings report** — a print-ready package-review document (metadata,
+  statistics, full Open-finding detail) plus a POA&M-friendly findings CSV
 
-| Route | Description |
-| --- | --- |
-| `/` and `/stigs` | Browse the STIG library; upload your own XCCDF/zip |
-| `/stigs/[stig_id]` | View a STIG's rules; filter, switch classification, export, or edit |
-| `/stigs/uploaded?id=<stig_id>` | View an imported STIG's rules |
-| `/stigs/[stig_id]/[classification]` | Classification-specific STIG view |
-| `/stigs/[stig_id]/groups/[group_id]` | Detail view for an individual rule/group |
-| `/editor` | List saved checklists; import a CKLB or delete a checklist |
-| `/editor?id=<id>` | Edit a single checklist |
+## Privacy
 
-## Tech stack
+All data — imported STIGs, checklists, edits — lives in your browser's IndexedDB.
+The site makes no external requests after load, has no accounts, and no analytics.
+Exported files are generated client-side. Clearing your browser storage clears
+your data; export first.
 
-- [Next.js 15](https://nextjs.org/) (App Router, static export) + [React 19](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/) and [Tailwind CSS](https://tailwindcss.com/)
-- [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) for client-side persistence
-- [Jest](https://jestjs.io/) for tests
+## For developers
 
-## Getting Started
-
-Access the upstream project at [stigui.com](https://stigui.com). This fork is
-deployed from this repository's own GitHub Pages site.
-
-## Local Development
-
-Requires **Node 22** (a `.node-version` file is included).
+Stack: Next.js 15 (static export) + React 19 + TypeScript + Tailwind + IndexedDB,
+with Jest unit/integration tests (including a committed CKL corpus regression
+suite) and a Playwright smoke test that drives the built site through the
+assessor loop. Requires Node 22 (`.node-version` included).
 
 ```bash
 git clone https://github.com/zarguell/stigui.git
 cd stigui
 npm install
-npm run dev
+npm run dev        # http://localhost:3000
+npm test           # unit + corpus tests
 ```
 
-Your local instance should now be running at [http://localhost:3000](http://localhost:3000).
+To build the static site locally, see the build step in
+`.github/workflows/deploy.yml` (the export prerenders fixture pages, so a dev
+server runs during the build). To refresh the CCI → 800-53 map against a newer
+DISA list: `python3 scripts/build-cci-map.py <U_CCI_List.xml>`.
 
-### Building the static site
+### CI
 
-The static export (`out/`) prerenders the fixture STIGs, so the build needs a
-server serving `public/` while it runs — the same approach upstream CI uses:
+Every push runs the unit/corpus suite, a browser smoke test of the built site,
+and the Pages deployment.
 
-```bash
-NEXT_PUBLIC_API_URL=http://localhost:3000 npm run dev &
-npm run build
-kill %1
-```
+## Acknowledgments
 
-### Scripts
-
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Build the static production site (`out/`) |
-| `npm run start` | Serve the built static site |
-| `npm run lint` | Run ESLint |
-| `npm test` | Run the Jest test suite |
-
-## Contributing
-
-STIGUI is open-source, and contributions are welcome!
-
-## Acknowledgments & Credits
-
-STIGUI is an independent, community-built project and is **not affiliated with, endorsed by, or sponsored by** the U.S. Defense Information Systems Agency (DISA) or the U.S. Department of Defense.
-
-- **[Defense Information Systems Agency (DISA)](https://www.disa.mil/)** authors and publishes the Security Technical Implementation Guides (STIGs). All STIG content browsed and exported through STIGUI originates from DISA's publicly available [STIG library](https://public.cyber.mil/stigs/).
-- **[DISA STIG Viewer](https://www.cyber.mil/stigs/srg-stig-tools)** is DISA's official tool for reviewing STIGs and building checklists. STIGUI's editing experience and its `.cklb` checklist format are modeled on STIG Viewer 3 for compatibility; STIG Viewer remains the authoritative reference implementation.
-
-STIGs are a product of the U.S. Government and are in the public domain.
+- [Neal Fennimore's STIGUI](https://github.com/nealfennimore/stig) — the original
+  project and the foundation of this fork (MIT)
+- [DISA](https://public.cyber.mil/stigs/) authors the STIGs and CCI list (public
+  domain); [STIG Viewer](https://www.cyber.mil/stigs/srg-stig-tools) remains the
+  authoritative reference implementation
+- [STIG Manager](https://github.com/NUWCDIVNPT/stig-manager) and STIGQter — prior
+  art and references for the checklist formats
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT, matching upstream — see the LICENSE file.

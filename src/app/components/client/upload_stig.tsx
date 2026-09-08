@@ -32,53 +32,54 @@ type Props = {
 
 /** Pick an XCCDF `.xml` (or a DISA library `.zip`) and store it in the
  * local, browser-side STIG library. */
-export const UploadStig = ({ onImported, label = "Upload STIG ⬆️" }: Props) => {
+export const UploadStig = ({ onImported, label = "Upload STIG(s) ⬆️" }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const [busy, setBusy] = useState(false);
     const [dragging, setDragging] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    const importFile = async (file: File) => {
-        if (busy) {
+    const importFiles = async (files: File[]) => {
+        if (busy || files.length === 0) {
             return;
         }
         setBusy(true);
         setError(null);
-        try {
-            const xml = file.name.toLowerCase().endsWith(".zip")
-                ? extractXccdfFromZip(new Uint8Array(await file.arrayBuffer()))
-                      .xml
-                : await file.text();
-            const entry = toLibraryStig(xml, convertXccdf(xml));
-            await IDB.library.put(entry);
-            onImported?.(entry.stig_id);
-        } catch (err) {
-            console.error(err);
-            setError(
-                err instanceof InvalidXccdfError
-                    ? err.message
-                    : `Could not import ${file.name}.`
-            );
-        } finally {
-            setBusy(false);
+        const failed: string[] = [];
+        const importedIds: string[] = [];
+        for (const file of files) {
+            try {
+                const xml = file.name.toLowerCase().endsWith(".zip")
+                    ? extractXccdfFromZip(
+                            new Uint8Array(await file.arrayBuffer())
+                      ).xml
+                    : await file.text();
+                const entry = toLibraryStig(xml, convertXccdf(xml));
+                await IDB.library.put(entry);
+                importedIds.push(entry.stig_id);
+            } catch (err) {
+                console.error(err);
+                failed.push(file.name);
+            }
+        }
+        setBusy(false);
+        if (importedIds.length > 0) {
+            onImported?.(importedIds[0]);
+        }
+        if (failed.length > 0) {
+            setError(`Could not import: ${failed.join(", ")}`);
         }
     };
 
     const onFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        e.target.value = ""; // allow re-importing the same file
-        if (file) {
-            await importFile(file);
-        }
+        const files = Array.from(e.target.files ?? []);
+        e.target.value = ""; // allow re-importing the same files
+        await importFiles(files);
     };
 
     const onDrop = async (e: React.DragEvent) => {
         e.preventDefault();
         setDragging(false);
-        const file = e.dataTransfer.files?.[0];
-        if (file) {
-            await importFile(file);
-        }
+        await importFiles(Array.from(e.dataTransfer.files ?? []));
     };
 
     return (
@@ -99,6 +100,7 @@ export const UploadStig = ({ onImported, label = "Upload STIG ⬆️" }: Props) 
                 hidden
                 ref={inputRef}
                 type="file"
+                multiple
                 accept=".xml,.zip,application/xml,text/xml,application/zip"
                 onChange={onFile}
             />

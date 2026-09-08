@@ -1,7 +1,7 @@
 "use client";
 import type { Checklist } from "@/api/generated/Checklist";
 import { controlsForCcis } from "@/api/entities/cci";
-import { buildFindingsReport, findingsToCsv } from "@/api/entities/report";
+import { buildFindingsReport, findingsToCsv, type StigReportSection } from "@/api/entities/report";
 import { IDB } from "@/app/db";
 import { buttonClasses } from "@/app/components/ui/button";
 import { MatrixTable } from "@/app/components/client/statistics";
@@ -17,6 +17,90 @@ const Row = ({ label, value }: { label: string; value: string }) =>
             <span className="font-semibold">{label}:</span> {value}
         </span>
     ) : null;
+
+const StigFindings = ({ stig }: { stig: StigReportSection }) => (
+    <div className="mt-4 flex flex-col gap-3">
+        <h3 className="text-lg font-semibold text-foreground">
+            {stig.displayName}{" "}
+            <span className="text-sm font-normal text-muted">
+                (V{stig.version}){stig.releaseInfo ? ` · ${stig.releaseInfo}` : ""}
+            </span>
+        </h3>
+        <MatrixTable matrix={stig.matrix} />
+        <div className="flex flex-col gap-4">
+            {stig.findings.map((finding) => (
+                <article
+                    key={finding.groupId + finding.ruleId}
+                    className="print-finding rounded-lg border border-border p-4 flex flex-col gap-2"
+                >
+                    <div className="flex items-center gap-3 flex-wrap">
+                        <SeverityBadge severity={finding.severity} />
+                        <span className="text-sm font-semibold text-foreground">
+                            {finding.groupId} · {finding.ruleId}
+                        </span>
+                    </div>
+                    <h4 className="text-base font-medium text-foreground">
+                        {finding.ruleTitle}
+                    </h4>
+                    <p className="text-sm discussion">{finding.discussion}</p>
+                    <div className="text-sm">
+                        <span className="font-semibold text-xs uppercase tracking-wide text-muted block mb-1">
+                            Check
+                        </span>
+                        <p className="whitespace-pre-line">{finding.checkContent}</p>
+                    </div>
+                    <div className="text-sm">
+                        <span className="font-semibold text-xs uppercase tracking-wide text-muted block mb-1">
+                            Fix
+                        </span>
+                        <p className="whitespace-pre-line">{finding.fixText}</p>
+                    </div>
+                    {finding.findingDetails && (
+                        <div className="text-sm">
+                            <span className="font-semibold text-xs uppercase tracking-wide text-muted block mb-1">
+                                Finding details
+                            </span>
+                            <p className="whitespace-pre-line">
+                                {finding.findingDetails}
+                            </p>
+                        </div>
+                    )}
+                    {finding.comments && (
+                        <div className="text-sm">
+                            <span className="font-semibold text-xs uppercase tracking-wide text-muted block mb-1">
+                                Comments
+                            </span>
+                            <p className="whitespace-pre-line">{finding.comments}</p>
+                        </div>
+                    )}
+                    {finding.controls.length > 0 && (
+                        <div className="text-xs text-muted">
+                            <span className="font-semibold uppercase tracking-wide">
+                                800-53 controls:{" "}
+                            </span>
+                            {finding.controls.join(", ")}
+                        </div>
+                    )}
+                </article>
+            ))}
+            {stig.cleared.length > 0 && (
+                <p className="text-xs text-muted">
+                    Also assessed:{" "}
+                    {stig.cleared
+                        .map(
+                            (entry) =>
+                                `${entry.groupId} (${
+                                    entry.status === "not_a_finding"
+                                        ? "Not a Finding"
+                                        : "Not Applicable"
+                                })`
+                        )
+                        .join(", ")}
+                </p>
+            )}
+        </div>
+    </div>
+);
 
 const ReportBoundary = () => {
     const params = useSearchParams();
@@ -147,81 +231,16 @@ const ReportBoundary = () => {
                 <h2 className="text-xl font-semibold tracking-tight text-foreground">
                     Open findings ({report.findings.length})
                 </h2>
-                {report.findings.length === 0 ? (
+                {report.findings.length === 0 && (
                     <p className="text-sm text-muted mt-2">
                         No open findings. 🎉
                     </p>
-                ) : (
-                    <div className="flex flex-col gap-4 mt-3">
-                        {report.findings.map((finding) => (
-                            <article
-                                key={finding.groupId + finding.ruleId}
-                                className="print-finding rounded-lg border border-border p-4 flex flex-col gap-2"
-                            >
-                                <div className="flex items-center gap-3 flex-wrap">
-                                    <SeverityBadge severity={finding.severity} />
-                                    <span className="text-sm font-semibold text-foreground">
-                                        {finding.groupId} · {finding.ruleId}
-                                    </span>
-                                    <span className="text-xs text-muted">
-                                        {finding.stigName} (V{finding.stigVersion}
-                                        )
-                                    </span>
-                                </div>
-                                <h3 className="text-base font-medium text-foreground">
-                                    {finding.ruleTitle}
-                                </h3>
-                                <p className="text-sm discussion">
-                                    {finding.discussion}
-                                </p>
-                                <div className="text-sm">
-                                    <span className="font-semibold text-xs uppercase tracking-wide text-muted block mb-1">
-                                        Check
-                                    </span>
-                                    <p className="whitespace-pre-line">
-                                        {finding.checkContent}
-                                    </p>
-                                </div>
-                                <div className="text-sm">
-                                    <span className="font-semibold text-xs uppercase tracking-wide text-muted block mb-1">
-                                        Fix
-                                    </span>
-                                    <p className="whitespace-pre-line">
-                                        {finding.fixText}
-                                    </p>
-                                </div>
-                                {finding.findingDetails && (
-                                    <div className="text-sm">
-                                        <span className="font-semibold text-xs uppercase tracking-wide text-muted block mb-1">
-                                            Finding details
-                                        </span>
-                                        <p className="whitespace-pre-line">
-                                            {finding.findingDetails}
-                                        </p>
-                                    </div>
-                                )}
-                                {finding.comments && (
-                                    <div className="text-sm">
-                                        <span className="font-semibold text-xs uppercase tracking-wide text-muted block mb-1">
-                                            Comments
-                                        </span>
-                                        <p className="whitespace-pre-line">
-                                            {finding.comments}
-                                        </p>
-                                    </div>
-                                )}
-                                {finding.controls.length > 0 && (
-                                    <div className="text-xs text-muted">
-                                        <span className="font-semibold uppercase tracking-wide">
-                                            800-53 controls:{" "}
-                                        </span>
-                                        {finding.controls.join(", ")}
-                                    </div>
-                                )}
-                            </article>
-                        ))}
-                    </div>
                 )}
+                {report.stigs
+                    .filter((stig) => stig.findings.length > 0)
+                    .map((stig) => (
+                        <StigFindings key={stig.stigName} stig={stig} />
+                    ))}
             </section>
 
             {report.cleared.length > 0 && (
@@ -240,9 +259,9 @@ const ReportBoundary = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {report.cleared.map((entry) => (
+                            {report.cleared.map((entry, i) => (
                                 <tr
-                                    key={entry.stigName + entry.groupId}
+                                    key={entry.stigName + entry.groupId + i}
                                     className="bg-surface border-b border-border last:border-0"
                                 >
                                     <td className="px-4 py-1.5">{entry.groupId}</td>

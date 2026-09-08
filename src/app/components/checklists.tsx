@@ -35,31 +35,30 @@ export const ChecklistsView = () => {
     }, []);
 
     const onImport = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        e.target.value = ""; // allow re-importing the same file
-        if (!file) {
-            return;
-        }
-        try {
-            const text = await file.text();
-            const checklist = file.name.toLowerCase().endsWith(".ckl")
-                ? cklToChecklist(text)
-                : Convert.toChecklist(text);
-            await IDB.importChecklist(checklist);
-            const imported = (await IDB.exportChecklist(
-                checklist.id
-            )) as Checklist;
-            setChecklists((prev) => [
-                ...(prev ?? []).filter((c) => c.id !== imported.id),
-                imported,
-            ]);
-        } catch (err) {
-            console.error(err);
-            window.alert(
-                err instanceof InvalidCklError
-                    ? `Could not import that checklist: ${err.message}`
-                    : "Could not import that file. Make sure it is a valid .cklb or .ckl checklist."
-            );
+        const files = Array.from(e.target.files ?? []);
+        e.target.value = ""; // allow re-importing the same files
+        for (const file of files) {
+            try {
+                const text = await file.text();
+                const checklist = file.name.toLowerCase().endsWith(".ckl")
+                    ? cklToChecklist(text)
+                    : Convert.toChecklist(text);
+                await IDB.importChecklist(checklist);
+                const imported = (await IDB.exportChecklist(
+                    checklist.id
+                )) as Checklist;
+                setChecklists((prev) => [
+                    ...(prev ?? []).filter((c) => c.id !== imported.id),
+                    imported,
+                ]);
+            } catch (err) {
+                console.error(err);
+                window.alert(
+                    err instanceof InvalidCklError
+                        ? `Could not import ${file.name}: ${err.message}`
+                        : `Could not import ${file.name}. Make sure it is a valid .cklb or .ckl checklist.`
+                );
+            }
         }
     };
 
@@ -151,6 +150,7 @@ export const ChecklistsView = () => {
                     ref={fileInputRef}
                     type="file"
                     accept=".cklb,.ckl,application/json,text/xml"
+                    multiple
                     className="hidden"
                     onChange={onImport}
                 />

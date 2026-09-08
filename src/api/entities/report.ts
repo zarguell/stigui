@@ -1,9 +1,5 @@
-import type {
-    Checklist,
-    Rule,
-    Severity,
-    Status,
-} from "@/api/generated/Checklist";
+import type { Checklist, Rule, Severity } from "@/api/generated/Checklist";
+import { Status } from "@/api/generated/Checklist";
 import type { CciMap } from "@/api/entities/cci";
 import { controlsForCcis } from "@/api/entities/cci";
 import { computeStatistics, type StatsMatrix } from "@/api/entities/statistics";
@@ -41,6 +37,23 @@ const SEVERITY_ORDER: Record<Severity, number> = {
 export const effectiveSeverity = (rule: Rule): Severity =>
     rule.overrides?.severity?.severity ?? rule.severity;
 
+/** One STIG's slice of the report */
+export interface StigReportSection {
+    stigName: string;
+    displayName: string;
+    version: string;
+    releaseInfo: string;
+    matrix: StatsMatrix;
+    findings: Finding[];
+    /** N/A + Not-a-Finding rules, in checklist order */
+    cleared: Array<{
+        groupId: string;
+        ruleTitle: string;
+        severity: Severity;
+        status: Status;
+    }>;
+}
+
 export interface FindingsReport {
     title: string;
     target: Checklist["target_data"];
@@ -50,6 +63,8 @@ export interface FindingsReport {
     /** Non-open, non-not-reviewed rules (N/A and Not a Finding), for context */
     cleared: Array<{ stigName: string; groupId: string; ruleTitle: string; severity: Severity; status: Status }>;
     stigCount: number;
+    /** Per-STIG breakdown for the report body */
+    stigs: StigReportSection[];
 }
 
 export const buildFindingsReport = (
@@ -58,39 +73,65 @@ export const buildFindingsReport = (
 ): FindingsReport => {
     const findings: Finding[] = [];
     const cleared: FindingsReport["cleared"] = [];
+    const noMap = { meta: { source: "", generated: "", count: 0, reference_titles: [] }, ccis: {} };
+    const stigs: StigReportSection[] = [];
+
+    const toFinding = (stig: Checklist["stigs"][number], rule: Rule): Finding => ({
+        stigName: stig.display_name || stig.stig_name,
+        stigVersion: stig.version,
+        groupId: rule.group_id,
+        ruleId: rule.rule_id,
+        ruleVersion: rule.rule_version,
+        ruleTitle: rule.rule_title,
+        severity: effectiveSeverity(rule),
+        discussion: rule.discussion,
+        checkContent: rule.check_content,
+        fixText: rule.fix_text,
+        findingDetails: rule.finding_details,
+        comments: rule.comments,
+        ccis: rule.ccis,
+        controls: controlsForCcis(rule.ccis, cciMap ?? noMap),
+    });
 
     for (const stig of checklist.stigs) {
+        const stigFindings: Finding[] = [];
+        const stigCleared: StigReportSection["cleared"] = [];
+
         for (const rule of stig.rules) {
-            if (rule.status === "open") {
-                findings.push({
-                    stigName: stig.display_name || stig.stig_name,
-                    stigVersion: stig.version,
-                    groupId: rule.group_id,
-                    ruleId: rule.rule_id,
-                    ruleVersion: rule.rule_version,
-                    ruleTitle: rule.rule_title,
-                    severity: effectiveSeverity(rule),
-                    discussion: rule.discussion,
-                    checkContent: rule.check_content,
-                    fixText: rule.fix_text,
-                    findingDetails: rule.finding_details,
-                    comments: rule.comments,
-                    ccis: rule.ccis,
-                    controls: controlsForCcis(rule.ccis, cciMap ?? { meta: { source: "", generated: "", count: 0, reference_titles: [] }, ccis: {} }),
-                });
+            if (rule.status === Status.Open) {
+                const finding = toFinding(stig, rule);
+                stigFindings.push(finding);
+                findings.push(finding);
             } else if (
-                rule.status === "not_a_finding" ||
-                rule.status === "not_applicable"
+                rule.status === Status.NotAFinding ||
+                rule.status === Status.NotApplicable
             ) {
-                cleared.push({
-                    stigName: stig.display_name || stig.stig_name,
+                const entry = {
                     groupId: rule.group_id,
                     ruleTitle: rule.rule_title,
                     severity: effectiveSeverity(rule),
                     status: rule.status,
-                });
+                };
+                stigCleared.push(entry);
+                cleared.push({ stigName: stig.display_name || stig.stig_name, ...entry });
             }
         }
+
+        stigFindings.sort(
+            (a, b) =>
+                SEVERITY_ORDER[a.severity] - SEVERITY_ORDER[b.severity] ||
+                a.groupId.localeCompare(b.groupId)
+        );
+
+        stigs.push({
+            stigName: stig.stig_name,
+            displayName: stig.display_name || stig.stig_name,
+            version: stig.version,
+            releaseInfo: stig.release_info,
+            matrix: computeStatistics({ ...checklist, stigs: [stig] }).overall,
+            findings: stigFindings,
+            cleared: stigCleared,
+        });
     }
 
     findings.sort(
@@ -106,6 +147,7 @@ export const buildFindingsReport = (
         findings,
         cleared,
         stigCount: checklist.stigs.length,
+        stigs,
     };
 };
 

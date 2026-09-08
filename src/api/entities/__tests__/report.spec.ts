@@ -96,6 +96,29 @@ describe('buildFindingsReport', () => {
         expect(report.title).toBe('web01');
     });
 
+    it('should break the report into per-STIG sections', () => {
+        const multi = checklist([]);
+        multi.stigs.push({
+            ...multi.stigs[0],
+            stig_name: 'Other STIG',
+            display_name: 'Other_STIG',
+            uuid: 'stig-2',
+            rules: [rule({ group_id: 'V-9', status: Status.Open, severity: Severity.High })],
+        });
+        multi.stigs[0].rules = [
+            rule({ group_id: 'V-1', status: Status.Open }),
+            rule({ group_id: 'V-2', status: Status.NotApplicable }),
+        ];
+
+        const report = buildFindingsReport(multi);
+        expect(report.stigs).toHaveLength(2);
+        expect(report.stigs[0].displayName).toBe('Test_STIG');
+        expect(report.stigs[0].findings).toHaveLength(1);
+        expect(report.stigs[0].cleared).toHaveLength(1);
+        expect(report.stigs[1].findings).toHaveLength(1);
+        expect(report.stigs[1].matrix.totals.total).toBe(1);
+    });
+
     it('should use the effective (overridden) severity and map controls', () => {
         const report = buildFindingsReport(
             checklist([
