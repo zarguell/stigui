@@ -49,7 +49,7 @@ jobs:
 
             - name: Serve staged site
               run: |
-                  npx serve site -l 3179 &
+                  python3 -m http.server 3179 --directory site &
                   for i in $(seq 1 30); do
                       curl -sf http://localhost:3179/stigui/editor.html >/dev/null && break
                       sleep 1

@@ -83,8 +83,16 @@ test("core assessor loop: import, edit, export, report", async ({ page }) => {
     });
     await downloadPromise;
 
-    // 6. The findings report renders with stats and buttons
-    await page.goto(`${BASE}/editor/report.html?id=${page.url().match(/id=([^&]+)/)?.[1]}`);
+    // 6. The findings report renders with stats and buttons.
+    // Navigate via the app's own button: clean-URL redirects on static
+    // hosts can strip the query string, losing the checklist id.
+    await page.evaluate(() => {
+        const btn = [...document.querySelectorAll("button")].find((b) =>
+            (b.textContent || "").includes("Report")
+        ) as HTMLButtonElement;
+        btn.click();
+    });
+    await page.waitForURL(/report\?id=/);
     await waitFor(
         page,
         "() => document.body.innerText.includes('Open findings')"
