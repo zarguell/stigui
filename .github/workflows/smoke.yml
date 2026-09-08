@@ -1,0 +1,73 @@
+name: Smoke
+
+on:
+    push:
+        branches: ['main']
+    workflow_dispatch:
+
+jobs:
+    smoke:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+                  cache: npm
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Create .env file
+              run: |
+                  echo NEXT_PUBLIC_MANIFEST_VERSION=$(sha1sum public/data/stigs/manifest.json | awk '{print $1}') >> .env
+
+            - name: Build App
+              env:
+                  # Build-time (SSG) fetches need a server serving public/;
+                  # the base path must NOT be set for it, or its routes move.
+                  NEXT_PUBLIC_API_URL: 'http://localhost:3000'
+              run: |
+                  npm run dev &
+                  PID=$!
+                  for i in $(seq 1 30); do
+                      curl -sf http://localhost:3000 >/dev/null && break
+                      sleep 1
+                  done
+
+                  NEXT_PUBLIC_BASE_PATH=/stigui npm run build
+
+                  kill $PID
+
+            - name: Stage site under a subpath (mirrors GitHub Pages)
+              run: |
+                  mkdir -p site/stigui
+                  cp -R out/* site/stigui/
+
+            - name: Serve staged site
+              run: |
+                  npx serve site -l 3179 &
+                  for i in $(seq 1 30); do
+                      curl -sf http://localhost:3179/stigui/editor.html >/dev/null && break
+                      sleep 1
+                  done
+
+            - name: Install Playwright browser
+              run: npx playwright install --with-deps chromium
+
+            - name: Run smoke tests
+              env:
+                  SMOKE_BASE_URL: 'http://localhost:3179'
+                  SMOKE_BASE_PATH: '/stigui'
+              run: npx playwright test
+
+            - name: Upload test results
+              if: failure()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: playwright-results
+                  path: test-results/
+                  retention-days: 7

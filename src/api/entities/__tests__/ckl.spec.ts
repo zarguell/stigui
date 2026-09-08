@@ -229,6 +229,24 @@ describe('CKL export / round trip', () => {
         expect(xml).toContain('<STATUS>NotApplicable</STATUS>');
     });
 
+    describe('committed corpus regression', () => {
+        const corpusDir = path.join(__dirname, '../../../../test-corpus');
+        const corpus = fs.existsSync(corpusDir)
+            ? fs.readdirSync(corpusDir).filter((f) => f.endsWith('.ckl'))
+            : [];
+
+        it('should have committed corpus files', () => {
+            expect(corpus.length).toBeGreaterThanOrEqual(8);
+        });
+
+        it.each(corpus)('should round trip %s losslessly', (file) => {
+            const xml = fs.readFileSync(path.join(corpusDir, file), 'utf8');
+            const original = stripVolatile(cklToChecklist(xml));
+            const exported = checklistToCkl(cklToChecklist(xml));
+            expect(stripVolatile(cklToChecklist(exported))).toEqual(original);
+        });
+    });
+
     (hasCorpus ? describe : describe.skip)('full corpus round trip', () => {
         const corpus = fs
             .readdirSync(corpusDir)

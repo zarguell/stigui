@@ -35,12 +35,11 @@ type Props = {
 export const UploadStig = ({ onImported, label = "Upload STIG ⬆️" }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const [busy, setBusy] = useState(false);
+    const [dragging, setDragging] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    const onFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        e.target.value = ""; // allow re-importing the same file
-        if (!file || busy) {
+    const importFile = async (file: File) => {
+        if (busy) {
             return;
         }
         setBusy(true);
@@ -65,8 +64,37 @@ export const UploadStig = ({ onImported, label = "Upload STIG ⬆️" }: Props) 
         }
     };
 
+    const onFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        e.target.value = ""; // allow re-importing the same file
+        if (file) {
+            await importFile(file);
+        }
+    };
+
+    const onDrop = async (e: React.DragEvent) => {
+        e.preventDefault();
+        setDragging(false);
+        const file = e.dataTransfer.files?.[0];
+        if (file) {
+            await importFile(file);
+        }
+    };
+
     return (
-        <div className="flex flex-col items-end gap-1">
+        <div
+            className={`flex flex-col items-end gap-1 rounded-md border border-dashed px-2 py-1 transition-colors ${
+                dragging
+                    ? "border-accent bg-accent/5"
+                    : "border-transparent"
+            }`}
+            onDragOver={(e) => {
+                e.preventDefault();
+                setDragging(true);
+            }}
+            onDragLeave={() => setDragging(false)}
+            onDrop={onDrop}
+        >
             <input
                 hidden
                 ref={inputRef}
@@ -80,7 +108,7 @@ export const UploadStig = ({ onImported, label = "Upload STIG ⬆️" }: Props) 
                 onClick={() => inputRef.current?.click()}
                 className={buttonClasses({ variant: "ghost", size: "sm" })}
             >
-                {busy ? "Importing…" : label}
+                {busy ? "Importing…" : dragging ? "Drop to import ⬇️" : label}
             </button>
             {error && (
                 <p className="text-xs text-red-800 dark:text-red-300 max-w-xs text-end">
