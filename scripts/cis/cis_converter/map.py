@@ -60,11 +60,14 @@ def profile_priority(profile_name: str) -> str:
     """XCCDF profile ids must be `<priority>_<classification>`; the app
     derives the classification tab (Public) from the second segment.
     Priority is a free-form key otherwise, so carry the CIS profile name
-    there, e.g. "L1-Docker-Linux_Public"."""
-    match = re.match(r"Level\s*(\d+)\s*-\s*(.+)", profile_name)
+    there, e.g. "L1-Docker-Linux_Public". Platform-less profiles
+    ("Level 1 (L1)") reduce to "L1"."""
+    match = re.match(r"Level\s*(\d+)\s*(?:-\s*(.+))?", profile_name)
     if match:
         level, rest = match.groups()
-        return f"L{level}-{slugify(rest).replace('_', '-')}"
+        if rest:
+            return f"L{level}-{slugify(rest).replace('_', '-')}"
+        return f"L{level}"
     return slugify(profile_name).replace("_", "-") or "CIS"
 
 
@@ -233,11 +236,11 @@ def _map_profiles(doc: BenchmarkDoc, profile_members: dict[str, list[str]]) -> l
 
 
 def _profile_sort_key(name: str) -> tuple:
-    match = re.match(r"Level\s*(\d+)\s*-\s*(.+)", name)
+    match = re.match(r"Level\s*(\d+)\s*(?:-\s*(.+))?", name)
     if match:
         level, rest = match.groups()
-        return (int(level), rest)
-    return (9, name)
+        return (int(level), rest or "")
+    return (99, name)
 
 
 def manifest_entry(stig: dict) -> dict:

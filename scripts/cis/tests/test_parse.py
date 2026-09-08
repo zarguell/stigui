@@ -33,7 +33,7 @@ def test_accepts_real_cis_numbering():
 def test_rejects_prose_and_wrap_fragments():
     assert parse_mod.heading_number("644 or more restrictive") is None
     assert parse_mod.heading_number("Overview") is None
-    assert parse_mod.heading_number("1.1.1.1.1.2 too deep") is None
+    assert parse_mod.heading_number("1.1.1.1.1.1.1.2 too deep") is None
     assert parse_mod.heading_number("Profile Applicability:") is None
 
 
@@ -62,13 +62,17 @@ def lines_to_pages(lines):
     return [(page, line) for line in lines]
 
 
-def test_toc_parses_entries_and_wraps():
+def test_toc_harvests_recommendation_numbers():
+    """The reconciliation oracle is the SET of leading numbers on TOC
+    pages -- no entry-level parsing of wraps, columns, or page numbers."""
     doc_lines = [
         make_line("Table of Contents"),
         make_line("1 Initial Setup.......... 5"),
         make_line("1.1.1 Ensure mounting of cramfs is disabled (Automated)"),
         make_line("(Automated)......................... 21"),
         make_line("2 Etcd Node Configuration.......... 30"),
+        make_line("18.10.43.6.1.1 (L1) Ensure 'Configure Attack Surface"),
+        make_line("2000' or more (Automated)............... 520"),
     ]
     doc = parse_mod.BenchmarkDoc()
     result = parse_mod.ParseResult(doc)
@@ -76,10 +80,11 @@ def test_toc_parses_entries_and_wraps():
     parse_mod._parse_toc(flat, doc, result)
     assert doc.has_toc
     numbers = [entry.number for entry in doc.toc]
-    assert numbers == ["1", "1.1.1", "2"]
+    assert numbers == ["1", "1.1.1", "2", "18.10.43.6.1.1"]
+    assert result.warnings == []
 
 
-def test_toc_demotes_bit_system_subentries():
+def test_toc_excludes_bare_pageish_numbers():
     doc_lines = [
         make_line("4.1.3.2 Ensure actions are logged (Automated)...... 448"),
         make_line("64 Bit systems.................................................. 448"),
@@ -91,23 +96,6 @@ def test_toc_demotes_bit_system_subentries():
     flat = lines_to_pages(doc_lines)
     parse_mod._parse_toc(flat, doc, result)
     assert [entry.number for entry in doc.toc] == ["4.1.3.2", "4.1.3.3"]
-
-
-# --- successor validity -------------------------------------------------------
-
-
-def test_valid_successors():
-    check = parse_mod._valid_successor
-    assert check("1", "2")
-    assert check("1", "1.1")
-    assert check("1", "1.1.1")  # first grandchild (skipped intermediates)
-    assert check("1.1.3", "1.1.4")
-    assert check("1.1.3.9", "1.1.4")
-    assert check("1.9", "2")
-    assert check("1.1.3", "2")  # sibling jumps forward
-    assert not check("1.1.3", "1.1.3.5")  # deeper, not a first child
-    assert not check("1.1.3", "1.1.2")  # backwards
-    assert not check("4.1.3", "4.1.3.2.1.1")
 
 
 def test_toc_number_plausibility():

@@ -24,7 +24,9 @@ from cis_converter.config import load_overrides  # noqa: E402
 
 def convert_pdf(pdf_path: Path, out_dir: Path, report_path: Path | None, strict: bool) -> bool:
     print(f"== {pdf_path.name}")
-    pages = extract.extract_pages(str(pdf_path))
+    pages = extract.extract_pages_cached(
+        str(pdf_path), cache_dir=str(Path(__file__).resolve().parent / ".cache")
+    )
     parsed = parse.parse(pages)
     doc = parsed.doc
 

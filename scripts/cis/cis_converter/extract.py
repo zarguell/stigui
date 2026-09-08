@@ -8,8 +8,12 @@ grouping (which splits inline code out of the sentence).
 
 from __future__ import annotations
 
+import gzip
+import hashlib
+import json
 import re
 from collections import Counter
+from pathlib import Path
 
 import pdfplumber
 
@@ -21,7 +25,10 @@ LINE_TOLERANCE_RATIO = 0.38
 MIN_LINE_TOLERANCE = 3.0
 
 # Horizontal gap (in font-size units) that implies a missing space.
-SPACE_RATIO = 0.22
+# Word gaps measure ~0.22 em in CIS PDFs (Cambria renders them at
+# exactly 0.22); intra-word glyph gaps are near zero, so 0.12 splits
+# the two cleanly for every font family seen so far.
+SPACE_RATIO = 0.12
 
 FOOTER_RE = re.compile(r"^Page\s+\d+$")
 
@@ -50,8 +57,10 @@ def extract_pages(pdf_path: str) -> list[Page]:
     pages: list[Page] = []
     with pdfplumber.open(pdf_path) as pdf:
         raw_pages: list[tuple[int, list]] = []
+        widths: dict[int, float] = {}
         for index, page in enumerate(pdf.pages, start=1):
             chars = [ch for ch in page.chars if ch.get("text")]
+            widths[index] = float(page.width)
             raw_pages.append((index, chars))
 
     # Page furniture repeats identically on many pages (headers/footers).
@@ -66,7 +75,82 @@ def extract_pages(pdf_path: str) -> list[Page]:
             for line in lines
             if not _is_furniture(line, strip)
         ]
-        pages.append(Page(number=index, lines=lines))
+        pages.append(Page(number=index, lines=lines, width=widths[index]))
+    return pages
+
+
+def extract_pages_cached(pdf_path: str, cache_dir: str | None = None) -> list[Page]:
+    """extract_pages with a local gzip cache keyed by file identity.
+
+    Extraction dominates conversion runtime (minutes for a thousand-page
+    benchmark); parse/map/validate are deterministic over its output, so
+    the cache turns repeat runs (tests, iteration) into seconds. The
+    cache is local-only: nothing new is committed."""
+    if not cache_dir:
+        return extract_pages(pdf_path)
+
+    pdf = Path(pdf_path)
+    digest = hashlib.sha256(
+        f"{pdf.name}:{pdf.stat().st_size}:{int(pdf.stat().st_mtime)}".encode()
+    ).hexdigest()[:20]
+    cache_file = Path(cache_dir) / f"{pdf.stem}.{digest}.json.gz"
+
+    if cache_file.exists():
+        with gzip.open(cache_file, "rt", encoding="utf-8") as handle:
+            return _pages_from_json(json.load(handle))
+
+    pages = extract_pages(pdf_path)
+    cache_file.parent.mkdir(parents=True, exist_ok=True)
+    with gzip.open(cache_file, "wt", encoding="utf-8") as handle:
+        json.dump(_pages_to_json(pages), handle)
+    return pages
+
+
+def _pages_to_json(pages: list[Page]) -> dict:
+    return {
+        "pages": [
+            {
+                "number": page.number,
+                "width": page.width,
+                        "lines": [
+                            {
+                                "page": line.page,
+                                "top": line.top,
+                                "x0": line.x0,
+                                "role": line.role,
+                                "runs": [
+                                    {"text": run.text, "font": run.font, "size": run.size}
+                                    for run in line.runs
+                                ],
+                            }
+                            for line in page.lines
+                        ],
+            }
+            for page in pages
+        ]
+    }
+
+
+def _pages_from_json(data: dict) -> list[Page]:
+    from .model import Run
+
+    pages = []
+    for raw_page in data["pages"]:
+        lines = []
+        for raw_line in raw_page["lines"]:
+            lines.append(
+                Line(
+                    page=raw_line["page"],
+                    top=raw_line["top"],
+                    x0=raw_line["x0"],
+                    role=raw_line["role"],
+                    runs=[
+                        Run(text=run["text"], font=run["font"], size=run["size"])
+                        for run in raw_line["runs"]
+                    ],
+                )
+            )
+        pages.append(Page(number=raw_page["number"], lines=lines, width=raw_page["width"]))
     return pages
 
 
@@ -140,6 +224,7 @@ def _cluster_lines(chars: list[dict], page_number: int) -> list[Line]:
 def _build_line(chars: list[dict], page_number: int) -> Line:
     chars = sorted(chars, key=lambda ch: ch["x0"])
     top = min(ch["top"] for ch in chars)
+    x0 = min(ch["x0"] for ch in chars)
 
     runs: list[Run] = []
     buffer = ""
@@ -184,4 +269,4 @@ def _build_line(chars: list[dict], page_number: int) -> Line:
         else:
             merged.append(run)
 
-    return Line(page=page_number, top=round(top, 1), runs=merged)
+    return Line(page=page_number, top=round(top, 1), runs=merged, x0=round(x0, 1))

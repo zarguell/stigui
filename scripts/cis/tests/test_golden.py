@@ -17,12 +17,17 @@ from cis_converter import emit, extract, map as map_module, parse, validate  # n
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 PDF_DIR = REPO_ROOT / "data" / "cis"
+CACHE_DIR = Path(__file__).resolve().parent.parent / ".cache"
 
 PILOTS = [
     # Filename, expected benchmark id (slugified title), minimum rec count.
     ("CIS_Docker_Benchmark_v1.6.0.pdf", "CIS_Docker_Benchmark", 100),
-    ("CIS_Debian_Linux_11_Benchmark_v1.0.0.pdf", "CIS_Debian_Linux_11", 250),
-    ("CIS_Kubernetes_V1.23_Benchmark_v1.0.1.pdf", "CIS_Kubernetes_V1_23", 100),
+    ("CIS_Debian_Linux_11_Benchmark_v1.0.0.pdf", "CIS_Debian_Linux_11_Benchmark", 250),
+    ("CIS_Kubernetes_V1.23_Benchmark_v1.0.1.pdf", "CIS_Kubernetes_V1_23_Benchmark", 100),
+    ("CIS_RHEL_9_v2.0.0.pdf", "CIS_Red_Hat_Enterprise_Linux_9_Benchmark", 250),
+    ("CIS_Windows_11_Enterprise_v4.0.0.pdf", "CIS_Microsoft_Windows_11_Enterprise_Benchmark", 500),
+    ("CIS_Windows_Server_2022_v4.0.0.pdf", "CIS_Microsoft_Windows_Server_2022_Benchmark", 400),
+    ("CIS_Microsoft_365_Foundations_v5.0.0.pdf", "CIS_Microsoft_365_Foundations_Benchmark", 100),
 ]
 
 PDFS = {name: (PDF_DIR / name) for name, _, _ in PILOTS if (PDF_DIR / name).exists()}
@@ -33,7 +38,7 @@ def test_pilot_conversion_is_clean(name, bid, min_recs, tmp_path):
     pdf_path = PDFS.get(name)
     if pdf_path is None:
         pytest.skip(f"{name} not present locally")
-    pages = extract.extract_pages(str(pdf_path))
+    pages = extract.extract_pages_cached(str(pdf_path), cache_dir=str(CACHE_DIR))
     doc = parse.parse(pages).doc
     stig, warnings = map_module.map_benchmark(doc)
 
@@ -60,7 +65,7 @@ def test_pilot_ids_are_stable_across_runs():
         pytest.skip(f"{name} not present locally")
     run_ids = []
     for _ in range(2):
-        pages = extract.extract_pages(str(PDFS[name]))
+        pages = extract.extract_pages_cached(str(PDFS[name]), cache_dir=str(CACHE_DIR))
         doc = parse.parse(pages).doc
         stig, _ = map_module.map_benchmark(doc)
         run_ids.append([group["+@id"] for group in stig["Benchmark"]["Group"]])

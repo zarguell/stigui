@@ -40,16 +40,15 @@ def heading_number(text: str) -> str | None:
     """Valid CIS recommendation number at line start, else None.
 
     Guards against prose that begins with a number: components are at
-    most two digits and at most five levels (Debian-style "3.5.3.1.1").
-    Numbering alone cannot separate a wrapped heading fragment ("10 or
-    as appropriate") from a new heading ("2 etcd"); _is_heading adds
-    capitalization and context on top of this.
+    most two digits and at most seven levels (Windows Administrative
+    Templates nest to "18.10.43.6.1.1"). Prose openers like "644 or
+    more" fail the two-digit-per-component rule.
     """
     match = HEADING_RE.match(text)
     if not match:
         return None
     parts = match.group(1).split(".")
-    if len(parts) > 5 or any(len(part) > 2 for part in parts):
+    if len(parts) > 7 or any(len(part) > 2 for part in parts):
         return None
     return match.group(1)
 
@@ -65,14 +64,13 @@ def _title_starts_sentence(text: str) -> bool:
 # Leading bullet glyphs: literal bullets, SymbolMT/Wingdings private-use
 # mappings, and dash/letter bullets. Debian bullets extract as PUA chars.
 BULLET_GLYPHS = "•\u25cf\uf0b7\uf06f\u25aa\u25a0\u2023\u25e6o-*\u2003\t "
-TOC_PAGE_RE = re.compile(r"^(\d+(?:\.\d+)*)\s+(.+?)\s*\.*\s*(\d+)\s*$")
-TOC_PAGELESS_RE = re.compile(r"^(\d+(?:\.\d+)*)\s+(.+?)\s*\.{2,}\s*$")
-
 # TOC sub-entries ("32 Bit systems .... 448" under an audit-rule entry)
 # carry bare page-ish numbers; real top-level sections stay below this.
-MAX_TOP_LEVEL_SECTION = 15
+MAX_TOP_LEVEL_SECTION = 20
+# Version/date line: "v4.0.0 - 06-14-2023" (Docker) and
+# "v4.0.0 \u2013 05/23/2025" (Windows Server 2022) both occur.
 VERSION_DATE_RE = re.compile(
-    r"v?(\d+\.\d+(?:\.\d+)?)\s*[-\u2013]\s*(\d{1,2})-(\d{1,2})-(\d{4})"
+    r"v?(\d+\.\d+(?:\.\d+)?)\s*[-\u2013]\s*(\d{1,2})[-/](\d{1,2})[-/](\d{4})"
 )
 STATUS_MARKER_RE = re.compile(r"\(([^)]+)\)\s*$")
 
@@ -103,15 +101,19 @@ def parse(pages: list[Page]) -> ParseResult:
     result = ParseResult(BenchmarkDoc(pages=pages))
     doc = result.doc
 
+    flat = [(page, line) for page in pages for line in page.lines]
+
+    # Title must be parsed first: its multi-line block (e.g. "11
+    # Enterprise Benchmark") would otherwise read as a numbered heading.
+    _parse_title_page(flat, doc, result)
+
     body_font, body_size = _body_font(pages)
     heading_style = _heading_style(pages, body_font, body_size)
 
-    flat = [(page, line) for page in pages for line in page.lines]
     body_start = _find_body_start(flat, heading_style, body_font, body_size)
     if body_start is None:
         raise ValueError("No numbered headings found; not a CIS benchmark PDF?")
 
-    _parse_title_page(flat[:body_start], doc, result)
     _parse_front_matter(flat[:body_start], doc, result, body_font)
     _parse_toc(flat[:body_start], doc, result)
     _parse_body(flat[body_start:], doc, result, heading_style, body_font, body_size)
@@ -146,10 +148,14 @@ def _body_font(pages: list[Page]) -> tuple[str, float]:
 
 def _heading_style(pages: list[Page], body_font: str, body_size: float) -> tuple[str, float] | None:
     """Font of numbered headings: matches the numbering grammar and is
-    visually distinct from body text."""
+    visually distinct from body text. Dot-leader lines (TOC) are
+    excluded — some benchmarks set their TOC in a smaller body font,
+    which would otherwise win the frequency vote."""
     counter: Counter[tuple[str, float]] = Counter()
     for page in pages:
         for line in page.lines:
+            if re.search(r"\.{2,}\s*\d+\s*$", line.text):
+                continue
             if HEADING_RE.match(line.text) and line.dominant_run:
                 run = line.dominant_run
                 if (run.font, run.size) != (body_font, body_size):
@@ -183,6 +189,8 @@ def _is_heading(line: Line, heading_style, body_font: str, body_size: float, pre
 def _find_body_start(flat, heading_style, body_font: str, body_size: float) -> int | None:
     """Index into flat (page, line) pairs of the first real heading."""
     for index, (_, line) in enumerate(flat):
+        if line.role == "title-page":
+            continue  # never start the body inside the title block
         if re.search(r"\.{2,}\s*\d+\s*$", line.text):
             continue
         prev_line = flat[index - 1][1] if index else None
@@ -195,11 +203,18 @@ def _find_body_start(flat, heading_style, body_font: str, body_size: float) -> i
 
 
 def _parse_title_page(flat, doc: BenchmarkDoc, result: ParseResult) -> None:
-    """Title = largest text in the first pages; version+date from its
-    ``vX.Y.Z - MM-DD-YYYY`` line."""
-    for _, line in flat[:60]:
+    """Title pages set the title in several consecutive large lines
+    ("CIS Microsoft Windows" / "11 Enterprise Benchmark") followed by a
+    version+date line. The title block must be assembled before body
+    detection, or its second line ("11 Enterprise Benchmark") reads as a
+    section heading."""
+    head = flat[:60]
+
+    version_index = None
+    for index, (_, line) in enumerate(head):
         match = VERSION_DATE_RE.search(line.text)
         if match:
+            version_index = index
             doc.version = match.group(1)
             month, day, year = match.group(2), match.group(3), match.group(4)
             doc.date = f"{year}-{int(month):02d}-{int(day):02d}"
@@ -208,14 +223,42 @@ def _parse_title_page(flat, doc: BenchmarkDoc, result: ParseResult) -> None:
     if not doc.version:
         result.warnings.append("version/date line not found in front matter")
 
-    biggest: tuple[float, Line] | None = None
-    for _, line in flat[:60]:
-        for run in line.runs:
-            if run.text.strip() and (biggest is None or run.size > biggest[0]):
-                biggest = (run.size, line)
-    if biggest:
-        doc.title = biggest[1].text.strip()
-        biggest[1].role = "title-page"
+    def large(line: Line) -> bool:
+        sizes = [run.size for run in line.runs if run.text.strip()]
+        return bool(sizes) and min(sizes) >= 18
+
+    title_lines: list[Line] = []
+    if version_index is not None:
+        # The version line anchors the title block: some benchmarks
+        # carry LATER large headings ("Terms of Use", 26pt) that are
+        # bigger than the title itself but come after it.
+        for index in range(version_index - 1, -1, -1):
+            line = head[index][1]
+            if large(line):
+                title_lines.insert(0, line)
+            else:
+                break
+    if not title_lines:
+        biggest_size = 0.0
+        for _, line in head[:10]:
+            for run in line.runs:
+                if run.text.strip():
+                    biggest_size = max(biggest_size, run.size)
+        if biggest_size:
+            title_lines = [
+                line
+                for _, line in head[:10]
+                if large(line)
+                and min(
+                    run.size for run in line.runs if run.text.strip()
+                )
+                >= biggest_size - 0.5
+            ]
+
+    if title_lines:
+        doc.title = " ".join(line.text for line in title_lines).strip()
+        for line in title_lines:
+            line.role = "title-page"
     else:
         result.warnings.append("title line not found in front matter")
 
@@ -297,12 +340,15 @@ DOT_LEADER_RE = re.compile(r"\.{2,}\s*\d+\s*$")
 
 
 def _parse_toc(flat, doc: BenchmarkDoc, result: ParseResult) -> None:
-    """Classify whole TOC pages; parse numbered entries for the
-    reconciliation oracle. Benchmarks differ: some list only front-matter
-    sections (no recommendation entries), some list everything. Long
-    titles wrap: the continuation line carries the dot leader and page
-    number, so adjacent pairs are merged before matching (only when the
-    continuation does not itself look like an entry)."""
+    """Classify whole TOC pages and harvest the set of recommendation
+    numbers for the reconciliation oracle.
+
+    Entry-level parsing (wraps, columns, leaders, page numbers) is
+    deliberately not attempted: Windows TOCs are two-column with 3-line
+    wraps. Reconciliation only needs WHICH numbers appear, and every
+    entry starts with its number, so the leading number token of each
+    numbered TOC line is the oracle. Sub-entries with bare page-ish
+    numbers ("32 Bit systems") are excluded by _toc_number_ok."""
     dot_counts: dict[int, int] = {}
     for page, line in flat:
         if DOT_LEADER_RE.search(line.text):
@@ -312,92 +358,40 @@ def _parse_toc(flat, doc: BenchmarkDoc, result: ParseResult) -> None:
     if not toc_pages:
         return
 
-    by_page: dict[int, list[Line]] = {}
     for page, line in flat:
         if page.number in toc_pages:
             line.role = "toc"
-            by_page.setdefault(page.number, []).append(line)
 
-    for page_number, lines in sorted(by_page.items()):
-        index = 0
-        while index < len(lines):
-            line = lines[index]
-            match = TOC_PAGE_RE.match(line.text)
-            if match is None:
-                match = TOC_PAGELESS_RE.match(line.text)
-                if match:
-                    _add_toc_entry(doc, match, result, page=None)
-                    index += 1
-                    continue
-            if match is None and index + 1 < len(lines):
-                nxt = lines[index + 1]
-                if (
-                    not DOT_LEADER_RE.search(line.text)
-                    and heading_number(line.text)
-                    and DOT_LEADER_RE.search(nxt.text)
-                    and not heading_number(nxt.text)
-                ):
-                    merged = TOC_PAGE_RE.match(f"{line.text} {nxt.text}")
-                    if merged:
-                        _add_toc_entry(doc, merged, result)
-                        index += 2
-                        continue
-            if match:
-                _add_toc_entry(doc, match, result)
-            elif re.match(r"\d", line.text):
-                result.warnings.append(f"TOC line not parsed as entry: {line.text[:120]}")
-            index += 1
+    for _, line in flat:
+        if line.role != "toc":
+            continue
+        match = re.match(r"(\d+(?:\.\d+)*)[\s(]", line.text)
+        if match and heading_number(line.text) and _toc_number_ok(match.group(1)):
+            doc.toc.append(TocEntry(number=match.group(1), title="", page=None))
 
-    doc.toc = _filter_toc_traversal(doc.toc, result)
+    doc.toc = dedupe_toc(doc.toc)
     doc.has_toc = bool(doc.toc)
 
 
-def _add_toc_entry(doc: BenchmarkDoc, match: re.Match, result: ParseResult, page=None) -> None:
-    title = STATUS_MARKER_RE.sub("", match.group(2)).strip()
-    if page is None:
-        page = int(match.group(3)) if match.lastindex and match.lastindex >= 3 else None
-    doc.toc.append(TocEntry(number=match.group(1), title=title, page=page))
+def dedupe_toc(entries):
+    seen = set()
+    out = []
+    for entry in entries:
+        if entry.number in seen:
+            continue
+        seen.add(entry.number)
+        out.append(entry)
+    return out
 
 
 def _toc_number_ok(number: str) -> bool:
+    """TOC sub-entries ("32 Bit systems .... 448" under an audit-rule
+    entry) carry bare page-ish numbers; real top-level sections stay
+    below this (Windows benchmarks top out at 19)."""
     parts = number.split(".")
     if len(parts) == 1:
-        return int(parts[0]) <= MAX_TOP_LEVEL_SECTION
-    return True
-
-
-def _valid_successor(prev: str, cur: str) -> bool:
-    """Whether `cur` can follow `prev` in a depth-first section walk:
-    a descendant (child, or deeper first-grandchild like 1 -> 1.1.1),
-    a sibling increment at any ancestor level, tolerating omissions."""
-    prev_parts = [int(x) for x in prev.split(".")]
-    cur_parts = [int(x) for x in cur.split(".")]
-    if cur_parts[: len(prev_parts)] == prev_parts and len(cur_parts) > len(prev_parts):
-        return cur_parts[len(prev_parts)] == 1
-    for depth in range(min(len(prev_parts), len(cur_parts))):
-        if cur_parts[:depth] == prev_parts[:depth] and cur_parts[depth] > prev_parts[depth]:
-            return len(cur_parts) == depth + 1
-    return False
-
-
-def _filter_toc_traversal(entries, result: ParseResult):
-    """Demote entries that do not form a valid section walk (sub-entries
-    like "32 Bit systems" carry bare numbers). Kept entries then prove
-    body coverage honestly."""
-    kept = []
-    demoted = 0
-    for entry in entries:
-        if not _toc_number_ok(entry.number) or (
-            kept and not _valid_successor(kept[-1].number, entry.number)
-        ):
-            demoted += 1
-            continue
-        kept.append(entry)
-    if demoted:
-        result.warnings.append(
-            f"{demoted} TOC sub-entry line(s) treated as annotations, not entries"
-        )
-    return kept
+        return 1 <= int(parts[0]) <= MAX_TOP_LEVEL_SECTION
+    return int(parts[0]) > 0
 
 
 # --- body ------------------------------------------------------------------
@@ -530,12 +524,13 @@ def _parse_body(flat, doc: BenchmarkDoc, result: ParseResult, heading_style, bod
         # Linux"); stripping the prefix would collapse L1 and L2 of the
         # same platform into one profile.
         if current_field.label == "Profile Applicability":
-            bullet = text.lstrip(BULLET_GLYPHS)
-            level_match = re.match(r"Level\s*(\d)\s*-\s*(.+)", bullet)
+            bullet = " ".join(text.lstrip(BULLET_GLYPHS).split())
+            # Profile bullets name the level anywhere in the line:
+            # "Level 1 - Docker - Linux", "Level 1 (L1)",
+            # "E3 Level 1" (Microsoft 365 license tiers).
+            level_match = re.search(r"\bLevel\s*(\d)\b", bullet)
             if level_match:
-                rec.levels.append(
-                    (int(level_match.group(1)), " ".join(bullet.split()))
-                )
+                rec.levels.append((int(level_match.group(1)), bullet))
 
         index += 1
 

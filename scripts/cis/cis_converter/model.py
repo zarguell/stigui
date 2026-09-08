@@ -43,6 +43,7 @@ class Line:
     page: int
     top: float
     runs: list[Run]
+    x0: float = 0.0
     role: str | None = None  # set by the parser; None means unclassified
 
     @property
@@ -76,6 +77,7 @@ class Line:
 class Page:
     number: int  # 1-based PDF page index
     lines: list[Line] = field(default_factory=list)
+    width: float = 0.0
 
 
 @dataclass
