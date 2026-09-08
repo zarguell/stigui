@@ -1,7 +1,7 @@
 "use client";
 import type { Stig as ChecklistStig } from "@/api/generated/Checklist";
 import { buttonClasses } from "@/app/components/ui/button";
-import type { MigrationPlan } from "@/api/entities/migration";
+import type { FieldDiff, MigrationPlan } from "@/api/entities/migration";
 import { useMemo, useState } from "react";
 
 const OUTCOME_STYLE: Record<string, string> = {
@@ -18,6 +18,29 @@ const OUTCOME_LABEL: Record<string, string> = {
     unchanged: "Unchanged",
 };
 
+const FieldDiffView = ({ diff }: { diff: FieldDiff }) => (
+    <div className="mt-1 rounded-md border border-border overflow-hidden">
+        <div className="px-2 py-1 bg-surface-muted text-xs font-semibold uppercase tracking-wide text-muted">
+            {diff.field}
+        </div>
+        <p className="px-2 py-1.5 text-xs font-mono whitespace-pre-wrap break-words leading-relaxed">
+            {diff.parts.map((part, i) =>
+                part.added ? (
+                    <span key={i} className="bg-green-200/60 dark:bg-green-900/60 text-green-900 dark:text-green-200">
+                        {part.value}
+                    </span>
+                ) : part.removed ? (
+                    <span key={i} className="bg-red-200/60 dark:bg-red-900/60 text-red-900 dark:text-red-200 line-through">
+                        {part.value}
+                    </span>
+                ) : (
+                    <span key={i}>{part.value}</span>
+                )
+            )}
+        </p>
+    </div>
+);
+
 type Props = {
     stig: ChecklistStig;
     plan: MigrationPlan;
@@ -28,6 +51,7 @@ type Props = {
 export const MigrateStig = ({ stig, plan, onApply, onCancel }: Props) => {
     const [busy, setBusy] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [expanded, setExpanded] = useState<string | null>(null);
 
     const summary = useMemo(
         () =>
@@ -78,34 +102,57 @@ export const MigrateStig = ({ stig, plan, onApply, onCancel }: Props) => {
                 ))}
             </div>
 
-            <ul className="flex flex-col gap-1 max-h-72 overflow-y-auto text-sm">
+            <ul className="flex flex-col gap-1 max-h-96 overflow-y-auto text-sm">
                 {plan.entries
                     .filter((entry) => entry.outcome !== "unchanged")
-                    .map((entry) => (
-                        <li
-                            key={entry.outcome + entry.groupId}
-                            className="flex flex-col gap-0.5 px-3 py-2 rounded-md border border-border bg-surface"
-                        >
-                            <span className="flex items-center gap-2">
-                                <span
-                                    className={`text-xs font-semibold uppercase ${OUTCOME_STYLE[entry.outcome]}`}
+                    .map((entry) => {
+                        const expandable =
+                            entry.outcome === "updated" &&
+                            entry.fieldDiffs.length > 0;
+                        const isExpanded = expanded === entry.outcome + entry.groupId;
+                        return (
+                            <li
+                                key={entry.outcome + entry.groupId}
+                                className="flex flex-col gap-0.5 px-3 py-2 rounded-md border border-border bg-surface"
+                            >
+                                <button
+                                    type="button"
+                                    className={`flex items-center gap-2 text-left ${expandable ? "cursor-pointer" : "cursor-default"}`}
+                                    onClick={
+                                        expandable
+                                            ? () =>
+                                                  setExpanded(
+                                                      isExpanded
+                                                          ? null
+                                                          : entry.outcome + entry.groupId
+                                                  )
+                                            : undefined
+                                    }
                                 >
-                                    {OUTCOME_LABEL[entry.outcome]}
-                                </span>
-                                <span className="font-medium text-foreground">
-                                    {entry.groupId}
-                                </span>
-                                <span className="text-muted truncate">
-                                    {entry.ruleTitle}
-                                </span>
-                            </span>
-                            {entry.changedFields.length > 0 && (
-                                <span className="text-xs text-muted">
-                                    changed: {entry.changedFields.join(", ")}
-                                </span>
-                            )}
-                        </li>
-                    ))}
+                                    <span
+                                        className={`text-xs font-semibold uppercase ${OUTCOME_STYLE[entry.outcome]}`}
+                                    >
+                                        {OUTCOME_LABEL[entry.outcome]}
+                                    </span>
+                                    <span className="font-medium text-foreground">
+                                        {entry.groupId}
+                                    </span>
+                                    <span className="text-muted truncate">
+                                        {entry.ruleTitle}
+                                    </span>
+                                </button>
+                                {entry.changedFields.length > 0 && (
+                                    <span className="text-xs text-muted">
+                                        changed: {entry.changedFields.join(", ")}
+                                    </span>
+                                )}
+                                {isExpanded &&
+                                    entry.fieldDiffs.map((diff) => (
+                                        <FieldDiffView key={diff.field} diff={diff} />
+                                    ))}
+                            </li>
+                        );
+                    })}
             </ul>
 
             {error && (

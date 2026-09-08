@@ -322,6 +322,26 @@ describe('planMigration', () => {
         expect(entry?.changedFields).not.toContain('check_content');
     });
 
+    it('should include word-level diffs for changed fields', () => {
+        const entry = plan.entries.find((e) => e.groupId === 'V-2');
+        const fixDiff = entry?.fieldDiffs.find((d) => d.field === 'fix_text');
+        expect(fixDiff).toBeDefined();
+        const removed = fixDiff?.parts
+            .filter((p) => p.removed)
+            .map((p) => p.value)
+            .join('');
+        const added = fixDiff?.parts
+            .filter((p) => p.added)
+            .map((p) => p.value)
+            .join('');
+        expect(removed).toContain('Fix V-2');
+        expect(added).toContain('NEW FIX');
+
+        // unchanged rules carry no diffs
+        const unchanged = plan.entries.find((e) => e.groupId === 'V-1');
+        expect(unchanged?.fieldDiffs).toEqual([]);
+    });
+
     it('should mark dropped rules as removed', () => {
         const entry = plan.entries.find((e) => e.groupId === 'V-3');
         expect(entry?.outcome).toBe('removed');

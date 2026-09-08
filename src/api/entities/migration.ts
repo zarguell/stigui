@@ -1,7 +1,10 @@
+import { diffWords, type Change } from "diff";
 import { v4 as uuidv4 } from "uuid";
-import Checklist, { Stig as ChecklistStig } from "@/api/entities/Checklist";
+import Checklist from "@/api/entities/Checklist";
+import type { Checklist as IChecklist } from "@/api/generated/Checklist";
+import type { Stig as ChecklistStig } from "@/api/generated/Checklist";
 import { Stig as IStig, Convert } from "@/api/generated/Stig";
-import { Rule, Status } from "@/api/generated/Checklist";
+import { Classification, Name, Rule, Status } from "@/api/generated/Checklist";
 import type { LibraryStig } from "@/api/entities/upload";
 
 /**
@@ -18,6 +21,12 @@ import type { LibraryStig } from "@/api/entities/upload";
 
 export type MigrationOutcome = "unchanged" | "updated" | "added" | "removed";
 
+/** One content field's word-level diff (updated rules only) */
+export interface FieldDiff {
+    field: string;
+    parts: Change[];
+}
+
 export interface MigrationEntry {
     outcome: MigrationOutcome;
     groupId: string;
@@ -26,6 +35,8 @@ export interface MigrationEntry {
     /** Review data carried over from the checklist (unchanged + updated) */
     status: Status;
     changedFields: string[];
+    /** Word-level before/after per changed field */
+    fieldDiffs: FieldDiff[];
 }
 
 export interface MigrationPlan {
@@ -57,7 +68,7 @@ export const benchmarkToStig = (target: LibraryStig): ChecklistStig => {
     const b = benchmark.Benchmark;
     const groups = Array.isArray(b.Group) ? b.Group : [b.Group];
 
-    const rules: Rule[] = groups.map((group) => {
+    const rules = groups.map((group): Rule => {
         const rule = group.Rule;
         const idents = Array.isArray(rule.ident)
             ? rule.ident
@@ -84,10 +95,10 @@ export const benchmarkToStig = (target: LibraryStig): ChecklistStig => {
             weight: rule["+@weight"],
             check_content: rule.check["check-content"],
             check_content_ref: {
-                href: rule.check["check-content-ref"]["+@href"] || "",
-                name: "M" as const,
+                href: rule.check["check-content-ref"]?.["+@href"] ?? "",
+                name: "M" as Name,
             },
-            classification: "Unclassified" as const,
+            classification: Classification.Unclassified,
             discussion: rule.description.match(vulnDiscussionRe)?.[1] || "",
             false_positives: "",
             false_negatives: "",
@@ -118,9 +129,9 @@ export const benchmarkToStig = (target: LibraryStig): ChecklistStig => {
         };
     });
 
-    const plainText = Array.isArray(b["plain-text"])
+    const plainText = (Array.isArray(b["plain-text"])
         ? b["plain-text"]
-        : [b["plain-text"]];
+        : [b["plain-text"]]) as Array<{ "+@id": string; "+content": string }>;
 
     return {
         stig_name: b.title,
@@ -146,19 +157,25 @@ const CONTENT_FIELDS: Array<[string, (rule: Rule) => string]> = [
     ["fix_text", (rule) => rule.fix_text],
 ];
 
-const changedFields = (oldRule: Rule, newRule: Rule): string[] => {
-    const changes: string[] = [];
-    for (const [label, get] of CONTENT_FIELDS) {
-        if (get(oldRule) !== get(newRule)) {
-            changes.push(label);
+const changedFields = (oldRule: Rule, newRule: Rule): string[] =>
+    fieldDiffs(oldRule, newRule).map((diff) => diff.field);
+
+/** Word-level diffs for every changed content field */
+const fieldDiffs = (oldRule: Rule, newRule: Rule): FieldDiff[] => {
+    const diffs: FieldDiff[] = [];
+    for (const [field, get] of CONTENT_FIELDS) {
+        const before = get(oldRule);
+        const after = get(newRule);
+        if (before !== after) {
+            diffs.push({ field, parts: diffWords(before, after) });
         }
     }
     const oldCcis = [...oldRule.ccis].sort().join(",");
     const newCcis = [...newRule.ccis].sort().join(",");
     if (oldCcis !== newCcis) {
-        changes.push("ccis");
+        diffs.push({ field: "ccis", parts: diffWords(oldCcis, newCcis) });
     }
-    return changes;
+    return diffs;
 };
 
 /** Finds the library entry that is a different release of this STIG */
@@ -226,6 +243,7 @@ export const planMigration = (
                     ruleTitle: renumbered.rule_title,
                     status: oldRule.status,
                     changedFields: changedFields(oldRule, renumbered),
+                    fieldDiffs: fieldDiffs(oldRule, renumbered),
                 });
                 counts.updated++;
                 continue;
@@ -237,6 +255,7 @@ export const planMigration = (
                 ruleTitle: oldRule.rule_title,
                 status: oldRule.status,
                 changedFields: [],
+                fieldDiffs: [],
             });
             counts.removed++;
             continue;
@@ -250,6 +269,7 @@ export const planMigration = (
                 ruleTitle: newRule.rule_title,
                 status: oldRule.status,
                 changedFields: [],
+                fieldDiffs: [],
             });
             counts.unchanged++;
         } else {
@@ -260,6 +280,7 @@ export const planMigration = (
                 ruleTitle: newRule.rule_title,
                 status: oldRule.status,
                 changedFields: changedFields(oldRule, newRule),
+                fieldDiffs: fieldDiffs(oldRule, newRule),
             });
             counts.updated++;
         }
@@ -279,6 +300,7 @@ export const planMigration = (
             ruleTitle: newRule.rule_title,
             status: Status.NotReviewed,
             changedFields: [],
+            fieldDiffs: [],
         });
         counts.added++;
     }
@@ -355,7 +377,7 @@ export const applyMigration = (
 
 /** Convenience for building a migration plan straight from a checklist */
 export const planChecklistMigrations = (
-    checklist: Checklist,
+    checklist: IChecklist,
     library: LibraryStig[]
 ): Array<{ stig: ChecklistStig; plan: MigrationPlan }> =>
     checklist.stigs.flatMap((stig) => {
