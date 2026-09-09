@@ -1,4 +1,5 @@
 "use client";
+import { ruleHref } from "@/app/utils";
 import { GroupWrapper } from "@/api/entities/Stig";
 import Link from "next/link";
 import { useRef } from "react";
@@ -10,7 +11,7 @@ interface ContentNavigationProps {
 }
 
 const makeUrl = (stigId: string, group: GroupWrapper) =>
-    `/stigs/${stigId}/groups/${group.id}`;
+    ruleHref(stigId, group.id);
 
 export const ContentNavigation = ({
     stigId,

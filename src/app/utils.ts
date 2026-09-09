@@ -1,3 +1,10 @@
+/**
+ * Canonical URL for a recommendation view. Rule pages render
+ * client-side from one shared route to keep the static export small.
+ */
+export const ruleHref = (stigId: string, groupId: string) =>
+    `/stigs/rules?stig=${encodeURIComponent(stigId)}&group=${encodeURIComponent(groupId)}`;
+
 export const debounce = (func: Function, delay: number) => {
     let timeout: NodeJS.Timeout;
     return function (...args: any[]) {

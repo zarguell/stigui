@@ -123,7 +123,13 @@ def main() -> None:
     parser.add_argument(
         "--public-dir",
         default=str(Path(__file__).resolve().parent.parent.parent / "public"),
-        help="the site's public/ directory",
+        help="the site's public/ directory (reads schema + manifest)",
+    )
+    parser.add_argument(
+        "--out-dir",
+        default=None,
+        help="where llms.txt and markdown/ are written (defaults to the "
+        "public dir; point it at the static export after a build)",
     )
     parser.add_argument(
         "--base-url",
@@ -134,12 +140,13 @@ def main() -> None:
     args = parser.parse_args()
 
     public = Path(args.public_dir).resolve()
+    out_dir = Path(args.out_dir).resolve() if args.out_dir else public
     schema_dir = public / "data" / "stigs" / "schema"
     manifest = json.loads(
         (public / "data" / "stigs" / "manifest.json").read_text(encoding="utf-8")
     )
 
-    md_root = public / "markdown" / "stigs"
+    md_root = out_dir / "markdown" / "stigs"
     md_root.mkdir(parents=True, exist_ok=True)
 
     index: dict[str, list[str]] = {}
@@ -197,7 +204,7 @@ def main() -> None:
         llms.append("")
         llms.extend(index[section])
         llms.append("")
-    (public / "llms.txt").write_text("\n".join(llms), encoding="utf-8")
+    (out_dir / "llms.txt").write_text("\n".join(llms), encoding="utf-8")
 
     print(f"benchmarks: {benchmarks}, recommendations: {rules}")
     print(f"llms.txt: {len(order)} sections")

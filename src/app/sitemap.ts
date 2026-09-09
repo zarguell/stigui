@@ -56,10 +56,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.7,
         })),
         ...stigWithGroups.map(({ group, stig }) => ({
-            url: `${URL}/stigs/${stig.id}/groups/${group.id}`,
+            url: `${URL}/markdown/stigs/${stig.id}/${group.id}.md`,
             lastModified: new Date(stig.date),
             changeFrequency: "monthly",
-            priority: 0.9,
+            priority: 0.5,
         })),
+        {
+            url: `${URL}/llms.txt`,
+            lastModified: new Date().toISOString(),
+            priority: 0.8,
+        },
     ];
 }

@@ -1,4 +1,5 @@
 "use client";
+import { ruleHref } from "@/app/utils";
 import { GroupWrapper } from "@/api/entities/Stig";
 import { useManifestContext } from "@/app/context/manifest";
 import Link from "next/link";
@@ -43,7 +44,7 @@ export const Breadcrumbs = ({ stigId, group, editor }: BreadcrumbsProps) => {
 
     if (group) {
         links.push({
-            href: `/stigs/${stigId}/groups/${group.id}`,
+            href: ruleHref(stigId, group.id),
             text: `${group.id}`,
         });
     }

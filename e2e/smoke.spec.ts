@@ -173,7 +173,7 @@ test("converted CIS benchmarks render like library STIGs", async ({ page }) => {
     );
 
     const groupId = page
-        .locator('a[href*="/groups/"]')
+        .locator('a[href*="stig=CIS_Docker_Benchmark"][href*="/stigs/rules"]')
         .first();
     await groupId.click();
     await waitFor(

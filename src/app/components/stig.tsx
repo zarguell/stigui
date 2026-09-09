@@ -8,7 +8,7 @@ import { buttonClasses } from "@/app/components/ui/button";
 import { TableCard } from "@/app/components/ui/card";
 import { useStigContext } from "@/app/context/stig";
 import { IDB } from "@/app/db";
-import { download } from "@/app/utils";
+import { download , ruleHref } from "@/app/utils";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -224,7 +224,7 @@ export const StigView = ({
                             <Link
                                 key="group-id"
                                 className="flex flex-col whitespace-nowrap font-medium text-accent hover:underline"
-                                href={`/stigs/${stigId}/groups/${group.id}`}
+                                href={ruleHref(stigId, group.id)}
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 {group.id}
@@ -262,7 +262,7 @@ export const StigView = ({
                     (uploaded ? (
                         group.id
                     ) : (
-                        <Link href={`/stigs/${stigId}/groups/${group.id}`}>
+                        <Link href={ruleHref(stigId, group.id)}>
                             {group.id}
                         </Link>
                     ))
@@ -278,7 +278,7 @@ export const StigView = ({
                                         variant: "secondary",
                                         size: "sm",
                                     })}
-                                    href={`/stigs/${stigId}/groups/${group.id}`}
+                                    href={ruleHref(stigId, group.id)}
                                 >
                                     Go to {group.id}
                                 </Link>
