@@ -5,9 +5,11 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 /**
- * Release timeline for the library: benchmarks that are brand new to the
- * catalog vs version updates of existing ones. Updates deep-link into the
- * precomputed release diff (/stigs/diff).
+ * Release timeline for the library, ordered by the benchmarks' own
+ * publish dates — benchmarks appearing in the catalog for the first time
+ * vs version updates of existing ones. Updates deep-link into the
+ * precomputed release diff (/stigs/diff). Ingest timing is deliberately
+ * not considered; the publish date is the authority.
  */
 
 interface NewEvent {
@@ -15,7 +17,6 @@ interface NewEvent {
     id: string;
     version: string;
     date: string;
-    recorded_at: string;
 }
 
 interface UpdateEvent {
@@ -24,7 +25,6 @@ interface UpdateEvent {
     fromVersion: string;
     toVersion: string;
     date: string;
-    recorded_at: string;
 }
 
 type Event = NewEvent | UpdateEvent;
@@ -34,15 +34,15 @@ const WINDOWS = [30, 90, 365, 0] as const;
 /** Baseline imports can list the whole catalog at once — page through. */
 const PAGE_SIZE = 50;
 
-const withinWindow = (recordedAt: string, days: number) => {
+const withinWindow = (date: string, days: number) => {
     if (days === 0) {
         return true;
     }
-    const recorded = Date.parse(recordedAt);
-    if (Number.isNaN(recorded)) {
+    const published = Date.parse(date);
+    if (Number.isNaN(published)) {
         return false;
     }
-    return Date.now() - recorded <= days * DAY_MS;
+    return Date.now() - published <= days * DAY_MS;
 };
 
 const Pill = ({ children }: { children: React.ReactNode }) => (
@@ -86,32 +86,29 @@ const WhatsNewView = () => {
         for (const [id, record] of Object.entries(
             history.benchmarks as Record<string, BenchmarkHistory>
         )) {
-            const releases = [...record.releases].sort((a, b) =>
-                a.recorded_at.localeCompare(b.recorded_at)
-            );
-            releases.forEach((release, index) => {
+            // The releases array is in release order (the pipeline
+            // appends), so index 0 is the catalog's first known release.
+            record.releases.forEach((release, index) => {
                 if (index === 0) {
                     all.push({
                         kind: "new",
                         id,
                         version: release.version,
                         date: release.date,
-                        recorded_at: release.recorded_at,
                     });
                 } else {
                     all.push({
                         kind: "update",
                         id,
-                        fromVersion: releases[index - 1].version,
+                        fromVersion: record.releases[index - 1].version,
                         toVersion: release.version,
                         date: release.date,
-                        recorded_at: release.recorded_at,
                     });
                 }
             });
         }
         return all.sort((a, b) => {
-            const compared = b.recorded_at.localeCompare(a.recorded_at);
+            const compared = b.date.localeCompare(a.date);
             return compared || a.id.localeCompare(b.id);
         });
     }, [history]);
@@ -146,7 +143,7 @@ const WhatsNewView = () => {
     const filtered = useMemo(
         () =>
             events.filter((event) => {
-                if (!withinWindow(event.recorded_at, days)) {
+                if (!withinWindow(event.date, days)) {
                     return false;
                 }
                 const entry = manifest.maybeById(event.id);
@@ -200,9 +197,10 @@ const WhatsNewView = () => {
                         What&apos;s new
                     </h1>
                     <p className="text-sm text-muted mt-1">
-                        Benchmarks added to the library for the first time,
-                        and releases that replace an older version. Version
-                        updates link to a diff view of exactly what changed.
+                        The newest releases in the catalog by publish date —
+                        benchmarks appearing for the first time, and version
+                        updates. Version updates link to a diff view of
+                        exactly what changed.
                     </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
@@ -251,15 +249,7 @@ const WhatsNewView = () => {
 
             {added.length === 0 && updated.length === 0 ? (
                 <p className="text-sm text-muted mt-6">
-                    Nothing recorded in this window. History begins{" "}
-                    {Object.values(history.benchmarks).reduce<string | null>(
-                        (earliest, record) =>
-                            !earliest || record.first_seen < earliest
-                                ? record.first_seen
-                                : earliest,
-                        null
-                    )}
-                    .
+                    Nothing published in this window.
                 </p>
             ) : (
                 <>
@@ -291,9 +281,6 @@ const WhatsNewView = () => {
                                                     published {event.date}
                                                 </span>
                                             )}
-                                            <span className="text-muted text-xs">
-                                                added to library {event.recorded_at}
-                                            </span>
                                             <Link
                                                 className="ml-auto text-xs font-medium text-accent hover:underline"
                                                 href={`/stigs/diff?id=${encodeURIComponent(
@@ -346,9 +333,6 @@ const WhatsNewView = () => {
                                                     published {event.date}
                                                 </span>
                                             )}
-                                            <span className="text-muted text-xs">
-                                                added {event.recorded_at}
-                                            </span>
                                         </div>
                                     );
                                 })}

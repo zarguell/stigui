@@ -10,12 +10,15 @@ import { API_BASE } from '@/api/entities/api';
 
 export interface ReleaseEvent {
     version: string;
+    /** The release's own publish date — the authority for freshness. */
     date: string;
-    /** When this release entered the library (not the publish date). */
+    /** When the pipeline recorded this release (provenance only; the UI
+     * never considers it). */
     recorded_at: string;
 }
 
 export interface BenchmarkHistory {
+    /** When the benchmark first entered the library (provenance only). */
     first_seen: string;
     releases: ReleaseEvent[];
 }

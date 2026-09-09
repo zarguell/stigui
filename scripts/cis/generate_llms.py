@@ -123,14 +123,16 @@ def rule_markdown(entry, benchmark, group, rule) -> str:
 
 
 def release_events(history: dict | None) -> list[dict]:
-    """Flatten history.json into sorted new/updated events."""
+    """Flatten history.json into release events sorted by publish date.
+
+    The benchmarks' own publish dates are the authority for freshness;
+    ingest timing is not considered.
+    """
     if not history:
         return []
     events = []
     for stig_id, record in history.get("benchmarks", {}).items():
-        releases = sorted(
-            record.get("releases", []), key=lambda r: r.get("recorded_at", "")
-        )
+        releases = record.get("releases", [])
         for index, release in enumerate(releases):
             events.append(
                 {
@@ -141,12 +143,9 @@ def release_events(history: dict | None) -> list[dict]:
                     if index > 0
                     else "",
                     "date": release.get("date", ""),
-                    "recorded_at": release.get("recorded_at", ""),
                 }
             )
-    events.sort(
-        key=lambda event: (event["recorded_at"], event["id"]), reverse=True
-    )
+    events.sort(key=lambda event: (event["date"], event["id"]), reverse=True)
     return events
 
 
@@ -177,9 +176,10 @@ def whats_new_markdown(events: list[dict], manifest_by_id, base_url: str) -> str
             entry = manifest_by_id.get(event["id"], {})
             title = entry.get("title", event["id"])
             href = f"{base_url}/stigs/{event['id']}"
+            published = f", published {event['date']}" if event["date"] else ""
             lines.append(
                 f"- [{title}]({href}): V{event['version']} "
-                f"added to the library {event['recorded_at']}"
+                f"new in the library{published}"
             )
         lines.append("")
     return "\n".join(lines)

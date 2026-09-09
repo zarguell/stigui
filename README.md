@@ -55,8 +55,10 @@ vendor — and how fresh it is.
 ### What's new and release diffs
 
 `/whats-new` tracks the library's release timeline: benchmarks **added to the
-catalog for the first time** vs **version updates** of existing ones. Each
-version update deep-links into a **release diff view** (`/stigs/diff`) showing
+catalog for the first time** vs **version updates** of existing ones, ordered
+by each release's **publish date** — the authority for freshness (the site
+never surfaces its own ingest timing). Each version update deep-links into a
+**release diff view** (`/stigs/diff`) showing
 exactly what changed between the previous and current release — rule matching by
 vulnerability id with renumbering fallback, and word-level diffs of every
 changed field. Benchmarks with a recorded change also show a "Changes in Vx →

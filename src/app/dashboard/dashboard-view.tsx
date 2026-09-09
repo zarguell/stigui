@@ -104,16 +104,18 @@ const DashboardView = () => {
         let recentAdded = 0;
         let recentUpdated = 0;
         if (history) {
+            // Freshness follows the benchmarks' own publish dates.
             for (const record of Object.values(history.benchmarks)) {
-                const first = Date.parse(record.first_seen);
+                const releases = record.releases;
+                const first = Date.parse(releases[0]?.date ?? "");
                 if (!Number.isNaN(first) && Date.now() - first <= 90 * DAY_MS) {
                     recentAdded++;
                 }
-                for (const release of record.releases.slice(1)) {
-                    const recorded = Date.parse(release.recorded_at);
+                for (const release of releases.slice(1)) {
+                    const published = Date.parse(release.date);
                     if (
-                        !Number.isNaN(recorded) &&
-                        Date.now() - recorded <= 90 * DAY_MS
+                        !Number.isNaN(published) &&
+                        Date.now() - published <= 90 * DAY_MS
                     ) {
                         recentUpdated++;
                     }
@@ -178,8 +180,8 @@ const DashboardView = () => {
                     detail={
                         historyLoading ? undefined : (
                             <>
-                                {stats.recentAdded} new · {stats.recentUpdated}{" "}
-                                updated ·{" "}
+                                {stats.recentAdded} newly published ·{" "}
+                                {stats.recentUpdated} updates ·{" "}
                                 <Link
                                     className="text-accent hover:underline"
                                     href="/whats-new"

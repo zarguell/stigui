@@ -232,8 +232,8 @@ test("library URL filters, dashboard, what's new, and diff views render", async 
         page,
         "() => document.body.innerText.includes(\"What's new\")"
     );
-    // The default window empties once the baseline ages out; all-time
-    // always shows the library's initial import.
+    // Freshness follows publish dates, so the default window can empty;
+    // all-time always shows the library's initial import.
     await page.locator('button:has-text("All time")').click();
     await waitFor(
         page,
