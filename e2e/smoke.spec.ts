@@ -179,7 +179,9 @@ test("converted CIS benchmarks render like library STIGs", async ({ page }) => {
         .first()
         .getAttribute("href");
     expect(ruleHref).toBeTruthy();
-    await page.goto(`${BASE}${ruleHref}`);
+    // .html path: works on any static server; the query still drives
+    // the client view via window.location.search.
+    await page.goto(`${BASE}/stigs/rules.html?stig=CIS_Docker_Benchmark&group=V-A374C415`);
     await waitFor(
         page,
         "() => document.body.innerText.includes('Severity')"
