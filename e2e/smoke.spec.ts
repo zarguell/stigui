@@ -201,20 +201,14 @@ test("library URL filters, dashboard, what's new, and diff views render", async 
     page,
 }) => {
     // The library reads its filter state from the URL (shareable views);
-    // the select adopts the param once the client view hydrates.
+    // toHaveValue retries until the client view has settled on the param.
     await page.goto(`${BASE}/stigs.html?category=Operating%20Systems&sort=-date`);
-    await waitFor(
-        page,
-        "() => document.querySelector('select[aria-label=\"Filter category\"]')?.value === 'Operating Systems'"
-    );
-    const category = await page
-        .locator('select[aria-label="Filter category"]')
-        .inputValue();
-    expect(category).toBe("Operating Systems");
-    const source = await page
-        .locator('select[aria-label="Filter source"]')
-        .inputValue();
-    expect(source).toBe("");
+    await expect(
+        page.locator('select[aria-label="Filter category"]')
+    ).toHaveValue("Operating Systems", { timeout: 15000 });
+    await expect(
+        page.locator('select[aria-label="Filter source"]')
+    ).toHaveValue("");
     // A filtered view shows fewer rows than the catalog.
     const countText = await page
         .locator("text=Showing ")

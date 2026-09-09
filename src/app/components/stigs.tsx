@@ -86,11 +86,17 @@ const byCountDesc = (counts: Map<string, number>) =>
 export const Stigs = () => {
     const manifest = useManifestContext();
     const { entries: uploads, reload } = useUploadedStigs();
-    // Start from the unfiltered state that matches the prerendered HTML,
-    // then adopt the URL params after mount — reading them in the state
-    // initializer would race static-export hydration.
-    const [state, setState] = useState<RowState>(EMPTY_STATE);
-    const [ready, setReady] = useState(false);
+    // The URL is the source of truth for filter/sort state, read client-
+    // side in the initializer so any remount re-adopts it (the server
+    // prerender gets the unfiltered state). The mount effect re-applies
+    // it for the case where hydration suspends before the initializer
+    // sees a navigated location.
+    const [state, setState] = useState<RowState>(() =>
+        typeof window === "undefined" ? EMPTY_STATE : readParams()
+    );
+    const [ready, setReady] = useState(
+        () => typeof window !== "undefined"
+    );
     const { q, source, category, tag, sort } = state;
     const update = (patch: Partial<RowState>) =>
         setState((prev) => ({ ...prev, ...patch }));

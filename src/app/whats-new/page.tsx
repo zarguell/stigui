@@ -4,6 +4,7 @@ import { Navigation } from "@/app/components/navigation";
 import { URL } from "@/app/constants";
 import ManifestComponent from "@/app/context/manifest";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import WhatsNewView from "./whats-new-view";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,7 +21,9 @@ export default function Page() {
         <ManifestComponent>
             <Navigation />
             <Main>
-                <WhatsNewView />
+                <Suspense>
+                    <WhatsNewView />
+                </Suspense>
             </Main>
             <Footer />
         </ManifestComponent>

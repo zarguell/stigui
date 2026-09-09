@@ -6,6 +6,7 @@ import { Stigs } from "@/app/components/stigs";
 import { APPNAME, URL } from "@/app/constants";
 import ManifestComponent from "@/app/context/manifest";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import "./db";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -33,7 +34,9 @@ export default async function Page() {
             <JsonLd data={jsonLd} />
             <Navigation />
             <Main>
-                <Stigs />
+                <Suspense>
+                    <Stigs />
+                </Suspense>
             </Main>
             <Footer />
         </ManifestComponent>

@@ -5,6 +5,7 @@ import { Stigs } from "@/app/components/stigs";
 import { URL } from "@/app/constants";
 import ManifestComponent from "@/app/context/manifest";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
@@ -20,7 +21,12 @@ export default async function Page() {
         <ManifestComponent>
             <Navigation />
             <Main>
-                <Stigs />
+                {/* Without a boundary, a client component that suspends on
+                    the manifest promise during hydration can leave the
+                    subtree stuck on server HTML — never interactive. */}
+                <Suspense>
+                    <Stigs />
+                </Suspense>
             </Main>
             <Footer />
         </ManifestComponent>
