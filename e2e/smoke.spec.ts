@@ -172,15 +172,25 @@ test("converted CIS benchmarks render like library STIGs", async ({ page }) => {
         "() => document.body.innerText.includes('Ensure a separate partition for containers')"
     );
 
-    const groupId = page
+    // The recommendation view renders client-side from its own URL;
+    // a crash there surfaces as Next's "Application error" page.
+    const ruleHref = await page
         .locator('a[href*="stig=CIS_Docker_Benchmark"][href*="/stigs/rules"]')
-        .first();
-    await groupId.click();
+        .first()
+        .getAttribute("href");
+    expect(ruleHref).toBeTruthy();
+    await page.goto(`${BASE}${ruleHref}`);
     await waitFor(
         page,
-        "() => document.body.innerText.includes('Description')"
+        "() => document.body.innerText.includes('Severity')"
+    );
+    await waitFor(
+        page,
+        "() => document.body.innerText.includes('Check')"
     );
     await expect(
-        page.locator("text=Ensure a separate partition for containers").first()
+        page.getByRole("heading", {
+            name: "Ensure a separate partition for containers",
+        })
     ).toBeVisible();
 });

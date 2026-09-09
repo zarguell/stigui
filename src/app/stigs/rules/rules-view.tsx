@@ -1,9 +1,8 @@
 "use client";
 import { GroupView } from "@/app/components/group";
-import { StigComponent } from "@/app/context/stig";
+import StigComponent from "@/app/context/stig";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 /**
  * Rule pages render client-side from one shared route — prerendering
@@ -12,7 +11,20 @@ import { Suspense } from "react";
  * /markdown/stigs/<id>.md (see /llms.txt).
  */
 const RulesView = () => {
-    const params = useSearchParams();
+    // Read the query from the location directly: through useSearchParams
+    // the static-export hydration cycle re-renders this view with empty
+    // params after the content has already mounted, blanking the page.
+    const [params, setParams] = useState(
+        () =>
+            new URLSearchParams(
+                typeof window === "undefined" ? "" : window.location.search
+            )
+    );
+    useEffect(() => {
+        const sync = () => setParams(new URLSearchParams(window.location.search));
+        window.addEventListener("popstate", sync);
+        return () => window.removeEventListener("popstate", sync);
+    }, []);
     const stigId = params.get("stig");
     const groupId = params.get("group");
 
