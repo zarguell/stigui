@@ -14,12 +14,16 @@ from __future__ import annotations
 
 import argparse
 import sys
+import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from cis_converter import emit, extract, map as map_module, parse, validate  # noqa: E402
 from cis_converter.config import load_overrides  # noqa: E402
+from rebuild_manifest import rebuild as rebuild_manifest  # noqa: E402
+import track_history  # noqa: E402
 
 
 def convert_pdf(pdf_path: Path, out_dir: Path, report_path: Path | None, strict: bool) -> bool:
@@ -54,10 +58,14 @@ def convert_pdf(pdf_path: Path, out_dir: Path, report_path: Path | None, strict:
     for warning in map_warnings:
         print(f"   warn: {warning}")
 
-    json_path = emit.write_library_files(stig, Path(out_dir) / "stigs" / "schema")
-    manifest_path = emit.regenerate_manifest(
-        Path(out_dir) / "stigs" / "schema", Path(out_dir)
-    )
+    schema_dir = Path(out_dir) / "stigs" / "schema"
+    # Stage the conversion so track_history can diff it against the
+    # current schema and precompute a version delta before overwriting.
+    json_path = emit.write_library_files(stig, Path(tempfile.mkdtemp()))
+    summary = track_history.absorb(schema_dir, Path(out_dir), json_path)
+    if summary["updated"]:
+        print(f"   delta: {', '.join(summary['updated'])} (precomputed)")
+    manifest_path = rebuild_manifest(schema_dir, Path(out_dir))
     group_count = len(stig["Benchmark"]["Group"])
     print(
         f"   {doc.title} v{doc.version} ({doc.date}): "

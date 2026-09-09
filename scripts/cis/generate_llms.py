@@ -7,6 +7,8 @@ Reads the shipped XCCDF JSON under public/data/stigs/schema/ and emits:
   public/markdown/stigs/<id>.md            per-benchmark overview linking
                                            every recommendation
   public/markdown/stigs/<id>/<group>.md    per-recommendation detail
+  public/markdown/whats-new.md             release timeline (from
+                                           data/stigs/history.json)
 
 Everything is generated at deploy time from the committed JSON; nothing
 markdown-related is committed. Stdlib only.
@@ -20,6 +22,8 @@ import re
 from pathlib import Path
 
 VULN_DISCUSSION_RE = re.compile(r"<VulnDiscussion>(.*)</VulnDiscussion>", re.S)
+
+WHATS_NEW_LIMIT = 100
 
 
 def as_list(value):
@@ -118,6 +122,69 @@ def rule_markdown(entry, benchmark, group, rule) -> str:
     return "\n".join(lines)
 
 
+def release_events(history: dict | None) -> list[dict]:
+    """Flatten history.json into sorted new/updated events."""
+    if not history:
+        return []
+    events = []
+    for stig_id, record in history.get("benchmarks", {}).items():
+        releases = sorted(
+            record.get("releases", []), key=lambda r: r.get("recorded_at", "")
+        )
+        for index, release in enumerate(releases):
+            events.append(
+                {
+                    "id": stig_id,
+                    "kind": "new" if index == 0 else "updated",
+                    "version": release.get("version", ""),
+                    "previous": releases[index - 1].get("version", "")
+                    if index > 0
+                    else "",
+                    "date": release.get("date", ""),
+                    "recorded_at": release.get("recorded_at", ""),
+                }
+            )
+    events.sort(
+        key=lambda event: (event["recorded_at"], event["id"]), reverse=True
+    )
+    return events
+
+
+def whats_new_markdown(events: list[dict], manifest_by_id, base_url: str) -> str:
+    lines = ["# What's new", ""]
+    updates = [event for event in events if event["kind"] == "updated"]
+    added = [event for event in events if event["kind"] == "new"]
+    if updates:
+        lines += [f"## Version updates ({len(updates)})", ""]
+        for event in updates:
+            entry = manifest_by_id.get(event["id"], {})
+            title = entry.get("title", event["id"])
+            href = f"{base_url}/stigs/{event['id']}"
+            diff = (
+                f"{base_url}/stigs/diff?id={event['id']}"
+                f"&from={event['previous']}"
+            )
+            published = f", published {event['date']}" if event["date"] else ""
+            lines.append(
+                f"- [{title}]({href}): V{event['previous']} → "
+                f"V{event['version']}{published} — "
+                f"[what changed]({diff})"
+            )
+        lines.append("")
+    if added:
+        lines += [f"## New benchmarks ({len(added)})", ""]
+        for event in added:
+            entry = manifest_by_id.get(event["id"], {})
+            title = entry.get("title", event["id"])
+            href = f"{base_url}/stigs/{event['id']}"
+            lines.append(
+                f"- [{title}]({href}): V{event['version']} "
+                f"added to the library {event['recorded_at']}"
+            )
+        lines.append("")
+    return "\n".join(lines)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -145,6 +212,13 @@ def main() -> None:
     manifest = json.loads(
         (public / "data" / "stigs" / "manifest.json").read_text(encoding="utf-8")
     )
+    manifest_by_id = {entry["id"]: entry for entry in manifest}
+
+    history_path = public / "data" / "stigs" / "history.json"
+    history = None
+    if history_path.exists():
+        history = json.loads(history_path.read_text(encoding="utf-8"))
+    events = release_events(history)
 
     md_root = out_dir / "markdown" / "stigs"
     md_root.mkdir(parents=True, exist_ok=True)
@@ -174,11 +248,7 @@ def main() -> None:
             )
             rules += 1
 
-        section = (
-            f"CIS Benchmarks — {entry['category']}"
-            if entry.get("source") == "CIS"
-            else "DISA STIGs"
-        )
+        section = f"{entry.get('source', 'DISA')} — {entry.get('category', 'Other')}"
         href = f"{args.base_url}/markdown/stigs/{entry['id']}.md"
         description = plain(benchmark.get("description", ""))[:200]
         line = f"- [{entry['title']} v{entry.get('version', '')}]({href}): {description}"
@@ -190,7 +260,8 @@ def main() -> None:
         )
         benchmarks += 1
 
-    # llms.txt: grouped index in stable section order
+    # llms.txt: grouped index in stable section order, with the release
+    # timeline up top so agents see freshness first.
     llms = [f"# {args.site_name}", ""]
     llms.append(
         "Machine-readable markdown versions of every DISA STIG and CIS "
@@ -198,6 +269,34 @@ def main() -> None:
         "recommendation pages carry the full discussion, check, and fix text."
     )
     llms.append("")
+    if events:
+        recent = events[:WHATS_NEW_LIMIT]
+        llms.append("## What's new (recent releases)")
+        llms.append("")
+        for event in recent:
+            entry = manifest_by_id.get(event["id"], {})
+            title = entry.get("title", event["id"])
+            href = f"{args.base_url}/stigs/{event['id']}"
+            if event["kind"] == "updated":
+                diff = (
+                    f"{args.base_url}/stigs/diff?id={event['id']}"
+                    f"&from={event['previous']}"
+                )
+                llms.append(
+                    f"- [{title}]({href}): V{event['previous']} → "
+                    f"V{event['version']} — [what changed]({diff})"
+                )
+            else:
+                llms.append(f"- [{title}]({href}): new in the library")
+        llms.append("")
+        whats_new = whats_new_markdown(events, manifest_by_id, args.base_url)
+        (out_dir / "markdown" / "whats-new.md").write_text(
+            whats_new, encoding="utf-8"
+        )
+        llms.append(
+            f"Full timeline: {args.base_url}/markdown/whats-new.md"
+        )
+        llms.append("")
     order = sorted(index)
     for section in order:
         llms.append(f"## {section}")
@@ -207,7 +306,7 @@ def main() -> None:
     (out_dir / "llms.txt").write_text("\n".join(llms), encoding="utf-8")
 
     print(f"benchmarks: {benchmarks}, recommendations: {rules}")
-    print(f"llms.txt: {len(order)} sections")
+    print(f"llms.txt: {len(order)} sections, {min(len(events), WHATS_NEW_LIMIT)} recent releases")
 
 
 if __name__ == "__main__":

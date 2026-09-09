@@ -1,0 +1,7445 @@
+{
+  "generated": "2026-09-09T15:19:13.011198+00:00",
+  "benchmarks": {
+    "AAA_Services": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-12-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "AFS_Ax-OS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-11-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "APACHE_SERVER_2.2_UNIX": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2019-01-07",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "APACHE_SERVER_2.2_WINDOWS": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2018-12-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "APACHE_SITE_2.2_UNIX": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2019-01-07",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "APACHE_SITE_2.2_WINDOWS": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2018-12-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "API_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-09-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "AW_CylanceON-PREM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-06-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Active_Directory_Domain": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-02-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Active_Directory_Forest": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-05-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Adobe_Acrobat_Pro_DC_Continuous_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2021-06-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Adobe_Acrobat_Reader_DC_Continuous_Track_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2021-06-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Adobe_ColdFusion_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Akamai_KSD_Service_IL2_ALG_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2017-09-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Akamai_KSD_Service_IL2_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2017-09-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Amazon_Linux_2023_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Anduril_NixOS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-08-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apache_Server_2-4_UNIX_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-05-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apache_Server_2-4_UNIX_Site_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apache_Server_2-4_Windows_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-02-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apache_Server_2-4_Windows_Site_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-02-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_iOS-iPadOS_16_BYOAD_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-08-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_iOS-iPadOS_16_COBO-COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_iOS-iPadOS_16_MDFPP_3-3_BYOAD_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-08-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_iOS-iPadOS_17_BYOAD_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-01-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_iOS-iPadOS_17_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_iOS-iPadOS_18_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_iOS-iPadOS_26_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_iOS_iPadOS_17_MDFPP_3-3_BYOAD_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-01-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_macOS_14_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-12-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_macOS_15_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-02-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_macOS_26_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_visionOS_26_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Apple_visionOS_2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Application_Layer_Gateway_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Application_Security_Development_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "6",
+          "date": "2025-09-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Application_Server_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4",
+          "date": "2026-06-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Arista_MLS_EOS_4-2x_L2S_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-05-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Arista_MLS_EOS_4-2x_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-02-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Arista_MLS_EOS_4-2x_Router_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-02-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "AvePoint_Compliance_Guardian_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-02-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "AvePoint_DocAve_6_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2022-08-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "AvePoint_Fly_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "BB_CylancePROTECT_Mobile_for_UEM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-11-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "BB_UEM_MDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2020-12-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "BEMS_2-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2020-05-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "BEMS_3-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-05-17",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CAN_Ubuntu_22-04_LTS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CAN_Ubuntu_24-04_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CA_IDMS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CD_Postgres_16_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-06-08",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_AKS_Optimized_Azure_Linux_2_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2025-08-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_AKS_Optimized_Azure_Linux_3_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_AWS_End_User_Compute_Services_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2025-07-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Alibaba_Cloud_Linux_3_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2025-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_AlmaLinux_OS_10_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_AlmaLinux_OS_8_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4.0.0",
+          "date": "2025-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_AlmaLinux_OS_9_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3.0.0",
+          "date": "2026-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Amazon_Elastic_Kubernetes_Service_EKS_Auto_Mode_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-05-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Amazon_Linux_2023_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2023-06-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Amazon_Linux_2023_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Amazon_Linux_2_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4.0.0",
+          "date": "2026-03-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Amazon_Linux_2_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.1",
+          "date": "2026-04-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Amazon_Web_Services_Foundations_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2022-08-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apache_Cassandra_4_0_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2024-08-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apache_Cassandra_4_1_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-08-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apache_Cassandra_5_0_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-01-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apache_Server_2_4_Windows_Server_Security_Technical_Implementation_Guide_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apache_Tomcat_10_1_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-08-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apache_Tomcat_7_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2016-03-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apache_Tomcat_8_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2016-03-17",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apache_Tomcat_9_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2022-09-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apache_Tomcat_Application_Server_9_Security_Technical_Implementation_Guide_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_MacOS_15_0_Sequoia_Intune_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-05-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_MacOS_26_Tahoe_Intune_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-05-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_iOS_18_and_iPadOS_18_Intune_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_iOS_26_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-10-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_iOS_26_and_iPadOS_26_Intune_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_iPadOS_26_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-10-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_macOS_12_0_Monterey_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4.0.0",
+          "date": "2024-12-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_macOS_12_0_Monterey_Cloud_tailored_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2025-03-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_macOS_13_0_Ventura_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4.0.0",
+          "date": "2025-10-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2024-10-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_macOS_14_0_Sonoma_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3.1.0",
+          "date": "2026-06-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_macOS_14_Sonoma_Security_Technical_Implementation_Guide_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_macOS_15_0_Sequoia_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.1.0",
+          "date": "2026-06-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_macOS_15_0_Sequoia_Cloud_tailored_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-03-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_macOS_15_Sequoia_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-07-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Apple_macOS_26_Tahoe_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-06-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Arista_EOS_benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-08-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Arista_MLS_EOS_4_X_NDM_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Arista_MLS_EOS_4_X_Router_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Azure_Kubernetes_Service_AKS_Benchmark_DRAFT": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-04-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_BIND_9_x_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Bottlerocket_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2022-08-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_CentOS_Linux_8_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2022-02-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Check_Point_Firewall_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2020-06-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_ACI_Layer_2_Switch_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_ACI_NDM_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_ACI_Router_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_ASA_9_x_Firewall_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2024-04-18",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_Firewall_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4.1.0",
+          "date": "2018-01-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_IOS_Router_NDM_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2024-01-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_IOS_Router_RTR_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2023-11-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_IOS_Switch_NDM_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2025-07-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_IOS_Switch_RTR_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2024-07-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_IOS_XE_16_x_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.2.0",
+          "date": "2025-06-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_IOS_XE_17_x_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.2.1",
+          "date": "2025-07-17",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_IOS_XE_Router_RTR_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2025-07-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_IOS_XE_Switch_L2S_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_IOS_XE_Switch_RTR_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2025-07-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_IOS_XR_7_x": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2025-04-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_NX_OS_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2025-03-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_NX_OS_Switch_L2S_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cisco_NX_OS_Switch_NDM_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2025-07-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Cloud_Linux_AlmaLinux_OS_9_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-06-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_CockroachDB_v25_x_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-05-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Debian_Linux_11_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2024-03-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Debian_Linux_12_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-05-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Debian_Linux_13_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-08-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_DigitalOcean_Foundations_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-07-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_DigitalOcean_Services_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-07-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Docker_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.7.0",
+          "date": "2024-07-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Dragos_Platform_2_x_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Everpure_FlashArray_Purity_6_9_x_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-08-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Forescout_Network_Access_Control_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Forescout_Network_Device_Management_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_FortiGate_7_4_x_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Fortigate_7_0_x_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.4.0",
+          "date": "2025-12-17",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_FreeBSD_14_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2024-11-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_GitHub_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2026-02-18",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_GitLab_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2024-04-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Android_13_COBO_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Android_13_COPE_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-18",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Android_14_COBO_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Android_14_COPE_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Android_15_COBO_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Android_15_COPE_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Android_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.6.0",
+          "date": "2025-09-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_ChromeOS_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2026-08-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Chrome_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.1.0",
+          "date": "2021-12-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Chrome_Browser_Cloud_Management_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-03-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Chrome_Enterprise_Core_Browser_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-08-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Chrome_Group_Policy_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-08-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Cloud_Platform_Foundation_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "5.0.0",
+          "date": "2026-05-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Container_Optimized_OS_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2024-05-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Kubernetes_Engine_GKE_Autopilot_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Kubernetes_Engine_GKE_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Google_Workspace_Foundations_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.4",
+          "date": "2026-08-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Honeywell_Android_13_COBO_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Honeywell_Android_13_COPE_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_IBM_CICS_Transaction_Server_6_1_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2025-12-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_IBM_Cloud_Foundations_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2025-11-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_IBM_Db2_11_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2025-09-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_IBM_WebSphere_Liberty_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2022-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_IBM_WebSphere_Liberty_Server_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-04-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_IBM_i_V7R4M0_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.1.0",
+          "date": "2025-08-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_IBM_zSecure_Suite_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-07",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Infoblox_8_x_DNS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Juniper_Router_NDM_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2023-06-07",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Juniper_Router_RTR_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2022-07-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Juniper_SRX_SG_IDPS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2017-07-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Juniper_SRX_SG_NDM_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2021-04-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Juniper_SRX_Services_Gateway_ALG_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2020-10-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Juniper_SRX_Services_Gateway_VPN_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2022-10-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Kubernetes_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.1",
+          "date": "2026-04-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Kubernetes_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-05-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Kubernetes_V1_23_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2022-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Linux_Mint_22_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_MS_SQL_Server_2016_Database_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_MS_SQL_Server_2016_Instance_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_MariaDB_10_11_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-03-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_MariaDB_10_6_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2024-03-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_MariaDB_Enterprise_10_x_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-06-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_365_Foundations_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7.0.0",
+          "date": "2026-05-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Azure_Compute_Services_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2025-06-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Azure_Database_Services_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2025-12-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Azure_Foundations_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2022-08-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Azure_Storage_Services_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Defender_Antivirus_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-02-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_DotNet_Framework_4_0_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Dynamics_365_Power_Platform": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2022-12-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Edge_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2022-09-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Entra_ID_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Exchange_2016_Edge_Transport_Server_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Exchange_2016_Mailbox_Server_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-01-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Exchange_2019_Edge_Server_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Exchange_2019_Mailbox_Server_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Exchange_Server_2019_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2023-06-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_IIS_10_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.1",
+          "date": "2023-07-17",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_IIS_8_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.4.0",
+          "date": "2015-08-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Intune_MDM_Service_Desktop_Mobile_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-04-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Intune_for_Edge_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-01-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Intune_for_Microsoft_Defender_Antivirus_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-05-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Intune_for_Office_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2024-12-17",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Office_365_ProPlus_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Office_Enterprise_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2024-07-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Office_System_2016_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_SQL_Server_2019_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2021-04-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_SQL_Server_2022_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.3.0",
+          "date": "2026-05-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_SQL_Server_2022_Database_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-05-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_SQL_Server_2022_Instance_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-05-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_SQL_Server_2025_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_10_EMS_Gateway_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3.0.0",
+          "date": "2024-05-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_10_Enterprise_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4.0.0",
+          "date": "2025-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_10_Enterprise_Release_21H1_or_older_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.11.0",
+          "date": "2021-07-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_10_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-04-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_10_Stand_alone_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4.0.0",
+          "date": "2025-06-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_11_Enterprise_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "5.1.0",
+          "date": "2026-07-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_11_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2026-08-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_11_Stand_alone_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "5.0.0",
+          "date": "2026-03-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_Server_2016_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.4.0",
+          "date": "2022-04-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_Server_2016_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2021-07-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_Server_2019_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "5.0.0",
+          "date": "2026-05-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_Server_2019_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4.0.0",
+          "date": "2025-07-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_Server_2022_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "5.1.0",
+          "date": "2026-07-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_Server_2022_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3.0.0",
+          "date": "2025-08-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_Server_2025_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.1.0",
+          "date": "2026-07-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Microsoft_Windows_Server_Domain_Name_System_DNS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-04-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_MongoDB_3_4_Benchmark_ARCHIVE": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2017-06-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_MongoDB_5_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2021-10-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_MongoDB_6_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2023-10-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_MongoDB_7_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2025-08-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_MongoDB_8_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Motorola_Solutions_Android_13_COBO_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-03-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Motorola_Solutions_Android_13_COPE_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-03-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Mozilla_Firefox_ESR_GPO_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-07-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Mozilla_Firefox_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-04-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_NGINX_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3.0.0",
+          "date": "2025-12-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_OPNsense_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_OceanBase_Enterprise_Edition_V4_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-05-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Okta_Identity_as_a_Service_IDaaS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Cloud_Infrastructure_Container_Engine_for_Kubernetes_OKE_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-07-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Cloud_Infrastructure_Foundations_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3.1.1",
+          "date": "2026-07-07",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Database_12c_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-07-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Database_19c_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2025-11-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Database_23ai_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2025-08-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Database_26ai_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Linux_10_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Linux_7_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Linux_8_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4.0.0",
+          "date": "2025-08-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Linux_8_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Linux_9_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3.0.0",
+          "date": "2026-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_MySQL_Community_Server_8_4_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2025-11-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_MySQL_Community_Server_9_7_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-06-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_MySQL_Enterprise_Edition_8_0_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2022-06-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_MySQL_Enterprise_Edition_8_4_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2025-11-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_MySQL_Enterprise_Edition_9_7_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-06-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_SaaS_Cloud_Applications_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-11-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Oracle_Solaris_11_4_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2023-12-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Palo_Alto_Firewall_10_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.3.0",
+          "date": "2025-10-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Palo_Alto_Firewall_11_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2025-10-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Palo_Alto_Networks_ALG_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Palo_Alto_Networks_IDPS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Palo_Alto_Networks_NDM_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Palo_Alto_Networks_Prisma_Cloud_Compute_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_PostgreSQL_13_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.3.0",
+          "date": "2025-12-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_PostgreSQL_14_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2021-10-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_PostgreSQL_15_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2022-12-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_PostgreSQL_16_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2025-06-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_PostgreSQL_17_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-07-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_PostgreSQL_18_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_RHEL8_on_IBM_Z_Linux_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2022-05-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_RedHat_OpenShift_Container_Platform_v4_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2021-03-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Red_Hat_Enterprise_Linux_10_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2025-09-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Red_Hat_Enterprise_Linux_10_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-04-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Red_Hat_Enterprise_Linux_7_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2021-11-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Red_Hat_Enterprise_Linux_8_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2022-02-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Red_Hat_Enterprise_Linux_8_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2024-11-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Red_Hat_Enterprise_Linux_9_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3.0.0",
+          "date": "2026-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Red_Hat_Enterprise_Linux_9_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-04-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Red_Hat_OpenShift_Container_Platform_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.8.0",
+          "date": "2025-06-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Redhat_OpenShift_Virtual_Machine_Extension_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-10-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Rocky_Linux_10_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Rocky_Linux_8_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3.0.0",
+          "date": "2025-08-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Rocky_Linux_9_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3.0.0",
+          "date": "2026-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_SUSE_Linux_Enterprise_11_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.1.1",
+          "date": "2022-02-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_SUSE_Linux_Enterprise_12_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2016-12-07",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_SUSE_Linux_Enterprise_15_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.1",
+          "date": "2025-02-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_SUSE_Linux_Enterprise_16_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_SUSE_Linux_Enterprise_Server_15_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Samsung_Android_15_BYOAD_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-04-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2023-01-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Samsung_Android_OS_13_with_Knox_3_x_COPE_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2023-01-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Samsung_Android_OS_14_with_Knox_3_x_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Samsung_Android_OS_15_with_Knox_3_x_COBO_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Samsung_Android_OS_15_with_Knox_3_x_COPE_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_SingleStore_8_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-05-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Snowflake_Foundations_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Solaris_11_X86_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Sophos_Firewall_v21_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Sophos_Firewall_v22_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Talos_Linux_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-07-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Tanium_7_x_Application_on_TanOS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Tanium_7_x_Operating_System_on_TanOS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Tanium_7_x_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Tencent_Cloud_Enterprise_Foundation_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Ubuntu_Linux_20_04_LTS_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3.0.0",
+          "date": "2025-03-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Ubuntu_Linux_20_04_LTS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2023-08-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Ubuntu_Linux_22_04_LTS_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2022-08-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Ubuntu_Linux_22_04_LTS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-05-08",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Ubuntu_Linux_24_04_LTS_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-05-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Ubuntu_Linux_24_04_LTS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-06-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Ubuntu_Linux_26_04_LTS_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-08-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_ESXi_7_0_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2025-05-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_NSX_4_x_Distributed_Firewall_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_NSX_4_x_Manager_NDM_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_NSX_4_x_Tier_0_Gateway_Firewall_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_NSX_4_x_Tier_0_Gateway_Router_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_NSX_4_x_Tier_1_Gateway_Firewall_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_NSX_4_x_Tier_1_Gateway_Router_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_ESXi_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-18",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_VAMI_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-18",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_Virtual_Machine_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_vCenter_Appliance_EAM_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_vCenter_Appliance_Lookup_Service_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_vCenter_Appliance_Perfcharts_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_vCenter_Appliance_Photon_OS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_vCenter_Appliance_PostgreSQL_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_vCenter_Appliance_RhttpProxy_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_vCenter_Appliance_STS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_vCenter_Appliance_UI_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_7_0_vCenter_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_ESXi_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-04-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_Virtual_Machine_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-08-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_vCenter_Appliance_ESX_Agent_Manager_EAM_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_vCenter_Appliance_Envoy_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-08-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_vCenter_Appliance_Lookup_Service_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-08-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_vCenter_Appliance_Management_Interface_VAMI_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-08-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_vCenter_Appliance_Perfcharts_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-08-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_vCenter_Appliance_Photon_OS_4_0_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-08-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_vCenter_Appliance_PostgreSQL_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-04-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_vCenter_Appliance_Secure_Token_Service_STS_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-08-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_vCenter_Appliance_User_Interface_UI_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-08-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_VMware_vSphere_8_0_vCenter_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Visual_Studio_Code_GPO_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2025-09-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Wind_River_eLxr_12_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2025-12-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_Xylok_Security_Suite_20_x_STIG_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2024-12-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CIS_YugabyteDB_Benchmark": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-07-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Canonical_Ubuntu_20-04_LTS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-05-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Central_Log_Server_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-02-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_ACI_L2S_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-12-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_ACI_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-12-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_ACI_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-12-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_ASA_FW_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-06-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_ASA_IPS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_ASA_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_ASA_VPN_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-08-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS-XE_Router_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-02-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS-XE_Router_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-08-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS-XR_Router_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-02-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS-XR_Router_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-08-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS_Router_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-06-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS_Router_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-08-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS_Switch_L2S_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-05-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS_Switch_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-06-05",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS_Switch_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-03-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS_XE_Switch_L2S_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-05-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS_XE_Switch_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-03-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_IOS_XE_Switch_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-03-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_ISE_NAC_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_ISE_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_NX-OS_Switch_L2S_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-06-08",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_NX-OS_Switch_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-12-08",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cisco_NX-OS_Switch_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-03-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Citrix_VAD_7-x_Delivery_Controller_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2021-12-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Citrix_VAD_7-x_License_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2021-02-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Citrix_VAD_7-x_Linux_VDA_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2021-02-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Citrix_VAD_7-x_StoreFront_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2021-02-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Citrix_VAD_7-x_Workspace_App_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2021-12-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Citrix_VAD_7x_Windows_VDA_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2021-02-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Citrix_XenDesktop_7-x_Receiver_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2018-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Citrix_XenDesktop_7-x_Windows_VDA_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2019-03-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Citrix_XenDesktop_Delivery_Controller_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2020-03-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Citrix_XenDesktop_License_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2019-12-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Citrix_XenDesktop_StoreFront_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2018-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CloudLinux_AlmaLinux_OS_9_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cloud_Computing_Mission_Owner_OS_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-08-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Cloud_Computing_Mission_Owner_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Container_Platform_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-09-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Crunchy_Data_PostgreSQL_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "DNS_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4",
+          "date": "2025-12-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Database_Generic": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4",
+          "date": "2026-02-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Dell_OS10_Switch_L2S_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Dell_OS10_Switch_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Dell_OS10_Switch_Router_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-03-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Dragos_Platform_2-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-02-18",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "EPAS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "EVVM_Endpoint_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-10-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "EVVM_Policy_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-12-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "EVVM_Session_Management_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "F5_BIG-IP_TMOS_ALG_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "F5_BIG-IP_TMOS_DNS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-09-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "F5_BIG-IP_TMOS_FW_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-09-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "F5_BIG-IP_TMOS_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-06-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "F5_BIG-IP_TMOS_VPN_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-09-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "F5_NGINX_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-01-07",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "FN_FortiGate_Firewall_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-11-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "FN_FortiGate_Firewall_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-11-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "FS_NAC_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Firewall_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Forescout_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-06-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "General_Purpose_Operating_System": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-09-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_13_BYOAD_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-02-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_13_COBO_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-12-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_13_COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-12-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_13_MDF_PP_3-3_BYOAD_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-09-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_14_BYOAD_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-02-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_14_COBO_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_14_COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_14_MDF_PP_3-3_BYOAD_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-08-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_15_COBO_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_15_COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_16_COBO_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Android_16_COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Google_Chrome_Current_Windows": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-05-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HPE_3PAR_SSMC_GPOS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HPE_3PAR_SSMC_WS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-05-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HPE_3PAR_StoreServ_3.2.x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2021-11-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HPE_3PAR_StoreServ_3.3.x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HPE_Alletra_Storage_ArcusOS_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-03-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HPE_Alletra_Storage_ArcusOS_WS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-03-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HPE_Aruba_AOS_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-10-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HPE_Aruba_AOS_VPN_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-10-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HPE_Aruba_AOS_Wireless_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-02-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HPE_Nimble_Storage_Array_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-06-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HP_FlexFabric_Switch_L2S_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2020-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HP_FlexFabric_Switch_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-06-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HP_FlexFabric_Switch_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2020-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HW_Android_13_COBO_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-05-07",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HW_Android_13_COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-05-07",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "HYCU_Protege_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_AIX_7-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_DB2_V10-5_LUW_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_DataPower_ALG_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2016-01-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_DataPower_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2017-10-05",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_HMC_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-06-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_MaaS360_with_Watson_v10.x_MDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2019-08-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_WebSphere_Liberty_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-02-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_WebSphere_Traditional_V9-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-02-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_zOS_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "9",
+          "date": "2026-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_zOS_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "9",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_zOS_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "9",
+          "date": "2026-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_zSecure_Suite_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-03-05",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IBM_zVM_CA_VMSecure_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2022-08-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IDPS_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-09-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IE_11_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2023-12-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IIS_10-0_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-02-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "IIS_10-0_Site_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "ISEC7_Sphere": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-08-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Infoblox_7-x_DNS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2020-12-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Infoblox_8_DNS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Ivanti_Connect_Secure_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-09-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Ivanti_Connect_Secure_VPN_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-09-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Ivanti_MI_Core_MDM_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-07-30",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Ivanti_MI_Sentry_9-x_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-09-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Ivanti_Sentry_9-x_ALG_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-09-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "JBoss_EAP_6-3_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-02-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Jamf_Pro_v10-x_EMM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Juniper_EX_L2S_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Juniper_EX_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Juniper_EX_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-06-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Juniper_Router_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-12-05",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Juniper_Router_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-12-05",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Juniper_SRX_SG_ALG_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-12-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Juniper_SRX_SG_IDPS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-06-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Juniper_SRX_SG_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-12-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Juniper_SRX_SG_VPN_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-12-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Kubernetes_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-02-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Layer_2_Switch_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-02-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MOZ_Firefox_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "6",
+          "date": "2026-05-08",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Azure_SQL_DB_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-06-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Azure_SQL_Managed_Instance_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-10-07",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Defender_Antivirus": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-08",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Defender_Endpoint_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-11-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Dot_Net_Framework": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-02-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Edge_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-02-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Entra_ID_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-03-17",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Exchange_2016_Edge_Transport_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-12-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Exchange_2016_Mailbox_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2023-12-18",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Exchange_2019_Edge_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-12-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Exchange_2019_Mailbox_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-05-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Intune_MDM_Service_Desktop_Mobile_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Intune_MDM_Service_Desktop_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-10-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Office_365_ProPlus_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-02-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_SCOM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2021-03-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_SQL_Server_2016_Database_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-03-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_SQL_Server_2016_Instance_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-12-08",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_SQL_Server_2022_Database_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-02-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_SQL_Server_2022_Instance_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-02-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Windows_10_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-09-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Windows_Server_2022_DNS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Windows_Server_2022_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MS_Windows_Server_2025_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Mainframe_Product_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MariaDB_Enterprise_10-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-03-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MarkLogic_Server_v9_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-09-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "McAfee_Application_Control_8-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-06-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_Access_2016": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2016-11-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_Excel_2016": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-02-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_Office_System_2016": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-12-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_OneDrive": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2023-06-05",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_OneNote_2016": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2017-01-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_Outlook_2016": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2022-03-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_PowerPoint_2016": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2016-11-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_Project_2016": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2016-11-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_Publisher_2016": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2018-03-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_SharePoint_Designer_2013": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2018-04-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_SharePoint_Server_2013": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-12-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_Skype_for_Business_2016": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2016-11-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_Visio_2016": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2016-11-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_Windows_11_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Microsoft_Word_2016": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2016-11-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Mirantis_Kubernetes_Engine_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MobileIron_Core_v10-x_MDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2019-02-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MongoDB_Enterpise_Advanced_8-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-02-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "MongoDB_Enterprise_Advanced_7-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "NTNX_Acropolis_AS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-02-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "NTNX_Acropolis_GPOS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-02-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "NetApp_ONTAP_DSC_9-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Network_Device_Management_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "5",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Network_Infrastructure_Policy_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "10",
+          "date": "2024-08-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Network_WLAN_AP-IG_Mgmt_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2023-09-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Network_WLAN_AP-IG_Platform_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2023-02-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Network_WLAN_AP-NIPR_Mgmt_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2023-09-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Network_WLAN_AP-NIPR_Platform_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2023-02-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Network_WLAN_Bridge_Mgmt_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2023-09-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Network_WLAN_Bridge_Platform_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2023-02-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Network_WLAN_Controller_Mgmt_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2023-09-18",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Network_WLAN_Controller_Platform_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2023-02-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Nokia_SR_OS_25-x_L2S_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Okta_IDaaS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-11-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Omnissa_WS1_UEM_API_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Omnissa_WS1_UEM_Agent_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Omnissa_WS1_UEM_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Oracle_Database_12c_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-02-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Oracle_Database_19c_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-02-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Oracle_Linux_7_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-05-08",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Oracle_Linux_8_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Oracle_Linux_9_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Oracle_MySQL_8.0_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-09-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "PAN_Prisma_Cloud_Compute_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-02-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Palo_Alto_Networks_ALG_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-03-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Palo_Alto_Networks_IDPS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-12-19",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Palo_Alto_Networks_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-03-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RB_NetIM_OS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-10-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RB_NetIM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-09-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RB_NetProfiler_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RGS_RKE2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RHEL_10_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RHEL_8_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RHEL_9_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RH_Ansible_Automation_Controller_App_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-11-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RH_Ansible_Automation_Controller_Web_Server_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-11-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RH_OpenShift_Container_Platform_4-12_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-12-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RH_OpenShift_Container_Platform_4-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RUCKUS_ICX_L2S_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RUCKUS_ICX_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-05-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "RUCKUS_ICX_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Rancher_MCM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-11-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Redis_Enterprise_6-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-09-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Router_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "5",
+          "date": "2025-09-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SDN_Controller_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-05-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SDN_NV_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2017-03-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SEL-2740S_L2S_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2019-05-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SEL-2740S_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2019-05-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SLEM_5_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-02-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SLES_12_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2025-11-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SLES_15_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SPEC_Innovations_Innoslate_4.x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2022-08-31",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SSS_TCMax_9-x": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-03-05",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SS_Android_14_BYOAD_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-02-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SS_Android_14_MDFPP_3-3_BYOAD_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SS_Android_15_BYOAD_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-04-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SS_Android_15_COBO_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-09-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SS_Android_15_COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-08-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SS_Android_15_MDFPP_BYOAD": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SS_Android_OS_13_KPE_3-x_COBO_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-12-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SS_Android_OS_13_KPE_3-x_COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-12-06",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SS_Android_OS_14_KPE_3-x_COBO_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "SS_Android_OS_14_KPE_3-x_COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-08-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Samsung_SDS_EMM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2022-06-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Solaris_11_SPARC_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Solaris_11_X86_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Splunk_Enterprise_7-x_for_Windows_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2024-08-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Splunk_Enterprise_8-x_for_Linux_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-03-05",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Symantec_Edge_SWG_ALG_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-12-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Symantec_Edge_SWG_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-02-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Symantec_ProxySG_ALG_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2020-03-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Symantec_ProxySG_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2019-12-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "TM_TippingPoint_IDPS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-09-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "TM_TippingPoint_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-03-10",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "TOSS_4_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "TOSS_5_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-04-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Tanium_7-x_Application_TanOS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-02-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Tanium_7-x_OS_TanOS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-02-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Tanium_7-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2025-05-14",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Tanium_7.0_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2018-07-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Tanium_7.3_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2021-12-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Tomcat_Application_Server_9_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-02-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Traditional_Security_Checklist": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-17",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "UEM_Agent_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-07-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "UEM_Server_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "U_SS_Android_16_COBO_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "U_SS_Android_16_COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMM": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-29",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_NSX-T_Manager_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-06-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_NSX-T_T-0_Gateway_FW_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-06-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_NSX-T_T-0_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2022-09-01",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_NSX-T_T1_Gateway_FW_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-06-22",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_NSX-T_T1_Gateway_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2022-03-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_NSX_4-x_Distributed_FW_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_NSX_4-x_Manager_NDM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_NSX_4-x_Tier0_GW_FW_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_NSX_4-x_Tier0_GW_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_NSX_4-x_Tier1_GW_FW_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_NSX_4-x_Tier1_GW_RTR_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-20",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_ESXi_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-02-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_VAMI_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_Virtual_Machine_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_vCA_EAM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_vCA_Lookup_Svc_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_vCA_Perfcharts_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-02-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_vCA_Photon_OS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-16",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_vCA_PostgreSQL_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_vCA_RhttpProxy_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-02-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_vCA_STS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_vCA_UI_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-06-15",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_7-0_vCenter_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-12-21",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8-0_ESXi_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-10-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8-0_VCSA_EAM_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8-0_VCSA_Envoy_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8-0_VCSA_Lookup_Svc_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8-0_VCSA_Perfcharts_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8-0_VCSA_Photon_OS_4-0_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8-0_VCSA_PostgreSQL_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-06-02",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8-0_VCSA_STS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8-0_VCSA_UI_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8-0_VCSA_VAMI_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8-0_vCenter_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMW_vSphere_8.0_Virtual_Machine_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2024-07-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMware_NSX-T_Distributed_FW_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2023-06-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VMware_NSX-T_SDN_Controller_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2022-03-09",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "VPN": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Web_Server_SRG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "4",
+          "date": "2026-05-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Windows_Firewall_with_Advanced_Security": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "2",
+          "date": "2023-08-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Windows_PAW_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-02-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Windows_Server_2019_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "3",
+          "date": "2026-02-12",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Xylok_Security_Suite_20-x_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2025-12-04",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Zebra_Android_13_COBO_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Zebra_Android_13_COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2024-12-11",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Zebra_Android_14_COBO_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "Zebra_Android_14_COPE_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "1",
+          "date": "2026-05-13",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-D_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-D_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-D_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-M_Restart_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-M_Restart_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-M_Restart_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-M_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-M_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-M_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-O_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-O_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_CONTROL-O_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_IOA_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_IOA_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_IOA_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_MAINVIEW_for_zOS_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_MAINVIEW_for_zOS_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_BMC_MAINVIEW_for_zOS_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_1_Tape_Management_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_1_Tape_Management_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_1_Tape_Management_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_Auditor_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_Auditor_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_Auditor_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_Common_Services_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_Common_Services_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_Common_Services_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_MICS_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_MICS_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_MICS_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_MIM_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_MIM_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_MIM_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_VTAPE_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_VTAPE_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CA_VTAPE_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CLSuperSession_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CLSuperSession_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CLSuperSession_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CSSMTP_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-06-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CSSMTP_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-06-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_CSSMTP_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-06-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Catalog_Solutions_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Catalog_Solutions_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Catalog_Solutions_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Compuware_Abend-AID_for_ACF2": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Compuware_Abend-AID_for_RACF": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Compuware_Abend-AID_for_TSS": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_FDR_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_FDR_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_FDR_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_FEP_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_FEP_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_FEP_for_TSS": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_HCD_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_HCD_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_HCD_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_IBM_CICS_Transaction_Server_for_ACF2": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_IBM_CICS_Transaction_Server_for_RACF": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_IBM_CICS_Transaction_Server_for_TSS": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_IBM_Health_Checker_for_ACF2": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-06-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_IBM_Health_Checker_for_RACF": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-06-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_IBM_Health_Checker_for_TSS": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-06-24",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_IBM_System_Display_and_Search_Facility_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_IBM_System_Display_and_Search_Facility_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_IBM_System_Display_and_Search_Facility_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_NetView_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_NetView_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_NetView_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Quest_NC-Pass_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Quest_NC-Pass_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Quest_NC-Pass_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_ROSCOE_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_ROSCOE_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_ROSCOE_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_SRRAUDIT_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-25",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_SRRAUDIT_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_SRRAUDIT_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_TADz_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-23",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_TADz_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_TADz_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_TDMF_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_TDMF_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_TDMF_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_VSS_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_WebsphereMQ_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_WebsphereMQ_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_WebsphereMQ_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2026-06-03",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Websphere_Application_Server_for_ACF2_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-26",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Websphere_Application_Server_for_RACF_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-27",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "zOS_Websphere_Application_Server_for_TSS_STIG": {
+      "first_seen": "2026-09-09",
+      "releases": [
+        {
+          "version": "7",
+          "date": "2025-09-28",
+          "recorded_at": "2026-09-09"
+        }
+      ]
+    }
+  }
+}

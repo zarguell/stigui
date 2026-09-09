@@ -14,10 +14,16 @@ interface IManifest {
     description: string;
     version: string;
     date: string;
-    /** Publishing source: "DISA" or "CIS". */
+    /** Publishing source: "DISA", "CIS", or "Imported". */
     source: string;
     /** Technology class, e.g. "Operating Systems", "Cloud Providers". */
     category: string;
+    /** Document kind: DISA "STIG"/"SRG", CIS "Benchmark". */
+    type?: string;
+    /** Vendor/technology labels, e.g. ["Microsoft", "Windows"]. */
+    tags?: string[];
+    /** Number of rules (Groups) in the benchmark. */
+    rules_count?: number;
 }
 
 export class ManifestStore {

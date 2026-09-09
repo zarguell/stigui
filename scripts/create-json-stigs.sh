@@ -5,6 +5,14 @@ shopt -s globstar
 
 mkdir -p public/data/stigs/schema
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Convert into a staging dir so track_history can diff the incoming
+# release against the current schema and precompute version deltas
+# before anything is overwritten.
+STAGING="$(mktemp -d)"
+trap 'rm -rf "$STAGING"' EXIT
+
 for file in data/stigs/**/*.xml; do
     JSON="$(yq --xml-strict-mode -p=xml -o=json <"$file")"
     ID=$(jq -r '.Benchmark.["+@id"]' <<<"$JSON")
@@ -12,19 +20,14 @@ for file in data/stigs/**/*.xml; do
         echo "No ID found in $file"
         continue
     fi
-    cp "$file" "public/data/stigs/schema/$ID.xml"
-    jq . <<<"$JSON" >"public/data/stigs/schema/$ID.json"
+    jq . <<<"$JSON" >"$STAGING/$ID.json"
 done
 
-jq -s '[
-    .[].Benchmark |
-    {
-        id: .["+@id"],
-        title: .title | sub(" Security Technical Implementation Guide"; ""),
-        description: .description,
-        version: .version,
-        date: .status.["+@date"],
-        source: "DISA",
-        category: "DISA STIG",
-    }
-]' public/data/stigs/schema/*.json >public/data/stigs/manifest.json
+python3 "$SCRIPT_DIR/track_history.py" \
+    --schema-dir public/data/stigs/schema \
+    --data-dir public/data \
+    --staged "$STAGING"
+
+python3 "$SCRIPT_DIR/rebuild_manifest.py" \
+    --schema-dir public/data/stigs/schema \
+    --data-dir public/data

@@ -196,3 +196,60 @@ test("converted CIS benchmarks render like library STIGs", async ({ page }) => {
         })
     ).toBeVisible();
 });
+
+test("library URL filters, dashboard, what's new, and diff views render", async ({
+    page,
+}) => {
+    // The library reads its filter state from the URL (shareable views);
+    // the select adopts the param once the client view hydrates.
+    await page.goto(`${BASE}/stigs.html?category=Operating%20Systems&sort=-date`);
+    await waitFor(
+        page,
+        "() => document.querySelector('select[aria-label=\"Filter category\"]')?.value === 'Operating Systems'"
+    );
+    const category = await page
+        .locator('select[aria-label="Filter category"]')
+        .inputValue();
+    expect(category).toBe("Operating Systems");
+    const source = await page
+        .locator('select[aria-label="Filter source"]')
+        .inputValue();
+    expect(source).toBe("");
+    // A filtered view shows fewer rows than the catalog.
+    const countText = await page
+        .locator("text=Showing ")
+        .first()
+        .innerText();
+    const [, shown, total] = countText.match(/Showing (\d+) of (\d+)/) ?? [];
+    expect(Number(shown)).toBeLessThan(Number(total));
+
+    await page.goto(`${BASE}/dashboard.html`);
+    await waitFor(
+        page,
+        "() => document.body.innerText.includes('Library dashboard')"
+    );
+    await waitFor(
+        page,
+        "() => document.body.innerText.includes('Security requirements')"
+    );
+
+    await page.goto(`${BASE}/whats-new.html`);
+    await waitFor(
+        page,
+        "() => document.body.innerText.includes(\"What's new\")"
+    );
+    // The default window empties once the baseline ages out; all-time
+    // always shows the library's initial import.
+    await page.locator('button:has-text("All time")').click();
+    await waitFor(
+        page,
+        "() => document.body.innerText.includes('New benchmarks')"
+    );
+
+    // The diff route handles unknown comparisons with a friendly state.
+    await page.goto(`${BASE}/stigs/diff.html?id=Does_Not_Exist&from=1`);
+    await waitFor(
+        page,
+        "() => document.body.innerText.includes('No recorded changes')"
+    );
+});

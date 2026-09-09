@@ -40,10 +40,38 @@ library entries — so importing a newer release upgrades your view. Imported
 STIGs behave like any library STIG: browse rules by severity and classification,
 export as XML/JSON/CSV, build checklists.
 
-Three **CIS Benchmarks** (Docker, Debian Linux 11, Kubernetes V1.23) ship in the
-library too, converted from the public CIS PDFs by the grammar-driven parser in
-`scripts/cis/` — see that directory's README for the pipeline, its accuracy
-checks, and how to convert more benchmarks.
+The **full CIS Benchmark library** ships too (300+ benchmarks), converted from
+the public CIS PDFs by the grammar-driven parser in `scripts/cis/` — see that
+directory's README for the pipeline, its accuracy checks, and how to convert
+more benchmarks.
+
+The library is searchable and **filterable by source, category, and
+vendor/technology tags** (derived from each benchmark's title at manifest-build
+time), with the filter/sort state mirrored into the URL so any filtered view is
+shareable. A **dashboard** (`/dashboard`) summarizes what the catalog covers —
+counts by source, document type (STIG / SRG / CIS Benchmark), category, and
+vendor — and how fresh it is.
+
+### What's new and release diffs
+
+`/whats-new` tracks the library's release timeline: benchmarks **added to the
+catalog for the first time** vs **version updates** of existing ones. Each
+version update deep-links into a **release diff view** (`/stigs/diff`) showing
+exactly what changed between the previous and current release — rule matching by
+vulnerability id with renumbering fallback, and word-level diffs of every
+changed field. Benchmarks with a recorded change also show a "Changes in Vx →
+Vy" link on their detail page.
+
+History works on a deltas-only storage model: the library keeps only the latest
+release of each benchmark in full, and when a refresh detects a version bump the
+pipeline precomputes a small changes file (`public/data/stigs/changes/`) plus a
+catalog timeline (`public/data/stigs/history.json`). The diff logic is the same
+code the checklist migration uses, run at build time. Note the bootstrap
+caveat: benchmarks added before history tracking shipped have a baseline
+`first_seen` and no diffs until their next tracked refresh.
+
+XML downloads are generated **in the browser** from the benchmark JSON
+(`src/api/xccdf.ts`), so no parallel `.xml` copy of every benchmark ships.
 
 ### Checklists
 
@@ -99,10 +127,29 @@ npm test           # unit + corpus tests
 ```
 
 To build the static site locally, see the build step in
-`.github/workflows/deploy.yml` (the export prerenders the whole library, so a
-dev server runs during the build — expect a several-minute build). To refresh the CCI → 800-53 map against a newer
+`.github/workflows/deploy.yml` (the export prerenders the per-benchmark pages,
+so a server serving `public/` runs during the build — expect a several-minute
+build). To refresh the CCI → 800-53 map against a newer
 DISA list: `python3 scripts/build-cci-map.py <U_CCI_List.xml>`. To convert CIS
 Benchmark PDFs into the library: `scripts/cis/` (see its README).
+
+### Library refresh pipeline
+
+Both ingest paths flow through the same manifest/history tooling:
+
+1. **DISA**: `scripts/create-json-stigs.sh` converts the quarterly SRG/STIG
+   library zip (via `scripts/fetch-stigs.sh`) into a staging dir.
+   **CIS**: `scripts/cis/run.py convert` stages each converted benchmark.
+2. `scripts/track_history.py --staged <dir|file>` diffs staged releases against
+   the current schema: new benchmarks and version bumps are recorded into
+   `public/data/stigs/history.json`, and version bumps produce a precomputed
+   changes file in `public/data/stigs/changes/<id>/<from_version>.json` (via
+   `scripts/compute_deltas.ts`, which reuses the app's migration diff logic).
+3. `scripts/rebuild_manifest.py` regenerates `manifest.json` — the single
+   source of truth for each entry's `source`, `category` (title keyword
+   classifier), `type` (STIG/SRG/Benchmark), `tags`, and `rules_count`.
+   `scripts/manifest_overrides.json` optionally corrects individual entries
+   (`id -> {category?, tags?, type?}`).
 
 ### CI
 

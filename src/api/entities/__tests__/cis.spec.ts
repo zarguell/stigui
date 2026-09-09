@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { Convert } from '../../generated/Stig';
 import { StigWrapper } from '../Stig';
-import { convertXccdf, toLibraryStig } from '../upload';
+import { toLibraryStig } from '../upload';
 
 /**
  * Contract tests for the converted CIS Benchmark library files
@@ -84,33 +84,11 @@ describe('converted CIS benchmarks', () => {
         }
     });
 
-    it.each(cisFiles)('%s XML mirrors the committed JSON', (file) => {
-        const xml = fs.readFileSync(
-            path.join(schemaDir, file.replace('.json', '.xml')),
-            'utf8'
-        );
-        const json = fs.readFileSync(path.join(schemaDir, file), 'utf8');
-        const converted = convertXccdf(xml);
-
-        // Canonicalize singleton arrays (Group/Profile arrayification,
-        // yq null vs fast-xml-parser ""), the same terms upload.spec.ts
-        // pins the DISA library with.
-        const canonicalize = (value: unknown): unknown => {
-            if (Array.isArray(value)) return value.map(canonicalize);
-            if (value && typeof value === 'object') {
-                return Object.keys(value as Record<string, unknown>)
-                    .sort()
-                    .reduce((acc, key) => {
-                        acc[key] = canonicalize(
-                            (value as Record<string, unknown>)[key]
-                        );
-                        return acc;
-                    }, {} as Record<string, unknown>);
-            }
-            return value === null ? '' : value;
-        };
-        expect(canonicalize(converted)).toEqual(canonicalize(JSON.parse(json)));
-    });
+    /**
+     * The XML↔JSON equivalence contract is pinned by
+     * src/api/__tests__/xccdf.spec.ts (the site serializes JSON to XCCDF
+     * in-browser; no committed .xml copy exists anymore).
+     */
 
     it('produce library metadata matching the manifest', () => {
         for (const file of cisFiles) {

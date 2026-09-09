@@ -3,6 +3,7 @@ import path from 'path';
 import { zipSync, strToU8 } from 'fflate';
 import { Convert, Stig as IStig } from '../../generated/Stig';
 import Stig, { StigWrapper } from '../Stig';
+import { benchmarkToXml } from '@/api/xccdf';
 import {
     convertXccdf,
     extractXccdfFromZip,
@@ -15,9 +16,23 @@ const schemaDir = path.join(
     '../../../../public/data/stigs/schema'
 );
 
+/**
+ * Representative committed-format XCCDF files (one DISA yq artifact, one
+ * CIS converter artifact). The library no longer ships .xml per
+ * benchmark — the site serializes the JSON in-browser (src/api/xccdf.ts)
+ * — so these fixtures pin the parser contract without a parallel copy of
+ * every document.
+ */
+const fixturesDir = path.join(__dirname, 'fixtures');
+
 const fixtures = fs
-    .readdirSync(schemaDir)
+    .readdirSync(fixturesDir)
     .filter((f) => f.endsWith('.xml'))
+    .sort();
+
+const documents = fs
+    .readdirSync(schemaDir)
+    .filter((f) => f.endsWith('.json'))
     .sort();
 
 /**
@@ -85,7 +100,7 @@ const SINGLE_GROUP_XCCDF = `<?xml version="1.0" encoding="utf-8"?><?xml-styleshe
 
 describe('upload converter', () => {
     it.each(fixtures)('should mirror the yq pipeline for %s', (fixture) => {
-        const xml = fs.readFileSync(path.join(schemaDir, fixture), 'utf8');
+        const xml = fs.readFileSync(path.join(fixturesDir, fixture), 'utf8');
         const expected = JSON.parse(
             fs.readFileSync(path.join(schemaDir, fixture.replace('.xml', '.json')), 'utf8')
         );
@@ -98,7 +113,7 @@ describe('upload converter', () => {
     });
 
     it.each(fixtures)('should feed the app contract for %s', (fixture) => {
-        const xml = fs.readFileSync(path.join(schemaDir, fixture), 'utf8');
+        const xml = fs.readFileSync(path.join(fixturesDir, fixture), 'utf8');
         const stig: StigWrapper = new StigWrapper(
             Convert.toStig(JSON.stringify(convertXccdf(xml)))
         );
@@ -164,9 +179,14 @@ describe('upload converter', () => {
             )
         );
 
-        for (const fixture of fixtures) {
-            const xml = fs.readFileSync(path.join(schemaDir, fixture), 'utf8');
-            const entry = toLibraryStig(xml, convertXccdf(xml));
+        for (const fixture of documents) {
+            const doc = JSON.parse(
+                fs.readFileSync(path.join(schemaDir, fixture), 'utf8')
+            );
+            const entry = toLibraryStig(
+                benchmarkToXml(doc),
+                Convert.toStig(JSON.stringify(doc))
+            );
             const expected = manifest.find(
                 (m: { id: string }) => m.id === entry.stig_id
             );
@@ -182,7 +202,7 @@ describe('upload converter', () => {
 describe('upload zip extraction', () => {
     it('should extract the xccdf from a library-style zip', () => {
         const xccdf = fs.readFileSync(
-            path.join(schemaDir, 'Google_Chrome_Current_Windows.xml'),
+            path.join(fixturesDir, 'Google_Chrome_Current_Windows.xml'),
             'utf8'
         );
         const zip = zipSync({

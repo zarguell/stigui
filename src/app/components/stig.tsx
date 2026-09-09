@@ -1,11 +1,13 @@
 "use client";
 import Checklist from "@/api/entities/Checklist";
-import { Classification, StigWrapper } from "@/api/entities/Stig";
+import Stig, { Classification, StigWrapper } from "@/api/entities/Stig";
+import { benchmarkToXml } from "@/api/xccdf";
 import { Severity } from "@/api/generated/Checklist";
 import { BASE_PATH } from "@/app/constants";
 import { Sidebar } from "@/app/components/sidebar";
 import { buttonClasses } from "@/app/components/ui/button";
 import { TableCard } from "@/app/components/ui/card";
+import { RecentChangesLink } from "@/app/components/client/recent_changes";
 import { useStigContext } from "@/app/context/stig";
 import { IDB } from "@/app/db";
 import { download , ruleHref } from "@/app/utils";
@@ -84,6 +86,21 @@ const toEditor = async (
     );
     await IDB.importChecklist(checklist);
     router.push(`/editor?id=${checklist.id}`);
+};
+
+/**
+ * XML export for library STIGs: serialize the benchmark JSON (already in
+ * fetch cache) to XCCDF in the browser instead of shipping a committed
+ * .xml copy of every benchmark.
+ */
+const toXml = async (stigId: string) => {
+    const doc = JSON.parse((await Stig.fetch(`${stigId}.json`)) as string);
+    const blob = new Blob([benchmarkToXml(doc)], {
+        type: "application/xml",
+    });
+    const url = URL.createObjectURL(blob);
+    download(url, `${stigId}.xml`);
+    URL.revokeObjectURL(url);
 };
 
 const Button = ({
@@ -313,6 +330,7 @@ export const StigView = ({
                 <div className="text-muted text-xs flex flex-col items-end text-end">
                     <span>Date: {stig.date}</span>
                     <span>Version: {stig.version}</span>
+                    <RecentChangesLink stigId={stig.id} version={stig.version} />
                 </div>
             </section>
 
@@ -374,12 +392,7 @@ export const StigView = ({
                     ) : (
                         <>
                             <button
-                                onClick={() =>
-                                    download(
-                                        `${BASE_PATH}/data/stigs/schema/${stig.id}.xml`,
-                                        `${stig.id}.xml`
-                                    )
-                                }
+                                onClick={() => void toXml(stig.id)}
                                 className={buttonClasses({
                                     variant: "ghost",
                                     size: "sm",

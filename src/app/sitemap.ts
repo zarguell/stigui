@@ -1,70 +1,59 @@
 import { Manifest } from "@/api/entities/Manifest";
-import Stig, { Classification } from "@/api/entities/Stig";
+import { Classification } from "@/api/entities/Stig";
 import { URL } from "@/app/constants";
 import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
+/**
+ * Enumerated from the manifest alone — reading every benchmark JSON here
+ * made the build fetch hundreds of megabytes and was the slowest step.
+ * Per-recommendation pages stay agent-discoverable through llms.txt and
+ * the per-benchmark markdown, which link each of them.
+ */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const manifest = await Manifest.init();
-    const stigs = await Promise.all(
-        manifest.elements.map(
-            async (element) => await Stig.read(`${element.id}.json`)
-        )
-    );
-    const stigWithGroups = (
-        await Promise.all([
-            ...stigs.flatMap(async (stig) => {
-                return stig?.groups.flatMap((group) => {
-                    return {
-                        stig: stig,
-                        group: group,
-                    };
-                });
-            }),
-        ])
-    ).flat();
-
+    const now = new Date().toISOString();
     const classifications = Object.values(Classification);
-    const stigsWithClassifications = stigs.flatMap((stig) =>
-        classifications.flatMap((classification) => ({
-            stig,
-            classification,
-        }))
-    );
 
     return [
         {
             url: URL,
-            lastModified: new Date().toISOString(),
+            lastModified: now,
             priority: 1,
         },
         {
             url: `${URL}/stigs`,
-            lastModified: new Date().toISOString(),
+            lastModified: now,
             priority: 1,
         },
-        ...stigs.map((stig) => ({
-            url: `${URL}/stigs/${stig.id}`,
-            lastModified: new Date(stig.date),
-            priority: 0.9,
-        })),
-        ...stigsWithClassifications.map(({ stig, classification }) => ({
-            url: `${URL}/stigs/${stig.id}/${classification}`,
-            lastModified: new Date(stig.date),
-            changeFrequency: "monthly",
-            priority: 0.7,
-        })),
-        ...stigWithGroups.map(({ group, stig }) => ({
-            url: `${URL}/markdown/stigs/${stig.id}/${group.id}.md`,
-            lastModified: new Date(stig.date),
-            changeFrequency: "monthly",
-            priority: 0.5,
-        })),
         {
-            url: `${URL}/llms.txt`,
-            lastModified: new Date().toISOString(),
+            url: `${URL}/whats-new`,
+            lastModified: now,
             priority: 0.8,
         },
+        {
+            url: `${URL}/dashboard`,
+            lastModified: now,
+            priority: 0.5,
+        },
+        {
+            url: `${URL}/llms.txt`,
+            lastModified: now,
+            priority: 0.8,
+        },
+        ...manifest.elements.map((element) => ({
+            url: `${URL}/stigs/${element.id}`,
+            lastModified: element.date ? new Date(element.date) : now,
+            priority: 0.9,
+        })),
+        ...manifest.elements.flatMap((element) =>
+            classifications.map((classification) => ({
+                url: `${URL}/stigs/${element.id}/${classification}`,
+                lastModified: element.date ? new Date(element.date) : now,
+                changeFrequency: "monthly" as const,
+                priority: 0.7,
+            }))
+        ),
     ];
 }
