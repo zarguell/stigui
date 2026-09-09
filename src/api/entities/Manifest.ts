@@ -14,6 +14,10 @@ interface IManifest {
     description: string;
     version: string;
     date: string;
+    /** Publishing source: "DISA" or "CIS". */
+    source: string;
+    /** Technology class, e.g. "Operating Systems", "Cloud Providers". */
+    category: string;
 }
 
 export class ManifestStore {
@@ -111,6 +115,8 @@ export async function uploadedElements(): Promise<IManifest[]> {
         description: entry.description,
         version: entry.version,
         date: entry.date,
+        source: 'Imported',
+        category: '',
     }));
 }
 

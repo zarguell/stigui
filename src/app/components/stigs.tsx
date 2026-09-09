@@ -11,8 +11,14 @@ import { UploadStig, useUploadedStigs } from "@/app/components/client/upload_sti
 import Link from "next/link";
 import { useMemo, useRef } from "react";
 
-const sorters = [defaultSort, defaultSort, defaultSort];
-const filters = [defaultFilter, null, null];
+const sorters = [
+    defaultSort,
+    defaultSort,
+    defaultSort,
+    defaultSort,
+    defaultSort,
+];
+const filters = [defaultFilter, defaultFilter, defaultFilter, null, null];
 
 export const Stigs = () => {
     const manifest = useManifestContext();
@@ -27,6 +33,15 @@ export const Stigs = () => {
             {
                 text: "STIG",
                 filterable: true,
+            },
+            {
+                text: "Source",
+                filterable: true,
+            },
+            {
+                text: "Category",
+                filterable: true,
+                className: "max-lg:hidden",
             },
             {
                 text: "Version",
@@ -46,7 +61,13 @@ export const Stigs = () => {
         () =>
             [
                 ...manifest.elements.map((element) => ({
-                    values: [element.title, element.version, element.date],
+                    values: [
+                        element.title,
+                        element.source,
+                        element.category,
+                        element.version,
+                        element.date,
+                    ],
                     columns: [
                         <Link
                             className="flex flex-col font-medium text-foreground hover:text-accent transition-colors"
@@ -54,13 +75,31 @@ export const Stigs = () => {
                         >
                             {element.title}
                         </Link>,
+                        <span className="flex">
+                            <span className="text-xs font-medium uppercase tracking-wide px-2 py-0.5 rounded-full bg-surface-muted text-muted border border-border">
+                                {element.source}
+                            </span>
+                        </span>,
+                        element.category,
                         element.version,
                         element.date,
                     ],
-                    classNames: [null, "text-center", "max-md:hidden"],
+                    classNames: [
+                        null,
+                        null,
+                        "max-lg:hidden",
+                        "text-center",
+                        "max-md:hidden",
+                    ],
                 })),
                 ...uploads.map((entry) => ({
-                    values: [entry.title, entry.version, entry.date],
+                    values: [
+                        entry.title,
+                        "Imported",
+                        "",
+                        entry.version,
+                        entry.date,
+                    ],
                     columns: [
                         <Link
                             className="flex flex-col font-medium text-foreground hover:text-accent transition-colors"
@@ -71,10 +110,20 @@ export const Stigs = () => {
                                 imported
                             </span>
                         </Link>,
+                        <span className="text-xs font-medium uppercase tracking-wide px-2 py-0.5 rounded-full bg-surface-muted text-muted border border-border">
+                            Imported
+                        </span>,
+                        "",
                         entry.version,
                         entry.date,
                     ],
-                    classNames: [null, "text-center", "max-md:hidden"],
+                    classNames: [
+                        null,
+                        null,
+                        "max-lg:hidden",
+                        "text-center",
+                        "max-md:hidden",
+                    ],
                 })),
             ],
         [manifest.elements, uploads]
@@ -111,7 +160,13 @@ export const Stigs = () => {
                         filters={filters}
                         tableHeaders={tableHeaders}
                         tableBody={tableBody}
-                        initialOrders={[Order.ASC, Order.NONE, Order.NONE]}
+                        initialOrders={[
+                            Order.ASC,
+                            Order.NONE,
+                            Order.NONE,
+                            Order.NONE,
+                            Order.NONE,
+                        ]}
                         formRef={formRef}
                     />
                 </form>

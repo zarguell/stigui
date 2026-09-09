@@ -24,5 +24,7 @@ jq -s '[
         description: .description,
         version: .version,
         date: .status.["+@date"],
+        source: "DISA",
+        category: "DISA STIG",
     }
 ]' public/data/stigs/schema/*.json >public/data/stigs/manifest.json
