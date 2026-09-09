@@ -1,0 +1,1637 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_SingleStore_8_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2025-05-14"
+    },
+    "title": "CIS SingleStore 8 Benchmark",
+    "description": "All CIS Benchmarks™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Internal Only - General Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Internal Only - General Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completes successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Internal Only - General Target Technology Details This document, CIS SingleStore 8 Benchmark, provides prescriptive guidance for establishing a secure configuration posture for SingleStore version/s 8.x. This guide was tested against SingleStore 8.9.7 running on Ubuntu Linux but applies to other distributions as well. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write to us at feedback@cisecurity.org.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.0.0 Benchmark Date: 2025-05-14",
+      "+@id": "release-info"
+    },
+    "version": "1.0.0",
+    "Profile": [
+      {
+        "+@id": "L1_Public",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-D67FB520",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-70B6A88E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E9AE26B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F32456FF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6E3CB8A7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97402D78",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-96058650",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FAA5CAD3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-64A6E1B2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-48CF4C08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3CF53ED4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-82A7B1BD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3F20C30E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-394A5E7C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Classified",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-D67FB520",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-70B6A88E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E9AE26B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F32456FF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6E3CB8A7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97402D78",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-96058650",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FAA5CAD3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-64A6E1B2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-48CF4C08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3CF53ED4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-82A7B1BD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3F20C30E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-394A5E7C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Sensitive",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-D67FB520",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-70B6A88E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E9AE26B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F32456FF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6E3CB8A7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97402D78",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-96058650",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FAA5CAD3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-64A6E1B2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-48CF4C08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3CF53ED4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-82A7B1BD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3F20C30E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-394A5E7C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Public",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-809ACA00",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-34711A1E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-813B27BB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0384BB93",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-06C2C154",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8493174",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-34C1841E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E8357F65",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-08DB8670",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7E42E060",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5E7EB3FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0E474134",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1553241D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6ECC056E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28626BC4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CD669AEC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-421938B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7BF51429",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BBE3A0EF",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Classified",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-809ACA00",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-34711A1E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-813B27BB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0384BB93",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-06C2C154",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8493174",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-34C1841E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E8357F65",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-08DB8670",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7E42E060",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5E7EB3FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0E474134",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1553241D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6ECC056E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28626BC4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CD669AEC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-421938B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7BF51429",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BBE3A0EF",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Sensitive",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-809ACA00",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-34711A1E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-813B27BB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0384BB93",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-06C2C154",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8493174",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-34C1841E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E8357F65",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-08DB8670",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7E42E060",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5E7EB3FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0E474134",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1553241D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6ECC056E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28626BC4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CD669AEC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-421938B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7BF51429",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BBE3A0EF",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-D67FB520",
+        "title": "1 Installation and Patching",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D67FB520r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1",
+          "title": "Perform a binary signature check on the SingleStore packages",
+          "description": "<VulnDiscussion>The first step in deploying your cluster is to download and install the SingleStore Tools on one of the hosts in your cluster. This host will be designated as the main deployment host for deploying SingleStore across your other hosts and setting up your cluster.\nThese tools perform all major cluster operations including downloading the latest version of SingleStore onto your hosts, assigning and configuring nodes in your cluster, and other management operations.\n\nRationale:\nTo ensure the integrity of your SingleStore packages you should perform a binary signature check. This prevents the risk of a supply chain compromise and potentially running malware on your host.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "1.1"
+          },
+          "fixtext": {
+            "+content": "Download the SingleStore packages from the linked SingleStore reference page onto a device with access to the main deployment host. Then verify the authenticity of the packages again following the steps above.",
+            "+@fixref": "F-D67FB520r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D67FB520r01_fix"
+          },
+          "check": {
+            "+@system": "C-D67FB520_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "You must install cosign before running these steps. See the referenced link for installation instructions.\nYou can use these steps to verify the authenticity of singlestoredb-server, singlestoredb-toolbox, singlestoredb-studio, and singlestore-client files. This feature will be available in SingleStore Toolbox at a later date.\n1. Run the curl command to obtain the list of fields required to verify a file’s authenticity.\nInternal Only - General\ncurl https://release.memsql.com/production/index/singlestoredbserver/8.9.json\n{\n\"releaseID\": \"2ab21226-4bfe-4bad-9064-550672f13dfe\",\n\"version\": \"8.9.7\",\n\"commit\": \"106641a1dd57894096168ae88bc05e6b0c68f8f2\",\n\"packages\": {\n\"memsql-symbols-tar\": {\n\"Path\": \"production/tar/x86_64/memsql-symbols-8.9.7-\n106641a1dd.x86_64.tar.gz\",\n\"Sha256Sum\":\n\"a4d1fdfa1fd34829e0e3d42fa159ab53d9baffde97d2d8711ed3c68c14b22c68\"\n},\n\"singlestoredb-server-deb\": {\n\"Path\": \"production/debian/pool/singlestoredb-\nserver8.9.7_106641a1dd_amd64.deb\",\n\"Sha256Sum\":\n\"16843bf29a0b53bd3d79cab2ad3cb836ded8aea976c79e15487a9cb9e7845b5a\",\n\"Signature\": \"production/release/signatures/singlestoredb-\nserver8.9.7_106641a1dd_amd64.deb.sigstore.json\"\n},\n\"singlestoredb-server-rpm\": {\n\"Path\": \"production/rpm/x86_64/singlestoredb-server8.9.7-\n106641a1dd.x86_64.rpm\",\n\"Sha256Sum\":\n\"656251393fb4de07897749166cdc3c525dc3ab44b695dd76a63d6c944e60434f\",\n\"Signature\": \"production/release/signatures/singlestoredb-server8.9.7-\n106641a1dd.x86_64.rpm.sigstore.json\"\n},\n\"singlestoredb-server-tar\": {\n\"Path\": \"production/tar/x86_64/singlestoredb-server-8.9.7-\n106641a1dd.x86_64.tar.gz\",\n\"Sha256Sum\":\n\"a528b9dd9f22110011e5ca7597d87c7d45216366d0fe0cf1307225baf74cd627\",\n\"Signature\": \"production/release/signatures/singlestoredb-server-8.9.7-\n106641a1dd.x86_64.tar.gz.sigstore.json\"\n}\n},\n\"dockerImages\": {\n\"nodealma\": [\n\"singlestore/node:alma-8.9.7-106641a1dd\",\n\"memsql/node:alma-8.9.7-106641a1dd\",\n\"gcr.io/singlestore-public/memsql/node:alma-8.9.7-106641a1dd\",\n\"gcr.io/singlestore-public/mirror/docker.io/memsql/node:alma-8.9.7-\n106641a1dd\"\n]\n},\n\"attestation\": {\n\"oidcProvider\": \"https://oidc.eks.us-east-\n1.amazonaws.com/id/CCDCDBA1379A5596AB5B2E46DCA385BC\",\n\"subject\": \"https://kubernetes.io/namespaces/freya-\nproduction/serviceaccounts/job-worker\"\n}\n}\nInternal Only - General 2. Download the signature file from the release server. This file can be downloaded either via a browser or via curl.\n• Browser: Copy and paste the following line in the address bar on your browser and save the file, or click the \"Download signature\" button next to the package.\nhttps://release.memsql.com/production/release/signatures/singlestoredb-\nserver8.9.7_106641a1dd_amd64.deb.sigstore.json\n• Command line: Run the following curl command package:\ncurl -O\nhttps://release.memsql.com/production/release/signatures/singlestoredb-\nserver8.9.7_106641a1dd_amd64.deb.sigstore.json\n3. Once the signature file is downloaded, run the following command to verify the authenticity of the singlestoredb-server8.9.7_106641a1dd_amd64.deb file:\necho -n 16843bf29a0b53bd3d79cab2ad3cb836ded8aea976c79e15487a9cb9e7845b5a |\ncosign verify-blob --certificate-oidc-issuer https://oidc.eks.us-east-\n1.amazonaws.com/id/CCDCDBA1379A5596AB5B2E46DCA385BC \\\n--certificate-identity https://kubernetes.io/namespaces/freya-\nstaging/serviceaccounts/job-worker \\\n--bundle singlestoredb-server8.9.7_106641a1dd_amd64.deb.sigstore.json \\\n--new-bundle-format -\nVerified OK"
+          }
+        }
+      },
+      {
+        "+@id": "V-70B6A88E",
+        "title": "1 Installation and Patching",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-70B6A88Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2",
+          "title": "Ensure the appropriate SingleStore software version/patches are installed",
+          "description": "<VulnDiscussion>The SingleStore installation version, along with the patch level, should be the most recent that is compatible with the organization's operational needs. Regularly review the latest release notes, maintenance release changelogs (https://support.singlestore.com/hc/en-us/sections/360011370892- ANNOUNCEMENTS), and security bulletins (https://www.singlestore.com/security/bulletins/) to keep up with the latest security updates.\n\nRationale:\nUsing the most recent SingleStore software version along with all applicable patches, helps limit the possibilities for vulnerabilities in the software. The installation version and/or patches applied should be selected according to the needs of the organization.\nAt a minimum, the software version should be supported.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "1.2"
+          },
+          "fixtext": {
+            "+content": "Upgrade to the latest version of the SingleStore software:\n1. Take a backup of your database cluster 2. Upgrade to the latest version of Toolbox 3. Upgrade your database cluster",
+            "+@fixref": "F-70B6A88Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-70B6A88Er01_fix"
+          },
+          "check": {
+            "+@system": "C-70B6A88E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command from within the SingleStore shell to determine if the SingleStore software version complies with your organization’s operational needs:\nSELECT @@memsql_version;\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-E9AE26B3",
+        "title": "2 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E9AE26B3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1",
+          "title": "Configure secure root password",
+          "description": "<VulnDiscussion>When SingleStore is installed, the root user is created on each SingleStore node. You are required to set a password when running sdb-admin create-node, but this can be set to a blank password for testing purposes. As a best practice, you should set a secure password for the root user.\n\nRationale:\nFailure to set a password for the root user can enable unauthorized access to the SingleStore database.\nIt's highly recommended that password length and complexity also be in-place.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "2.1"
+          },
+          "fixtext": {
+            "+content": "Once your cluster is deployed, you can change the password for the root user with the sdb-admin change-root-password command. This command configures the root password for a single SingleStore node. To configure the password on all nodes in a SingleStore cluster, run:\nsdb-admin change-root-password --all --yes --password <secure_password>\nChanging the root password is an online operation for both aggregators and leaves and you do not have to perform any additional operations; however, you must ensure your nodes are running before calling the change-root-password command.\nWarning Setting the root password via a command-line argument is often not secure and SingleStore recommends safer, alternative methods to configure passwords.\nWhile it is convenient to set the root password using a command-line argument, it is often recommended against this practice for security reasons. The command-line argument accepts passwords entered as plain text, which makes them vulnerable to being discovered in the list of processes running on the system during application runtime. The plain text passwords could also be saved and accessed in the history file if your command-line interpreter maintains a history. For example, in Bash, the command history including password inputs is logged at ~/.bash_history. In addition, the root password supplied as a command-line argument is displayed on-screen and is visible to anyone who is reading the user’s screen.\nSome of the more secure, alternative methods to set SingleStore root password are as follows.\n• Set the root password using the MEMSQL_PASSWORD environment variable. This option is best suited for automated applications.\n• As of SingleStore Toolbox 1.6.4, Toolbox commands can solicit the root password interactively from users. The passwords entered in an interactive prompt are not displayed on-screen and are effectively secured from anyone reading the user’s screen. The interactive prompt is invoked if neither the -- password flag nor the MEMSQL_PASSWORD environment variable has been used to set the root password.\n• In zsh, start subshell, unset HISTFILE, exit\n• In bash, set +o history",
+            "+@fixref": "F-E9AE26B3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E9AE26B3r01_fix"
+          },
+          "check": {
+            "+@system": "C-E9AE26B3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Try to connect to the SingleStore server from the SingleStore client as the root user without specifying the password option ( -p/ – password).\nsinglestore -u root\nIf you are able to connect to the server without specifying the password option a password has not been configured for the root user. Follow the remediation steps to set a secure password.\nsinglestore>\nIf the root user has been configured with a password attempting to connect to the server without the password option will result in the following error message.\nAccess denied for user 'root'@'localhost' (using password: NO)\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-F32456FF",
+        "title": "2 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F32456FFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2",
+          "title": "Configure user authentication",
+          "description": "<VulnDiscussion>Configure user authentication according to your organization’s needs and technology.\nSingleStore supports multiple authentication methods.\n• Password\n• JWT\n• Kerberos\n• Connection links\n• PAM\n• PAM-based authentication using Active Directory\n• SAML 2.0 For specific instructions on each type of configuration, please refer to the referenced links to our documentation.\n\nRationale:\nFailure to authenticate clients, users, and servers can enable unauthorized access to the SingleStore database and can prevent tracing actions back to their sources.\nIt's highly recommended that password length and complexity also be in-place.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "2.2"
+          },
+          "fixtext": {
+            "+content": "If using local authentication, set a password policy according to your organization’s policies. SingleStore recommends following NIST’s guidelines on password and passphrase security and allows you to set password expiration, and complexity and restrict reuse.\nSET GLOBAL password_min_length = 12;\nSET GLOBAL password_min_numeric_chars = 1;\nSET GLOBAL password_min_special_chars = 1;\nSET GLOBAL password_min_lowercase_chars = 1;\nSET GLOBAL password_min_uppercase_chars = 1;\nSET GLOBAL password_max_consec_sequential_chars = 2;\nSET GLOBAL password_max_consec_repeat_chars = 3;\nSET GLOBAL password_expiration_seconds = 0;\nYou can set the user’s password using the SET PASSWORD command.\nSET PASSWORD FOR ‘<username>’@’localhost’ = PASSWORD(‘<secure_password>’);\nAlternatively, you can configure one of the available authentication options in the references section.\nOnce your users and roles have been created or during creation, enable the lockout policy for users and roles by setting FAILED_LOGIN_ATTEMPTS and PASSWORD_LOCK_TIME according to your organization’s policy.\nNotes:\n• SingleStore recommends setting this policy on roles and not on individual users.\nYou can then have users associated with the role to facilitate policy management;\n• If a user is associated with more than one role with different password lock times, the larger PASSWORD_LOCK_TIME value is applied.\n• If a user and a role the user is tied to have conflicting FAILED_LOGIN_ATTEMPTS settings, the lower value is applied.",
+            "+@fixref": "F-F32456FFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-F32456FFr01_fix"
+          },
+          "check": {
+            "+@system": "C-F32456FF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Try to connect to the SingleStore server from the SingleStore client as a given user without specifying the password option ( -p/ – password).\nsinglestore -u <username>\nIf you are able to connect to the server without specifying the password option a password has not been configured for the user. Follow the remediation steps to configure a secure password or use one of the available authentication options in the references section.\nsinglestore>\nIf the user has been configured with a password, attempting to connect to the server without the password option will result in the following error message.\nAccess denied for user '<username>'@'localhost' (using password: NO)\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-809ACA00",
+        "title": "2 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-809ACA00r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.3",
+          "title": "Generate TLS Certificates for SingleStore node authentication",
+          "description": "<VulnDiscussion>To enable SingleStore node authentication over TLS you must generate certificates and keys (or use existing ones, but sharing keys across different services is not recommended in general).\n\nRationale:\nEach SingleStore node which will be receiving TLS connections needs a server certificate and key - these can be the same or different for all servers. The server certificate(s) should be signed by a CA certificate.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "2.3"
+          },
+          "fixtext": {
+            "+content": "Follow the example steps from the referenced documentation for generating certificates and keys.",
+            "+@fixref": "F-809ACA00r01_fix"
+          },
+          "fix": {
+            "+@id": "F-809ACA00r01_fix"
+          },
+          "check": {
+            "+@system": "C-809ACA00_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To verify that the server is configured with a TLS certificate check the memsql.cnf file for ssl settings.\ngrep ssl memsql.cnf\nssl_ca = ./certs/ca-cert.pem\nssl_cert = ./certs/server-cert.pem\nssl_key = ./certs/server-key.pem\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-34711A1E",
+        "title": "2 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-34711A1Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.4",
+          "title": "Configure secure client and intra-cluster connections",
+          "description": "<VulnDiscussion>This section describes how to enable secure connections between clients and the SingleStore cluster, as well as between nodes within the SingleStore cluster. This requires configuring the ssl_cert, ssl_key, and ssl_ca settings on all SingleStore nodes.\n\nRationale:\nThis configuration secures intra-cluster communication by making each SingleStore node connect to other SingleStore nodes only over secure connections authenticated by a valid server certificate signed by the CA cert specified by the ssl_ca setting.\nNote that, depending on the client configuration, a client connecting to SingleStore may or may not use a secure connection even when SSL is enabled on the server. See the Server Configuration to Require Secure Client Connections section of the referenced documentation.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "2.4"
+          },
+          "fixtext": {
+            "+content": "1. Place server-cert.pem, server-key.pem, and ca-cert.pem files in the certs directory on each SingleStore node in the cluster. You can copy the files from the Generating SSL Certificates section of the linked documentation to all nodes.\nNote that the certs directory and its contents must be owned by the memsql user and group (e.g., chown -R memsql:memsql <directory> after copying the certificates to directory).\n2. Update the SingleStore configuration for all nodes to set the ssl_cert, ssl_key, and ssl_ca settings to the paths to the server-cert.pem, server-key.pem, and ca-cert.pem files, respectively. These can be absolute paths, or relative to the SingleStore installation directory. You can do this by using sdb-admin update-config. For example:\nsdb-admin update-config --all --key ssl_cert --value ./certs/server-cert.pem\nsdb-admin update-config --all --key ssl_key --value ./certs/server-key.pem\nsdb-admin update-config --all --key ssl_ca --value ./certs/ca-cert.pem\n3. Alternatively, edit the memsql.cnf file on all aggregators to add the certificate paths in the [server] section. For example:\nssl_ca = ./certs/ca-cert.pem\nssl_cert = ./certs/server-cert.pem\nssl_key = ./certs/server-key.pem\n4. Restart all nodes.\nsdb-admin restart-node --all\nIt is also recommended to add REQUIRE SSL, as described in the linked documentation, to the GRANT statement of all SingleStore accounts used to connect to aggregator and leaf nodes in ADD AGGREGATOR and ADD LEAF statements (by default, root).\nAdditionally, ensure node_replication_ssl_only is set to OFF to ensure intra- cluster and cross-cluster communication is done through SSL/TLS.",
+            "+@fixref": "F-34711A1Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-34711A1Er01_fix"
+          },
+          "check": {
+            "+@system": "C-34711A1E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check the memsql.cnf configuration file for ssl_cert, ssl_key, and ssl_ca settings on all SingleStore nodes.\ngrep ssl memsql.cnf\nIf the ssl_cert, ssl_key, and ssl_ca settings are missing from your memsql.cnf configuration files you do not have secure client and intra-cluster connections configured.\nHere is an example of the output when these settings are configured:\nssl_ca = ./certs/ca-cert.pem\nssl_cert = ./certs/server-cert.pem\nssl_key = ./certs/server-key.pem\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-813B27BB",
+        "title": "2 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-813B27BBr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.5",
+          "title": "Enable Wire Encryption and Kerberos on HDFS Pipelines",
+          "description": "<VulnDiscussion>If using SingleStoreDB with HDFS (Hadoop Distributed File System) pipelines, enable advanced HDFS pipeline features that leverage Kerberos authentication and wire encryption.\n\nRationale:\nWhen you use HDFS pipelines, you extract data from an HDFS file path, optionally transform the data, and load it to a SingleStore table.\nWith Load Data from HDFS Using a Pipeline, you can encrypt your pipeline’s connection to HDFS and you can authenticate your pipeline using Kerberos.\nSingleStore supports Data Transfer Protocol (DTP), which encrypts your pipeline’s connection to HDFS.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "2.5"
+          },
+          "fixtext": {
+            "+content": "Follow the example steps from the referenced documentation for configuring wire encryption.",
+            "+@fixref": "F-813B27BBr01_fix"
+          },
+          "fix": {
+            "+@id": "F-813B27BBr01_fix"
+          },
+          "check": {
+            "+@system": "C-813B27BB_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check your deployment for HDFS Pipelines.\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-6E3CB8A7",
+        "title": "3 Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6E3CB8A7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1",
+          "title": "Ensure least privilege for database accounts",
+          "description": "<VulnDiscussion>SingleStore provides a set of recommended roles to be used as a starting point for its RBAC functionality.\nThe Database Administrator role is responsible for creating and removing databases and has the ability to restore backups. It cannot execute backups, nor can it read any of the data within the database.\nThe Cluster Administrator role has a minimal set of privileges required to run a SingleStore cluster.\n\nRationale:\nEnsuring highly privileged Roles are granted only for database and cluster administrators, and roles are not scoped to \"admin\" databases will reduce attack surface and follows the least privilege principle.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "3.1"
+          },
+          "fixtext": {
+            "+content": "Review users with Database Administrator and Cluster Administrator access. Remove any users who should not have this level of access.",
+            "+@fixref": "F-6E3CB8A7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-6E3CB8A7r01_fix"
+          },
+          "check": {
+            "+@system": "C-6E3CB8A7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check for users with database roles \"dba_role\" and “cluster_role”, and within the “dba” and “cluster” groups, using the following commands.\nSHOW USERS FOR ROLE 'dba_role';\nSHOW USERS FOR GROUP 'dba';\nSHOW USERS FOR ROLE 'cluster_role';\nSHOW USERS FOR GROUP 'cluster';\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-97402D78",
+        "title": "3 Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-97402D78r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.2",
+          "title": "Ensure that role-based access control is enabled and configured appropriately",
+          "description": "<VulnDiscussion>Role-based access control (RBAC) is a method of regulating access to resources based on the roles of individual users within an enterprise. A user is granted one or more roles that determine the user’s access to database resources and operations. Outside of role assignments, the user has no access to the system. SingleStore can use RBAC to govern access to SingleStore systems. The Compliance Officer role must be configured to manage role and schema authorizations, and the Security Officer role must be configured to manage users and groups.\n\nRationale:\nWhen properly implemented, RBAC enables users to carry out a wide range of authorized tasks by dynamically regulating their actions according to flexible functions.\nThis allows an organization to control employees’ access to all database tables through RBAC.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "3.2"
+          },
+          "fixtext": {
+            "+content": "1. Establish roles for SingleStore.\n2. Assign the appropriate privileges to each role.\n3. Establish a group for each role.\n4. Assign the appropriate users to each group.\n5. Remove any individual privileges assigned to users that are now addressed by the roles.\n6. See the reference below for more information.",
+            "+@fixref": "F-97402D78r01_fix"
+          },
+          "fix": {
+            "+@id": "F-97402D78r01_fix"
+          },
+          "check": {
+            "+@system": "C-97402D78_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Connect to SingleStore with the Compliance Officer and Security Officer privileges and run the following commands to identify users' roles and privileges:\nSHOW USERS;\nSHOW USERS FOR ROLE 'role';\nSHOW USERS FOR GROUP 'group';\nSHOW GROUPS;\nSHOW GROUPS FOR ROLE 'role';\nSHOW GROUPS FOR USER 'user'@'%';\nSHOW ROLES;\nSHOW ROLES FOR USER 'user'@'%';\nSHOW ROLES FOR GROUP 'group';\nVerify that the appropriate role or roles have been configured for each user.\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-96058650",
+        "title": "3 Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-96058650r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.3",
+          "title": "Ensure that SingleStore is run using a non-privileged, dedicated service account",
+          "description": "<VulnDiscussion>The SingleStore service should not be run using a privileged account such as 'root' because this unnecessarily exposes the operating system to high risk.\n\nRationale:\nUsing a non-privileged, dedicated service account restricts the database from accessing the critical areas of the operating system which are not required by SingleStore. This will also mitigate the potential for unauthorized access via a compromised, privileged account on the operating system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "3.3"
+          },
+          "fixtext": {
+            "+content": "1. Create a dedicated user for performing SingleStore database activity.\n2. Set the Database data files, the keyfile, and the SSL private key files to only be readable by the SingleStore user.\n3. Set the log files to only be writable by the SingleStore user and readable only by root.",
+            "+@fixref": "F-96058650r01_fix"
+          },
+          "fix": {
+            "+@id": "F-96058650r01_fix"
+          },
+          "check": {
+            "+@system": "C-96058650_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to get listing of all SingleStore instances, the PID number, and the PID owner.\nps -ef | grep -E \"memsqld|singlestoredb\"\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-FAA5CAD3",
+        "title": "3 Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FAA5CAD3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.4",
+          "title": "Ensure that each role for each SingleStore database is needed and grants only the necessary privileges",
+          "description": "<VulnDiscussion>Reviewing all roles periodically and eliminating unneeded roles as well as unneeded privileges from necessary roles helps minimize the privileges that each user has.\n\nRationale:\nAlthough role-based access control (RBAC) has many advantages for regulating access to resources, over time some roles may no longer be needed, and some roles may grant privileges that are no longer needed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "3.4"
+          },
+          "fixtext": {
+            "+content": "To revoke a role use the DROP command.\nTo change privileges for a user-defined role use the GRANT command.\nDROP ROLE ‘role_name’;\nGRANT CLUSTER on *.* to ROLE 'cluster_role';\nInternal Only - General",
+            "+@fixref": "F-FAA5CAD3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-FAA5CAD3r01_fix"
+          },
+          "check": {
+            "+@system": "C-FAA5CAD3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following command to view all roles on the database on which the command runs, as well as the privileges granted by each role. Ensure that only necessary roles are listed and only the necessary privileges are listed for each role.\nSHOW ROLES;\nSHOW GRANTS FOR ROLE 'dba_role';\nSHOW GRANTS FOR ROLE 'cluster_role';\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-0384BB93",
+        "title": "3 Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0384BB93r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.5",
+          "title": "Review Superuser/Admin Roles",
+          "description": "<VulnDiscussion>Roles provide several advantages that make it easier to manage privileges in a database system. Security administrators can control access to their databases in a way that mirrors the structure of their organizations (they can create roles in the database that map directly to the job functions in their organizations). The assignment of privileges is simplified. Instead of granting the same set of privileges to each individual user in a particular job function, the administrator can grant this set of privileges to a role representing that job function and then grant that role to each user in that job function.\n\nRationale:\nReviewing the Superuser/Admin roles within a database helps minimize the possibility of privileged unwanted access.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "3.5"
+          },
+          "fixtext": {
+            "+content": "Remove a user from a group with a superuser role on the current database.\nREVOKE GROUP ‘group_name’ FROM user;",
+            "+@fixref": "F-0384BB93r01_fix"
+          },
+          "fix": {
+            "+@id": "F-0384BB93r01_fix"
+          },
+          "check": {
+            "+@system": "C-0384BB93_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Superuser roles provide the ability to assign any user any privilege on any database, which means that users with one of these roles can assign themselves any privilege on any database.\nSHOW USERS;\nSHOW ROLES;\nSHOW GRANTS FOR 'user'@’%’;\nSHOW GRANTS FOR ROLE 'role';\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-06C2C154",
+        "title": "3 Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-06C2C154r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.6",
+          "title": "Delete Unnecessary Default Users",
+          "description": "<VulnDiscussion>If upgrading from SingleStoreDB 5.8 or earlier to 6.0 and then gradually to 8.1, 8.5, or 8.7, drop unnecessary default users.\n\nRationale:\nIn MemSQL 6.0 and later, the only default user created on each SingleStore node during installation is the 'root'@'%' user, which should be configured as described in the previous section of this doc.\nIn MemSQL 5.8 and earlier, several default users are created on each SingleStore node during installation. SingleStore recommends deleting all of these default users except for the 'root'@'%' user.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "3.6"
+          },
+          "fixtext": {
+            "+content": "To delete these users, use the DROP USER command. On each SingleStore node (including both aggregators and leaves), log in as the root user or another user with sufficient permissions, and run:\nDROP USER ''@'localhost';\nDROP USER ''@'127.0.0.1';\nDROP USER 'root'@'localhost';\nDROP USER 'dashboard'@'%';\nDROP USER 'dashboard'@'localhost';",
+            "+@fixref": "F-06C2C154r01_fix"
+          },
+          "fix": {
+            "+@id": "F-06C2C154r01_fix"
+          },
+          "check": {
+            "+@system": "C-06C2C154_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check users configured in the database.\nSHOW USERS;\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-B8493174",
+        "title": "3 Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B8493174r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.7",
+          "title": "Synchronize Permissions Across Your Cluster",
+          "description": "<VulnDiscussion>Enable permissions synchronization across the cluster to keep non-root user accounts, roles, and groups in check automatically and to avoid potential divergent configurations that may create security gaps.\n\nRationale:\nYou can ease user account management by automatically keeping non-root user accounts, roles, and groups in sync across your cluster. This functionality is enabled through a new engine variable named sync_permissions. All user account operations performed on the master aggregator are propagated automatically to each child aggregator in the cluster. For example, if an administrator connects to the master aggregator, issues a GRANT to change a user’s password, and then tries to connect to a child aggregator as that user using the old password, the old password will be rejected.\nIf this command is issued in the child aggregator, it is first forwarded to the master aggregator, then propagated in the same way.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "3.7"
+          },
+          "fixtext": {
+            "+content": "Connect to the master aggregator as root and drop all non-root users, if present. Any groups or roles you have created will be removed after you enable sync_permissions.\nSet the sync_permissions variable:\nSET GLOBAL sync_permissions = ON;\nNotes:\n• This is a permanent change. Once sync_permissions is enabled, you cannot turn it off and you can no longer create any local non-root users, groups, or roles;\nonce you set this value, it will be set on all child aggregators in your cluster;\n• If there are or you expect the cluster to have > 100 users, setting this flag might result in a performance hit on the system (may not be recommended depending on your setup and context).\nInternal Only - General",
+            "+@fixref": "F-B8493174r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B8493174r01_fix"
+          },
+          "check": {
+            "+@system": "C-B8493174_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check the sync_permissions variable in the database.\nSELECT @@sync_permissions;\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-34C1841E",
+        "title": "3 Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-34C1841Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.8",
+          "title": "Implement Row-Level Security",
+          "description": "<VulnDiscussion>For sensitive workloads or data you would like to see restricted to certain users or roles based on a need-to-know basis, it is recommended to enable RLS (Row-Level Security). It’s possible to create tables with RLS enabled or alter existing tables to incorporate RLS.\nRLS works for read-only, you cannot restrict write access on a table using this configuration. RLS restricts the results of a query returned for each user based on their permissions but does not guarantee security against side-channel attacks. For example, a malicious user with access to an RLS view may connive another user with a different set of permissions on a table to extract information. A carefully designed query can trigger exceptions on non-permitted data, timing dependence, EXPLAIN command options, etc. For example, using a query with \"1/(total_value - 200000)\" on a Tenders table may result in a “divide by zero” error, thereby indicating there is at least one tender with this value.\n\nRationale:\nRow-Level Security (RLS) allows only those users who have the required permissions to access data by rows in a database. For example, RLS can be used to restrict each salesman to access only those rows in a table that are relevant to their sales details.\nRLS restricts users' access to data at the database level instead of the application level.\nThe database applies this access control to the table whenever a query runs, irrespective of which application needs the data.\nRow-level security in SingleStore is achieved by creating a view on a table with a special roles column. RLS works for read-only, you cannot restrict write access on a table using this configuration.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "3.8"
+          },
+          "fixtext": {
+            "+content": "For a given role, the ACCESS_ROLES field will be used to specify which roles have access to that row. The DATA_1 through DATA_3 columns are data stored in a table.\nIt is important that each role name in ACCESS_ROLES be surrounded by a preceding and trailing comma.\nIn addition to applying RLS using an access-control list field, you can also restrict access based on the data in the rows of a table. For example, grant access based on an owner id or restrict access to only rows for a specific year, 2022.\nTo create a new table with a roles column use an appropriate version of the following command:\nCREATE TABLE <table>(ACCESS_ROLES VARBINARY(<SIZE>) DEFAULT \",\", …);\nIt is important that the default value for ACCESS_ROLES be a comma: \",\" for row-level security to work correctly.\nThe <SIZE> of the ACCESS_ROLES column should be set to match the expected number of roles.",
+            "+@fixref": "F-34C1841Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-34C1841Er01_fix"
+          },
+          "check": {
+            "+@system": "C-34C1841E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "For a table to be used with row-level security, it must have a VARBINARY column where a row entry in the column contains a comma separated list of roles which have access to that row. There are special formatting constraints for the roles columns which are discussed below.\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-E8357F65",
+        "title": "4 Data Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E8357F65r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.1",
+          "title": "Ensure legacy TLS protocols are disabled",
+          "description": "<VulnDiscussion>Only modern TLS protocols should be enabled in SingleStore for all client connections and upstream connections. Removing legacy TLS and SSL protocols (SSL 3.0, TLS 1.0 and 1.1), and enabling emerging and stable TLS protocols (TLS 1.2, and TLS 1.3), ensures users are able to take advantage of strong security capabilities and protects them from insecure legacy protocols.\n\nRationale:\nSSL 3.0, TLS 1.0 and 1.1 have known vulnerabilities and should no longer be used.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "4.1"
+          },
+          "fixtext": {
+            "+content": "The following command updates the TLS version to TLSv1.2 on all nodes in the cluster.\nsdb-admin update-config --key tls_version --value TLSv1.2 --all\nThe following command restarts all nodes in the cluster for the new tls_version value to take effect.\nsdb-admin stop-node --all\nsdb-admin start-node --all\nConfirm the new tls_version.\nSELECT @@tls_version;\n+---------------+\n| @@tls_version |\n+---------------+\n| TLSv1.2 |\n+---------------+\n1 row in set (0.01 sec)\nAdditionally, review the list of SSL/TLS ciphers enumerated in ssl_cipher - note that you can further restrict the ciphersuites to be used by modifying this variable.\nInternal Only - General",
+            "+@fixref": "F-E8357F65r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E8357F65r01_fix"
+          },
+          "check": {
+            "+@system": "C-E8357F65_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To verify that the server disables legacy TLS protocols check the configured TLS versions.\nSELECT @@tls_version;\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-64A6E1B2",
+        "title": "4 Data Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-64A6E1B2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.2",
+          "title": "Ensure Encryption of Data in Transit TLS",
+          "description": "<VulnDiscussion>Use TLS to protect all incoming and outgoing connections between the SingleStore server and client connections. TLS ensures that SingleStore traffic is only readable by the intended client.\n\nRationale:\nThis prevents sniffing of cleartext traffic or performing a man-in-the-middle attack between the SingleStore server and connecting clients.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "4.2"
+          },
+          "fixtext": {
+            "+content": "To make the server restrict access to clients over TLS only, add the REQUIRE SSL clause to the user’s GRANT statement, for example:\nGRANT all ON *.* TO 'user'@'%' REQUIRE SSL;\nSet the default_user_require_ssl engine variable to set REQUIRE SSL for all newly created users.\nSET GLOBAL default_user_require_ssl = 1;",
+            "+@fixref": "F-64A6E1B2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-64A6E1B2r01_fix"
+          },
+          "check": {
+            "+@system": "C-64A6E1B2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check that the SingleStore users have the REQUIRE SSL clause added to their GRANT statement.\nSHOW USERS;\nSHOW GRANTS FOR ‘user’@’%’;\nExample output:\n+--------------------------------------------------------+\n| Grants for user@% |\n+--------------------------------------------------------+\n| GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' REQUIRE SSL |\n+--------------------------------------------------------+\nCheck the default_user_require_ssl engine variable. This engine variable controls the default value for REQUIRE SSL in the CREATE USER DDL statement.\nIf it is enabled and REQUIRE is not specified in the CREATE USER statement, SSL will be required by default.\nOnce it is turned on, it impacts only the newly created users. It will not enforce SSL for existing users.\nThis variable can sync to all aggregators.\nselect @@default_user_require_ssl;\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-08DB8670",
+        "title": "4 Data Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-08DB8670r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.3",
+          "title": "Ensure Federal Information Processing Standard (FIPS) is enabled",
+          "description": "<VulnDiscussion>The Federal Information Processing Standards (FIPS) developed by the National Institute of Standards and Technology (NIST) is a set of standards relating to the security of data and other information technology resources. These standards help protect the confidentiality, integrity and authenticity of information. The FIPS protocol establishes security standards to protect against unauthorized access to data via cyberattacks and other threats.\n\nRationale:\nFIPS sets specific requirements for cybersecurity such as computer encryption schemes, key generation methods, computer security, and interoperability among others.\nWhen ssl_fips_mode is set to ON, the FIPS mode is enabled, which is a security standard that sets a stringent limit on what security algorithms are allowed, and mandates the use of specific key lengths and hash functions. This keeps the node more resistant to external attacks when an SSL/TLS connection is in use.\nWhen ssl_fips_mode is set to ON, certain cryptographic algorithms and hash functions, such as MD5, are disabled because they do not satisfy the standards of FIPS mode.\nEnabling FIPS mode will restrict the TLS version to 1.2 for cluster communications.\nSingleStore uses the OpenSSL FIPS module.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "4.3"
+          },
+          "fixtext": {
+            "+content": "The ssl_fips_mode engine variable is only settable at startup. This variable can only be set while the node is offline and any changes made to this variable will take effect on the next start of the node.\nYou may enable and configure FIPS mode using the following two methods.\nMethod 1: Use SingleStore Tools (Preferred Method) 1. Update the FIPS mode configuration variables using the sdb-admin update- config command. Use the --all flag to update the variable settings on all nodes. For example, execute the following commands:\nsdb-admin update-config --all --key \"ssl-fips-mode\" --value \"ON\"\n2. Restart the nodes\nsdb-admin restart-node --all\n3. Ensure that SingleStore starts successfully. Once started, validate that your settings have been loaded successfully by executing the following SQL command in a SQL client.\nSELECT @@ssl_fips_mode;\n+-----------------+\n| @@ssl_fips_mode |\n+-----------------+\n| 1 |\n+-----------------+\nInternal Only - General Method 2: Modify the memsql.cnf File Note: Always ensure that each node in your cluster has been stopped before making FIPS mode configuration changes in the memsql.cnf file.\n1. Open a new console window with access to the node you want to configure.\n2. Stop any SingleStore processes on the node.\nsdb-admin stop-node --all\n3. After a node has been stopped, navigate to the memsql.cnf path for the node and open the file with a text editor. Add the FIPS mode variable.\nssl_fips_mode = ON\n4. When your configuration is complete, save the memsql.cnf file and exit the text editor.\nWarning: Repeat the configuration update process for each node in your cluster before continuing.\n5. Start the node.\nsdb-admin start-node --all\n6. Ensure that SingleStore starts successfully. Once started, validate that your settings have been loaded successfully by executing the following SQL command in a SQL client.\nSELECT @@ssl_fips_mode;\n+-----------------+\n| @@ssl_fips_mode |\n+-----------------+\n| 1 |\n+-----------------+",
+            "+@fixref": "F-08DB8670r01_fix"
+          },
+          "fix": {
+            "+@id": "F-08DB8670r01_fix"
+          },
+          "check": {
+            "+@system": "C-08DB8670_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check the ssl_fips_mode engine variable. This engine variable is used to enable SSL/TLS FIPS mode on each node.\nSELECT @@ssl_fips_mode;\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-7E42E060",
+        "title": "4 Data Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7E42E060r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.4",
+          "title": "Ensure Encryption of Data at Rest",
+          "description": "<VulnDiscussion>Encryption of data at rest must be enabled to ensure compliance with security and privacy standards including HIPAA, PCI-DSS, and FERPA.\nEncryption at rest, when used in conjunction with transport encryption and good security policies that protect relevant accounts, passwords, and encryption keys.\n\nRationale:\nUnauthorized users, such as intruders who are attempting security attacks, cannot read the data from storage and back up media unless they have the master encryption key to decrypt it.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "4.4"
+          },
+          "fixtext": {
+            "+content": "SingleStore is compatible with at-rest disk-based encryption via LUKS (Linux Unified Key Setup). Configure your block device to be encrypted with LUKS and then install SingleStore on the encrypted volume. Specific steps for different versions of Linux are available in our documentation.\nExample Setup Process\n• Prepare block device\n• Encrypt block device with LUKS\n• Create filesystem (i.e., mkfs.ext4 /dev/mapper/myencryptedvolume)\n• Mount filesystem (i.e., mount /dev/mapper/myencryptedvolume /data)\n• Install SingleStore normally to encrypted location using the SingleStore management tools SingleStore also has partner integrations available (IBM Guardium Data Encryption and CipherTrust Transparent Encryption) should you prefer an alternative to LUKS encryption.\nInternal Only - General",
+            "+@fixref": "F-7E42E060r01_fix"
+          },
+          "fix": {
+            "+@id": "F-7E42E060r01_fix"
+          },
+          "check": {
+            "+@system": "C-7E42E060_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "You can use the dmsetup status command to check for LUKS-encrypted partitions.\nsudo dmsetup status\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-5E7EB3FE",
+        "title": "4 Data Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5E7EB3FEr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.5",
+          "title": "Configure Encryption Mode",
+          "description": "<VulnDiscussion>You can use the aes_default_encryption_mode variable to control the supported key size. It takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128 and 256. Permitted mode values are ECB, GCM, and CBC.\n\nRationale:\nConfigure the encryption mode required by your organization's security policy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "4.5"
+          },
+          "fixtext": {
+            "+content": "Set the variable to the mode you require.\nsdb-admin update-config --all --key \"aes_default_encryption_mode\" --value\n\"aes-128-ecb\"",
+            "+@fixref": "F-5E7EB3FEr01_fix"
+          },
+          "fix": {
+            "+@id": "F-5E7EB3FEr01_fix"
+          },
+          "check": {
+            "+@system": "C-5E7EB3FE_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check the aes_default_encryption_mode variable.\nSELECT @@aes_default_encryption_mode;\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-48CF4C08",
+        "title": "5 Audit Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-48CF4C08r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1",
+          "title": "Ensure that system activity is audited",
+          "description": "<VulnDiscussion>SingleStore logs all database activities and writes the generated logs to an external location. SingleStore provides multiple logging levels, and each level provides limited or exhaustive information about user actions and database responses.\n\nRationale:\nThis feature is useful for performing common information security tasks such as auditing, investigating suspicious activity, and validating access control policies.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "5.1"
+          },
+          "fixtext": {
+            "+content": "To enable audit logging, set auditlog_level to a value other than OFF. For example, the ALL-RESULTS-INCLUDING-PARSE-FAILS level is inclusive of ALL-RESULTS but also logs invalid statements that fail to parse. See the Audit Logging Levels documentation referenced below for more information about logging levels.\nConsider enabling synchronous audit log record persistence by enabling auditlog_disk_sync if required by your organization’s security needs. By default, this value is set to OFF and audit log disk syncs are delayed.\nYou may enable and configure audit logging using the following two methods. With each method, you can set the variables that are described in the previous section. Note that you can only set these variables to take effect when a node starts, as opposed to taking effect while a node is running.\nToolbox preserves the node's base directory (or “basedir”) during an upgrade. By default, Toolbox sets the auditlogsdir relative to the node’s base directory, and the value for auditlogsdir to auditlogs. For the tarball-based deployments, a node’s default base directory is ~/memsql/nodes/<hash>, however, the base directory can be anywhere on the filesystem.\nWhen changing the value of auditlogsdir, SingleStore suggests using either:\n• A relative path\n• An absolute path outside of the memsql directory (i.e., outside of /var/lib/memsql).\nFor example, /var/log/memsql or /var/log/singlestore are suitable provided that the memsql:memsql permissions are also set on this directory.\nSet auditlogsdir to a trusted and secured local or network directory where audit logs will be written.\nNotes:\n• User credentials and PII information contained in all valid statements and queries is obfuscated in audit logs. When invalid statements cannot be parsed, the literal query text is included in the log entry. This text may contain sensitive information;\n• Always ensure that the log file location is secured appropriately and that extra precaution is taken when processing the logs (particularly when selecting logging levels that include INCLUDING-PARSE-FAILS);\nInternal Only - General Method 1: Use SingleStore Tools (Preferred Method) 1. Update the audit logging configuration variables using the sdb-admin update- config command. Use the --all flag to update the variable settings on all nodes. For example, execute the following commands:\nsdb-admin update-config --all --key \"auditlog_level\" --value \"ADMIN-ONLY\"\nsdb-admin update-config --all --key \"auditlog_disk_sync\" --value \"OFF\"\nsdb-admin update-config --all --key \"auditlog_rotation_size\" --value\n\"134217728\"\nsdb-admin update-config --all --key \"auditlog_rotation_time\" --value \"3600\"\nsdb-admin update-config --all --key \"auditlogsdir\" --value \"auditlogs\"\n2. Restart the nodes\nsdb-admin restart-node --all\n3. Ensure that SingleStore starts successfully. Once started, validate that your settings have been loaded successfully by executing the following SQL command in a SQL client.\nSHOW GLOBAL VARIABLES LIKE 'audit%';\n+---------------------------+------------------------+\n| Variable_name | Value |\n+---------------------------+------------------------+\n| auditlog_disk_sync | OFF |\n| auditlog_level | ADMIN-ONLY |\n| auditlog_retention_period | 0 |\n| auditlog_rotation_size | 134217728 |\n| auditlog_rotation_time | 3600 |\n| auditlogsdir | auditlogs |\n+---------------------------+------------------------+\nInternal Only - General Method 2: Modify the memsql.cnf File Note: Always ensure that each node in your cluster has been stopped before making audit logging configuration changes in the memsql.cnf file.\n1. Open a new console window with access to the node you want to configure.\n2. Stop any SingleStore processes on the node.\nsdb-admin stop-node --all\n3. After a node has been stopped, navigate to the memsql.cnf path for the node and open the file with a text editor. Add the required audit logging variables.\nFor example:\nauditlog_level = ADMIN-ONLY\nauditlog_disk_sync = OFF\nauditlog_rotation_size = 134217728\nauditlog_rotation_time = 3600\nauditlogsdir = auditlogs\n4. When your configuration is complete, save the memsql.cnf file and exit the text editor.\nWarning: Repeat the configuration update process for each node in your cluster before continuing.\n5. Start the node.\nsdb-admin start-node --all\n6. Ensure that SingleStore starts successfully. Once started, validate that your settings have been loaded successfully by executing the following SQL command in a SQL client.\nSHOW GLOBAL VARIABLES LIKE 'audit%';\n+---------------------------+------------------------+\n| Variable_name | Value |\n+---------------------------+------------------------+\n| auditlog_disk_sync | OFF |\n| auditlog_level | ADMIN-ONLY |\n| auditlog_retention_period | 0 |\n| auditlog_rotation_size | 134217728 |\n| auditlog_rotation_time | 3600 |\n| auditlogsdir | auditlogs |\n+---------------------------+------------------------+\nInternal Only - General",
+            "+@fixref": "F-48CF4C08r01_fix"
+          },
+          "fix": {
+            "+@id": "F-48CF4C08r01_fix"
+          },
+          "check": {
+            "+@system": "C-48CF4C08_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check if the auditlog_level has been set in the memsql.cnf file.\ngrep auditlog_level memsql.cnf\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-0E474134",
+        "title": "5 Audit Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0E474134r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2",
+          "title": "Ensure that audit filters are configured properly",
+          "description": "<VulnDiscussion>SingleStore supports auditing of various operations.\nThere are 11 logging levels that can be specified by the auditlog_level variable in a node’s memsql.cnf file. These levels can be organized into three categories, each with increasing verbosity:\n• Logging is disabled:\no OFF\n• Log only valid statements and queries:\no LOGINS-ONLY\no ADMIN-ONLY\no WRITES-ONLY\no ALL-QUERIES\no ALL-QUERIES-PLAINTEXT\no ALL-RESULTS\n• Log valid and invalid statements and queries:\no ADMIN-ONLY-INCLUDING-PARSE-FAILS\no WRITES-ONLY-INCLUDING-PARSE-FAILS\no ALL-QUERIES-INCLUDING-PARSE-FAILS\no ALL-QUERIES-PLAINTEXT-INCLUDING-PARSE-FAILS\no ALL-RESULTS-INCLUDING-PARSE-FAILS\n\nRationale:\nAll operations carried out on the database can be configured for logging. This helps in backtracking and tracing any incident that occurs.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "5.2"
+          },
+          "fixtext": {
+            "+content": "Set the audit logging level based on the organization’s requirements.",
+            "+@fixref": "F-0E474134r01_fix"
+          },
+          "fix": {
+            "+@id": "F-0E474134r01_fix"
+          },
+          "check": {
+            "+@system": "C-0E474134_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To verify that audit filters are configured on MongoDB as per the organization’s requirements, run the following command:\nSHOW GLOBAL VARIABLES LIKE 'audit%';\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-1553241D",
+        "title": "5 Audit Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1553241Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.3",
+          "title": "Ensure that log entries are preserved",
+          "description": "<VulnDiscussion>SingleStore allows a log retention period to be configured. Configuring a retention period will enable purging of audit log records.\n\nRationale:\nWhile purging old audit log records may conserve disk space, it will destroy records that may be needed for forensic analysis.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "5.3"
+          },
+          "fixtext": {
+            "+content": "Setting this to 0 so that log files will be kept on the server indefinitely.",
+            "+@fixref": "F-1553241Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-1553241Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-1553241D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check the auditlog_retention_period setting.\nSHOW GLOBAL VARIABLES LIKE 'audit%';\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-3CF53ED4",
+        "title": "6 Operating System Hardening",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3CF53ED4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.1",
+          "title": "Ensure that SingleStore uses a non-default port",
+          "description": "<VulnDiscussion>Changing the default port used by SingleStore makes it harder for attackers to find the database and target it.\n\nRationale:\nStandard ports are used in automated attacks and by attackers to verify which applications are running on a server.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "6.1"
+          },
+          "fixtext": {
+            "+content": "Change the port for SingleStore server to a number other than 3306 and restart all nodes.\nsdb-admin update-config --all --key \"port\" --value \"3307\"\nsdb-admin restart-node --all",
+            "+@fixref": "F-3CF53ED4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-3CF53ED4r01_fix"
+          },
+          "check": {
+            "+@system": "C-3CF53ED4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To verify the port number used by MongoDB, execute the following command and ensure that the port number is not 3306:\ngrep port data/master/memsql.cnf\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-6ECC056E",
+        "title": "6 Operating System Hardening",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6ECC056Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "6.2",
+          "title": "Ensure that operating system resource limits are set for SingleStore",
+          "description": "<VulnDiscussion>Most Linux operating systems provide ways to control the usage of system resources such as threads, files and network at an individual user or process level.\n\nRationale:\nThe per-user limitations for resources are called ulimits, and they prevent single users from consuming too much system resources.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "6.2"
+          },
+          "fixtext": {
+            "+content": "For optimal performance, SingleStore recommends setting ulimits to higher values than the default Linux settings. The ulimit settings can be configured in the /etc/security/limits.conf file, in the /etc/security/limits.d file, or directly via shell commands.\nA SingleStore cluster uses a substantial number of client and server connections between aggregators and leaf nodes to run queries and cluster operations. SingleStore recommends setting the Linux file descriptor and maximum process limits to the values listed below to account for these connections. Failing to increase this limit can significantly degrade performance and even cause connection limit errors. The ulimit settings can be configured in the /etc/security/limits.conf file, or directly via shell commands.\nPermanently increase the open files limit and the max user processes limit for the memsql user by editing the /etc/security/limits.conf file as the root user and adding the following lines:\nmemsql soft NOFILE 1024000\nmemsql hard NOFILE 1024000\nmemsql soft nproc 128000\nmemsql hard nproc 128000\nNote: Each node must be restarted for the changed ulimit settings to take effect.\nThe file-max setting configures the maximum number of file handles (file descriptor limit) for the entire system. On the contrary, ulimit settings are only enforced on a process level. Hence, the file-max value must be higher than the NOFILE setting.\nIncrease the maximum number of file handles configured for the entire system in /proc/sys/fs/file-max. To make the change permanent, append or modify the fs.file-max line in the /etc/sysctl.conf file.",
+            "+@fixref": "F-6ECC056Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-6ECC056Er01_fix"
+          },
+          "check": {
+            "+@system": "C-6ECC056E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To verify the resource limits set for MongoDB, run the following commands.\nExtract the process ID for SingleStore:\nps -ef | grep memsqld\nView the limits associated with the ID.\ncat /proc/50/limits\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-28626BC4",
+        "title": "6 Operating System Hardening",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-28626BC4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "6.3",
+          "title": "Configure Host-Based Security",
+          "description": "<VulnDiscussion>Restrict network access to where SingleStoreDB will be/is installed via firewall or network policies (e.g. if using Amazon EC2 for running the cluster, security groups can be configured to allow inbound network access only from allowed IP address ranges).\nYou can also set the bind-address variable to restrict the range of IP addresses which are allowed to connect to SingleStore. For example, if you set it to 127.0.0.1, you will only be able to connect to SingleStore locally. See bind_address in the referenced documentation for Non-Sync Variables List.\n\nRationale:\nRestricting network access to SingleStore reduces the attack surface.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "6.3"
+          },
+          "fixtext": {
+            "+content": "Set the bind-address variable to restrict connections to only a specific IP address.\nsdb-admin update-config --all --key \"bind_address\" --value \"127.0.0.1\"\nNote:\n• When allow_ipv6 is set to true, this variable can be set to an IPv6 address.\nChanging this setting will require restarting all nodes.\nsdb-admin restart-node --all",
+            "+@fixref": "F-28626BC4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-28626BC4r01_fix"
+          },
+          "check": {
+            "+@system": "C-28626BC4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check the bind-address variable.\nSELECT @@bind_address;\nIf the address is 0.0.0.0(IPv4) or:: (IPv6), SingleStore accepts connections on all network interfaces; otherwise, it only accepts connections for the given IP address.\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-CD669AEC",
+        "title": "6 Operating System Hardening",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CD669AECr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "6.4",
+          "title": "Disable the Data API",
+          "description": "<VulnDiscussion>SingleStore provides the Data API to execute SQL statements against your database over an HTTP connection. The Data API can be used to integrate SingleStore with serverless architecture, develop custom applications, and build seamless integrations with applications.\n\nRationale:\nUnless necessary, disable Data API endpoints by setting the http_api variable to OFF on each aggregator node.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "6.4"
+          },
+          "fixtext": {
+            "+content": "Set the data api variable to OFF on each aggregator and restart all nodes.\nsdb-admin update-config --all --key \"http_api\" --value \"OFF\"\nsdb-admin restart-node --all",
+            "+@fixref": "F-CD669AECr01_fix"
+          },
+          "fix": {
+            "+@id": "F-CD669AECr01_fix"
+          },
+          "check": {
+            "+@system": "C-CD669AEC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check if the data api is enabled:\ngrep http_api memsql.cnf\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-421938B3",
+        "title": "6 Operating System Hardening",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-421938B3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "6.5",
+          "title": "Disable Code Engine",
+          "description": "<VulnDiscussion>The Code Engine feature in SingleStore supports creating functions (UDFs and TVFs) using code compiled to WebAssembly (Wasm). The Code Engine uses the wasmtime runtime to compile and run WebAssembly code.\n\nRationale:\nUnless necessary, disable Code Engine by setting enable_wasm to OFF.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "6.5"
+          },
+          "fixtext": {
+            "+content": "Set enable_wasm to OFF.\nsdb-admin update-config --all --key \"enable_wasm\" --value \"OFF\"",
+            "+@fixref": "F-421938B3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-421938B3r01_fix"
+          },
+          "check": {
+            "+@system": "C-421938B3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check if the Code Engine is enabled:\ngrep enable_wasm memsql.cnf\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-7BF51429",
+        "title": "6 Operating System Hardening",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7BF51429r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "6.6",
+          "title": "Configure Dedicated Admin Connections",
+          "description": "<VulnDiscussion>To log in to a dedicated admin connection, you should first log in to the machine where the master aggregator is running. If a master aggregator is not running, then log into a child aggregator.\n\nRationale:\nThis uses a Unix domain socket to designate that this is a dedicated admin connection.\nThis is only available in the file system and cannot be used over a network, which is why you must log on to the aggregator before connecting using this method.\nOnce you log in, if commands do not run, you can kill connections and queries to free resources to allow others to connect to the system.\nA similar approach will also allow you to log on to a leaf node directly, if necessary. The connection is node-local.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "6.6"
+          },
+          "fixtext": {
+            "+content": "Specifies the number of connections reserved for admin users (users granted the SUPER permission). This is the number of connections over and above the max_connections.\nIts purpose is to allow admin users to login even if max_connections number of non- admin users are already logged in. For example, if max_connections is set to 100 and max_dedicated_admin_connections is set to 5, then even if 100 non-admin user connections are active at any time, 5 admin users can still log in. This is to prevent administrative users from being locked out of the system during heavy traffic.\nsdb-admin update-config --all --key \"max_dedicated_admin_connections\" --value\n\"5\"",
+            "+@fixref": "F-7BF51429r01_fix"
+          },
+          "fix": {
+            "+@id": "F-7BF51429r01_fix"
+          },
+          "check": {
+            "+@system": "C-7BF51429_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check this variables setting:\nSelect @@max_dedicated_admin_connections;\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-BBE3A0EF",
+        "title": "6 Operating System Hardening",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BBE3A0EFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "6.7",
+          "title": "Configure hiding license-related variables",
+          "description": "<VulnDiscussion>Hides license-related variables from SHOW commands. This variable can sync to all nodes, including aggregator and leaf nodes.\n\nRationale:\nUse this variable if you would like to hide license-related variables from SHOW commands.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "6.7"
+          },
+          "fixtext": {
+            "+content": "Configure this variable to your requirements.\nsdb-admin update-config --all --key \"license_visibility\" --value \"1\"",
+            "+@fixref": "F-BBE3A0EFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-BBE3A0EFr01_fix"
+          },
+          "check": {
+            "+@system": "C-BBE3A0EF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check this variables setting:\nSELECT @@license_visibility;\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-82A7B1BD",
+        "title": "7 File Permissions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-82A7B1BDr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "7.1",
+          "title": "Ensure appropriate key file permissions are set",
+          "description": "<VulnDiscussion>In the Shared Cluster, the certificate or keyfile is utilized for authentication.\nImplementing proper file permissions on the certificate or keyfile will prevent unauthorized access.\n\nRationale:\nProtecting the certificate and keyfile strengthens authentication in the sharded cluster and prevents unauthorized access to the SingleStore database.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "7.1"
+          },
+          "fixtext": {
+            "+content": "Set the certificate and keyfile ownership to memsql.\nsudo chown memsql:memsql certificate\nsudo chown memsql:memsql keyfile\nRemove other permissions from the keyfile.\nchmod 600 keyfile",
+            "+@fixref": "F-82A7B1BDr01_fix"
+          },
+          "fix": {
+            "+@id": "F-82A7B1BDr01_fix"
+          },
+          "check": {
+            "+@system": "C-82A7B1BD_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Find the location of the certificate and keyfile.\ngrep ssl memsql.cnf\nCheck the permissions of the files.\nls -l certificate_and_keyfile_locations\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-3F20C30E",
+        "title": "7 File Permissions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3F20C30Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "7.2",
+          "title": "Ensure appropriate data dir permissions are set.",
+          "description": "<VulnDiscussion>The SingleStore data directory needs to be protected with the appropriate file permissions and ownership. This directory contains snapshots, logs, and columnstore segments. You can only set the datadir variable while the node is offline. The changes to this variable will take effect on the next start of the node.\n\nRationale:\nThis will restrict unauthorized users from accessing the SingleStore data directory.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "7.2"
+          },
+          "fixtext": {
+            "+content": "Set ownership of the data directory to memsql and remove other permissions using the following commands.\nchmod 750 datadir\nchown memsql:memsql datadir",
+            "+@fixref": "F-3F20C30Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-3F20C30Er01_fix"
+          },
+          "check": {
+            "+@system": "C-3F20C30E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To verify that the permissions for the SingleStore data directory are configured securely, run the following commands.\nIdentify the nodes.\nsdb-admin list-nodes\nDescribe a node based on a memsql ID.\nsdb-admin describe-node --memsql-id 19F394927E | grep datadir\nList the ownership and permissions of the datadir.\nls -al datadir\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      },
+      {
+        "+@id": "V-394A5E7C",
+        "title": "7 File Permissions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-394A5E7Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "7.3",
+          "title": "Ensure appropriate FILE READ and FILE WRITE privileges for users.",
+          "description": "<VulnDiscussion>The secure_file_priv global variable controls where users with the FILE READ and FILE WRITE privilege can read or save files. It should be set on all nodes to a directory that is not used by SingleStore or other software.\n\nRationale:\nIf not set, a user with the FILE READ or FILE WRITE privilege can tamper with the system by reading or creating files in sensitive locations. For information on how to set engine variables, see the engine variables overview.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS SingleStore 8 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS SingleStore 8 Benchmark",
+            "dc:identifier": "7.3"
+          },
+          "fixtext": {
+            "+content": "Specifies the directory to which any import or export operations should be limited.\nsdb-admin update-config --all --key \"secure_file_priv\" --value\n\"/home/singlestore\"\nChanging this setting will require restarting all nodes.\nsdb-admin restart-node --all",
+            "+@fixref": "F-394A5E7Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-394A5E7Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-394A5E7C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_SingleStore_8_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check the secure_file_priv engine variable.\nSELECT @@secure_file_priv;\nOptionally, install the latest version of SingleStore Tools and generate the security recommendations report to review the security configuration.\nsdb-report collect-and-check --security-recommendations"
+          }
+        }
+      }
+    ]
+  }
+}

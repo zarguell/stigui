@@ -1,0 +1,1736 @@
+<?xml version="1.0" encoding="utf-8"?><Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd" id="CIS_Oracle_SaaS_Cloud_Applications_Benchmark" xml:lang="en" xmlns="http://checklists.nist.gov/xccdf/1.1">
+  <status date="2025-11-14">accepted</status>
+  <title>CIS Oracle SaaS Cloud Applications Benchmark</title>
+  <description>All CIS Benchmarks ™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks ™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completes successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks ™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks ™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Target Technology Details This document, CIS (Center for Internet Security) Oracle SaaS Foundations benchmark, provides prescriptive guidance for establishing a secure baseline configuration for Oracle SaaS environments. The scope of this benchmark is to establish a base level of security for organizations utilizing the included Oracle SaaS applications. The benchmark is not an exhaustive list of all possible security configurations and architectures. The benchmark should be taken as a starting point and tailored as appropriate to meet site-specific needs. This benchmark covers Oracle Fusion and EPM SaaS Applications where explicitly highlighted, and will be extended to other Oracle SaaS applications in future releases. Additionally, Oracle SaaS applications are associated with an Oracle Cloud Infrastructure tenancy. Therefore, organizations should also leverage the Oracle Cloud Infrastructure Foundations Benchmark to establish a secure baseline configuration for their OCI tenancy running Oracle SaaS.</description>
+  <notice id="terms-of-use" xml:lang="en"/>
+  <front-matter xml:lang="en"/>
+  <rear-matter xml:lang="en"/>
+  <reference href="https://www.cisecurity.org/cis-benchmarks">
+    <dc:publisher>Center for Internet Security</dc:publisher>
+    <dc:source>CIS Benchmarks</dc:source>
+  </reference>
+  <plain-text id="release-info">Release: 1.0.0 Benchmark Date: 2025-11-14</plain-text>
+  <version>1.0.0</version>
+  <Profile id="L1_Public">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-BAB36EDB" selected="true"/>
+    <select idref="V-37150BEC" selected="true"/>
+    <select idref="V-5D0A3069" selected="true"/>
+    <select idref="V-115052EC" selected="true"/>
+    <select idref="V-337B88FC" selected="true"/>
+    <select idref="V-DE22B403" selected="true"/>
+    <select idref="V-DF32A17C" selected="true"/>
+    <select idref="V-7610915E" selected="true"/>
+    <select idref="V-D738C5FF" selected="true"/>
+    <select idref="V-BEB9EC5D" selected="true"/>
+    <select idref="V-DAC5A23C" selected="true"/>
+    <select idref="V-5695F05F" selected="true"/>
+    <select idref="V-53B2B362" selected="true"/>
+    <select idref="V-E1F6AE1A" selected="true"/>
+    <select idref="V-A99683A2" selected="true"/>
+    <select idref="V-127562B9" selected="true"/>
+    <select idref="V-D2E8B15C" selected="true"/>
+    <select idref="V-49BEA116" selected="true"/>
+    <select idref="V-11D33F7C" selected="true"/>
+    <select idref="V-D4645F42" selected="true"/>
+    <select idref="V-D5A79E97" selected="true"/>
+    <select idref="V-EBB0E709" selected="true"/>
+    <select idref="V-AD5F905C" selected="true"/>
+    <select idref="V-6AEC7736" selected="true"/>
+    <select idref="V-8651E562" selected="true"/>
+    <select idref="V-269A581B" selected="true"/>
+    <select idref="V-7AF3A55E" selected="true"/>
+    <select idref="V-1C7F225F" selected="true"/>
+    <select idref="V-D49C560B" selected="true"/>
+    <select idref="V-F7DB209B" selected="true"/>
+    <select idref="V-25652646" selected="true"/>
+  </Profile>
+  <Profile id="L1_Classified">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-BAB36EDB" selected="true"/>
+    <select idref="V-37150BEC" selected="true"/>
+    <select idref="V-5D0A3069" selected="true"/>
+    <select idref="V-115052EC" selected="true"/>
+    <select idref="V-337B88FC" selected="true"/>
+    <select idref="V-DE22B403" selected="true"/>
+    <select idref="V-DF32A17C" selected="true"/>
+    <select idref="V-7610915E" selected="true"/>
+    <select idref="V-D738C5FF" selected="true"/>
+    <select idref="V-BEB9EC5D" selected="true"/>
+    <select idref="V-DAC5A23C" selected="true"/>
+    <select idref="V-5695F05F" selected="true"/>
+    <select idref="V-53B2B362" selected="true"/>
+    <select idref="V-E1F6AE1A" selected="true"/>
+    <select idref="V-A99683A2" selected="true"/>
+    <select idref="V-127562B9" selected="true"/>
+    <select idref="V-D2E8B15C" selected="true"/>
+    <select idref="V-49BEA116" selected="true"/>
+    <select idref="V-11D33F7C" selected="true"/>
+    <select idref="V-D4645F42" selected="true"/>
+    <select idref="V-D5A79E97" selected="true"/>
+    <select idref="V-EBB0E709" selected="true"/>
+    <select idref="V-AD5F905C" selected="true"/>
+    <select idref="V-6AEC7736" selected="true"/>
+    <select idref="V-8651E562" selected="true"/>
+    <select idref="V-269A581B" selected="true"/>
+    <select idref="V-7AF3A55E" selected="true"/>
+    <select idref="V-1C7F225F" selected="true"/>
+    <select idref="V-D49C560B" selected="true"/>
+    <select idref="V-F7DB209B" selected="true"/>
+    <select idref="V-25652646" selected="true"/>
+  </Profile>
+  <Profile id="L1_Sensitive">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-BAB36EDB" selected="true"/>
+    <select idref="V-37150BEC" selected="true"/>
+    <select idref="V-5D0A3069" selected="true"/>
+    <select idref="V-115052EC" selected="true"/>
+    <select idref="V-337B88FC" selected="true"/>
+    <select idref="V-DE22B403" selected="true"/>
+    <select idref="V-DF32A17C" selected="true"/>
+    <select idref="V-7610915E" selected="true"/>
+    <select idref="V-D738C5FF" selected="true"/>
+    <select idref="V-BEB9EC5D" selected="true"/>
+    <select idref="V-DAC5A23C" selected="true"/>
+    <select idref="V-5695F05F" selected="true"/>
+    <select idref="V-53B2B362" selected="true"/>
+    <select idref="V-E1F6AE1A" selected="true"/>
+    <select idref="V-A99683A2" selected="true"/>
+    <select idref="V-127562B9" selected="true"/>
+    <select idref="V-D2E8B15C" selected="true"/>
+    <select idref="V-49BEA116" selected="true"/>
+    <select idref="V-11D33F7C" selected="true"/>
+    <select idref="V-D4645F42" selected="true"/>
+    <select idref="V-D5A79E97" selected="true"/>
+    <select idref="V-EBB0E709" selected="true"/>
+    <select idref="V-AD5F905C" selected="true"/>
+    <select idref="V-6AEC7736" selected="true"/>
+    <select idref="V-8651E562" selected="true"/>
+    <select idref="V-269A581B" selected="true"/>
+    <select idref="V-7AF3A55E" selected="true"/>
+    <select idref="V-1C7F225F" selected="true"/>
+    <select idref="V-D49C560B" selected="true"/>
+    <select idref="V-F7DB209B" selected="true"/>
+    <select idref="V-25652646" selected="true"/>
+  </Profile>
+  <Profile id="L2_Public">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-FF5D9264" selected="true"/>
+    <select idref="V-D63104AB" selected="true"/>
+    <select idref="V-239F4E50" selected="true"/>
+    <select idref="V-83D7226A" selected="true"/>
+    <select idref="V-0948FB45" selected="true"/>
+    <select idref="V-9F79CBAB" selected="true"/>
+    <select idref="V-26F2D636" selected="true"/>
+    <select idref="V-F09A818D" selected="true"/>
+    <select idref="V-9CAC26C4" selected="true"/>
+    <select idref="V-C0C71DF1" selected="true"/>
+    <select idref="V-6B6AFA0F" selected="true"/>
+    <select idref="V-07F1A24D" selected="true"/>
+    <select idref="V-D172DB33" selected="true"/>
+  </Profile>
+  <Profile id="L2_Classified">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-FF5D9264" selected="true"/>
+    <select idref="V-D63104AB" selected="true"/>
+    <select idref="V-239F4E50" selected="true"/>
+    <select idref="V-83D7226A" selected="true"/>
+    <select idref="V-0948FB45" selected="true"/>
+    <select idref="V-9F79CBAB" selected="true"/>
+    <select idref="V-26F2D636" selected="true"/>
+    <select idref="V-F09A818D" selected="true"/>
+    <select idref="V-9CAC26C4" selected="true"/>
+    <select idref="V-C0C71DF1" selected="true"/>
+    <select idref="V-6B6AFA0F" selected="true"/>
+    <select idref="V-07F1A24D" selected="true"/>
+    <select idref="V-D172DB33" selected="true"/>
+  </Profile>
+  <Profile id="L2_Sensitive">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-FF5D9264" selected="true"/>
+    <select idref="V-D63104AB" selected="true"/>
+    <select idref="V-239F4E50" selected="true"/>
+    <select idref="V-83D7226A" selected="true"/>
+    <select idref="V-0948FB45" selected="true"/>
+    <select idref="V-9F79CBAB" selected="true"/>
+    <select idref="V-26F2D636" selected="true"/>
+    <select idref="V-F09A818D" selected="true"/>
+    <select idref="V-9CAC26C4" selected="true"/>
+    <select idref="V-C0C71DF1" selected="true"/>
+    <select idref="V-6B6AFA0F" selected="true"/>
+    <select idref="V-07F1A24D" selected="true"/>
+    <select idref="V-D172DB33" selected="true"/>
+  </Profile>
+  <Group id="V-BAB36EDB">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-BAB36EDBr01_rule" weight="10.0" severity="medium">
+      <version>1.1</version>
+      <title>Ensure Password Policy Enforces Length and Rotation</title>
+      <description>&lt;VulnDiscussion&gt;A strong password policy helps protect Oracle Fusion and EPM SaaS environments against unauthorized access by enforcing minimum standards for password length, rotation, and reuse prevention for both user and administrative accounts.
+Administrators can configure password policies in:
+• Fusion SaaS (pre-upgrade environments): Security Console Administration Password Policy
+• Fusion SaaS (upgraded environments) and Oracle EPM: OCI IAM Identity Domain Console Recommended Configuration:
+• Require passwords to be at least 14 characters in length.
+• Prevent reuse of the last five passwords.
+• Require administrative passwords to expire and be changed at least every 365 days.
+• Lock accounts after five failed login attempts.
+These parameters are available and enforceable in both pre-upgrade and post-upgrade identity configurations across Oracle Fusion and EPM SaaS applications.
+
+Rationale:
+Enforcing password length and rotation reduces the likelihood that weak or compromised passwords are exploited to gain unauthorized access.
+Overly frequent password changes can lead to insecure workarounds such as predictable patterns or insecure storage. Use of longer password utilizing passphrases should be encouraged to make passwords easier for users to remember. Balance password policy strictness with usability, and complement with multi-factor authentication (MFA) to minimize reliance on passwords alone.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-BAB36EDBr01_fix">Pre-upgrade (Security Console):
+1. Navigate to Navigator Tools, Security Console, Administration, Password Policy.
+2. Configure the following values:
+• Minimum Length: 14
+• Require Numbers: No
+• Require Special Characters: No
+• Password Expiration (Days): 365
+• Prevent Reuse of Last Passwords: 5
+• Failed Sign-In Attempts Before Lockout: 5 3. Save and communicate changes to all users.
+EPM &amp; Post-upgrade (OCI IAM Identity Domain):
+1. In the OCI Console, open the Identity Domain Security, Password Policy.
+2. Configure equivalent parameters for length, complexity, expiration, reuse prevention, and lockout.
+3. Save policy updates; they take immediate effect for all users.</fixtext>
+      <fix id="F-BAB36EDBr01_fix"/>
+      <check system="C-BAB36EDB_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>For pre-upgrade environments:
+1. Sign in as a Security Administrator or IT Security Manager.
+2. Navigate to Tools, Security Console, Administration, Password Policy.
+3. Verify that:
+• Minimum length is ≥ 14 characters.
+• Password expiration is ≤ 365 days.
+• Password reuse prevention is ≥ 5 previous passwords.
+• Account lockout triggers after ≤ 5 failed login attempts.
+For EPM and post-upgrade environments (OCI IAM Identity Domain):
+1. In the OCI Console, go to Identity &amp; Security, Domains, Security, Password Policy.
+2. Confirm the equivalent settings:
+• Minimum length ≥ 14.
+• Expiration ≤ 365 days.
+• Password history ≥ 5.
+• Account lockout ≤ 5 failed attempts.
+3. Ensure lockout duration and auto-unlock timing meet organizational requirements.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-37150BEC">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-37150BECr01_rule" weight="10.0" severity="medium">
+      <version>1.2</version>
+      <title>Ensure MFA is Enforced for All SaaS Users</title>
+      <description>&lt;VulnDiscussion&gt;Multi-Factor Authentication (MFA) requires users to present an additional verification factor beyond username and password. In Oracle Fusion environments, native MFA enforcement via Identity Domain sign- on policies functions only after the environment’s identity service is upgraded to OCI IAM. For environments not yet upgraded, MFA must remain delegated to an external IdP or await the identity upgrade. Where supported, phishing-resistant factors (for example, FIDO2/WebAuthn passkeys or hardware security keys) are preferred over SMS or email OTP.
+
+Rationale:
+MFA protects against credential theft and password reuse attacks. Enforcing MFA across all SaaS users - whether they authenticate through the Fusion Identity Domain, an external OCI IAM domain, or another IdP — provides consistent protection and centralized policy control.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-37150BECr01_fix">1. If the Fusion environment is upgraded to OCI IAM:
+• In Fusion Security Console User Categories, Two-Factor Authentication, enable MFA for all categories.
+2. If the environment is not upgraded or uses a federated IdP:
+• Enable MFA in the external IdP or external OCI IAM domain and ensure it applies to all users accessing Fusion.
+3. Communicate enrollment instructions and verify MFA enrollment via Fusion My Profile, Manage Secure Verification.
+4. Perform test logins to confirm MFA prompts are consistently applied.</fixtext>
+      <fix id="F-37150BECr01_fix"/>
+      <check system="C-37150BEC_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Check if the Fusion environment is upgraded to OCI IAM or uses an external IdP.
+2. If on OCI IAM, review Security Console, User Categories, Two-Factor Authentication and confirm all user categories have MFA enabled.
+3. If identity upgrade is not yet performed, verify that MFA is enforced via the external IdP for all users.
+4. Test login with a standard SaaS user account and confirm MFA is required (native or via IdP).</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-5D0A3069">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-5D0A3069r01_rule" weight="10.0" severity="medium">
+      <version>1.3</version>
+      <title>Ensure Phishing-Resistant MFA Is Enforced for SaaS Administrators and Privileged Accounts</title>
+      <description>&lt;VulnDiscussion&gt;Multi-Factor Authentication (MFA) requires users to present an additional verification factor beyond username and password. In Oracle Fusion environments, native MFA enforcement via Identity Domain sign- on policies functions only after the environment’s identity service is upgraded to OCI IAM or an external IdP. For environments not yet upgraded, MFA must be delegated to an external IdP or await the identity upgrade.
+SaaS Administrators and other SaaS privileged accounts must authenticate using phishing-resistant MFA methods such as FIDO2/WebAuthn security keys, platform passkeys, or passwordless authentication. Weaker factors such as SMS OTP or email OTP should be disabled for administrative and privileged accounts.
+
+Rationale:
+Privileged accounts are high-value targets. Enforcing MFA with phishing resistant factors reduces the risk of unauthorized administrative access even if credentials are compromised. To use native MFA, the identity service must be on OCI IAM, which provides the required support for enforcing sign-on policies and MFA natively.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-5D0A3069r01_fix">1. If identity upgrade is not finalized implement MFA via the external IdP.
+2. After the upgrade, in the Security Console open User Categories Two-Factor Authentication and enable MFA for administrator/privileged categories.
+3. Define valid phishing resistant MFA factors (mobile authenticator, FIDO, etc.).
+4. Save settings and ensure SaaS users enroll in MFA during their next login.
+5. Test that privileged accounts require MFA (OCI IAM) and fallback to IdP enrollment where needed.</fixtext>
+      <fix id="F-5D0A3069r01_fix"/>
+      <check system="C-5D0A3069_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Determine if the Fusion environment has been upgraded to use OCI IAM (check Fusion environment’s maintenance/upgrade status) or is using an external IdP for MFA.
+2. Access the Security Console User Categories Two-Factor Authentication and confirm SaaS administrators/privileged categories have MFA enabled. Only enable factors that are considered phishing resistant.
+3. If identity upgrade has not occurred, verify that MFA is enforced via the external IdP for privileged accounts.
+4. Test login with a privileged account and confirm MFA prompt is required (native or via IdP).</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FF5D9264">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FF5D9264r01_rule" weight="10.0" severity="high">
+      <version>1.4</version>
+      <title>Ensure Fusion Applications Administrators Have Access Only to Fusion Applications Resources</title>
+      <description>&lt;VulnDiscussion&gt;Ensure that Fusion Applications Administrators are granted Console access only to Fusion Applications resources. Their IAM policies must be scoped exclusively to the fusion-applications-family resource type, without granting access to other OCI services.
+
+Rationale:
+Fusion Applications Administrators are responsible for managing SaaS environments, not the broader OCI infrastructure. Granting them access to additional OCI services (for example, Compute, Networking, Object Storage) is unnecessary and increases the attack surface. Restricting their access to Fusion Applications resources enforces least privilege, reduces risk of accidental or malicious changes to unrelated services, and aligns with compliance requirements for segregation of duties.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FF5D9264r01_fix">1. Identify the group(s) used for Fusion Applications Administrators (e.g., FusionAdmins).
+2. Remove any existing policies that provide access to non-Fusion OCI services.
+3. Create or update the policy to restrict privileges to Fusion Applications only:
+• For administrators:
+Allow group FusionAdmins to manage fusion-applications-family in tenancy
+• For read-only roles (if needed):
+Allow group FusionViewers to read fusion-applications-family in tenancy</fixtext>
+      <fix id="F-FF5D9264r01_fix"/>
+      <check system="C-FF5D9264_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Navigate to Identity &amp; Security Policies.
+2. Review policies attached to groups containing Fusion Applications Administrators.
+3. Confirm that:
+• Policies use the fusion-applications-family resource type.
+• No broad tenancy-wide permissions (such as manage all-resources or unrelated service resource types) are present.
+4. Verify that Console access for Fusion Administrators shows only Fusion Applications in the navigation menu.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-115052EC">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-115052ECr01_rule" weight="10.0" severity="medium">
+      <version>1.5</version>
+      <title>Ensure OCI Console Access Is Restricted to Administrative Accounts</title>
+      <description>&lt;VulnDiscussion&gt;Ensure that only designated administrative accounts are allowed to log in to the Oracle Cloud Infrastructure (OCI) Console. All non-admin user accounts must have the console password capability disabled, and sign-on policies must restrict Console application access to administrative groups only.
+
+Rationale:
+The OCI Console provides broad administrative access. Restricting console login exclusively to administrative accounts minimizes the risk of unauthorized changes and reduces the attack surface in case of credential compromise. Non-administrative users can still interact with OCI through APIs, SDKs, or federated identity providers without requiring console access.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-115052ECr01_fix">1. For each non-admin user:
+• Navigate to Identity &amp; Security Domains Edit User Capabilities.
+• Uncheck Can use Console password.
+• Save changes.
+2. Update the Sign-On Policy for the identity domain:
+• Add a rule that allows Console login only for users in an Admin group.
+• Add a default deny rule for all other users.
+3. Test the configuration by attempting Console login with both an admin and a non- admin account.</fixtext>
+      <fix id="F-115052ECr01_fix"/>
+      <check system="C-115052EC_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Navigate to Identity &amp; Security Domains Users.
+• For each non-admin user, confirm that Can use Console password is unchecked under Edit User Capabilities.
+2. Navigate to Domains Security Sign-On Policies.
+• Verify there is a policy rule that allows Console access only for designated administrative groups.
+• Confirm that a deny rule is in place for all other users.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-337B88FC">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-337B88FCr01_rule" weight="10.0" severity="medium">
+      <version>1.6</version>
+      <title>Ensure Privileged and Administrative Roles Are Restricted to Known IP Addresses</title>
+      <description>&lt;VulnDiscussion&gt;When Location-Based Access Control (LBAC) is enabled in Oracle Fusion Applications, administrative and privileged roles must not be configured for unrestricted access. In the Fusion Security Console, privileged roles such as IT Security Manager and Application Implementation Consultant include the option “Enable Role for Access from All IP Addresses.” This setting should remain disabled, ensuring these roles can only be accessed from known and approved IP ranges defined within the LBAC configuration or associated network perimeter.
+
+Rationale:
+Restricting administrative and privileged access to known IP ranges prevents unauthorized or high-risk logins from untrusted networks. This measure reduces the attack surface for high-privilege accounts and aligns with the principle of least privilege by ensuring elevated functions are only available from managed corporate networks or approved secure endpoints.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-337B88FCr01_fix">1. Sign in to Fusion Security Console with an administrative account.
+2. Navigate to Roles, Search, IT Security Manager (or equivalent privileged roles).
+3. Go to the Administration tab and ensure the checkbox Enable Role for Access from All IP Addresses is cleared.
+4. Verify that the role is correctly assigned to the appropriate network perimeter under LBAC settings, restricting access to known IP ranges.
+5. Test access from a trusted IP and confirm the role remains functional; test from an unapproved IP to confirm access is denied.</fixtext>
+      <fix id="F-337B88FCr01_fix"/>
+      <check system="C-337B88FC_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Confirm that LBAC is enabled for the Fusion environment.
+2. Sign in to Fusion Security Console with appropriate privileges.
+3. Navigate to Roles, Search, IT Security Manager (and other privileged roles).
+4. Open the role and go to the Administration tab.
+5. Verify that the checkbox Enable Role for Access from All IP Addresses is not selected.
+6. Confirm that privileged roles are associated with the intended network perimeter or known IP range within LBAC configuration.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-DE22B403">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-DE22B403r01_rule" weight="10.0" severity="medium">
+      <version>1.7</version>
+      <title>Ensure Privileged Access is Certified Periodically</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that only authorized users retain elevated access, by reviewing users' abilities periodically - monthly for IT administrators and quarterly for others.
+
+Rationale:
+Users could accumulate roles and data access as their responsibilities change, giving them elevated or unintended abilities that they could use erroneously or maliciously with substantial impact on operations and finances.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-DE22B403r01_fix">When a role should be removed from a user either:
+• Remove unwanted role.
+• Leave role and monitor the transactions performed by the user (see below).
+1. Review the user's actions since the previous review:
+Manual method:
+1. Navigate to Tools Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+3. Review the transactions that the role allows.
+Automated method: 1.Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs.
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-DE22B403r01_fix"/>
+      <check system="C-DE22B403_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>Review users' abilities Manual method:
+1. Navigate to Tools Scheduled Processes 2. Review User and Role Access Audit Report and User Role Membership Report (or schedule them, then review them).
+Automated method:
+1. Initiate one or more Access Certification campaigns in Fusion Cloud Applications Risk Management using the instructions in Digitize Access Certification Workflows.
+2. For example, initiate campaigns to review users with unauthorized access; detect privilege creep (accumulation of access no longer required); or detect users, organizations or roles recently added or not included in the reviews.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D63104AB">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D63104ABr01_rule" weight="10.0" severity="high">
+      <version>1.8</version>
+      <title>Ensure Oracle Break Glass for Fusion Cloud Service Is Enabled</title>
+      <description>&lt;VulnDiscussion&gt;Oracle Break Glass for Fusion Cloud Service provides a customer-controlled workflow that governs Oracle personnel’s emergency access to the Fusion Cloud database and middleware tiers. When enabled, Oracle cannot access customer data without explicit approval from your designated administrators for each one-off service activity.
+
+Rationale:
+Activating and monitoring the Break Glass service ensures that privileged Oracle support access occurs only under strict governance, audit logging, and time-bound approvals, reducing insider and third-party access risk.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D63104ABr01_fix">In console:
+1. Activate Break Glass service via Oracle Cloud Subscription management.
+2. Define approvers (Fusion Cloud Administrators).
+3. Enable notifications for Break Glass request/approval activities.
+4. Enable post-access revocation and audit logs are retained</fixtext>
+      <fix id="F-D63104ABr01_fix"/>
+      <check system="C-D63104AB_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>In console:
+1. Go to: Access Oracle Cloud Console 2. Select My Services → Subscriptions → Fusion Cloud Service 3. Verify that Break Glass status is Enabled 4. Verify that designated approvers are defined in the workflow 5. Verify that post-access revocation and audit logs are retained</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-239F4E50">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-239F4E50r01_rule" weight="10.0" severity="high">
+      <version>1.9</version>
+      <title>Ensure Basic Authentication Is Blocked for SOAP and REST API Integrations</title>
+      <description>&lt;VulnDiscussion&gt;Organizations must block the use of Basic Authentication for all SOAP and REST API integrations with Oracle SaaS Applications. This can be achieved by disabling Basic Authentication at the Fusion Applications layer and enforcing OAuth 2.0 as the only supported authentication method. Automated monitoring of Fusion audit logs and OCI IAM authentication logs should also be configured to detect and alert on attempted Basic Authentication use.
+
+Rationale:
+Blocking Basic Authentication prevents insecure clients from connecting, even if misconfigured. Combined with monitoring, this ensures that only OAuth tokens are accepted, reducing exposure to replay attacks, credential theft, and non-compliant integrations.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-239F4E50r01_fix">1. Submit a Service Request to Oracle SaaS Operations asking to disable Basic Authentication for APIs in your Fusion instance.
+2. Include details of your current integrations (endpoints, methods) that rely on Basic Auth.
+3. Confirm with Oracle that Basic Auth has been disabled in your environment.
+4. Update all integrations to use supported methods (JWT, OAuth, SAML) per Oracle guidance.
+5. Test all APIs to validate they function correctly under the new authentication method.</fixtext>
+      <fix id="F-239F4E50r01_fix"/>
+      <check system="C-239F4E50_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Review your Service Request history with Oracle to confirm a request has been submitted to disable Basic Auth for APIs.
+2. Confirm Oracle’s response/documentation showing that Basic Auth is disabled in the environment.
+3. Attempt API calls using Basic Authentication and verify they fail.
+4. Use supported authentication (JWT, SAML, OAuth) to confirm the API works with secure methods.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-DF32A17C">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-DF32A17Cr01_rule" weight="10.0" severity="medium">
+      <version>1.10</version>
+      <title>Ensure All API Based Integrations Use OAuth Authentication</title>
+      <description>&lt;VulnDiscussion&gt;All API based integrations with Oracle SaaS Applications must use OAuth 2.0 authentication configured through the Fusion Identity Domain. Basic Authentication, long-lived static passwords, or legacy authentication mechanisms must not be used for API or integration access. OAuth provides secure, token-based authentication with support for scopes, expiration, and revocation.
+
+Rationale:
+Basic Authentication and static credentials present significant risks, including credential theft, replay attacks, and the inability to enforce least-privilege access. Modern integrations require stronger controls to protect sensitive business transactions and data. Enforcing OAuth for all API and integration access aligns with industry standards and provides stronger security controls, including token expiration, scoped access, and easier revocation.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-DF32A17Cr01_fix">1. Identify integrations currently using Basic Authentication by reviewing Fusion audit logs and OCI IAM authentication records.
+2. Register OAuth clients in the Fusion Identity Domain for each integration, assigning only the required scopes and authorized resources.
+3. Reconfigure integrations to use OAuth tokens in place of Basic Authentication credentials.
+4. Disable or revoke Basic Authentication credentials in Fusion Applications and IAM domains.
+5. Establish a recurring process to review Fusion and IAM logs to detect any attempted Basic Authentication use.</fixtext>
+      <fix id="F-DF32A17Cr01_fix"/>
+      <check system="C-DF32A17C_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Review all configured SOAP and REST integrations in Fusion Applications and Oracle Integration Cloud.
+2. Confirm that integration clients are registered as OAuth clients in the Fusion Identity Domain and that Basic Authentication credentials are not in use.
+3. Examine Fusion audit logs to identify API requests authenticated with Basic Authentication.
+4. Review OCI IAM Identity Domain authentication logs to confirm that API access tokens are issued via OAuth flows only.
+5. Validate that no unscoped or legacy credentials are present in active integrations.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-7610915E">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-7610915Er01_rule" weight="10.0" severity="medium">
+      <version>1.11</version>
+      <title>Ensure Integration Account Secrets Are Rotated on a Regular Schedule</title>
+      <description>&lt;VulnDiscussion&gt;Oracle SaaS environments often integrate with external systems using service accounts, OAuth clients, JWT signing keys, and X.509 certificates. These credentials are typically long-lived and, if not rotated regularly, may be compromised or reused by unauthorized parties. Organizations should enforce a policy to rotate all integration account secrets on a defined schedule, for example every 90 or 180 days, and update dependent integrations accordingly.
+
+Rationale:
+Long-lived credentials represent a significant risk if stolen, exposed in logs, or left unmanaged. Regular rotation reduces the risk window for credential misuse and aligns with best practices for key management. Scheduled rotation ensures that even if a secret is compromised, it cannot be abused indefinitely.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.11</dc:identifier>
+      </reference>
+      <fixtext fixref="F-7610915Er01_fix">1. Develop an inventory of all integration account secrets, including OAuth credentials, JWT keys, and certificates.
+2. Define a rotation schedule (for example, 90 or 180 days) aligned with organizational policy and compliance requirements.
+3. Rotate each credential according to the schedule, updating dependent integrations and notifying stakeholders.
+4. Remove or revoke any unused or expired credentials to reduce the attack surface.
+5. Document the process and maintain records of all credential rotations for audit purposes.</fixtext>
+      <fix id="F-7610915Er01_fix"/>
+      <check system="C-7610915E_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Review integration accounts in Oracle Fusion Applications and identify all OAuth clients, JWT keys, and certificates in use.
+2. Confirm that each credential has a documented rotation policy, including expiration and renewal dates.
+3. Validate logs or change records to confirm that credentials have been rotated within the organization’s defined schedule (for example, within the past 180 days).
+4. Check for expired or inactive credentials and confirm they are removed from production environments.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D738C5FF">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D738C5FFr01_rule" weight="10.0" severity="medium">
+      <version>1.12</version>
+      <title>Ensure EPM Automate Credentials Are Protected via Secure Storage</title>
+      <description>&lt;VulnDiscussion&gt;EPM Automate requires credentials to execute commands such as data load, snapshot management, or audit log export. These credentials must never be stored in plaintext within scripts or configuration files. Instead, credentials must be secured using Oracle’ s encrypted password file (created with the encrypt command) or by integrating with secure enterprise credential vaults and OS-level key stores.
+
+Rationale:
+Storing credentials in plaintext exposes privileged accounts to theft and misuse. EPM Automate is commonly executed with Service Administrator-level rights, making it a high-value target. Using the encrypted password file or secure storage mechanisms significantly reduces the risk of credential exposure and aligns with security best practices.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.12</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D738C5FFr01_fix">• Use the EPM Automate encrypt command to generate an encrypted password file and update scripts to reference it instead of plaintext arguments.
+• Alternatively, configure integration with an enterprise password vault or OS secure key store to inject credentials at runtime.
+• Regularly rotate credentials and regenerate encrypted storage files.
+• Audit existing automation jobs to ensure compliance and remove any residual plaintext credentials.</fixtext>
+      <fix id="F-D738C5FFr01_fix"/>
+      <check system="C-D738C5FF_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Review all automation scripts, scheduled jobs, and CI/CD processes invoking EPM Automate.
+2. Verify that credentials are not stored in cleartext (e.g. in batch files, shell scripts, or parameters).
+3. Confirm that either:
+• The Oracle encrypted password file is being used, or
+• Credentials are retrieved securely from an OS-level key store (e.g. Windows Credential Manager, Linux keyring) or an enterprise vault (e.g. CyberArk, HashiCorp Vault, OCI Vault).
+4. Validate that credential rotation is in place and documented.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-83D7226A">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-83D7226Ar01_rule" weight="10.0" severity="high">
+      <version>1.13</version>
+      <title>Ensure Dormant Accounts and Orphaned Identities Are Automatically Detected and Disabled</title>
+      <description>&lt;VulnDiscussion&gt;Dormant accounts and orphaned identities should be detected and disabled using automated identity governance capabilities. Policies should be configured in OCI Identity Domains or integrated identity governance platforms to automatically flag and disable accounts that have not logged in within a defined period, or that have no role assignments or ownership.
+
+Rationale:
+Automated detection and disabling reduces reliance on manual reviews, minimizes human error, and ensures consistent enforcement. This strengthens the organization’s security posture and reduces the window of opportunity for account misuse.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.13</dc:identifier>
+      </reference>
+      <fixtext fixref="F-83D7226Ar01_fix">1. Implement identity governance tooling in OCI Identity Domains or an integrated IAM solution.
+2. Configure policies to flag accounts inactive for more than 90 days or lacking ownership/role assignments.
+3. Set policies to disable such accounts automatically while notifying administrators.
+4. Define exceptions for service accounts and apply compensating monitoring controls.
+5. Periodically review policy effectiveness and adjust thresholds as needed.</fixtext>
+      <fix id="F-83D7226Ar01_fix"/>
+      <check system="C-83D7226A_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Verify that identity governance policies are configured to automatically detect dormant and orphaned accounts.
+2. Review policy logs to confirm detection and disabling actions have occurred.
+3. Check for exceptions or exclusions and validate that they are documented and approved.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-BEB9EC5D">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-BEB9EC5Dr01_rule" weight="10.0" severity="medium">
+      <version>1.14</version>
+      <title>Ensure Dormant Accounts and Orphaned Identities Are Reviewed and Disabled</title>
+      <description>&lt;VulnDiscussion&gt;Dormant accounts and orphaned identities should be identified and disabled on a regular schedule. Dormant accounts are active accounts that have not been used for a defined period, such as 90 days. Orphaned identities are accounts with no associated owner or role assignment. Manual reviews of account activity in Fusion Applications and OCI Identity Domains should be conducted at least quarterly to detect such accounts.
+
+Rationale:
+Inactive or orphaned accounts present unnecessary risk, as they may still be accessible but not actively monitored. Regular reviews reduce the chance that attackers exploit forgotten accounts to gain unauthorized access.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>1.14</dc:identifier>
+      </reference>
+      <fixtext fixref="F-BEB9EC5Dr01_fix">1. Establish a policy defining thresholds for dormant accounts (for example, 90 days inactivity).
+2. Schedule quarterly reports of user activity and ownership.
+3. Review results with application owners.
+4. Disable or delete dormant and orphaned accounts once confirmed unnecessary.
+5. Document results and keep evidence for audit purposes.</fixtext>
+      <fix id="F-BEB9EC5Dr01_fix"/>
+      <check system="C-BEB9EC5D_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Generate user activity reports for Fusion Applications or OCI Identity Domains.
+2. Identify accounts with no sign-in activity for at least 90 days.
+3. Identify accounts without assigned roles, groups, or owners.
+4. Confirm that such accounts are reviewed and, if appropriate, disabled or removed.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-0948FB45">
+    <title>2 Networking</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-0948FB45r01_rule" weight="10.0" severity="high">
+      <version>2.1</version>
+      <title>Ensure Network Perimeters are Configured in IAM or the Identity Provider</title>
+      <description>&lt;VulnDiscussion&gt;Network Perimeters restrict where users can sign in to Oracle SaaS applications by enforcing trusted IP ranges or network sources. For upgraded environments, this is configured natively in Oracle Identity Domains. For environments that have not yet been upgraded, equivalent controls should be configured in the external identity provider (IdP).
+
+Rationale:
+Restricting access to approved IPs or network locations at the identity layer reduces the risk of compromised credentials being used from untrusted or malicious networks. By placing the enforcement at the authentication layer, even valid credentials cannot be misused outside authorized locations.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>2.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-0948FB45r01_fix">1. Upgraded environments (OCI IAM):
+• Go to Identity &amp; Security, Domains, Security, Network Perimeters.
+• Create a perimeter with approved IP ranges.
+• Attach the perimeter to sign-on policies.
+2. Non-upgraded environments (external IdP):
+• Configure conditional access rules in the IdP (Azure AD, Okta, etc.).
+• Define approved IP ranges or geolocation-based conditions.
+• Apply these rules to authentication policies used by Oracle SaaS.</fixtext>
+      <fix id="F-0948FB45r01_fix"/>
+      <check system="C-0948FB45_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. For upgraded environments:
+• Sign in to the Oracle Cloud Console.
+• Navigate to Identity &amp; Security, Domains, Security, Network Perimeters.
+• Verify that at least one Network Perimeter is defined with authorized IP ranges and attached to sign-on policies.
+2. For non-upgraded environments:
+• Review conditional access or equivalent policies in the IdP.
+• Confirm that rules are applied to restrict authentication attempts to approved IP ranges or network locations.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-DAC5A23C">
+    <title>2 Networking</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-DAC5A23Cr01_rule" weight="10.0" severity="medium">
+      <version>2.2</version>
+      <title>Ensure OCI Console Access Is Restricted to Trusted Networks</title>
+      <description>&lt;VulnDiscussion&gt;Ensure that access to the Oracle Cloud Infrastructure (OCI) Console is restricted to trusted networks (secure VPNs or private network endpoints) by configuring IAM Network Sources
+
+Rationale:
+The OCI Console provides administrative access. If user credentials are compromised, unrestricted access from any IP address increases the attack surface. Restricting console login to approved IP ranges or VCN subnets enforces defense in depth and reduces the likelihood of unauthorized access.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>2.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-DAC5A23Cr01_fix">1. Define a Network Source with trusted IP ranges or VCN subnets:
+• Navigate to Identity &amp; Security, Network Sources, Create Network Source.
+• Add approved IPs or CIDRs.
+2. Update the Sign-On Policy for the identity domain:
+• Add a rule that allows console login only if request.networkSource.name matches the trusted network source.
+• Add a default deny rule for all other networks.
+3. Test access from both inside and outside the trusted network.
+4. Maintain a secure break-glass account exempt from the restriction.</fixtext>
+      <fix id="F-DAC5A23Cr01_fix"/>
+      <check system="C-DAC5A23C_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Navigate to Identity &amp; Security, Domains, Security, Sign-On Policies.
+• Confirm that console login rules reference a defined network source (for example, request.networkSource.name = &lt;TrustedSource&gt;).
+• Verify that there is no policy rule permitting console access from any network.
+2. Navigate to Identity &amp; Security, Network Sources.
+• Confirm that the trusted network source contains only approved IP addresses, CIDR blocks, or VCN subnets.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-5695F05F">
+    <title>2 Networking</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-5695F05Fr01_rule" weight="10.0" severity="medium">
+      <version>2.3</version>
+      <title>Ensure Access to Fusion is restricted via Access Control List</title>
+      <description>&lt;VulnDiscussion&gt;An Access Control List (ACL) restricts connections to Oracle Fusion SaaS environments by allowing access only from defined public IP addresses, CIDR ranges, or Oracle Cloud Infrastructure (OCI) Virtual Cloud Networks (VCNs). This ensures that access is limited to approved enterprise networks and private connectivity options such as FastConnect or VPN, while blocking all other traffic by default.
+
+Rationale:
+Enabling ACLs enforces strict network perimeter controls around Oracle Fusion environments. By limiting access to trusted IPs or VCNs, ACLs protect against unauthorized access attempts from the public internet and reduce the risk of brute force, credential stuffing, and other network-based attacks. ACLs also align with zero-trust principles by ensuring SaaS applications are not broadly exposed.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>2.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-5695F05Fr01_fix">1. In the Oracle Cloud Infrastructure Console, access the Fusion SaaS environment’s network configuration 2. Enable the Access Control List feature if not already active 3. Add the organization’s trusted public IP addresses, CIDR ranges, and/or OCI Virtual Cloud Networks (VCNs) to the ACL 4. Save the configuration and confirm that the ACL is enforced 5. Remove any broad or unnecessary ranges that could allow access from untrusted sources 6. Document any exceptions that must remain open, including justification and approval 7. Validate the changes by testing access from both allowed and disallowed networks to ensure enforcement is functioning as expected</fixtext>
+      <fix id="F-5695F05Fr01_fix"/>
+      <check system="C-5695F05F_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Sign in to the Oracle Cloud Infrastructure Console with the appropriate administrator privileges 2. Navigate to the Fusion SaaS environment’s network settings and locate the Access Control List configuration 3. Verify that ACLs are enabled for the environment 4. Confirm that the ACL contains only trusted public IP addresses, CIDR ranges, or OCI Virtual Cloud Networks (VCNs) 5. Check that the allowlist excludes overly broad ranges such as 0.0.0.0/0 6. Validate that exceptions are documented and limited to approved use cases (for example, supplier portal or integrations that must be accessible from external networks) 7. Attempt access from an unlisted IP or VCN to confirm that connections are blocked</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-53B2B362">
+    <title>2 Networking</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-53B2B362r01_rule" weight="10.0" severity="medium">
+      <version>2.4</version>
+      <title>Ensure Location-Based Access Control (LBAC) is enabled</title>
+      <description>&lt;VulnDiscussion&gt;Location-Based Access Control (LBAC) restricts user access to Oracle Fusion SaaS products based on network location. It applies to both user interface (UI) and API sign- ins. Access is allowed only from registered IP ranges, such as corporate offices or VPN gateways. Users connecting from unregistered networks receive only generic or limited access unless explicitly permitted.
+
+Rationale:
+Enabling LBAC enforces a perimeter-based restriction on where users and integrations can connect from. This complements authentication and role-based authorization by ensuring that even valid credentials cannot be used from untrusted or malicious networks. Implementing LBAC reduces the attack surface and aligns with the principle of least privilege.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>2.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-53B2B362r01_fix">1. Use an account with the IT Security Manager role to configure LBAC 2. In the Security Console, open the Location Based Access tab and select Enable Location Based Access 3. Add trusted IP addresses or CIDR ranges, including the administrator’s current IP to avoid lockout 4. Save the configuration and confirm the change 5. Mark the IT Security Manager role as public to preserve console access even from unregistered networks 6. If disabling LBAC, deselect the option; allowlist entries remain stored for reuse 7. Validate by testing login from both trusted and untrusted IPs</fixtext>
+      <fix id="F-53B2B362r01_fix"/>
+      <check system="C-53B2B362_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Confirm that the IT Security Manager role is assigned 2. In a test or non-production environment, validate LBAC configuration before enabling in production 3. Navigate to Navigator, Tools, Security Console, Location Based Access 4. Verify that Enable Location Based Access is selected 5. Review the IP Address Allowlist to ensure it contains valid IPv4 or CIDR ranges for trusted networks 6. Confirm that the IT Security Manager role is designated as public to preserve administrative access 7. If LBAC is disabled, check that allowlist entries are retained in read-only mode for later use 8. Test login from a disallowed IP to confirm access is restricted, and from an allowed IP to confirm access works</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-9F79CBAB">
+    <title>2 Networking</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-9F79CBABr01_rule" weight="10.0" severity="high">
+      <version>2.5</version>
+      <title>Ensure Geolocation Filtering with WAF for SaaS is enforced</title>
+      <description>&lt;VulnDiscussion&gt;Geolocation filtering in WAF for Oracle Fusion Applications restricts access based on the source country or region of incoming requests. WAF policies can be configured to allow or block traffic from selected geographies, helping organizations limit access to regions where legitimate users are located. This control must be enabled and validated through a Service Request with Oracle SaaS Operations.
+
+Rationale:
+Restricting access to only the countries or regions where the organization operates reduces unnecessary exposure to malicious traffic. Many automated attacks originate from outside business-relevant regions, and filtering them at the WAF layer prevents unwanted traffic from reaching the application.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>2.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-9F79CBABr01_fix">1. Submit a Service Request to Oracle SaaS Operations requesting geolocation filtering to be enabled for the Fusion environment.
+2. Provide Oracle with the list of countries or regions that should be allowed or blocked.
+3. After configuration by Oracle, confirm that the rules are applied and enforced.
+4. Test by accessing Fusion from both allowed and blocked regions to ensure expected behavior.
+5. Document exceptions if broader access must remain temporarily enabled.</fixtext>
+      <fix id="F-9F79CBABr01_fix"/>
+      <check system="C-9F79CBAB_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Review Service Request (SR) records with Oracle SaaS Operations to confirm that geolocation filtering has been enabled.
+2. Verify the countries or regions included in the allow or block lists match organizational requirements.
+3. Optionally log a new Service Request with Oracle SaaS Operations to confirm the current WAF policy configuration.
+4. Validate functionality by attempting access from at least one blocked country and confirming that requests are denied.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-26F2D636">
+    <title>2 Networking</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-26F2D636r01_rule" weight="10.0" severity="high">
+      <version>2.6</version>
+      <title>Ensure IP-Based Filtering with WAF for SaaS is Enforced</title>
+      <description>&lt;VulnDiscussion&gt;IP-based filtering in WAF for Oracle Fusion Applications restricts access to trusted public IP addresses or CIDR ranges. WAF rules can allow or block specific IP ranges so that only authorized enterprise networks (such as corporate offices, VPN gateways, or partner networks) can reach Fusion Applications. This control must be enabled and validated through a Service Request with Oracle SaaS Operations.
+
+Rationale:
+Restricting access by IP address or CIDR reduces the exposure of Fusion Applications to unauthorized traffic from the public internet. By ensuring only trusted network sources can connect, IP-based filtering helps protect against brute force attempts, scanning, and other malicious activity.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>2.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-26F2D636r01_fix">1. Submit a Service Request to Oracle SaaS Operations requesting IP-based filtering to be enabled for the Fusion environment.
+2. Provide Oracle with a list of approved IP addresses or CIDR ranges representing trusted enterprise or VPN networks.
+3. Review and approve Oracle’s implementation of the filtering policy.
+4. Remove any unnecessary or overly broad ranges.
+5. Validate enforcement by testing API and UI access from both allowed and disallowed IP addresses.
+6. Document exceptions if temporary external access is required.</fixtext>
+      <fix id="F-26F2D636r01_fix"/>
+      <check system="C-26F2D636_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Review Service Request (SR) records with Oracle SaaS Operations to confirm that IP-based filtering has been enabled.
+2. Verify that the allowlist includes only approved public IP addresses or CIDR ranges corresponding to trusted networks.
+3. Ensure no overly broad ranges, such as 0.0.0.0/0, are permitted.
+4. Optionally log a Service Request with Oracle SaaS Operations to confirm the current WAF policy configuration.
+5. Test connectivity from both an allowed and a disallowed IP address to confirm enforcement.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F09A818D">
+    <title>2 Networking</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F09A818Dr01_rule" weight="10.0" severity="high">
+      <version>2.7</version>
+      <title>Ensure Qualified Target Filtering with WAF for SaaS is Enforced</title>
+      <description>&lt;VulnDiscussion&gt;Qualified Target Filtering in WAF for Oracle Fusion Applications enables differentiated access control at the module or endpoint level. This allows organizations to apply stricter policies for sensitive internal modules while permitting broader access to externally facing modules, such as Supplier Portal and Oracle Recruiting Cloud Candidate Experience (ORC). Filtering rules can be defined per qualified target to separate external user traffic (e.g., suppliers, applicants) from internal corporate traffic.
+This control must be enabled and validated through a Service Request with Oracle SaaS Operations.
+
+Rationale:
+Not all Fusion modules require the same level of exposure. Internal corporate modules should be tightly restricted, while external-facing portals must allow controlled access for third parties. Qualified Target Filtering provides the flexibility to enforce strong network restrictions for corporate use while preserving access for suppliers and applicants, minimizing unnecessary risk while supporting business functions.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>2.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F09A818Dr01_fix">1. Submit a Service Request to Oracle SaaS Operations requesting Qualified Target Filtering to be enabled for the Fusion environment.
+2. Provide Oracle with the list of Fusion modules requiring differentiated access (e.g., Supplier Portal, Candidate Experience) and their corresponding IP or geolocation restrictions.
+3. Review Oracle’s implementation to ensure policies match business and security requirements.
+4. Test access for both corporate and external traffic (supplier, applicant) to confirm correct behavior.
+5. Document exceptions where broader access must be maintained.</fixtext>
+      <fix id="F-F09A818Dr01_fix"/>
+      <check system="C-F09A818D_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Review Service Request (SR) records with Oracle SaaS Operations to confirm that Qualified Target Filtering has been enabled.
+2. Verify which Fusion modules are included in the configuration (e.g., Supplier Portal, Candidate Experience).
+3. Review allowlist/blocklist rules applied to each qualified target (CIDR ranges, countries, or both).
+4. Optionally log a Service Request with Oracle SaaS Operations to confirm the current Qualified Target Filtering policies.
+5. Validate by testing access to each configured module from both allowed and disallowed IPs or regions to ensure differentiated enforcement.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-9CAC26C4">
+    <title>3 Logging and Monitoring</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-9CAC26C4r01_rule" weight="10.0" severity="high">
+      <version>3.1</version>
+      <title>Ensure Fusion Applications Login, Logout and Session Events are Captured, Exported, and Forwarded to Central Logging</title>
+      <description>&lt;VulnDiscussion&gt;Capture all user authentication lifecycle events (successful and failed logins, logouts, session creation/termination, token refresh, and session invalidation) from Fusion Applications and ensure these events are exported to OCI Audit/Logging and forwarded to your centralized SIEM or log repository for retention, correlation, and alerting.
+Sample alerts/detection rules:
+• Multiple failed logins from same account or IP within short window.
+• Login from new Geo-location or anonymized IP.
+• Successful login immediately after password reset / privilege change.
+• Concurrent sessions from geographically dispersed IPs for same user.
+
+Rationale:
+Authentication lifecycle events are fundamental telemetry for detecting account compromise, brute-force attacks, anomalous logins (time/location), and unauthorized session reuse. Centralizing these events enables correlation with other security data (privilege changes, API activity) and supports incident detection and forensic investigations.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>3.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-9CAC26C4r01_fix">1.Configure export Export audit events to OCI Logging (or to Object Storage + Streaming). If using Oracle’s documented methods (REST API / Audit export), configure the export schedule and confirm delivery. 2.Establish ingestion pipeline: Create or verify t he Service Connector Hub (OCI Logging → Streaming → SIEM) or object -storage- based ingestion.</fixtext>
+      <fix id="F-9CAC26C4r01_fix"/>
+      <check system="C-9CAC26C4_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>In the OCI Console 1. Verify Audit records (OCI Audit) capture high-level tenancy and console events.
+For Fusion application session details, verify the tenant’s Fusion Audit export pipeline is configured, Confirm Fusion’s audit export is sending events to OCI Logging or to Object Storage.
+2. In OCI Logging (or Object Storage), search for recent Fusion session events (examples: SignInSuccess, SignInFailure, SignOut, SessionCreated). Use query filters for eventName, principal, sourceIp, and eventTime.
+3. Confirm the Service Connector Hub ingestion pipeline (Logging → Service Cconnector Hub, Streaming, or Object Storage ingestion) is operational and logs are flowing.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-C0C71DF1">
+    <title>3 Logging and Monitoring</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-C0C71DF1r01_rule" weight="10.0" severity="high">
+      <version>3.2</version>
+      <title>Ensure EPM Audit Data is Exported and Centrally Stored</title>
+      <description>&lt;VulnDiscussion&gt;EPM Cloud Applications generate audit data that records user sign-ins, administrative actions, and configuration changes. This audit data should be exported regularly from the EPM environment to ensure it is retained outside of the application. To ensure audit integrity and long-term availability, these audit records should be periodically exported from the service and stored in a centralized repository for example on Object Storage.
+
+Rationale:
+Audit data retained only inside EPM is limited by default retention policies and is vulnerable to loss or deletion. Exporting ensures durability and independence, while forwarding into OCI Logging Analytics or a SIEM enables consolidated monitoring, alerting, and compliance reporting across enterprise systems.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>3.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-C0C71DF1r01_fix">• Configure automated export of EPM audit data (for example, with EPM Automate Access Log downloads).
+• Store exported files securely outside the transactional environment.
+• Test and validate that exports and any forwarding pipelines complete successfully, without data loss.</fixtext>
+      <fix id="F-C0C71DF1r01_fix"/>
+      <check system="C-C0C71DF1_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Confirm that EPM audit data exports are scheduled and active.
+2. Verify that audit data files contain expected details, such as user ID, login time, IP address, and executed functions.
+3. Check that exported data is securely stored in an external location, like Object Storage.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6B6AFA0F">
+    <title>3 Logging and Monitoring</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6B6AFA0Fr01_rule" weight="10.0" severity="high">
+      <version>3.3</version>
+      <title>Ensure to enable Audit on BI Publisher and OTBI Activity</title>
+      <description>&lt;VulnDiscussion&gt;Enable auditing and monitoring of all BI Publisher (BIP) and Oracle Transactional Business Intelligence (OTBI) reporting activity within Oracle Fusion Applications. This includes audit of report executions, catalog object creations, deletions, updates, and access control changes, as well as performance and concurrency usage metrics.
+Centralize this audit data for anomaly detection, insider-threat monitoring, and compliance reporting.
+
+Rationale:
+Reports and dashboards in Fusion Applications can access or export large volumes of sensitive operational and financial data. Auditing report execution and modification provides visibility into who viewed, changed, or extracted information, helping to prevent unauthorized disclosure or manipulation of analytics.
+Usage metrics also provide early indicators of abuse or unusual access patterns.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>3.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6B6AFA0Fr01_fix">1. How To Configure And Use Audit In BI Publisher For Fusion SaaS Cloud Customers? (Doc ID 2059102.1) – KB61120
+• Login BI with an BI Administrator user
+• Navigate to: Administration -&gt; Manage BI Publisher -&gt; Runtime Configuration -&gt; Properties -&gt; Data Model
+• If the following parameter is set to True: Enable SQL session trace = True 2. How to Track Delete , Archive and Unarchive Events in BI (KB86271)
+• Go to Navigator
+• Under Tools select Audit Reports
+• Enter the
+o Date After
+o User
+▪ Product = Oracle Business Intelligence Enterprise Edition
+▪ Event Type (Optional)
+• Click on Search
+• Following are the list of "Event Type": BI Analysis Accessed, BI Dashboard Accessed, BI Catalog Object Created, BI Catalog Object Deleted, BI Catalog Object Updated, BI Catalog Object ACL Set` 3. Enable OTBI Usage &amp; Performance Auditing (Doc ID 2731495.1) - KB5355 Starting with Fusion Applications Release 20D, two new subject areas are provided to monitor OTBI usage and performance:
+• OTBI Usage Real Time: Monitors OTBI usage, including user, analysis and dashboard, and subject area usage trends.
+• OTBI Performance Real Time: Monitors usage trends and OTBI analysis execution time, execution errors, and database physical SQL execution statistics.
+• Captures OTBI Query execution data including ad-hoc queries, saved analyses and dashboards
+• Six months of OTBI execution data is available in 20D.
+• Data older than six months is purged weekly.
+• Subject areas are secured by duty roles.
+• Does not contain BI Catalog change audit data.
+4. Centralize and Monitor
+• Export BI and OTBI audit data to a SIEM, Centralized Logging Store, or OCI Logging Analytics.</fixtext>
+      <fix id="F-6B6AFA0Fr01_fix"/>
+      <check system="C-6B6AFA0F_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Check Audit In BI Publisher For Fusion SaaS Cloud Customers? (Doc ID 2059102.1) – KB61120
+• Login BI with an BI Administrator user
+• Navigate to: Administration -&gt; Manage BI Publisher -&gt; Runtime Configuration -&gt; Properties -&gt; Data Model
+• Ensure Enable SQL session trace is set to True 2. How to Track Delete, Archive and Unarchive Events in BI (KB86271)
+• Go to Navigator
+• Under Tools select Audit Reports
+• Enter the
+o Date After
+o User
+▪ Product = Oracle Business Intelligence Enterprise Edition
+▪ Event Type (Optional)
+• Click on Search
+• Following are the list of Event Type: BI Analysis Accessed, BI Dashboard Accessed, BI Catalog Object Created, BI Catalog Object Deleted, BI Catalog Object Updated, BI Catalog Object ACL Set 3. Check if OTBI Usage &amp; Performance Auditing is enabled: (Doc ID 2731495.1) - KB5355 Starting with Fusion Applications Release 20D 4. Verify data is in a SIEM, Centralized Logging Store, or OCI Logging Analytics.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-07F1A24D">
+    <title>3 Logging and Monitoring</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-07F1A24Dr01_rule" weight="10.0" severity="high">
+      <version>3.4</version>
+      <title>Ensure BPM Approval Rule and Workflow Configuration Changes Are Audited</title>
+      <description>&lt;VulnDiscussion&gt;Enable and monitor auditing for changes to BPM (Business Process Management) approval rules and SOA workflow configurations within Oracle Fusion Applications.
+These rules determine the routing and approval hierarchy for critical business transactions (e.g., expense approvals, journal entries, purchase orders, HR changes).
+By auditing changes, organizations can maintain accountability for modifications that may alter segregation of duties or bypass established approval hierarchies.
+
+Rationale:
+Approval rules define key authorization paths that enforce financial and operational controls. Unauthorized or untracked changes can enable fraudulent approvals, insider threats, or policy violations. Auditing BPM/SOA configuration changes ensures the integrity and traceability of the enterprise approval model.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>3.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-07F1A24Dr01_fix">1. Enable auditing for SOA/BPM components in Fusion’s audit configuration as per Doc ID 2053746.1.
+2. Ensure all BPM rule changes are routed through change management or governance workflow.
+3. Configure scheduled extraction of BPM audit logs for integration with centralized audit monitoring (OCI Logging, SIEM, or Analytics).
+4. Implement periodic review (monthly/quarterly) of approval rule changes by business process owners and security administrators.
+5. Set up alerts or dashboards for critical workflow-change events.</fixtext>
+      <fix id="F-07F1A24Dr01_fix"/>
+      <check system="C-07F1A24D_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Access Setup and Maintenance → Manage Audit Policies → Audit Configuration.
+2. Confirm that Audit for SOA/BPM Changes is Enabled (refer to Doc ID 2053746.1). Review Fusion Applications SOA Audit (Doc ID 2053746.1) 3. Verify that audit data is available through Audit Report / REST API.
+4. Check for regular export or forwarding of BPM audit logs to the central logging system (OCI Logging / SIEM) for retention and correlation.
+5. Review samples of recent approval rule modifications and confirm they match authorized change requests.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D172DB33">
+    <title>3 Logging and Monitoring</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D172DB33r01_rule" weight="10.0" severity="high">
+      <version>3.5</version>
+      <title>Ensure Logging Pipelines are Monitored for Failures to Prevent Silent Loss of Audit Events</title>
+      <description>&lt;VulnDiscussion&gt;Audit and monitoring data from Oracle SaaS Applications is often exported and ingested into downstream systems such as Centralized Log Management (CLM) or Security Information and Event Management (SIEM) Platforms. If the export or ingestion pipelines fail, audit data may silently stop flowing, leaving security teams unaware of missing records. Monitoring and alerting should be enabled on all logging pipelines to detect failures and disruptions in log collection or forwarding.
+In Oracle SaaS Connector Hub is the recommended log routing services. Organizations leveraging multi-cloud or hybrid environments may also use third-party log forwarding and observability agents to ensure reliable audit data delivery.
+
+Rationale:
+Audit data is critical for detecting malicious activity, ensuring accountability, and meeting compliance requirements. Pipeline failures can result in gaps that prevent accurate forensic investigations and weaken monitoring effectiveness. By actively monitoring the health of logging pipelines, organizations can ensure continuous visibility into user and administrative activity.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>3.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D172DB33r01_fix">1. Configure OCI Monitoring alarms on Service Connector Hub pipelines to trigger when ingestion or forwarding fails.
+2. Establish alert rules in Centralized Log Management (CLM) or SIEM Platform to detect periods with no incoming audit events.
+3. Route alarms to administrators via Notifications, email, or ticketing systems.
+4. Test the monitoring setup by intentionally pausing or misconfiguring a pipeline and verifying that alerts are generated.
+5. Document the monitoring and escalation process in the organization’s operational runbooks.</fixtext>
+      <fix id="F-D172DB33r01_fix"/>
+      <check system="C-D172DB33_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. If using OCI Service Connector Hub, open the OCI Console, review OCI Service Connector Hub to confirm monitoring is enabled on log collection and forwarding pipelines.
+2. Check whether alarms exist in OCI Monitoring for connector errors, ingestion failures, or delivery delays.
+3. Validate that alerts are directed to responsible administrators via email, pager, or incident management systems.
+4. Inspect recent alarm history to confirm that test failures are detected and reported.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E1F6AE1A">
+    <title>4.1 Security Configuration Changes</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E1F6AE1Ar01_rule" weight="10.0" severity="medium">
+      <version>4.1.1</version>
+      <title>Ensure Changes to Audit Policy Settings Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that changes to Audit Policies are appropriate. Audit Policies record the changes made to Fusion Application configuration settings, which in turn determine the applications' behaviors. Each Audit Policy records changes to specific settings. Administrators enable each Audit Policy separately. Once an Audit Policy is enabled, audit information is stored without any intervention of the user or any explicit user action. Administrators can also disable any Audit Policy separately - i.e., specify that specific settings' changes will no longer be recorded - and re-enable them later.
+
+Rationale:
+Changes to Audit Policies impact the ability to detect changes to Fusion Application configurations, and consequent changes to the applications' behaviors. This control ensures that changes are recorded, reviewed, and if necessary, reversed.
+If an Audit Policy is disabled erroneously, the ability to monitor changes to Fusion Application configurations is lost; those changes will alter the applications' behaviors without appropriate oversight.
+If an Audit Policy is disabled maliciously, Fusion Application configurations can be changed in unauthorized ways - a potential exploit is to disable an Audit Policy, change an application configuration setting, abuse the changed behavior of the application, then restore the original configuration setting and re-enable the Audit Policy.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>4.1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E1F6AE1Ar01_fix">1. Re-enable the Audit Policy.
+1. Navigate to My Enterprise, Setup and Maintenance, Manage Audit Policies 2. Tap Configure Business Object Attributes in the Oracle Fusion Applications section.
+3. Re-enable the policy.
+2. Review activity that occurred while the Audit Policy was disabled:
+o Manual method: Review the transactions that could be created or approved while the Audit Policy was disabled.
+1. Navigate to Tools, Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+o Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs.
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-E1F6AE1Ar01_fix"/>
+      <check system="C-E1F6AE1A_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>Ensure that Audit Policies are enabled - and remain enabled - for Fusion Application configuration settings that have material impact on finances, operations, and compliance:
+• Manual method: Review the Audit History report for Audit Policies:
+1. Navigate to Tools, Audit Reports.
+2. Set Product to Audit Policies.
+3. Set Date to desired day/range.
+4. Tap Search.
+• Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor Audit Policy changes and initiate investigation workflows when unwanted changes occur.
+1. For example, deploy the control 60019: Track When Audit Policy is Disabled using the instructions in Continuously Monitor Configuration Changes.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A99683A2">
+    <title>4.1 Security Configuration Changes</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A99683A2r01_rule" weight="10.0" severity="medium">
+      <version>4.1.2</version>
+      <title>Ensure Configuration Changes to HCM Security Profile Setups Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that changes to HCM security profiles are appropriate. Each profile gives users access to specific kinds of HCM data, like specfic People or specific Payroll records. Each user can be assigned one or more profiles.
+
+Rationale:
+Each change to a profile has immediate effect for all users who have the profile.
+If a profile is changed erroneously or maliciously, users will gain or lose access unexpectedly. In the case of a gain, users could see sensitive data without authorization.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>4.1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A99683A2r01_fix">If audit has been disabled or was never enabled, see the instructions in Ensure Changes to Audit Policy Settings are Monitored.
+If unwanted changes were made to a profile:
+1. Restore the profile's intended settings.
+2. Review activity that occurred while those changes were in effect:
+o Manual method: Review the transactions that could be created or approved while the changes were in effect:
+1. Navigate to Tools, Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+o Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-A99683A2r01_fix"/>
+      <check system="C-A99683A2_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Enable audit of security profile changes using the instructions in Configure Data Roles and Security Profiles for Audit 2. Monitor changes to...
+1. That Audit Policy using the instructions in Ensure Changes to Audit Policy Settings are Monitored.
+2. Security profiles:
+▪ Manual method: Review the Audit History report for profiles:
+1. Navigate to Tools, Audit Reports.
+2. Set Product.
+3. Set Date to desired day/range.
+4. Tap Search.
+▪ Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor profile changes and initiate investigation workflows when unwanted changes occur.
+1. For example, deploy the following controls using the instructions in Continuously Monitor Configuration Changes:
+60008: Additions and Deletions to Data Roles, 60009: Updates to Data Roles, 60010: Additions and Deletions to Profile Options, 60011: Updates to Profile Options, 60015: Additions and Deletions to Security Profiles, and 60016: Updates to Security Profiles.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-127562B9">
+    <title>4.1 Security Configuration Changes</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-127562B9r01_rule" weight="10.0" severity="medium">
+      <version>4.1.3</version>
+      <title>Ensure Unused Custom Roles Are Disabled or Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that unused Custom Roles are disabled, or if they cannot or should not be disabled, that the actions they allow are monitored.
+
+Rationale:
+An unused custom role could be discovered by a user, assigned to a user (perhaps themself or someone else) either erroneously or maliciously; then the beneficiary of the assignment could perform unintended or unauthorized actions.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>4.1.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-127562B9r01_fix">If a role that was previously unassigned is now discovered to be assigned to a user:
+1. Either:
+o Make the role inactive.
+o Leave the role active and monitor the transactions performed if the role is assigned to a user (see below).
+2. Review the user's actions since then:
+o Manual method: Review the transactions that the role allows:
+1. Navigate to Tools Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+o Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-127562B9r01_fix"/>
+      <check system="C-127562B9_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>Identify custom roles that are not assigned to any users.
+• Manual method: Inspect each role's user assignments in Security Console.
+• Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor roles' assignments and initiate investigation workflows when they remain unassigned.
+1. For example, deploy the control 80001: Custom Roles Not Used using the instructions in Continuously Monitor Configuration Changes.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D2E8B15C">
+    <title>4.2 High Risk Business Transactions &amp; User Actions</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D2E8B15Cr01_rule" weight="10.0" severity="medium">
+      <version>4.2.1</version>
+      <title>Ensure Changes to Payment Setups Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that Payment configuration changes are monitored.
+
+Rationale:
+Each change to a Payment configuration has immediate effect for all subsequent payments. Configurations include payment methods and bank account details.
+If a configuration is changed erroneously or maliciously, payments could be directed to the wrong recipient. Once payments are made, they could be difficult to reclaim.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>4.2.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D2E8B15Cr01_fix">If audit has been disabled or was never enabled, see the instructions in Ensure Changes to Audit Policy Settings are Monitored.
+If unwanted changes were made to a Payment setup:
+1. Restore the intended settings.
+2. Review activity that occurred while those changes were in effect:
+o Manual method: Review the transactions that could be created or approved while the changes were in effect:
+1. Navigate to Tools, Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+o Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-D2E8B15Cr01_fix"/>
+      <check system="C-D2E8B15C_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Enable audit of Payment setup changes:
+1. Navigate to My Enterprise, Setup and Maintenance, Manage Audit Policies 2. Tap Configure Business Object Attributes in the Oracle Fusion Applications section.
+3. Enable the Audit Policies for Payment setup attributes.
+2. Monitor changes to...
+1. Those Audit Policies, using the instructions in Ensure Changes to Audit Policy Settings are Monitored.
+2. The Payment setups:
+▪ Manual method: Review the Audit History reports for the setups:
+1. Navigate to Tools, Audit Reports.
+2. Set Product.
+3. Set Date to desired day/range.
+4. Tap Search.
+▪ Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor Payment setup changes and initiate investigation workflows when unwanted changes occur.
+1. For example, deploy the following controls using the instructions in Continuously Monitor Configuration Changes:
+60002: Frequent Changes to Supplier Bank Account Details, 60005: Frequent Changes to Supplier Payment Methods, and 60007: Changes to Supplier Bank Accounts on a Weekend.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-49BEA116">
+    <title>4.2 High Risk Business Transactions &amp; User Actions</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-49BEA116r01_rule" weight="10.0" severity="medium">
+      <version>4.2.2</version>
+      <title>Ensure Unused Business Setups Are Disabled</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that unused business setups are disabled, or if they cannot or should not be disabled, that the actions they allow are monitored. Business setups could include ledgers, suppliers, and customers, to name only a few.
+
+Rationale:
+An unused setup could be discovered by a user, then used either erroneously or maliciously. For example, journal entries could be made to unused ledgers, with subsequent impact on financial reporting accuracy; purchase orders, invoices and payments could be attributed to unused suppliers, resulting in lost cash; and goods or services could be attributed to unused customers, resulting in losses.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>4.2.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-49BEA116r01_fix">If a business setup that was previously unused is now discovered to have been used, 1. Either:
+o Make the setup inactive.
+o Leave the setup active and monitor the transactions performed if the setup is used in transactions (see below).
+2. Review those transactions:
+o Manual method: Review the transactions that include the setup:
+1. Navigate to Tools, Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+o Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-49BEA116r01_fix"/>
+      <check system="C-49BEA116_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>Identify business setups that are not associated with transactions.
+• Manual method:
+1. Navigate to Tools, Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+• Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor setup use and initiate investigation workflows when they remain unused:
+1. For example, deploy the folowing controls using the instructions in Continuously Monitor Configuration Changes: 30009: Suppliers With No Invoice Activity, 32003: Ledgers With No Journal Activity, and 33004: Customers With No Invoice Activity.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-11D33F7C">
+    <title>4 Application Configuration Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-11D33F7Cr01_rule" weight="10.0" severity="medium">
+      <version>4.3</version>
+      <title>Ensure Configuration Changes to Roles Built for IT Superusers Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that pervasive or substantial abilities to configure and change Fusion are monitored.
+
+Rationale:
+Those abilities let users fundamentally change the behavior of the applications.
+Erroneous or malicious changes could have substantial impact on operations and finances.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>4.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-11D33F7Cr01_fix">When a user is assigned to the role:
+1. Either:
+o Remove unwanted assignments.
+o Leave assignments and monitor the transactions performed by assigned users (see below).
+2. Review the user's actions since then:
+o Manual method: Review the transactions that the role allows:
+1. Navigate to Tools, Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+o Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-11D33F7Cr01_fix"/>
+      <check system="C-11D33F7C_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>Identify users who have been assigned an IT superuser role - e.g., Application Implementation Consultant.
+• Manual method: Inspect the role's assignments in Security Console.
+• Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor the role's assignments and initiate investigation workflows when those assignments change.
+1. For example, deploy the control 60024: New Users Assigned to Application Implementation Consultant Role using the instructions in Continuously Monitor Configuration Changes.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D4645F42">
+    <title>4 Application Configuration Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D4645F42r01_rule" weight="10.0" severity="medium">
+      <version>4.4</version>
+      <title>Ensure Uploaded Files Are Scanned for Viruses and Restricted by Extension Policy</title>
+      <description>&lt;VulnDiscussion&gt;In Oracle EPM Cloud, you can enable pre-upload virus scanning using the setVirusScanOnFileUploads command so that files with malware are blocked before upload. In addition, enforce a file extension policy to restrict potentially dangerous file types (executables, scripts) from being uploaded.
+
+Rationale:
+Automatically scanning files before upload prevents malicious content from entering the environment. Combined with extension restrictions, this defense-in-depth approach reduces the risk from malware, ransomware, or embedded scripts being introduced via file upload.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>4.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D4645F42r01_fix">• Use epmautomate setVirusScanOnFileUploads true to enable virus scanning before files are uploaded. ￼
+• If needed, define or refine a policy of allowed and disallowed extension types to block risky formats.
+• Test uploads to validate scanning and blocking is working as expected.
+• Ensure that role assignment is controlled so only trusted Service Administrators can modify scan settings.
+• Document exception handling (for business-justified file types) and apply compensating controls.</fixtext>
+      <fix id="F-D4645F42r01_fix"/>
+      <check system="C-D4645F42_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Run epmautomate getVirusScanOnFileUploads to check whether scanning is enabled. If it returns false, scanning is not enforced. ￼ 2. Confirm that the file upload behavior prevents known malicious signatures (e.g.
+test with EICAR file) or rejects infected files.
+3. Review documentation or environment settings that disallow certain binary file types (e.g. .exe, .bat, .msi, .vbs) as indicated in the uploadFile command spec.
+4. Ensure that only Service Administrators have permission to run setVirusScanOnFileUploads.
+5. Verify that any exceptions to the extension allow/deny policy are documented and reviewed.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D5A79E97">
+    <title>5.1 IT Administrator Seperation of Duties</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D5A79E97r01_rule" weight="10.0" severity="medium">
+      <version>5.1.1</version>
+      <title>Ensure Transactions Created/Updated by Fusion Administrators Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that creation, update and approval of transactions by administrators are monitored.
+
+Rationale:
+Erroneous or malicious transactions could have substantial impact on operations, finances and legal/regulatory compliance.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>5.1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D5A79E97r01_fix">1. Reverse the transaction if possible.
+2. Identify the configurations that allowed the transaction and alter them if possible - for details see the preceding recommendations.</fixtext>
+      <fix id="F-D5A79E97r01_fix"/>
+      <check system="C-D5A79E97_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>• Manual method: Review the transactions:
+1. Navigate to Tools, Reports and Analytics. 2. Select the appropriate dashboards or reports.
+• Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the following controls using the instructions in Continuously Monitor Transactions: 41001: Approved Payable Invoices by IT Superusers, 41002: Created or Updated Payable Invoices by IT Superusers, 41003: Created or Updated Payments by IT Superusers, 41004:
+Created or Updated Suppliers by IT Superusers, 41005: Approval Workflow Rules for Financials by IT Superusers, 41006: Approved or Posted Journals by IT Superusers, 41007: Created or Updated Journals by IT Superusers, 41008: Created or Updated General Ledger Account Combinations by IT Superusers, 41009: Created or Updated General Ledger Options by IT Superusers, 41010: Created or Updated Customers by IT Superusers, 41011: Created or Updated Receivables Invoices by IT Superusers, 41012: Created or Updated Receivables Standard Receipts by IT Superusers, 42001: Created or Updated Employee Job Assignments by IT Superusers, 42002: Created or Updated Employee Payroll Transactions by IT Superusers, 42003:
+Created or Updated Employee Personal Payment Methods by IT Superusers, and 42004: Created or Updated Employee Salary by IT Superusers.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-EBB0E709">
+    <title>5.1 IT Administrator Seperation of Duties</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-EBB0E709r01_rule" weight="10.0" severity="medium">
+      <version>5.1.2</version>
+      <title>Ensure Assignments of Substantial Access to Fusion Users Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that assignments of pervasive or substantial abilities to configure and change Fusion, create/approve transactions, and view sensitive data are monitored.
+
+Rationale:
+Those abilities give users freedom to fundamentally change the behavior of the applications, create/approve transactions, and view sensitive data without the usual separation of duties (SoD) or oversight. Erroneous or malicious actions could have substantial impact on operations, finances, and legal/regulatory compliance.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>5.1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-EBB0E709r01_fix">When a user is assigned the privileges:
+1. Either:
+o Remove unwanted assignments.
+o Leave assignments and monitor the transactions performed by assigned users (see below).
+2. Review the user's actions since then:
+o Manual method: Review the transactions that the privileges allow:
+1. Navigate to Tools, Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+o Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-EBB0E709r01_fix"/>
+      <check system="C-EBB0E709_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>Identify users who have been assigned privileges that let them change the behavior of the applications, create/approve transactions, and view sensitive data.
+• Manual method: Review assignments - e.g., HDL logs.
+• Automated method: Create Access Controls in Fusion Cloud Applications Risk Management that continuously monitor the roles' assignments and initiate investigation workflows when those assignments change.
+1. For example, deploy the following controls using the instructions in Automate Separation of Duties Reporting for Compliance: 4085: HDL Import Data into Stage Tables &amp; HDL Import Data into Application Tables, 4096: HDL Sensitive Data Loader Privilege, 4097: HDL Sensitive Data Exchange Work Area, and 9361: Sensitive IT Security Privileges.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-AD5F905C">
+    <title>5.1 IT Administrator Seperation of Duties</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-AD5F905Cr01_rule" weight="10.0" severity="medium">
+      <version>5.1.3</version>
+      <title>Ensure Assignments of Substantial Access to EPM Administrators Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that pervasive or substantial abilities to view sensitive data are monitored - for example, data about accounts and financial data.
+
+Rationale:
+Those abilities give users freedom to view sensitive data without the usual oversight.
+Erroneous or malicious actions could have substantial impact on operations, finances, and legal/regulatory compliance.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>5.1.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-AD5F905Cr01_fix">When a user is assigned to one of the privileges:
+• Remove unwanted assignments.
+• Ensure that the user complies with all data handling policies.</fixtext>
+      <fix id="F-AD5F905Cr01_fix"/>
+      <check system="C-AD5F905C_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>Identify users who have been assigned privileges that let them view sensitive data.
+• Manual method: In EPM, identify roles that contain privileges that let users view sensitive data. Then inspect each role's user assignments.
+• Automated method: Create Access Controls in Fusion Cloud Applications Risk Management that continuously monitor the roles' assignments and initiate investigation workflows when those assignments change.
+1. For example, deploy the following controls using the instructions in Automate Separation of Duties Reporting for Compliance: 4608:
+Sensitive EPM Accounts Reconciliation (ARCS) Superuser roles and 4616: Sensitive EPM Financial Consolidation (FCCS) Superuser roles.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6AEC7736">
+    <title>5.2 Application Superuser Seperation of Duties</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6AEC7736r01_rule" weight="10.0" severity="medium">
+      <version>5.2.1</version>
+      <title>Ensure Assignments of Substantial Access to Business Users Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that pervasive or substantial abilities to view sensitive data are monitored - for example, data about employees or their pay, suppliers, customers, or bank accounts.
+
+Rationale:
+Those abilities give users freedom to view sensitive data without the usual oversight.
+Erroneous or malicious actions could have substantial impact on operations, finances, and legal/regulatory compliance.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>5.2.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6AEC7736r01_fix">When a user is assigned to one of the privileges:
+• Remove unwanted assignments.
+• Ensure that the user complies with all data handling policies.</fixtext>
+      <fix id="F-6AEC7736r01_fix"/>
+      <check system="C-6AEC7736_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>Identify users who have been assigned privileges that let them view sensitive data.
+• Manual method: In Security Console, identify roles that contain privileges that let users view sensitive data. Then inspect each role's user assignments.
+• Automated method: Create Access Controls in Fusion Cloud Applications Risk Management that continuously monitor the roles' assignments and initiate investigation workflows when those assignments change.
+1. For example, deploy the following controls using the instructions in Automate Separation of Duties Reporting for Compliance: 4079:
+Sensitive Human Resource Privileges, 4080: Sensitive Payroll Privileges, 6681: Sensitive Set Up Procurement Privileges, 9800: Sensitive Customer Privileges, 9801: Sensitive Supplier Privileges, 9802: Sensitive Payment Privileges, 9804:
+Sensitive Purchasing Privilege, and 9805: HR Sensitive Access Analysis for Excluded Role.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-8651E562">
+    <title>5.3 Application Business User Seperation of Duties</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-8651E562r01_rule" weight="10.0" severity="medium">
+      <version>5.3.1</version>
+      <title>Ensure SoD Within Fusion Is Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that the ability to perform an unwanted combination of actions within Fusion is monitored.
+
+Rationale:
+Erroneous or malicious actions could have substantial impact on operations, finances and legal/regulatory compliance.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>5.3.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-8651E562r01_fix">When a user is assigned the privileges:
+1. Either:
+o Remove unwanted assignments.
+o Leave assignments and monitor the transactions performed by assigned users (see below).
+2. Review the user's actions since then:
+o Manual method: Review the transactions that the privileges allow:
+1. Navigate to Tools, Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+o Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-8651E562r01_fix"/>
+      <check system="C-8651E562_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>Identify users who have been assigned combinations of Fusion privileges that let them perform unwanted actions.
+• Manual method: In Security Console, identify users that have those combinations.
+• Automated method: Create Access Controls in Fusion Cloud Applications Risk Management that continuously monitor the privileges' assignments and initiate investigation workflows when those assignments change.
+1. For example, deploy the following controls using the instructions in Automate Separation of Duties Reporting for Compliance: 4051: Manage Employee and Manage Payroll, 4052: Manage Time and Labor and Manage Payroll, 4053: Manage Employee and Manage Compensation, 4054: Manage Employee and Manage Payroll Batch Processes, 4055: Manage Employee and Manage Payroll Costing, 4056: Manage Worker and Manage Payroll, 4057: Manage Worker and Manage Payroll Batch Processes, 4058: Manage Worker and Manage Payroll Costing, 4059: Manage Person and Manage Payroll, 4060: Manage Person and Manage Payroll Batch Processes, 4061: Manage Person and Manage Payroll Costing, 4062: Create User and Manage Payroll, 4063: Create User and Manage Payroll Batch Processes, 4064: Create User and Manage Payroll Costing, 4068: Manage Time and Labor and Manage Payroll Batch Processes, 4069: Manage Time and Labor and Manage Payroll Costing, 4070: Manage Worker and Manage Compensation, 4071: Manage Person and Manage Compensation, 4073: Manage Employee Position and Manage Compensation, 5800:
+Approve Payables Invoices and Create Payables Invoices, 5810:
+Approve Payables Invoices and Create Payments, 5892: Maintain Supplier Bank Accounts and Create Payments, 5980: Create Suppliers and Create Payments, 6080: Create Purchase Orders and Define Procurement Approval Routing Rules, 6390: Create Suppliers and Create Payables Invoices, and 6410: Create Suppliers and Create Purchase Orders.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-269A581B">
+    <title>5.3 Application Business User Seperation of Duties</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-269A581Br01_rule" weight="10.0" severity="medium">
+      <version>5.3.2</version>
+      <title>Ensure SoD Across Fusion and EPM Is Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that the ability to perform an unwanted combination of actions in Fusion and EPM is monitored.
+
+Rationale:
+Erroneous or malicious actions could have substantial impact on finances and legal/regulatory compliance.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>5.3.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-269A581Br01_fix">When a user is assigned the privileges:
+1. Either:
+o Remove unwanted assignments.
+o Leave assignments and monitor the transactions performed by assigned users (see below).
+2. Review the user's actions since then:
+o Manual method: Review the transactions that the privileges allow:
+1. Navigate to Tools, Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+o Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-269A581Br01_fix"/>
+      <check system="C-269A581B_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Identify users who have been assigned combinations of Fusion and EPM privileges that let them perform unwanted actions.
+o Manual method: In Fusion and EPM's user access administration tools, identify users that have those combinations.
+o Automated method: Create Access Controls in Fusion Cloud Applications Risk Management that continuously monitor the privileges' assignments and initiate investigation workflows when those assignments change.
+1. For example, deploy the following controls using the instructions in Automate Separation of Duties Reporting for Compliance: 4601:
+EPM Accounts Reconciliation (ARCS) Superuser and Fusion Create Payables Invoices, 4602: EPM Accounts Reconciliation (ARCS) Superuser and Fusion Create Payments, 4603: EPM Accounts Reconciliation (ARCS) Superuser and Fusion Create Purchase Orders, 4604: EPM Accounts Reconciliation (ARCS) Superuser and Fusion Enter Customer Receipts, 4605: EPM Accounts Reconciliation (ARCS) Superuser and Fusion Enter Journals, 4606: EPM Accounts Reconciliation (ARCS) Superuser and Fusion Inventory Transactions, 4607: EPM Accounts Reconciliation (ARCS) Superuser and Fusion Physical Inventory, 4609: EPM Financial Consolidation (FCCS) Superuser and Fusion Create Payables Invoices, 4610: EPM Financial Consolidation (FCCS) Superuser and Fusion Create Payments, 4611: EPM Financial Consolidation (FCCS) Superuser and Fusion Create Purchase Orders, 4612: EPM Financial Consolidation (FCCS) Superuser and Fusion Enter Customer Receipts, 4613: EPM Financial Consolidation (FCCS) Superuser and Fusion Enter Journals, 4614: EPM Financial Consolidation (FCCS) Superuser and Fusion Inventory Transactions, and 4615: EPM Financial Consolidation (FCCS) Superuser and Fusion Physical Inventory.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-7AF3A55E">
+    <title>5.3 Application Business User Seperation of Duties</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-7AF3A55Er01_rule" weight="10.0" severity="medium">
+      <version>5.3.3</version>
+      <title>Ensure SoD Across Fusion and OCI Is Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that the ability to perform an unwanted combination of actions in Fusion and its OCI environment is monitored.
+
+Rationale:
+Erroneous or malicious actions could have substantial impact on operations, finances and legal/regulatory compliance.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>5.3.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-7AF3A55Er01_fix">When a user is assigned the privileges:
+1. Either:
+o Remove unwanted assignments.
+o Leave assignments and monitor the transactions performed by assigned users (see below).
+2. Review the user's actions since then:
+o Manual method: Review the transactions that the privileges allow:
+1. Navigate to Tools, Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+o Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-7AF3A55Er01_fix"/>
+      <check system="C-7AF3A55E_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>1. Identify users who have been assigned combinations of Fusion and OCI privileges that let them perform unwanted actions.
+o Manual method: In Fusion and OCI's user access administration tools, identify users that have those combinations.
+o Automated method: Create Access Controls in Fusion Cloud Applications Risk Management that continuously monitor the privileges' assignments and initiate investigation workflows when those assignments change.
+1. For example, deploy the following controls using the instructions in Automate Separation of Duties Reporting for Compliance: 4651:
+OCI DBaaS Administrator and Fusion BI Administrator, 4652: OCI SOA Administrator and Fusion Workflow Administrator, 4653: OCI Service Administrator and Fusion Security Administrator, and 4654: OCI Service Developer and Fusion Security Administrator.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-1C7F225F">
+    <title>5.3 Application Business User Seperation of Duties</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-1C7F225Fr01_rule" weight="10.0" severity="medium">
+      <version>5.3.4</version>
+      <title>Ensure Fusion ERP Transactions Allowed by SoD Violations Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that ERP transactions that violate separation of duties policies (SoD) are monitored.
+
+Rationale:
+Erroneous or malicious transactions could have substantial impact on operations, finances and legal/regulatory compliance.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>5.3.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-1C7F225Fr01_fix">1. Reverse the transaction if possible.
+2. Identify the configurations that allowed the transaction and alter them if possible - for details see the preceding recommendations.</fixtext>
+      <fix id="F-1C7F225Fr01_fix"/>
+      <check system="C-1C7F225F_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>• Manual method: Review the transactions:
+1. Navigate to Tools, Reports and Analytics. 2. Select the appropriate dashboards or reports.
+• Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the following controls using the instructions in Continuously Monitor Transactions: 40001: Supplier and Payables Invoices Created by the Same User, 40004: Payment Process Request Created by Same User Managing Suppliers, 40005: Suppliers and Purchase Orders Managed by the Same User, 40008: External Bank Accounts and Payments Managed by the Same User, 40009: Purchase Orders and Procurement Approval Routing Rules Managed by the Same User, 40012: Payable Invoices Approved and Created by the Same User, 40013: Payable Invoices Approved and Payment Created by the Same User, 40015:
+Requisition and Purchase Order Managed by the Same User, 40017:
+Payments and Requisitions Managed by the Same User.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D49C560B">
+    <title>5.3 Application Business User Seperation of Duties</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D49C560Br01_rule" weight="10.0" severity="medium">
+      <version>5.3.5</version>
+      <title>Ensure Fusion HCM Transactions Allowed by SoD Violations Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that HCM transactions that violate separation of duties policies (SoD) are monitored.
+
+Rationale:
+Erroneous or malicious transactions could have substantial impact on operations, finances and legal/regulatory compliance.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>5.3.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D49C560Br01_fix">1. Reverse the transaction if possible.
+2. Identify the configurations that allowed the transaction and alter them if possible - for details see the preceding recommendations.</fixtext>
+      <fix id="F-D49C560Br01_fix"/>
+      <check system="C-D49C560B_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>• Manual method: Review the transactions:
+1. Navigate to Tools, Reports and Analytics. 2. Select the appropriate dashboards or reports.
+• Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the following controls using the instructions in Continuously Monitor Transactions: 50001: Payroll Transactions and Personal Payment Method Managed by Same User, 50002: Payroll Transactions and Time Cards Managed by Same User, and 50005: Salary and Personal Payment Method Managed by Same User.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F7DB209B">
+    <title>5.3 Application Business User Seperation of Duties</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F7DB209Br01_rule" weight="10.0" severity="medium">
+      <version>5.3.6</version>
+      <title>Ensure Shared EPM Accounts Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that sharing of EPM user accounts is monitored.
+
+Rationale:
+Sharing of accounts could have substantial impact on operations, finances and legal/regulatory compliance. For example, sharing makes it impossible to identify the person who performed an erroneous or malicious action.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>5.3.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F7DB209Br01_fix">When an account is shared:
+1. Either:
+o Inactivate the account.
+o Change the account password and share the new password with only one user.
+o Allow sharing to continue and monitor the transactions performed by the users (see below).
+2. Review actions since the account was shared.</fixtext>
+      <fix id="F-F7DB209Br01_fix"/>
+      <check system="C-F7DB209B_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>Identify accounts that are used by more than one person.
+• Manual method: In EPM, identify accounts.
+• Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor account use and initiate investigation workflows when those assignments change.
+1. For example, deploy the following controls using the instructions in Continuously Monitor Transactions: 45001: Shared User Accounts in EPM Account Reconciliation and 45002: Shared User Accounts in EPM Financial Consolidation and Close.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-25652646">
+    <title>5.3 Application Business User Seperation of Duties</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-25652646r01_rule" weight="10.0" severity="medium">
+      <version>5.3.7</version>
+      <title>Ensure Potential Ghost Employees Are Monitored</title>
+      <description>&lt;VulnDiscussion&gt;The purpose of this recommendation is to ensure that the ability of employees to be paid without working is monitored.
+
+Rationale:
+Employees who are paid without working could have substantial impact on operations, finances and legal/regulatory compliance.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Oracle SaaS Cloud Applications Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Oracle SaaS Cloud Applications Benchmark</dc:subject>
+        <dc:identifier>5.3.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-25652646r01_fix">When a user is paid without working:
+1. Either:
+o Terminate the user's employment.
+o Allow employment to continue and monitor the transactions performed by the user and their hiring managers (see below).
+2. Review actions since then:
+o Manual method: Review the transactions performed by the user and their hiring managers:
+1. Navigate to Tools, Reports and Analytics.
+2. Select the appropriate dashboards or reports.
+o Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor those transactions and initiate investigation workflows when unwanted activity occurs:
+1. Deploy the appropriate controls using the instructions in Continuously Monitor Transactions.</fixtext>
+      <fix id="F-25652646r01_fix"/>
+      <check system="C-25652646_chk">
+        <check-content-ref href="CIS_Oracle_SaaS_Cloud_Applications_Benchmark.xml" name="M"/>
+        <check-content>Identify users who have been paid without working.
+• Manual method: In HCM, identify users who have payroll entries without time entries or other evidence or work.
+• Automated method: Create Transaction Controls in Fusion Cloud Applications Risk Management that continuously monitor suspicious hires and initiate investigation workflows when those assignments change.
+1. For example, deploy the following controls using the instructions in Continuously Monitor Transactions: 50003: Employee New Hire Created by Same User Managing Personal Payments and 50004:
+Employee New Hire Created by Same User Managing Time Cards.</check-content>
+      </check>
+    </Rule>
+  </Group>
+</Benchmark>
+

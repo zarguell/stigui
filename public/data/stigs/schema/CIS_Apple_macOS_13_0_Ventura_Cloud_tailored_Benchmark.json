@@ -1,0 +1,2671 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2024-10-30"
+    },
+    "title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+    "description": "All CIS Benchmarks™ focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the CIS Benchmarks™ are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All CIS Benchmarks™ are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the CIS Benchmarks™ Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed, since all are important for properly securing systems and are typically in scope for audits. In addition, CIS has developed CIS Build Kits for some common technologies to assist in applying CIS Benchmarks™ Recommendations. When remediating systems (changing configuration settings on deployed systems as per the CIS Benchmarks ™ Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: 1. NEVER deploy a CIS Build Kit, or any internally developed remediation method, to production systems without proper testing. 2. Proper testing consists of the following: Internal Only - General a. Understand the configuration (including installed applications) of the targeted systems. b. Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. c. Test the configuration changes on representative lab system(s). This way if there is some issue it can be resolved prior to deploying to any production systems. d. When confident, initially deploy to a small sub-set of users and monitor closely for issues. This way if there is some issue it can be resolved prior to deploying more broadly. e. When confident, iteratively deploy to additional groups and monitor closely for issues until deployment is complete. This way if there is some issue it can be resolved prior to continuing deployment. NOTE: CIS and the CIS Benchmarks™ development communities in CIS WorkBench do their best to test and have high confidence in the Recommendations, but they cannot test potential conflicts with all possible system deployments. Known potential issues identified during CIS Benchmarks™ development are documented in the Impact section of each Recommendation. By using CIS and/or CIS Benchmarks™ Certified tools, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Target Technology Details This document, CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark, provides prescriptive guidance for establishing a secure configuration posture for Apple macOS 13.0 Ventura running on a cloud platform. This guide was tested against Apple macOS 13.0 Ventura. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org. Internal Only - General",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.1.0 Benchmark Date: 2024-10-30",
+      "+@id": "release-info"
+    },
+    "version": "1.1.0",
+    "Profile": [
+      {
+        "+@id": "L1_Public",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-515C024E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9EB8AA5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-953CB674",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7537DAAC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AC8BB1EE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FB875C16",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5D9F5792",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-43AA20A5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28EB77F3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B5226D9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8A5B5546",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A2F6EED",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9C151FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-99AD7E0F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F75AA93A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21288C3F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CDCE0C32",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71D55B31",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-76754972",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-37A91A85",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F13BA0AD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9135598B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-27ECEF75",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB7CD391",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E9AE47B1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5CB95B18",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-03C9DB53",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4732DD1E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0B53B5FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-481C09F8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7647D717",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8A43DCC0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6FD8E13B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4495ECA6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4C199DC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF83E6D0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B8A0CEE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-827E1FB7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9EAD2552",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BA59F05D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7FF20123",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D4E83F86",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CCF2BFB3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28DEF1C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-680D7B5F",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Classified",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-515C024E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9EB8AA5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-953CB674",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7537DAAC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AC8BB1EE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FB875C16",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5D9F5792",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-43AA20A5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28EB77F3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B5226D9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8A5B5546",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A2F6EED",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9C151FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-99AD7E0F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F75AA93A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21288C3F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CDCE0C32",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71D55B31",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-76754972",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-37A91A85",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F13BA0AD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9135598B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-27ECEF75",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB7CD391",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E9AE47B1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5CB95B18",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-03C9DB53",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4732DD1E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0B53B5FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-481C09F8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7647D717",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8A43DCC0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6FD8E13B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4495ECA6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4C199DC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF83E6D0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B8A0CEE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-827E1FB7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9EAD2552",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BA59F05D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7FF20123",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D4E83F86",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CCF2BFB3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28DEF1C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-680D7B5F",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Sensitive",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-515C024E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9EB8AA5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-953CB674",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7537DAAC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AC8BB1EE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FB875C16",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5D9F5792",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-43AA20A5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28EB77F3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B5226D9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8A5B5546",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A2F6EED",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9C151FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-99AD7E0F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F75AA93A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21288C3F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CDCE0C32",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71D55B31",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-76754972",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-37A91A85",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F13BA0AD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9135598B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-27ECEF75",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB7CD391",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E9AE47B1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5CB95B18",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-03C9DB53",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4732DD1E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0B53B5FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-481C09F8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7647D717",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8A43DCC0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6FD8E13B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4495ECA6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4C199DC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF83E6D0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B8A0CEE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-827E1FB7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9EAD2552",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BA59F05D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7FF20123",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D4E83F86",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CCF2BFB3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28DEF1C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-680D7B5F",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Public",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-7064CCF7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EBFC7A14",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-ED8D7A53",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-56DDA07D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A929D45B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E6666E0D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DF239981",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-390FE78D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-274D8917",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A7448082",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Classified",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-7064CCF7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EBFC7A14",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-ED8D7A53",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-56DDA07D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A929D45B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E6666E0D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DF239981",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-390FE78D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-274D8917",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A7448082",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Sensitive",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-7064CCF7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EBFC7A14",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-ED8D7A53",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-56DDA07D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A929D45B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E6666E0D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DF239981",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-390FE78D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-274D8917",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A7448082",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-515C024E",
+        "title": "1 Install Updates, Patches and Additional Security Software",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-515C024Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1",
+          "title": "Ensure All Apple-provided Software Is Current",
+          "description": "<VulnDiscussion>Software vendors release security patches and software updates for their products when security vulnerabilities are discovered. There is no simple way to complete this action without a network connection to an Apple software repository. Please ensure appropriate access for this control. This check is only for what Apple provides through software update.\nSoftware updates should be run at minimum every 30 days. Run the following command to verify when software update was previously run:\n$ /usr/bin/sudo defaults read /Library/Preferences/com.apple.SoftwareUpdate | grep -e LastFullSuccessfulDate.\nThe response should be in the last 30 days ( Example): LastFullSuccessfulDate = \"2020-07-30 12:45:25 +0000\";\n\nRationale:\nIt is important that these updates be applied in a timely manner to prevent unauthorized persons from exploiting the identified vulnerabilities.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "1.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to verify what packages need to be installed:\n% /usr/bin/sudo /usr/sbin/softwareupdate -l\nThe output will include the following:\nSoftware Update found the following new or updated software:\nRun the following command to install all the packages that need to be updated:\nTo install all updates run the command:\n% /usr/bin/sudo /usr/sbin/softwareupdate -i -a\nOr run the following command to install individual packages:\n% /usr/bin/sudo /usr/sbin/softwareupdate -i '<package name>'\nNote: If one of the software updates listed includes Action: restart, then you must attach the -R flag to force a system restart. If the system update is complete but no restart occurs, then the system is in an unknown state that requires a future restart. It is advised to run updates and forced restarts during system downtime and not while in active use.\nexample:\n% /usr/bin/sudo /usr/sbin/softwareupdate -l\nSoftware Update Tool\nFinding available software\nSoftware Update found the following new or updated software:\n* Label: ProVideoFormats-2.2.7\nTitle: Pro Video Formats, Version: 2.2.7, Size: 9693KiB, Recommended:\nYES,\n* Label: Command Line Tools for Xcode-15.0\nTitle: Command Line Tools for Xcode, Version: 15.0, Size: 721962KiB,\nRecommended: YES,\n% /usr/bin/sudo /usr/sbin/softwareupdate -i 'ProVideoFormats-2.2.7'\nSoftware Update Tool\nFinding available software\nAttempting to quit apps: (\n\"com.apple.Compressor\"\n)\nWaiting for user to quit any relevant apps\nSuccessfully quit all apps\nDownloaded Pro Video Formats\nInstalling Pro Video Formats\nDone with Pro Video Formats\nDone.\nIn the above example, if a restart was required, the command to remediate would be /usr/bin/sudo /usr/sbin/softwareupdate -i 'ProVideoFormats-2.2.7' -R Internal Only - General",
+            "+@fixref": "F-515C024Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-515C024Er01_fix"
+          },
+          "check": {
+            "+@system": "C-515C024E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify there are no software updates:\n% /usr/bin/sudo /usr/sbin/softwareupdate -l\nSoftware Update Tool\nFinding available software\nNo new software available.\nNote: If you are running a previous version of macOS, the output will say that the current version is available. As long as the system is on the current point release of macOS, it is compliant. It is recommended that your organization moves to the current version of macOS once a .1 version is released. Be aware that old macOS versions will stop receiving any updates.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-F9EB8AA5",
+        "title": "1 Install Updates, Patches and Additional Security Software",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F9EB8AA5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2",
+          "title": "Ensure Auto Update Is Enabled",
+          "description": "<VulnDiscussion>Auto Update verifies that your system has the newest security patches and software updates. If \"Automatically check for updates\" is not selected, background updates for new malware definition files from Apple for XProtect and Gatekeeper will not occur.\nhttp://macops.ca/os-x-admins-your-clients-are-not-getting-background-security-updates/ https://derflounder.wordpress.com/2014/12/17/forcing-xprotect-blacklist-updates-on- mavericks-and-yosemite/\n\nRationale:\nIt is important that a system has the newest updates applied so as to prevent unauthorized persons from exploiting identified vulnerabilities.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "1.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable auto update:\n% /usr/bin/sudo /usr/bin/defaults write\n/Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool\ntrue\nInternal Only - General",
+            "+@fixref": "F-F9EB8AA5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-F9EB8AA5r01_fix"
+          },
+          "check": {
+            "+@system": "C-F9EB8AA5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that software updates are automatically checked:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\n$.NSUserDefaults.alloc.initWithSuiteName('com.apple.SoftwareUpdate')\\\n.objectForKey('AutomaticCheckEnabled').js\nEOS\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-953CB674",
+        "title": "1 Install Updates, Patches and Additional Security Software",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-953CB674r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3",
+          "title": "Ensure Download New Updates When Available Is Enabled",
+          "description": "<VulnDiscussion>In the GUI, both \"Install macOS updates\" and \"Install app updates from the App Store\" are dependent on whether \"Download new updates when available\" is selected.\n\nRationale:\nIt is important that a system has the newest updates downloaded so that they can be applied.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "1.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable auto update:\n% /usr/bin/sudo /usr/bin/defaults write\n/Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -bool true\nInternal Only - General",
+            "+@fixref": "F-953CB674r01_fix"
+          },
+          "fix": {
+            "+@id": "F-953CB674r01_fix"
+          },
+          "check": {
+            "+@system": "C-953CB674_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that software updates are automatically checked:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\n$.NSUserDefaults.alloc.initWithSuiteName('com.apple.SoftwareUpdate')\\\n.objectForKey('AutomaticDownload').js\nEOS\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-7537DAAC",
+        "title": "1 Install Updates, Patches and Additional Security Software",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7537DAACr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4",
+          "title": "Ensure Install of macOS Updates Is Enabled",
+          "description": "<VulnDiscussion>Ensure that macOS updates are installed after they are available from Apple. This setting enables macOS updates to be automatically installed. Some environments will want to approve and test updates before they are delivered. It is best practice to test first where updates can and have caused disruptions to operations. Automatic updates should be turned off where changes are tightly controlled and there are mature testing and approval processes. Automatic updates should not be turned off simply to allow the administrator to contact users in order to verify installation. A dependable, repeatable process involving a patch agent or remote management tool should be in place before auto-updates are turned off.\n\nRationale:\nPatches need to be applied in a timely manner to reduce the risk of vulnerabilities being exploited.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "1.4"
+          },
+          "fixtext": {
+            "+content": "Run the following command to to enable automatic checking and installing of macOS updates:\n% /usr/bin/sudo /usr/bin/defaults write\n/Library/Preferences/com.apple.SoftwareUpdate\nAutomaticallyInstallMacOSUpdates -bool TRUE\nInternal Only - General",
+            "+@fixref": "F-7537DAACr01_fix"
+          },
+          "fix": {
+            "+@id": "F-7537DAACr01_fix"
+          },
+          "check": {
+            "+@system": "C-7537DAAC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that macOS updates are automatically checked and installed:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\n$.NSUserDefaults.alloc.initWithSuiteName('com.apple.SoftwareUpdate')\\\n.objectForKey('AutomaticallyInstallMacOSUpdates').js\nEOS\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-AC8BB1EE",
+        "title": "1 Install Updates, Patches and Additional Security Software",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AC8BB1EEr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5",
+          "title": "Ensure Install Application Updates from the App Store Is Enabled",
+          "description": "<VulnDiscussion>Ensure that application updates are installed after they are available from Apple. These updates do not require reboots or administrator privileges for end users.\n\nRationale:\nPatches need to be applied in a timely manner to reduce the risk of vulnerabilities being exploited.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "1.5"
+          },
+          "fixtext": {
+            "+content": "Run the following command to turn on App Store auto updating:\n% /usr/bin/sudo /usr/bin/defaults write\n/Library/Preferences/com.apple.commerce AutoUpdate -bool TRUE\nInternal Only - General",
+            "+@fixref": "F-AC8BB1EEr01_fix"
+          },
+          "fix": {
+            "+@id": "F-AC8BB1EEr01_fix"
+          },
+          "check": {
+            "+@system": "C-AC8BB1EE_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that App Store updates are auto updating:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\n$.NSUserDefaults.alloc.initWithSuiteName('com.apple.commerce')\\\n.objectForKey('AutoUpdate').js\nEOS\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-FB875C16",
+        "title": "1 Install Updates, Patches and Additional Security Software",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FB875C16r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.6",
+          "title": "Ensure Install Security Responses and System Files Is Enabled",
+          "description": "<VulnDiscussion>Ensure that system and security updates are installed after they are available from Apple. This setting enables definition updates for XProtect and Gatekeeper. With this setting in place, new malware and adware that Apple has added to the list of malware or untrusted software will not execute. These updates do not require reboots or end user admin rights.\nApple has introduced a security feature that allows for smaller downloads and the installation of security updates when a reboot is not required. This feature is only available when the last regular update has already been applied. This feature emphasizes that a Mac must be up-to-date on patches so that Apple's security tools can be used to quickly patch when a rapid response is necessary.\n\nRationale:\nPatches need to be applied in a timely manner to reduce the risk of vulnerabilities being exploited.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "1.6"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to enable automatic checking of system data files and security updates:\n% /usr/bin/sudo /usr/bin/defaults write\n/Library/Preferences/com.apple.SoftwareUpdate ConfigDataInstall -bool true\n% /usr/bin/sudo /usr/bin/defaults write\n/Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -bool\ntrue",
+            "+@fixref": "F-FB875C16r01_fix"
+          },
+          "fix": {
+            "+@id": "F-FB875C16r01_fix"
+          },
+          "check": {
+            "+@system": "C-FB875C16_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands to verify that system data files and security updates are automatically checked:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\nfunction run() {\nlet pref1 =\nObjC.unwrap($.NSUserDefaults.alloc.initWithSuiteName('com.apple.SoftwareUpdat\ne')\\\n.objectForKey('ConfigDataInstall'))\nlet pref2 =\nObjC.unwrap($.NSUserDefaults.alloc.initWithSuiteName('com.apple.SoftwareUpdat\ne')\\\n.objectForKey('CriticalUpdateInstall'))\nif ( pref1 == 1 && pref2 == 1 ) {\nreturn(\"true\")\n} else {\nreturn(\"false\")\n}\n}\nEOS\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-5D9F5792",
+        "title": "2.1 Network",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5D9F5792r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.1",
+          "title": "Ensure Firewall Is Enabled",
+          "description": "<VulnDiscussion>A firewall is a piece of software that blocks unwanted incoming connections to a system.\n\nRationale:\nA firewall minimizes the threat of unauthorized users gaining access to your system while connected to a network or the Internet.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.1.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable the firewall:\n% /usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.alf\nglobalstate -int <value>\nFor the <value>, use either 1, specific services, or 2, essential services only.",
+            "+@fixref": "F-5D9F5792r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5D9F5792r01_fix"
+          },
+          "check": {
+            "+@system": "C-5D9F5792_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that the firewall is enabled:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\nfunction run() {\nlet firewallstate =\nObjC.unwrap($.NSUserDefaults.alloc.initWithSuiteName('com.apple.alf')\\\n.objectForKey('globalstate'))\nif ( ( firewallstate == 1 ) || ( firewallstate == 2 ) ) {\nreturn(\"true\")\n} else {\nreturn(\"false\")\n}\n}\nEOS\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-43AA20A5",
+        "title": "2.2.1 Date & Time",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-43AA20A5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2.1.1",
+          "title": "Ensure Set Time and Date Automatically Is Enabled",
+          "description": "<VulnDiscussion>Correct date and time settings are required for authentication protocols, file creation, modification dates, and log entries.\nNote: If your organization has internal time servers, enter them here. Enterprise mobile devices may need to use a mix of internal and external time servers. If multiple servers are required, use the Date & Time System Preference with each server separated by a space.\nAdditional Note: The default Apple time server is time.apple.com. Variations include time.euro.apple.com. While it is certainly more efficient to use internal time servers, there is no reason to block access to global Apple time servers or to add a time.apple.com alias to internal DNS records. There are no reports that Apple gathers any information from NTP synchronization, as the computers already phone home to Apple for Apple services including iCloud use and software updates. Best practice is to allow DNS resolution to an authoritative time service for time.apple.com, preferably to connect to Apple servers, but local servers are acceptable as well.\n\nRationale:\nKerberos may not operate correctly if the time on the Mac is off by more than 5 minutes.\nThis in turn can affect Apple's single sign-on feature, Active Directory logons, and other features.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.2.1.1"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to enable the date and time setting automatically:\n$ /usr/bin/sudo /usr/sbin/systemsetup -setnetworktimeserver\n<your.time.server>\nsetNetworkTimeServer: <your.time.server>\n$ /usr/bin/sudo /usr/sbin/systemsetup -setusingnetworktime on\nsetUsingNetworkTime: On\nexample:\n$ /usr/bin/sudo /usr/sbin/systemsetup -setnetworktimeserver time.apple.com\nsetNetworkTimeServer: time.apple.com\n$ /usr/bin/sudo /usr/sbin/systemsetup -setusingnetworktime on\nsetUsingNetworkTime: On\nRun the following commands if you have not set, or need to set, a new time zone:\n$ /usr/bin/sudo /usr/sbin/systemsetup -listtimezones\n$ /usr/bin/sudo /usr/sbin/systemsetup -settimezone <selected time zone>\nexample:\n$ /usr/bin/sudo /usr/sbin/systemsetup -listtimezones\nTime Zones:\nAfrica/Abidjan\nAfrica/Accra\nAfrica/Addis_Ababa\n...\n$ /usr/bin/sudo /usr/sbin/systemsetup -settimezone America/New_York\nSet TimeZone: America/New_York",
+            "+@fixref": "F-43AA20A5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-43AA20A5r01_fix"
+          },
+          "check": {
+            "+@system": "C-43AA20A5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to ensure that date and time are automatically set:\n$ /usr/bin/sudo /usr/sbin/systemsetup -getusingnetworktime\nNetwork Time: On\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-28EB77F3",
+        "title": "2.2.1 Date & Time",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-28EB77F3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2.1.2",
+          "title": "Ensure the Time Service Is Enabled",
+          "description": "<VulnDiscussion>In macOS 10.14, Apple replace ntp with timed for time services, and is used to ensure correct time is kept. Correct date and time settings are required for authentication protocols, file creation, modification dates, and log entries.\n\nRationale:\nKerberos may not operate correctly if the time on the Mac is off by more than 5 minutes.\nThis in turn can affect Apple's single sign-on feature, Active Directory logons, and other features.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.2.1.2"
+          },
+          "fixtext": {
+            "+content": "Terminal Method:\nRun the following commands to enable the timed service:\n$ /usr/bin/sudo /bin/launchctl load -w\n/System/Library/LaunchDaemons/com.apple.timed.plist\nInternal Only - General",
+            "+@fixref": "F-28EB77F3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-28EB77F3r01_fix"
+          },
+          "check": {
+            "+@system": "C-28EB77F3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Terminal Method:\nRun the following command to ensure that the timed service is enabled:\n$ /usr/bin/sudo /bin/launchctl list | /usr/bin/grep -c com.apple.timed\n1"
+          }
+        }
+      },
+      {
+        "+@id": "V-1B5226D9",
+        "title": "2.2.2 Sharing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1B5226D9r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2.2.1",
+          "title": "Ensure Remote Apple Events Is Disabled",
+          "description": "<VulnDiscussion>Apple Events is a technology that allows one program to communicate with other programs. Remote Apple Events allows a program on one computer to communicate with a program on a different computer.\n\nRationale:\nDisabling Remote Apple Events mitigates the risk of an unauthorized program gaining access to the system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.2.2.1"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to set Remote Apple Events to Off:\n% /usr/bin/sudo /usr/sbin/systemsetup -setremoteappleevents off\nsetremoteappleevents: Off\nInternal Only - General",
+            "+@fixref": "F-1B5226D9r01_fix"
+          },
+          "fix": {
+            "+@id": "F-1B5226D9r01_fix"
+          },
+          "check": {
+            "+@system": "C-1B5226D9_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands to verify that Remote Apple Events is not set\n% /usr/bin/sudo /usr/sbin/systemsetup -getremoteappleevents\nRemote Apple Events: Off"
+          }
+        }
+      },
+      {
+        "+@id": "V-7064CCF7",
+        "title": "2.2.2 Sharing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7064CCF7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.2.2.2",
+          "title": "Ensure Content Caching Is Disabled",
+          "description": "<VulnDiscussion>Starting with 10.13 (macOS High Sierra), Apple introduced a service to make it easier to deploy data from Apple, including software updates, where there are bandwidth constraints to the Internet and fewer constraints or greater bandwidth exist on the local subnet. This capability can be very valuable for organizations that have throttled and possibly metered Internet connections. In heterogeneous enterprise networks with multiple subnets, the effectiveness of this capability would be determined by how many Macs were on each subnet at the time new, large updates were made available upstream. This capability requires the use of mac OS clients as P2P nodes for updated Apple content. Unless there is a business requirement to manage operational Internet connectivity and bandwidth, user endpoints should not store content and act as a cluster to provision data.\nContent types supported by Content Caching in macOS\n\nRationale:\nThe main use case for Mac computers is as mobile user endpoints. P2P sharing services should not be enabled on laptops that are using untrusted networks. Content Caching can allow a computer to be a server for local nodes on an untrusted network.\nWhile there are certainly logical controls that could be used to mitigate risk, they add to the management complexity. Since the value of the service is in specific use cases, organizations with the use case described above can accept risk as necessary.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.2.2.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable Content Caching:\n% /usr/bin/sudo /usr/bin/AssetCacheManagerUtil deactivate\nThe output will include Content caching deactivated",
+            "+@fixref": "F-7064CCF7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-7064CCF7r01_fix"
+          },
+          "check": {
+            "+@system": "C-7064CCF7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that Content Caching is not enabled:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\n$.NSUserDefaults.alloc.initWithSuiteName('com.apple.AssetCache')\\\n.objectForKey('Activated').js\nEOS\nfalse\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-EBFC7A14",
+        "title": "2.3 Privacy & Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-EBFC7A14r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.3.1",
+          "title": "Ensure Sending Diagnostic and Usage Data to Apple Is Disabled",
+          "description": "<VulnDiscussion>Apple provides a mechanism to send diagnostic and analytics data back to Apple to help them improve the platform. Information sent to Apple may contain internal organizational information that should be controlled and not available for processing by Apple. Turn off all Analytics and Improvements sharing.\nShare Mac Analytics (Share with App Developers dependent on Mac Analytic sharing)\n• Includes diagnostics, usage and location data Share iCloud Analytics\n• Includes iCloud data and usage information\n\nRationale:\nOrganizations should have knowledge of what is shared with the vendor and that this setting automatically forwards information to Apple.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.3.1"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to disable the sending of diagnostic data to Apple:\n% /usr/bin/sudo /usr/bin/defaults write /Library/Application\\\nSupport/CrashReporter/DiagnosticMessagesHistory.plist AutoSubmit -bool false\n/usr/bin/sudo /usr/bin/defaults write /Library/Application\\\nSupport/CrashReporter/DiagnosticMessagesHistory.plist ThirdPartyDataSubmit -\nbool false\n% /usr/bin/sudo /bin/chmod 644 /Library/Application\\\nSupport/CrashReporter/DiagnosticMessagesHistory.plist\n% /usr/bin/sudo /usr/bin/chgrp admin /Library/Application\\\nSupport/CrashReporter/DiagnosticMessagesHistory.plist\n% /usr/bin/sudo -u <username> /usr/bin/defaults write\n/Users/<username>/Library/Preferences/com.apple.assistant.support \"Siri Data\nSharing Opt-In Status\" -int 2",
+            "+@fixref": "F-EBFC7A14r01_fix"
+          },
+          "fix": {
+            "+@id": "F-EBFC7A14r01_fix"
+          },
+          "check": {
+            "+@system": "C-EBFC7A14_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that sending diagnostic and usage data to Apple is disabled:\n% /usr/bin/sudo /usr/bin/defaults read /Library/Application\\\nSupport/CrashReporter/DiagnosticMessagesHistory.plist AutoSubmit\n0\n% /usr/bin/sudo /usr/bin/defaults read /Library/Application\\\nSupport/CrashReporter/DiagnosticMessagesHistory.plist ThirdPartyDataSubmit\n0\n% /usr/bin/sudo -u <username> /usr/bin/defaults read\n/Users/<username>/Library/Preferences/com.apple.assistant.support \"Siri Data\nSharing Opt-In Status\"\n2\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-8A5B5546",
+        "title": "2.3 Privacy & Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8A5B5546r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.3.2",
+          "title": "Ensure Limit Ad Tracking Is Enabled",
+          "description": "<VulnDiscussion>Apple provides a framework that allows advertisers to target Apple users and end-users with advertisements. While many people prefer to see advertising that is relevant to them and their interests, the detailed information that is collected, correlated, and available to advertisers in repositories via data mining is often disconcerting. This information is valuable to both advertisers and attackers, and has been used with other metadata to reveal users' identities.\nOrganizations should manage advertising settings on computers rather than allow users to configure the settings.\nApple Information Ad tracking should be limited on 10.15 and prior.\n\nRationale:\nOrganizations should manage user privacy settings on managed devices to align with organizational policies and user data protection requirements.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.3.2"
+          },
+          "fixtext": {
+            "+content": "For each needed user, run the following command to enable limited ad tracking:\n% /usr/bin/sudo -u <username> /usr/bin/defaults write\n/Users/<username>/Library/Preferences/com.apple.Adlib.plist\nallowApplePersonalizedAdvertising -bool false\nInternal Only - General",
+            "+@fixref": "F-8A5B5546r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8A5B5546r01_fix"
+          },
+          "check": {
+            "+@system": "C-8A5B5546_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "For each user, run the following command to verify that ad tracking is limited:\n% /usr/bin/sudo -u <username> /usr/bin/defaults read\n/Users/<username>/Library/Preferences/com.apple.AdLib.plist\nallowApplePersonalizedAdvertising\n0"
+          }
+        }
+      },
+      {
+        "+@id": "V-0A2F6EED",
+        "title": "2.3 Privacy & Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0A2F6EEDr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.3.3",
+          "title": "Ensure Gatekeeper Is Enabled",
+          "description": "<VulnDiscussion>Gatekeeper is Apple’s application that utilizes allowlisting to restrict downloaded applications from launching. It functions as a control to limit applications from unverified sources from running without authorization. In an update to Gatekeeper in macOS 13 Ventura, Gatekeeper checks every application on every launch, not just quarantined apps.\n\nRationale:\nDisallowing unsigned software will reduce the risk of unauthorized or malicious applications from running on the system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.3.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable Gatekeeper to allow applications from App Store and identified developers:\n% /usr/bin/sudo /usr/sbin/spctl --global-enable\nInternal Only - General",
+            "+@fixref": "F-0A2F6EEDr01_fix"
+          },
+          "fix": {
+            "+@id": "F-0A2F6EEDr01_fix"
+          },
+          "check": {
+            "+@system": "C-0A2F6EED_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that Gatekeeper is enabled:\n% /usr/bin/sudo /usr/sbin/spctl --status\nassessments enabled"
+          }
+        }
+      },
+      {
+        "+@id": "V-F9C151FE",
+        "title": "2.4 Lock Screen",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F9C151FEr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.1",
+          "title": "Ensure an Inactivity Interval of 20 Minutes Or Less for the Screen Saver Is Enabled",
+          "description": "<VulnDiscussion>A locking screen saver is one of the standard security controls to limit access to a computer and the current user's session when the computer is temporarily unused or unattended. In macOS, the screen saver starts after a value is selected in the drop- down menu. 20 minutes or less is an acceptable value. Any value can be selected through the command line or script, but a number that is not reflected in the GUI can be problematic. 20 minutes is the default for new accounts.\n\nRationale:\nSetting an inactivity interval for the screen saver prevents unauthorized persons from viewing a system left unattended for an extensive period of time.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.4.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to verify that the idle time of the screen saver to 20 minutes of less (≤1200)\n% sudo -u <username> defaults -currentHost write com.apple.screensaver\nidleTime - int <value ≤1200>\nNote: Issues arise if the command line is used to make the setting something other than what is available in the GUI Menu. The GUI allows the options of 1 (60), 2 (120), 5 (300), 10 (600), or 20 (120) minutes, so use one of those values to avoid any issues.",
+            "+@fixref": "F-F9C151FEr01_fix"
+          },
+          "fix": {
+            "+@id": "F-F9C151FEr01_fix"
+          },
+          "check": {
+            "+@system": "C-F9C151FE_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run this script to verify the idle times for all users:\nUUID=`ioreg -rd1 -c IOPlatformExpertDevice | grep \"IOPlatformUUID\" | sed -e\n's/^.* \"\\(.*\\)\"$/\\1/'`\nfor i in $(find /Users -type d -maxdepth 1)\ndo\nPREF=$i/Library/Preferences/ByHost/com.apple.screensaver.$UUID\nif [ -e $PREF.plist ]\nthen\necho -n \"Checking User: '$i': \"\ndefaults read $PREF.plist idleTime 2>&1\nfi\ndone\nNote: If the output of the script includes The domain/default pair of (com.apple.screensaver, idleTime) does not exist for any user, then the setting has not been changed from the default. Follow the remediation instructions to set the idle time to match your organization's policy.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-99AD7E0F",
+        "title": "2.4 Lock Screen",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-99AD7E0Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.2",
+          "title": "Ensure Require Password After Screen Saver Begins or Display Is Turned Off Is Enabled for 5 Seconds or Immediately",
+          "description": "<VulnDiscussion>Sleep and screen saver modes are low power modes that reduce electrical consumption while the system is not in use.\n\nRationale:\nPrompting for a password when waking from sleep or screen saver mode mitigates the threat of an unauthorized person gaining access to a system in the user's absence.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.4.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to require a password to unlock the computer after the screen saver engages or the computer sleeps:\n% /usr/bin/sudo /usr/sbin/sysadminctl -screenLock immediate -password\n<administrator password>\nor\n% /usr/bin/sudo /usr/sbin/sysadminctl -screenLock 5 seconds -password\n<administrator password>\nInternal Only - General",
+            "+@fixref": "F-99AD7E0Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-99AD7E0Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-99AD7E0F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that a password is required to wake the computer from sleep or from the screen saver after 5 seconds of less:\n% /usr/bin/sudo /usr/sbin/sysadminctl -screenLock status\nThe output should include either screenLock delay is immediate or screenLock delay is 5 seconds."
+          }
+        }
+      },
+      {
+        "+@id": "V-F75AA93A",
+        "title": "2.4 Lock Screen",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F75AA93Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.3",
+          "title": "Ensure a Custom Message for the Login Screen Is Enabled",
+          "description": "<VulnDiscussion>An access warning informs the user that the system is reserved for authorized use only, and that the use of the system may be monitored.\n\nRationale:\nAn access warning may reduce a casual attacker's tendency to target the system.\nAccess warnings may also aid in the prosecution of an attacker by evincing the attacker's knowledge of the system's private status, acceptable use policy, and authorization requirements.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.4.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable a custom login screen message:\n% /usr/bin/sudo /usr/bin/defaults write\n/Library/Preferences/com.apple.loginwindow LoginwindowText -string \"<custom\nmessage>\"\nInternal Only - General",
+            "+@fixref": "F-F75AA93Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-F75AA93Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-F75AA93A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that a custom message on the login screen is configured:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\n$.NSUserDefaults.alloc.initWithSuiteName('com.apple.loginwindow')\\\n.objectForKey('LoginwindowText').js\nEOS\nThe output should be a message that is configured to your organization's required text."
+          }
+        }
+      },
+      {
+        "+@id": "V-21288C3F",
+        "title": "2.4 Lock Screen",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-21288C3Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.4",
+          "title": "Ensure Login Window Displays as Name and Password Is Enabled",
+          "description": "<VulnDiscussion>The login window prompts a user for his/her credentials, verifies their authorization level, and then allows or denies the user access to the system.\n\nRationale:\nPrompting the user to enter both their username and password makes it twice as hard for unauthorized users to gain access to the system since they must discover two attributes.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.4.4"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable the login window to display name and password:\n% /usr/bin/sudo /usr/bin/defaults write\n/Library/Preferences/com.apple.loginwindow SHOWFULLNAME -bool true\nNote: The GUI will not display the updated setting until the current user(s) logs out.\nInternal Only - General",
+            "+@fixref": "F-21288C3Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-21288C3Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-21288C3F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the login window displays name and password:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\n$.NSUserDefaults.alloc.initWithSuiteName('com.apple.loginwindow')\\\n.objectForKey('SHOWFULLNAME').js\nEOS\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-CDCE0C32",
+        "title": "2.4 Lock Screen",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CDCE0C32r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.5",
+          "title": "Ensure Show Password Hints Is Disabled",
+          "description": "<VulnDiscussion>Password hints are user-created text displayed when an incorrect password is used for an account.\n\nRationale:\nPassword hints make it easier for unauthorized persons to gain access to systems by displaying information provided by the user to assist in remembering the password. This info could include the password itself or other information that might be readily discerned with basic knowledge of the end user.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.4.5"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable password hints:\n% /usr/bin/sudo /usr/bin/defaults write\n/Library/Preferences/com.apple.loginwindow RetriesUntilHint -int 0\nInternal Only - General",
+            "+@fixref": "F-CDCE0C32r01_fix"
+          },
+          "fix": {
+            "+@id": "F-CDCE0C32r01_fix"
+          },
+          "check": {
+            "+@system": "C-CDCE0C32_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that password hints are not displayed:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\n$.NSUserDefaults.alloc.initWithSuiteName('com.apple.loginwindow')\\\n.objectForKey('RetriesUntilHint').js\nEOS\n0\nNote: The default setting is not auditable through the command line. Please run the Terminal command for the remediation to set an initial value."
+          }
+        }
+      },
+      {
+        "+@id": "V-71D55B31",
+        "title": "2.5 Login Password",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-71D55B31r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5.1",
+          "title": "Ensure Users' Accounts Do Not Have a Password Hint",
+          "description": "<VulnDiscussion>Password hints help the user recall their passwords for various systems and/or accounts. In most cases, password hints are simple and closely related to the user's password.\n\nRationale:\nPassword hints that are closely related to the user's password are a security vulnerability, especially in the social media age. Unauthorized users are more likely to guess a user's password if there is a password hint. The password hint is very susceptible to social engineering attacks and information exposure on social media networks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.5.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to remove a user's password hint:\n% /usr/bin/sudo /usr/bin/dscl . -list /Users hint . -delete /Users/<username>\nhint\nexample:\n% /usr/bin/sudo /usr/bin/dscl . -list /Users hint . -delete /Users/firstuser\nhint\n% /usr/bin/sudo /usr/bin/dscl . -list /Users hint . -delete /Users/seconduser\nhint",
+            "+@fixref": "F-71D55B31r01_fix"
+          },
+          "fix": {
+            "+@id": "F-71D55B31r01_fix"
+          },
+          "check": {
+            "+@system": "C-71D55B31_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that no users have a password hint:\n% /usr/bin/sudo /usr/bin/dscl . -list /Users hint\nThe output will list all users. If there are any text listed with the user, then the machine is not compliant.\nexample:\n% /usr/bin/sudo /usr/bin/dscl . -list /Users hint . -list /Users hint\nfirstuser passwordhint\nseconduser passwordhint2\nthirduser\nfourthuser\nGuest\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-76754972",
+        "title": "2.6 Users & Groups",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-76754972r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.6.1",
+          "title": "Ensure Guest Account Is Disabled",
+          "description": "<VulnDiscussion>The guest account allows users access to the system without having to create an account or password. Guest users are unable to make setting changes and cannot remotely login to the system. All files, caches, and passwords created by the guest user are deleted upon logging out.\n\nRationale:\nDisabling the guest account mitigates the risk of an untrusted user doing basic reconnaissance and possibly using privilege escalation attacks to take control of the system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.6.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable the guest account:\n% /usr/bin/sudo /usr/bin/defaults write\n/Library/Preferences/com.apple.loginwindow GuestEnabled -bool false",
+            "+@fixref": "F-76754972r01_fix"
+          },
+          "fix": {
+            "+@id": "F-76754972r01_fix"
+          },
+          "check": {
+            "+@system": "C-76754972_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify if the guest account is enabled:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\n$.NSUserDefaults.alloc.initWithSuiteName('com.apple.loginwindow')\\\n.objectForKey('GuestEnabled').js\nEOS\nfalse"
+          }
+        }
+      },
+      {
+        "+@id": "V-37A91A85",
+        "title": "2.6 Users & Groups",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-37A91A85r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.6.2",
+          "title": "Ensure Guest Access to Shared Folders Is Disabled",
+          "description": "<VulnDiscussion>Allowing guests to connect to shared folders enables users to access selected shared folders and their contents from different computers on a network.\n\nRationale:\nNot allowing guests to connect to shared folders mitigates the risk of an untrusted user doing basic reconnaissance and possibly using privilege escalation attacks to take control of the system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.6.2"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to verify that shared folders are not accessible to guest users:\n% /usr/bin/sudo /usr/sbin/sysadminctl -smbGuestAccess off\nInternal Only - General",
+            "+@fixref": "F-37A91A85r01_fix"
+          },
+          "fix": {
+            "+@id": "F-37A91A85r01_fix"
+          },
+          "check": {
+            "+@system": "C-37A91A85_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands to verify that shared folders are not accessible to guest users:\n% /usr/bin/sudo /usr/sbin/sysadminctl -smbGuestAccess status\nThe output should include SMB guest access disabled."
+          }
+        }
+      },
+      {
+        "+@id": "V-F13BA0AD",
+        "title": "2.6 Users & Groups",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F13BA0ADr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.6.3",
+          "title": "Ensure Automatic Login Is Disabled",
+          "description": "<VulnDiscussion>The automatic login feature saves a user's system access credentials and bypasses the login screen. Instead, the system automatically loads to the user's desktop screen.\n\nRationale:\nDisabling automatic login decreases the likelihood of an unauthorized person gaining access to a system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "2.6.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable automatic login:\n% /usr/bin/sudo /usr/bin/defaults delete\n/Library/Preferences/com.apple.loginwindow autoLoginUser\nInternal Only - General",
+            "+@fixref": "F-F13BA0ADr01_fix"
+          },
+          "fix": {
+            "+@id": "F-F13BA0ADr01_fix"
+          },
+          "check": {
+            "+@system": "C-F13BA0AD_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that automatic login has not been enabled:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\nfunction run() {\nlet pref1 =\nObjC.unwrap($.NSUserDefaults.alloc.initWithSuiteName('com.apple.loginwindow')\n\\\n.objectForKey('autoLoginUser'))\nif ( pref1 == null ) {\nreturn(\"true\")\n} else {\nreturn(\"false\")\n}\n}\nEOS\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-9135598B",
+        "title": "3 Logging and Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9135598Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1",
+          "title": "Ensure Security Auditing Is Enabled",
+          "description": "<VulnDiscussion>macOS's audit facility, auditd, receives notifications from the kernel when certain system calls, such as open, fork, and exit, are made. These notifications are captured and written to an audit log.\nApple has deprecated auditd as of macOS 11.0 Big Sur. In macOS 14.0 Sonoma it is no longer enabled by default and it is suggested to use an application that integrates with the EndpointSecurity API. These applications are 3rd party and not built into the macOS. Until auditd is removed from macOS completely, running the binary is the best way to collect logging in macOS and the only one that is part of the OS.\n\nRationale:\nLogs generated by auditd may be useful when investigating a security incident as they may help reveal the vulnerable application and the actions taken by a malicious actor.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "3.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to load auditd:\n% /usr/bin/sudo /bin/launchctl load -w\n/System/Library/LaunchDaemons/com.apple.auditd.plist\nInternal Only - General",
+            "+@fixref": "F-9135598Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-9135598Br01_fix"
+          },
+          "check": {
+            "+@system": "C-9135598B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify auditd:\n% /usr/bin/sudo /bin/launchctl list | /usr/bin/grep -i auditd\n- 0 com.apple.auditd"
+          }
+        }
+      },
+      {
+        "+@id": "V-ED8D7A53",
+        "title": "3 Logging and Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-ED8D7A53r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.2",
+          "title": "Ensure Security Auditing Flags For User-Attributable Events Are Configured Per Local Organizational Requirements",
+          "description": "<VulnDiscussion>Auditing is the capture and maintenance of information about security-related events.\nAuditable events often depend on differing organizational requirements.\n\nRationale:\nMaintaining an audit trail of system activity logs can help identify configuration errors, troubleshoot service disruptions, and analyze compromises or attacks that have occurred, have begun, or are about to begin. Audit logs are necessary to provide a trail of evidence in case the system or network is compromised.\nDepending on the governing authority, organizations can have vastly different auditing requirements. In this control we have selected a minimal set of audit flags that should be a part of any organizational requirements. The flags selected below may not adequately meet organizational requirements for users of this benchmark. The auditing checks for the flags proposed here will not impact additional flags that are selected.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "3.2"
+          },
+          "fixtext": {
+            "+content": "Perform the following to set the required Security Auditing Flags:\nEdit the /etc/security/audit_control file and add -fm, ad, -ex, aa, -fr, lo, and - fw to flags. You can also substitute -all for -fm, -ex, -fr, and -fw.",
+            "+@fixref": "F-ED8D7A53r01_fix"
+          },
+          "fix": {
+            "+@id": "F-ED8D7A53r01_fix"
+          },
+          "check": {
+            "+@system": "C-ED8D7A53_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Security Auditing Flags that are enabled:\n% /usr/bin/sudo /usr/bin/grep -e \"^flags:\" /etc/security/audit_control\nThe output should include the following flags:\n• -fm - audit failed file attribute modification events\n• ad - audit successful/failed administrative events\n• -ex - audit failed program execution\n• aa - audit all authorization and authentication events\n• -fr - audit all failed read actions where enforcement stops a read of a file\n• lo - audit successful/failed login/logout events\n• -fw - audit all failed write actions where enforcement stopped a file write The -all flag will capture all failed events across all audit classes and can be used to supersede the individual flags for failed events.\nNote: Excluding potentially noisy audit events may be ideal, depending on your use- case.\nNote: Historical audit flags are listed below as preliminary guidance.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-27ECEF75",
+        "title": "3 Logging and Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-27ECEF75r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.3",
+          "title": "Ensure install.log Is Retained for 365 or More Days and No Maximum Size",
+          "description": "<VulnDiscussion>macOS writes information pertaining to system-related events to the file /var/log/install.log and has a configurable retention policy for this file. The default logging setting limits the file size of the logs and the maximum size for all logs. The default allows for an errant application to fill the log files and does not enforce sufficient log retention. The Benchmark recommends a value based on standard use cases. The value should align with local requirements within the organization.\nThe default value has an \"all_max\" file limitation, no reference to a minimum retention, and a less precise rotation argument.\nThe all_max flag control will remove old log entries based only on the size of the log files. Log size can vary widely depending on how verbose installing applications are in their log entries. The decision here is to ensure that logs go back a year, and depending on the applications a size restriction could compromise the ability to store a full year.\nWhile this Benchmark is not scoring for a rotation flag, the default rotation is sequential rather than using a timestamp. Auditors may prefer timestamps in order to simply review specific dates where event information is desired.\nPlease review the File Rotation section in the man page for more information.\n• The maximum file size limitation string should be removed \"all_max=\"\n• An organization-appropriate retention should be added \"ttl=\"\n• The rotation should be set with timestamps \"rotate=utc\" or \"rotate=local\"\n\nRationale:\nArchiving and retaining install.log for at least a year is beneficial in the event of an incident, as it will allow the user to view the various changes to the system along with the date and time they occurred.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "3.3"
+          },
+          "fixtext": {
+            "+content": "Perform the following to ensure that install logs are retained for at least 365 days:\nEdit the /etc/asl/com.apple.install file and add or modify the ttl value to 365 or greater on the file line. Also, remove the all_max= setting and value from the file line.",
+            "+@fixref": "F-27ECEF75r01_fix"
+          },
+          "fix": {
+            "+@id": "F-27ECEF75r01_fix"
+          },
+          "check": {
+            "+@system": "C-27ECEF75_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that log files are retained for at least 365 days with no maximum size:\n% /usr/bin/sudo /usr/bin/grep -i ttl /etc/asl/com.apple.install\nThe output must include ttl≥365\n% /usr/bin/sudo /usr/bin/grep -i all_max= /etc/asl/com.apple.install\nNo results should be returned."
+          }
+        }
+      },
+      {
+        "+@id": "V-AB7CD391",
+        "title": "3 Logging and Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AB7CD391r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.4",
+          "title": "Ensure Security Auditing Retention Is Enabled",
+          "description": "<VulnDiscussion>The macOS audit capability contains important information to investigate security or operational issues. This resource is only completely useful if it is retained long enough to allow technical staff to find the root cause of anomalies in the records.\nRetention can be set to respect both size and longevity. To retain as much as possible under a certain size, the recommendation is to use the following:\nexpire-after:60d OR 5G This recomendation is based on minimum storage for review and investigation. When a third party tool is in use to allow remote logging or the store and forwarding of logs, this local storage requirement is not required.\n\nRationale:\nThe audit records need to be retained long enough to be reviewed as necessary.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "3.4"
+          },
+          "fixtext": {
+            "+content": "Perform the following to set the audit retention length:\nEdit the /etc/security/audit_control file so that expire-after: is at least 60d OR 5G",
+            "+@fixref": "F-AB7CD391r01_fix"
+          },
+          "fix": {
+            "+@id": "F-AB7CD391r01_fix"
+          },
+          "check": {
+            "+@system": "C-AB7CD391_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify audit retention:\n% /usr/bin/sudo /usr/bin/grep -e \"^expire-after\" /etc/security/audit_control\nThe output value for expire-after: should be ≥ 60d OR 5G Note: If your organization is offloading your security logs, we recommend following the same guidance (at minimum) for your off-site log storage. Your local storage limit (or time frame) may fail if they are set to lower in this case, but are following the guidance."
+          }
+        }
+      },
+      {
+        "+@id": "V-E9AE47B1",
+        "title": "3 Logging and Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E9AE47B1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.5",
+          "title": "Ensure Access to Audit Records Is Controlled",
+          "description": "<VulnDiscussion>The audit system on macOS writes important operational and security information that can be both useful for an attacker and a place for an attacker to attempt to obfuscate unwanted changes that were recorded. As part of defense-in-depth, the /etc/security/audit_control configuration and the files in /var/audit should be owned only by root with group wheel with read-only rights and no other access allowed. macOS ACLs should not be used for these files.\nThe default folder for storing logs is /var/audit, but it can be changed. This recommendation will ensure that any target directory has appropriate access control in place even if the target directory is not the default of /var/audit.\n\nRationale:\nAudit records should never be changed except by the system daemon posting events.\nRecords may be viewed or extracts manipulated, but the authoritative files should be protected from unauthorized changes.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "3.5"
+          },
+          "fixtext": {
+            "+content": "Terminal Method:\nRun the following to commands to set the audit records to the root user and wheel group:\n% /usr/bin/sudo /usr/sbin/chown -R root:wheel /etc/security/audit_control\n% /usr/bin/sudo /bin/chmod -R og-rw /etc/security/audit_control\n% /usr/bin/sudo /usr/sbin/chown -R root:wheel $(/usr/bin/sudo /usr/bin/grep\n'^dir' /etc/security/audit_control | /usr/bin/awk -F: '{print $2}')\n% /usr/bin/sudo /bin/chmod -R og-rw $(/usr/bin/sudo /usr/bin/grep '^dir'\n/etc/security/audit_control | /usr/bin/awk -F: '{print $2}')\nNote: It is recommended to do a thorough verification process on why the audit logs have been changed before following the remediation steps. If the system has different access controls on the audit logs, and the changes cannot be traced, a new install may be prudent. Check for signs of file tampering as well as unapproved OS changes.\nNote: In macOS 14, and versions going forward, Apple disabled auditd by default.\nSince that is the default, the /etc/security/audit_control does not exist. If this remediation is ran without copying the /etc/security/audit_control.example to /etc/security/audit_control then it can cause a recursive permissions issue and can cause an unsupported state (undesired results) and booting anomalies.",
+            "+@fixref": "F-E9AE47B1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E9AE47B1r01_fix"
+          },
+          "check": {
+            "+@system": "C-E9AE47B1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands to check file access rights:\n% /usr/bin/sudo /bin/ls -n $(/usr/bin/sudo /usr/bin/grep '^dir'\n/etc/security/audit_control | /usr/bin/awk -F: '{print $2}') | /usr/bin/awk\n'{s+=$3} END {print s}'\n0\n% /usr/bin/sudo /bin/ls -n $(/usr/bin/sudo /usr/bin/grep '^dir'\n/etc/security/audit_control | /usr/bin/awk -F: '{print $2}') | /usr/bin/awk\n'{s+=$4} END {print s}'\n0\n% /usr/bin/sudo /bin/ls -l $(/usr/bin/sudo /usr/bin/grep '^dir'\n/etc/security/audit_control | /usr/bin/awk -F: '{print $2}') | /usr/bin/awk\n'!/-r--r-----|current|total/{print $1}' | /usr/bin/wc -l | /usr/bin/tr -d ' '\n0\n% /usr/bin/sudo /bin/ls -n $(/usr/bin/sudo /usr/bin/grep '^dir' /var/audit/ |\n/usr/bin/awk -F: '{print $2}') | /usr/bin/awk '{s+=$3} END {print s}'\n0\n% /usr/bin/sudo /bin/ls -n $(/usr/bin/sudo /usr/bin/grep '^dir' /var/audit/ |\n/usr/bin/awk -F: '{print $2}') | /usr/bin/awk '{s+=$4} END {print s}'\n0\n% /usr/bin/sudo /bin/ls -l $(/usr/bin/sudo /usr/bin/grep '^dir' /var/audit/ |\n/usr/bin/awk -F: '{print $2}') | /usr/bin/awk '!/-r--r-----\n|current|total/{print $1}' | /usr/bin/wc -l | /usr/bin/tr -d ' '\n0\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-5CB95B18",
+        "title": "3 Logging and Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5CB95B18r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.6",
+          "title": "Ensure Firewall Logging Is Enabled and Configured",
+          "description": "<VulnDiscussion>The socketfilter Firewall is what is used when the Firewall is turned on in the Security & Privacy Preference Pane. In order to appropriately monitor what access is allowed and denied, logging must be enabled. The logging level must be set to \"detailed\" to be useful in monitoring connection attempts that the firewall detects. Throttled login is not sufficient for examining Firewall connection attempts.\nIn-depth log monitoring on macOS may require changes to the \"Enable-Private-Data\" key in SystemLogging.System to ensure more complete logging.\nReviewing macOS Unified Logs\n\nRationale:\nIn order to troubleshoot the successes and failures of a Firewall, detailed logging should be enabled.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "3.6"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable logging of the firewall:\n% /usr/bin/sudo /usr/libexec/ApplicationFirewall/socketfilterfw --\nsetloggingmode on\nTurning on log mode\n% /usr/bin/sudo /usr/libexec/ApplicationFirewall/socketfilterfw --\nsetloggingopt detail\nSetting detail log option",
+            "+@fixref": "F-5CB95B18r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5CB95B18r01_fix"
+          },
+          "check": {
+            "+@system": "C-5CB95B18_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that the Firewall log is enabled:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\nfunction run() {\nlet pref1 = $.NSUserDefaults.alloc.initWithSuiteName('com.apple.alf')\\\n.objectForKey('loggingenabled').js\nlet pref2 = $.NSUserDefaults.alloc.initWithSuiteName('com.apple.alf')\\\n.objectForKey('loggingoption').js\nif ( pref1 == 1 && pref2 == 2 ) {\nreturn(\"true\")\n} else {\nreturn(\"false\")\n}\n}\nEOS\ntrue\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-56DDA07D",
+        "title": "4 Network Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-56DDA07Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.1",
+          "title": "Ensure Bonjour Advertising Services Is Disabled",
+          "description": "<VulnDiscussion>Bonjour is an auto-discovery mechanism for TCP/IP devices which enumerates devices and services within a local subnet. DNS on macOS is integrated with Bonjour and should not be turned off, but the Bonjour advertising service can be disabled.\n\nRationale:\nBonjour can simplify device discovery from an internal rogue or compromised host. An attacker could use Bonjour's multicast DNS feature to discover a vulnerable or poorly- configured service or additional information to aid a targeted attack. Implementing this control disables the continuous broadcasting of \"I'm here!\" messages. Typical end-user endpoints should not have to advertise services to other computers. This setting does not stop the computer from sending out service discovery messages when looking for services on an internal subnet, if the computer is looking for a printer or server and using service discovery. To block all Bonjour traffic except to approved devices, the pf or other firewall would be needed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "4.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable Bonjour Advertising services:\n% /usr/bin/sudo /usr/bin/defaults write\n/Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements\n-bool true\nInternal Only - General",
+            "+@fixref": "F-56DDA07Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-56DDA07Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-56DDA07D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that Bonjour Advertising is not enabled:\n% /usr/bin/sudo /usr/bin/osascript -l JavaScript << EOS\n$.NSUserDefaults.alloc.initWithSuiteName('com.apple.mDNSResponder')\\\n.objectForKey('NoMulticastAdvertisements').js\nEOS\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-03C9DB53",
+        "title": "4 Network Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-03C9DB53r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.2",
+          "title": "Ensure HTTP Server Is Disabled",
+          "description": "<VulnDiscussion>macOS used to have a graphical front-end to the embedded Apache web server in the Operating System. Personal web sharing could be enabled to allow someone on another computer to download files or information from the user's computer. Personal web sharing from a user endpoint has long been considered questionable, and Apple has removed that capability from the GUI. Apache, however, is still part of the Operating System and can be easily turned on to share files and provide remote connectivity to an end-user computer. Web sharing should only be done through hardened web servers and appropriate cloud services.\n\nRationale:\nWeb serving should not be done from a user desktop. Dedicated webservers or appropriate cloud storage should be used. Open ports make it easier to exploit the computer.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "4.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable the HTTP server services:\n% /usr/bin/sudo /usr/sbin/apachectl stop\n% /usr/bin/sudo /bin/launchctl unload -w\n/System/Library/LaunchDaemons/org.apache.httpd.plist\nInternal Only - General",
+            "+@fixref": "F-03C9DB53r01_fix"
+          },
+          "fix": {
+            "+@id": "F-03C9DB53r01_fix"
+          },
+          "check": {
+            "+@system": "C-03C9DB53_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that the HTTP server services are not currently enabled. This check does not reflect any auto-start settings, only whether the web server is currently enabled:\n% /usr/bin/sudo /bin/launchctl list | /usr/bin/grep -c \"org.apache.httpd\"\n0"
+          }
+        }
+      },
+      {
+        "+@id": "V-4732DD1E",
+        "title": "4 Network Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4732DD1Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.3",
+          "title": "Ensure NFS Server Is Disabled",
+          "description": "<VulnDiscussion>macOS can act as an NFS fileserver. NFS sharing could be enabled to allow someone on another computer to mount shares and gain access to information from the user's computer. File sharing from a user endpoint has long been considered questionable, and Apple has removed that capability from the GUI. NFSD is still part of the Operating System and can be easily turned on to export shares and provide remote connectivity to an end-user computer.\nThe etc/exports file contains the list of NFS shared directories. If the file exists, it is likely that NFS sharing has been enabled in the past or may be available periodically. As an additional check, the audit verifies that there is no /etc/exports file.\n\nRationale:\nFile serving should not be done from a user desktop. Dedicated servers should be used.\nOpen ports make it easier to exploit the computer.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "4.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable the nfsd fileserver services:\n% /usr/bin/sudo /sbin/nfsd stop\n% /usr/bin/sudo /bin/launchctl disable system/com.apple.nfsd\nRemove the exported Directory listing.\n% /usr/bin/sudo /bin/rm /etc/exports\nInternal Only - General",
+            "+@fixref": "F-4732DD1Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-4732DD1Er01_fix"
+          },
+          "check": {
+            "+@system": "C-4732DD1E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands to verify that the NFS fileserver service is not enabled:\n% /usr/bin/sudo /bin/launchctl list | /usr/bin/grep -c com.apple.nfsd\n0\n% /usr/bin/sudo /bin/cat /etc/exports\ncat: /etc/exports: No such file or directory"
+          }
+        }
+      },
+      {
+        "+@id": "V-0B53B5FE",
+        "title": "5.1 File System Permissions and Access Controls",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0B53B5FEr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.1",
+          "title": "Ensure Home Folders Are Secure",
+          "description": "<VulnDiscussion>By default, macOS allows all valid users into the top level of every other user's home folder and restricts access to the Apple default folders within. Another user on the same system can see you have a \"Documents\" folder but cannot see inside it. This configuration does work for personal file sharing but can expose user files to standard accounts on the system.\nThe best parallel for Enterprise environments is that everyone who has a Dropbox account can see everything that is at the top level but can't see your pictures. Similarly with macOS, users can see into every new Directory that is created because of the default permissions.\nHome folders should be restricted to access only by the user. Sharing should be used on dedicated servers or cloud instances that are managing access controls. Some environments may encounter problems if execute rights are removed as well as read and write. Either no access or execute only for group or others is acceptable.\n\nRationale:\nAllowing all users to view the top level of all networked users' home folder may not be desirable since it may lead to the revelation of sensitive information.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.1.1"
+          },
+          "fixtext": {
+            "+content": "For each user, run the following command to secure all home folders:\n% /usr/bin/sudo /bin/chmod -R og-rwx /Users/<username>\nAlternately, run the following command if there needs to be executable access for a home folder:\n% /usr/bin/sudo /bin/chmod -R og-rw /Users/<username>",
+            "+@fixref": "F-0B53B5FEr01_fix"
+          },
+          "fix": {
+            "+@id": "F-0B53B5FEr01_fix"
+          },
+          "check": {
+            "+@system": "C-0B53B5FE_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to ensure that all home folders are secure:\n% /usr/bin/sudo /usr/bin/find /System/Volumes/Data/Users -mindepth 1 -\nmaxdepth 1 -type d -not -perm 700 | /usr/bin/grep -v \"Shared\" | /usr/bin/grep\n-v \"Guest\"\nThe output will show what user folders are not secure.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-481C09F8",
+        "title": "5.1 File System Permissions and Access Controls",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-481C09F8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.2",
+          "title": "Ensure Apple Mobile File Integrity (AMFI) Is Enabled",
+          "description": "<VulnDiscussion>Apple Mobile File Integrity (AMFI) was first released in macOS 10.12. The daemon and service block attempts to run unsigned code. AMFI uses launchd, code signatures, certificates, entitlements, and provisioning profiles to create a filtered entitlement dictionary for an app. AMFI is the macOS kernel module that enforces code-signing and library validation.\n\nRationale:\nApple Mobile File Integrity validates that application code is validated.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.1.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable the Apple Mobile File Integrity service:\n% /usr/bin/sudo /usr/sbin/nvram boot-args=\"\"",
+            "+@fixref": "F-481C09F8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-481C09F8r01_fix"
+          },
+          "check": {
+            "+@system": "C-481C09F8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that Apple Mobile File Integrity is enabled:\n% /usr/bin/sudo /usr/sbin/nvram -p | /usr/bin/grep -c\n\"amfi_get_out_of_my_way=1\"\n0\nNote: AMFI cannot be disabled with SIP enabled, but a change attempt can be made that will appear successful, and report incorrectly as successful. If the AMFI audit fails, and the SIP audit passes, this is still an issue the admin should research."
+          }
+        }
+      },
+      {
+        "+@id": "V-7647D717",
+        "title": "5.1 File System Permissions and Access Controls",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7647D717r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.3",
+          "title": "Ensure Signed System Volume (SSV) Is Enabled",
+          "description": "<VulnDiscussion>Signed System Volume is a security feature introduced in macOS 11.0 Big Sur.\nDuring system installation, a SHA-256 cryptographic hash is calculated for all immutable system files and stored in a Merkle tree which itself is hashed as the Seal. Both are stored in the metadata of the snapshot created of the System volume.\nThe seal is verified by the boot loader at startup. macOS will not boot if system files have been tampered with. If validation fails, the user will be instructed to reinstall the operating system.\nDuring read operations for files located in the Signed System Volume, a hash is calculated and compared to the value stored in the Merkle tree.\n\nRationale:\nRunning without Signed System Volume on a production system could run the risk of Apple software that integrates directly with macOS being modified.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.1.3"
+          },
+          "fixtext": {
+            "+content": "If SSV has been disabled, assume that the operating system has been compromised.\nBack up any files, and do a clean install to a known good Operating System.\nInternal Only - General",
+            "+@fixref": "F-7647D717r01_fix"
+          },
+          "fix": {
+            "+@id": "F-7647D717r01_fix"
+          },
+          "check": {
+            "+@system": "C-7647D717_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that Signed System Volume is enabled:\n% /usr/bin/sudo /usr/bin/csrutil authenticated-root status\nAuthenticated Root status: enabled"
+          }
+        }
+      },
+      {
+        "+@id": "V-8A43DCC0",
+        "title": "5.1 File System Permissions and Access Controls",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8A43DCC0r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.4",
+          "title": "Ensure Appropriate Permissions Are Enabled for System Wide Applications",
+          "description": "<VulnDiscussion>Applications in the System Applications Directory (/Applications) should be world- executable since that is their reason to be on the system. They should not be world- writable and allow any process or user to alter them for other processes or users to then execute modified versions.\n\nRationale:\nUnauthorized modifications of applications could lead to the execution of malicious code.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.1.4"
+          },
+          "fixtext": {
+            "+content": "Run the following command to change the permissions for each application that does not meet the requirements:\n% /usr/bin/sudo IFS=$'\\n'\nfor apps in $( /usr/bin/find /System/Volumes/Data/Applications -iname\n\"*\\.app\" -type d -perm -2 | grep -v Xcode.app ); do\n/bin/chmod -R o-w \"$apps\"\ndone\nNote: Global changes should not be performed where mission-critical applications are part of the improperly permissioned applications.\nInternal Only - General",
+            "+@fixref": "F-8A43DCC0r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8A43DCC0r01_fix"
+          },
+          "check": {
+            "+@system": "C-8A43DCC0_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that all applications have the correct permissions:\n% /usr/bin/sudo /usr/bin/find /System/Volumes/Data/Applications -iname\n\"*\\.app\" -type d -perm -2 -ls | grep -v Xcode.app | /usr/bin/wc -l |\n/usr/bin/xargs\n0"
+          }
+        }
+      },
+      {
+        "+@id": "V-6FD8E13B",
+        "title": "5.1 File System Permissions and Access Controls",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6FD8E13Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.5",
+          "title": "Ensure No World Writable Folders Exist in the System Folder",
+          "description": "<VulnDiscussion>Software sometimes insists on being installed in the /System/Volumes/Data/System Directory and has inappropriate world-writable permissions.\nMacs with writable files in System should be investigated forensically. A file with open writable permissions is a sign of at best a rogue application. It could also be a sign of a computer compromise and a persistent presence on the system.\n\nRationale:\nFolders in /System/Volumes/Data/System should not be world-writable. The audit check excludes the downloadDir folder that is part of Apple's default user template.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.1.5"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set permissions so that folders are not world-writable in the /System folder:\n% /usr/bin/sudo IFS=$'\\n'\nfor sysPermissions in $( /usr/bin/sudo /usr/bin/find\n/System/Volumes/Data/System -type d -perm -2 | /usr/bin/grep -v \"downloadDir\"\n); do\n/bin/chmod -R o-w \"$sysPermissions\"\ndone\nInternal Only - General",
+            "+@fixref": "F-6FD8E13Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-6FD8E13Br01_fix"
+          },
+          "check": {
+            "+@system": "C-6FD8E13B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check for directories in the /System folder that are world- writable:\n% /usr/bin/sudo /usr/bin/find /System/Volumes/Data/System -type d -perm -2 -\nls | /usr/bin/grep -v \"downloadDir\" | /usr/bin/wc -l | /usr/bin/xargs\n0"
+          }
+        }
+      },
+      {
+        "+@id": "V-A929D45B",
+        "title": "5.1 File System Permissions and Access Controls",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A929D45Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.1.6",
+          "title": "Ensure No World Writable Folders Exist in the Library Folder",
+          "description": "<VulnDiscussion>Software sometimes insists on being installed in the /System/Volumes/Data/Library Directory and has inappropriate world-writable permissions.\n\nRationale:\nFolders in /System/Volumes/Data/Library should not be world-writable. The audit check excludes the /System/Volumes/Data/Library/Caches and /System/Volumes/Data/Library/Preferences/Audio/Data folders where the sticky bit is set.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.1.6"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set permissions so that folders are not world-writable in the /System/Volumes/Data/Library folder:\n% /usr/bin/sudo IFS=$'\\n'\nfor libPermissions in $( /usr/bin/find /System/Volumes/Data/Library -type d -\nperm -2 | /usr/bin/grep -v Caches | /usr/bin/grep -v /Preferences/Audio/Data\n); do\n/bin/chmod -R o-w \"$libPermissions\"\ndone\nInternal Only - General",
+            "+@fixref": "F-A929D45Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-A929D45Br01_fix"
+          },
+          "check": {
+            "+@system": "C-A929D45B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following to verify that no directories in the /System/Volumes/Data/Library folder are world-writable:\n% /usr/bin/sudo /usr/bin/find /System/Volumes/Data/Library -type d -perm -2 -\nls | /usr/bin/grep -v Caches | /usr/bin/grep -v /Preferences/Audio/Data |\n/usr/bin/wc -l | /usr/bin/xargs\n0"
+          }
+        }
+      },
+      {
+        "+@id": "V-4495ECA6",
+        "title": "5.2 Password Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4495ECA6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.1",
+          "title": "Ensure Password Account Lockout Threshold Is Configured",
+          "description": "<VulnDiscussion>The account lockout threshold specifies the amount of times a user can enter an incorrect password before a lockout will occur.\nEnsure that a lockout threshold is part of the password policy on the computer.\n\nRationale:\nThe account lockout feature mitigates brute-force password attacks on the system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.2.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the maximum number of failed login attempts to less than or equal to 5:\n% /usr/bin/sudo /usr/bin/pwpolicy -n /Local/Default -setglobalpolicy\n\"maxFailedLoginAttempts=<value≤5>\"\nInternal Only - General",
+            "+@fixref": "F-4495ECA6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4495ECA6r01_fix"
+          },
+          "check": {
+            "+@system": "C-4495ECA6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Terminal Method:\nRun the following command to verify that the number of failed attempts is less than or equal to 5:\n$ /usr/bin/sudo /usr/bin/pwpolicy -getaccountpolicies 2> /dev/null |\n/usr/bin/tail +2 | /usr/bin/xmllint --xpath\n'//dict/key[text()=\"policyAttributeMaximumFailedAuthentications\"]/following-\nsibling::integer[1]/text()' -\nThe output should be ≤ 5"
+          }
+        }
+      },
+      {
+        "+@id": "V-4C199DC5",
+        "title": "5.2 Password Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4C199DC5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.2",
+          "title": "Ensure Password Minimum Length Is Configured",
+          "description": "<VulnDiscussion>A minimum password length is the fewest number of characters a password can contain to meet a system's requirements.\nEnsure that a minimum of a 15-character password is part of the password policy on the computer.\nWhere the confidentiality of encrypted information in FileVault is more of a concern, requiring a longer password or passphrase may be sufficient rather than imposing additional complexity requirements that may be self-defeating.\n\nRationale:\nInformation systems that are not protected with strong password schemes including passwords of minimum length provide a greater opportunity for attackers to crack the password and gain access to the system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.2.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the password length to greater than or equal to 15:\n% /usr/bin/sudo /usr/bin/pwpolicy -n /Local/Default -setglobalpolicy\n\"minChars=<value≥15>\"\nInternal Only - General",
+            "+@fixref": "F-4C199DC5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4C199DC5r01_fix"
+          },
+          "check": {
+            "+@system": "C-4C199DC5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that the password length is greater than or equal to 15:\n% /usr/bin/sudo /usr/bin/pwpolicy -getaccountpolicies | /usr/bin/grep -e\n\"policyAttributePassword matches\" | /usr/bin/cut -b 46-53 | /usr/bin/cut -\nd',' -f1 | /usr/bin/cut -d'{' -f2\nThe output value should be ≥ 15"
+          }
+        }
+      },
+      {
+        "+@id": "V-E6666E0D",
+        "title": "5.2 Password Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E6666E0Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2.3",
+          "title": "Ensure Complex Password Must Contain Alphabetic Characters Is Configured",
+          "description": "<VulnDiscussion>Complex passwords contain one character from each of the following classes: English uppercase letters, English lowercase letters, Westernized Arabic numerals, and non- alphanumeric characters.\nEnsure that an Alphabetic character is part of the password policy on the computer.\n\nRationale:\nThe more complex a password, the more resistant it will be against persons seeking unauthorized access to a system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.2.3"
+          },
+          "fixtext": {
+            "+content": "Terminal Method:\nRun the following command to set that passwords must contain at least one letter:\n% /usr/bin/sudo /usr/bin/pwpolicy -n /Local/Default -setglobalpolicy -\nsetaccountpolicies \"requiresAlpha=<value≥1>\"",
+            "+@fixref": "F-E6666E0Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-E6666E0Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-E6666E0D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that the password requires at least one letter:\n% pref=$(/usr/bin/sudo /usr/bin/pwpolicy -getaccountpolicies | /usr/bin/sudo\n/usr/bin/grep -A1 minimumLetters | /usr/bin/sudo /usr/bin/tail -1 |\n/usr/bin/sudo /usr/bin/cut -d'>' -f2 | /usr/bin/sudo /usr/bin/cut -d '<' -f1)\n&& if [[ \"$pref\" != \"\" && pref -ge 1 ]]; then echo \"true\"; else echo \"false\";\nfi\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-DF239981",
+        "title": "5.2 Password Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-DF239981r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2.4",
+          "title": "Ensure Complex Password Must Contain Numeric Character Is Configured",
+          "description": "<VulnDiscussion>Complex passwords contain one character from each of the following classes: English uppercase letters, English lowercase letters, Westernized Arabic numerals, and non- alphanumeric characters.\nEnsure that a number or numeric value is part of the password policy on the computer.\n\nRationale:\nThe more complex a password, the more resistant it will be against persons seeking unauthorized access to a system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.2.4"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set passwords to require at least one number:\n% /usr/bin/sudo /usr/bin/pwpolicy -n /Local/Default -setglobalpolicy -\nsetaccountpolicies \"requiresNumeric=<value≥1>\"",
+            "+@fixref": "F-DF239981r01_fix"
+          },
+          "fix": {
+            "+@id": "F-DF239981r01_fix"
+          },
+          "check": {
+            "+@system": "C-DF239981_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that passwords require at least one number:\n% pref=$(/usr/bin/sudo /usr/bin/pwpolicy -getaccountpolicies | /usr/bin/sudo\n/usr/bin/grep -A1 minimumNumericCharacters | /usr/bin/sudo /usr/bin/tail -1 |\n/usr/bin/sudo /usr/bin/cut -d '>' -f2 | /usr/bin/sudo /usr/bin/cut -d '<' -\nf1) && if [[ \"$pref\" != \"\" && pref -ge 1 ]]; then echo \"true\"; else echo\n\"false\"; fi\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-390FE78D",
+        "title": "5.2 Password Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-390FE78Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2.5",
+          "title": "Ensure Complex Password Must Contain Special Character Is Configured",
+          "description": "<VulnDiscussion>Complex passwords contain one character from each of the following classes: English uppercase letters, English lowercase letters, Westernized Arabic numerals, and non- alphanumeric characters. Ensure that a special character is part of the password policy on the computer.\n\nRationale:\nThe more complex a password, the more resistant it will be against persons seeking unauthorized access to a system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.2.5"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set passwords to require at least one special character:\n% /usr/bin/sudo /usr/bin/pwpolicy -n /Local/Default -setglobalpolicy -\nsetaccountpolicies \"requiresSymbol=<value≥1>\"",
+            "+@fixref": "F-390FE78Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-390FE78Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-390FE78D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that the password requires at least one special character:\n% /usr/bin/sudo pref=$(/usr/bin/sudo pwpolicy -getaccountpolicies |\n/usr/bin/sudo /usr/bin/grep -A1 minimumSymbols | /usr/bin/sudo /usr/bin/tail\n-1 | /usr/bin/sudo /usr/bin/cut -d '>' -f2 | /usr/bin/sudo /usr/bin/cut -d\n'<' -f1) && if [[ \"$pref\" != \"\" && pref -ge 1 ]]; then echo \"true\"; else echo\n\"false\"; fi\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-274D8917",
+        "title": "5.2 Password Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-274D8917r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2.6",
+          "title": "Ensure Complex Password Must Contain Uppercase and Lowercase Characters Is Configured",
+          "description": "<VulnDiscussion>Complex passwords contain one character from each of the following classes: English uppercase letters, English lowercase letters, Westernized Arabic numerals, and non- alphanumeric characters.\nEnsure that both uppercase and lowercase letters are part of the password policy on the computer.\n\nRationale:\nThe more complex a password, the more resistant it will be against persons seeking unauthorized access to a system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.2.6"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set passwords to require an upper and lower case letter:\n% /usr/bin/sudo /usr/bin/pwpolicy -n /Local/Default -setglobalpolicy\n\"requiresMixedCase=<value≥1>\"\nInternal Only - General",
+            "+@fixref": "F-274D8917r01_fix"
+          },
+          "fix": {
+            "+@id": "F-274D8917r01_fix"
+          },
+          "check": {
+            "+@system": "C-274D8917_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that the password requires an upper and lower case letter:\n% /usr/bin/sudo pref=$(/usr/bin/pwpolicy -getaccountpolicies | /usr/bin/grep\n-A1 minimumMixedCaseCharacters | /usr/bin/tail -1 | /usr/bin/cut -d'>' -f2 |\n/usr/bin/cut -d '<' -f1) && if [[ \"$pref\" != \"\" && pref -ge 1 ]]; then echo\n\"true\"; else echo \"false\"; fi\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-AF83E6D0",
+        "title": "5.2 Password Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AF83E6D0r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.7",
+          "title": "Ensure Password Age Is Configured",
+          "description": "<VulnDiscussion>Over time, passwords can be captured by third parties through mistakes, phishing attacks, third-party breaches, or merely brute-force attacks. To reduce the risk of exposure and to decrease the incentives of password reuse (passwords that are not forced to be changed periodically generally are not ever changed), users should reset passwords periodically. This control uses 365 days as the acceptable value. Some organizations may be more or less restrictive. This control mainly exists to mitigate against password reuse of the macOS account password in other realms that may be more prone to compromise. Attackers take advantage of exposed information to attack other accounts.\n\nRationale:\nPasswords should be changed periodically to reduce exposure.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.2.7"
+          },
+          "fixtext": {
+            "+content": "Run the following command to require that passwords expire after at most 365 days:\n% /usr/bin/sudo /usr/bin/pwpolicy -n /Local/Default -setglobalpolicy\n\"maxMinutesUntilChangePassword=<value≤525600>\"\nInternal Only - General",
+            "+@fixref": "F-AF83E6D0r01_fix"
+          },
+          "fix": {
+            "+@id": "F-AF83E6D0r01_fix"
+          },
+          "check": {
+            "+@system": "C-AF83E6D0_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that the password expires after at most 365 days:\n% /usr/bin/sudo pref=$(/usr/bin/pwpolicy -getaccountpolicies | /usr/bin/grep\n-A1 policyAttributeExpiresEveryNDays | /usr/bin/tail -1 | /usr/bin/cut -d'>'\n-f2 | /usr/bin/cut -d '<' -f1) && if [[ \"$pref\" != \"\" && pref -le 365 ]];\nthen echo \"true\"; else echo \"false\"; fi\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-1B8A0CEE",
+        "title": "5.2 Password Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1B8A0CEEr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.8",
+          "title": "Ensure Password History Is Configured",
+          "description": "<VulnDiscussion>Over time, passwords can be captured by third parties through mistakes, phishing attacks, third-party breaches, or merely brute-force attacks. To reduce the risk of exposure and to decrease the incentives of password reuse (passwords that are not forced to be changed periodically generally are not ever changed), users must reset passwords periodically. This control ensures that previous passwords are not reused immediately by keeping a history of previous password hashes. Ensure that password history checks are part of the password policy on the computer. This control checks whether a new password is different than the previous 15. The latest NIST guidance based on exploit research referenced in this section details how one of the greatest risks is password exposure rather than password cracking. Passwords should be changed to a new unique value whenever a password might have been exposed to anyone other than the account holder. Attackers have maintained persistent control based on predictable password change patterns and substantially different patterns should be used in case of a leak.\n\nRationale:\nOld passwords should not be reused.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.2.8"
+          },
+          "fixtext": {
+            "+content": "Run the following command to require that the password must be different from at least the last 15 passwords:\n% /usr/bin/sudo /usr/bin/pwpolicy -n /Local/Default -setglobalpolicy\n\"usingHistory=<value≥15>\"",
+            "+@fixref": "F-1B8A0CEEr01_fix"
+          },
+          "fix": {
+            "+@id": "F-1B8A0CEEr01_fix"
+          },
+          "check": {
+            "+@system": "C-1B8A0CEE_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that the password is required to be different from at least the last 15 passwords:\n% /usr/bin/sudo pref$=(/usr/bin/pwpolicy -getaccountpolicies | /usr/bin/grep\n-A1 policyAttributePasswordHistoryDepth | /usr/bin/tail -1 | /usr/bin/cut -\nd'>' -f2 | /usr/bin/cut -d '<' -f1) && if [[ \"$pref\" != \"\" && pref -ge 1 ]];\nthen echo \"true\"; else echo \"false\"; fi\ntrue\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-827E1FB7",
+        "title": "5 System Access, Authentication, and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-827E1FB7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.3",
+          "title": "Ensure the Sudo Timeout Period Is Set to Zero",
+          "description": "<VulnDiscussion>The sudo command allows the user to run programs as the root user. Working as the root user allows the user an extremely high level of configurability within the system.\nThis control, along with the control to use a separate timestamp for each tty, limits the window where an unauthorized user, process, or attacker could utilize legitimate credentials that are valid for longer than required.\n\nRationale:\nThe sudo command stays logged in as the root user for five minutes before timing out and re-requesting a password. This five-minute window should be eliminated since it leaves the system extremely vulnerable. This is especially true if an exploit were to gain access to the system, since they would be able to make changes as a root user.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to edit the sudo settings:\n% /usr/bin/sudo /usr/sbin/visudo -f /etc/sudoers.d/<configuration file name>\nexample: $ /usr/bin/sudo /usr/sbin/visudo -f /etc/sudoers.d/10_cissudoconfiguration Note: Unlike other Unix and/or Linux distros, macOS will ignore configuration files in the sudoers.d folder that contain a. so do not add a file extension to the configuration file.\nAdd the line Defaults timestamp_timeout=0 to the configuration file.\nIf /etc/sudoers.d/ is not owned by root or in the wheel group, run the following to change ownership and group:\n% /usr/bin/sudo /usr/sbin/chown -R root:wheel /etc/security/sudoers.d/",
+            "+@fixref": "F-827E1FB7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-827E1FB7r01_fix"
+          },
+          "check": {
+            "+@system": "C-827E1FB7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to verify the sudo timeout period:\n% /usr/bin/sudo /usr/bin/sudo -V | /usr/bin/grep -c \"Authentication timestamp\ntimeout: 0.0 minutes\"\n1\nRun the following commands to verify that the root is the owner of the /etc/sudoers.d folder, and that wheel is the group\n% /usr/bin/stat /etc/sudoers.d\n16777229 19662948 drwxr-xr-x 2 root wheel 0 64 \"Jun 7 23:12:24 2022\" \"May 9\n17:30:48 2022\" \"Jun 7 23:12:24 2022\" \"May 9 17:30:48 2022\" 4096 0 0\n/etc/sudoers.d\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-9EAD2552",
+        "title": "5 System Access, Authentication, and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9EAD2552r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.4",
+          "title": "Ensure a Separate Timestamp Is Enabled for Each User/tty Combo",
+          "description": "<VulnDiscussion>Using tty tickets ensures that a user must enter the sudo password in each Terminal session.\nWith sudo versions 1.8 and higher, introduced in 10.12, the default value is to have tty tickets for each interface so that root access is limited to a specific terminal. The default configuration can be overwritten or not configured correctly on earlier versions of macOS.\n\nRationale:\nIn combination with removing the sudo timeout grace period, a further mitigation should be in place to reduce the possibility of a background process using elevated rights when a user elevates to root in an explicit context or tty.\nAdditional mitigation should be in place to reduce the risk of privilege escalation of background processes.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.4"
+          },
+          "fixtext": {
+            "+content": "Run the following command to edit the sudo settings:\n% /usr/bin/sudo /usr/sbin/visudo -f /etc/sudoers.d/<configuration file name>\nexample: % /usr/bin/sudo /usr/sbin/visudo -f /etc/sudoers.d/10_cissudoconfiguration Note: Unlike other Unix and/or Linux distros, macOS will ignore configuration files in the sudoers.d folder that contain a. so do not add a file extension to the configuration file.\nAdd the line Defaults timestamp_type=tty to the configuration file.\nNote: The Defaults timestamp_type=tty line can be added to an existing configuration file or a new one. That will depend on your organization's preference and works either way.",
+            "+@fixref": "F-9EAD2552r01_fix"
+          },
+          "fix": {
+            "+@id": "F-9EAD2552r01_fix"
+          },
+          "check": {
+            "+@system": "C-9EAD2552_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands to verify that the default sudoers controls are in place with explicit tickets per tty:\n% /usr/bin/sudo /usr/bin/sudo -V | /usr/bin/grep -c \"Type of authentication\ntimestamp record: tty\"\n1\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-BA59F05D",
+        "title": "5 System Access, Authentication, and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BA59F05Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.5",
+          "title": "Ensure the \"root\" Account Is Disabled",
+          "description": "<VulnDiscussion>The root account is a superuser account that has access privileges to perform any actions and read/write to any file on the computer. With some versions of Linux, the system administrator may commonly use the root account to perform administrative functions.\n\nRationale:\nEnabling and using the root account puts the system at risk since any successful exploit or mistake while the root account is in use could have unlimited access privileges within the system. Using the sudo command allows users to perform functions as a root user while limiting and password protecting the access privileges. By default the root account is not enabled on a macOS computer. An administrator can escalate privileges using the sudo command (use -s or -i to get a root shell).</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.5"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable the root user:\n% /usr/bin/sudo /usr/sbin/dsenableroot -d\nusername = root\nuser password:\nInternal Only - General",
+            "+@fixref": "F-BA59F05Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-BA59F05Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-BA59F05D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the the root user has not been enabled:\n% /usr/bin/sudo /usr/bin/dscl . -read /Users/root AuthenticationAuthority\nNo such key: AuthenticationAuthority"
+          }
+        }
+      },
+      {
+        "+@id": "V-7FF20123",
+        "title": "5 System Access, Authentication, and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7FF20123r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.6",
+          "title": "Ensure an Administrator Account Cannot Login to Another User's Active and Locked Session",
+          "description": "<VulnDiscussion>macOS has a privilege that can be granted to any user that will allow that user to unlock active users' sessions.\n\nRationale:\nDisabling the administrator's and/or user's ability to log into another user's active and locked session prevents unauthorized persons from viewing potentially sensitive and/or personal information.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.6"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable a user logging into another user's active and/or locked session:\n% /usr/bin/sudo /usr/bin/security authorizationdb write\nsystem.login.screensaver authenticate-session-owner\nYES (0)",
+            "+@fixref": "F-7FF20123r01_fix"
+          },
+          "fix": {
+            "+@id": "F-7FF20123r01_fix"
+          },
+          "check": {
+            "+@system": "C-7FF20123_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that a user cannot log into another user's active and/or locked session:\n% /usr/bin/sudo /usr/bin/security authorizationdb read\nsystem.login.screensaver 2>&1 | /usr/bin/grep -c 'authenticate-session-owner'\n1"
+          }
+        }
+      },
+      {
+        "+@id": "V-A7448082",
+        "title": "5 System Access, Authentication, and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A7448082r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.7",
+          "title": "Ensure a Login Window Banner Exists",
+          "description": "<VulnDiscussion>A Login window banner warning informs the user that the system is reserved for authorized use only. It enforces an acknowledgment by the user that they have been informed of the use policy in the banner if required. The system recognizes either the .txt and the.rtf formats.\n\nRationale:\nAn access warning may reduce a casual attacker's tendency to target the system.\nAccess warnings may also aid in the prosecution of an attacker by evincing the attacker's knowledge of the system's private status, acceptable use policy, and authorization requirements.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.7"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to create or edit the login window text and set the proper permissions:\nEdit (or create) a PolicyBanner.txt or PolicyBanner.rtf file, in the /Library/Security/ folder, to include the required login window banner text.\nPerform the following to set permissions on the policy banner file:\n% /usr/bin/sudo /usr/sbin/chown o+r /Library/Security/PolicyBanner.txt\n% /usr/bin/sudo /usr/sbin/chown o+r /Library/Security/PolicyBanner.rtf\nNote: If your organization uses an.rtfd file to set the policy banner, run % /usr/bin/sudo /usr/sbin/chown -R o+rx /Library/Security/PolicyBanner.rtfd to update the permissions.",
+            "+@fixref": "F-A7448082r01_fix"
+          },
+          "fix": {
+            "+@id": "F-A7448082r01_fix"
+          },
+          "check": {
+            "+@system": "C-A7448082_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the login window text:\n% /usr/bin/sudo /bin/cat /Library/Security/PolicyBanner.*\nIf the output includes no matches found: /Library/Security/PolicyBanner.* the system is not compliant.\nRun the following to verify permissions of the policy banner file:\n% /usr/bin/stat -f %A /Library/Security/PolicyBanner.*\nThe output should have 4 as the 3rd digit.\nIf there is an output, then the policy banner will not display.\nInternal Only - General example:\n% /usr/bin/sudo /bin/cat /Library/Security/PolicyBanner.txt\nCenter for Internet Security Test Message\n% /usr/bin/sudo /bin/cat /Library/Security/PolicyBanner.rtf\n{\\rtf1\\ansi\\ansicpg1252\\cocoartf1561\\cocoasubrtf610\n{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}\n{\\colortbl;\\red255\\green255\\blue255;}\n{\\*\\expandedcolortbl;;}\n\\margl1440\\margr1440\\vieww10800\\viewh8400\\viewkind0\n\\pard\\tx566\\tx1133\\tx1700\\tx2267\\tx2834\\tx3401\\tx3968\\tx4535\\tx5102\\tx5669\\tx\n6236\\tx6803\\pardirnatural\\partightenfactor0\n\\f0\\fs24 \\cf0 Center for Internet Security Test Message}\n% /usr/bin/sudo /bin/cat /Library/Security/PolicyBanner.*\n{\\rtf1\\ansi\\ansicpg1252\\cocoartf1561\\cocoasubrtf610\n{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}\n{\\colortbl;\\red255\\green255\\blue255;}\n{\\*\\expandedcolortbl;;}\n\\margl1440\\margr1440\\vieww10800\\viewh8400\\viewkind0\n\\pard\\tx566\\tx1133\\tx1700\\tx2267\\tx2834\\tx3401\\tx3968\\tx4535\\tx5102\\tx5669\\tx\n6236\\tx6803\\pardirnatural\\partightenfactor0\n\\f0\\fs24 \\cf0 Center for Internet Security Test Message}Center for Internet\nSecurity Test Message\n% /usr/bin/sudo stat -f %A /Library/Security/PolicyBanner.*\n644"
+          }
+        }
+      },
+      {
+        "+@id": "V-D4E83F86",
+        "title": "5 System Access, Authentication, and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D4E83F86r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.8",
+          "title": "Ensure the Guest Home Folder Does Not Exist",
+          "description": "<VulnDiscussion>In the previous two controls, the guest account login has been disabled and sharing to guests has been disabled, as well. There is no need for the legacy Guest home folder to remain in the file system. When normal user accounts are removed, you have the option to archive it, leave it in place, or delete. In the case of the guest folder, the folder remains in place without a GUI option to remove it. If at some point in the future a Guest account is needed, it will be re-created. The presence of the Guest home folder can cause automated audits to fail when looking for compliant settings within all User folders, as well. Rather than ignoring the folder's continued existence, it is best removed.\n\nRationale:\nThe Guest home folders are unneeded after the Guest account is disabled and could be used inappropriately.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.8"
+          },
+          "fixtext": {
+            "+content": "Run the following command to remove the Guest user home folder:\n% /usr/bin/sudo /bin/rm -R /Users/Guest\nInternal Only - General",
+            "+@fixref": "F-D4E83F86r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D4E83F86r01_fix"
+          },
+          "check": {
+            "+@system": "C-D4E83F86_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify if the Guest user home folder exists:\n% /usr/bin/sudo /bin/ls /Users/ | /usr/bin/grep Guest"
+          }
+        }
+      },
+      {
+        "+@id": "V-CCF2BFB3",
+        "title": "5 System Access, Authentication, and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CCF2BFB3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.9",
+          "title": "Ensure XProtect Is Running and Updated",
+          "description": "<VulnDiscussion>XProtect is Apple's native signature-based antivirus technology. XProtect both finds and blocks the execution of known malware. There are many AV and Endpoint Threat Detection and Response (ETDR) tools available for Mac OS. The native Apple provisioned tool looks for specific known malware and is completely integrated into the OS. No matter what other tools are being used, XProtect should have the latest signatures available.\n\nRationale:\nApple creates signatures for known malware that actually affects Macs and that knowledge should be leveraged.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.9"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable and update XProtect:\n% /usr/bin/sudo /bin/launchctl load -w\n/Library/Apple/System/Library/LaunchDaemons/com.apple.XProtect.daemon.scan.pl\nist\n% /usr/bin/sudo /bin/launchctl load -w\n/Library/Apple/System/Library/LaunchDaemons/com.apple.XprotectFramework.Plugi\nnService.plist\n% /usr/bin/sudo /usr/sbin/softwareupdate -l --background-critical\nsoftwareupdate[97180]: Triggering a background check with forced scan\n(critical and config-data updates only) ...\nNote: Xprotect can only be enabled/disabled if SIP (System Integrity Protection) is disabled. If Xprotect is disabled, the system might be compromised and needs to be investigated.",
+            "+@fixref": "F-CCF2BFB3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-CCF2BFB3r01_fix"
+          },
+          "check": {
+            "+@system": "C-CCF2BFB3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that XProtect is running and up-to-date:\n% /usr/bin/sudo /bin/launchctl list | /usr/bin/grep -cE\n\"(com.apple.XprotectFramework.PluginService$|com.apple.XProtect.daemon.scan$)\n\"\n2\nNote: XProtect can only be disabled while SIP (System Integrity Protection) is disabled.\nIf XProtect is disabled while SIP is enabled, there needs to be a more significant investigation on this system, as it is likely compromised in some way.\nTo verify the updates to XProtect, run the following command:\n% /usr/bin/sudo /usr/sbin/system_profiler SPInstallHistoryDataType | grep -A\n5 \"XProtectPlistConfigData\"\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-28DEF1C6",
+        "title": "5 System Access, Authentication, and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-28DEF1C6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.10",
+          "title": "Ensure Secure Keyboard Entry Terminal.app Is Enabled",
+          "description": "<VulnDiscussion>Secure Keyboard Entry prevents other applications on the system and/or network from detecting and recording what is typed into Terminal. Unauthorized applications and malicious code could intercept keystrokes entered in the Terminal.\n\nRationale:\nEnabling Secure Keyboard Entry minimizes the risk of a key logger detecting what is entered in Terminal.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.10"
+          },
+          "fixtext": {
+            "+content": "Run the following command to ensure keyboard entries are secure in Terminal for every user that is non-compliant:\n% /usr/bin/sudo -u <username> /usr/bin/defaults write -app Terminal\nSecureKeyboardEntry -bool true\nInternal Only - General",
+            "+@fixref": "F-28DEF1C6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-28DEF1C6r01_fix"
+          },
+          "check": {
+            "+@system": "C-28DEF1C6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "For each user, run the following command to verify that keyboard entries in Terminal are secured:\n% /usr/bin/sudo for i in $(/usr/bin/find /Users -type d -maxdepth 1);\ndo\nPREF=$i/Library/Preferences/com.apple.Terminal\nif [ -e $PREF.plist ]\nthen\necho -n \"Checking User: '$i': \"\n/usr/bin/defaults read $PREF.plist SecureKeyboardEntry\nfi\ndone\nChecking User: '/Users/<username>': 1\nChecking User: '/Users/<username>': 0\nAny user that contains the output 0 is not in compliance"
+          }
+        }
+      },
+      {
+        "+@id": "V-680D7B5F",
+        "title": "5 System Access, Authentication, and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-680D7B5Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.11",
+          "title": "Ensure Show All Filename Extensions Setting is Enabled",
+          "description": "<VulnDiscussion>A filename extension is a suffix added to a base filename that indicates the base filename's file format.\n\nRationale:\nVisible filename extensions allow the user to identify the file type and the application it is associated with which leads to quick identification of misrepresented malicious files.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apple macOS 13.0 Ventura Cloud-tailored Benchmark",
+            "dc:identifier": "5.11"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable displaying of file extensions:\n% /usr/bin/sudo -u <username> /usr/bin/defaults write\n/Users/<username>/Library/Preferences/.GlobalPreferences.plist\nAppleShowAllExtensions -bool true\n% /usr/bin/sudo killall Finder",
+            "+@fixref": "F-680D7B5Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-680D7B5Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-680D7B5F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apple_macOS_13_0_Ventura_Cloud_tailored_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that displaying of file extensions is enabled:\n% /usr/bin/sudo -u <username> /usr/bin/defaults read\n/Users/<username>/Library/Preferences/.GlobalPreferences.plist\nAppleShowAllExtensions\n1"
+          }
+        }
+      }
+    ]
+  }
+}

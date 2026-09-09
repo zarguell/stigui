@@ -1,0 +1,1073 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_Talos_Linux_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2024-07-22"
+    },
+    "title": "CIS Talos Linux Benchmark",
+    "description": "All CIS Benchmarks™ focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system for vulnerabilities and quickly updating with the latest security patches. • Monitoring applications and libraries for vulnerabilities and quickly updating with the latest security patches. In the end, the CIS Benchmarks are designed as a key component of a comprehensive cybersecurity program. This document provides prescriptive guidance for establishing a secure configuration posture for Linux systems based on Talos Linux. Talos Linux does not include any facilities for interactive use. This means that shells, user accounts, a console for local access, and an SSH daemon for remote access are not available. To obtain the latest version of this guide, please visit http://workbench.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.0.0 Benchmark Date: 2024-07-22",
+      "+@id": "release-info"
+    },
+    "version": "1.0.0",
+    "Profile": [
+      {
+        "+@id": "L1-Server_Public",
+        "title": "Level 1 - Server",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-303B8B56",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-784F230D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-18E28E3B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9A1C77A6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2B788684",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EBA8BFC1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7927859F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21944DC2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3C29DBB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-50242D6C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3FAF0CB7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-093B8176",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BA374B71",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Server_Classified",
+        "title": "Level 1 - Server",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-303B8B56",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-784F230D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-18E28E3B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9A1C77A6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2B788684",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EBA8BFC1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7927859F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21944DC2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3C29DBB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-50242D6C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3FAF0CB7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-093B8176",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BA374B71",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Server_Sensitive",
+        "title": "Level 1 - Server",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-303B8B56",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-784F230D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-18E28E3B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9A1C77A6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2B788684",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EBA8BFC1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7927859F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21944DC2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3C29DBB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-50242D6C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3FAF0CB7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-093B8176",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BA374B71",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Server_Public",
+        "title": "Level 2 - Server",
+        "description": "are intended for environments or use cases where security is paramount. acts as defense in depth measure. may negatively inhibit the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-33DDB47B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-955E6EC6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-72B345C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-09D8CD22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-584F7015",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-276597D8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CF1D660B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A68FD992",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Server_Classified",
+        "title": "Level 2 - Server",
+        "description": "are intended for environments or use cases where security is paramount. acts as defense in depth measure. may negatively inhibit the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-33DDB47B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-955E6EC6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-72B345C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-09D8CD22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-584F7015",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-276597D8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CF1D660B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A68FD992",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Server_Sensitive",
+        "title": "Level 2 - Server",
+        "description": "are intended for environments or use cases where security is paramount. acts as defense in depth measure. may negatively inhibit the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-33DDB47B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-955E6EC6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-72B345C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-09D8CD22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-584F7015",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-276597D8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CF1D660B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A68FD992",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-33DDB47B",
+        "title": "1.1 Boot Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-33DDB47Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.1.1",
+          "title": "Install Talos with SecureBoot enabled",
+          "description": "<VulnDiscussion>Secure Boot is a standard that ensures systems boot only to a trusted operating system.\nTalos supports booting UEFI systems in SecureBoot mode. When combined with TPM- based disk encryption, this provides Trusted Boot experience.\nNote: SecureBoot is not supported on x86 platforms in BIOS mode.\nThe implementation uses systemd-boot as a boot menu implementation, while the Talos kernel, initramfs and cmdline arguments are combined into the Unified Kernel Image (UKI) format. UEFI firmware loads the systemd-boot bootloader, which then loads the UKI image. Both systemd-boot and Talos UKI image are signed with the key, which is enrolled into the UEFI firmware.\nAs Talos Linux is fully contained in the UKI image, the full operating system is verified and booted by the UEFI firmware.\n\nRationale:\nEnabling SecureBoot ensures that only signed and validated Talos images are able to be loaded and, in conjunction with a TPM2 module, decrypt the disk.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "1.1.1"
+          },
+          "fixtext": {
+            "+content": "Ensure Talos Linux is installed and booted from images that support SecureBoot, as per the documentation:\nhttps://www.talos.dev/latest/talos-guides/install/bare-metal-platforms/secureboot Note that secureboot images signed by SideroLabs are available for all platforms, or enterprises may sign their own images. Additional steps are usually required with cloud provider platforms to register the Sidero signing keys.",
+            "+@fixref": "F-33DDB47Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-33DDB47Br01_fix"
+          },
+          "check": {
+            "+@system": "C-33DDB47B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "$ talosctl -n <IP> get securitystate\nNODE NAMESPACE TYPE ID VERSION SECUREBOOT\nruntime SecurityState securitystate 1 true\nConfirm that SECUREBOOT shows as true.\nNote that the --insecure flag will be necessary if the system is not yet part of a Kubernetes cluster."
+          }
+        }
+      },
+      {
+        "+@id": "V-303B8B56",
+        "title": "1.2 Encrypt System disks",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-303B8B56r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2.1",
+          "title": "Encrypt System Disks with KMS or TPM methods",
+          "description": "<VulnDiscussion>It is possible to enable encryption for the STATE and EPHEMERAL partitions of the system disks at the OS level. The STATE partition contains the most sensitive node data: secrets and cluster certificates. The EPHEMERAL partition may contain sensitive workload data. Data is encrypted using LUKS2, which is provided by the Linux kernel modules and cryptsetup utility.\nTalos Linux supports four encryption methods, which can be combined together for a single partition:\n• static - encrypt with the static passphrase (weakest protection, for STATE partition encryption it means that the passphrase will be stored in the META partition, which is not encrypted, and thus can be trivially bypassed).\n• nodeID - encrypt with the key derived from the node UUID (this protects against data being leaked or recovered from a drive that has been physically removed from a Talos Linux node, but does not protect the data from access in the same system.).\n• kms - encrypt using a key sealed with a network KMS (strong, but requires network access to decrypt the data.)\n• tpm - encrypt with the key derived from the hardware TPM (strong, when used with SecureBoot).\nIt is recommended to use KMS or TPM methods if available.\n\nRationale:\nEncrypting the partitions can prevent an attacker with physical access to the machine, or the ability to boot an alternate operating system remotely, from being able to retrieve data such as cluster certificates and other information that can be used to compromise a cluster.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "1.2.1"
+          },
+          "fixtext": {
+            "+content": "Because there is no in-place encryption of the STATE partition, it is recommended to set up encryption during the initial install of a Talos Linux machine.\nUsing Omni The simplest way to enable disk encryption is if Omni is in use to manage the Talos Linux machines. In this case, simply specify the check-box \"Encrypt Disks\", under Cluster Features, when creating the cluster in the Omni UI. All nodes that join the cluster will have encryption enabled, using Omni as the KMS. This can also be achieved using cluster templates, by setting:\nfeatures:\ndiskencryption: true\nvia Machine Configurations If using SecureBoot, apply the following patch to enable TPM based disk encryption:\n# tpm-disk-encryption.yaml\nmachine:\nsystemDiskEncryption:\nephemeral:\nprovider: luks2\nkeys:\n- slot: 0\ntpm: {}\nstate:\nprovider: luks2\nkeys:\n- slot: 0\ntpm: {}\nApply the following to enable a network KMS:\nsystemDiskEncryption:\nstate:\nprovider: luks2\nkeys:\n- kms:\nendpoint: https://192.168.88.21:4443\nslot: 0\nephemeral:\nprovider: luks2\nkeys:\n- kms:\nendpoint: https://192.168.88.21:4443\nslot: 0",
+            "+@fixref": "F-303B8B56r01_fix"
+          },
+          "fix": {
+            "+@id": "F-303B8B56r01_fix"
+          },
+          "check": {
+            "+@system": "C-303B8B56_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "talosctl read /system/state/config.yaml | yq '.machine.systemDiskEncryption'\nThe keys entries should have values of tpm or kms in order to pass.\nFor example:\nsystemDiskEncryption:\nephemeral:\nprovider: luks2\nkeys:\n- slot: 0\ntpm: {}\nstate:\nprovider: luks2\nkeys:\n- slot: 0\ntpm: {}"
+          }
+        }
+      },
+      {
+        "+@id": "V-784F230D",
+        "title": "1 Initial Setup",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-784F230Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3",
+          "title": "Ensure updated software is installed",
+          "description": "<VulnDiscussion>Periodically, software updates are released for included software either due to security flaws or to include additional functionality or bug fixes.\n\nRationale:\nTalos Linux is regularly updated to incorporate the latest Linux Kernel, Kubernetes versions, Talos bug fixes and other improvements. It is recommended to always run and upgrade to the latest stable release of Talos Linux. Users can be notified of the availability of new Talos Linux releases by subscribing to release-notifications on the Talos Linux GitHub repository. Similarly, it is recommended to run and upgrade to the latest stable Kubernetes release on all clusters.\nAs with any software installation, organizations need to determine if a given update meets their requirements and verify the compatibility and supportability of any additional software against the update revision that is selected.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "1.3"
+          },
+          "fixtext": {
+            "+content": "Update Talos Linux as per https://www.talos.dev/latest/talos-guides/upgrading-talos/",
+            "+@fixref": "F-784F230Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-784F230Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-784F230D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify there are no updates to install by comparing the output of:\ntalosctl version\nWith the most recent available stable release in the Talos Linux github repository."
+          }
+        }
+      },
+      {
+        "+@id": "V-18E28E3B",
+        "title": "2 Time Synchronization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-18E28E3Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1",
+          "title": "Ensure NTP is configured",
+          "description": "<VulnDiscussion>The Talos Linux daemon machined implements the Network Time Protocol (NTP). NTP is designed to synchronize system clocks across a variety of systems and use a source that is highly accurate.\n\nRationale:\nProper configuration of NTP is vital to ensuring time synchronization is working properly.\nBy default, Talos Linux installs with a single time server referenced, which is currently time.cloudflare.com.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "2.1"
+          },
+          "fixtext": {
+            "+content": "Configure additional time servers as needed.\nThe following commands would add \"2.pool.ntp.org\" to the list of time servers.\nNote that if the system is using the default time server, then defining a time server in the machine configuration will replace the default. (i.e. the operation below would replace the default time server, not append it to the list of time servers, if there is currently no time server specified in the machine configuration.) Execute the following command to create a patch to update the time servers:\n# cat <<EOF > time-servers.yaml\nmachine:\ntime:\nservers:\n- 2.pool.ntp.org\nEOF\nThen apply the patch to the machine to activate the new configuration:\ntalosctl patch mc --patch @time-servers.yaml",
+            "+@fixref": "F-18E28E3Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-18E28E3Br01_fix"
+          },
+          "check": {
+            "+@system": "C-18E28E3B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify that at least two time servers are configured:\n# talosctl get TimeServer -o yaml\nnode: 192.168.64.118\nmetadata:\nnamespace: network\ntype: TimeServerStatuses.net.talos.dev\nid: timeservers\nversion: 3\nowner: network.TimeServerSpecController\nphase: running\ncreated: 2024-06-04T04:05:47Z\nupdated: 2024-06-05T17:50:14Z\nspec:\ntimeServers:\n- 2.pool.ntp.org\n- time.cloudflare.com\nThe synchronization status of the system can be checked with:\n#talosctl get timestatus -o yaml\nnode: 192.168.64.118\nmetadata:\nnamespace: runtime\ntype: TimeStatuses.v1alpha1.talos.dev\nid: node\nversion: 20\nowner: time.SyncController\nphase: running\ncreated: 2024-06-04T04:05:47Z\nupdated: 2024-06-05T14:45:14Z\nspec:\nsynced: true\nepoch: 18\nsyncDisabled: false"
+          }
+        }
+      },
+      {
+        "+@id": "V-9A1C77A6",
+        "title": "3 Kubernetes",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9A1C77A6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1",
+          "title": "Ensure control plane scheduling is disabled",
+          "description": "<VulnDiscussion>Control plane scheduling allows workloads to run on control plane nodes.\n\nRationale:\nRestricting access to control plane nodes is vital to ensuring that sensitive data (e.g.\nencryption secrets, PKI, etc.) is not exposed. Allowing workload scheduling on control plane nodes may enable workloads to access sensitive data present on control plane nodes, and may also adversely impact control plane node stability (if workloads consume excess CPU or Memory resources.)</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "3.1"
+          },
+          "fixtext": {
+            "+content": "The following commands would disable control plane scheduling.\nCreate a patch to disallow scheduling on control planes:\ncat <<EOF > disallowSchedulingPatch.yaml\ncluster:\nallowSchedulingOnControlPlanes: false\nEOF\nThen apply the patch to the machine:\ntalosctl patch mc --patch @disallowSchedulingPatch.yaml",
+            "+@fixref": "F-9A1C77A6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-9A1C77A6r01_fix"
+          },
+          "check": {
+            "+@system": "C-9A1C77A6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command against a control plane node and verify that control plane scheduling is disabled:\n# talosctl read /system/state/config.yaml | yq\n'.cluster.allowSchedulingOnControlPlanes | select(. != null)'\nfalse"
+          }
+        }
+      },
+      {
+        "+@id": "V-2B788684",
+        "title": "3 Kubernetes",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2B788684r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.2",
+          "title": "Ensure Pod Security Standards policy is restricted",
+          "description": "<VulnDiscussion>Kubernetes Pod Security Standards define different isolation levels for Pods. These standards let you define how you want to restrict the behavior of pods in a clear, consistent fashion.\n\nRationale:\nRestricting workloads is vital to ensure that workloads adhere to the principle of least privilege. The Restricted policy is aimed at enforcing current Pod hardening best practices, at the expense of some compatibility. It is targeted at operators and developers of security-critical applications, as well as lower-trust users.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "3.2"
+          },
+          "fixtext": {
+            "+content": "The following commands would enable the restricted policy for workloads:\nCreate a patch that defines the policy:\ncat <<EOF > admissionPatch.yaml\ncluster:\napiServer:\nadmissionControl:\n- name: PodSecurity\nconfiguration:\ndefaults:\nenforce: restricted\nEOF\nThen apply the patch to the machines:\ntalosctl patch mc --patch @admissionPatch.yaml",
+            "+@fixref": "F-2B788684r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2B788684r01_fix"
+          },
+          "check": {
+            "+@system": "C-2B788684_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify that workloads are restricted:\n# talosctl get admissioncontrolconfigs.kubernetes.talos.dev admission-control\n-o yaml | yq '.spec.config[0].configuration.defaults.enforce'\nrestricted"
+          }
+        }
+      },
+      {
+        "+@id": "V-EBA8BFC1",
+        "title": "4 Access Control",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-EBA8BFC1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1",
+          "title": "Ensure RBAC is enabled",
+          "description": "<VulnDiscussion>RBAC allows granular control over permissions for users.\n\nRationale:\nRBAC is vital to ensure that the principle of least privilege is adhered to.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "4.1"
+          },
+          "fixtext": {
+            "+content": "Generate a new client configuration access file with the role of os:admin.\n(Additional configurations and certificates for different roles can be generated by passing --roles flag.)\ntalosctl config new --roles=os:admin admin\nThe above command will create a new client configuration file admin with a new certificate with os:admin role.\nThe following commands would then enable RBAC:\nCreate a patch:\ncat <<EOF > rbacPatch.yaml\nmachine:\nfeatures:\nrbac: true\nEOF\nThen apply the patch to the machines:\ntalosctl patch mc --patch @rbacPatch.yaml\nEnabling RBAC will reboot the node",
+            "+@fixref": "F-EBA8BFC1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-EBA8BFC1r01_fix"
+          },
+          "check": {
+            "+@system": "C-EBA8BFC1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify that RBAC is enabled:\n# talosctl read /system/state/config.yaml | yq '.machine.features.rbac |\nselect(. != null) '\ntrue"
+          }
+        }
+      },
+      {
+        "+@id": "V-955E6EC6",
+        "title": "5.1 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-955E6EC6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.1.1",
+          "title": "Ensure packet redirect sending is disabled",
+          "description": "<VulnDiscussion>ICMP Redirects are used to send routing information to other hosts. As a host itself does not act as a router (in a host only configuration), there is no need to send redirects.\n\nRationale:\nAn attacker could use a compromised host to send invalid ICMP redirects to other router devices in an attempt to corrupt routing and have users access a system set up by the attacker as opposed to a valid system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.1.1"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to set the active kernel parameters and persist the settings:\nCreate the patch to disable sending redirects:\n# cat <<EOF > send-redirects.yaml\nmachine:\nsysctls:\nnet.ipv4.conf.all.send_redirects: \"0\"\nnet.ipv4.conf.default.send_redirects: \"0\"\nEOF\nApply the patch to the machines:\ntalosctl patch mc --patch @send-redirects.yaml",
+            "+@fixref": "F-955E6EC6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-955E6EC6r01_fix"
+          },
+          "check": {
+            "+@system": "C-955E6EC6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output matches:\n# talosctl read /proc/sys/net/ipv4/conf/all/send_redirects\n0\n# talosctl read /proc/sys/net/ipv4/conf/default/send_redirects\n0"
+          }
+        }
+      },
+      {
+        "+@id": "V-7927859F",
+        "title": "5.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7927859Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.1",
+          "title": "Ensure source routed packets are not accepted",
+          "description": "<VulnDiscussion>In networking, source routing allows a sender to partially or fully specify the route packets take through a network. In contrast, non-source routed packets travel a path determined by routers in the network. In some cases, systems may not be routable or reachable from some locations (e.g. private addresses vs. Internet routable), and so source routed packets would need to be used.\n\nRationale:\nSetting net.ipv4.conf.all.accept_source_route, net.ipv4.conf.default.accept_source_route, net.ipv6.conf.all.accept_source_route and net.ipv6.conf.default.accept_source_route to 0 disables the system from accepting source routed packets. Assume this system was capable of routing packets to Internet routable addresses on one interface and private addresses on another interface. Assume that the private addresses were not routable to the Internet routable addresses and vice versa. Under normal routing circumstances, an attacker from the Internet routable addresses could not use the system as a way to reach the private address systems. If, however, source routed packets were allowed, they could be used to gain access to the private address systems as the route could be specified, rather than rely on routing protocols that did not allow this routing.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.2.1"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to set the active kernel parameters and persist the settings:\nCreate the patch file:\n# cat <<EOF > reject-sourceroutes.yaml\nmachine:\nsysctls:\nnet.ipv4.conf.all.accept_source_route: \"0\"\nnet.ipv4.conf.default.accept_source_route: \"0\"\nnet.ipv6.conf.all.accept_source_route: \"0\"\nnet.ipv6.conf.default.accept_source_route: \"0\"\nEOF\nApply the patch file to the machines:\ntalosctl patch mc --patch @reject-sourceroutes.yaml",
+            "+@fixref": "F-7927859Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-7927859Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-7927859F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output matches:\ntalosctl read /proc/sys/net/ipv4/conf/all/accept_source_route\n0\ntalosctl read /proc/sys/net/ipv4/conf/default/accept_source_route\n0\ntalosctl read /proc/sys/net/ipv6/conf/default/accept_source_route\n0\ntalosctl read /proc/sys/net/ipv6/conf/all/accept_source_route\n0"
+          }
+        }
+      },
+      {
+        "+@id": "V-72B345C6",
+        "title": "5.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-72B345C6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2.2",
+          "title": "Ensure ICMP redirects are not accepted",
+          "description": "<VulnDiscussion>ICMP redirect messages are packets that convey routing information and tell your host (acting as a router) to send packets via an alternate path. It is a way of allowing an outside routing device to update your system routing tables. By setting accept_redirects to 0, the system will not accept any ICMP redirect messages, and therefore, won't allow outsiders to update the system's routing tables.\n\nRationale:\nAttackers could use bogus ICMP redirect messages to maliciously alter the system routing tables and get them to send packets to incorrect networks and allow your system packets to be captured.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.2.2"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to set the active kernel parameters and persist the settings:\nCreate the patch with the sysctls to disable accepting redirects on both ipv4 and ipv6, for new and existing interfaces:\n# cat <<EOF > accept-redirects.yaml\nmachine:\nsysctls:\nnet.ipv4.conf.all.accept_redirects: \"0\"\nnet.ipv4.conf.default.accept_redirects: \"0\"\nnet.ipv6.conf.all.accept_redirects: \"0\"\nnet.ipv6.conf.default.accept_redirects: \"0\"\nEOF\nThen apply the patch to the machines:\ntalosctl patch mc --patch @accept-redirects.yaml",
+            "+@fixref": "F-72B345C6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-72B345C6r01_fix"
+          },
+          "check": {
+            "+@system": "C-72B345C6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output matches:\n# talosctl read /proc/sys/net/ipv4/conf/all/accept_redirects\n0\n# talosctl read /proc/sys/net/ipv4/conf/default/accept_redirects\n0\n# talosctl read /proc/sys/net/ipv6/conf/all/accept_redirects\n0\n# talosctl read /proc/sys/net/ipv6/conf/default/accept_redirects\n0"
+          }
+        }
+      },
+      {
+        "+@id": "V-09D8CD22",
+        "title": "5.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-09D8CD22r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2.3",
+          "title": "Ensure secure ICMP redirects are not accepted",
+          "description": "<VulnDiscussion>Secure ICMP redirects are the same as ICMP redirects, except they come from gateways listed on the default gateway list. It is assumed that these gateways are known to your system, and that they are likely to be secure.\n\nRationale:\nIt is still possible for even known gateways to be compromised. Setting net.ipv4.conf.all.secure_redirects to 0 protects the system from routing table updates by possibly compromised known gateways.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.2.3"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to set the active kernel parameters and persist the settings:\nCreate the patch file to disable redirects, for both new and existing interfaces:\n# cat <<EOF > secure-redirects.yaml\nmachine:\nsysctls:\nnet.ipv4.conf.all.secure_redirects: \"0\"\nnet.ipv4.conf.default.secure_redirects: \"0\"\nEOF\nThen apply the patch to the machine, to effect both changes:\ntalosctl patch mc --patch @secure-redirects.yaml",
+            "+@fixref": "F-09D8CD22r01_fix"
+          },
+          "fix": {
+            "+@id": "F-09D8CD22r01_fix"
+          },
+          "check": {
+            "+@system": "C-09D8CD22_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output matches:\n# talosctl read /proc/sys/net/ipv4/conf/all/secure_redirects\n0\n# talosctl read /proc/sys/net/ipv4/conf/default/secure_redirects\n0"
+          }
+        }
+      },
+      {
+        "+@id": "V-584F7015",
+        "title": "5.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-584F7015r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2.4",
+          "title": "Ensure suspicious (martian) packets are logged",
+          "description": "<VulnDiscussion>When enabled, this feature logs packets with un-routable source addresses (so called \"martian packets\") to the kernel log.\n\nRationale:\nEnabling this feature and logging these packets allows an administrator to investigate the possibility that an attacker is sending spoofed packets to their system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.2.4"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to set the active kernel parameters and persist the settings:\nCreate the patch to define the changes in the machine config to log martian packets:\ncat <<EOF > log-martians.yaml\nmachine:\nsysctls:\nnet.ipv4.conf.all.log_martians: \"1\"\nnet.ipv4.conf.default.log_martians: \"1\"\nEOF\nApply the patch to the machines:\ntalosctl patch mc --patch @log-martians.yaml",
+            "+@fixref": "F-584F7015r01_fix"
+          },
+          "fix": {
+            "+@id": "F-584F7015r01_fix"
+          },
+          "check": {
+            "+@system": "C-584F7015_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output matches:\n# talosctl read /proc/sys/net/ipv4/conf/all/log_martians\n1\n# talosctl read /proc/sys/net/ipv4/conf/default/log_martians\n1"
+          }
+        }
+      },
+      {
+        "+@id": "V-21944DC2",
+        "title": "5.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-21944DC2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.5",
+          "title": "Ensure broadcast ICMP requests are ignored",
+          "description": "<VulnDiscussion>Setting net.ipv4.icmp_echo_ignore_broadcasts to 1 will cause the system to ignore all ICMP echo and timestamp requests to broadcast and multicast addresses.\n\nRationale:\nAccepting ICMP echo and timestamp requests with broadcast or multicast destinations for your network could be used to trick your host into starting (or participating) in a Smurf attack. A Smurf attack relies on an attacker sending large amounts of ICMP broadcast messages with a spoofed source address. All hosts receiving this message and responding would send echo-reply messages back to the spoofed address, which is probably not routable. If many hosts respond to the packets, the amount of traffic on the network could be significantly multiplied.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.2.5"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to set the active kernel parameter and persist the setting:\nCreate the patch file that will amend the machine configuration to ignore icmp packets to broadcast addresses:\n# cat <<EOF > icmp-echo-ignore-broadcasts.yaml\nmachine:\nsysctls:\nnet.ipv4.icmp_echo_ignore_broadcasts: \"1\"\nEOF\nApply the patch to machines:\ntalosctl patch mc --patch @icmp-echo-ignore-broadcasts.yaml",
+            "+@fixref": "F-21944DC2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-21944DC2r01_fix"
+          },
+          "check": {
+            "+@system": "C-21944DC2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify output matches:\n# talosctl read /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts\n1"
+          }
+        }
+      },
+      {
+        "+@id": "V-B3C29DBB",
+        "title": "5.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B3C29DBBr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.6",
+          "title": "Ensure bogus ICMP responses are ignored",
+          "description": "<VulnDiscussion>Setting icmp_ignore_bogus_error_responses to 1 prevents the kernel from logging bogus responses (RFC-1122 non-compliant) from broadcast reframes, keeping file systems from filling up with useless log messages.\n\nRationale:\nSome routers (and some attackers) will send responses that violate RFC-1122 and attempt to fill up a log file system with many useless error messages.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.2.6"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to set the active kernel parameter and persist the setting:\nCreate the patch file with the machine configuration to ignore non-compliant responses:\n# cat <<EOF > icmp-ignore-bogus-error-responses.yaml\nmachine:\nsysctls:\nnet.ipv4.icmp_ignore_bogus_error_responses: \"1\"\nEOF\nApply the patch file to machines:\ntalosctl patch mc --patch @icmp-ignore-bogus-error-responses.yaml",
+            "+@fixref": "F-B3C29DBBr01_fix"
+          },
+          "fix": {
+            "+@id": "F-B3C29DBBr01_fix"
+          },
+          "check": {
+            "+@system": "C-B3C29DBB_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify output matches:\n# talosctl read /proc/sys/net/ipv4/icmp_ignore_bogus_error_responses\n1"
+          }
+        }
+      },
+      {
+        "+@id": "V-50242D6C",
+        "title": "5.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-50242D6Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.7",
+          "title": "Ensure TCP SYN Cookies is enabled",
+          "description": "<VulnDiscussion>When tcp_syncookies is set, the kernel will handle TCP SYN packets normally until the half-open connection queue is full, at which time, the SYN cookie functionality kicks in. SYN cookies work by not using the SYN queue at all. Instead, the kernel simply replies to the SYN with a SYN|ACK, but will include a specially crafted TCP sequence number that encodes the source and destination IP address and port number and the time the packet was sent. A legitimate connection would send the ACK packet of the three way handshake with the specially crafted sequence number. This allows the system to verify that it has received a valid response to a SYN cookie and allow the connection, even though there is no corresponding SYN in the queue.\n\nRationale:\nAttackers use SYN flood attacks to perform a denial of service attacked on a system by sending many SYN packets without completing the three way handshake. This will quickly use up slots in the kernel's half-open connection queue and prevent legitimate connections from succeeding. SYN cookies allow the system to keep accepting valid connections, even if under a denial of service attack.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.2.7"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to set the active kernel parameter and persist the setting:\nCreate the patch to enable syncookies:\n# cat <<EOF > enable_syncookies.yaml\nmachine:\nsysctls:\nnet.ipv4.tcp_syncookies: \"1\"\nEOF\nThen apply the patch to the machines:\ntalosctl patch mc --patch @enable_syncookies.yaml",
+            "+@fixref": "F-50242D6Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-50242D6Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-50242D6C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify output matches:\n# talosctl read /proc/sys/net/ipv4/tcp_syncookies\n1"
+          }
+        }
+      },
+      {
+        "+@id": "V-276597D8",
+        "title": "5.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-276597D8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2.8",
+          "title": "Enable Reverse Path Filtering if there are only symmetrical",
+          "description": "<VulnDiscussion>Setting net.ipv4.conf.all.rp_filter and net.ipv4.conf.default.rp_filter to 1 forces the Linux kernel to utilize reverse path filtering on a received packet to determine if the packet was valid. Essentially, with reverse path filtering, if the return packet does not go out the same interface that the corresponding source packet came from, the packet is dropped (and logged if log_martians is set).\n\nRationale:\nSetting these flags is a good way to deter attackers from sending your system bogus packets that cannot be responded to.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.2.8"
+          },
+          "fixtext": {
+            "+content": "Use the following commands to enable reverse-path filtering:\nCreate the patch file that sets the appropriate sysctls:\n# cat <<EOF > reversepath-filter.yaml\nmachine:\nsysctls:\nnet.ipv4.conf.all.rp_filter: \"1\"\nnet.ipv4.conf.default.rp_filter: \"1\"\nEOF\nThen apply the patch to machines:\ntalosctl patch mc --patch @reversepath-filter.yaml",
+            "+@fixref": "F-276597D8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-276597D8r01_fix"
+          },
+          "check": {
+            "+@system": "C-276597D8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output matches:\n# talosctl read /proc/sys/net/ipv4/conf/all/rp_filter\n1\n# talosctl read /proc/sys/net/ipv4/conf/default/rp_filter\n1"
+          }
+        }
+      },
+      {
+        "+@id": "V-CF1D660B",
+        "title": "5.3.1 Configure Control Plane Firewall",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CF1D660Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.3.1.1",
+          "title": "Apply an appropriate control plane firewall policy",
+          "description": "<VulnDiscussion>A default deny all policy on connections to control plane nodes ensures that any unconfigured network usage will be rejected.\n\nRationale:\nOnly trusted networks should be allowed to access Kubernetes and other APIs.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.3.1.1"
+          },
+          "fixtext": {
+            "+content": "Note that this is an example policy only, which assumes there is no existing Ingress firewall configured, and provides the following restrictions:\n• Talos Linux apid and Kubernetes API are accessible from anywhere\n• kubelet and trustd APIs are only accessible within the cluster\n• etcd API is limited to controlplane nodes In the example we assume these template variables to describe the cluster:\n• $CLUSTER_SUBNET, e.g. 172.20.0.0/24 - the subnet which covers all machines in the cluster\n• $CP1, $CP2, $CP3 - the IP addresses of the controlplane nodes\n• $VXLAN_PORT - the UDP port used by the CNI for encapsulated traffic\ntalosctl read /system/state/config.yaml > controlplane.yaml\ncat << EOF >> controlplane.yaml\n---\napiVersion: v1alpha1\nkind: NetworkDefaultActionConfig\ningress: block\n---\napiVersion: v1alpha1\nkind: NetworkRuleConfig\nname: kubelet-ingress\nportSelector:\nports:\n- 10250\nprotocol: tcp\ningress:\n- subnet: $CLUSTER_SUBNET\n---\napiVersion: v1alpha1\nkind: NetworkRuleConfig\nname: apid-ingress\nportSelector:\nports:\n- 50000\nprotocol: tcp\ningress:\n- subnet: 0.0.0.0/0\n- subnet: ::/0\n---\napiVersion: v1alpha1\nkind: NetworkRuleConfig\nname: trustd-ingress\nportSelector:\nports:\n- 50001\nprotocol: tcp\ningress:\n- subnet: $CLUSTER_SUBNET\n---\napiVersion: v1alpha1\nkind: NetworkRuleConfig\nname: kubernetes-api-ingress\nportSelector:\nports:\n- 6443\nprotocol: tcp\ningress:\n- subnet: 0.0.0.0/0\n- subnet: ::/0\n---\napiVersion: v1alpha1\nkind: NetworkRuleConfig\nname: etcd-ingress\nportSelector:\nports:\n- 2379-2380\nprotocol: tcp\ningress:\n- subnet: $CP1/32\n- subnet: $CP2/32\n- subnet: $CP3/32\n---\napiVersion: v1alpha1\nkind: NetworkRuleConfig\nname: cni-vxlan\nportSelector:\nports:\n- $VXLAN_PORT\nprotocol: udp\ningress:\n- subnet: $CLUSTER_SUBNET\nEOF\ntalosctl apply -f controlplane.yaml",
+            "+@fixref": "F-CF1D660Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-CF1D660Br01_fix"
+          },
+          "check": {
+            "+@system": "C-CF1D660B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "This will display the currently active ingress firewall policy and rules, if any.\ntalosctl read /system/state/config.yaml | yq 'select(.kind ==\n\"NetworkDefaultActionConfig\"),select(.kind == \"NetworkRuleConfig\" )'"
+          }
+        }
+      },
+      {
+        "+@id": "V-A68FD992",
+        "title": "5.3.2 Configure Worker node Ingress Firewall",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A68FD992r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.3.2.1",
+          "title": "Apply an appropriate worker node firewall policy",
+          "description": "<VulnDiscussion>A default \"deny all\" policy on connections to worker nodes ensures that any unconfigured network usage will be rejected.\n\nRationale:\nOnly trusted networks should be allowed to access Kubernetes and other APIs.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.3.2.1"
+          },
+          "fixtext": {
+            "+content": "Note that this is an example policy only, which assumes there is no existing Ingress firewall configured, and provides the following restrictions:\n• Talos Linux apid and kubelet API are accessible only from within the cluster.\n(Control plane nodes are used as endpoints to terminate talosctl commands, and will relay API requests to the workers.) The example assumes these template variables to describe the cluster:\n• $CLUSTER_SUBNET, e.g. 172.20.0.0/24 - the subnet which covers all machines in the cluster\n• $CP1, $CP2, $CP3 - the IP addresses of the controlplane nodes\n• $VXLAN_PORT - the UDP port used by the CNI for encapsulated traffic\ntalosctl read /system/state/config.yaml > worker.yaml\ncat << EOF >> worker.yaml\n---\napiVersion: v1alpha1\nkind: NetworkDefaultActionConfig\ningress: block\n---\napiVersion: v1alpha1\nkind: NetworkRuleConfig\nname: kubelet-ingress\nportSelector:\nports:\n- 10250\nprotocol: tcp\ningress:\n- subnet: $CLUSTER_SUBNET\n---\napiVersion: v1alpha1\nkind: NetworkRuleConfig\nname: apid-ingress\nportSelector:\nports:\n- 50000\nprotocol: tcp\ningress:\n- subnet: $CLUSTER_SUBNET\n---\napiVersion: v1alpha1\nkind: NetworkRuleConfig\nname: cni-vxlan\nportSelector:\nports:\n- $VXLAN_PORT\nprotocol: udp\ningress:\n- subnet: $CLUSTER_SUBNET\nEOF\ntalosctl apply -f worker.yaml",
+            "+@fixref": "F-A68FD992r01_fix"
+          },
+          "fix": {
+            "+@id": "F-A68FD992r01_fix"
+          },
+          "check": {
+            "+@system": "C-A68FD992_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "This will display the currently active ingress firewall policy and rules, if any:\ntalosctl read /system/state/config.yaml | yq 'select(.kind ==\n\"NetworkDefaultActionConfig\"),select(.kind == \"NetworkRuleConfig\" )'"
+          }
+        }
+      },
+      {
+        "+@id": "V-3FAF0CB7",
+        "title": "5.4 Network Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3FAF0CB7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.4.1",
+          "title": "Enable KubeSpan where network level encryption is",
+          "description": "<VulnDiscussion>KubeSpan securely and transparently establishes full encryption between all members of a cluster – even if they are running on completely different networks and behind firewalls. All cluster members will find each other, and automatically update reachability information.\nKubeSpan operates outside of Kubernetes. It works with any CNI, and even if Kubernetes is not ready or broken.\nKubeSpan provides full Wireguard based encryption for all traffic with the Kubernetes cluster, automatically.\nKubeSpan uses UDP port 51820 to carry all KubeSpan encrypted traffic. Thus best practice is to ensure that one end of all possible node-node communication paths allows UDP port 51820, inbound.\nKubeSpan adds no value in a single node cluster.\n\nRationale:\nEncryption of network traffic provides defense against untrusted networks or bad actors with access to the physical network infrastructure. Ensuring traffic is encrypted prevents such actors obtaining confidential information such as security tokens, certificates, or passwords.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "5.4.1"
+          },
+          "fixtext": {
+            "+content": "To enable KubeSpan for a new cluster, we can use the --with-kubespan flag in talosctl gen config to generate the appropriate configurations.\nTo enable KubeSpan on each node in an existing cluster:\nCreate a patch file with the machine configuration to enable KubeSpan:\ncat <<EOF > kubespanPatch.yaml\nmachine:\nnetwork:\nkubespan:\nenabled: true\ncluster:\ndiscovery:\nenabled: true\nEOF\nApply the patch to the nodes:\ntalosctl patch mc --patch @kubespanPatch.yaml",
+            "+@fixref": "F-3FAF0CB7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-3FAF0CB7r01_fix"
+          },
+          "check": {
+            "+@system": "C-3FAF0CB7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure each node reports a KubeSpan identity:\ntalosctl get kubespanidentities\nNODE NAMESPACE TYPE ID VERSION\nADDRESS PUBLICKEY\n192.168.64.118 kubespan KubeSpanIdentity local 1\nfdbc:4650:47f9:5902:c6c:8ff:fe6d:ca1c/128\n8/0Xz4C8twGaEUIf3CZPj9/wXpPsTeNI5NArhurRpWY=\nYou can also examine the status of the nodes KubeSpan peers:\ntalosctl get kubespanpeerstatuses\nID VERSION LABEL\nENDPOINT STATE RX TX\n06D9QQOydzKrOL7oeLiqHy9OWE8KtmJzZII2A5/FLFI= 63 talos-default-\ncontrolplane-2\n172.20.0.3:51820 up 15043220 17869488\nTHtfKtfNnzJs1nMQKs5IXqK0DFXmM//0WMY+NnaZrhU= 62 talos-default-\ncontrolplane-3\n172.20.0.4:51820 up 14573208 18157680\nnVHu7l13uZyk0AaI1WuzL2/48iG8af4WRv+LWmAax1M= 60 talos-default-\nworker-2\n172.20.0.6:51820 up 130072 46888"
+          }
+        }
+      },
+      {
+        "+@id": "V-093B8176",
+        "title": "6.1 Configure Kernel Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-093B8176r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.1.1",
+          "title": "Ensure kernel logging is configured to send logs to a remote",
+          "description": "<VulnDiscussion>Ensures that kernel logs are pushed to a remote endpoint, for better forensic correlation and to protect against local loss.\n\nRationale:\nKernel logs can be used for auditing and detecting security events.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "6.1.1"
+          },
+          "fixtext": {
+            "+content": "The following commands would configure kernel logging:\nCreate a patch to enable logging:\ncat <<EOF > kernel-logging.yaml\nmachine:\ninstall:\nextraKernelArgs: [talos.logging.kernel=tcp://host:5044/]\nEOF\nThen apply the patch to the machines:\ntalosctl patch mc --patch @kernel-logging.yaml",
+            "+@fixref": "F-093B8176r01_fix"
+          },
+          "fix": {
+            "+@id": "F-093B8176r01_fix"
+          },
+          "check": {
+            "+@system": "C-093B8176_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify that kernel logging is configured:\n# talosctl read /system/state/config.yaml | yq 'select(.kind ==\n\"KmsgLogConfig\")'; talosctl read /proc/cmdline | grep 'talos.logging.kernel'\nIf logging is configured, representative output will look like:\ntalos.logging.kernel=tcp://LOGGINGHOST:5044/\nor\napiVersion: v1alpha1\nkind: KmsgLogConfig\nname: remote-log\nurl: udp://LOGGINGHOST:5044/\ndepending on the method used to configure logging.\nLOGGINGHOST will be the configured IP of the log receiver.\nNote that it is possible to configure kernel logging in two ways, hence the use of two commands in the above test."
+          }
+        }
+      },
+      {
+        "+@id": "V-BA374B71",
+        "title": "6.2 Configure Service Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BA374B71r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.2.1",
+          "title": "Ensure service logging is configured",
+          "description": "<VulnDiscussion>Service logging ensures that service logs are pushed to a remote endpoint.\n\nRationale:\nService logs can be used for auditing and detecting security events. Sending logs to a remote log server provides the ability to forensically reconstruct events which may have impacted the operations or security of a system even after a system crash or reboot.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Talos Linux Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Talos Linux Benchmark",
+            "dc:identifier": "6.2.1"
+          },
+          "fixtext": {
+            "+content": "The following commands would configure service logging:\nCreate a patch file with the configuration to define logging:\ncat <<EOF > service-logging.yaml\nmachine:\nlogging:\ndestinations:\n- endpoint: tcp://##LOGDESTINATION_IP##:12345\nformat: \"json_lines\"\nEOF\nReplace ##LOGDESTINATION_IP## with the IP address of the log server.\nThen apply the patch to the machines:\ntalosctl patch mc --patch @service-logging.yaml",
+            "+@fixref": "F-BA374B71r01_fix"
+          },
+          "fix": {
+            "+@id": "F-BA374B71r01_fix"
+          },
+          "check": {
+            "+@system": "C-BA374B71_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Talos_Linux_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify that kernel logging is configured:\n# talosctl read /system/state/config.yaml | yq\n'.machine.logging.destinations'"
+          }
+        }
+      }
+    ]
+  }
+}

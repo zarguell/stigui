@@ -11,7 +11,7 @@ exports[`CKLBConverter golden conversions matches snapshot for CIS_Docker_Benchm
     {
       "display_name": "CIS_Docker_Benchmark",
       "reference_identifier": "1.1.1",
-      "release_info": "Release: 1.6.0 Benchmark Date: 2023-06-14",
+      "release_info": "Release: 1.7.0 Benchmark Date: 2024-07-25",
       "rules": [
         {
           "ccis": [],
@@ -162,7 +162,7 @@ systemctl restart auditd",
           "rule_title": "Ensure auditing is configured for the Docker daemon",
           "rule_version": "1.1.3",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -190,7 +190,7 @@ As well as auditing the normal Linux file system and system calls, you should al
           "false_positives": "",
           "finding_details": "",
           "fix_text": "You should add a rule for the /run/containerd directory.
-For example, Add the line as below to the /etc/audit/audit.rules file:
+For example, Add the line as below to the /etc/audit/rules.d/audit.rules file:
 -a exit,always -F path=/run/containerd -F perm=war -k docker
 Then, restart the audit daemon using the following command
 systemctl restart auditd",
@@ -217,7 +217,7 @@ systemctl restart auditd",
           "rule_title": "Ensure auditing is configured for Docker files and directories - /run/containerd",
           "rule_version": "1.1.4",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -245,9 +245,16 @@ As well as auditing the normal Linux file system and system calls, you should al
           "false_positives": "",
           "finding_details": "",
           "fix_text": "You should add a rule for the /var/lib/docker directory.
-For example, Add the line as below to the /etc/audit/audit.rules file:
+Adding exclusions for /var/lib/docker/overlay2 & /var/lib/docker/volumes reduces the audit messages to a more manageable level.
+For example, Add the line as below to the /etc/audit/rules.d/audit.rules file:
 -a exit,always -F path=/var/lib/docker -F perm=war -k docker
-Then, restart the audit daemon using the following command
+-a exit,never -F dir=/var/lib/docker/volumes
+-a exit,never -F dir=/var/lib/docker/overlay2
+or for systems with namespace-remapping enabled
+-a exit,always -F path=/var/lib/docker -F perm=war -k docker
+-a exit,never -F dir=/var/lib/docker/165536.165536/volumes
+-a exit,never -F dir=/var/lib/docker/165536.165536/overlay2
+Then, restart the audit daemon using the following command Internal Only - General
 systemctl restart auditd",
           "group_id": "V-45534983",
           "group_id_src": "V-45534983",
@@ -272,7 +279,7 @@ systemctl restart auditd",
           "rule_title": "Ensure auditing is configured for Docker files and directories - /var/lib/docker",
           "rule_version": "1.1.5",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -294,15 +301,14 @@ This should display a rule for the /etc/docker directory.",
           "discussion": "Audit /etc/docker.
 
 Rationale:
-As well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privilege and its behavior depends on some key files and directories, one of these being /etc/docker.
-This holds various certificates and keys used for TLS communication between Docker daemon and Docker client and as such it should be audited.",
+As well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privilege and its behavior depends on some key files and directories, one of these being /etc/docker. This holds various certificates and keys used for TLS communication between Docker daemon and Docker client and as such it should be audited.",
           "documentable": "false",
           "false_negatives": "",
           "false_positives": "",
           "finding_details": "",
           "fix_text": "You should add a rule for the /etc/docker directory.
 For example:
-Add the line below to the /etc/audit/audit.rules file:
+Add the line below to the /etc/audit/rules.d/audit.rules file:
 -w /etc/docker -k docker
 Then restart the audit daemon. For example:
 systemctl restart auditd",
@@ -329,7 +335,106 @@ systemctl restart auditd",
           "rule_title": "Ensure auditing is configured for Docker files and directories - /etc/docker",
           "rule_version": "1.1.6",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
+          "status": "not_reviewed",
+          "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
+          "third_party_tools": "",
+          "uuid": "123e4567-e89b-12d3-a456-426614174000",
+          "weight": "10.0",
+        },
+        {
+          "ccis": [],
+          "check_content": "Ensure that the host specific security guidelines are followed. Ask the system administrators which security benchmark the current host system should currently be compliant with and check that security standards associated with this standard are currently in place.",
+          "check_content_ref": {
+            "href": "CIS_Docker_Benchmark.xml",
+            "name": "M",
+          },
+          "classification": "Unclassified",
+          "comments": "",
+          "discussion": "A container host is able to run one or more containers. It is of utmost importance to harden the host to mitigate host security misconfiguration.
+
+Rationale:
+You should follow infrastructure security best practices and harden your host OS.
+Keeping the host system hardened will ensure that host vulnerabilities are mitigated.
+Not hardening the host system could lead to security exposures and breaches.",
+          "documentable": "false",
+          "false_negatives": "",
+          "false_positives": "",
+          "finding_details": "",
+          "fix_text": "You may consider various CIS Security Benchmarks for your container host. If you have other security guidelines or regulatory requirements to adhere to, please follow them as suitable in your environment.",
+          "group_id": "V-6A7C51C3",
+          "group_id_src": "V-6A7C51C3",
+          "group_title": "Ensure the container host has been Hardened",
+          "group_tree": [
+            {
+              "description": "<GroupDescription></GroupDescription>",
+              "id": "V-6A7C51C3",
+              "title": "1.2 General Configuration",
+            },
+          ],
+          "ia_controls": "",
+          "legacy_ids": [],
+          "mitigation_control": "",
+          "mitigations": "",
+          "overrides": {},
+          "potential_impacts": "",
+          "reference_identifier": "1.2.1",
+          "responsibility": "",
+          "rule_id": "SV-6A7C51C3r01",
+          "rule_id_src": "SV-6A7C51C3r01_rule",
+          "rule_title": "Ensure the container host has been Hardened",
+          "rule_version": "1.2.1",
+          "security_override_guidance": "",
+          "severity": "medium",
+          "status": "not_reviewed",
+          "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
+          "third_party_tools": "",
+          "uuid": "123e4567-e89b-12d3-a456-426614174000",
+          "weight": "10.0",
+        },
+        {
+          "ccis": [],
+          "check_content": "You should execute the command below in order to verify that the Docker version is up to date in line with the requirements of the application you are running. It should be noted that it is not a security requirement to be at the most up to date version, provided the version you are using does not contain any critical or high security vulnerabilities.
+docker version",
+          "check_content_ref": {
+            "href": "CIS_Docker_Benchmark.xml",
+            "name": "M",
+          },
+          "classification": "Unclassified",
+          "comments": "",
+          "discussion": "Frequent releases for Docker are issued which address security vulnerabilities, resolve product bugs and bring in new functionality. You should keep a tab on these product updates and upgrade as frequently as possible in line with the general IT security policy of your organization.
+
+Rationale:
+By staying up to date on Docker updates, vulnerabilities in the software can be mitigated. An experienced attacker may be able to exploit known vulnerabilities resulting in them being able to attain inappropriate access or to elevate their privileges. If you do not ensure that Docker is running at the most current release consistent with the requirements of of your application, you may introduce unwanted behaviour and it is therefore important to ensure that you monitor software versions and upgrade in a timely fashion.",
+          "documentable": "false",
+          "false_negatives": "",
+          "false_positives": "",
+          "finding_details": "",
+          "fix_text": "You should monitor versions of Docker releases and make sure your software is updated as required.",
+          "group_id": "V-10142F89",
+          "group_id_src": "V-10142F89",
+          "group_title": "Ensure that the version of Docker is up to date",
+          "group_tree": [
+            {
+              "description": "<GroupDescription></GroupDescription>",
+              "id": "V-10142F89",
+              "title": "1.2 General Configuration",
+            },
+          ],
+          "ia_controls": "",
+          "legacy_ids": [],
+          "mitigation_control": "",
+          "mitigations": "",
+          "overrides": {},
+          "potential_impacts": "",
+          "reference_identifier": "1.2.2",
+          "responsibility": "",
+          "rule_id": "SV-10142F89r01",
+          "rule_id_src": "SV-10142F89r01_rule",
+          "rule_title": "Ensure that the version of Docker is up to date",
+          "rule_version": "1.2.2",
+          "security_override_guidance": "",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -408,7 +513,7 @@ By default, unrestricted network traffic is enabled between all containers on th
           "fix_text": "Edit the Docker daemon configuration file to ensure that icc is disabled. It should include the following setting
 "icc": false
 Alernatively, run the docker daemon directly and pass --icc=false as an argument.
-For Example,
+For Example, Internal Only - General
 dockerd --icc=false
 Alternatively, you can follow the Docker documentation and create a custom network and only join containers that need to communicate to that custom network. The --icc parameter only applies to the default docker bridge, if custom networks are used then the approach of segmenting networks should be adopted instead.
 In order for this control to be fully effective, all containers connected to the docker0 bridge should drop the NET_RAW capability, otherwise a compromised container could use raw ethernet packets to communicate with other containers despite this restriction.",
@@ -519,6 +624,7 @@ We recommended letting Docker make changes to iptables automatically in order to
           "false_positives": "",
           "finding_details": "",
           "fix_text": "Do not run the Docker daemon with --iptables=false parameter. For example, do not start the Docker daemon as below:
+Internal Only - General
 dockerd --iptables=false",
           "group_id": "V-78F797A0",
           "group_id_src": "V-78F797A0",
@@ -680,7 +786,8 @@ If you must expose the Docker daemon via a network socket, you should configure 
           "false_negatives": "",
           "false_positives": "",
           "finding_details": "",
-          "fix_text": "Follow the steps mentioned in the Docker documentation or other references.",
+          "fix_text": "Follow the steps mentioned in the Docker documentation or other references.
+Internal Only - General",
           "group_id": "V-13A38B69",
           "group_id_src": "V-13A38B69",
           "group_title": "Ensure TLS authentication for Docker daemon is configured",
@@ -1004,7 +1111,7 @@ The docker.service file contains sensitive parameters that may alter the behavio
           "fix_text": "Step 1: Find out the file location:
 systemctl show -p FragmentPath docker.service
 Step 2: If the file does not exist, this recommendation is not applicable. If the file does exist, you should execute the command below, including the correct file path, in order to set the ownership and group ownership for the file to root.
-For example,
+For example, Internal Only - General
 chown root:root /usr/lib/systemd/system/docker.service",
           "group_id": "V-DE39BEF4",
           "group_id_src": "V-DE39BEF4",
@@ -1029,7 +1136,7 @@ chown root:root /usr/lib/systemd/system/docker.service",
           "rule_title": "Ensure that the docker.service file ownership is set to root:root",
           "rule_version": "3.1",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1085,7 +1192,7 @@ chmod 644 /usr/lib/systemd/system/docker.service",
           "rule_title": "Ensure that docker.service file permissions are appropriately set",
           "rule_version": "3.2",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1117,7 +1224,7 @@ The docker.socket file contains sensitive parameters that may alter the behavior
           "fix_text": "Step 1: Find out the file location:
 systemctl show -p FragmentPath docker.socket
 Step 2: If the file does not exist, this recommendation is not applicable. If the file exists, execute the command below, including the correct file path to set the ownership and group ownership for the file to root.
-For example,
+For example, Internal Only - General
 chown root:root /usr/lib/systemd/system/docker.socket",
           "group_id": "V-CF0A54F9",
           "group_id_src": "V-CF0A54F9",
@@ -1142,7 +1249,7 @@ chown root:root /usr/lib/systemd/system/docker.socket",
           "rule_title": "Ensure that docker.socket file ownership is set to root:root",
           "rule_version": "3.3",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1173,7 +1280,7 @@ The docker.socket file contains sensitive parameters that may alter the behavior
           "fix_text": "Step 1: Find out the file location:
 systemctl show -p FragmentPath docker.socket
 Step 2: If the file does not exist, this recommendation is not applicable. If the file does exist, you should execute the command below, including the correct file path to set the file permissions to 644.
-For example,
+For example, Internal Only - General
 chmod 644 /usr/lib/systemd/system/docker.socket",
           "group_id": "V-677AC714",
           "group_id_src": "V-677AC714",
@@ -1198,7 +1305,7 @@ chmod 644 /usr/lib/systemd/system/docker.socket",
           "rule_title": "Ensure that docker.socket file permissions are set to 644 or more restrictive",
           "rule_version": "3.4",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1250,7 +1357,7 @@ This sets the ownership and group ownership for the directory to root.",
           "rule_title": "Ensure that the /etc/docker directory ownership is set to root:root",
           "rule_version": "3.5",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1301,7 +1408,7 @@ This sets the permissions for the directory to 755.",
           "rule_title": "Ensure that /etc/docker directory permissions are set to 755 or more restrictively",
           "rule_version": "3.6",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1353,7 +1460,7 @@ This would set the individual ownership and group ownership for the registry cer
           "rule_title": "Ensure that registry certificate file ownership is set to root:root",
           "rule_version": "3.7",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1405,7 +1512,7 @@ This would set the permissions for the registry certificate files to 444.",
           "rule_title": "Ensure that registry certificate file permissions are set to 444 or more restrictively",
           "rule_version": "3.8",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1423,7 +1530,7 @@ The above command should return no results.",
           },
           "classification": "Unclassified",
           "comments": "",
-          "discussion": "You should verify that the TLS CA certificate file (the file that is passed along with the -- tlscacert parameter) is individually owned and group owned by root.
+          "discussion": "You should verify that the TLS CA certificate file (the file that is passed along with the - -tlscacert parameter) is individually owned and group owned by root.
 
 Rationale:
 The TLS CA certificate file should be protected from any tampering. It is used to authenticate the Docker server based on a given CA certificate. It must be therefore be individually owned and group owned by root to ensure that it cannot be modified by less privileged users.",
@@ -1457,7 +1564,7 @@ This sets the individual ownership and group ownership for the TLS CA certificat
           "rule_title": "Ensure that TLS CA certificate file ownership is set to root:root",
           "rule_version": "3.9",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1474,7 +1581,7 @@ stat -c %a <path to TLS CA certificate file>",
           },
           "classification": "Unclassified",
           "comments": "",
-          "discussion": "You should verify that the TLS CA certificate file (the file that is passed along with the -- tlscacert parameter) has permissions of 444 or is set more restrictively.
+          "discussion": "You should verify that the TLS CA certificate file (the file that is passed along with the - -tlscacert parameter) has permissions of 444 or is set more restrictively.
 
 Rationale:
 The TLS CA certificate file should be protected from any tampering. It is used to authenticate the Docker server based on a given CA certificate. It must therefore have permissions of 444, or more restrictive permissions to ensure that the file cannot be modified by a less privileged user.",
@@ -1508,7 +1615,7 @@ This sets the file permissions on the TLS CA file to 444.",
           "rule_title": "Ensure that TLS CA certificate file permissions are set to 444 or more restrictively",
           "rule_version": "3.10",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1560,7 +1667,7 @@ This sets the individual ownership and the group ownership for the Docker server
           "rule_title": "Ensure that Docker server certificate file ownership is set to root:root",
           "rule_version": "3.11",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1611,7 +1718,7 @@ This sets the file permissions of the Docker server certificate file to 444.",
           "rule_title": "Ensure that the Docker server certificate file permissions are set to 444 or more restrictively",
           "rule_version": "3.12",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1744,6 +1851,7 @@ For these reason, the default Docker Unix socket file should be owned by root an
           "false_positives": "",
           "finding_details": "",
           "fix_text": "You should execute the following command:
+Internal Only - General
 chown root:docker /var/run/docker.sock
 This sets the ownership to root and group ownership to docker for the default Docker socket file.",
           "group_id": "V-11B9CB86",
@@ -1769,7 +1877,7 @@ This sets the ownership to root and group ownership to docker for the default Do
           "rule_title": "Ensure that the Docker socket file ownership is set to root:docker",
           "rule_version": "3.15",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1820,7 +1928,7 @@ This sets the file permissions of the Docker socket file to 660.",
           "rule_title": "Ensure that the Docker socket file permissions are set to 660 or more restrictively",
           "rule_version": "3.16",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1873,7 +1981,7 @@ This sets the ownership to root and group ownership to root for the default Cont
           "rule_title": "Ensure that the Containerd socket file ownership is set to root:root",
           "rule_version": "3.23",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1924,7 +2032,7 @@ This sets the file permissions of the Containerd socket file to 660.",
           "rule_title": "Ensure that the Containerd socket file permissions are set to 660 or more restrictively",
           "rule_version": "3.24",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -1956,6 +2064,7 @@ It is good practice to run the container as a non-root user, where possible. Thi
 USER <username or ID>
 In this case, the user name or ID refers to the user that was found in the container base image. If there is no specific user created in the container base image, then make use of the useradd command to add a specific user before the USER instruction in the Dockerfile.
 For example, add the below lines in the Dockerfile to create a user in the container:
+Internal Only - General
 RUN useradd -d /home/username -m -s /bin/bash username
 USER username
 Note: If there are users in the image that are not needed, you should consider deleting them. After deleting those users, commit the image and then generate new instances of the containers.
@@ -2120,7 +2229,8 @@ Care should be taken with the results returned by vulnerability assessment tools
           "false_negatives": "",
           "false_positives": "",
           "finding_details": "",
-          "fix_text": "Images should be re-built ensuring that the latest version of the base images are used, to keep the operating system patch level at an appropriate level. Once the images have been re-built, containers should be re-started making use of the updated images.",
+          "fix_text": "Images should be re-built ensuring that the latest version of the base images are used, to keep the operating system patch level at an appropriate level. Once the images have been re-built, containers should be re-started making use of the updated images.
+Internal Only - General",
           "group_id": "V-92F76845",
           "group_id_src": "V-92F76845",
           "group_title": "Ensure images are scanned and rebuilt to include security patches",
@@ -2375,9 +2485,7 @@ Cryptographic signature is a tool to verify artifact authenticity. Every artifac
           "false_negatives": "",
           "false_positives": "",
           "finding_details": "",
-          "fix_text": "Validate every artifact with its signature. It is recommended to do so automatically.
-Controls Control IG 1 IG 2 IG 3 Version 2.7 Allowlist Authorized Scripts Use technical controls, such as digital signatures and version control, to ensure v8 that only authorized scripts, such as specific .ps1, .py, etc., files, are allowed to ● execute. Block unauthorized scripts from executing. Reassess bi-annually, or more frequently.
-2.7 Utilize Application Whitelisting v7 Utilize application whitelisting technology on all assets to ensure that only ● authorized software executes and all unauthorized software is blocked from executing on assets.",
+          "fix_text": "Validate every artifact with its signature. It is recommended to do so automatically.",
           "group_id": "V-6741085C",
           "group_id_src": "V-6741085C",
           "group_title": "Ensure all signed artifacts are validated",
@@ -2454,7 +2562,7 @@ docker swarm leave",
           "rule_title": "Ensure swarm mode is not Enabled, if not needed",
           "rule_version": "5.1",
           "security_override_guidance": "",
-          "severity": "high",
+          "severity": "medium",
           "status": "not_reviewed",
           "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
           "third_party_tools": "",
@@ -2488,7 +2596,8 @@ AppArmor protects the Linux OS and applications from various threats by enforcin
 4. Start your Docker container using the customized AppArmor profile. For example:
 docker run --interactive --tty --security-opt="apparmor:PROFILENAME" ubuntu
 /bin/bash
-Alternatively, Docker's default AppArmor policy can be used.",
+Alternatively, Docker's default AppArmor policy can be used.
+Internal Only - General",
           "group_id": "V-96D7D56B",
           "group_id_src": "V-96D7D56B",
           "group_title": "Ensure that, if applicable, an AppArmor Profile is enabled",
@@ -2548,6 +2657,7 @@ You should execute the command below to remove unneeded capabilities:
 docker run --cap-drop={"Capability 1","Capability 2"} <Run arguments>
 <Container Image Name or ID> <Command>
 Alternatively, you could remove all the currently configured capabilities and then restore only the ones you specifically use:
+Internal Only - General
 docker run --cap-drop=all --cap-add={"Capability 1","Capability 2"} <Run
 arguments> <Container Image Name or ID> <Command>
 Note that some settings also can be configured using the --sysctl option, reducing the need for container capabilities even further. This includes unprivileged ICMP echo sockets without NET_RAW and allow opening any port less than 1024 without NET_BIND_SERVICE.
@@ -2714,7 +2824,7 @@ Running SSH within the container increases the complexity of security management
           "finding_details": "",
           "fix_text": "Uninstall the SSH daemon from the container and use and use docker exec to enter a container on the remote host.
 docker exec --interactive --tty <CONTAINER ID> sh
-OR
+OR Internal Only - General
 docker attach <CONTAINER ID>",
           "group_id": "V-BEBA8181",
           "group_id_src": "V-BEBA8181",
@@ -2819,8 +2929,10 @@ Additionally, in the course of time, the Dockerfile may undergo various changes 
           "false_negatives": "",
           "false_positives": "",
           "finding_details": "",
-          "fix_text": "You should ensure that the Dockerfile for each container image only exposes needed ports. You can also completely ignore the list of ports defined in the Dockerfile by NOT using -P (UPPERCASE) or the --publish-all flag when starting the container. Instead, use the -p (lowercase) or --publish flag to explicitly define the ports that you need for a particular container instance.
+          "fix_text": "You should ensure that the Dockerfile for each container image only exposes needed ports. You can also completely ignore the list of ports defined in the Dockerfile by NOT using -P (UPPERCASE) or the --publish-all flag when starting the container.
+Instead, use the -p (lowercase) or --publish flag to explicitly define the ports that you need for a particular container instance.
 For example:
+Internal Only - General
 docker run --interactive --tty --publish 5000 --publish 5001 --publish 5002
 centos /bin/bash",
           "group_id": "V-B1D7EA0A",
@@ -2929,6 +3041,7 @@ For example, you could run a container using the command below:
 docker run -d --memory 256m centos sleep 1000
 In the example above, the container is started with a memory limit of 256 MB.
 Verify the memory settings by using the command below:
+Internal Only - General
 docker inspect --format='{{ .Id }}: Memory={{.HostConfig.Memory}}
 KernelMemory={{.HostConfig.KernelMemory}} Swap={{.HostConfig.MemorySwap}}'
 <CONTAINER ID>",
@@ -2984,6 +3097,7 @@ By default, CPU time is divided between containers equally. If you wish to contr
           "finding_details": "",
           "fix_text": "You should manage the CPU runtime between your containers dependent on their priority within your organization. To do so start the container using the --cpu-shares argument.
 For example, you could run a container as below:
+Internal Only - General
 docker run -d --cpu-shares 512 centos sleep 1000
 In the example above, the container is started with CPU shares of 50% of what other containers use. So if the other container has CPU shares of 80%, this container will have CPU shares of 40%.
 Every new container will have 1024 shares of CPU by default. However, this value is shown as 0 if you run the command mentioned in the audit section.
@@ -3042,6 +3156,7 @@ This also reduces security attack vectors since the container instance's filesys
           "false_positives": "",
           "finding_details": "",
           "fix_text": "You should add a --read-only flag at a container's runtime to enforce the container's root filesystem being mounted as read only.
+Internal Only - General
 docker run <Run arguments> --read-only <Container Image Name or ID> <Command>
 Enabling the --read-only option at a container's runtime should be used by administrators to force a container's executable processes to only write container data to explicit storage locations during its lifetime.
 Examples of explicit storage locations during a container's runtime include, but are not limited to:
@@ -3094,8 +3209,7 @@ docker ps --quiet | xargs docker inspect --format '{{ .Id }}: Ports={{
 .NetworkSettings.Ports }}'
 Then review the list and ensure that the exposed container ports are bound to a specific interface and not to the wildcard IP address 0.0.0.0.
 For example, if the command above returns the results below, this is non-compliant and the container can accept connections on any host interface on the specified port 49153.
-Ports=map[443/tcp:<nil> 80/tcp:[map[HostPort:49153 HostIp:0.0.0.0]]]
-However, if the exposed port is bound to a specific interface on the host as below, then this is configured in line with good security practice.
+Ports=map[443/tcp:<nil> 80/tcp:[map[HostPort:49153 HostIp:0.0.0.0]]] However, if the exposed port is bound to a specific interface on the host as below, then this is configured in line with good security practice.
 Ports=map[443/tcp:<nil> 80/tcp:[map[HostIp:10.2.3.4 HostPort:49153]]]",
           "check_content_ref": {
             "href": "CIS_Docker_Benchmark.xml",
@@ -3112,7 +3226,7 @@ If you have multiple network interfaces on your host machine, the container can 
           "false_positives": "",
           "finding_details": "",
           "fix_text": "You should bind the container port to a specific host interface on the desired host port.
-For example,
+For example, Internal Only - General
 docker run --detach --publish 10.2.3.4:49153:80 nginx
 In the example above, the container port 80 is bound to the host port on 49153 and would accept incoming connection only from the 10.2.3.4 external interface.",
           "group_id": "V-A1D4E24A",
@@ -3169,6 +3283,7 @@ If you indefinitely keep trying to start the container, it could possibly lead t
           "false_positives": "",
           "finding_details": "",
           "fix_text": "If you wish a container to be automatically restarted, a sample command is as below:
+Internal Only - General
 docker run --detach --restart=on-failure:5 nginx",
           "group_id": "V-50CAC1F3",
           "group_id_src": "V-50CAC1F3",
@@ -3205,7 +3320,8 @@ docker run --detach --restart=on-failure:5 nginx",
           "check_content": "You should run the following command:
 docker ps --quiet --all | xargs docker inspect --format '{{ .Id }}:
 PidMode={{ .HostConfig.PidMode }}'
-If the command above returns host, it means that the host PID namespace is shared with its containers; any other result means that the system is configured in line with good security practice.",
+If the command above returns host, it means that the host PID namespace is shared with its containers; any other result means that the system is configured in line with good security practice.
+Internal Only - General",
           "check_content_ref": {
             "href": "CIS_Docker_Benchmark.xml",
             "name": "M",
@@ -3274,6 +3390,7 @@ The IPC namespace provides separation of IPC between the host and containers. If
           "false_positives": "",
           "finding_details": "",
           "fix_text": "You should not start a container with the --ipc=host argument. For example, do not start a container as below:
+Internal Only - General
 docker run --interactive --tty --ipc=host centos /bin/bash",
           "group_id": "V-76C6AF8E",
           "group_id_src": "V-76C6AF8E",
@@ -3313,7 +3430,7 @@ Devices={{ .HostConfig.Devices }}'
 The above command would list out each device with below information:
 • CgroupPermissions - For example, rwm
 • PathInContainer - Device path within the container
-• PathOnHost - Device path on the host You should verify that the host device is needed to be accessed from within the container and that the permissions required are correctly set. If the above command returns [], then the container does not have access to host devices and is configured in line with good security practice.",
+• PathOnHost - Device path on the host Internal Only - General You should verify that the host device is needed to be accessed from within the container and that the permissions required are correctly set. If the above command returns [], then the container does not have access to host devices and is configured in line with good security practice.",
           "check_content_ref": {
             "href": "CIS_Docker_Benchmark.xml",
             "name": "M",
@@ -3758,8 +3875,7 @@ Step 3: Match the version of the image you are running to the latest version rep
           "discussion": "You should always ensure that you are using the latest version of the images within your repository and not cached older versions.
 
 Rationale:
-Multiple Docker commands such as docker pull, docker run etc. are known to have an issue where by default, they extract the local copy of the image, if present, even though there is an updated version of the image with the same tag in the upstream repository.
-This could lead to using older images containing known vulnerabilites.",
+Multiple Docker commands such as docker pull, docker run etc. are known to have an issue where by default, they extract the local copy of the image, if present, even though there is an updated version of the image with the same tag in the upstream repository. This could lead to using older images containing known vulnerabilites.",
           "documentable": "false",
           "false_negatives": "",
           "false_positives": "",
@@ -3953,6 +4069,124 @@ If the Docker socket is mounted inside a container it could allow processes runn
         },
         {
           "ccis": [],
+          "check_content": "Step 1 Make a list of all image IDs that are currently instantiated by executing the command below:
+docker images --quiet | xargs docker inspect --format '{{ .Id }}: Image={{
+.Config.Image }}'
+Step 2: List all the images present on the system by executing the command below:
+docker images
+Step 3: Compare the list of image IDs from Step 1 and Step 2 and look for images that are currently not in use. If any unused or old images are found, discuss with the system administrator the need to keep such images on the system. If images are no longer needed they should be deleted.",
+          "check_content_ref": {
+            "href": "CIS_Docker_Benchmark.xml",
+            "name": "M",
+          },
+          "classification": "Unclassified",
+          "comments": "",
+          "discussion": "You should not keep a large number of container images on the same host. Use only tagged images as appropriate.
+
+Rationale:
+Tagged images are useful if you need to fall back from the "latest" version to a specific version of an image in production. Images with unused or old tags may contain vulnerabilities that might be exploited if instantiated.",
+          "documentable": "false",
+          "false_negatives": "",
+          "false_positives": "",
+          "finding_details": "",
+          "fix_text": "You should keep only the images that you actually need and establish a workflow to remove old or stale images from the host. Additionally, you should use features such as pull-by-digest to get specific images from the registry.
+You can follow the steps below to find unused images on the system so they can be deleted.
+Step 1 Make a list of all image IDs that are currently instantiated by executing the command below:
+Internal Only - General
+docker images --quiet | xargs docker inspect --format '{{ .Id }}: Image={{
+.Config.Image }}'
+Step 2: List all the images present on the system by executing the command below:
+docker images
+Step 3: Compare the list of image IDs created from Step 1 and Step 2 to find out images which are currently not being instantiated.
+Step 4: Decide if you want to keep the images that are not currently in use. If they are not needed, delete them by executing the following command:
+docker rmi <IMAGE ID>
+Alternatively, the docker system prune command can be used to remove dangling images which are not tagged or, if necessary, all images that are not currently used by a running container when used with the -a option.",
+          "group_id": "V-A1AACB11",
+          "group_id_src": "V-A1AACB11",
+          "group_title": "Ensure that image sprawl is avoided",
+          "group_tree": [
+            {
+              "description": "<GroupDescription></GroupDescription>",
+              "id": "V-A1AACB11",
+              "title": "6 Docker Security Operations",
+            },
+          ],
+          "ia_controls": "",
+          "legacy_ids": [],
+          "mitigation_control": "",
+          "mitigations": "",
+          "overrides": {},
+          "potential_impacts": "",
+          "reference_identifier": "6.1",
+          "responsibility": "",
+          "rule_id": "SV-A1AACB11r01",
+          "rule_id_src": "SV-A1AACB11r01_rule",
+          "rule_title": "Ensure that image sprawl is avoided",
+          "rule_version": "6.1",
+          "security_override_guidance": "",
+          "severity": "medium",
+          "status": "not_reviewed",
+          "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
+          "third_party_tools": "",
+          "uuid": "123e4567-e89b-12d3-a456-426614174000",
+          "weight": "10.0",
+        },
+        {
+          "ccis": [],
+          "check_content": "Step 1 - Find the total number of containers you have on the host:
+docker info --format '{{ .Containers }}'
+Step 2 - Execute the commands below to find the total number of containers that are actually running or in the stopped state on the host.
+docker info --format '{{ .ContainersStopped }}'
+docker info --format '{{ .ContainersRunning }}'
+If the difference between the number of containers that are stopped on the host and the number of containers that are actually running is excessive, you may be suffering from "Container sprawl" and should review the unused containers for potential deletion.",
+          "check_content_ref": {
+            "href": "CIS_Docker_Benchmark.xml",
+            "name": "M",
+          },
+          "classification": "Unclassified",
+          "comments": "",
+          "discussion": "You should not keep a large number of containers on the same host.
+
+Rationale:
+The flexibility of containers makes it easy to run multiple instances of applications and therefore indirectly leads to Docker images that can exist at varying security patch levels. It also means that you are consuming host resources that otherwise could have been used for running 'useful' containers. Having more than just an essential number of containers on a particular host makes the system vulnerable to mishandling, misconfiguration and fragmentation. You should therefore keep the number of containers on a given host to the minimum number commensurate with serving production applications.",
+          "documentable": "false",
+          "false_negatives": "",
+          "false_positives": "",
+          "finding_details": "",
+          "fix_text": "You should periodically check your container inventory on each host and clean up containers which are not in active use with the command below:
+docker container prune",
+          "group_id": "V-17B4E2FE",
+          "group_id_src": "V-17B4E2FE",
+          "group_title": "Ensure that container sprawl is avoided",
+          "group_tree": [
+            {
+              "description": "<GroupDescription></GroupDescription>",
+              "id": "V-17B4E2FE",
+              "title": "6 Docker Security Operations",
+            },
+          ],
+          "ia_controls": "",
+          "legacy_ids": [],
+          "mitigation_control": "",
+          "mitigations": "",
+          "overrides": {},
+          "potential_impacts": "",
+          "reference_identifier": "6.2",
+          "responsibility": "",
+          "rule_id": "SV-17B4E2FEr01",
+          "rule_id_src": "SV-17B4E2FEr01_rule",
+          "rule_title": "Ensure that container sprawl is avoided",
+          "rule_version": "6.2",
+          "security_override_guidance": "",
+          "severity": "medium",
+          "status": "not_reviewed",
+          "stig_uuid": "123e4567-e89b-12d3-a456-426614174000",
+          "third_party_tools": "",
+          "uuid": "123e4567-e89b-12d3-a456-426614174000",
+          "weight": "10.0",
+        },
+        {
+          "ccis": [],
           "check_content": "Run docker info and verify the number of managers.
 docker info --format '{{ .Swarm.Managers }}'
 Alternatively run the below command.
@@ -4018,7 +4252,8 @@ ss -lp | grep -iE ':2377|:7946'",
           "discussion": "By default, Docker swarm services will listen on all interfaces on the host. This may not be necessary for the operation of the swarm where the host has multiple network interfaces.
 
 Rationale:
-When a swarm is initialized the default value for the --listen-addr flag is 0.0.0.0:2377 which means that swarm services will listen on all interfaces on the host. If a host has multiple network interfaces this may be undesirable as it could expose swarm services to networks which are not involved with the operation of the swarm.
+When a swarm is initialized the default value for the --listen-addr flag is 0.0.0.0:2377 which means that swarm services will listen on all interfaces on the host.
+If a host has multiple network interfaces this may be undesirable as it could expose swarm services to networks which are not involved with the operation of the swarm.
 By passing a specific IP address to the --listen-addr, a specific network interface can be specified, limiting this exposure.",
           "documentable": "false",
           "false_negatives": "",
@@ -4179,6 +4414,7 @@ This has benefits in a high security environment, however these should be balanc
           "false_positives": "",
           "finding_details": "",
           "fix_text": "If you are initializing a swarm, use the command below.
+Internal Only - General
 docker swarm init --autolock
 If you want to set --autolock on an existing swarm manager node, use the following command.
 docker swarm update --autolock",
@@ -4442,10 +4678,11 @@ As well as auditing the normal Linux file system and system calls, you should al
           "finding_details": "",
           "fix_text": "If the file exists, a rule for it should be added.
 For example:
-Add the line as below in /etc/audit/audit.rules file:
+Add the line as below in /etc/audit/rules.d/audit.rules file:
 -w /usr/lib/systemd/system/docker.service -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd",
           "group_id": "V-E5D8F5C3",
           "group_id_src": "V-E5D8F5C3",
@@ -4502,10 +4739,11 @@ As well as auditing the normal Linux file system and system calls, you should al
           "finding_details": "",
           "fix_text": "If the file exists, you should add a rule for it.
 For example:
-Add the line below to the /etc/audit/audit.rules file:
+Add the line below to the /etc/audit/rules.d/audit.rules file:
 -w /run/containerd/containerd.sock -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd",
           "group_id": "V-75680822",
           "group_id_src": "V-75680822",
@@ -4540,20 +4778,20 @@ systemctl restart auditd",
         {
           "ccis": [],
           "check_content": "Step 1: Find out the configuration file location:
-systemctl show -p FragmentPath docker.socket
+systemctl show -p FragmentPath docker.sock
 Step 2: Locate the socket file location:
 grep ListenStream <FragmentPath from previous step>
 Step 3: If the file does not exist, this recommendation is not applicable. If the file exists, you should verify that there is an audit rule corresponding to the file:
 For example, you could execute the command below:
-auditctl -l | grep docker.socket
-This should display a rule for docker.socket.",
+auditctl -l | grep docker.sock
+This should display a rule for docker.sock.",
           "check_content_ref": {
             "href": "CIS_Docker_Benchmark.xml",
             "name": "M",
           },
           "classification": "Unclassified",
           "comments": "",
-          "discussion": "Audit docker.socket, if applicable.
+          "discussion": "Audit docker.sock, if applicable.
 
 Rationale:
 As well as auditing the normal Linux file system and system calls, you should also audit the Docker daemon. Because this daemon runs with root privileges, it is very important to audit its activities and usage. Its behavior depends on some key files and directories with docker.socket being one such file, and as this holds various parameters for the Docker daemon, it should be audited.",
@@ -4563,18 +4801,19 @@ As well as auditing the normal Linux file system and system calls, you should al
           "finding_details": "",
           "fix_text": "If the file exists, you should add a rule for it.
 For example:
-Add the line below to the /etc/audit/audit.rules file:
+Add the line below to the /etc/audit/rules.d/audit.rules file:
 -w /var/run/docker.sock -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd",
-          "group_id": "V-A3E64ECE",
-          "group_id_src": "V-A3E64ECE",
-          "group_title": "Ensure auditing is configured for Docker files and directories - docker.socket",
+          "group_id": "V-1169EF95",
+          "group_id_src": "V-1169EF95",
+          "group_title": "Ensure auditing is configured for Docker files and directories - docker.sock",
           "group_tree": [
             {
               "description": "<GroupDescription></GroupDescription>",
-              "id": "V-A3E64ECE",
+              "id": "V-1169EF95",
               "title": "1.1 Linux Hosts Specific Configuration",
             },
           ],
@@ -4586,9 +4825,9 @@ systemctl restart auditd",
           "potential_impacts": "",
           "reference_identifier": "1.1.9",
           "responsibility": "",
-          "rule_id": "SV-A3E64ECEr01",
-          "rule_id_src": "SV-A3E64ECEr01_rule",
-          "rule_title": "Ensure auditing is configured for Docker files and directories - docker.socket",
+          "rule_id": "SV-1169EF95r01",
+          "rule_id_src": "SV-1169EF95r01_rule",
+          "rule_title": "Ensure auditing is configured for Docker files and directories - docker.sock",
           "rule_version": "1.1.9",
           "security_override_guidance": "",
           "severity": "high",
@@ -4624,6 +4863,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /etc/default/docker -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd",
           "group_id": "V-8BE8FC39",
           "group_id_src": "V-8BE8FC39",
@@ -4670,7 +4910,8 @@ This should display a rule for the /etc/docker/daemon.json file.",
           "discussion": "Audit /etc/docker/daemon.json, if applicable.
 
 Rationale:
-As well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privileges and its behavior depends on some key files and directories. /etc/docker/daemon.json is one such file. This holds various parameters for the Docker daemon, and as such it should be audited.",
+As well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privileges and its behavior depends on some key files and directories.
+/etc/docker/daemon.json is one such file. This holds various parameters for the Docker daemon, and as such it should be audited.",
           "documentable": "false",
           "false_negatives": "",
           "false_positives": "",
@@ -4681,6 +4922,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /etc/docker/daemon.json -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd",
           "group_id": "V-2C0A66C9",
           "group_id_src": "V-2C0A66C9",
@@ -4727,7 +4969,8 @@ This should display a rule for /etc/containerd/config.toml file.",
           "discussion": "Audit /etc/containerd/config.toml if applicable
 
 Rationale:
-As well as auditing the normal Linux file system and system calls, you should also audit the Docker daemon. Because this daemon runs with root privileges it is very important to audit its activities and usage. Its behavior depends on some key files and directories and /etc/containerd/config.toml is one such file as it contains various parameters. If present, it is important that it is audited.",
+As well as auditing the normal Linux file system and system calls, you should also audit the Docker daemon. Because this daemon runs with root privileges it is very important to audit its activities and usage. Its behavior depends on some key files and directories and /etc/containerd/config.toml is one such file as it contains various parameters.
+If present, it is important that it is audited.",
           "documentable": "false",
           "false_negatives": "",
           "false_positives": "",
@@ -4738,6 +4981,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /etc/containerd/config.toml -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd",
           "group_id": "V-3B46ED45",
           "group_id_src": "V-3B46ED45",
@@ -4795,6 +5039,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /etc/sysconfig/docker -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd",
           "group_id": "V-8C076373",
           "group_id_src": "V-8C076373",
@@ -4852,6 +5097,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /usr/bin/containerd -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd",
           "group_id": "V-384824BE",
           "group_id_src": "V-384824BE",
@@ -4885,7 +5131,7 @@ systemctl restart auditd",
         },
         {
           "ccis": [],
-          "check_content": "You should verify that there is an audit rule corresponding to /usr/bin/containerd-shim file.
+          "check_content": "You should verify that there is an audit rule corresponding to /usr/bin/containerd- shim file.
 For example, you could execute the command below:
 auditctl -l | grep /usr/bin/containerd-shim
 This should display a rule for /usr/bin/containerd-shim file.",
@@ -4905,10 +5151,11 @@ As well as auditing the normal Linux file system and system calls, you should au
           "finding_details": "",
           "fix_text": "You should add a rule for the /usr/bin/containerd-shim file.
 For example:
-Add the line below to the /etc/audit/audit.rules file:
+Add the line below to the /etc/audit/rules.d/audit.rules file:
 -w /usr/bin/containerd-shim -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd",
           "group_id": "V-801CAA69",
           "group_id_src": "V-801CAA69",
@@ -4966,6 +5213,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /usr/bin/containerd-shim-runc-v1 -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd",
           "group_id": "V-3890DDBB",
           "group_id_src": "V-3890DDBB",
@@ -5023,6 +5271,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /usr/bin/containerd-shim-runc-v2 -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd",
           "group_id": "V-44A0342B",
           "group_id_src": "V-44A0342B",
@@ -5116,8 +5365,8 @@ systemctl restart auditd",
           "check_content": "docker inspect --format='{{ .State.Pid }}' $(docker ps -q) | while read -r
 line; do ps -h -p "$line" -o pid,user; done
 The above command will find the PID of the container and then list the host user associated with the container process. If the container process is running as root, then this configuration may be non-compliant with your organization's security policy.
-Alternatively, you can run docker info to ensure that the userns is listed under
-Security Options:
+Alternatively, you can run docker info to ensure that the userns is listed under Security Options:
+Internal Only - General
 docker info --format '{{ .SecurityOptions }}'",
           "check_content_ref": {
             "href": "CIS_Docker_Benchmark.xml",
@@ -5193,7 +5442,7 @@ It is possible to attach to a different cgroup other than the one which is the d
           "false_positives": "",
           "finding_details": "",
           "fix_text": "The default setting is in line with good security practice and can be left in situ. If you wish to specifically set a non-default cgroup, pass the --cgroup-parent parameter to the Docker daemon when starting it.
-For example,
+For example, Internal Only - General
 dockerd --cgroup-parent=/foobar",
           "group_id": "V-74A349B4",
           "group_id_src": "V-74A349B4",
@@ -5304,6 +5553,7 @@ Third party integrations of Docker may implement their own authorization models 
           "fix_text": "Step 1: Install/Create an authorization plugin.
 Step 2: Configure the authorization policy as desired.
 Step 3: Start the docker daemon as below:
+Internal Only - General
 dockerd --authorization-plugin=<PLUGIN_ID>",
           "group_id": "V-29B915D9",
           "group_id_src": "V-29B915D9",
@@ -5411,6 +5661,7 @@ Alternatively, if Docker's default profile is adequate for your environment, you
           "false_positives": "",
           "finding_details": "",
           "fix_text": "By default, Docker's default seccomp profile is applied. If this is adequate for your environment, no action is necessary. Alternatively, if you choose to apply your own seccomp profile, use the --seccomp-profile flag at daemon start or put it in the daemon runtime parameters file.
+Internal Only - General
 dockerd --seccomp-profile </path/to/seccomp/profile>",
           "group_id": "V-69887F18",
           "group_id_src": "V-69887F18",
@@ -5938,6 +6189,7 @@ SELinux provides a Mandatory Access Control (MAC) system that greatly augments t
 4. Start Docker in daemon mode with SELinux enabled. For example:
 docker daemon --selinux-enabled
 or by adding the following to the daemon.json configuration file:
+Internal Only - General
 {
 "selinux-enabled": true
 }
@@ -6124,11 +6376,11 @@ Docker connects virtual interfaces created in bridge mode to a common bridge cal
           "weight": "10.0",
         },
       ],
-      "size": 113,
+      "size": 117,
       "stig_id": "CIS Docker Benchmark",
       "stig_name": "CIS Docker Benchmark",
       "uuid": "123e4567-e89b-12d3-a456-426614174000",
-      "version": "1.6.0",
+      "version": "1.7.0",
     },
   ],
   "target_data": {

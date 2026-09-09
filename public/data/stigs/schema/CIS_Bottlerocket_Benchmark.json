@@ -1,0 +1,1402 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_Bottlerocket_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2022-08-11"
+    },
+    "title": "CIS Bottlerocket Benchmark",
+    "description": "All CIS Benchmarks focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system for vulnerabilities and quickly updating with the latest security patches • Monitoring applications and libraries for vulnerabilities and quickly updating with the latest security patches In the end, the CIS Benchmarks are designed as a key component of a comprehensive cybersecurity program. This document provides prescriptive guidance for establishing a secure configuration posture for Linux systems based on Bottlerocket. Bottlerocket does not include any facilities for interactive use. This means that shells, user accounts, console gettys for local access, and an SSH daemon for remote access are not available. However, Bottlerocket does allow additional host-level services to be defined and executed, provided they are packaged as containers. These additional services are referred to as host containers. It is possible to configure a host container to provide the necessary access to complete this benchmark. Bottlerocket defines an \"admin\" host container that supports SSH sessions and includes a static shell for running commands directly on the host. It is disabled by default and only intended for break-glass access to troubleshoot production systems, but it can be enabled and used to perform the audit and remediation steps in this guide. The guidance within broadly assumes that operations are being performed as the root user. Operations performed using sudo instead of the root user may produce unexpected results or fail to make the intended changes to the system. Non-root users may not be able to access certain areas of the system, especially after remediation has been performed. It is advisable to verify root users path integrity and the integrity of any programs being run prior to execution of commands and scripts included in this benchmark. To obtain the latest version of this guide, please visit http://workbench.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.0.0 Benchmark Date: 2022-08-11",
+      "+@id": "release-info"
+    },
+    "version": "1.0.0",
+    "Profile": [
+      {
+        "+@id": "L1-Server_Public",
+        "title": "Level 1 - Server",
+        "description": "be practical and prudent. provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-4221C1C3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-288F6893",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1666E51F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4C777BE1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-26F52838",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8C40CA64",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F4A6FB6B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-23CC24A7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-853ED1A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6703B2E1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3F4D835",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C5C09FB5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-02BC1A59",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Server_Classified",
+        "title": "Level 1 - Server",
+        "description": "be practical and prudent. provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-4221C1C3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-288F6893",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1666E51F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4C777BE1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-26F52838",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8C40CA64",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F4A6FB6B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-23CC24A7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-853ED1A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6703B2E1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3F4D835",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C5C09FB5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-02BC1A59",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Server_Sensitive",
+        "title": "Level 1 - Server",
+        "description": "be practical and prudent. provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-4221C1C3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-288F6893",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1666E51F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4C777BE1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-26F52838",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8C40CA64",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F4A6FB6B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-23CC24A7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-853ED1A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6703B2E1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3F4D835",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C5C09FB5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-02BC1A59",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Server_Public",
+        "title": "Level 2 - Server",
+        "description": "are intended for environments or use cases where security is paramount. acts as defense in depth measure. may negatively inhibit the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-DD676D5E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-006E7433",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5974D939",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C67AE451",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9844DAD0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5324FBD1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-60F263F6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-57496892",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-369991E9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EC98ABD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6E162466",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E61017FD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3B78BF2E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B9441344",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F1EE82D",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Server_Classified",
+        "title": "Level 2 - Server",
+        "description": "are intended for environments or use cases where security is paramount. acts as defense in depth measure. may negatively inhibit the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-DD676D5E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-006E7433",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5974D939",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C67AE451",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9844DAD0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5324FBD1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-60F263F6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-57496892",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-369991E9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EC98ABD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6E162466",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E61017FD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3B78BF2E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B9441344",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F1EE82D",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Server_Sensitive",
+        "title": "Level 2 - Server",
+        "description": "are intended for environments or use cases where security is paramount. acts as defense in depth measure. may negatively inhibit the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-DD676D5E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-006E7433",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5974D939",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C67AE451",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9844DAD0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5324FBD1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-60F263F6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-57496892",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-369991E9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EC98ABD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6E162466",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E61017FD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3B78BF2E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B9441344",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F1EE82D",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-DD676D5E",
+        "title": "1.1.1 Disable unused filesystems",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-DD676D5Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.1.1.1",
+          "title": "Ensure mounting of udf filesystems is disabled",
+          "description": "<VulnDiscussion>The udf filesystem type is the universal disk format used to implement ISO/IEC 13346 and ECMA-167 specifications. This is an open vendor filesystem type for data storage on a broad range of media. This filesystem type is necessary to support writing DVDs and newer optical disc formats.\n\nRationale:\nRemoving support for unneeded filesystem types reduces the local attack surface of the system. If this filesystem type is not needed, disable it.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "1.1.1.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable the udf module:\n# apiclient set kernel.modules.udf.allowed=false\nRun the following command to unload the udf module:\n# rmmod udf",
+            "+@fixref": "F-DD676D5Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-DD676D5Er01_fix"
+          },
+          "check": {
+            "+@system": "C-DD676D5E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify the output is as indicated:\n# modprobe -n -v udf\ninstall /bin/true\n# grep -Fw udf /proc/modules\n<No output>"
+          }
+        }
+      },
+      {
+        "+@id": "V-4221C1C3",
+        "title": "1.2 Configure Software Updates",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4221C1C3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2.1",
+          "title": "Ensure software update repositories are configured",
+          "description": "<VulnDiscussion>Systems need to have software update repositories configured to ensure they receive the latest updates.\n\nRationale:\nIf a system's software update repositories are misconfigured, important updates may not be identified.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "1.2.1"
+          },
+          "fixtext": {
+            "+content": "Configure your software update repositories according to site policy.",
+            "+@fixref": "F-4221C1C3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4221C1C3r01_fix"
+          },
+          "check": {
+            "+@system": "C-4221C1C3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify software update repositories are configured correctly. This command should display a list of available updates and return without error:\n# apiclient update check"
+          }
+        }
+      },
+      {
+        "+@id": "V-288F6893",
+        "title": "1.3 Filesystem Integrity Checking",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-288F6893r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3.1",
+          "title": "Ensure dm-verity is configured",
+          "description": "<VulnDiscussion>dm-verity provides transparent integrity checking of block devices using a cryptographic digest. Because dm-verity devices are read-only, filesystems mounted from the devices are also read-only.\n\nRationale:\nUsing dm-verity prevents direct modification of the root filesystem. Indirect modifications, whether accidental or malicious, can be detected by rebooting the system if corrupt blocks are found.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "1.3.1"
+          },
+          "fixtext": {
+            "+content": "Replace the system or reinstall the distribution.",
+            "+@fixref": "F-288F6893r01_fix"
+          },
+          "fix": {
+            "+@id": "F-288F6893r01_fix"
+          },
+          "check": {
+            "+@system": "C-288F6893_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that the root filesystem is using dm-verity, and that the kernel is configured to restart if corruption is detected.\n# grep -Fw \"dm-mod.create=root,,,ro,0\" /proc/cmdline\n# grep -Fw \"root=/dev/dm-0\" /proc/cmdline\n# grep -Fw \"restart_on_corruption\" /proc/cmdline"
+          }
+        }
+      },
+      {
+        "+@id": "V-1666E51F",
+        "title": "1.4 Additional Process Hardening",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1666E51Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4.1",
+          "title": "Ensure setuid programs do not create core dumps",
+          "description": "<VulnDiscussion>A core dump is the memory of an executable program. It is generally used to determine why a program aborted. It can also be used to glean confidential information from a core file.\n\nRationale:\nSetting the fs.suid_dumpable variable to 0 will prevent setuid programs from dumping core.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "1.4.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameter and persist the setting:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"fs.suid_dumpable\" = \"0\"\nEOF",
+            "+@fixref": "F-1666E51Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-1666E51Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-1666E51F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify output matches:\n# sysctl fs.suid_dumpable\nfs.suid_dumpable = 0"
+          }
+        }
+      },
+      {
+        "+@id": "V-4C777BE1",
+        "title": "1.4 Additional Process Hardening",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4C777BE1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4.2",
+          "title": "Ensure address space layout randomization (ASLR) is enabled",
+          "description": "<VulnDiscussion>Address space layout randomization (ASLR) is an exploit mitigation technique which randomly arranges the address space of key data areas of a process.\n\nRationale:\nRandomly placing virtual memory regions will make it difficult to write memory page exploits as the memory placement will be consistently shifting.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "1.4.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameter and persist the setting:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"kernel.randomize_va_space\" = \"2\"\nEOF",
+            "+@fixref": "F-4C777BE1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4C777BE1r01_fix"
+          },
+          "check": {
+            "+@system": "C-4C777BE1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify output matches:\n# sysctl kernel.randomize_va_space\nkernel.randomize_va_space = 2"
+          }
+        }
+      },
+      {
+        "+@id": "V-26F52838",
+        "title": "1.4 Additional Process Hardening",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-26F52838r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4.3",
+          "title": "Ensure unprivileged eBPF is disabled",
+          "description": "<VulnDiscussion>Unprivileged users should not have access to eBPF.\n\nRationale:\neBPF requires complex verification and JIT compilation procedures, and any bugs in this logic can compromise kernel security. Access to eBPF can also facilitate speculative execution attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "1.4.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameter and persist the setting:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"kernel.unprivileged_bpf_disabled\" = \"1\"\nEOF",
+            "+@fixref": "F-26F52838r01_fix"
+          },
+          "fix": {
+            "+@id": "F-26F52838r01_fix"
+          },
+          "check": {
+            "+@system": "C-26F52838_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify output matches:\n# sysctl kernel.unprivileged_bpf_disabled\nkernel.unprivileged_bpf_disabled = 1"
+          }
+        }
+      },
+      {
+        "+@id": "V-006E7433",
+        "title": "1.4 Additional Process Hardening",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-006E7433r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.4.4",
+          "title": "Ensure user namespaces are disabled",
+          "description": "<VulnDiscussion>User namespaces should be disabled unless required.\nNote that user namespaces can be necessary in environments where containers running as unprivileged users are meant to run other containers. These are often referred to as \"rootless\" containers.\n\nRationale:\nIf user namespaces are enabled, then an unprivileged user can create a new user namespace where their processes have capabilities such as CAP_SYS_ADMIN. This opens a large attack surface within the kernel that would otherwise be unreachable.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "1.4.4"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameter and persist the setting:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"user.max_user_namespaces\" = \"0\"\nEOF",
+            "+@fixref": "F-006E7433r01_fix"
+          },
+          "fix": {
+            "+@id": "F-006E7433r01_fix"
+          },
+          "check": {
+            "+@system": "C-006E7433_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify output matches:\n# sysctl user.max_user_namespaces\nuser.max_user_namespaces = 0"
+          }
+        }
+      },
+      {
+        "+@id": "V-8C40CA64",
+        "title": "1.5 Mandatory Access Control",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8C40CA64r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5.1",
+          "title": "Ensure SELinux is configured",
+          "description": "<VulnDiscussion>SELinux must be enabled and in enforcing mode.\n\nRationale:\nThe mandatory access controls provided by the default SELinux policy are a critical mechanism to prevent containers from accessing sensitive data or modifying system files that belong to the host or to other containers.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "1.5.1"
+          },
+          "fixtext": {
+            "+content": "Replace the system or reinstall the distribution.",
+            "+@fixref": "F-8C40CA64r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8C40CA64r01_fix"
+          },
+          "check": {
+            "+@system": "C-8C40CA64_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that SELinux is enabled, that it is set to enforcing mode, and that the expected policy is loaded.\n# sestatus\nSELinux status: enabled\nLoaded policy name: fortified\nCurrent mode: enforcing\nMode from config file: enforcing\nPolicy MLS status: enabled\nPolicy deny_unknown status: denied\nMemory protection checking: actual (secure)"
+          }
+        }
+      },
+      {
+        "+@id": "V-5974D939",
+        "title": "1.5 Mandatory Access Control",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5974D939r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.5.2",
+          "title": "Ensure Lockdown is configured",
+          "description": "<VulnDiscussion>Lockdown must be enabled in integrity mode.\nNote that this prevents unsigned kernel modules from being loaded. This could interfere with the operation of hardware or third-party software that depends on these modules.\n\nRationale:\nMany security mechanisms ultimately depend on the kernel for enforcement. This includes access controls such as capabilities and SELinux, and integrity checks such as dm-verity. Modifications to the running kernel could bypass or subvert these mechanisms.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "1.5.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable Lockdown in integrity mode:\n# apiclient set kernel.lockdown=integrity",
+            "+@fixref": "F-5974D939r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5974D939r01_fix"
+          },
+          "check": {
+            "+@system": "C-5974D939_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that Lockdown is enabled in integrity mode.\n# grep -Fw '[integrity]' /sys/kernel/security/lockdown\nnone [integrity] confidentiality"
+          }
+        }
+      },
+      {
+        "+@id": "V-F4A6FB6B",
+        "title": "1 Initial Setup",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F4A6FB6Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.6",
+          "title": "Ensure updates, patches, and additional security software are installed",
+          "description": "<VulnDiscussion>Periodically updates are released for included software either due to security flaws or to include additional functionality.\n\nRationale:\nIt is recommended that the latest software updates be used to take advantage of the latest functionality and security enhancements. As with any software installation, organizations need to determine if a given update meets their requirements and verify the compatibility and supportability of any additional software against the update revision that is selected.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "1.6"
+          },
+          "fixtext": {
+            "+content": "Update the software on the system according to site policy.\nThis command will apply the latest available update and reboot the system to apply it if necessary:\n# apiclient update apply --check --reboot",
+            "+@fixref": "F-F4A6FB6Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-F4A6FB6Br01_fix"
+          },
+          "check": {
+            "+@system": "C-F4A6FB6B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify there are no updates to install. This command should display a list of available updates and return without error:\n# apiclient update check"
+          }
+        }
+      },
+      {
+        "+@id": "V-23CC24A7",
+        "title": "2.1.1 Time Synchronization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-23CC24A7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.1.1",
+          "title": "Ensure chrony is configured",
+          "description": "<VulnDiscussion>chrony is a daemon which implements the Network Time Protocol (NTP). It is designed to synchronize system clocks across a variety of systems and use a source that is highly accurate.\n\nRationale:\nProper configuration of chrony is vital to ensuring time synchronization is working properly.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "2.1.1.1"
+          },
+          "fixtext": {
+            "+content": "Configure additional time servers as needed.\nThe following command would add \"2.pool.ntp.org\" to the list of time servers.\n# apiclient apply <<EOF\n[settings.ntp]\ntime-servers = [ \"2.pool.ntp.org\" ]\nEOF\nIf chrony is not running, update to a version of the OS with the correct service configuration.",
+            "+@fixref": "F-23CC24A7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-23CC24A7r01_fix"
+          },
+          "check": {
+            "+@system": "C-23CC24A7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify that time servers are configured:\n# apiclient get settings.ntp.time-servers\n{\n\"settings\": {\n\"ntp\": {\n\"time-servers\": [\n\"...\"\n]\n}\n}\n}\nRun the following command and verify that chrony is active:\n# systemctl is-active chronyd\nactive"
+          }
+        }
+      },
+      {
+        "+@id": "V-C67AE451",
+        "title": "3.1 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C67AE451r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.1.1",
+          "title": "Ensure packet redirect sending is disabled",
+          "description": "<VulnDiscussion>ICMP Redirects are used to send routing information to other hosts. As a host itself does not act as a router (in a host only configuration), there is no need to send redirects.\n\nRationale:\nAn attacker could use a compromised host to send invalid ICMP redirects to other router devices in an attempt to corrupt routing and have users access a system set up by the attacker as opposed to a valid system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.1.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameters and persist the settings:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"net.ipv4.conf.all.send_redirects\" = \"0\"\n\"net.ipv4.conf.default.send_redirects\" = \"0\"\nEOF\nRun the following command to flush the routing cache:\n# sysctl -w net.ipv4.route.flush=1",
+            "+@fixref": "F-C67AE451r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C67AE451r01_fix"
+          },
+          "check": {
+            "+@system": "C-C67AE451_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output matches:\n# sysctl net.ipv4.conf.all.send_redirects\nnet.ipv4.conf.all.send_redirects = 0\n# sysctl net.ipv4.conf.default.send_redirects\nnet.ipv4.conf.default.send_redirects = 0"
+          }
+        }
+      },
+      {
+        "+@id": "V-9844DAD0",
+        "title": "3.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9844DAD0r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.2.1",
+          "title": "Ensure source routed packets are not accepted",
+          "description": "<VulnDiscussion>In networking, source routing allows a sender to partially or fully specify the route packets take through a network. In contrast, non-source routed packets travel a path determined by routers in the network. In some cases, systems may not be routable or reachable from some locations (e.g. private addresses vs. Internet routable), and so source routed packets would need to be used.\n\nRationale:\nSetting net.ipv4.conf.all.accept_source_route,\nnet.ipv6.conf.default.accept_source_route to 0 disables the system from accepting source routed packets. Assume this system was capable of routing packets to Internet routable addresses on one interface and private addresses on another interface.\nAssume that the private addresses were not routable to the Internet routable addresses and vice versa. Under normal routing circumstances, an attacker from the Internet routable addresses could not use the system as a way to reach the private address systems. If, however, source routed packets were allowed, they could be used to gain access to the private address systems as the route could be specified, rather than rely on routing protocols that did not allow this routing.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.2.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameters and persist the settings:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"net.ipv4.conf.all.accept_source_route\" = \"0\"\n\"net.ipv4.conf.default.accept_source_route\" = \"0\"\n\"net.ipv6.conf.all.accept_source_route\" = \"0\"\n\"net.ipv6.conf.default.accept_source_route\" = \"0\"\nEOF\nRun the following command to flush the routing caches:\n# sysctl -w net.ipv4.route.flush=1\n# sysctl -w net.ipv6.route.flush=1",
+            "+@fixref": "F-9844DAD0r01_fix"
+          },
+          "fix": {
+            "+@id": "F-9844DAD0r01_fix"
+          },
+          "check": {
+            "+@system": "C-9844DAD0_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output matches:\n# sysctl net.ipv4.conf.all.accept_source_route\nnet.ipv4.conf.all.accept_source_route = 0\n# sysctl net.ipv4.conf.default.accept_source_route\nnet.ipv4.conf.default.accept_source_route = 0\n# sysctl net.ipv6.conf.all.accept_source_route\nnet.ipv6.conf.all.accept_source_route = 0\n# sysctl net.ipv6.conf.default.accept_source_route\nnet.ipv6.conf.default.accept_source_route = 0"
+          }
+        }
+      },
+      {
+        "+@id": "V-5324FBD1",
+        "title": "3.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5324FBD1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.2.2",
+          "title": "Ensure ICMP redirects are not accepted",
+          "description": "<VulnDiscussion>ICMP redirect messages are packets that convey routing information and tell your host (acting as a router) to send packets via an alternate path. It is a way of allowing an outside routing device to update your system routing tables. By setting net.ipv4.conf.all.accept_redirects and net.ipv6.conf.all.accept_redirects to 0, the system will not accept any ICMP redirect messages, and therefore, won't allow outsiders to update the system's routing tables.\n\nRationale:\nAttackers could use bogus ICMP redirect messages to maliciously alter the system routing tables and get them to send packets to incorrect networks and allow your system packets to be captured.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.2.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameters and persist the settings:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"net.ipv4.conf.all.accept_redirects\" = \"0\"\n\"net.ipv4.conf.default.accept_redirects\" = \"0\"\n\"net.ipv6.conf.all.accept_redirects\" = \"0\"\n\"net.ipv6.conf.default.accept_redirects\" = \"0\"\nEOF\nRun the following commands to flush the routing caches:\n# sysctl -w net.ipv4.route.flush=1\n# sysctl -w net.ipv6.route.flush=1",
+            "+@fixref": "F-5324FBD1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5324FBD1r01_fix"
+          },
+          "check": {
+            "+@system": "C-5324FBD1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output matches:\n# sysctl net.ipv4.conf.all.accept_redirects\nnet.ipv4.conf.all.accept_redirects = 0\n# sysctl net.ipv4.conf.default.accept_redirects\nnet.ipv4.conf.default.accept_redirects = 0\n# sysctl net.ipv6.conf.all.accept_redirects\nnet.ipv6.conf.all.accept_redirects = 0\n# sysctl net.ipv6.conf.default.accept_redirects\nnet.ipv6.conf.default.accept_redirects = 0"
+          }
+        }
+      },
+      {
+        "+@id": "V-60F263F6",
+        "title": "3.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-60F263F6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.2.3",
+          "title": "Ensure secure ICMP redirects are not accepted",
+          "description": "<VulnDiscussion>Secure ICMP redirects are the same as ICMP redirects, except they come from gateways listed on the default gateway list. It is assumed that these gateways are known to your system, and that they are likely to be secure.\n\nRationale:\nIt is still possible for even known gateways to be compromised. Setting net.ipv4.conf.all.secure_redirects to 0 protects the system from routing table updates by possibly compromised known gateways.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.2.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameters and persist the settings:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"net.ipv4.conf.all.secure_redirects\" = \"0\"\n\"net.ipv4.conf.default.secure_redirects\" = \"0\"\nEOF\nRun the following command to flush the routing cache:\n# sysctl -w net.ipv4.route.flush=1",
+            "+@fixref": "F-60F263F6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-60F263F6r01_fix"
+          },
+          "check": {
+            "+@system": "C-60F263F6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output matches:\n# sysctl net.ipv4.conf.all.secure_redirects\nnet.ipv4.conf.all.secure_redirects = 0\n# sysctl net.ipv4.conf.default.secure_redirects\nnet.ipv4.conf.default.secure_redirects = 0"
+          }
+        }
+      },
+      {
+        "+@id": "V-57496892",
+        "title": "3.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-57496892r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.2.4",
+          "title": "Ensure suspicious packets are logged",
+          "description": "<VulnDiscussion>When enabled, this feature logs packets with un-routable source addresses to the kernel log.\n\nRationale:\nEnabling this feature and logging these packets allows an administrator to investigate the possibility that an attacker is sending spoofed packets to their system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.2.4"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameters and persist the settings:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"net.ipv4.conf.all.log_martians\" = \"1\"\n\"net.ipv4.conf.default.log_martians\" = \"1\"\nEOF\nRun the following command to flush the routing cache:\n# sysctl -w net.ipv4.route.flush=1",
+            "+@fixref": "F-57496892r01_fix"
+          },
+          "fix": {
+            "+@id": "F-57496892r01_fix"
+          },
+          "check": {
+            "+@system": "C-57496892_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output matches:\n# sysctl net.ipv4.conf.all.log_martians\nnet.ipv4.conf.all.log_martians = 1\n# sysctl net.ipv4.conf.default.log_martians\nnet.ipv4.conf.default.log_martians = 1"
+          }
+        }
+      },
+      {
+        "+@id": "V-853ED1A2",
+        "title": "3.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-853ED1A2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.2.5",
+          "title": "Ensure broadcast ICMP requests are ignored",
+          "description": "<VulnDiscussion>Setting net.ipv4.icmp_echo_ignore_broadcasts to 1 will cause the system to ignore all ICMP echo and timestamp requests to broadcast and multicast addresses.\n\nRationale:\nAccepting ICMP echo and timestamp requests with broadcast or multicast destinations for your network could be used to trick your host into starting (or participating) in a Smurf attack. A Smurf attack relies on an attacker sending large amounts of ICMP broadcast messages with a spoofed source address. All hosts receiving this message and responding would send echo-reply messages back to the spoofed address, which is probably not routable. If many hosts respond to the packets, the amount of traffic on the network could be significantly multiplied.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.2.5"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameter and persist the setting:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"net.ipv4.icmp_echo_ignore_broadcasts\" = \"1\"\nEOF\nRun the following command to flush the routing cache:\n# sysctl -w net.ipv4.route.flush=1",
+            "+@fixref": "F-853ED1A2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-853ED1A2r01_fix"
+          },
+          "check": {
+            "+@system": "C-853ED1A2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify output matches:\n# sysctl net.ipv4.icmp_echo_ignore_broadcasts\nnet.ipv4.icmp_echo_ignore_broadcasts = 1"
+          }
+        }
+      },
+      {
+        "+@id": "V-6703B2E1",
+        "title": "3.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6703B2E1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.2.6",
+          "title": "Ensure bogus ICMP responses are ignored",
+          "description": "<VulnDiscussion>Setting icmp_ignore_bogus_error_responses to 1 prevents the kernel from logging bogus responses (RFC-1122 non-compliant) from broadcast reframes, keeping file systems from filling up with useless log messages.\n\nRationale:\nSome routers (and some attackers) will send responses that violate RFC-1122 and attempt to fill up a log file system with many useless error messages.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.2.6"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameter and persist the setting:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"net.ipv4.icmp_ignore_bogus_error_responses\" = \"1\"\nEOF\nRun the following command to flush the routing cache:\n# sysctl -w net.ipv4.route.flush=1",
+            "+@fixref": "F-6703B2E1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-6703B2E1r01_fix"
+          },
+          "check": {
+            "+@system": "C-6703B2E1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify output matches:\n# sysctl net.ipv4.icmp_ignore_bogus_error_responses\nnet.ipv4.icmp_ignore_bogus_error_responses = 1"
+          }
+        }
+      },
+      {
+        "+@id": "V-B3F4D835",
+        "title": "3.2 Network Parameters",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B3F4D835r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.2.7",
+          "title": "Ensure TCP SYN Cookies is enabled",
+          "description": "<VulnDiscussion>When tcp_syncookies is set, the kernel will handle TCP SYN packets normally until the half-open connection queue is full, at which time, the SYN cookie functionality kicks in.\nSYN cookies work by not using the SYN queue at all. Instead, the kernel simply replies to the SYN with a SYN|ACK, but will include a specially crafted TCP sequence number that encodes the source and destination IP address and port number and the time the packet was sent. A legitimate connection would send the ACK packet of the three way handshake with the specially crafted sequence number. This allows the system to verify that it has received a valid response to a SYN cookie and allow the connection, even though there is no corresponding SYN in the queue.\n\nRationale:\nAttackers use SYN flood attacks to perform a denial of service attacked on a system by sending many SYN packets without completing the three way handshake. This will quickly use up slots in the kernel's half-open connection queue and prevent legitimate connections from succeeding. SYN cookies allow the system to keep accepting valid connections, even if under a denial of service attack.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.2.7"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the active kernel parameter and persist the setting:\n# apiclient apply <<EOF\n[settings.kernel.sysctl]\n\"net.ipv4.tcp_syncookies\" = \"1\"\nEOF\nRun the following command to flush the routing cache:\n# sysctl -w net.ipv4.route.flush=1",
+            "+@fixref": "F-B3F4D835r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B3F4D835r01_fix"
+          },
+          "check": {
+            "+@system": "C-B3F4D835_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify output matches:\n# sysctl net.ipv4.tcp_syncookies\nnet.ipv4.tcp_syncookies = 1"
+          }
+        }
+      },
+      {
+        "+@id": "V-369991E9",
+        "title": "3.3 Uncommon Network Protocols",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-369991E9r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.3.1",
+          "title": "Ensure SCTP is disabled",
+          "description": "<VulnDiscussion>The Stream Control Transmission Protocol (SCTP) is a transport layer protocol used to support message oriented communication, with several streams of messages in one connection. It serves a similar function as TCP and UDP, incorporating features of both.\nIt is message-oriented like UDP, and ensures reliable in-sequence transport of messages with congestion control like TCP.\n\nRationale:\nIf the protocol is not being used, it is recommended that kernel module not be loaded, disabling the service to reduce the potential attack surface.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.3.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable the sctp module:\n# apiclient set kernel.modules.sctp.allowed=false",
+            "+@fixref": "F-369991E9r01_fix"
+          },
+          "fix": {
+            "+@id": "F-369991E9r01_fix"
+          },
+          "check": {
+            "+@system": "C-369991E9_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify the output is as indicated:\n# modprobe -n -v sctp\ninstall /bin/true\n# grep -w sctp /proc/modules\n<No output>"
+          }
+        }
+      },
+      {
+        "+@id": "V-6EC98ABD",
+        "title": "3.4.1 Configure IPv4 iptables",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6EC98ABDr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.4.1.1",
+          "title": "Ensure IPv4 default deny firewall policy",
+          "description": "<VulnDiscussion>A default deny all policy on connections ensures that any unconfigured network usage will be rejected.\n\nRationale:\nWith a default accept policy the firewall will accept any packet that is not configured to be denied. It is easier to allow list acceptable usage than to deny list unacceptable usage.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.4.1.1"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to implement a default DROP policy:\n# iptables -P INPUT DROP\n# iptables -P OUTPUT DROP\n# iptables -P FORWARD DROP",
+            "+@fixref": "F-6EC98ABDr01_fix"
+          },
+          "fix": {
+            "+@id": "F-6EC98ABDr01_fix"
+          },
+          "check": {
+            "+@system": "C-6EC98ABD_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify that the policy for the INPUT, OUTPUT, and FORWARD chains is DROP or REJECT:\n# iptables -L\nChain INPUT (policy DROP)\nChain FORWARD (policy DROP)\nChain OUTPUT (policy DROP)"
+          }
+        }
+      },
+      {
+        "+@id": "V-6E162466",
+        "title": "3.4.1 Configure IPv4 iptables",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6E162466r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.4.1.2",
+          "title": "Ensure IPv4 loopback traffic is configured",
+          "description": "<VulnDiscussion>Configure the loopback interface to accept traffic. Configure all other interfaces to deny traffic to the loopback network (127.0.0.0/8).\n\nRationale:\nLoopback traffic is generated between processes on machine and is typically critical to operation of the system. The loopback interface is the only place that loopback network (127.0.0.0/8) traffic should be seen, all other interfaces should ignore traffic on this network as an anti-spoofing measure.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.4.1.2"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to implement the loopback rules:\n# iptables -A INPUT -i lo -j ACCEPT\n# iptables -A OUTPUT -o lo -j ACCEPT\n# iptables -A INPUT -s 127.0.0.0/8 -j DROP",
+            "+@fixref": "F-6E162466r01_fix"
+          },
+          "fix": {
+            "+@id": "F-6E162466r01_fix"
+          },
+          "check": {
+            "+@system": "C-6E162466_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output includes the listed rules in order (packet and byte counts may differ):\n# iptables -L INPUT -v -n\nChain INPUT (policy DROP 0 packets, 0 bytes)\npkts bytes target prot opt in out source\ndestination\n0 0 ACCEPT all -- lo * 0.0.0.0/0 0.0.0.0/0\n0 0 DROP all -- * * 127.0.0.0/8 0.0.0.0/0\n# iptables -L OUTPUT -v -n\nChain OUTPUT (policy DROP 0 packets, 0 bytes)\npkts bytes target prot opt in out source\ndestination\n0 0 ACCEPT all -- * lo 0.0.0.0/0 0.0.0.0/0"
+          }
+        }
+      },
+      {
+        "+@id": "V-E61017FD",
+        "title": "3.4.1 Configure IPv4 iptables",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E61017FDr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.4.1.3",
+          "title": "Ensure IPv4 outbound and established connections are configured",
+          "description": "<VulnDiscussion>Configure the firewall rules for new outbound, and established connections.\n\nRationale:\nIf rules are not in place for new outbound, and established connections all packets will be dropped by the default policy preventing network usage.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.4.1.3"
+          },
+          "fixtext": {
+            "+content": "Configure iptables in accordance with site policy. The following commands will implement a policy to allow all outbound connections and all established connections:\n# iptables -A OUTPUT -p tcp -m state --state NEW,ESTABLISHED -j ACCEPT\n# iptables -A OUTPUT -p udp -m state --state NEW,ESTABLISHED -j ACCEPT\n# iptables -A OUTPUT -p icmp -m state --state NEW,ESTABLISHED -j ACCEPT\n# iptables -A INPUT -p tcp -m state --state ESTABLISHED -j ACCEPT\n# iptables -A INPUT -p udp -m state --state ESTABLISHED -j ACCEPT\n# iptables -A INPUT -p icmp -m state --state ESTABLISHED -j ACCEPT",
+            "+@fixref": "F-E61017FDr01_fix"
+          },
+          "fix": {
+            "+@id": "F-E61017FDr01_fix"
+          },
+          "check": {
+            "+@system": "C-E61017FD_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify all rules for new outbound, and established connections match site policy:\n# iptables -L -v -n"
+          }
+        }
+      },
+      {
+        "+@id": "V-3B78BF2E",
+        "title": "3.4.2 Configure IPv6 ip6tables",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3B78BF2Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.4.2.1",
+          "title": "Ensure IPv6 default deny firewall policy",
+          "description": "<VulnDiscussion>A default deny all policy on connections ensures that any unconfigured network usage will be rejected.\n\nRationale:\nWith a default accept policy the firewall will accept any packet that is not configured to be denied. It is easier to allow list acceptable usage than to deny list unacceptable usage.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.4.2.1"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to implement a default DROP policy:\n# ip6tables -P INPUT DROP\n# ip6tables -P OUTPUT DROP\n# ip6tables -P FORWARD DROP",
+            "+@fixref": "F-3B78BF2Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-3B78BF2Er01_fix"
+          },
+          "check": {
+            "+@system": "C-3B78BF2E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify that the policy for the INPUT, OUTPUT, and FORWARD chains is DROP or REJECT:\n# ip6tables -L\nChain INPUT (policy DROP)\nChain FORWARD (policy DROP)\nChain OUTPUT (policy DROP)"
+          }
+        }
+      },
+      {
+        "+@id": "V-B9441344",
+        "title": "3.4.2 Configure IPv6 ip6tables",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B9441344r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.4.2.2",
+          "title": "Ensure IPv6 loopback traffic is configured",
+          "description": "<VulnDiscussion>Configure the loopback interface to accept traffic. Configure all other interfaces to deny traffic to the loopback network (::1).\n\nRationale:\nLoopback traffic is generated between processes on machine and is typically critical to operation of the system. The loopback interface is the only place that loopback network (::1) traffic should be seen, all other interfaces should ignore traffic on this network as an anti-spoofing measure.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.4.2.2"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to implement the loopback rules:\n# ip6tables -A INPUT -i lo -j ACCEPT\n# ip6tables -A OUTPUT -o lo -j ACCEPT\n# ip6tables -A INPUT -s ::1 -j DROP",
+            "+@fixref": "F-B9441344r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B9441344r01_fix"
+          },
+          "check": {
+            "+@system": "C-B9441344_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following commands and verify output includes the listed rules in order (packet and byte counts may differ):\n# ip6tables -L INPUT -v -n\nChain INPUT (policy DROP 0 packets, 0 bytes)\npkts bytes target prot opt in out source\ndestination\n0 0 ACCEPT all lo * ::/0 ::/0\n0 0 DROP all * * ::1 ::/0\n# ip6tables -L OUTPUT -v -n\nChain OUTPUT (policy DROP 0 packets, 0 bytes)\npkts bytes target prot opt in out source\ndestination\n0 0 ACCEPT all * lo ::/0 ::/0"
+          }
+        }
+      },
+      {
+        "+@id": "V-2F1EE82D",
+        "title": "3.4.2 Configure IPv6 ip6tables",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2F1EE82Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.4.2.3",
+          "title": "Ensure IPv6 outbound and established connections are configured",
+          "description": "<VulnDiscussion>Configure the firewall rules for new outbound, and established IPv6 connections.\n\nRationale:\nIf rules are not in place for new outbound, and established connections all packets will be dropped by the default policy preventing network usage.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "3.4.2.3"
+          },
+          "fixtext": {
+            "+content": "Configure iptables in accordance with site policy. The following commands will implement a policy to allow all outbound connections and all established connections:\n# ip6tables -A OUTPUT -p tcp -m state --state NEW,ESTABLISHED -j ACCEPT\n# ip6tables -A OUTPUT -p udp -m state --state NEW,ESTABLISHED -j ACCEPT\n# ip6tables -A OUTPUT -p icmp -m state --state NEW,ESTABLISHED -j ACCEPT\n# ip6tables -A INPUT -p tcp -m state --state ESTABLISHED -j ACCEPT\n# ip6tables -A INPUT -p udp -m state --state ESTABLISHED -j ACCEPT\n# ip6tables -A INPUT -p icmp -m state --state ESTABLISHED -j ACCEPT",
+            "+@fixref": "F-2F1EE82Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-2F1EE82Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-2F1EE82D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify all rules for new outbound, and established connections match site policy:\n# ip6tables -L -v -n"
+          }
+        }
+      },
+      {
+        "+@id": "V-C5C09FB5",
+        "title": "4.1.1 Configure journald",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C5C09FB5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.1.1",
+          "title": "Ensure journald is configured to write logs to persistent disk",
+          "description": "<VulnDiscussion>Data from the journal may be stored in volatile memory or persisted locally on the server. Logs in memory will be lost upon a system reboot. By persisting logs to local disk on the server they are protected from loss.\n\nRationale:\nWriting log data to disk will provide the ability to forensically reconstruct events which may have impacted the operations or security of a system even after a system crash or reboot.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "4.1.1.1"
+          },
+          "fixtext": {
+            "+content": "Update to a version of the OS with the correct journald configuration.",
+            "+@fixref": "F-C5C09FB5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C5C09FB5r01_fix"
+          },
+          "check": {
+            "+@system": "C-C5C09FB5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review /usr/lib/systemd/journald.conf.d/journald.conf and verify that logs are persisted to disk:\n# grep -Fw Storage /usr/lib/systemd/journald.conf.d/journald.conf\nStorage=persistent"
+          }
+        }
+      },
+      {
+        "+@id": "V-02BC1A59",
+        "title": "4.1 Configure Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-02BC1A59r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.2",
+          "title": "Ensure permissions on journal files are configured",
+          "description": "<VulnDiscussion>The journal is stored in /var/log/journal, and contains logged information from all services on the system.\n\nRationale:\nIt is important to ensure that log files have the correct permissions to ensure that sensitive data is archived and protected.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Bottlerocket Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Bottlerocket Benchmark",
+            "dc:identifier": "4.1.2"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to set permissions on all existing log files:\n# find /var/log/journal -type f -perm /g+wx,o+rwx -exec chmod g-wx,o-rwx \"{}\"\n+",
+            "+@fixref": "F-02BC1A59r01_fix"
+          },
+          "fix": {
+            "+@id": "F-02BC1A59r01_fix"
+          },
+          "check": {
+            "+@system": "C-02BC1A59_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Bottlerocket_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command and verify that other has no permissions on any files and group does not have write or execute permissions on any files:\n# find /var/log/journal -type f -perm /g+wx,o+rwx"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,2577 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_Cisco_IOS_XR_7_x",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2025-04-30"
+    },
+    "title": "CIS Cisco IOS XR 7.x",
+    "description": "All CIS Benchmarks™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Internal Only - General Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Internal Only - General Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completes successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Internal Only - General Target Technology Details This document, Security Configuration Benchmark for Cisco IOS XR, provides prescriptive guidance for establishing a secure configuration posture for Cisco Routers running Cisco IOS XR. This guide was developed and tested against Cisco IOS XR version 7.3. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at benchmarkinfo@cisecurity.org.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.0.1 Benchmark Date: 2025-04-30",
+      "+@id": "release-info"
+    },
+    "version": "1.0.1",
+    "Profile": [
+      {
+        "+@id": "L1_Public",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-7193D22F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-03C3A6F9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BF9EBFAF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BF1FA198",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-44C1473D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0EDF7A7C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C24FB214",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-463F6011",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D28A825A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D9458062",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A71C4E8A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B18AA125",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4E36AD69",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-57A0C6BA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-12B6581F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5D5ED507",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-18D05729",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4804F759",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3818D266",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D58D522E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B5D3DE8D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3830A77C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C57313C9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E2865ADC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-07F04649",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B1B5E7E6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DAE578AC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3EBABDE0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1EA485EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-037166CE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-730C2B2C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Classified",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-7193D22F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-03C3A6F9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BF9EBFAF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BF1FA198",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-44C1473D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0EDF7A7C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C24FB214",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-463F6011",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D28A825A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D9458062",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A71C4E8A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B18AA125",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4E36AD69",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-57A0C6BA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-12B6581F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5D5ED507",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-18D05729",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4804F759",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3818D266",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D58D522E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B5D3DE8D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3830A77C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C57313C9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E2865ADC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-07F04649",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B1B5E7E6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DAE578AC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3EBABDE0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1EA485EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-037166CE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-730C2B2C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Sensitive",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-7193D22F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-03C3A6F9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BF9EBFAF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BF1FA198",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-44C1473D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0EDF7A7C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C24FB214",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-463F6011",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D28A825A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D9458062",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A71C4E8A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B18AA125",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4E36AD69",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-57A0C6BA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-12B6581F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5D5ED507",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-18D05729",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4804F759",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3818D266",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D58D522E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B5D3DE8D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3830A77C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C57313C9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E2865ADC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-07F04649",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B1B5E7E6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DAE578AC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3EBABDE0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1EA485EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-037166CE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-730C2B2C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Public",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-897C8D26",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BCC5B39A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71E6FF53",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-938876E2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-11C27248",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5FD76E79",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-82D04C1D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-642E73B6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D140A6A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8F711E6D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7B715356",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F1993C78",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D189A803",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-96155F1F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8EEC63E4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-845F4775",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5CD09B0C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D3C60E09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0E5499C0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-02256221",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-47D531D8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F77DD1D4",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Classified",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-897C8D26",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BCC5B39A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71E6FF53",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-938876E2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-11C27248",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5FD76E79",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-82D04C1D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-642E73B6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D140A6A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8F711E6D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7B715356",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F1993C78",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D189A803",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-96155F1F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8EEC63E4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-845F4775",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5CD09B0C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D3C60E09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0E5499C0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-02256221",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-47D531D8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F77DD1D4",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Sensitive",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-897C8D26",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BCC5B39A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71E6FF53",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-938876E2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-11C27248",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5FD76E79",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-82D04C1D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-642E73B6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D140A6A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8F711E6D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7B715356",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F1993C78",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D189A803",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-96155F1F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8EEC63E4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-845F4775",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5CD09B0C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D3C60E09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0E5499C0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-02256221",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-47D531D8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F77DD1D4",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-897C8D26",
+        "title": "1.1.1 AAA prerequisites",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-897C8D26r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.1.1.1",
+          "title": "TACACS+",
+          "description": "<VulnDiscussion>Cisco IOS XR devices can use the TACACS+ protocol to communicate with a central AAA server. Using a central authentication store ensures that all administrative actions are tied to named users, making the tracking of changes much easier. It also makes tracking compromised accounts and malicious activities much easier.\n\nRationale:\nCentral authentication is key as it minimizes the effort in managing named user accounts. Keeping local admin accounts opens the door to all the issues inherent in shared accounts, namely:\n• Errors in implementation being done by generic admin accounts, which can then be denied by all.\n• Shared credentials staying unchanged when administrative staff leave the organization or change roles.\n• Giving malicious actors the ability to recover shared credentials from saved device backups</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.1.1.1"
+          },
+          "fixtext": {
+            "+content": "For complete instructions how to configure AAA please refer to the configuration guide.\nBelow you can find some minimum config snippets to implement a radius or tacacs+ server group.\nIOSXR(config)#tacacs-server host {tacacs_ip_address} port 49\nIOSXR(config-tacacs-host)#key {tacacs_key}\nIOSXR(config)#aaa group server tacacs+ {tacacs_group_name}\nIOSXR(config-sg-tacacs)#server {tacacs_ip_address}",
+            "+@fixref": "F-897C8D26r01_fix"
+          },
+          "fix": {
+            "+@id": "F-897C8D26r01_fix"
+          },
+          "check": {
+            "+@system": "C-897C8D26_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "\"show run aaa\" shows all hierarchic configuration on a single line with the hierarchy prepended.\nTwo or more TACACS servers must be defined, and they must be referenced by a aaa group:\nInternal Only - General\nIOSXR#sh run aaa\n!\ntacacs-server host 1.1.1.1 port 49\nkey 7 070C285F4D06\n!\ntacacs-server host 1.1.1.2 port 49\nkey 7 00071A150754\n!\naaa group server tacacs+ TAC\nserver 1.1.1.1\nserver 1.1.1.2"
+          }
+        }
+      },
+      {
+        "+@id": "V-BCC5B39A",
+        "title": "1.1.1 AAA prerequisites",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BCC5B39Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.1.1.2",
+          "title": "RADIUS",
+          "description": "<VulnDiscussion>Cisco IOS XR devices can use the RADIUS protocol to communicate with a central AAA server. Using a central authentication store ensures that all administrative actions are tied to named users, making the tracking of changes much easier. It also makes tracking compromised accounts and malicious activities much easier.\n\nRationale:\nCentral authentication is key as it minimizes the effort in managing named user accounts. Keeping local admin accounts opens the door to all the issues inherent in shared accounts, namely:\n• Errors in implementation being done by generic admin accounts, which can then be denied by all.\n• Shared credentials staying unchanged when administrative staff leave the organization or change roles.\n• Giving malicious actors the ability to recover shared credentials from saved device backups</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.1.1.2"
+          },
+          "fixtext": {
+            "+content": "For complete instructions how to configure AAA please refer to the configuration guide.\nBelow you can find some minimum config snippets to implement a radius or tacacs+ server group.\nradius-server host {radius_ip_address}\nkey {radius_key}\naaa group server radius {radius_group_name}\nserver radius_ip_address}",
+            "+@fixref": "F-BCC5B39Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-BCC5B39Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-BCC5B39A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "\"show run aaa\" shows all hierarchic configuration on a single line with the hierarchy prepended.\nTwo or more RADIUS servers must be defined, and they must be referenced by a aaa group:\nInternal Only - General\nIOSXR#sh run aaa\n!\nradius-server host 2.2.2.2 auth-port 1645 acct-port 1646\nkey 7 1511021F0725\n!\nradius-server host 2.2.2.3 auth-port 1645 acct-port 1646\nkey 7 13061E010803\n!\naaa group server radius RAD\nserver 2.2.2.2 auth-port 1645 acct-port 1646\nserver 2.2.2.3 auth-port 1645 acct-port 1646"
+          }
+        }
+      },
+      {
+        "+@id": "V-7193D22F",
+        "title": "1.1.2 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7193D22Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1.2.1",
+          "title": "console authentication",
+          "description": "<VulnDiscussion>Authenticate management access to the network devices. Typically a central authentication store combined with a fallback mechanism should be implemented to allow emergency access, in case the central authentication servers are not available.\n\nRationale:\nManagement access to network devices must be authenticated. The default under AAA (local or network) is to require users to log in using a valid user name and password.\nThis rule applies for both local and network AAA. Fallback mode should also be enabled to allow emergency access to the router or switch in the event that the AAA server was unreachable.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.1.2.1"
+          },
+          "fixtext": {
+            "+content": "Configure an authentication list that references the AAA group that was created in the prerequisites. AAA lists are prioritized list of databases. If the system is unable to use a database, it automatically rolls over to the next database on the list. If the authentication, authorization, or accounting request is rejected by any database, the rollover does not occur and the request is rejected.\nIt is common to include \"local\" as the last entry in the list, to allow access to manage the device even if all servers from the AAA group are unavailable. Note that it also means that if an attacker can DoS the AAA Servers, they can start to try authenticate locally as well. Hence, always ensure to use strong passwords for local users.\nIOSXR(config)#aaa authentication login default group\n{tacacs_group|radius_group} local\nAbove configuration authenticates first against a central aaa group and uses local user accounts as fallback.\nEnsure the above list is referenced under the line templates:\nIOSXR(config)#line console login authentication default\nEnsure the vty pool references the above line template:\nIOSXR(config)#vty-pool default 0 4 line-template default",
+            "+@fixref": "F-7193D22Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-7193D22Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-7193D22F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "The console doesn't have any line pool. The console is configured directly:\nIOSXR#show run formal | i \"login authentication\"\nline console login authentication default\nVerify an authentication list is defined and optionally references the aaa group that was created in the prerequisites:\nIOSXR#show run formal | i \"aaa authentication login\"\naaa authentication login default group {tacacs_group|radius_group} local\nIf a group is referenced above in the authentication list, verify that group is defined:\nInternal Only - General\nIOSXR#r#show run formal | i \"aaa group server\"\naaa group server tacacs+ {tacacs_group|radius_group}"
+          }
+        }
+      },
+      {
+        "+@id": "V-03C3A6F9",
+        "title": "1.1.2 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-03C3A6F9r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1.2.2",
+          "title": "vty line authentication",
+          "description": "<VulnDiscussion>Authenticate management access to the network devices. Typically a central authentication store combined with a fallback mechanism should be implemented to allow emergency access, in case the central authentication servers are not available.\n\nRationale:\nManagement access to network devices must be authenticated. The default under AAA (local or network) is to require users to log in using a valid user name and password.\nThis rule applies for both local and network AAA. Fallback mode should also be enabled to allow emergency access to the router or switch in the event that the AAA server was unreachable.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.1.2.2"
+          },
+          "fixtext": {
+            "+content": "Configure an authentication list that references the AAA group that was created in the prerequisites. AAA lists are prioritized list of databases. If the system is unable to use a database, it automatically rolls over to the next database on the list. If the authentication, authorization, or accounting request is rejected by any database, the rollover does not occur and the request is rejected.\nIt is common to include \"local\" as the last entry in the list, to allow access to manage the device even if all servers from the AAA group are unavailable. Note that it also means that if an attacker can DoS the AAA Servers, they can start to try authenticate locally as well. Hence, always ensure to use strong passwords for local users.\nIOSXR(config)#aaa authentication login default group\n{tacacs_group|radius_group} local\nAbove configuration authenticates first against a central aaa group and uses local user accounts as fallback.\nEnsure the above list is referenced under the line templates:\nIOSXR(config)#line console login authentication default\nIOSXR(config)#line default login authentication default\nEnsure the vty pool references the above line template:\nIOSXR(config)#vty-pool default 0 4 line-template default",
+            "+@fixref": "F-03C3A6F9r01_fix"
+          },
+          "fix": {
+            "+@id": "F-03C3A6F9r01_fix"
+          },
+          "check": {
+            "+@system": "C-03C3A6F9_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check which line templates are referenced by the vty pool:\nIOSXR#show run formal | i \"vty-pool\"\nvty-pool default 0 4 line-template default\nEnsure the above list is referenced under the line templates:\nIOSXR#show run formal | i \"login authentication\"\nline console login authentication default\nline default login authentication default\nVerify an authentication list is defined and optionally references the aaa group that was created in the prerequisites:\nInternal Only - General\nIOSXR#show run formal | i \"aaa authentication login\"\naaa authentication login default group {tacacs_group|radius_group} local"
+          }
+        }
+      },
+      {
+        "+@id": "V-71E6FF53",
+        "title": "1.1.3 Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-71E6FF53r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.1.3.1",
+          "title": "Configure Authorization",
+          "description": "<VulnDiscussion>Command authorization allows restricting specific users to specific command sets that they can use on the device. Command authorization is a complex endeavor and is very rarely implemented. Usually, the TACACS+ protocol is used with a central AAA server.\n\nRationale:\nCommand authorization allows the implementation of fine-grained role-based access control concepts.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.1.3.1"
+          },
+          "fixtext": {
+            "+content": "Currently CIS makes no recommendations how to implement command authorization.\nRoles and access-privileges should be defined in collaboration with your operations and security teams.",
+            "+@fixref": "F-71E6FF53r01_fix"
+          },
+          "fix": {
+            "+@id": "F-71E6FF53r01_fix"
+          },
+          "check": {
+            "+@system": "C-71E6FF53_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check which line template is referenced by the vty-pools\nIOSXR#show run formal | i \"vty-pool\"\nvty-pool default 0 4 line-template default\nCheck the relationship between line template in use and the aaa list:\nIOSXR##show run formal | i \"authorization\"\nline console authorization commands default\nline default authorization commands default\nVerify an authentication list is defined and optionally references the aaa group that was created in the prerequisites:\nIOSXR#show run formal | i \"aaa authorization\"\naaa authorization commands default group {tacacs_group} none"
+          }
+        }
+      },
+      {
+        "+@id": "V-BF9EBFAF",
+        "title": "1.1.4 Accounting",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BF9EBFAFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1.4.1",
+          "title": "exec accounting",
+          "description": "<VulnDiscussion>The router reports user activity to the TACACS+ or RADIUS security server in the form of accounting records. Each accounting record contains accounting AV pairs and is stored on the security server.\n\nRationale:\nAuthentication, authorization and accounting (AAA) systems provide an authoritative source for managing and monitoring access for devices. Centralizing control improves consistency of access control, the services that may be accessed once authenticated and accountability by tracking services accessed. Additionally, centralizing access control simplifies and reduces administrative costs of account provisioning and de- provisioning, especially when managing a large number of devices. AAA Accounting provides a management and audit trail for user and administrative sessions through TACACS+.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.1.4.1"
+          },
+          "fixtext": {
+            "+content": "Configure an accounting list which for example includes the tacacs+ or radius server group, which was defined in the prerequisites or local or both:\nInternal Only - General\nIOSXR(config)#aaa accounting exec default start-stop group\n{tacacs_group|radius_group}\nIOSXR(config)#line console accounting exec default\nIOSXR(config)#line default accounting exec default\nNote: exec accounting doesn't support the \"local\" / syslog target.",
+            "+@fixref": "F-BF9EBFAFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-BF9EBFAFr01_fix"
+          },
+          "check": {
+            "+@system": "C-BF9EBFAF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Make sure an accounting list is defined and that same list (called 'default' in the example below) is referenced by the line templates.\nIOSXR#show run aaa\naaa accounting exec default start-stop group {tacacs_group|radius_group}\nline console accounting exec default\nline default accounting exec default\nIf not the 'line default' template is used, make sure the correct line template is associated with the vty-pool."
+          }
+        }
+      },
+      {
+        "+@id": "V-BF1FA198",
+        "title": "1.1.4 Accounting",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BF1FA198r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1.4.2",
+          "title": "command accounting",
+          "description": "<VulnDiscussion>The router reports user activity to the TACACS+ or RADIUS security server in the form of accounting records. Each accounting record contains accounting AV pairs and is stored on the security server.\n\nRationale:\nAuthentication, authorization and accounting (AAA) systems provide an authoritative source for managing and monitoring access for devices. Centralizing control improves consistency of access control, the services that may be accessed once authenticated and accountability by tracking services accessed. Additionally, centralizing access control simplifies and reduces administrative costs of account provisioning and de- provisioning, especially when managing a large number of devices. AAA Accounting provides a management and audit trail for user and administrative sessions through TACACS+.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.1.4.2"
+          },
+          "fixtext": {
+            "+content": "Configure an accounting list which for example includes the tacacs+ or radius server group, which was defined in the prerequisites or local or both:\nInternal Only - General\nIOSXR(config)#aaa accounting commands default start-stop group\n{tacacs_group|radius_group} local\nIOSXR(config)#line console accounting commands default\nIOSXR(config)#line default accounting commands default",
+            "+@fixref": "F-BF1FA198r01_fix"
+          },
+          "fix": {
+            "+@id": "F-BF1FA198r01_fix"
+          },
+          "check": {
+            "+@system": "C-BF1FA198_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Make sure an accounting list is defined and that same list (called 'default' in the example below) is referenced by the line templates.\nIOSXR#show run aaa\naaa accounting commands default start-stop local none\nline console accounting commands default\nline default accounting commands default\nIf not the 'line default' template is used, make sure the correct line template is associated with the vty-pool."
+          }
+        }
+      },
+      {
+        "+@id": "V-44C1473D",
+        "title": "1.1.4 Accounting",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-44C1473Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1.4.3",
+          "title": "network accounting",
+          "description": "<VulnDiscussion>The router reports user activity to the TACACS+ or RADIUS security server in the form of accounting records. Each accounting record contains accounting AV pairs and is stored on the security server.\n\nRationale:\nAuthentication, authorization and accounting (AAA) systems provide an authoritative source for managing and monitoring access for devices. Centralizing control improves consistency of access control, the services that may be accessed once authenticated and accountability by tracking services accessed. Additionally, centralizing access control simplifies and reduces administrative costs of account provisioning and de- provisioning, especially when managing a large number of devices. AAA Accounting provides a management and audit trail for user and administrative sessions through TACACS+.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.1.4.3"
+          },
+          "fixtext": {
+            "+content": "Configure an accounting list which includes the tacacs+ or radius server group, that was defined in the prerequisites or local or both:\naaa accounting network default start-stop group {tacacs_group|radius_group}",
+            "+@fixref": "F-44C1473Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-44C1473Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-44C1473D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the network accounting\nIOSXR#show run aaa\naaa accounting network default start-stop group {tacacs_group|radius_group}"
+          }
+        }
+      },
+      {
+        "+@id": "V-0EDF7A7C",
+        "title": "1.1.4 Accounting",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0EDF7A7Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1.4.4",
+          "title": "system accounting",
+          "description": "<VulnDiscussion>The router reports user activity to the TACACS+ or RADIUS security server in the form of accounting records. Each accounting record contains accounting AV pairs and is stored on the security server.\n\nRationale:\nAuthentication, authorization and accounting (AAA) systems provide an authoritative source for managing and monitoring access for devices. Centralizing control improves consistency of access control, the services that may be accessed once authenticated and accountability by tracking services accessed. Additionally, centralizing access control simplifies and reduces administrative costs of account provisioning and de- provisioning, especially when managing a large number of devices. AAA Accounting provides a management and audit trail for user and administrative sessions through TACACS+.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.1.4.4"
+          },
+          "fixtext": {
+            "+content": "Configure an accounting list which includes the tacacs+ or radius server group, that was defined in the prerequisites or local or both:\naaa accounting system default start-stop group {tacacs_group|radius_group}",
+            "+@fixref": "F-0EDF7A7Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-0EDF7A7Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-0EDF7A7C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the system accounting:\nIOSXR#show run aaa\naaa accounting system default start-stop group {tacacs_group|radius_group}"
+          }
+        }
+      },
+      {
+        "+@id": "V-938876E2",
+        "title": "1.1 Authentication, Authorization and Accounting (AAA) Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-938876E2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.1.5",
+          "title": "Local users, groups and tasks",
+          "description": "<VulnDiscussion>To provide controlled access to the XR and System Admin configurations on the router, user profiles are created with assigned privileges. The privileges are specified using command rules and data rules. The authentication, authorization, and accounting (aaa) commands are used for the creation of users, groups, command rules, and data rules.\nThe aaa commands are also used for changing the disaster-recovery password.\n\nRationale:\nIOS-XR has a very strong embedded mechanism to do user authentication and authorization. While XR does not have the concept of privilege-levels as what IOS had, the embedded user task group management is extremely strong allow for the creation of different task groups.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.1.5"
+          },
+          "fixtext": {
+            "+content": "The commands below will enable authorizarion for a user.\nIOSXR(config)#taskgroup {task_group} task read {task}\nIOSXR(config)#usergroup {user_group} taskgroup {task_group}\nIOSXR(config)#username {username}\nIOSXR(config-un)#secret {password}\nIOSXR(config-un)#group {user_group}",
+            "+@fixref": "F-938876E2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-938876E2r01_fix"
+          },
+          "check": {
+            "+@system": "C-938876E2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "\"show run aaa\" shows all hierarchic configuration on a single line with the hierarchy prepended.\nInternal Only - General\nIOSXR#sh run aaa\ntaskgroup TASKGROUP\ntask read bgp\n!\nusergroup XRGROUP\ntaskgroup TASKGROUP\n!\nusername cisco\ngroup root-lr\ngroup cisco-support\nsecret 10\n$6$O51Wr/lUsR6S5r/.$.qUOapiguyRPwNwix3FVwc9APW3WvrhZv84z0F7cM0zxcyCiXwQ45YuX/\np/jDXb4cS7bTxemvGK73giBtJHoj.\n!\nusername USER1\ngroup XRGROUP\nsecret 10\n$6$cTTjN1rrPqxaBN1.$jq8GqQ.hSwZXb72YxgTCPgm3kZ2MT51FAlXcJDN54l/vY9TNa8Nob6cyY\ntT4vT4Y9wjtH9R7aK3KmUgwjR5pz0\n!"
+          }
+        }
+      },
+      {
+        "+@id": "V-C24FB214",
+        "title": "1.2 SSH",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C24FB214r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2.1",
+          "title": "Set the 'hostname'",
+          "description": "<VulnDiscussion>The hostname is used in prompts and default configuration filenames.\n\nRationale:\nThe domain name is prerequisite for setting up SSH.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.2.1"
+          },
+          "fixtext": {
+            "+content": "Configure an appropriate host name for the router.\nIOSXR(config)#hostname {hostname}",
+            "+@fixref": "F-C24FB214r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C24FB214r01_fix"
+          },
+          "check": {
+            "+@system": "C-C24FB214_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the local time zone is configured:\nVerify the result shows the summer-time recurrence is configured properly.\nIOSXR#sh run | incl hostname"
+          }
+        }
+      },
+      {
+        "+@id": "V-463F6011",
+        "title": "1.2 SSH",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-463F6011r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2.2",
+          "title": "Set 'modulus' to greater than or equal to 2048 for 'crypto key generate rsa'",
+          "description": "<VulnDiscussion>Use this command to generate RSA key pairs for your Cisco device.\nRSA keys are generated in pairs--one public RSA key and one private RSA key.\n\nRationale:\nAn RSA key pair is a prerequisite for setting up SSH and should be at least 2048 bits.\nNOTE: IOS does NOT display the modulus bit value in the Audit Procedure.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.2.2"
+          },
+          "fixtext": {
+            "+content": "Generate an RSA key pair for the router.\nInternal Only - General\nIOSXR#crypto key generate rsa general-keys\nWed Jul 19 18:10:51.633 UTC\nThe name for the keys will be: the_default\n% You already have keys defined for the_default\nDo you really want to replace them? [yes/no]: yes\nChoose the size of the key modulus in the range of 512 to 4096 for your\nGeneral Purpose Keypair. Choosing a key modulus greater than 512 may take a\nfew minutes.\nHow many bits in the modulus [2048]:\nGenerating RSA keys ...\nDone w/ crypto generate keypair\n[OK]",
+            "+@fixref": "F-463F6011r01_fix"
+          },
+          "fix": {
+            "+@id": "F-463F6011r01_fix"
+          },
+          "check": {
+            "+@system": "C-463F6011_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the RSA key pair is configured:\nIOSXR#sh crypto key mypubkey rsa\nWed Jul 19 18:09:46.009 UTC\nKey label: the_default\nType : RSA General purpose\nSize : 2048\nCreated : 16:25:09 UTC Wed Jul 19 2023"
+          }
+        }
+      },
+      {
+        "+@id": "V-D28A825A",
+        "title": "1.2 SSH",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D28A825Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2.3",
+          "title": "Set 'seconds' for 'ssh timeout' for 60 seconds or less",
+          "description": "<VulnDiscussion>The time interval that the router waits for the SSH client to respond before disconnecting an uncompleted login attempt.\n\nRationale:\nThis reduces the risk of an administrator leaving an authenticated session logged in for an extended period of time.\nCIS Recommends 60 seconds or less.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.2.3"
+          },
+          "fixtext": {
+            "+content": "Configure the SSH timeout\nIOSXR(config)#ssh timeout {ssh_timeout}",
+            "+@fixref": "F-D28A825Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-D28A825Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-D28A825A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the SSH timeout is configured:\nVerify the timeout is configured properly.\nIOSXR#sh running-config ssh timeout\nWed Jul 19 18:13:59.732 UTC\nssh timeout 53"
+          }
+        }
+      },
+      {
+        "+@id": "V-D9458062",
+        "title": "1.3 Global Service Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D9458062r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3.1",
+          "title": "Disable CDP",
+          "description": "<VulnDiscussion>Disable Cisco Discovery Protocol (CDP) service at device level.\n\nRationale:\nThe Cisco Discovery Protocol is a proprietary protocol that Cisco devices use to identify each other on a LAN segment. It is useful only in network monitoring and troubleshooting situations but is considered a security risk because of the amount of information provided from queries. In addition, there have been published denial-of- service (DoS) attacks that use CDP. CDP should be completely disabled unless necessary.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.3.1"
+          },
+          "fixtext": {
+            "+content": "Disable Cisco Discovery Protocol (CDP) service globally.\nIOSXR(config)#no cdp",
+            "+@fixref": "F-D9458062r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D9458062r01_fix"
+          },
+          "check": {
+            "+@system": "C-D9458062_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if CDP is enabled:\nVerify the result shows \"CDP is not enabled\"\nIOSXR#show cdp"
+          }
+        }
+      },
+      {
+        "+@id": "V-A71C4E8A",
+        "title": "1.3 Global Service Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A71C4E8Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3.2",
+          "title": "Disable TCP and UDP small servers",
+          "description": "<VulnDiscussion>TCP and UDP small servers are servers (daemons, in Unix parlance) that run in the router which are useful for diagnostics.\n\nRationale:\nTCP Small Servers The TCP small servers are:\nEcho: Echoes back whatever you type through the telnet x.x.x.x echo command.\nChargen: Generates a stream of ASCII data. Use the telnet x.x.x.x chargen command.\nDiscard: Throws away whatever you type. Use the telnet x.x.x.x discard command.\nDaytime: Returns system date and time, if it is correct. It is correct if you run Network Time Protocol (NTP), or have set the date and time manually from the exec level. Use the telnet x.x.x.x daytime command.\nReplace x.x.x.x with the IP address of your router. Most routers inside Cisco run the small servers.\nUDP Small Servers The UDP small servers are:\nEcho: Echoes the payload of the datagram you send.\nDiscard: Silently pitches the datagram you send.\nChargen: Pitches the datagram you send, and responds with a 72-character string of ASCII characters terminated with a CR+LF.\nNotes:\nAlmost all Unix boxes support the small servers listed above.\nThe router also offers finger service and async line bootp service, which you can independently turn off with the configuration global commands no service finger and no ip bootp server, respectively.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.3.2"
+          },
+          "fixtext": {
+            "+content": "Disable TCp and UDP small services\nIOSXR(config)#no service ipv4 tcp-small-servers max-servers 10\nIOSXR(config)#no service ipv4 udp-small-servers max-servers 10\nIOSXR(config)#commit",
+            "+@fixref": "F-A71C4E8Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-A71C4E8Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-A71C4E8A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the feature is enabled:\nVerify a command string result returns Internal Only - General\nIOSXR#show run | incl small\nservice ipv4 tcp-small-servers max-servers 10\nservice ipv4 udp-small-servers max-servers 10"
+          }
+        }
+      },
+      {
+        "+@id": "V-B18AA125",
+        "title": "1.4 Logging Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B18AA125r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4.1",
+          "title": "Enable logging",
+          "description": "<VulnDiscussion>Enable logging of system messages.\n\nRationale:\nLogging provides a chronological record of activities on the Cisco device and allows monitoring of both operational and security related events.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.4.1"
+          },
+          "fixtext": {
+            "+content": "Enable system logging.\nIOSXR(config)#logging trap {severity_level}",
+            "+@fixref": "F-B18AA125r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B18AA125r01_fix"
+          },
+          "check": {
+            "+@system": "C-B18AA125_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the feature is enabled:\nVerify no result returns\nIOSXR#sh logging\nWed Jul 19 18:27:39.571 UTC\nSyslog logging: enabled (0 messages dropped, 0 flushes, 0 overruns)\nConsole logging: level warnings, 121 messages logged\nMonitor logging: level debugging, 0 messages logged\nTrap logging: level alert, 0 messages logged\nLogging to 1.1.1.1, 0 message lines logged\nBuffer logging: level debugging, 909 messages logged"
+          }
+        }
+      },
+      {
+        "+@id": "V-4E36AD69",
+        "title": "1.4 Logging Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4E36AD69r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4.2",
+          "title": "Set 'buffer size'",
+          "description": "<VulnDiscussion>Enable system message logging to a local buffer.\n\nRationale:\nThe device can copy and store log messages to an internal memory buffer. The buffered data is available only from a router exec or enabled exec session. This form of logging is useful for debugging and monitoring when logged in to a router.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.4.2"
+          },
+          "fixtext": {
+            "+content": "Configure buffered logging (with minimum size). Recommended size is 64000.\nIOSXR(config)#logging buffered {logging_buffer_size}",
+            "+@fixref": "F-4E36AD69r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4E36AD69r01_fix"
+          },
+          "check": {
+            "+@system": "C-4E36AD69_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the feature is enabled:\nVerify a command string result returns\nIOSXR#sh logging\nWed Jul 19 18:30:49.736 UTC\nSyslog logging: enabled (0 messages dropped, 0 flushes, 0 overruns)\nConsole logging: level warnings, 123 messages logged\nMonitor logging: level debugging, 0 messages logged\nTrap logging: level alert, 0 messages logged\nLogging to 1.1.1.1, 0 message lines logged\nBuffer logging: level debugging, 916 messages logged\nIOSXR#sh run logging\nWed Jul 19 18:32:35.155 UTC\nlogging trap alerts\nlogging buffered 123123123\nlogging 1.1.1.1 vrf default severity alerts"
+          }
+        }
+      },
+      {
+        "+@id": "V-57A0C6BA",
+        "title": "1.4 Logging Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-57A0C6BAr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4.3",
+          "title": "Set 'logging console critical'",
+          "description": "<VulnDiscussion>Verify logging to device console is enabled and limited to a rational severity level to avoid impacting system performance and management.\n\nRationale:\nThis configuration determines the severity of messages that will generate console messages. Logging to console should be limited only to those messages required for immediate troubleshooting while logged into the device. This form of logging is not persistent; messages printed to the console are not stored by the router. Console logging is handy for operators when they use the console.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.4.3"
+          },
+          "fixtext": {
+            "+content": "Configure console logging level.\nIOSXR(config)#logging console critical",
+            "+@fixref": "F-57A0C6BAr01_fix"
+          },
+          "fix": {
+            "+@id": "F-57A0C6BAr01_fix"
+          },
+          "check": {
+            "+@system": "C-57A0C6BA_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the feature is enabled:\nVerify a command string result returns\nIOSXR#sh run logging\nWed Jul 19 18:32:35.155 UTC\nlogging trap alerts\nlogging buffered 123123123\nlogging 1.1.1.1 vrf default severity alerts"
+          }
+        }
+      },
+      {
+        "+@id": "V-12B6581F",
+        "title": "1.4 Logging Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-12B6581Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4.4",
+          "title": "Set IP address for 'logging host'",
+          "description": "<VulnDiscussion>Log system messages and debug output to a remote host.\n\nRationale:\nCisco routers can send their log messages to a Unix-style Syslog service. A syslog service simply accepts messages and stores them in files or prints them according to a simple configuration file. This form of logging is best because it can provide protected long-term storage for logs (the devices internal logging buffer has limited capacity to store events.) In addition, logging to an external system is highly recommended or required by most security standards. If desired or required by policy, law and/or regulation, enable a second syslog server for redundancy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.4.4"
+          },
+          "fixtext": {
+            "+content": "Designate one or more syslog servers by IP address.\nhostname(config)#logging host {syslog_server}",
+            "+@fixref": "F-12B6581Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-12B6581Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-12B6581F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if a syslog server is enabled:\nVerify one or more IP address(es) returns Internal Only - General\nRP/0/RP0/CPU0:IOSXR#sh logging\nWed Jul 19 18:35:21.188 UTC\nSyslog logging: enabled (0 messages dropped, 0 flushes, 0 overruns)\nConsole logging: level critical, 127 messages logged\nMonitor logging: level debugging, 0 messages logged\nTrap logging: level alert, 0 messages logged\nLogging to 1.1.1.1, 0 message lines logged\nBuffer logging: level debugging, 950 messages logged\nIOSXR#sh run logging\nWed Jul 19 18:35:46.794 UTC\nlogging trap alerts\nlogging console critical\nlogging buffered 123123123\nlogging 1.1.1.1 vrf default severity alerts"
+          }
+        }
+      },
+      {
+        "+@id": "V-5D5ED507",
+        "title": "1.4 Logging Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5D5ED507r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4.5",
+          "title": "Set 'logging trap informational'",
+          "description": "<VulnDiscussion>Limit messages logged to the syslog servers based on severity level informational.\n\nRationale:\nThis determines the severity of messages that will generate simple network management protocol (SNMP) trap and or syslog messages. This setting should be set to either \"debugging\" (7) or \"informational\" (6), but no lower.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.4.5"
+          },
+          "fixtext": {
+            "+content": "Configure SNMP trap and syslog logging level.\nInternal Only - General\nIOSXR(config)#logging trap informational",
+            "+@fixref": "F-5D5ED507r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5D5ED507r01_fix"
+          },
+          "check": {
+            "+@system": "C-5D5ED507_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if a syslog server for SNMP traps is enabled:\nVerify \"level informational\" returns\nIOSXR#sh run logging\nWed Jul 19 18:36:42.079 UTC\nlogging trap alerts\nlogging console critical\nlogging buffered 123123123\nlogging 1.1.1.1 vrf default severity alerts\nIOSXR#sh logging\nWed Jul 19 18:37:03.574 UTC\nSyslog logging: enabled (0 messages dropped, 0 flushes, 0 overruns)\nConsole logging: level critical, 127 messages logged\nMonitor logging: level debugging, 0 messages logged\nTrap logging: level alert, 0 messages logged\nLogging to 1.1.1.1, 0 message lines logged\nBuffer logging: level debugging, 961 messages logged"
+          }
+        }
+      },
+      {
+        "+@id": "V-18D05729",
+        "title": "1.4 Logging Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-18D05729r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4.6",
+          "title": "Set logging timestamps",
+          "description": "<VulnDiscussion>Configure the system to apply a time stamp to debugging messages or system logging messages\n\nRationale:\nIncluding timestamps in log messages allows correlating events and tracing network attacks across multiple devices. Enabling service timestamp to mark the time log messages were generated simplifies obtaining a holistic view of events enabling faster troubleshooting of issues or attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.4.6"
+          },
+          "fixtext": {
+            "+content": "Configure debug messages to include timestamps.\nIOSXR(config)#service timestamps log datetime msec",
+            "+@fixref": "F-18D05729r01_fix"
+          },
+          "fix": {
+            "+@id": "F-18D05729r01_fix"
+          },
+          "check": {
+            "+@system": "C-18D05729_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the additional detail is enabled:\nVerify a command string result returns\nIOSXR#sh run | inc timestamp\nWed Jul 19 18:40:59.975 UTC\nBuilding configuration...\nservice timestamps log datetime msec"
+          }
+        }
+      },
+      {
+        "+@id": "V-4804F759",
+        "title": "1.4 Logging Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4804F759r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4.7",
+          "title": "Set 'logging source interface'",
+          "description": "<VulnDiscussion>Specify the source IPv4 or IPv6 address of system logging packets\n\nRationale:\nThis is required so that the router sends log messages to the logging server from a consistent IP address.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.4.7"
+          },
+          "fixtext": {
+            "+content": "Bind logging to the loopback interface.\nIOSXR(config)#logging source-interface {logging_source_interface}",
+            "+@fixref": "F-4804F759r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4804F759r01_fix"
+          },
+          "check": {
+            "+@system": "C-4804F759_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if logging services are bound to a source interface:\nVerify a command string result returns\nIOSXR(config)#sh run logging\nWed Jul 19 18:41:55.797 UTC\nlogging trap informational\nlogging console critical\nlogging buffered 123123123\nlogging 1.1.1.1 vrf default severity alerts\nlogging source-interface MgmtEth0/RP0/CPU0/0"
+          }
+        }
+      },
+      {
+        "+@id": "V-3818D266",
+        "title": "1.5 SNMP Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3818D266r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5.1",
+          "title": "Unset 'private' for 'snmp-server community'",
+          "description": "<VulnDiscussion>An SNMP community string permits read-only access to all objects.\n\nRationale:\nThe default community string \"private\" is well known. Using easy to guess, well known community string poses a threat that an attacker can effortlessly gain unauthorized access to the device.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.5.1"
+          },
+          "fixtext": {
+            "+content": "Disable the default SNMP community string private\nIOSXR(config)#no snmp-server community {community_string}",
+            "+@fixref": "F-3818D266r01_fix"
+          },
+          "fix": {
+            "+@id": "F-3818D266r01_fix"
+          },
+          "check": {
+            "+@system": "C-3818D266_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the public community string is enabled:\nEnsure private does not show as a result\nIOSXR# show run snmp-server | inc snmp-server community"
+          }
+        }
+      },
+      {
+        "+@id": "V-D58D522E",
+        "title": "1.5 SNMP Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D58D522Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5.2",
+          "title": "Unset 'public' for 'snmp-server community'",
+          "description": "<VulnDiscussion>An SNMP community string permits read-only access to all objects.\n\nRationale:\nThe default community string \"public\" is well known. Using easy to guess, well known community string poses a threat that an attacker can effortlessly gain unauthorized access to the device.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.5.2"
+          },
+          "fixtext": {
+            "+content": "Disable the default SNMP community string \"public\"\nIOSXR(config)#no snmp-server community {community_string}",
+            "+@fixref": "F-D58D522Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-D58D522Er01_fix"
+          },
+          "check": {
+            "+@system": "C-D58D522E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the public community string is enabled: Ensure public does not show as a result\nIOSXR#show run | inc snmp-server community"
+          }
+        }
+      },
+      {
+        "+@id": "V-B5D3DE8D",
+        "title": "1.5 SNMP Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B5D3DE8Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5.3",
+          "title": "Do not set 'RW' for any 'snmp-server community'",
+          "description": "<VulnDiscussion>Specifies read-write access. Authorized management stations can both retrieve and modify MIB objects.\n\nRationale:\nEnabling SNMP read-write enables remote management of the device. Unless absolutely necessary, do not allow simple network management protocol (SNMP) write access.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.5.3"
+          },
+          "fixtext": {
+            "+content": "Disable SNMP write access.\nIOSXR(config)#no snmp-server community {community_string}",
+            "+@fixref": "F-B5D3DE8Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-B5D3DE8Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-B5D3DE8D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if a read/write community string is enabled:\nVerify the result does not show a community string with a \"RW\"\nIOSXR#show run | incl snmp-server community"
+          }
+        }
+      },
+      {
+        "+@id": "V-3830A77C",
+        "title": "1.5 SNMP Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3830A77Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5.4",
+          "title": "Set the ACL for each 'snmp-server community'",
+          "description": "<VulnDiscussion>This feature specifies a list of IP addresses that are allowed to use the community string to gain access to the SNMP agent.\n\nRationale:\nIf ACLs are not applied, then anyone with a valid SNMP community string can potentially monitor and manage the router. An ACL should be defined and applied for all SNMP access to limit access to a small number of authorized management stations segmented in a trusted management zone. If possible, use SNMPv3 which uses authentication, authorization, and data privatization (encryption).</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.5.4"
+          },
+          "fixtext": {
+            "+content": "Configure authorized SNMP community string and restrict access to authorized management systems.\nIOSXR(config)#snmp-server community {community_string} RO IPv4 {snmp_access-\nlist}",
+            "+@fixref": "F-3830A77Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-3830A77Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-3830A77C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if an ACL is enabled:\nVerify the result shows a number after the community string\nIOSXR#show run | incl snmp-server community"
+          }
+        }
+      },
+      {
+        "+@id": "V-C57313C9",
+        "title": "1.5 SNMP Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C57313C9r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5.5",
+          "title": "Set 'snmp-server host' when using SNMP",
+          "description": "<VulnDiscussion>SNMP notifications can be sent as traps to authorized management systems.\n\nRationale:\nIf SNMP is enabled for device management and device alerts are required, then ensure the device is configured to submit traps only to authorize management systems.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.5.5"
+          },
+          "fixtext": {
+            "+content": "Configure authorized SNMP trap community string and restrict sending messages to authorized management systems.\nIOSXR(config)#snmp-server host {ip_address} version {snmp_version}\n{encryption-type} {trap_community_string}",
+            "+@fixref": "F-C57313C9r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C57313C9r01_fix"
+          },
+          "check": {
+            "+@system": "C-C57313C9_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if SNMP traps are enabled:\nIf the command returns configuration values, then SNMP is enabled.\nIOSXR#show run | incl snmp-server host"
+          }
+        }
+      },
+      {
+        "+@id": "V-E2865ADC",
+        "title": "1.5 SNMP Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E2865ADCr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5.6",
+          "title": "Set 'snmp-server enable traps snmp'",
+          "description": "<VulnDiscussion>SNMP notifications can be sent as traps to authorized management systems.\n\nRationale:\nSNMP has the ability to submit traps .</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.5.6"
+          },
+          "fixtext": {
+            "+content": "Enable SNMP traps.\nIOSXR(config)#snmp-server traps snmp authentication",
+            "+@fixref": "F-E2865ADCr01_fix"
+          },
+          "fix": {
+            "+@id": "F-E2865ADCr01_fix"
+          },
+          "check": {
+            "+@system": "C-E2865ADC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if SNMP traps are enabled:\nIf the command returns configuration values, then SNMP is enabled.\nIOSXR#show run | incl snmp-server"
+          }
+        }
+      },
+      {
+        "+@id": "V-11C27248",
+        "title": "1.5 SNMP Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-11C27248r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.5.7",
+          "title": "Set 'priv' for each 'snmp-server group' using SNMPv3",
+          "description": "<VulnDiscussion>Specifies authentication of a packet with encryption when using SNMPv3\n\nRationale:\nSNMPv3 provides much improved security over previous versions by offering options for Authentication and Encryption of messages. When configuring a user for SNMPv3 you have the option of using a range of encryption schemes, or no encryption at all, to protect messages in transit. AES128 is the minimum strength encryption method that should be deployed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.5.7"
+          },
+          "fixtext": {
+            "+content": "For each SNMPv3 group created on your router add privacy options by issuing the following command...\nIOSXR(config)#snmp-server group {snmp_group_name} v3 priv IPv4 {snmp_access-\nlist}",
+            "+@fixref": "F-11C27248r01_fix"
+          },
+          "fix": {
+            "+@id": "F-11C27248r01_fix"
+          },
+          "check": {
+            "+@system": "C-11C27248_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the result show the appropriate group name and security model\nIOSXR#show run | inc snmp-server group"
+          }
+        }
+      },
+      {
+        "+@id": "V-5FD76E79",
+        "title": "1.5 SNMP Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5FD76E79r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.5.8",
+          "title": "Require 'aes 128' as minimum for 'snmp-server user' when using SNMPv3",
+          "description": "<VulnDiscussion>Specify the use of a minimum of 128-bit AES algorithm for encryption when using SNMPv3.\n\nRationale:\nSNMPv3 provides much improved security over previous versions by offering options for Authentication and Encryption of messages. When configuring a user for SNMPv3 you have the option of using a range of encryption schemes, or no encryption at all, to protect messages in transit. AES128 is the minimum strength encryption method that should be deployed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.5.8"
+          },
+          "fixtext": {
+            "+content": "For each SNMPv3 user created on your router add privacy options by issuing the following command.\nhostname(config)#snmp-server user {snmp_user_name} {snmp_group_name} v3 auth\nsha {snmp_auth_password} priv aes 128 {snmp_priv_password} ipv4 {snmp_access-\nlist}",
+            "+@fixref": "F-5FD76E79r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5FD76E79r01_fix"
+          },
+          "check": {
+            "+@system": "C-5FD76E79_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the result show the appropriate user name and security settings\nIOSXR#show snmp user"
+          }
+        }
+      },
+      {
+        "+@id": "V-07F04649",
+        "title": "1.6 Access Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-07F04649r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.6.1",
+          "title": "Disable Telnet Access",
+          "description": "<VulnDiscussion>Telnet is a clear-text administrative protocol. As such, both the credentials used to establish the session and all commands and data within the session are readable in clear-text, so can be intercepted or modified by an attacker\n\nRationale:\nTelnet doesn't natively support encryption or message integrity checks. Hence, any transmitted information (including credentials) is exposed to an attacker that gains access to the communication. Furthermore communication could be intercepted and modified by a man-in-the-middle attacker.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.6.1"
+          },
+          "fixtext": {
+            "+content": "It's recommended to restrict VTYs to SSH for management access and not allow this device to SSH to other devices:\nInternal Only - General\nvty-pool default 0 4 line-template default\nline default\ntransport input ssh\ntransport output none",
+            "+@fixref": "F-07F04649r01_fix"
+          },
+          "fix": {
+            "+@id": "F-07F04649r01_fix"
+          },
+          "check": {
+            "+@system": "C-07F04649_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check the vty pools in use:\nshow run formal | i vty-pool\nvty-pool default 0 4 line-template default\nline-template is \"default\", multiple vty-pools might exist, check each.\ncheck the corresponding line template:\nshow run formal | i \"line default\"\nline default exec-timeout ...\n...\nline default transport input ssh\nCheck if line default transport input ssh or line default transport input none is present."
+          }
+        }
+      },
+      {
+        "+@id": "V-B1B5E7E6",
+        "title": "1.6 Access Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B1B5E7E6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.6.2",
+          "title": "Restrict VTY Access",
+          "description": "<VulnDiscussion>VTY access can be restricted via access-lists to limit from which the source addresses a management session to the device can be established.\n\nRationale:\nVTY ACLs control what addresses may attempt to log in to the router. Configuring VTY lines to use an ACL, restricts the sources where a user can manage the device. You should limit the specific host(s) and or network(s) authorized to connect to and configure the device, via an approved protocol, to those individuals or systems authorized to administer the device. For example, you could limit access to specific hosts, so that only network managers can configure the devices only by using specific network management workstations. Make sure you configure all VTY lines to use the same ACL.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.6.2"
+          },
+          "fixtext": {
+            "+content": "Define ACLs which match the allowed sources. To restrict access of incoming or outgoing connections over IPv4 and IPv6, the IPv4 access list and IPv6 access list must share the same name:\nipv4 access-list ACL-VTY-IN\n10 permit ipv4 192.168.1.0/24 any\n1000 deny ipv4 any any log icmp-off\nipv6 access-list ACL-VTY-IN\n10 permit ipv6 2001:db8::/64 any\n1000 deny any any log icmp-off\nApply the ACL on the line template:\nvty-pool default 0 4 line-template default\nline default\naccess-class ingress ACL-VTY-IN\nAlternatively you can implement restrictions on the SSH Server which allows both IPv4 and IPv6. Note that SSH could be also used for Netconf, so the ACL might need to include additional sources which do not apply for VTY access only.\nssh server ipv4 access-list ACL-VTY-IN ipv6 access-list ACL-VTY-IN",
+            "+@fixref": "F-B1B5E7E6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B1B5E7E6r01_fix"
+          },
+          "check": {
+            "+@system": "C-B1B5E7E6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check the vty pools in use:\nshow run formal | i vty-pool\nvty-pool default 0 4 line-template default\nline-template is \"default\", multiple vty-pools might exist, check each.\ncheck the corresponding line template:\nshow run formal | i \"line default access\"\nline default access-class ingress {ssh_access-list}\nCheck if ACLs are applied to SSH server:\nshow run formal | i \"ssh.*access\"\nssh server vrf default ipv4 access-list {ssh_access-list}\nAudit fails if access- is not in any of the outputs.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-DAE578AC",
+        "title": "1.6 Access Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-DAE578ACr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.6.3",
+          "title": "Ensure Exec Timeout for Console Sessions is set",
+          "description": "<VulnDiscussion>Verify device is configured to automatically disconnect console sessions after a defined maximum session time, set in minutes.\nNote there are 3 different timeout values:\n• absolute-timeout: terminate the connection after the specified time has elapsed, regardless of whether the connection is being used at the time of termination.\n• exec-timeout: If no user input is detected during the interval, the EXEC facility returns the terminal to the idle state and disconnects the incoming session\n• session-timeout: Traditionally the VTY can be used for other features than EXEC (CLI), e.g. terminal server, PAD, async lines etc. The session-timeout applies to any sessions running to/through the router on VTY. Use the session-timeout command to set the interval that the Cisco IOS XR software waits for traffic before closing the connection to a remote device and returning the terminal to an idle state.\nFor management access we need to configure the exec-timeout.\n\nRationale:\nThis prevents unauthorized users from misusing abandoned sessions. For example, if the network administrator disconnects leaving a console session open, that session will remain open (in the same state and privilege level) for the next person who connects a console cable to the device.\nA shorter timeout is usually desired, but this can be extended for longer-running operations such as debug sessions or software upgrades.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.6.3"
+          },
+          "fixtext": {
+            "+content": "vty-pool default 0 4 line-template default\nline default\nexec-timeout 10 0",
+            "+@fixref": "F-DAE578ACr01_fix"
+          },
+          "fix": {
+            "+@id": "F-DAE578ACr01_fix"
+          },
+          "check": {
+            "+@system": "C-DAE578AC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check if the exec timeout on the console is configured:\nInternal Only - General\nshow run formal | i \"console exec\"\nline console exec-timeout 10 0\nAudit fails if value is not in accordance with your organization standards.\nIf not configured, the default value of 10 minutes applies."
+          }
+        }
+      },
+      {
+        "+@id": "V-3EBABDE0",
+        "title": "1.7 Banner Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3EBABDE0r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.7.1",
+          "title": "Pre-authentication Banner",
+          "description": "<VulnDiscussion>A pre-authentication banner is displayed when a terminal connects, before a login occurs. This banner is useful for sending messages that affect all users (such as impending system shutdowns). This banner can also be used to notify unauthorized users of any penalties to accessing the device, or any logging that may be configured.\n\nRationale:\nNetwork banners are electronic messages that provide notice of legal rights to users of computer networks. From a legal standpoint, banners have following primary functions.\n• Banners may be used to generate consent to real-time monitoring under ECPA Title III.\n• Banners may be used to generate consent to the retrieval of stored files and records pursuant to ECPA.\n• in the case of government networks, banners may eliminate any Fourth Amendment \"reasonable expectation of privacy\" that government employees or other users might otherwise retain in their use of the government's network under O'Connor v. Ortega, 480 U.S. 709 (1987).\n• In the case of a non-government network, banners may establish a system administrator's \"common authority\" to consent to a law enforcement search pursuant to United States v. Matlock, 415 U.S. 164 (1974).\" (US Department of Justice APPENDIX A: Sample Network Banner Language) In your country different laws might apply. Please consult with your corporate legal team to assess the exact legal context and rules for banners.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.7.1"
+          },
+          "fixtext": {
+            "+content": "Configure a login banner as shown below. The delimiter character shown is a \"^\", but any character can serve as a delimiter.\nIOSXR(config)# banner login ^ {login_banner} ^",
+            "+@fixref": "F-3EBABDE0r01_fix"
+          },
+          "fix": {
+            "+@id": "F-3EBABDE0r01_fix"
+          },
+          "check": {
+            "+@system": "C-3EBABDE0_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Show the running configuration banners:\nIOSXR#show run banner\nIf the command does not return a result, the banner is not enabled.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-1EA485EF",
+        "title": "1.7 Banner Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1EA485EFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.7.2",
+          "title": "Post-authentication Banner",
+          "description": "<VulnDiscussion>A post-authentication banner is displayed to the user after a successful login. It can also serve as a legal notice to authorized users of the equipment to notify them of any logging that may be configured.\nThis banner is not appropriate to notify unauthorized users of any penalties to accessing the device, because after successful login corresponding laws might have already been violated.\nA post-authentication banner can often also hold asset-specific information, such as:\n• The primary technical contacts for the equipment\n• Location or environment information - for instance the street address or rack number or production / test / lab environment\n• The purchase date\n• The asset tag information for the device\n• Any upstream circuit numbers\n• Carrier or ISP support phone numbers\n• Any other asset-specific information that may be important to the organization\n\nRationale:\nPost-authentication banners can be used to reduce the risk of human error. For example by highlighting the current environment (Production or Lab).</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.7.2"
+          },
+          "fixtext": {
+            "+content": "Configure an exec banner as shown below. The delimiter character shown is a \"^\", but any character can serve as a delimiter.\nInternal Only - General\nIOSXR(config)# banner exec ^ {exec_banner} ^",
+            "+@fixref": "F-1EA485EFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-1EA485EFr01_fix"
+          },
+          "check": {
+            "+@system": "C-1EA485EF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Show the running configuration with a \"b\" filter to \"begin\" the listing at the found string\nIOSXR#show run banner\nIf the command does not return a result, the banner is not enabled."
+          }
+        }
+      },
+      {
+        "+@id": "V-82D04C1D",
+        "title": "1.8 Password Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-82D04C1Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.8.1",
+          "title": "Enable AES Password Encryption",
+          "description": "<VulnDiscussion>You can enable strong, reversible 128-bit Advanced Encryption Standard (AES) password encryption, also known as type-6 encryption. To start using type-6 encryption, you must enable the AES password encryption feature and configure a master encryption key, which is used to encrypt and decrypt passwords. After you enable AES password encryption and configure a master key, all existing and newly created clear- text passwords for supported applications are stored in type-6 encrypted format\n\nRationale:\nEncryption of passwords is used to protect it from being sent over the wire cleartext or being accidentally exposed when sharing device configurations with third parties. By applying encryption you are making it more difficult for an adversary to gain access to your device/network.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.8.1"
+          },
+          "fixtext": {
+            "+content": "Define a password encryption key\nIOSXR#key config-key password-encryption\nNew password Requirements: Min-length 6, Max-length 64\nCharacters restricted to [A-Z][a-z][0-9]\nEnter new key :\nEnter confirm key :\nMaster key operation is started in background\nEnable aes config password encryption\n/* Enable Type 6 password encryption */\nIOSXR# configure\nIOSXR(config)#password6 encryption aes\nIOSXR(config)#commit",
+            "+@fixref": "F-82D04C1Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-82D04C1Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-82D04C1D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Just verifying the running configuration might not be sufficient because it could be that no masterkey has been set.\nIOSXR# show run formal | i password6\npassword6 encryption aes\nUse the following show command to see if encryption is enabled and functional. Only when all three status are \"Enabled\" the feature is fully working.\nInternal Only - General\nIOSXR#show type6 server\nServer detail information:\n=============================================\nAES config State : Enabled\nMasterkey config State : Enabled\nType6 feature State : Enabled\nMaster key Inprogress : No\nVerify Type 6 trace server details."
+          }
+        }
+      },
+      {
+        "+@id": "V-037166CE",
+        "title": "1.8 Password Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-037166CEr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.8.2",
+          "title": "Set username secret for all local users",
+          "description": "<VulnDiscussion>A root-system user with a normal password will not be authenticated because the normal password is two-way encrypted and poses a security risk because the password information is stored in the flash disk, which can be easily decrypted. Secrets are one- way encrypted and cannot be easily reverted without brute-forcing.\nIf both secret and password are configured for a user, then secret takes precedence, and password security policy does not have any effect on authentication or change of password for such users.\n\nRationale:\nSecrets use a one-way cryptographic hash.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.8.2"
+          },
+          "fixtext": {
+            "+content": "IOSXR# configure\nIOSXR(config)#username {local_username}\nIOSXR(config)#secret {local_password}\ncommit",
+            "+@fixref": "F-037166CEr01_fix"
+          },
+          "fix": {
+            "+@id": "F-037166CEr01_fix"
+          },
+          "check": {
+            "+@system": "C-037166CE_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "The following command is used to show all local users:\nIOSXR# show run username\nusername {local_username}\ngroup root-lr\ngroup cisco-support\nsecret {local_password}"
+          }
+        }
+      },
+      {
+        "+@id": "V-642E73B6",
+        "title": "1.8 Password Rules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-642E73B6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.8.3",
+          "title": "Configure a Password Policy",
+          "description": "<VulnDiscussion>Because passwords are stored only in revertible type 7 format, please consider not applying this recommendation and using secrets instead.\nThis only applies if you absolutely need to configure \"password\" instead of \"secret\" for local users.\nCisco IOS XR Software introduces advanced AAA password strengthening policy and security mechanism to store, retrieve and provide rules or policy to specify user passwords. This password policy is applicable only for local users, and not for remote users whose profile information are stored in a third party AAA server.\n\nRationale:\nStrong passwords are important because they help prevent unauthorized access to devices and the network. Even if a central authentication source is used, if that service is not available the fall-back authentication is often to local credentials. At least one local administrator user must be present on the device.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.8.3"
+          },
+          "fixtext": {
+            "+content": "Use the following configuration to enable a password policy. Choose values according to established guidelines of your organization.\nIOSXR# configure\nIOSXR(config)#aaa password-policy {password_policy}\nIOSXR(config-aaa)#min-length 8\nIOSXR(config-aaa)#max-length 25\nIOSXR(config-aaa)#lifetime months 3\nIOSXR(config-aaa)#min-char-change 5\nIOSXR(config-aaa)#authen-max-attempts 3\nIOSXR(config-aaa)#lockout-time days 1\nIOSXR(config)#username {local_username} password-policy {password_policy}\npassword 0 {local_password}\nIOSXR(config)#commit",
+            "+@fixref": "F-642E73B6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-642E73B6r01_fix"
+          },
+          "check": {
+            "+@system": "C-642E73B6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "IOSXR#sh run aaa\naaa password-policy {password_policy}\nlifetime months 3\nmax-length 25\nmin-length 18\nlockout-time days 1\nmin-char-change 5\nauthen-max-attempts 3\n!\nusername {local_username}\ngroup root-lr\ngroup cisco-support\nsecret {local_password}\nThe policy is only in effect when it is also applied under a \"username\" section.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-D140A6A2",
+        "title": "1 Management Plane",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D140A6A2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.9",
+          "title": "Management plane protection",
+          "description": "<VulnDiscussion>The Management Plane Protection (MPP) feature provides the capability to restrict the interfaces on which network management packets are allowed to enter a device. The MPP feature allows a network operator to designate one or more router interfaces as management interfaces.\nThe MPP protection feature, as well as all the management protocols under MPP, are disabled by default. When you configure an interface as either out-of-band or inband, it automatically enables MPP. Consequently, this enablement extends to all the protocols under MPP. If MPP is disabled and a protocol is activated, all interfaces can pass traffic.\nWhen MPP is enabled with an activated protocol, the only default management interfaces allowing management traffic are the route processor (RP) and standby route processor (SRP) Ethernet interfaces. You must manually configure any other interface for which you want to enable MPP as a management interface.\n\nRationale:\nThis is part of the MPP setup.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "1.9"
+          },
+          "fixtext": {
+            "+content": "Configure the management plane so that only certain protocols connectced to certain interfaces can access this IOS-XR device.\nIOSXR(config)#control-plane\nIOSXR(config-ctrl)#management-plane\nIOSXR(config-mpp)#inband\nIOSXR(config-mpp-inband)#interface {interface} allow {protocol} peer address\nipv4 {IP_address}\nIOSXR(config-mpp)#out-of-band\nIOSXR(config-mpp-outband)#interface {interface} allow {protocol} peer address\nipv4 {IP_address}",
+            "+@fixref": "F-D140A6A2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D140A6A2r01_fix"
+          },
+          "check": {
+            "+@system": "C-D140A6A2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the appropriate management plane protection configuration.\nIOSXR#sh run control-plane\nWed Jul 19 23:25:11.297 UTC\ncontrol-plane\nmanagement-plane\ninband\ninterface Loopback1\nallow SSH peer\naddress ipv4 1.1.1.1\n!\n!\n!\nout-of-band\ninterface MgmtEth0/RP0/CPU0/0\nallow SSH peer\naddress ipv4 1.1.1.1"
+          }
+        }
+      },
+      {
+        "+@id": "V-8F711E6D",
+        "title": "2.1.1 EIGRP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8F711E6Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.1.1.1",
+          "title": "Authentication",
+          "description": "<VulnDiscussion>Configure the EIGRP address family.\n\nRationale:\nRationale: EIGRP is a true multi-protocol routing protocol and the 'address-family' feature enables restriction of exchanges with specific neighbors</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.1.1.1"
+          },
+          "fixtext": {
+            "+content": "Configure the EIGRP address family.\nInternal Only - General\nIOSXR(config)#router eigrp {AS_number}\nIOSXR(config-eigrp)# address-family ipv4\nIOSXR(config-eigrp-af)# interface {interface}\nIOSXR(config-eigrp-af-if)#authentication keychain {key_chain_name}",
+            "+@fixref": "F-8F711E6Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-8F711E6Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-8F711E6D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that authentication is configured:\nIOSXR#sh run key chain\nWed Jul 19 21:48:31.091 UTC\nkey chain CHAIN\nkey 1\nkey-string password 045802150C2E\nIOSXR#sh run router eigrp\nWed Jul 19 21:48:03.792 UTC\nrouter eigrp 100\naddress-family ipv4\ninterface Loopback1\nauthentication keychain CHAIN\n!\ninterface MgmtEth0/RP0/CPU0/0\nauthentication keychain CHAIN"
+          }
+        }
+      },
+      {
+        "+@id": "V-7B715356",
+        "title": "2.1.2 OSPF",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7B715356r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.1.2.1",
+          "title": "Authentication",
+          "description": "<VulnDiscussion>Enable Open Shortest Path First (OSPF) Message Digest 5 (MD5) authentication.\n\nRationale:\nThis is part of the OSPF authentication setup</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.1.2.1"
+          },
+          "fixtext": {
+            "+content": "Configure the appropriate interface(s) for Message Digest authentication\nIOSXR(config)#router ospf {process_id}\nIOSXR(config-ospf)# address-family ipv4\nIOSXR(config-ospf)#area 0 authentication keychain {key_chain_name}",
+            "+@fixref": "F-7B715356r01_fix"
+          },
+          "fix": {
+            "+@id": "F-7B715356r01_fix"
+          },
+          "check": {
+            "+@system": "C-7B715356_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the appropriate md5 key is defined on the appropriate interface(s)\nIOSXR#sh run key chain\nWed Jul 19 21:54:01.554 UTC\nkey chain CHAIN\nkey 1\nkey-string password 045802150C2E\nIOSXR#sh run router ospf\nWed Jul 19 21:54:20.095 UTC\nrouter ospf 1\naddress-family ipv4\narea 0\nauthentication keychain CHAIN"
+          }
+        }
+      },
+      {
+        "+@id": "V-F1993C78",
+        "title": "2.1.3 BGP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F1993C78r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.1.3.1",
+          "title": "Authentication",
+          "description": "<VulnDiscussion>Enable message digest5 (MD5) authentication on a TCP connection between two BGP peers\n\nRationale:\nEnforcing routing authentication reduces the likelihood of routing poisoning and unauthorized routers from joining BGP routing.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.1.3.1"
+          },
+          "fixtext": {
+            "+content": "Configure BGP neighbor authentication where feasible.\nIOSXR(config)#router bgp {local_AS_number}\nIOSXR(config-bgp)#neighbor {neighbor_IP_address} remote-as {remote_AS_number}\nIOSXR(config-bgp)#neighbor {neighbor_IP_address} password clear\n{BGP_password}",
+            "+@fixref": "F-F1993C78r01_fix"
+          },
+          "fix": {
+            "+@id": "F-F1993C78r01_fix"
+          },
+          "check": {
+            "+@system": "C-F1993C78_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify you see the appropriate neighbor password is defined:\nIOSXR#sh run router bgp\nWed Jul 19 22:02:46.892 UTC\nrouter bgp 100\nneighbor 10.10.10.10\nremote-as 200\npassword encrypted 104D000A061811021F0725282D3B303A"
+          }
+        }
+      },
+      {
+        "+@id": "V-D189A803",
+        "title": "2.1.4 ISIS",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D189A803r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.1.4.1",
+          "title": "Authentication",
+          "description": "<VulnDiscussion>Enable authentication for ISIS packets and to specify the set of keys that can be used on an interface.\n\nRationale:\nThis is part of the ISIS authentication setup</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.1.4.1"
+          },
+          "fixtext": {
+            "+content": "Configure the Interface with the RIPv2 key chain.\nIOSXR(config)#router isis {process_id}\nIOSXR(config-isis)#lsp-password keychain {key_chain_name}\nIOSXR(config-isis)#interface {interface}\nIOSXR(config-isis-if)#hello-password keychain {key_chain_name}",
+            "+@fixref": "F-D189A803r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D189A803r01_fix"
+          },
+          "check": {
+            "+@system": "C-D189A803_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the appropriate key chain and mode are set on the appropriate interface(s)\nRP/0/RP0/CPU0:IOSXR#sh run key chain\nWed Jul 19 22:22:46.974 UTC\nkey chain CHAIN\nkey 1\nkey-string password 045802150C2E\nRP/0/RP0/CPU0:IOSXR#sh run router isis\nWed Jul 19 22:23:56.615 UTC\nrouter isis 1\nlsp-password keychain CHAIN\ninterface MgmtEth0/RP0/CPU0/0\nhello-password keychain CHAIN"
+          }
+        }
+      },
+      {
+        "+@id": "V-96155F1F",
+        "title": "2.1.5 RIP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-96155F1Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.1.5.1",
+          "title": "Authentication",
+          "description": "<VulnDiscussion>Enable authentication for Routing Information Protocol (RIP) Version 2 packets and to specify the set of keys that can be used.\n\nRationale:\nThis is part of the RIPv2 authentication setup</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.1.5.1"
+          },
+          "fixtext": {
+            "+content": "Configure the Interface with the RIPv2 key chain.\nInternal Only - General\nIOSXR(config)#router rip\nIOSXR(config-rip)#interface {interface}\nIOSXR(config-rip-if)#authentication keychain {key_chain_name} mode md5",
+            "+@fixref": "F-96155F1Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-96155F1Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-96155F1F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the appropriate key chain and mode are set on the appropriate interface(s)\nIOSXR#sh run router rip\nWed Jul 19 21:19:21.400 UTC\nrouter rip\ninterface MgmtEth0/RP0/CPU0/0\nauthentication keychain CHAIN mode md5\nIOSXR#sh rip\nWed Jul 19 21:21:58.785 UTC\nRIP config:\nActive: Yes\nAdded to socket: Yes\nOut-of-memory state: Normal\nVersion: 2\nDefault metric: Not set\nMaximum paths: 4\nAuto summarize: No\nBroadcast for V2: No\nPacket source validation: Yes\nNSF: Disabled\nTimers: Update: 30 seconds (13 seconds until next update)\nInvalid: 180 seconds\nHolddown: 180 seconds\nFlush: 240 seconds"
+          }
+        }
+      },
+      {
+        "+@id": "V-8EEC63E4",
+        "title": "2.1 Routing protocols",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8EEC63E4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.1.6",
+          "title": "Key chains",
+          "description": "<VulnDiscussion>Keychain management is a common method of authentication to configure shared secrets on all entities that exchange secrets such as keys, before establishing trust with each other. Routing protocols and network management applications on Cisco IOS XR software often use authentication to enhance security while communicating with peers.\n\nRationale:\nThe keychain by itself has no relevance; therefore, it must be used by an application that needs to communicate by using the keys (for authentication) with its peers. The keychain provides a secure mechanism to handle the keys and rollover based on the lifetime. Border Gateway Protocol (BGP), Open Shortest Path First (OSPF), and Intermediate System-to-Intermediate System (IS-IS) use the keychain to implement a hitless key rollover for authentication. BGP uses TCP authentication, which enables the authentication option and sends the Message Authentication Code (MAC) based on the cryptographic algorithm configured for the keychain.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.1.6"
+          },
+          "fixtext": {
+            "+content": "IOSXR(config)#key chain {key_chain_name}\nIOSXR(config-CHAIN)#key {key_id}\nIOSXR(config-CHAIN-1)#key-string {key_string}",
+            "+@fixref": "F-8EEC63E4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8EEC63E4r01_fix"
+          },
+          "check": {
+            "+@system": "C-8EEC63E4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "IOSXR#sh run key chain\nWed Jul 19 21:02:23.744 UTC\nkey chain CHAIN\nkey 1\nkey-string password 1511021F0725\n!"
+          }
+        }
+      },
+      {
+        "+@id": "V-845F4775",
+        "title": "2.2.1 Require Encryption Keys for NTP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-845F4775r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.2.1.1",
+          "title": "Set 'ntp authenticate'",
+          "description": "<VulnDiscussion>Enable NTP authentication.\n\nRationale:\nUsing authenticated NTP ensures the Cisco device only permits time updates from authorized NTP servers.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.2.1.1"
+          },
+          "fixtext": {
+            "+content": "Configure NTP authentication:\nIOSXR(config)#ntp authenticate",
+            "+@fixref": "F-845F4775r01_fix"
+          },
+          "fix": {
+            "+@id": "F-845F4775r01_fix"
+          },
+          "check": {
+            "+@system": "C-845F4775_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "From the command prompt, execute the following commands:\nIOSXR(config)#sh run ntp\n!\nntp\nauthentication-key 1 md5 encrypted 104D000A0618\nauthenticate\nserver 1.1.1.1 key 1"
+          }
+        }
+      },
+      {
+        "+@id": "V-5CD09B0C",
+        "title": "2.2.1 Require Encryption Keys for NTP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5CD09B0Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.2.1.2",
+          "title": "Set 'ntp authentication-key'",
+          "description": "<VulnDiscussion>Define an authentication key for Network Time Protocol (NTP).\n\nRationale:\nUsing an authentication key provides a higher degree of security as only authenticated NTP servers will be able to update time for the Cisco device.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.2.1.2"
+          },
+          "fixtext": {
+            "+content": "Configure at the NTP key ring and encryption key using the following command\nIOSXR(config)#ntp authentication-key {ntp_key_id} md5 {ntp_key}",
+            "+@fixref": "F-5CD09B0Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-5CD09B0Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-5CD09B0C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "From the command prompt, execute the following commands:\nIOSXR#show run ntp"
+          }
+        }
+      },
+      {
+        "+@id": "V-D3C60E09",
+        "title": "2.2.1 Require Encryption Keys for NTP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D3C60E09r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.2.1.3",
+          "title": "Set the 'ntp trusted-key'",
+          "description": "<VulnDiscussion>Ensure you authenticate the identity of a system to which Network Time Protocol (NTP) will synchronize\n\nRationale:\nThis authentication function provides protection against accidentally synchronizing the system to another system that is not trusted, because the other system must know the correct authentication key.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.2.1.3"
+          },
+          "fixtext": {
+            "+content": "Configure the NTP trusted key using the following command\nIOSXR(config)#ntp trusted-key {ntp_key_id}",
+            "+@fixref": "F-D3C60E09r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D3C60E09r01_fix"
+          },
+          "check": {
+            "+@system": "C-D3C60E09_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "From the command prompt, execute the following commands:\nRP/0/RP0/CPU0:IOSXR#sh run ntp\nWed Jul 19 22:08:20.188 UTC\nntp\nauthentication-key 1 md5 encrypted 130404160A1F\nauthenticate\ntrusted-key 1\nserver 1.1.1.1 key 1\nThe above command should return any NTP server(s) configured with encryption keys.\nThis value should be the same as the total number of servers configured as tested in."
+          }
+        }
+      },
+      {
+        "+@id": "V-0E5499C0",
+        "title": "2.2.1 Require Encryption Keys for NTP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0E5499C0r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.2.1.4",
+          "title": "Set 'key' for each 'ntp server'",
+          "description": "<VulnDiscussion>Specifies the authentication key for NTP.\n\nRationale:\nThis authentication feature provides protection against accidentally synchronizing the ntp system to another system that is not trusted, because the other system must know the correct authentication key.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.2.1.4"
+          },
+          "fixtext": {
+            "+content": "Configure each NTP Server to use a key ring using the following command.\nIOSXR(config)#ntp server {ntp-server_ip_address} key {ntp_key_id}",
+            "+@fixref": "F-0E5499C0r01_fix"
+          },
+          "fix": {
+            "+@id": "F-0E5499C0r01_fix"
+          },
+          "check": {
+            "+@system": "C-0E5499C0_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "From the command prompt, execute the following commands:\nIOSXR#show run ntp"
+          }
+        }
+      },
+      {
+        "+@id": "V-730C2B2C",
+        "title": "2.2 NTP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-730C2B2Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2.2",
+          "title": "Set 'ip address' for 'ntp server'",
+          "description": "<VulnDiscussion>Use this command if you want to allow the system to synchronize the system software clock with the specified NTP server.\n\nRationale:\nTo ensure that the time on your Cisco router is consistent with other devices in your network, at least two (and preferably at least three) NTP Server/s external to the router should be configured.\nEnsure you also configure consistent timezone and daylight savings time setting for all devices. For simplicity, the default of Coordinated Universal Time (UTC).</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.2.2"
+          },
+          "fixtext": {
+            "+content": "Configure theexternal NTP Server using the following commands\nIOSXR(config)#ntp server {ntp-server_ip_address} key {ntp_key_id}",
+            "+@fixref": "F-730C2B2Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-730C2B2Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-730C2B2C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "From the command prompt, execute the following commands:\nIOSXR#sh run ntp"
+          }
+        }
+      },
+      {
+        "+@id": "V-02256221",
+        "title": "2.3 VRRP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-02256221r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.3.1",
+          "title": "Authentication",
+          "description": "<VulnDiscussion>You can ensure that VRRP messages received from VRRP routers that comprise a virtual router are authenticated by configuring a simple text password.\n\nRationale:\nThis is part of the VRRP authentication setup</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.3.1"
+          },
+          "fixtext": {
+            "+content": "Configure VRRP with the appropriate password.\nIOSXR(config)#router vrrp\nIOSXR(config-vrrp)#interface {interface}\nIOSXR(config-vrrp-if)#address-family ipv4\nIOSXR(config-vrrp-address-family)#vrrp {virtual_router_id}\nIOSXR(config-vrrp-virtual-router)#text-authentication {password}",
+            "+@fixref": "F-02256221r01_fix"
+          },
+          "fix": {
+            "+@id": "F-02256221r01_fix"
+          },
+          "check": {
+            "+@system": "C-02256221_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that VRRP is running and authentication is bsing used.\nInternal Only - General\nRP/0/RP0/CPU0:IOSXR#sh run router vrrp\nMon Jul 24 14:57:34.430 UTC\nrouter vrrp\ninterface MgmtEth0/RP0/CPU0/0\naddress-family ipv4\nvrrp 1\ntext-authentication cisco"
+          }
+        }
+      },
+      {
+        "+@id": "V-47D531D8",
+        "title": "2.4 HSRP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-47D531D8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.4.1",
+          "title": "Authentication",
+          "description": "<VulnDiscussion>Enable authentication for HSRP packets and to specify the set of keys that can be used on an interface.\n\nRationale:\nThis is part of the HSRP authentication setup</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "2.4.1"
+          },
+          "fixtext": {
+            "+content": "Configure HSRP with the appropriate password.\nIOSXR(config)#router hsrp\nIOSXR(config-hsrp)#interface {interface}\nIOSXR(config-hsrp-if)#address-family ipv4 hsrp {hsrp_group_number}\nauthentication {hsrp_password}",
+            "+@fixref": "F-47D531D8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-47D531D8r01_fix"
+          },
+          "check": {
+            "+@system": "C-47D531D8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that HSRP is running and authentication is bsing used.\nIOSXR#sh run router hsrp\nWed Jul 19 22:29:07.903 UTC\nrouter hsrp\ninterface MgmtEth0/RP0/CPU0/0\naddress-family ipv4\nhsrp 1\nauthentication cisco"
+          }
+        }
+      },
+      {
+        "+@id": "V-F77DD1D4",
+        "title": "3 Data Plane",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F77DD1D4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.1",
+          "title": "URPF",
+          "description": "<VulnDiscussion>Enable Unicast reverse path forwarding to prevent IP speeofing attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Cisco IOS XR 7.x",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Cisco IOS XR 7.x",
+            "dc:identifier": "3.1"
+          },
+          "fixtext": {
+            "+content": "Configure the Interface with the RIPv2 key chain.\nIOSXR(config)#int {interface}\nIOSXR(config-if)#ipv4 verify unicast source reachable-via rx",
+            "+@fixref": "F-F77DD1D4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-F77DD1D4r01_fix"
+          },
+          "check": {
+            "+@system": "C-F77DD1D4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Cisco_IOS_XR_7_x.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the appropriate key chain and mode are set on the appropriate interface(s)\nIOSXR#sh run interface mgmtEth 0/RP0/CPU0/0\nWed Jul 19 22:37:55.238 UTC\ninterface MgmtEth0/RP0/CPU0/0\ncdp\nipv4 address dhcp\nipv4 verify unicast source reachable-via rx"
+          }
+        }
+      }
+    ]
+  }
+}

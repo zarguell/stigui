@@ -73,8 +73,19 @@ TOC_TITLE_RE = re.compile(r"^(\d+(?:\.\d+)*)\s+(.+)$")
 # Version/date line: "v4.0.0 - 06-14-2023" (Docker) and
 # "v4.0.0 \u2013 05/23/2025" (Windows Server 2022) both occur.
 VERSION_DATE_RE = re.compile(
-    r"v?(\d+\.\d+(?:\.\d+)?)\s*[-\u2013]\s*(\d{1,2})[-/](\d{1,2})[-/](\d{4})"
+    r"v?(\d+\.\d+(?:\.\d+)?)(?:\s*\([^)]*\))?\s*[-\u2013]\s*(\d{1,2})[-/](\d{1,2})[-/](\d{4})"
 )
+# "v1.1.0 - 24 Jan 2024" (Cisco/STIG-template style, month name).
+VERSION_DATE_TEXT_RE = re.compile(
+    r"v?(\d+\.\d+(?:\.\d+)?)\s*[-\u2013]\s*(\d{1,2})\s+([A-Za-z]{3,9})\s+(\d{4})"
+)
+MONTHS = {
+    m: i + 1
+    for i, m in enumerate(
+        ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug",
+         "sep", "sept", "oct", "nov", "dec"]
+    )
+}
 STATUS_MARKER_RE = re.compile(r"\(([^)]+)\)\s*$")
 
 BULLET_RE = re.compile(r"^[•\u25cf\u25aa\u25a0o\-]\s+")
@@ -222,6 +233,16 @@ def _parse_title_page(flat, doc: BenchmarkDoc, result: ParseResult) -> None:
             doc.version = match.group(1)
             month, day, year = match.group(2), match.group(3), match.group(4)
             doc.date = f"{year}-{int(month):02d}-{int(day):02d}"
+            line.role = "title-page"
+            break
+        match = VERSION_DATE_TEXT_RE.search(line.text)
+        if match:
+            version_index = index
+            doc.version = match.group(1)
+            day = int(match.group(2))
+            month = MONTHS.get(match.group(3)[:3].lower(), 1)
+            year = match.group(4)
+            doc.date = f"{year}-{month:02d}-{day:02d}"
             line.role = "title-page"
             break
     if not doc.version:
@@ -531,10 +552,30 @@ def _parse_body(flat, doc: BenchmarkDoc, result: ParseResult, heading_style, bod
             continue
 
         line.role = "rec-content"
+        vendor_match = re.match(
+            r"(GROUP ID|RULE ID):\s*([VLS][\w-]+)", text, re.IGNORECASE
+        )
+        if vendor_match:
+            kind, value = vendor_match.groups()
+            if kind.upper() == "GROUP ID" and value.startswith("V-"):
+                rec.vendor_group_id = value
+            elif kind.upper() == "RULE ID" and value.startswith("SV-"):
+                rec.vendor_rule_id = re.sub(r"_rule$", "", value)
+            index += 1
+            continue
         if line.is_fully_mono():
             current_field.add_code(text)
         else:
             current_field.add_text(text)
+
+        # STIG-template bullets carry CAT severity instead of levels and
+        # vendor-supplied GROUP ID / RULE ID lines in the description.
+        if current_field.label == "Profile Applicability":
+            cat_match = re.search(
+                r"SEVERITY:\s*CAT\s*([IVX]+)", text, re.IGNORECASE
+            )
+            if cat_match:
+                rec.cat_severity = cat_match.group(1).upper()
 
         # Profile Applicability: capture levels from bullet lines. The
         # full bullet text is the profile name ("Level 1 - Docker -

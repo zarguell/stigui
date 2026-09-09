@@ -1,0 +1,1807 @@
+<?xml version="1.0" encoding="utf-8"?><Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd" id="CIS_Google_Android_Benchmark" xml:lang="en" xmlns="http://checklists.nist.gov/xccdf/1.1">
+  <status date="2025-09-30">accepted</status>
+  <title>CIS Google Android Benchmark</title>
+  <description>All CIS Benchmarks ™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks ™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Internal Only - General Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Internal Only - General Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completes successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks ™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks ™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Internal Only - General Target Technology Details This is the final release of the CIS Benchmark for Google Android Benchmark. CIS encourages you to migrate to a more recent, supported version of this technology. This document, Security Configuration Benchmark for Google Android, provides prescriptive guidance for establishing a secure configuration posture for the Google Android OS. This guide was tested against the Android 16.0.0 OS. This benchmark covers Android 16 and higher and all hardware devices on which this OS is supported. In determining recommendations, the current guidance treats all Android mobile device platforms as having the same use cases and risk/threat scenarios. In all but a very few cases, configuration steps, default settings, and benchmark recommended settings are identical regardless of hardware platform. To obtain the latest version of this guide, please visit http://cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.</description>
+  <notice id="terms-of-use" xml:lang="en"/>
+  <front-matter xml:lang="en"/>
+  <rear-matter xml:lang="en"/>
+  <reference href="https://www.cisecurity.org/cis-benchmarks">
+    <dc:publisher>Center for Internet Security</dc:publisher>
+    <dc:source>CIS Benchmarks</dc:source>
+  </reference>
+  <plain-text id="release-info">Release: 1.6.0 Benchmark Date: 2025-09-30</plain-text>
+  <version>1.6.0</version>
+  <Profile id="L1_Public">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-41484F1C" selected="true"/>
+    <select idref="V-8632282A" selected="true"/>
+    <select idref="V-7C558CCD" selected="true"/>
+    <select idref="V-044CD005" selected="true"/>
+    <select idref="V-9326E13B" selected="true"/>
+    <select idref="V-3EDD6FCF" selected="true"/>
+    <select idref="V-09E00590" selected="true"/>
+    <select idref="V-2D47E1B6" selected="true"/>
+    <select idref="V-DF45D195" selected="true"/>
+    <select idref="V-88779EF6" selected="true"/>
+    <select idref="V-634E134A" selected="true"/>
+    <select idref="V-25485358" selected="true"/>
+    <select idref="V-1F84C6A6" selected="true"/>
+    <select idref="V-200EBD31" selected="true"/>
+    <select idref="V-C868E3BA" selected="true"/>
+    <select idref="V-A8698EEF" selected="true"/>
+    <select idref="V-DA8DC24E" selected="true"/>
+    <select idref="V-140E02F1" selected="true"/>
+    <select idref="V-5F5848F7" selected="true"/>
+    <select idref="V-315FD4A4" selected="true"/>
+    <select idref="V-F983FDFF" selected="true"/>
+    <select idref="V-E3AF6164" selected="true"/>
+    <select idref="V-8BC788FA" selected="true"/>
+    <select idref="V-61859C15" selected="true"/>
+    <select idref="V-3DAC7597" selected="true"/>
+    <select idref="V-4F8CDF3D" selected="true"/>
+    <select idref="V-D37B7FB4" selected="true"/>
+    <select idref="V-A9F36536" selected="true"/>
+    <select idref="V-20728839" selected="true"/>
+    <select idref="V-B7914FD1" selected="true"/>
+    <select idref="V-107AFCB8" selected="true"/>
+    <select idref="V-D821AE0B" selected="true"/>
+    <select idref="V-E76C29A9" selected="true"/>
+    <select idref="V-59DE06D8" selected="true"/>
+    <select idref="V-77E50CA3" selected="true"/>
+    <select idref="V-9EE855AE" selected="true"/>
+    <select idref="V-6F65F6A3" selected="true"/>
+    <select idref="V-DBEDD61B" selected="true"/>
+  </Profile>
+  <Profile id="L1_Classified">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-41484F1C" selected="true"/>
+    <select idref="V-8632282A" selected="true"/>
+    <select idref="V-7C558CCD" selected="true"/>
+    <select idref="V-044CD005" selected="true"/>
+    <select idref="V-9326E13B" selected="true"/>
+    <select idref="V-3EDD6FCF" selected="true"/>
+    <select idref="V-09E00590" selected="true"/>
+    <select idref="V-2D47E1B6" selected="true"/>
+    <select idref="V-DF45D195" selected="true"/>
+    <select idref="V-88779EF6" selected="true"/>
+    <select idref="V-634E134A" selected="true"/>
+    <select idref="V-25485358" selected="true"/>
+    <select idref="V-1F84C6A6" selected="true"/>
+    <select idref="V-200EBD31" selected="true"/>
+    <select idref="V-C868E3BA" selected="true"/>
+    <select idref="V-A8698EEF" selected="true"/>
+    <select idref="V-DA8DC24E" selected="true"/>
+    <select idref="V-140E02F1" selected="true"/>
+    <select idref="V-5F5848F7" selected="true"/>
+    <select idref="V-315FD4A4" selected="true"/>
+    <select idref="V-F983FDFF" selected="true"/>
+    <select idref="V-E3AF6164" selected="true"/>
+    <select idref="V-8BC788FA" selected="true"/>
+    <select idref="V-61859C15" selected="true"/>
+    <select idref="V-3DAC7597" selected="true"/>
+    <select idref="V-4F8CDF3D" selected="true"/>
+    <select idref="V-D37B7FB4" selected="true"/>
+    <select idref="V-A9F36536" selected="true"/>
+    <select idref="V-20728839" selected="true"/>
+    <select idref="V-B7914FD1" selected="true"/>
+    <select idref="V-107AFCB8" selected="true"/>
+    <select idref="V-D821AE0B" selected="true"/>
+    <select idref="V-E76C29A9" selected="true"/>
+    <select idref="V-59DE06D8" selected="true"/>
+    <select idref="V-77E50CA3" selected="true"/>
+    <select idref="V-9EE855AE" selected="true"/>
+    <select idref="V-6F65F6A3" selected="true"/>
+    <select idref="V-DBEDD61B" selected="true"/>
+  </Profile>
+  <Profile id="L1_Sensitive">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-41484F1C" selected="true"/>
+    <select idref="V-8632282A" selected="true"/>
+    <select idref="V-7C558CCD" selected="true"/>
+    <select idref="V-044CD005" selected="true"/>
+    <select idref="V-9326E13B" selected="true"/>
+    <select idref="V-3EDD6FCF" selected="true"/>
+    <select idref="V-09E00590" selected="true"/>
+    <select idref="V-2D47E1B6" selected="true"/>
+    <select idref="V-DF45D195" selected="true"/>
+    <select idref="V-88779EF6" selected="true"/>
+    <select idref="V-634E134A" selected="true"/>
+    <select idref="V-25485358" selected="true"/>
+    <select idref="V-1F84C6A6" selected="true"/>
+    <select idref="V-200EBD31" selected="true"/>
+    <select idref="V-C868E3BA" selected="true"/>
+    <select idref="V-A8698EEF" selected="true"/>
+    <select idref="V-DA8DC24E" selected="true"/>
+    <select idref="V-140E02F1" selected="true"/>
+    <select idref="V-5F5848F7" selected="true"/>
+    <select idref="V-315FD4A4" selected="true"/>
+    <select idref="V-F983FDFF" selected="true"/>
+    <select idref="V-E3AF6164" selected="true"/>
+    <select idref="V-8BC788FA" selected="true"/>
+    <select idref="V-61859C15" selected="true"/>
+    <select idref="V-3DAC7597" selected="true"/>
+    <select idref="V-4F8CDF3D" selected="true"/>
+    <select idref="V-D37B7FB4" selected="true"/>
+    <select idref="V-A9F36536" selected="true"/>
+    <select idref="V-20728839" selected="true"/>
+    <select idref="V-B7914FD1" selected="true"/>
+    <select idref="V-107AFCB8" selected="true"/>
+    <select idref="V-D821AE0B" selected="true"/>
+    <select idref="V-E76C29A9" selected="true"/>
+    <select idref="V-59DE06D8" selected="true"/>
+    <select idref="V-77E50CA3" selected="true"/>
+    <select idref="V-9EE855AE" selected="true"/>
+    <select idref="V-6F65F6A3" selected="true"/>
+    <select idref="V-DBEDD61B" selected="true"/>
+  </Profile>
+  <Profile id="L2_Public">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-142A018E" selected="true"/>
+    <select idref="V-FEFD99CE" selected="true"/>
+    <select idref="V-8B3ED1BE" selected="true"/>
+    <select idref="V-AB55840E" selected="true"/>
+    <select idref="V-E4D39B0E" selected="true"/>
+    <select idref="V-92DDC544" selected="true"/>
+    <select idref="V-3E9C1DBD" selected="true"/>
+  </Profile>
+  <Profile id="L2_Classified">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-142A018E" selected="true"/>
+    <select idref="V-FEFD99CE" selected="true"/>
+    <select idref="V-8B3ED1BE" selected="true"/>
+    <select idref="V-AB55840E" selected="true"/>
+    <select idref="V-E4D39B0E" selected="true"/>
+    <select idref="V-92DDC544" selected="true"/>
+    <select idref="V-3E9C1DBD" selected="true"/>
+  </Profile>
+  <Profile id="L2_Sensitive">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-142A018E" selected="true"/>
+    <select idref="V-FEFD99CE" selected="true"/>
+    <select idref="V-8B3ED1BE" selected="true"/>
+    <select idref="V-AB55840E" selected="true"/>
+    <select idref="V-E4D39B0E" selected="true"/>
+    <select idref="V-92DDC544" selected="true"/>
+    <select idref="V-3E9C1DBD" selected="true"/>
+  </Profile>
+  <Group id="V-41484F1C">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-41484F1Cr01_rule" weight="10.0" severity="medium">
+      <version>1.1</version>
+      <title>Ensure device firmware is up to date</title>
+      <description>&lt;VulnDiscussion&gt;Ensure that the device is kept up to date with security patch levels.
+The recommended state for this setting is: Apply updates.
+
+Rationale:
+Firmware updates often include critical security fixes that reduce the probability of an attacker remotely exploiting the device. The device should be on the latest security patch level as applicable.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-41484F1Cr01_fix">Follow the below steps to check and update the device security patch level:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Advanced.
+4. Tap System Updates.
+5. Tap Check for update.
+6. Apply the update if available.</fixtext>
+      <fix id="F-41484F1Cr01_fix"/>
+      <check system="C-41484F1C_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>To verify that your device is updated to the most recent firmware version:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Advanced.
+4. Tap System update.
+5. Verify that the Android Security patch level is current and that no new updates exist.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-8632282A">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-8632282Ar01_rule" weight="10.0" severity="medium">
+      <version>1.2</version>
+      <title>Ensure 'Screen Lock' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;Enabling the Screen lock setting helps secure Android devices. This setting helps prevent unauthorized access to your device and protects data from being compromised.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Enabling Screen Lock requires user authentication before interacting with the device. As a result, Screen Lock strengthens application and data protection and improves device security.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-8632282Ar01_fix">To configure a Pattern, PIN or Password for the device:
+1. Tap Settings.
+2. Tap Security.
+3. Tap Screen Lock.
+4. Tap Pattern, PIN or Password.
+5. Enter a complex Pattern, PIN or Password.
+6. Tap Continue.
+7. Enter in the same complex Pattern, PIN or Password again.
+8. Tap OK.</fixtext>
+      <fix id="F-8632282Ar01_fix"/>
+      <check system="C-8632282A_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Verify that a Pattern, PIN or Password has been set for the device:
+1. Tap Settings.
+2. Tap Security.
+3. Verify that Screen lock has Pattern, PIN or Password underneath the text.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-7C558CCD">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-7C558CCDr01_rule" weight="10.0" severity="medium">
+      <version>1.3</version>
+      <title>Ensure 'Make pattern visible' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Disable pattern visibility if using a pattern as device lock mechanism.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Keeping device unlock patterns visible during device unlock can reveal the pattern and is vulnerable to shoulder surfing attacks. Therefore, is it not a best practice to make the device pattern visible.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-7C558CCDr01_fix">To disable device unlock pattern visibility, follow the below steps:
+1. Tap Settings Gear Icon.
+2. Tap Security.
+3. If Screen lock has Pattern underneath the text, follow further steps. If not, then this recommendation is not applicable.
+4. Tap the Gear Icon next to Screen lock.
+5. Toggle Make pattern visible to OFF position.</fixtext>
+      <fix id="F-7C558CCDr01_fix"/>
+      <check system="C-7C558CCD_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps and verify that device unlock pattern is not visible:
+1. Tap Settings Gear Icon.
+2. Tap Security.
+3. If Screen lock has Pattern underneath the text, follow further steps. If not, then this recommendation is not applicable.
+4. Tap the Gear Icon next to Screen lock.
+5. Verify that the Make pattern visible switch is Disabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-044CD005">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-044CD005r01_rule" weight="10.0" severity="medium">
+      <version>1.4</version>
+      <title>Ensure 'Automatically Lock' is set to 'Immediately'</title>
+      <description>&lt;VulnDiscussion&gt;Immediately lock the phone as soon as the device goes to sleep.
+The recommended state for this setting is: Immediately.
+
+Rationale:
+Automatically and immediately locking the device as soon as it goes to sleep ensures there is no delay between the device entering the sleep state and the device being locked.
+This is an important security measure as it helps prevent unauthorized access to the device and protects sensitive data stored on it.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-044CD005r01_fix">Follow the below steps and set Automatically Lock to Immediately:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Tap the Gear icon next to Screen lock.
+4. Tap Automatically lock.
+5. Tap Immediately.
+Internal Only - General</fixtext>
+      <fix id="F-044CD005r01_fix"/>
+      <check system="C-044CD005_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps and verify that Automatically Look is set to Immediately:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Tap the Gear icon next to Screen lock.
+4. Verify that Automatically lock has a text Immediately after sleep underneath it.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-9326E13B">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-9326E13Br01_rule" weight="10.0" severity="medium">
+      <version>1.5</version>
+      <title>Ensure 'Power button instantly locks' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;Pressing the power button should lock the device instantly.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Enabling Power button instantly locks setting ensures that the device is instantly locked as well. This avoids a possible situation where a device is asleep but not locked and would be vulnerable to unauthorized use.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-9326E13Br01_fix">Follow the below steps to enable the Power button instantly locks setting:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Tap the Gear icon next to Screen lock.
+4. Toggle Power button instantly locks setting to ON position.</fixtext>
+      <fix id="F-9326E13Br01_fix"/>
+      <check system="C-9326E13B_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps and verify that Power button instantly locks is Enabled:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Tap the Gear icon next to Screen lock.
+4. Verify that Power button instantly locks is Enabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-3EDD6FCF">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-3EDD6FCFr01_rule" weight="10.0" severity="medium">
+      <version>1.6</version>
+      <title>Ensure 'Lock Screen Message' is configured</title>
+      <description>&lt;VulnDiscussion&gt;Set a message to be displayed on the locked screen.
+The recommended state for this setting is: Configure Lock Screen Message.
+
+Rationale:
+When device screen is locked, a lock screen message helps to provide
+• Deterrent warnings
+• Device recognition without needing to unlock the device
+• Emergency contact information Such information could be valuable to both your device security and personnel security.
+It is thus recommended to have a suitable lock screen message.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-3EDD6FCFr01_fix">Follow the below steps to set up a Lock screen message:
+1. Open phone's Settings app.
+2. Tap Display.
+3. Tap Advanced.
+4. Tap Lock screen display.
+5. Tap Lock screen message.
+6. Write your message and tap Save.
+Internal Only - General</fixtext>
+      <fix id="F-3EDD6FCFr01_fix"/>
+      <check system="C-3EDD6FCF_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps and verify that Lock screen message is set:
+1. Open phone's Settings app.
+2. Tap Display.
+3. Tap Advanced.
+4. Tap Lock screen display.
+5. Tap Lock screen message.
+6. Verify that a suitable Lock screen message is set.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-142A018E">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-142A018Er01_rule" weight="10.0" severity="high">
+      <version>1.7</version>
+      <title>Do not connect to untrusted Wi-Fi networks</title>
+      <description>&lt;VulnDiscussion&gt;The Do not connect to untrusted Wi-Fi networks setting protects users from potential security threats when connecting to Wi-Fi networks. When this setting is enabled, the device will automatically avoid connecting to any Wi-Fi networks that it deems untrusted, based on a set of predefined criteria.
+The recommended state for this setting is: Only connect to trusted networks.
+
+Rationale:
+Connecting a device to an open untrusted network through unsecured channels can increase the remote attack surface of the device. The cellular data network is a more difficult medium to inspect compared to Wi-Fi. If a user is going to be using public Wi-Fi, using a secure VPN is recommended. In most cases, you should avoid using a public, untrusted or free Wi-Fi.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-142A018Er01_fix">Follow the below steps to disable Wi-Fi or connect to a trusted network:
+1. Open phone's Settings app.
+2. Tap Network &amp; internet.
+3. Toggle Wi-Fi setting to the Off position or connect to a trusted network.</fixtext>
+      <fix id="F-142A018Er01_fix"/>
+      <check system="C-142A018E_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Wi-Fi is either disabled or not connected to an untrusted network:
+1. Open phone's Settings app.
+2. Tap Network &amp; internet.
+3. Verify that the Wi-Fi switch is in the Off position or is connected to a trusted network only.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FEFD99CE">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FEFD99CEr01_rule" weight="10.0" severity="high">
+      <version>1.8</version>
+      <title>Ensure 'Show passwords' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This setting controls whether passwords typed into a user's Android device are visible on screen or hidden. When this setting is disabled, the password is concealed, and only the most recent character is visible for a short time after it has been pressed.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Disabling this setting prevents potential shoulder surfing attacks.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FEFD99CEr01_fix">Follow the below steps to disable Show passwords:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Toggle Show passwords to OFF position.</fixtext>
+      <fix id="F-FEFD99CEr01_fix"/>
+      <check system="C-FEFD99CE_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify Show passwords is set to Disabled:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Verify that Show passwords slider is OFF.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-09E00590">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-09E00590r01_rule" weight="10.0" severity="medium">
+      <version>1.9</version>
+      <title>Ensure 'Developer Options' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;The Developer Options is a hidden settings menu on Android devices that provides advanced tools and options for developers and advanced users.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Enabling Developer Options allows a user to alter specific, very advanced settings on the device. This can severely affect how the device functions and expose additional developmental features to the user. This also exposes the device to respond to features such as USB debugging (when enabled) and other features that could be exploited to gain malicious access to the device sub-systems.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-09E00590r01_fix">Follow the below steps to disable Developer Options:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Advanced.
+4. Tap Developer options.
+5. Toggle it to OFF position.</fixtext>
+      <fix id="F-09E00590r01_fix"/>
+      <check system="C-09E00590_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Developer Options is Disabled:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Advanced.
+4. Tap Developer options.
+5. Verify that it is OFF.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-2D47E1B6">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-2D47E1B6r01_rule" weight="10.0" severity="medium">
+      <version>1.10</version>
+      <title>Ensure 'Install unknown apps' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;The Install unknown apps setting in Android allows users to install apps from sources other than the Google Play Store.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Disabling installation from untrusted distribution channels protects against the inadvertent installation of untrusted or malicious applications. Google Play Apps are vetted by the Google Security Team and are generally considered safe. Installing apps from other sources can increase the risk of downloading malware or apps that may compromise user privacy and security. Therefore, it is recommended that users avoid installing apps from untrusted distribution channels.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-2D47E1B6r01_fix">Follow the below steps to disable Install unknown apps:
+1. Open phone's Settings app.
+2. Tap Apps &amp; notifications.
+3. Tap Advanced.
+4. Tap Special app access.
+5. Tap Install unknown apps.
+6. Tap any app showing Allowed.
+7. Toggle Allow from this source to OFF position.
+Internal Only - General</fixtext>
+      <fix id="F-2D47E1B6r01_fix"/>
+      <check system="C-2D47E1B6_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Install unknown apps is Disabled:
+1. Open phone's Settings app.
+2. Tap Apps &amp; notifications.
+3. Tap Advanced.
+4. Tap Special app access.
+5. Tap Install unknown apps.
+6. Verify that all of the apps in the list show Not allowed.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-DF45D195">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-DF45D195r01_rule" weight="10.0" severity="medium">
+      <version>1.11</version>
+      <title>Do not root a user device</title>
+      <description>&lt;VulnDiscussion&gt;Rooting an Android device means gaining administrative access to the device's system files and settings. This allows users to install custom firmware, modify system files, and perform other advanced operations that are not possible with a standard, unrooted device.
+The recommended state for this setting is: Do not Root.
+
+Rationale:
+Rooting an Android device breaks the user-level restrictions set by Google. In addition, rooting enables any form of alteration to the device, which could allow privileged actions. As a result, rooting puts the device at greater risk because rooting can modify the device without restrictions. Rooting also voids the warranty and could make installing future security updates is problematic.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.11</dc:identifier>
+      </reference>
+      <fixtext fixref="F-DF45D195r01_fix">Follow your device manufacturer documentation to completely un-root a user device.</fixtext>
+      <fix id="F-DF45D195r01_fix"/>
+      <check system="C-DF45D195_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Identifying a rooted device is not straightforward. You may need to install a terminal or root checker app to detect rooted devices. Alternatively, the device manufacturer may provide documentation describing how to detect rooting.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-8B3ED1BE">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-8B3ED1BEr01_rule" weight="10.0" severity="high">
+      <version>1.12</version>
+      <title>Ensure 'Smart Lock' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Smart Lock detects the device's presence and automatically keeps it unlocked even if it has a screen password, pin or pattern enabled. Using Smart Lock allows the device to be unlocked if preconditions are met.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Smart Lock detects the device's presence and automatically keeps it unlocked even if it has a screen password, pin or pattern enabled. Using Smart Lock allows the device to be unlocked if preconditions are met. As a best practice, do not set the device to unlock automatically. For example, if the device is stolen and taken to a location pre-defined in Smart Lock, it would automatically unlock. Similarly, if someone could replay the voice, the device would automatically unlock.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.12</dc:identifier>
+      </reference>
+      <fixtext fixref="F-8B3ED1BEr01_fix">Follow the below steps to disable Smart Lock:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Tap Advanced.
+4. Tap Trust agents.
+5. Toggle Smart Lock (Google) to OFF position.
+Internal Only - General</fixtext>
+      <fix id="F-8B3ED1BEr01_fix"/>
+      <check system="C-8B3ED1BE_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Smart Lock is Disabled:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Tap Advanced.
+4. Tap Trust agents.
+5. Verify that Smart Lock (Google) is OFF.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-AB55840E">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-AB55840Er01_rule" weight="10.0" severity="high">
+      <version>1.13</version>
+      <title>Ensure 'Find My Device' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;Find My Device allows users to remotely locate, lock, or erase their device in case it is lost or stolen.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+By enabling Find My Device, a user can remotely locate the device, ring the device, lock, or erase the device data. This helps to protect any sensitive data or personal information that may be stored on the device. It also increases the chances of recovering the device or having it returned to the owner, as it can provide location information to law enforcement or other authorities.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.13</dc:identifier>
+      </reference>
+      <fixtext fixref="F-AB55840Er01_fix">Follow the below steps to enable Find My Device:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Tap Find My Device.
+4. Toggle slider to the ON position.</fixtext>
+      <fix id="F-AB55840Er01_fix"/>
+      <check system="C-AB55840E_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Find My Device is Enabled:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Verify that the Find My Device is ON.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-88779EF6">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-88779EF6r01_rule" weight="10.0" severity="medium">
+      <version>1.14</version>
+      <title>Ensure 'Use network-provided time' and 'Use network- provided time zone' are set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;The Use network-provided time and Use network-provided time zone settings allow the device to automatically update its time and time zone based on the network it is connected to. When these settings are enabled, the device will periodically check with the network to ensure that its time and time zone are accurate.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Using the network-provided time setting fetches the date and time information from the cellular provider and is generally more reliable. In addition, precise date and time could help forensics device recovery through Android Device Manager and maintain application and logs in a time-sync manner.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.14</dc:identifier>
+      </reference>
+      <fixtext fixref="F-88779EF6r01_fix">Follow the below steps to enable Use network-provided time and Use network- provided time zone settings:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Date &amp; time.
+4. Toggle Use network-provided time setting to ON position.
+5. Toggle Use network-provided time zone setting to ON position.
+Internal Only - General</fixtext>
+      <fix id="F-88779EF6r01_fix"/>
+      <check system="C-88779EF6_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Use network-provided time and Use network- provided time zone setting is Enabled:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Date &amp; time.
+4. Verify that Use network-provided time setting is Enabled.
+5. Verify that Use network-provided time zone setting is Enabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-634E134A">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-634E134Ar01_rule" weight="10.0" severity="medium">
+      <version>1.15</version>
+      <title>Ensure 'Remotely locate this device' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;The Remotely locate this device setting allows users to locate their lost or stolen device remotely, as long as it is connected to the internet. By enabling this feature, users can easily track the location of their device on a map, lock it remotely with a custom message and phone number, and even erase all data on the device to protect sensitive information.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+By enabling the Remotely locate this device setting users can quickly and easily locate their lost or stolen device, and take action to protect their data and privacy.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.15</dc:identifier>
+      </reference>
+      <fixtext fixref="F-634E134Ar01_fix">Follow the below steps to enable Remotely locate this device:
+1. Open phone's Settings app.
+2. Tap Google.
+3. Tap Security.
+4. Tap Find My Device.
+5. Toggle Remotely locate this device setting to ON position.
+Internal Only - General</fixtext>
+      <fix id="F-634E134Ar01_fix"/>
+      <check system="C-634E134A_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Remotely locate this device setting is Enabled:
+1. Open phone's Settings app.
+2. Tap Google.
+3. Tap Security.
+4. Tap Find My Device.
+5. Verify that Remotely locate this device setting is Enabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-25485358">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-25485358r01_rule" weight="10.0" severity="medium">
+      <version>1.16</version>
+      <title>Ensure 'Allow remote lock and erase' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;The allow remote lock and erase setting allows users to remotely lock their device with a new passcode or erase all data in the event of loss or theft.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Allow remote lock and erase setting helps a user to remotely lock a device or erase data through Find My Device. This helps to safeguard privacy and protect data from unsanctioned access.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.16</dc:identifier>
+      </reference>
+      <fixtext fixref="F-25485358r01_fix">Follow the below steps to enable Allow remote lock and erase:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Tap Device admin apps.
+4. Tap Find My Device toggle.
+5. Tap Activate this device.
+Internal Only - General</fixtext>
+      <fix id="F-25485358r01_fix"/>
+      <check system="C-25485358_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Allow remote lock and erase setting is Enabled:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Tap Device admin apps.
+4. Verify that Find My Device is Enabled and Allow remote lock and erase is listed underneath.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-1F84C6A6">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-1F84C6A6r01_rule" weight="10.0" severity="medium">
+      <version>1.17</version>
+      <title>Ensure 'Scan device for security threats' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;The Scan device for security threats feature on Android Google is a built-in security feature that allows users to scan their device for any potential security threats.
+When this feature is enabled, the device will periodically scan for malware, spyware, and other potential security threats.
+The recommended state for this setting is: Enabled
+
+Rationale:
+Enabling Scan device for security threats setting ensures that the device is regularly scanned for potential threats, and any detected threats can be promptly addressed to prevent harm to the device and the user's personal information.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.17</dc:identifier>
+      </reference>
+      <fixtext fixref="F-1F84C6A6r01_fix">Follow the below steps to enable Scan device for security threats:
+1. Open phone's Settings app.
+2. Tap Google.
+3. Tap Security.
+4. Tap Google Play Protect.
+5. Tap Settings Gear icon.
+6. Toggle Scan device for security threats setting to ON position.
+Internal Only - General</fixtext>
+      <fix id="F-1F84C6A6r01_fix"/>
+      <check system="C-1F84C6A6_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Scan device for security threats setting is Enabled:
+1. Open phone's Settings app.
+2. Tap Google.
+3. Tap Security.
+4. Tap Google Play Protect.
+5. Tap Settings Gear icon.
+6. Verify that Scan device for security threats setting is Enabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-200EBD31">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-200EBD31r01_rule" weight="10.0" severity="medium">
+      <version>1.18</version>
+      <title>Ensure 'Improve harmful app detection' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;The Improve harmful app detection setting enables Google to scan apps on the device in real-time, analyze their behavior, and compare them against a database of known malicious apps.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Enabling Improve harmful app detection setting sends anonymous information to Google about non-Google Play apps to enhance the detection and prevention of harmful apps, ultimately enhancing the security of Android devices and benefiting all users.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.18</dc:identifier>
+      </reference>
+      <fixtext fixref="F-200EBD31r01_fix">Follow the below steps to enable Improve harmful app detection:
+1. Open phone's Settings app.
+2. Tap Google.
+3. Tap Security.
+4. Tap Google Play Protect.
+5. Toggle Improve harmful app detection setting to ON position.
+Internal Only - General</fixtext>
+      <fix id="F-200EBD31r01_fix"/>
+      <check system="C-200EBD31_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Improve harmful app detection setting is Enabled:
+1. Open phone's Settings app.
+2. Tap Google.
+3. Tap Security.
+4. Tap Google Play Protect.
+5. Verify that Improve harmful app detection setting is Enabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-C868E3BA">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-C868E3BAr01_rule" weight="10.0" severity="medium">
+      <version>1.19</version>
+      <title>Ensure 'Ask for unlock pattern/PIN/password before unpinning' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;A user can pin an app and hand the device to a friend. With the screen pinned, the friend can use only that app. To use the other apps again, the user can unpin the screen.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+A user might lend their device to a friend or anyone else to carry out a single task, such as playing a game. Screen pinning, in such a situation, locks the user to a particular screen, preventing accidental or malicious unpinning and preserving the confidentiality of the device's data. Users cannot use the device outside of the pinned application until the screen is unpinned. Unpinning the screen should require user re-authentication.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.19</dc:identifier>
+      </reference>
+      <fixtext fixref="F-C868E3BAr01_fix">Follow the below steps to enable Ask for pattern/PIN/password before unpinning:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Tap Advanced.
+4. Tap Screen pinning.
+5. If you are using Screen Pinning, then toggle Ask for pattern/PIN/password before unpinning setting to ON position.</fixtext>
+      <fix id="F-C868E3BAr01_fix"/>
+      <check system="C-C868E3BA_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Ask for pattern/PIN/password before unpinning setting is Enabled:
+1. Open phone's Settings app.
+2. Tap Security.
+3. Tap Advanced.
+4. Tap Screen pinning.
+5. If Screen Pinning is On, then verify that Ask for pattern/PIN/password before unpinning setting is Enabled.
+Internal Only - General</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A8698EEF">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A8698EEFr01_rule" weight="10.0" severity="medium">
+      <version>1.20</version>
+      <title>Ensure 'Screen timeout' is set to '2 minutes'</title>
+      <description>&lt;VulnDiscussion&gt;The Screen timeout setting allows users to specify the amount of time that elapses before the device's screen automatically turns off.
+The recommended state for this setting is: 2 Minutes.
+
+Rationale:
+Setting an inactivity timeout is a recommended security measure to prevent unauthorized access to the device when it's unattended. The inactivity timeout automatically turns off the screen after a specified period of inactivity and also activates other security features like a screen lock to safeguard the device. This helps protect sensitive information from unauthorized access and enhances the overall security of the device.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.20</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A8698EEFr01_fix">Follow the below steps to set Screen timeout setting to 2 minutes:
+1. Open phone's Settings app.
+2. Tap Display.
+3. Tap Advanced.
+4. Tap Screen timeout.
+5. Tap on time duration of 2 minutes.</fixtext>
+      <fix id="F-A8698EEFr01_fix"/>
+      <check system="C-A8698EEF_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Screen timeout setting is set to 2 minute:
+1. Open phone's Settings app.
+2. Tap Display.
+3. Tap Advanced.
+4. Verify that Screen timeout is set to 2 minutes.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-DA8DC24E">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-DA8DC24Er01_rule" weight="10.0" severity="medium">
+      <version>1.21</version>
+      <title>Ensure 'Wi-Fi assistant' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;The Wi-Fi assistant setting allows users to automatically connect to high-quality open Wi-Fi networks.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Wi-Fi assistant connects to any open Wi-Fi and tunnels the connection through Google VPN servers. It is considered best practice to only connect to trusted networks manually and leave this setting disabled.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.21</dc:identifier>
+      </reference>
+      <fixtext fixref="F-DA8DC24Er01_fix">Follow the below steps to disable Wi-Fi assistant:
+1. Open phone's Settings app.
+2. Tap Google.
+3. Tap Networking.
+4. Toggle Wi-Fi assistant to OFF position.
+Internal Only - General</fixtext>
+      <fix id="F-DA8DC24Er01_fix"/>
+      <check system="C-DA8DC24E_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Wi-Fi assistant is Disabled:
+1. Open phone's Settings app.
+2. Tap Google.
+3. Tap Networking.
+4. Verify that Wi-Fi assistant is turned OFF.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-140E02F1">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-140E02F1r01_rule" weight="10.0" severity="medium">
+      <version>1.22</version>
+      <title>Keep device Apps up to date</title>
+      <description>&lt;VulnDiscussion&gt;Regularly update device apps.
+The recommended state for this setting is: Update apps.
+
+Rationale:
+Enabling Keep device Apps up to date ensures that apps are always up to date with the latest features and security fixes without the need for manual updates.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.22</dc:identifier>
+      </reference>
+      <fixtext fixref="F-140E02F1r01_fix">Follow the below steps to update all Apps:
+1. Tap/slide up Launcher.
+2. Launch Play Store App in the App drawer.
+3. Tap Menu.
+4. Tap My apps &amp; Games.
+5. If there are any updates pending, then tap Update All.</fixtext>
+      <fix id="F-140E02F1r01_fix"/>
+      <check system="C-140E02F1_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Apps are up to date:
+1. Tap/slide up Launcher.
+2. Launch Play Store App in the App drawer.
+3. Tap Menu.
+4. Tap My apps &amp; Games.
+5. Verify that all apps are up to date.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-5F5848F7">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-5F5848F7r01_rule" weight="10.0" severity="medium">
+      <version>1.23</version>
+      <title>Ensure 'Add users from lock screen' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;The Add users from lock screen setting allows users to add new users to the device from the lock screen without having to enter the primary user's password.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Users and the guest profile can do most of the same things as the device’s owner, but each profile has its own storage space. As a result, guests could install malicious apps or carry out other activities that compromise overall device security. Therefore, adding users from the lock screen setting should be disabled.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.23</dc:identifier>
+      </reference>
+      <fixtext fixref="F-5F5848F7r01_fix">Follow the below steps to disable Add users from lock screen setting:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Advanced.
+4. Tap Multiple users.
+5. Toggle Add users from lock screen setting to OFF position.
+Internal Only - General</fixtext>
+      <fix id="F-5F5848F7r01_fix"/>
+      <check system="C-5F5848F7_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Add users from lock screen setting is Disabled:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Advanced.
+4. Tap Multiple users.
+5. Verify that Add users from lock screen setting is Disabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-315FD4A4">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-315FD4A4r01_rule" weight="10.0" severity="medium">
+      <version>1.24</version>
+      <title>Ensure 'Guest profiles' do not exist</title>
+      <description>&lt;VulnDiscussion&gt;Do not add any guest profiles on the device. Guest profiles allows users to create temporary profiles for guests or other individuals who may need to use the device without accessing the owner's personal data.
+The recommended state for this setting is: Remove Guest profiles.
+
+Rationale:
+Users and the guest profile can do most of the same things as the device’s owner, but each profile has its own storage space. As a result, guests could install malicious apps or carry out other activities that compromise overall device security. Therefore, adding any guest profiles on the device is not recommended.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.24</dc:identifier>
+      </reference>
+      <fixtext fixref="F-315FD4A4r01_fix">Follow the below steps remove the Guest profile:
+1. Open Quick Settings drawer.
+2. Tap the Profile icon.
+3. Switch to Guest profile.
+4. Open Quick Settings drawer.
+5. Tap Remove guest.
+6. Confirm removal by tapping remove.</fixtext>
+      <fix id="F-315FD4A4r01_fix"/>
+      <check system="C-315FD4A4_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that the Guest profile do not exist:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Advanced.
+4. Tap Multiple users.
+5. Verify that Guests is grayed out.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F983FDFF">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F983FDFFr01_rule" weight="10.0" severity="medium">
+      <version>1.25</version>
+      <title>Review app permissions periodically</title>
+      <description>&lt;VulnDiscussion&gt;Review device app's permissions periodically. App permissions allow control over which capabilities or information apps could access on the device. Permissions can extend from using device hardware to accessing data.
+The recommended state for this setting is: Review app permissions regularly.
+
+Rationale:
+Periodically reviewing all apps permissions ensures that those apps have legitimate permissions and only have access to data they actually need. Uninstall apps that may seek overbroad permissions.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.25</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F983FDFFr01_fix">Follow the below steps to set app permissions appropriately:
+1. Open phone's Settings app.
+2. Tap Apps &amp; notifications.
+3. Tap App permissions.
+4. Tap on each permission and review the apps that have them.
+5. Disable the app permissions that are over-permissive.</fixtext>
+      <fix id="F-F983FDFFr01_fix"/>
+      <check system="C-F983FDFF_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to review app permissions:
+1. Open phone's Settings app.
+2. Tap Apps &amp; notifications.
+3. Tap See all apps.
+4. Tap on each permission and review the apps that have them.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E3AF6164">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E3AF6164r01_rule" weight="10.0" severity="medium">
+      <version>1.26</version>
+      <title>Ensure 'Bluetooth' Pairing is Configured</title>
+      <description>&lt;VulnDiscussion&gt;Bluetooth provides wireless connections to a wide range of devices like handsfree headsets, internet sharing and data transfer.
+The recommended state for Bluetooth is: Disabled.
+
+Rationale:
+Some Bluetooth profiles provide for transfer of data without encryption or may be in violation of organization security policies and therefore should be disabled.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.26</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E3AF6164r01_fix">Follow the below steps to disable Bluetooth:
+1. Open phone's Settings app.
+2. Tap Connected Devices.
+3. Tap Connection Preferences.
+4. Tap Bluetooth.
+5. Toggle Bluetooth setting to OFF position.</fixtext>
+      <fix id="F-E3AF6164r01_fix"/>
+      <check system="C-E3AF6164_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Verify that Bluetooth is configured according to site policies:
+1. Open phone's Settings app.
+2. Tap Connected Devices.
+3. Tap Connection Preferences.
+4. Tap Bluetooth.
+5. Verify that Bluetooth is turned off or that all paired devices are authorized.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-8BC788FA">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-8BC788FAr01_rule" weight="10.0" severity="medium">
+      <version>1.27</version>
+      <title>Ensure that no 3rd party keyboards are installed</title>
+      <description>&lt;VulnDiscussion&gt;A number of 3rd party custom keyboards are available for Android devices.
+
+Rationale:
+Many 3rd party keyboards have been known to contain malware and provide an easy method to capture keystrokes.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.27</dc:identifier>
+      </reference>
+      <fixtext fixref="F-8BC788FAr01_fix">Follow the below steps to uninstall 3rd party keyboards:
+1. Open phone's Settings app.
+2. Tap Apps &amp; Notifications.
+3. Tap See All Apps.
+4. Review the list of installed apps and remove any 3rd party keyboards that are installed.</fixtext>
+      <fix id="F-8BC788FAr01_fix"/>
+      <check system="C-8BC788FA_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Verify that no 3rd Party keyboards are installed:
+1. Open phone's Settings app.
+2. Tap Apps &amp; Notifications.
+3. Tap See All Apps.
+4. Review the list of installed apps and verify that no 3rd party keyboards are installed.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-61859C15">
+    <title>1 Android OS Security Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-61859C15r01_rule" weight="10.0" severity="medium">
+      <version>1.28</version>
+      <title>Review existing user profiles periodically</title>
+      <description>&lt;VulnDiscussion&gt;Review any user profiles on the device. Remove those that are no longer required.
+
+Rationale:
+Users and the guest profile can do most of the same things as the device’s owner, but each profile has its own storage space. As a result, additional users could install malicious apps or carry out other activities that compromise overall device security.
+Therefore, reviewing and removing unnecessary user profiles should be done periodically.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>1.28</dc:identifier>
+      </reference>
+      <fixtext fixref="F-61859C15r01_fix">Follow the below steps to delete any unnecessary profiles:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Advanced.
+4. Tap Multiple users.
+5. Tap any unnecessary profile.
+6. Tap Delete User.
+Internal Only - General</fixtext>
+      <fix id="F-61859C15r01_fix"/>
+      <check system="C-61859C15_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Review the list of user profiles.
+Follow the below steps to view the list of profile that exist:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Advanced.
+4. Tap Multiple users.
+5. Review the list of user profiles.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-3DAC7597">
+    <title>2 Android OS Privacy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-3DAC7597r01_rule" weight="10.0" severity="medium">
+      <version>2.1</version>
+      <title>Ensure 'Lock screen' is set to 'Don't show notifications at all'</title>
+      <description>&lt;VulnDiscussion&gt;Disable notifications on the lock screen.
+The recommended state for this setting is: Don't show notifications at all.
+
+Rationale:
+If the device is lost or unattended, disabling notifications prevents the information from appearing on the lock screen. This information might be confidential, and thus unwarranted disclosures could be avoided.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>2.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-3DAC7597r01_fix">Follow these steps to set the lock screen to show no notifications:
+1. Open phone's Settings app.
+2. Tap Apps &amp; notifications.
+3. Tap Notifications.
+4. Tap Advanced.
+5. Tap Lock Screen.
+6. Tap Lock Screen and set it to Don't show notifications at all.
+Internal Only - General</fixtext>
+      <fix id="F-3DAC7597r01_fix"/>
+      <check system="C-3DAC7597_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>To verify notifications on the lock screen are not shown:
+1. Open phone's Settings app.
+2. Tap Apps &amp; notifications.
+3. Tap Notifications.
+4. Tap Advanced.
+5. Tap Lock Screen.
+6. Verify that Lock Screen is set to Don't show notifications at all.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E4D39B0E">
+    <title>2 Android OS Privacy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E4D39B0Er01_rule" weight="10.0" severity="high">
+      <version>2.2</version>
+      <title>Ensure 'Back up to Google Drive' is 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Disable Backup to Google Drive.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+If a user can back up corporate device data to a personal Google account, the user can later restore the information to a new device. Because of privacy concerns, backing up personal data such as text messages, emails, photos, and contacts to any third party is not recommended.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>2.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E4D39B0Er01_fix">Follow the below steps to disable Back up to Google Drive:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Advanced.
+4. Tap Backup.
+5. Tap Back up to Google Drive.
+6. Toggle it to OFF position.
+7. Tap OK on warning popup.</fixtext>
+      <fix id="F-E4D39B0Er01_fix"/>
+      <check system="C-E4D39B0E_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify Back up to Google Drive is Disabled:
+1. Open phone's Settings app.
+2. Tap System.
+3. Tap Advanced.
+4. Tap Backup.
+5. Verify that Back up to Google Drive is OFF.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-4F8CDF3D">
+    <title>2 Android OS Privacy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-4F8CDF3Dr01_rule" weight="10.0" severity="medium">
+      <version>2.3</version>
+      <title>Ensure 'Web and App Activity' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Disable linking of web and app activity to your account when you are logged out.
+The recommended state for this setting is: Disabled.
+Note: This setting is applicable only for Google Pixel line of devices.
+
+Rationale:
+When this setting is enabled, searches and activity from other Google services are linked and saved to the Google Account. This could be privacy-invasive, so it is recommended to disable this setting.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>2.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-4F8CDF3Dr01_fix">Follow the below steps to disable Web &amp; App Activity setting:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Toggle Web &amp; App Activity setting to OFF position.</fixtext>
+      <fix id="F-4F8CDF3Dr01_fix"/>
+      <check system="C-4F8CDF3D_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Web &amp; App Activity setting is Disabled:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Verify that Web &amp; App Activity setting is Disabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D37B7FB4">
+    <title>2 Android OS Privacy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D37B7FB4r01_rule" weight="10.0" severity="medium">
+      <version>2.4</version>
+      <title>Ensure 'Device Information' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Disable storing device information to your account.
+The recommended state for this setting is: Disabled.
+Note: This setting is applicable only for Google Pixel line of devices.
+
+Rationale:
+When the Device Information setting is enabled, contact lists, calendars, alarms, and applications are saved to provide a personalized experience. The Device Information setting saves this data and replicates the information on Google’s servers. It is recommended to disable this setting as it could be considered a privacy issue for the organization.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>2.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D37B7FB4r01_fix">Follow the below steps to disable Device Information setting:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Toggle Device Information setting to OFF position.</fixtext>
+      <fix id="F-D37B7FB4r01_fix"/>
+      <check system="C-D37B7FB4_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Device Information setting is Disabled:
+1. Tap Settings Gear Icon.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Verify that Device Information setting is Disabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A9F36536">
+    <title>2 Android OS Privacy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A9F36536r01_rule" weight="10.0" severity="medium">
+      <version>2.5</version>
+      <title>Ensure 'Voice &amp; Audio Activity' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Disable saving your voice and other audio to your Google Account.
+The recommended state for this setting is: Disabled.
+Note: This setting is applicable only for Google Pixel line of devices.
+
+Rationale:
+Google records your voice and other audio when you use audio activations. Audio can be saved even when your device is offline. When Voice &amp; Audio Activity is off, voice inputs won't be saved to your Google Account, even if you're signed in. Instead, they may only be saved using anonymous identifiers. It is recommended to disable this setting as it could be considered a privacy issue for the organization.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>2.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A9F36536r01_fix">Follow the below steps to disable Voice &amp; Audio Activity setting:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Toggle Voice &amp; Audio Activity setting to OFF position.</fixtext>
+      <fix id="F-A9F36536r01_fix"/>
+      <check system="C-A9F36536_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Voice &amp; Audio Activity setting is Disabled:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Verify that Voice &amp; Audio Activity setting is Disabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-20728839">
+    <title>2 Android OS Privacy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-20728839r01_rule" weight="10.0" severity="medium">
+      <version>2.6</version>
+      <title>Ensure 'YouTube Search History' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Disable storing YouTube Search History to a user's account.
+The recommended state for this setting is: Disabled.
+Note: This setting is applicable only for Google Pixel line of devices.
+
+Rationale:
+Turning on the YouTube Search History setting stores all YouTube searches to the user’s Google account. YouTube and Google search history influences the recommendations seen on the YouTube homepage. It is recommended to disable this setting as it could be considered a privacy issue for the organization.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>2.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-20728839r01_fix">Follow the below steps to disable YouTube Search History setting:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Toggle YouTube Search History setting to OFF position.</fixtext>
+      <fix id="F-20728839r01_fix"/>
+      <check system="C-20728839_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that YouTube Search History setting is Disabled:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Verify that YouTube Search History setting is Disabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-B7914FD1">
+    <title>2 Android OS Privacy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-B7914FD1r01_rule" weight="10.0" severity="medium">
+      <version>2.7</version>
+      <title>Ensure 'YouTube Watch History' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Disable storing YouTube Watch History to a user account.
+The recommended state for this setting is: Disabled.
+Note: This setting is applicable only for Google Pixel line of devices.
+
+Rationale:
+Turning on the YouTube Watch History setting stores all YouTube watch history to the user’s Google account. YouTube and Google watch history influences the recommendations seen on the YouTube homepage. It is recommended to disable this setting as it could be considered a privacy issue for the organization.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>2.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-B7914FD1r01_fix">Follow the below steps to disable YouTube Watch History setting:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Toggle YouTube Watch History setting to OFF position.</fixtext>
+      <fix id="F-B7914FD1r01_fix"/>
+      <check system="C-B7914FD1_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that YouTube Watch History setting is Disabled:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Verify that YouTube Watch History is Disabled.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-107AFCB8">
+    <title>2 Android OS Privacy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-107AFCB8r01_rule" weight="10.0" severity="medium">
+      <version>2.8</version>
+      <title>Ensure 'Google Location History' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Disable storing device location history.
+The recommended state for this setting is: Disabled.
+Note: This setting is applicable only for Google Pixel line of devices.
+
+Rationale:
+When the Google Location History setting is enabled, the device periodically sends diagnostic information to Google. This setting stores location history to provide results and recommendations across Google products. It is recommended to disable this setting as it could be considered a privacy issue for the organization.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>2.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-107AFCB8r01_fix">Follow the below steps to disable Google Location History setting:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Toggle Google Location History setting to OFF position.</fixtext>
+      <fix id="F-107AFCB8r01_fix"/>
+      <check system="C-107AFCB8_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Google Location History setting is Disabled:
+1. Open phone's Settings app.
+2. Tap Privacy.
+3. Tap Advanced.
+4. Tap Activity Controls.
+5. Verify that Google Location History setting is turned OFF.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D821AE0B">
+    <title>2 Android OS Privacy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D821AE0Br01_rule" weight="10.0" severity="medium">
+      <version>2.9</version>
+      <title>Ensure 'Opt out of Ads Personalization' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;The Opt out of Ads Personalization setting allows users to control how their data is used for personalized advertising.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Apps leverage the app/browsing data to build a profile for displaying personalized ads.
+Disabling this setting prevents building profiles from various app/browsing activities to protect privacy.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>2.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D821AE0Br01_fix">Follow the below steps to enable Opt out of Ads Personalization setting:
+1. Open phone's Settings app.
+2. Tap Google.
+3. Tap Ads.
+4. Toggle Opt out of Ads Personalization setting to ON position.</fixtext>
+      <fix id="F-D821AE0Br01_fix"/>
+      <check system="C-D821AE0B_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Opt out of Ads Personalization setting is Enabled:
+1. Open phone's Settings app.
+2. Tap Google.
+3. Tap Ads.
+4. Verify that Opt out of Ads Personalization setting is turned ON.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E76C29A9">
+    <title>2 Android OS Privacy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E76C29A9r01_rule" weight="10.0" severity="medium">
+      <version>2.10</version>
+      <title>Ensure 'Wi-Fi scanning' Is 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Wi-Fi scanning is a feature that allows your device to continuously scan for nearby Wi-Fi networks even when Wi-Fi is turned off. While it's used to improve location accuracy for services like Google Maps and Find My Phone, it also presents some security and privacy risks.
+
+Rationale:
+Wi-Fi scanning can make you vulnerable to attacks, especially when your device is configured to automatically connect to known networks. Threat actors can set up an "evil twin" network — a fake Wi-Fi access point with a common name like "Free Public Wi-Fi." Your phone might automatically connect to this malicious network, allowing the attacker to intercept your data and/or distribute malware.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>2.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E76C29A9r01_fix">Follow the below steps to disable Wi-Fi assistant:
+1. Open phone's Settings app.
+2. Tap Location.
+3. Tap Location services.
+4. Tap Wi-Fi scanning.
+5. Toggle Wi-Fi scanning to OFF position.</fixtext>
+      <fix id="F-E76C29A9r01_fix"/>
+      <check system="C-E76C29A9_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Wi-Fi assistant is Disabled:
+1. Open phone's Settings app.
+2. Tap Location.
+3. Tap Location services.
+4. Tap Wi-Fi scanning.
+5. Verify that Wi-Fi scanning is turned OFF.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-59DE06D8">
+    <title>2 Android OS Privacy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-59DE06D8r01_rule" weight="10.0" severity="medium">
+      <version>2.11</version>
+      <title>Ensure 'Bluetiooth' scanning' Is 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Bluetooth scanning allows the device to find nearby Bluetooth devices and services, even when Bluetooth is turned off. This feature, part of location services, is mainly for improving location accuracy but carries significant security and privacy risks.
+
+Rationale:
+Bluetooth scanning can be used to track your location. By continuously collecting the MAC addresses of nearby Bluetooth devices, this data can be used to create a detailed record of your movements. Malicious actors could potentially use this information to monitor your routine and habits. Although newer Android versions use randomized MAC addresses to mitigate some of this risk, it is still a concern.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>2.11</dc:identifier>
+      </reference>
+      <fixtext fixref="F-59DE06D8r01_fix">Follow the below steps to disable Wi-Fi assistant:
+1. Open phone's Settings app.
+2. Tap Location.
+3. Tap Location services.
+4. Tap Bluetooth scanning.
+5. Toggle Bluetooth scanning to OFF position.</fixtext>
+      <fix id="F-59DE06D8r01_fix"/>
+      <check system="C-59DE06D8_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Wi-Fi assistant is Disabled:
+1. Open phone's Settings app.
+2. Tap Location.
+3. Tap Location services.
+4. Tap Bluetooth scanning.
+5. Verify that Bluetooth scanning is turned OFF.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-77E50CA3">
+    <title>3 Android OS Chrome Browser Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-77E50CA3r01_rule" weight="10.0" severity="medium">
+      <version>3.1</version>
+      <title>Ensure 'Microphone' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This setting controls if a site asks before accessing the microphone.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Websites will have to ask permission before being allowed to access the microphone, which will help prevent unwanted access to the microphone and help protect against potential privacy concerns.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>3.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-77E50CA3r01_fix">Follow the below steps to Enable the Microphone permission request:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Site settings.
+5. Tap Microphone.
+6. Toggle to the ON position.</fixtext>
+      <fix id="F-77E50CA3r01_fix"/>
+      <check system="C-77E50CA3_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Microphone is Enabled:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Site settings.
+5. Verify that Microphone displays Ask first.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-9EE855AE">
+    <title>3 Android OS Chrome Browser Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-9EE855AEr01_rule" weight="10.0" severity="medium">
+      <version>3.2</version>
+      <title>Ensure 'Location' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This setting controls if a site asks before accessing the location.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Websites will have to ask permission before being allowed to access the location, which will help prevent unwanted access to the user's location and help protect against potential privacy concerns.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>3.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-9EE855AEr01_fix">Follow the below steps to Enable the Location permission request:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Site settings.
+5. Tap Location.
+6. Toggle to the ON position.</fixtext>
+      <fix id="F-9EE855AEr01_fix"/>
+      <check system="C-9EE855AE_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Location is Enabled:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Site settings.
+5. Verify that Location displays Ask first.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6F65F6A3">
+    <title>3 Android OS Chrome Browser Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6F65F6A3r01_rule" weight="10.0" severity="medium">
+      <version>3.3</version>
+      <title>Ensure 'Allow third-party cookies' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;A third-party cookie is sent by a domain that differs from the domain in the browser's address bar.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Blocking third-party cookies can help protect users' privacy by eliminating several website tracking cookies.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>3.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6F65F6A3r01_fix">Follow the below steps to Disabled the Allow third-party cookies option:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Site settings.
+5. Tap Allow third-party cookies.
+6. Uncheck the Allow third-party cookies checkbox.</fixtext>
+      <fix id="F-6F65F6A3r01_fix"/>
+      <check system="C-6F65F6A3_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Allow third-party cookies is Disabled:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Site settings.
+5. Verify that Allow third-party cookies displays Allowed, except third- party.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-DBEDD61B">
+    <title>3 Android OS Chrome Browser Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-DBEDD61Br01_rule" weight="10.0" severity="medium">
+      <version>3.4</version>
+      <title>Ensure 'Safe Browsing' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This setting controls the Safe Browsing feature.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Google Safe Browsing helps protect devices by warning users when they attempt to navigate dangerous sites or download harmful files.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>3.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-DBEDD61Br01_fix">Follow the below steps to Enable the Safe Browsing feature:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Privacy.
+5. Check the Safe Browsing checkbox.</fixtext>
+      <fix id="F-DBEDD61Br01_fix"/>
+      <check system="C-DBEDD61B_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Safe Browsing is Enabled:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Privacy.
+5. Verify that Safe Browsing checkbox is checked.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-92DDC544">
+    <title>3 Android OS Chrome Browser Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-92DDC544r01_rule" weight="10.0" severity="high">
+      <version>3.5</version>
+      <title>Ensure 'Search and URL suggestions' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Google Chrome uses a prediction service to show related searches, matches from browsing history, and popular websites while a user types in the address bar.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Having search suggestions processed is considered a privacy concern.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>3.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-92DDC544r01_fix">Follow the below steps to Disable the Search and URL suggestions feature:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Privacy.
+5. Uncheck the Search and URL suggestions checkbox.</fixtext>
+      <fix id="F-92DDC544r01_fix"/>
+      <check system="C-92DDC544_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Search and URL suggestions is Disabled:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Privacy.
+5. Verify that Search and URL suggestions checkbox is unchecked.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-3E9C1DBD">
+    <title>3 Android OS Chrome Browser Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-3E9C1DBDr01_rule" weight="10.0" severity="high">
+      <version>3.6</version>
+      <title>Ensure 'Do Not Track' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;When browsing the web on computers or Android devices, users can request websites not to collect or track browsing data.
+The recommended state for this setting is: Enabled.
+Note: Chrome doesn't provide details of which websites and web services respect Do Not Track requests and how websites interpret them.
+
+Rationale:
+Many websites will still collect and use browsing data to improve security, provide content, services, ads, and recommendations on their websites, and generate reporting statistics.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Google Android Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Google Android Benchmark</dc:subject>
+        <dc:identifier>3.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-3E9C1DBDr01_fix">Follow the below steps to Enabled the Do Not Track feature:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Privacy.
+5. Tap Do Not Track.
+6. Toggle the Do Not Track to the ON position.</fixtext>
+      <fix id="F-3E9C1DBDr01_fix"/>
+      <check system="C-3E9C1DBD_chk">
+        <check-content-ref href="CIS_Google_Android_Benchmark.xml" name="M"/>
+        <check-content>Follow the below steps to verify that Do Not Track is Enabled:
+1. Tap Chrome Icon.
+2. Tap Menu Icon.
+3. Tap Settings.
+4. Tap Privacy.
+5. Tap Do Not Track.
+6. Verify that Do Not Track toggle is on.</check-content>
+      </check>
+    </Rule>
+  </Group>
+</Benchmark>
+

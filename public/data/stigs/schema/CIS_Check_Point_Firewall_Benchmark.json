@@ -1,0 +1,2906 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_Check_Point_Firewall_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2020-06-29"
+    },
+    "title": "CIS Check Point Firewall Benchmark",
+    "description": "This document, Security Configuration Benchmark for Checkpoint Firewall, provides prescriptive guidance for establishing a secure configuration posture for Checkpoint Firewall versions R75.x – 80.x installed on Gaia Platform. This guide was tested against Checkpoint R80.10 installed on Gaia. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.1.0 Benchmark Date: 2020-06-29",
+      "+@id": "release-info"
+    },
+    "version": "1.1.0",
+    "Profile": [
+      {
+        "+@id": "L1_Public",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-0D1A947A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-830E5F1F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D386FEE8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-11DB8772",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0831475D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CE5FEB3A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-24B94557",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CBAF24E1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F5ABFF90",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-94891B30",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4F0BBECE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D726F9E2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D76106EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3F4DDB77",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7CB5023D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7B479DB8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-591E07EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9B93FB52",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-143B1F0F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-83FAADBC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-986129E1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A2E9864",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-38C03BF1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D9100879",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8DC6B875",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-525FEB54",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-93C96503",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A04BA158",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5DFD344D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6CCB3427",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5097A6F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8C5CF35",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CE005030",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9CDE29F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0F0EDAFA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-359C1E9F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9E61E3FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2437A5F5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-813015DF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CFE20DAE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7E429E38",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E8A40347",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Classified",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-0D1A947A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-830E5F1F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D386FEE8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-11DB8772",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0831475D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CE5FEB3A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-24B94557",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CBAF24E1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F5ABFF90",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-94891B30",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4F0BBECE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D726F9E2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D76106EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3F4DDB77",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7CB5023D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7B479DB8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-591E07EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9B93FB52",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-143B1F0F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-83FAADBC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-986129E1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A2E9864",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-38C03BF1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D9100879",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8DC6B875",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-525FEB54",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-93C96503",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A04BA158",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5DFD344D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6CCB3427",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5097A6F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8C5CF35",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CE005030",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9CDE29F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0F0EDAFA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-359C1E9F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9E61E3FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2437A5F5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-813015DF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CFE20DAE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7E429E38",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E8A40347",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Sensitive",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-0D1A947A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-830E5F1F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D386FEE8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-11DB8772",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0831475D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CE5FEB3A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-24B94557",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CBAF24E1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F5ABFF90",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-94891B30",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4F0BBECE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D726F9E2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D76106EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3F4DDB77",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7CB5023D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7B479DB8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-591E07EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9B93FB52",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-143B1F0F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-83FAADBC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-986129E1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A2E9864",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-38C03BF1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D9100879",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8DC6B875",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-525FEB54",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-93C96503",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A04BA158",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5DFD344D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6CCB3427",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5097A6F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8C5CF35",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CE005030",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9CDE29F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0F0EDAFA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-359C1E9F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9E61E3FE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2437A5F5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-813015DF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CFE20DAE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7E429E38",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E8A40347",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Public",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-168EBF59",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-23F7519C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F2BE6AC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-38E3BAA8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B452DCA5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A579CFED",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-709C2768",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E7D13E90",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D1A7A12E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5AF7051D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-736A55A0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1A70F032",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1DE40F1A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3404C898",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F3833E6C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C49031C8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD9BEDAD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1442DF56",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Classified",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-168EBF59",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-23F7519C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F2BE6AC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-38E3BAA8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B452DCA5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A579CFED",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-709C2768",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E7D13E90",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D1A7A12E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5AF7051D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-736A55A0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1A70F032",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1DE40F1A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3404C898",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F3833E6C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C49031C8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD9BEDAD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1442DF56",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Sensitive",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-168EBF59",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-23F7519C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F2BE6AC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-38E3BAA8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B452DCA5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A579CFED",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-709C2768",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E7D13E90",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D1A7A12E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5AF7051D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-736A55A0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1A70F032",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1DE40F1A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3404C898",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F3833E6C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C49031C8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD9BEDAD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1442DF56",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-0D1A947A",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0D1A947Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1",
+          "title": "Ensure Minimum Password Length is set to 14 or higher",
+          "description": "<VulnDiscussion>Defines the minimum length a password can be. The minimum number of characters of a password that is to be allowed for users or SNMP users. Does not apply to passwords that have already been set.\n\nRationale:\nPassword length has been found to be a primary factor in characterizing password strength. Passwords that are too short yield to brute force attacks as well as to dictionary attacks using words and commonly chosen passwords.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the min-password-length setting.\nCLI:\nHostname>set password-controls min-password-length 14\nGUI:\nNavigate to User Management > Password Policy\nEnsure 'Minimum Password Length' is set to 14 or higher.\n11 | P a g e",
+            "+@fixref": "F-0D1A947Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-0D1A947Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-0D1A947A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Minimum Password Length.\nCLI:\nHostname>show password-controls min-password-length\nMinimum Password Length 14\nGUI:\nNavigate to User Management > Password Policy\nEnsure Minimum Password Length is set to 14 or higher."
+          }
+        }
+      },
+      {
+        "+@id": "V-830E5F1F",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-830E5F1Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2",
+          "title": "Ensure Disallow Palindromes is selected",
+          "description": "<VulnDiscussion>A palindrome is a sequence of letters, numbers, or characters that can be read the same in each direction. racecar, bob, and noon are some of the famous examples of Palindrome.\n\nRationale:\nThe Palindrome words are high on wordlists which are used before any brute-force attacks, and it's simpler to crack using the password cracking tools.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the palindrome-check setting.\nCLI:\nHostname>set password-controls palindrome-check on\nGUI:\nNavigate to User Management > Password Policy\nEnsure 'Disallow Palindrome' is checked.",
+            "+@fixref": "F-830E5F1Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-830E5F1Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-830E5F1F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Disallow Palindrome setting.\nCLI:\nHostname> show password-controls palindrome-check\nPassword Palindrome Check on\nGUI:\nNavigate to User Management > Password Policy\nEnsure Disallow Palindrome setting is checked."
+          }
+        }
+      },
+      {
+        "+@id": "V-D386FEE8",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D386FEE8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3",
+          "title": "Ensure Password Complexity is set to 3",
+          "description": "<VulnDiscussion>This checks all new passwords to ensure that they meet basic requirements for strong passwords. The required number of character types are: Upper case alphabetic (A-Z), Lower case alphabetic (a-z), Digits (0-9), Other (everything else). A value of \"1\" effectively disables this check. Changes to this setting do not affect existing passwords.\n\nRationale:\nPassword complexity recommendations are derived from the USGCB (United States Government Configuration Baseline), Common Weakness Enumeration, and benchmarks published by the CIS (Center for Internet Security). Password complexity adds entropy to a password, in comparison to a simple password of the same length. A complex password is more difficult to attack, either directly against administrative interfaces or cryptographically, against captured password hashes. However, making a password of greater length will generally have a greater impact in this regard, in comparison to making a shorter password more complex.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the password-controls complexity setting.\nCLI:\nHostname>set password-controls complexity 3\n15 | P a g e GUI:\nNavigate to User Management > Password Policy > Password Complexity:\nchecked the '3 - Require three character types' setting.",
+            "+@fixref": "F-D386FEE8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D386FEE8r01_fix"
+          },
+          "check": {
+            "+@system": "C-D386FEE8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Password Complexity.\nCLI:\nHostname> show password-controls complexity\nPassword Complexity 3\nGUI:\nNavigate to User Management > Password Policy > Password Complexity:\nEnsure '3 - Require three character types' checked."
+          }
+        }
+      },
+      {
+        "+@id": "V-11DB8772",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-11DB8772r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4",
+          "title": "Ensure Check for Password Reuse is selected and History Length is set to 12 or more",
+          "description": "<VulnDiscussion>Check for reuse of passwords. When a user's password is changed, the new password is checked against the recent passwords for the user. An identical password is not allowed.\nThe number of passwords kept in the record is set by History length. Does not apply to SNMP passwords. Enables or disables password history checking and password history recording, for all users.\n\nRationale:\nThe longer a user uses the same password, the greater the chance that an attacker can determine the password through brute force attacks. Also, any accounts that may have been compromised will remain exploitable for as long as the password is left unchanged. If password changes are required but password reuse is not prevented, or if users continually reuse a small number of passwords, the effectiveness of a good password policy is greatly reduced. While current guidance emphasizes password length above frequent password changes, not enforcing password re-use guidance adds the temptation of using a small pool of passwords, which can make an attacker's job easier across an entire infrastructure.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.4"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set tie history-checking setting.\nCLI:\nHostname>set password-controls history-checking on\nHostname>set password-controls history-length 12\nGUI:\nNavigate to User Management > Password Policy > Password History:\nchecked the 'Check for Password Reuse' setting.\nNavigate to User Management > Password Policy > Password History:\nSet 'History Length' is set to 12 or more.",
+            "+@fixref": "F-11DB8772r01_fix"
+          },
+          "fix": {
+            "+@id": "F-11DB8772r01_fix"
+          },
+          "check": {
+            "+@system": "C-11DB8772_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Check for Password Reuse and History Length setting.\nCLI:\nHostname> show password-controls history-checking\nPassword History Checking on\nHostname> show password-controls history-length\nPassword History Length 12\nGUI:\nNavigate to User Management > Password Policy > Password History:\nEnsure 'Check for Password Reuse' is checked.\nNavigate to User Management > Password Policy > Password History:\nEnsure 'History Length' is set to 12 or more.\n17 | P a g e"
+          }
+        }
+      },
+      {
+        "+@id": "V-0831475D",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0831475Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5",
+          "title": "Ensure Password Expiration is set to 90 days",
+          "description": "<VulnDiscussion>The number of days for which a password is valid. After that time, the password expires.\nThe count starts when the user changes their passwords. Users are required to change an expired password the next time they log in. If set to never, passwords do not expire. Does not apply to SNMP users.\n\nRationale:\nThe window of opportunity for an attacker to leverage compromised credentials or successfully compromise credentials via an online brute force attack is limited by the age of the password. Therefore, reducing the maximum age of a password also reduces an attacker's window of opportunity.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.5"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the history-length setting.\nCLI:\nHostname>set password-controls history-length 90\nGUI:\nNavigate to User Management > Password Policy > Mandatory Password Changes:\nPassword Expiration:\nSet 'Password expires after' setting to 90 or less\n19 | P a g e",
+            "+@fixref": "F-0831475Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-0831475Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-0831475D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Password Expiration setting.\nCLI:\nHostname> show password-controls password-expiration\nPassword Expiration Lifetime 90\nGUI:\nNavigate to User Management > Password Policy > Mandatory Password Changes:\nPassword Expiration:\nEnsure 'Password expires after' is checked and set to 90 or less."
+          }
+        }
+      },
+      {
+        "+@id": "V-CE5FEB3A",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CE5FEB3Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.6",
+          "title": "Ensure Warn users before password expiration is set to 7 days",
+          "description": "<VulnDiscussion>The number of days before the password expires that the user starts getting warned they will have to change it. A user that does not log in will not see the warning.\n\nRationale:\nProviding an advance warning that a password will be expiring gives users time to think of a secure password. Users caught unaware may choose a simple password or write it down where it may be discovered.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.6"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the expiration-warning-days setting.\nCLI:\nHostname>set password-controls expiration-warning-days 7\nGUI:\nNavigate to User Management > Password Policy > Mandatory Password Changes\nSet 'Warn users before password expiration' is set to 7 days or less.\n21 | P a g e",
+            "+@fixref": "F-CE5FEB3Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-CE5FEB3Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-CE5FEB3A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the warn users before Password Expiration x days setting.\nCLI:\nHostname> show password-controls expiration-warning-days\nPassword Expiration Warning Days 7\nGUI:\nNavigate to User Management > Password Policy > Mandatory Password Changes\nEnsure 'Warn users before password expiration' is set to 7 days or less."
+          }
+        }
+      },
+      {
+        "+@id": "V-24B94557",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-24B94557r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.7",
+          "title": "Ensure Lockout users after password expiration is set to 1",
+          "description": "<VulnDiscussion>Lockout users after password expiration. After a user's password has expired, they have this number of days to log in and change it. If they do change their password within that number of days they will be unable to log in: They are locked out. A value of never allows the user to wait as long as they want to change their password.\n\nRationale:\nUser accounts and their passwords are the front-line of defense against malicious users gaining access to critical systems and data. Just as important as ensuring strong passwords are used and changed regularly, unused accounts should be closely monitored and disabled, whenever possible. Inactive accounts could become targets of brute force or dictionary attacks to gain access to the network and critical data/devices attached to it.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.7"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the expiration-lockout-days setting.\nCLI:\nHostname>set password-controls expiration-lockout-days 1\n23 | P a g e GUI:\nNavigate to User Management > Password Policy > Mandatory Password Changes >\nLockout users after password expiration:\nChecked 'Lockout user after' setting and set to 1 day.",
+            "+@fixref": "F-24B94557r01_fix"
+          },
+          "fix": {
+            "+@id": "F-24B94557r01_fix"
+          },
+          "check": {
+            "+@system": "C-24B94557_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the lockout users after x days setting.\nCLI:\nHostname> show password-controls expiration-lockout-days\nPassword Expiration Lockout Days 1\nGUI:\nNavigate to User Management > Password Policy > Mandatory Password Changes >\nLockout users after password expiration:\nEnsure 'Lockout user after' is checked and set to 1 day."
+          }
+        }
+      },
+      {
+        "+@id": "V-CBAF24E1",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CBAF24E1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.8",
+          "title": "Ensure Deny access to unused accounts is selected",
+          "description": "<VulnDiscussion>Deny access to unused accounts. If there has been no successful login attempt in a set period of time, the user is locked out and cannot log in.\n\nRationale:\nUser accounts that have been unused for over a given period of time can be automatically disabled. Unused accounts pose a threat to system security since the users are not logging in to notice failed login attempts or other anomalies</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.8"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the deny-on-nonuse setting.\nCLI:\nHostname>set password-controls deny-on-nonuse enable on\nGUI:\nNavigate to User Management > Password Policy > Deny access to unused\naccounts:\nChecked the 'Deny access to unused accounts' setting.",
+            "+@fixref": "F-CBAF24E1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-CBAF24E1r01_fix"
+          },
+          "check": {
+            "+@system": "C-CBAF24E1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Deny access to unused accounts setting.\nCLI:\nHostname> show password-controls deny-on-nonuse enable\nDeny Access to Unused Accounts on\nGUI:\nNavigate to User Management > Password Policy > Deny access to unused\naccounts:\nEnsure 'Deny access to unused accounts' is checked."
+          }
+        }
+      },
+      {
+        "+@id": "V-F5ABFF90",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F5ABFF90r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.9",
+          "title": "Ensure Days of non-use before lock-out is set to 30",
+          "description": "<VulnDiscussion>Days of non-use before lock-out. The number of days in which a user has not (successfully) logged in before that user is locked out. This only takes effect if Deny access to unused accounts is selected.\n\nRationale:\nUser accounts that have been unused for over a given period of time can be automatically disabled. It is recommended that accounts that are unused for 30 days should be disabled.\nUnused accounts pose a threat to system security since the users are not logging in to notice failed login attempts or other anomalies.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.9"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the deny-on-nonuse allowed-days setting.\nCLI:\nHostname>set password-controls deny-on-nonuse allowed-days 30\n27 | P a g e GUI:\nNavigate to User Management > Password Policy > Deny access to unused\naccounts:\nSet 'Days of non-use before lock-out' to 30 or less.\nNote: This setting only takes effect if 'Deny access to unused accounts' is enabled.",
+            "+@fixref": "F-F5ABFF90r01_fix"
+          },
+          "fix": {
+            "+@id": "F-F5ABFF90r01_fix"
+          },
+          "check": {
+            "+@system": "C-F5ABFF90_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Days of non-use before lock-out setting.\nCLI:\nHostname> show password-controls deny-on-nonuse allowed-days\nDays Nonuse Before Lockout 30\nGUI:\nNavigate to User Management > Password Policy > Deny access to unused\naccounts:\nEnsure 'Days of non-use before lock-out' is set to 30 or less.\nNote: This setting only takes effect if 'Deny access to unused accounts' is enabled."
+          }
+        }
+      },
+      {
+        "+@id": "V-94891B30",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-94891B30r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.10",
+          "title": "Ensure Force users to change password at first login after password was changed from Users page is selected",
+          "description": "<VulnDiscussion>Force users to change password at first login after their password was changed using the command set user password or from the WebUI User Management > Users page.\n\nRationale:\nThis forces the user to change the password and not to use the password set by the Administrator.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.10"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set force-change-when setting.\nCLI:\nHostname>set password-controls force-change-when password\nGUI:\nNavigate to User Management > Password Policy > Mandatory Password Change:\nChecked the 'Force users to change password at first login after password was\nchanged from Users page' setting.\n29 | P a g e",
+            "+@fixref": "F-94891B30r01_fix"
+          },
+          "fix": {
+            "+@id": "F-94891B30r01_fix"
+          },
+          "check": {
+            "+@system": "C-94891B30_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Force users to change password at first login after password was changed from Users page setting.\nCLI:\nHostname>show password-controls force-change-when\nForce Password Change When Password\nGUI:\nNavigate to User Management > Password Policy > Mandatory Password Change:\nEnsure 'Force users to change password at first login after password was\nchanged from Users page' is checked."
+          }
+        }
+      },
+      {
+        "+@id": "V-4F0BBECE",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4F0BBECEr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.11",
+          "title": "Ensure Deny access after failed login attempts is selected",
+          "description": "<VulnDiscussion>If the configured limit is reached, the user is locked out (unable to log in) for a configurable period of time.\n\nRationale:\nLocking out user IDs after n unsuccessful consecutive login attempts mitigate brute force password attacks against your systems.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.11"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the deny-on-fail setting.\nCLI:\nHostname>set password-controls deny-on-fail enable on\nGUI:\nNavigate to User Management > Password Policy > Deny Access After Failed\nLogin Attempts:\nChecked the 'Deny access after failed login attempts' setting.\n31 | P a g e",
+            "+@fixref": "F-4F0BBECEr01_fix"
+          },
+          "fix": {
+            "+@id": "F-4F0BBECEr01_fix"
+          },
+          "check": {
+            "+@system": "C-4F0BBECE_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Deny access after failed login attempts setting.\nCLI:\nHostname> show password-controls deny-on-fail enable\nDeny Access After Failed Attempts on\nGUI:\nNavigate to User Management > Password Policy > Deny Access After Failed\nLogin Attempts:\nEnsure 'Deny access after failed login attempts' is checked."
+          }
+        }
+      },
+      {
+        "+@id": "V-D726F9E2",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D726F9E2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.12",
+          "title": "Ensure Maximum number of failed attempts allowed is set to 5 or fewer",
+          "description": "<VulnDiscussion>This only takes effect if Deny access after failed attempts is enabled. The number of failed login attempts that a user is allowed before being locked out. After making that many successive failed attempts, future attempts will fail. When one login attempt succeeds, counting of failed attempts stops, and the count is reset to zero.\n\nRationale:\nRepeated failed login attempts could either be a valid user who has forgotten the password, or a malicious attempt to gain access to the system. For this reason, this setting should be as restrictive as possible to mitigate brute force attack attempts to discover a user's password.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.12"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the deny-on-fail failures-allowed setting.\nCLI:\nHostname>set password-controls deny-on-fail failures-allowed 5\n33 | P a g e GUI:\nNavigate to User Management > Password Policy > Deny Access After Failed\nLogin Attempts:\nchecked and set ' Maximum number of failed attempts allowed is set to'\nsetting to 5 or fewer.",
+            "+@fixref": "F-D726F9E2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D726F9E2r01_fix"
+          },
+          "check": {
+            "+@system": "C-D726F9E2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Deny access after failed login attempts setting.\nCLI:\nHostname> show password-controls deny-on-fail failures-allowed\nMaximum Failed Attempts 5\nGUI:\nNavigate to User Management > Password Policy > Deny Access After Failed\nLogin Attempts:\nEnsure ' Maximum number of failed attempts allowed is set to' is set to 5or\nfewer."
+          }
+        }
+      },
+      {
+        "+@id": "V-D76106EC",
+        "title": "1 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D76106ECr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.13",
+          "title": "Ensure Allow access again after time is set to 300 or more seconds",
+          "description": "<VulnDiscussion>Allow access again after a user has been locked out (due to failed login attempts). The user is allowed access after the configured time if there have been no login attempts during that time). This setting only takes effect if Deny access after failed login attempts is selected.\n\nRationale:\nUsers can accidentally lock themselves out of their accounts if they mistype their password multiple times. To reduce the chance of such accidental lockouts, the Allow access again after time setting determines the number of seconds that must elapse before the counter that tracks failed logon attempts and triggers lockouts is reset to 0.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "1.13"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set the deny-on-fail allow-afte setting.\nCLI:\nHostname> set password-controls deny-on-fail allow-after 300\n35 | P a g e GUI:\nNavigate to User Management > Password Policy > Deny Access After Failed\nLogin Attempts:\nSet the 'Allow access again after time' setting to 300 or more seconds.",
+            "+@fixref": "F-D76106ECr01_fix"
+          },
+          "fix": {
+            "+@id": "F-D76106ECr01_fix"
+          },
+          "check": {
+            "+@system": "C-D76106EC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Allow access again after time setting.\nCLI:\nHostname> show password-controls deny-on-fail allow-after\nUnlock User After Seconds 300\nGUI:\nNavigate to User Management > Password Policy > Deny Access After Failed\nLogin Attempts:\nEnsure 'Allow access again after time' is set to 300 or more seconds."
+          }
+        }
+      },
+      {
+        "+@id": "V-3F4DDB77",
+        "title": "2.1 General Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3F4DDB77r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.1",
+          "title": "Ensure 'Login Banner' is set",
+          "description": "<VulnDiscussion>Configure a login banner, ideally approved by the organization’s legal team. This banner should, at minimum, prohibit unauthorized access, provide notice of logging or monitoring, and avoid using the word “welcome” or similar words of invitation.\n\nRationale:\nThrough a properly stated login banner, the risk of unintentional access to the device by unauthorized users is reduced. Should legal action take place against a person accessing the device without authorization, the login banner greatly diminishes a defen dant’s claim of ignorance.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.1.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable and set the Banner.\nCLI:\nHostname>set message banner on msgvalue \"Organization_Banner\"\n38 | P a g e GUI:\nNavigate to System Management > Messages\nChecked the Banner message and configured the organization defined banner.",
+            "+@fixref": "F-3F4DDB77r01_fix"
+          },
+          "fix": {
+            "+@id": "F-3F4DDB77r01_fix"
+          },
+          "check": {
+            "+@system": "C-3F4DDB77_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Banner configured on the device and it's status.\nCLI:\nHostname>show configuration message\nset message banner on\nset message banner on line msgvalue \"Organization defined Banner\"\nGUI:\nNavigate to System Management -> Messages -> Banner message\nEnsure Banner Message should be checked and \"Organization defined Banner\"\nshould be set."
+          }
+        }
+      },
+      {
+        "+@id": "V-7CB5023D",
+        "title": "2.1 General Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7CB5023Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.2",
+          "title": "Ensure 'Message Of The Day (MOTD)' is set",
+          "description": "<VulnDiscussion>Sets the MOTD message.\n\nRationale:\nNetwork banners are electronic messages that provide notice of legal rights to users of computer networks. From a legal standpoint, banners have four primary functions.\n• First, banners may be used to generate consent to real-time monitoring under Title III.\n• Second, banners may be used to generate consent to the retrieval of stored files and records pursuant to ECPA.\n• Third, in the case of government networks, banners may eliminate any Fourth Amendment \"reasonable expectation of privacy\" that government employees or other users might otherwise retain in their use of the government's network under O'Connor v.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.1.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable and configured the MOTD setting.\nCLI:\nHostname> set message motd on msgvalue \"MOTD BANNER\"\n40 | P a g e GUI:\nNavigate to System Management -> Messages -> Message of the day\nChecked the Message of the day and add \"MOTD Banner\".",
+            "+@fixref": "F-7CB5023Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-7CB5023Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-7CB5023D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the MOTD Banner is configured on the device and it's status.\nCLI:\nHostname>show configuration message\nset message motd on\nset message motd on line msgvalue \"MOTD BANNER\"\nGUI:\nNavigate to System Management -> Messages -> Message of the day\nEnsure Message of the day should be checked and \"MOTD\" Banner should be set."
+          }
+        }
+      },
+      {
+        "+@id": "V-7B479DB8",
+        "title": "2.1 General Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7B479DB8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.3",
+          "title": "Ensure Core Dump is enabled",
+          "description": "<VulnDiscussion>A Core Dump contains the recorded state of the working memory and CPU's contents of the Gaia system at the time that a Gaia process terminated abnormally. The core file is stored in the /var/log/dump/usermode directory.\n\nRationale:\nThe Core Dump helps in troubleshooting to identify for which reason the process/system got crashed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.1.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set Core Dump.\nHostname> set core-dump enable\nGUI:\nNavigate to System Management > Core Dump > select Enable Core Dumps",
+            "+@fixref": "F-7B479DB8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-7B479DB8r01_fix"
+          },
+          "check": {
+            "+@system": "C-7B479DB8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check the status of Core Dump.\nHostname> show core-dump status\nGUI:\nNavigate to System Management > Core Dump"
+          }
+        }
+      },
+      {
+        "+@id": "V-591E07EF",
+        "title": "2.1 General Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-591E07EFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.4",
+          "title": "Ensure Config-state is saved",
+          "description": "<VulnDiscussion>The 'Config state' setting provides the detail of the current configuration which is saved or unsaved. Saved state indicates the current configuration of the system is matched with the saved configuration, while unsaved state indicates a configuration change has been made and it has not been saved to the configuration file.\n\nRationale:\nThe Unsaved state indicates that some configuration changes are made in the system.\nAdministrator needs to review whether all changes are authorized or not by verifying configuration change logs.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.1.4"
+          },
+          "fixtext": {
+            "+content": "Run the following command to save the configuration.\nHostname> save config",
+            "+@fixref": "F-591E07EFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-591E07EFr01_fix"
+          },
+          "check": {
+            "+@system": "C-591E07EF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check the status of config-state.\nHostname> show config-state"
+          }
+        }
+      },
+      {
+        "+@id": "V-9B93FB52",
+        "title": "2.1 General Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9B93FB52r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.5",
+          "title": "Ensure unused interfaces are disabled",
+          "description": "<VulnDiscussion>Disables the unused interfaces.\n\nRationale:\nShutting down the unused interfaces is a complement to physical security. In fact, an attacker connecting physically to an unused port of the security appliance can use the interface to gain access to the device if the relevant interface has not been disabled and the source restriction to management access is not enabled.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.1.5"
+          },
+          "fixtext": {
+            "+content": "Run the following command disable the unused interface.\nCLI:\nHostname> set interface <Interface_Number> state off\nGUI:\nNavigate to Network Management > Network Interfaces > Open unused Interface >\nunchecked Enable",
+            "+@fixref": "F-9B93FB52r01_fix"
+          },
+          "fix": {
+            "+@id": "F-9B93FB52r01_fix"
+          },
+          "check": {
+            "+@system": "C-9B93FB52_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check the status of all interfaces and verify interface state is off if it is not in used.\nCLI:\nHostname> show interfaces all\nGUI:\nNavigate to Network Management > Network Interfaces"
+          }
+        }
+      },
+      {
+        "+@id": "V-143B1F0F",
+        "title": "2.1 General Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-143B1F0Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.6",
+          "title": "Ensure DNS server is configured",
+          "description": "<VulnDiscussion>Gaia uses the Domain Name Service (DNS) to translate host names into IP addresses. To enable DNS lookups, you must specify the primary DNS server for your system. You can also specify secondary and tertiary DNS servers. When resolving host names, the system consults the primary name server. If a failure or time-out occurs, the system consults the secondary name server, and if necessary, the tertiary.\n\nRationale:\nThe purpose is to perform the resolution of system hostnames to Internet Protocol (IP) addresses.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.1.6"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set DNS server.\nCLI:\nHostname> set dns primary <IP_Address>\nHostname> set dns secondary <IP_Address>\nHostname> set dns tertiary <IP_Address>\n47 | P a g e GUI:\nNavigate to Network Management > Hosts and DNS > DNS\nSet Primary, secondary and tertiary DNS server address.",
+            "+@fixref": "F-143B1F0Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-143B1F0Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-143B1F0F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check the Primary, Secondary and tertiary DNS are configured.\nCLI:\nHostname> show dns primary\n10.22.1.39\nHostname> show dns secondary\n10.88.3.99\nHostname> show dns tertiary\n10.10.1.2\nGUI:\nNavigate to Network Management > Hosts and DNS > DNS"
+          }
+        }
+      },
+      {
+        "+@id": "V-83FAADBC",
+        "title": "2.1 General Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-83FAADBCr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.7",
+          "title": "Ensure IPv6 is disabled if not used",
+          "description": "<VulnDiscussion>Although IPv6 has many advantages over IPv4, not all organizations have IPv6 or dual stack configurations implemented\n\nRationale:\nIf IPv6 or dual stack is not to be used, it is recommended that IPv6 be disabled to reduce the attack surface of the system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.1.7"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable or disable IPv6.\nHostname> set ipv6-state on\nHostname> set ipv6-state off",
+            "+@fixref": "F-83FAADBCr01_fix"
+          },
+          "fix": {
+            "+@id": "F-83FAADBCr01_fix"
+          },
+          "check": {
+            "+@system": "C-83FAADBC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check IPv6 status.\nHostname> show ipv6-state"
+          }
+        }
+      },
+      {
+        "+@id": "V-986129E1",
+        "title": "2.1 General Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-986129E1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.8",
+          "title": "Ensure Host Name is set",
+          "description": "<VulnDiscussion>Changes the device default hostname.\n\nRationale:\nThe device hostname plays an important role in asset inventory and identification as a security requirement, but also in the public keys and certificate deployments as well as when correlating logs from different systems during an incident handling.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.1.8"
+          },
+          "fixtext": {
+            "+content": "Run the following command to set Host Name.\nCLI:\nHostname> set hostname <name>\nGUI:\nNavigate to Network Management > Hosts and DNS > System Name > Host Name",
+            "+@fixref": "F-986129E1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-986129E1r01_fix"
+          },
+          "check": {
+            "+@system": "C-986129E1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check Host Name.\nCLI:\nHostname> show hostname\nGUI:\nNavigate to Network Management > Hosts and DNS > System Name > Host Name"
+          }
+        }
+      },
+      {
+        "+@id": "V-0A2E9864",
+        "title": "2.1 General Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0A2E9864r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.9",
+          "title": "Ensure Telnet is disabled",
+          "description": "<VulnDiscussion>Disables the telnet access to the security appliance in the case it has been configured.\n\nRationale:\nTelnet is an unsecure protocol as username and password are conveyed in clear text during the administrator authentication and can be retrieved through network sniffing.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.1.9"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable the telnet.\nCLI:\nHostname> set net-access telnet off\nGUI:\nNavigate to System Management > Network Access > verify Enable Telnet is\nunchecked.",
+            "+@fixref": "F-0A2E9864r01_fix"
+          },
+          "fix": {
+            "+@id": "F-0A2E9864r01_fix"
+          },
+          "check": {
+            "+@system": "C-0A2E9864_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check the status of telnet.\nCLI:\nHostname> show net-access telnet\nGUI:\nNavigate to System Management > Network Access > Enable Telnet"
+          }
+        }
+      },
+      {
+        "+@id": "V-38C03BF1",
+        "title": "2.1 General Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-38C03BF1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.10",
+          "title": "Ensure DHCP is disabled",
+          "description": "<VulnDiscussion>Disable the Dynamic Host Configuration Protocol (DHCP) server on your device.\n\nRationale:\nThe DHCP server supplies automatic configuration parameters, such as dynamic IP address, to requesting systems. A dedicated server located in a secured management zone should be used to provide DHCP services instead. Attackers can potentially be used for denial-of-service (DoS) attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.1.10"
+          },
+          "fixtext": {
+            "+content": "Run the following command to disable the DHCP.\nCLI:\nHostname> set dhcp server disable\nGUI:\nNavigate to Network Management > DHCP Server > DHCP Server Configuration >\nveriify Enable DHCP Server is unchecked",
+            "+@fixref": "F-38C03BF1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-38C03BF1r01_fix"
+          },
+          "check": {
+            "+@system": "C-38C03BF1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check the status of DHCP Server.\nCLI:\nHostname> show dhcp server status\nGUI:\nNavigate to Network Management > DHCP Server > DHCP Server Configuration >\nEnable DHCP Server"
+          }
+        }
+      },
+      {
+        "+@id": "V-D9100879",
+        "title": "2.2 SNMP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D9100879r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2.1",
+          "title": "Ensure SNMP agent is disabled",
+          "description": "<VulnDiscussion>The Simple Network Management Protocol (SNMP) server is used to listen for SNMP commands from an SNMP management system, execute the commands or collect the information and then send results back to the requesting system.\n\nRationale:\nThe SNMP server can communicate using SNMP v1, which transmits data in the clear and does not require authentication to execute commands. Unless absolutely necessary, it is recommended that the SNMP service not be used. If SNMP is required the server should be configured to use only SNMPv3.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.2.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to configure the SNMP.\nCLI:\nHostname> set snmp agent off\nGUI:\nSystem Management > SNMP > Unhecked the Enable SNMP Agent\n55 | P a g e",
+            "+@fixref": "F-D9100879r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D9100879r01_fix"
+          },
+          "check": {
+            "+@system": "C-D9100879_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check whether the SNMP agent is configured:\nCLI:\nHostname> show snmp agent\nSNMP Agent Disabled\nGUI:\nNavigate to System Management > SNMP > SNMP General Settings\nVerify Enable SNMP agent is unchecked."
+          }
+        }
+      },
+      {
+        "+@id": "V-8DC6B875",
+        "title": "2.2 SNMP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8DC6B875r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2.2",
+          "title": "Ensure SNMP version is set to v3-Only",
+          "description": "<VulnDiscussion>Sets the SNMP v3.\n\nRationale:\nSNMP Version 3 provides security enhancements that are not available in SNMP Version 1 or SNMP Version 2c. SNMP Versions 1 and 2c transmit data between the SNMP server and SNMP agent in clear text. SNMP Version 3 adds authentication and privacy options to secure protocol operations. For configuration purposes, the authentication and privacy options are grouped together into security models. Security models apply to users and groups, and are divided into the following three types: •NoAuthPriv— No Authentication and No Privacy, which means that no security is applied to messages. •AuthNoPriv— Authentication but No Privacy, which means that messages are authenticated. •AuthPriv— Authentication and Privacy, which means that messages are authenticated and encrypted.\nIt is recommended that packets should be authenticated and encrypted</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.2.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to configure the SNMP agent-version v3-only CLI:\nHostname> set snmp agent-version v3-Only\n57 | P a g e GUI:\nNavigate to System Management > SNMP > Select V3-Only in Version",
+            "+@fixref": "F-8DC6B875r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8DC6B875r01_fix"
+          },
+          "check": {
+            "+@system": "C-8DC6B875_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check whether the SNMP agent-version v3-only is configured CLI:\nHostname> show snmp agent-version\nv3-Only\nGUI:\nNavigate to System Management > SNMP > SNMP General Settings\nVerify version is set to v3-Only."
+          }
+        }
+      },
+      {
+        "+@id": "V-525FEB54",
+        "title": "2.2 SNMP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-525FEB54r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2.3",
+          "title": "Ensure SNMP traps is enabled",
+          "description": "<VulnDiscussion>Enables SNMP traps to be sent to the NMS.\n\nRationale:\nThe purpose of the SNMP service is to monitor in real time the events occurring on systems in order to meet the security requirement of availability of systems and services. The traps are SNMP notifications sent to the NMS and should be enabled in order to be sent and processed by the NMS. The NMS will then provide a comprehensive aggregation and reporting of events generated, thus helping administrator.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.2.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to Configure the SNMP traps.\nCLI:\nHostname> set snmp traps trap authorizationError enable\nHostname> set snmp traps trap coldStart enable\nHostname> set snmp traps trap configurationChange enable\nHostname> set snmp traps trap configurationSave enable\nHostname> set snmp traps trap linkUpLinkDown enable\nHostname> set snmp traps trap lowDiskSpace enable\n59 | P a g e GUI:\nNavigate to System Management > SNMP > Enabled Traps > Set and select the\nfollowing traps\nuthorizationError, coldStart, configurationChange, configurationSave,\nlinkUpLinkDown and lowDiskSpace",
+            "+@fixref": "F-525FEB54r01_fix"
+          },
+          "fix": {
+            "+@id": "F-525FEB54r01_fix"
+          },
+          "check": {
+            "+@system": "C-525FEB54_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check whether the SNMP traps are configured:\nCLI:\nHostname> show snmp traps enabled-traps\nauthorizationError\ncoldStart\nconfigurationChange\nGUI:\nNavigate to System Management > SNMP > Enabled Traps\nVerify authorizationError, coldStart, configurationChange, configurationSave,\nlinkUpLinkDown and lowDiskSpace alerts are selected."
+          }
+        }
+      },
+      {
+        "+@id": "V-93C96503",
+        "title": "2.2 SNMP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-93C96503r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2.4",
+          "title": "Ensure SNMP traps receivers is set",
+          "description": "<VulnDiscussion>Enables SNMP traps receivers where traps to be sent to.\n\nRationale:\nThe purpose of the SNMP service is to monitor in real time the events occurring on systems in order to meet the security requirement of availability of systems and services. The traps are SNMP notifications sent to the NMS or SNMP traps receivers and should be enabled in order to be sent and processed by the NMS. The NMS or SNMP traps receivers will then provide a comprehensive aggregation and reporting of events generated, thus helping administrator.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.2.4"
+          },
+          "fixtext": {
+            "+content": "Run the following command to Configure the SNMP traps receivers.\nCLI:\nHostname> add snmp traps receiver 10.10.168.86 version v3\nGUI:\nNavigate to System Management > SNMP > Trap Receivers Setting > Add > Add IP\nAddress Version details.\n61 | P a g e",
+            "+@fixref": "F-93C96503r01_fix"
+          },
+          "fix": {
+            "+@id": "F-93C96503r01_fix"
+          },
+          "check": {
+            "+@system": "C-93C96503_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check whether the SNMP traps receivers are configured:\nCLI:\nHostname> show snmp traps receivers\nTrap Receiver 10.7.26.5\nVersion v3\nGUI:\nNavigate to System Management > SNMP > Trap Receivers Settings\nVerify Trap Receiver is configured."
+          }
+        }
+      },
+      {
+        "+@id": "V-A04BA158",
+        "title": "2.3 NTP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A04BA158r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.3.1",
+          "title": "Ensure NTP is enabled and IP address is set for Primary and Secondary NTP server",
+          "description": "<VulnDiscussion>These settings enable the use of primary and secondary NTP servers to provide redundancy in case of a failure involving the primary NTP server.\n\nRationale:\nNTP enables the device to maintain accurate time and date when receiving updates from a reliable NTP server. Accurate timestamps are critical when correlating events with other systems, troubleshooting, or performing investigative work. Logs and certain cryptographic functions, such as those utilizing certificates, rely on accurate time and date parameters. In addition, rules referencing a Schedule object will not function as intended if the device’s time and date are incorrect. For additional security, authenticated NTP can be utilized. If Symmetric Key authentication is selected, only SHA1 should be used, as MD5 is considered severely compromised.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.3.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable the NTP and configure the Primary & Secondary NTP server.\nCLI:\nHostname> set ntp active on\nHostname> set ntp server primary ntpserver.time.com version 3\nHostname> set ntp server primary 10.22.13.33 version 3\nGUI:\nSystem Management > Time > Set Time and Date > Checked Set Time and Date\nautomatically using Network Time Protocol (NTP) and configured the Primary\nNTP Server and Secondary NTP server",
+            "+@fixref": "F-A04BA158r01_fix"
+          },
+          "fix": {
+            "+@id": "F-A04BA158r01_fix"
+          },
+          "check": {
+            "+@system": "C-A04BA158_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check the status of NTP.\nCLI:\nHostname> show ntp active\nYes\nRun the following command to verify the IP address is configured for Primary and Secondary NTP server.\nHostname> show ntp servers\nIP Address Type Version\n------------ ------- ---------------\n10.10.22.124 Primary 3\n192.169.1.238 Secondary 3\n63 | P a g e GUI:\nNavigate to System Management > Time > Set Time and Date\nVerify Set Time and Date automatically using Network Time Protocol (NTP) option is checked and Primary NTP server and secondary NTP server address is configured."
+          }
+        }
+      },
+      {
+        "+@id": "V-5DFD344D",
+        "title": "2.3 NTP",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5DFD344Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.3.2",
+          "title": "Ensure timezone is properly configured",
+          "description": "<VulnDiscussion>Sets the local time zone information so that the time displayed by the device is more relevant to those who are viewing it.\n\nRationale:\nHaving a correct time set on the device is important for two main reasons. The first reason is that digital certificates compare this time to the range defined by their Valid From and Valid To fields to define a specific validity period. The second reason is to have relevant time stamps when logging information. Whether you are sending messages to a Syslog server, sending messages to an SNMP monitoring station, or performing packet captures, timestamps have little usefulness if you cannot be certain of their accuracy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.3.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to Configure the Timezone used by the enterprise (GMT, UTC, EDT, PST).\nCLI:\nHostname> set timezone Asia / Kolkata\nGUI:\nSystem Management > Time > Set Time Zone > Time Zone\n65 | P a g e",
+            "+@fixref": "F-5DFD344Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-5DFD344Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-5DFD344D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Timezone.\nCLI:\nHostname> show timezone\nTime Zone: Asia/Kolkata (GMT +05:30)\nGUI:\nNavigate to System Management > Time > Set Timezone"
+          }
+        }
+      },
+      {
+        "+@id": "V-6CCB3427",
+        "title": "2.4 Backup",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6CCB3427r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.1",
+          "title": "Ensure 'System Backup' is set.",
+          "description": "<VulnDiscussion>List last-successful backup which is taken either locally or on a remote server. The backup can be taken locally on the device and also on a remote server via FTP, tftp or scp. The backup which is taken last is marked with (latest) in backup type.\n\nRationale:\nThe backup helps in restoring the configuration in the case of system failure or corruption or in the condition of device replacement.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.4.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to Configure the backup.\nCLI:\nTo take the backup local on the device.\nHostname> add backup local\nTo take the backup of FTP or SCP server.\nHostname>add backup [ftp|scp] ip [IP Address] path [Path to store backup]\nusername [Username] password [Password]\nTo take the backup on tftp server.\nHostname>add backup tftp [IP address of tftp server]\nGUI:\nNavigate to Maintenance > System Backup > Backup > Select (This appliance |\nSCP Server | FTP Server | TFTP Server)",
+            "+@fixref": "F-6CCB3427r01_fix"
+          },
+          "fix": {
+            "+@id": "F-6CCB3427r01_fix"
+          },
+          "check": {
+            "+@system": "C-6CCB3427_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the last successful backup.\nCLI:\nHostname>show backup last-successful\nBackup Type: local ( latest )\nBackup file location: /var/log/CPbackup/backups/backup_gw-\nCheckpoint_28_Dec_2015_15_46.tgz\nBackup process finished in 00:19 seconds\nBackup Date: 28-Dec-2015 15:46:43\nGUI:\nNavigate to Maintenance > System Backup\n67 | P a g e"
+          }
+        }
+      },
+      {
+        "+@id": "V-5097A6F7",
+        "title": "2.4 Backup",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5097A6F7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.2",
+          "title": "Ensure 'Snapshot' is set",
+          "description": "<VulnDiscussion>An image of the system partition creates when takes the snapshots, includes all the configuration settings, Operating System and Checkpoint files. The locally stored firewall logs are not stored in the snapshots, as log partition is not included in the Snapshots.\nSnapshots can be restored on the same hardware on which it takes or on the same configuration hardware.\n\nRationale:\nSnapshots are critical to system recovery in the event of a System crash.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.4.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to take the snapshot.\nCLI:\nTo take the snapshot run the following command on the device.\nHostname> add snapshot [snapshot_name]\nGUI:\nNavigate to Maintenance > Snapshot Management > New\nProvide the Name and description for the snapshot\n69 | P a g e",
+            "+@fixref": "F-5097A6F7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5097A6F7r01_fix"
+          },
+          "check": {
+            "+@system": "C-5097A6F7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the list of snapshots taken on the system, CLI:\nHostname>show snapshots\nRestore points:\n---------------\nmonthlysnapshot\nCreation of an additional restore point will need 6.272G\nAmount of space available for restore points is 7.34G\nGUI:\nNavigate to Maintenance > Snapshot Management"
+          }
+        }
+      },
+      {
+        "+@id": "V-B8C5CF35",
+        "title": "2.4 Backup",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B8C5CF35r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.3",
+          "title": "Configuring Scheduled Backups",
+          "description": "<VulnDiscussion>The backup can be scheduled to take daily, weekly or monthly. The backup can be taken locally on the device and also on a remote server via FTP, tftp or scp. The backup which is taken last is marked with (latest) in backup type.\n\nRationale:\nThe backup helps in restoring the configuration in the case of system failure or corruption or in the condition of device replacement.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.4.3"
+          },
+          "fixtext": {
+            "+content": "GUI:\nNavigate to Maintenance > System Backup > Scheduled Backup > Add Scheduled\nBackup\nProvide the Backup Type and Backup Schedule as per organization's policy.",
+            "+@fixref": "F-B8C5CF35r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B8C5CF35r01_fix"
+          },
+          "check": {
+            "+@system": "C-B8C5CF35_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "GUI:\nNavigate to Maintenance > System Backup > Scheduled Backup"
+          }
+        }
+      },
+      {
+        "+@id": "V-CE005030",
+        "title": "2.5 Authentication Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CE005030r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5.1",
+          "title": "Ensure CLI session timeout is set to less than or equal to 10 minutes",
+          "description": "<VulnDiscussion>Set the CLI Session Timeout value for device management to 10 minutes or less to automatically close inactive sessions.\n\nRationale:\nAn unattended computer with an open administrative session to the device could allow an unauthorized user access to the firewall’s management interface</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.5.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to Configure the Inactivity Timeout for Command Line.\nCLI:\nHostname> set inactivity-timeout 10\nGUI:\nNavigate to System Management > Session > Command Line Shell > Inactivity\nTimeout - Set to 10 or less\n72 | P a g e",
+            "+@fixref": "F-CE005030r01_fix"
+          },
+          "fix": {
+            "+@id": "F-CE005030r01_fix"
+          },
+          "check": {
+            "+@system": "C-CE005030_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check Inactivity Timeout for Command Line is set to 10 or less.\nCLI:\nHostname>show inactivity-timeout\n10\nGUI:\nNavigate to System Management > Session > Command Line Shell > Inactivity\nTimeout - Set to 10 or less"
+          }
+        }
+      },
+      {
+        "+@id": "V-9CDE29F7",
+        "title": "2.5 Authentication Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9CDE29F7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5.2",
+          "title": "Ensure Web session timeout is set to less than or equal to 10 minutes",
+          "description": "<VulnDiscussion>Set the WebUI Session Timeout value for device management to 10 minutes or less to automatically close inactive sessions.\n\nRationale:\nAn unattended computer with an open administrative session to the device could allow an unauthorized user access to the firewall’s management interface</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.5.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to Configure the Inactivity Timeout for Web UI.\nCLI:\nHostname> set web session-timeout 10\nGUI:\nNavigate to System Management > Session > Web UI > Inactivity Timeout - Set\nto 10 or less",
+            "+@fixref": "F-9CDE29F7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-9CDE29F7r01_fix"
+          },
+          "check": {
+            "+@system": "C-9CDE29F7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check Inactivity Timeout for Web UI is set to 10 or less.\nCLI:\nHostname> show web session-timeout\nWebSessionTimeout 10\nGUI:\nNavigate to System Management > Session > Web UI > Inactivity Timeout - Set\nto 10 or less"
+          }
+        }
+      },
+      {
+        "+@id": "V-0F0EDAFA",
+        "title": "2.5 Authentication Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0F0EDAFAr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5.3",
+          "title": "Ensure Client Authentication is secured.",
+          "description": "<VulnDiscussion>Client Authentication allows a user and device to authenticate to the firewall and inherit pre-configured firewall rules for a set amount of time. By default, these connections are unencrypted yet can travel over unsecured networks. It is recommended that all Client Authentication connections be made using the HTTPS configuration. This both uniquely identifies the gateway and keeps the authentication credentials from being copied when going over the network.\n\nRationale:\nThe Client Authentication is used to authenticate a user or device to the firewall and by default, it works on HTTP port 900 and telnet port 259. The setting is stored in $FWDIR/conf/fwauthd.conf file. HTTP and telnet both are non-secure plaintext protocol and there is a number of published vulnerabilities, including the possibility of information disclosure and unauthorized access to the host system, which could permit sensitive data to be compromised. HTTPS configuration for all Client Authentication connections helps in identifying the gateway and keeps the authentication credentials from being copied when passes through the network.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.5.3"
+          },
+          "fixtext": {
+            "+content": "Comment out or remove the following line from $FWDIR/conf/fwauthd.conf file, or disable the telnet service listening on port 259 by default, write a rule that prevents connections to the daemon in the rulebase.\n#259 fwssd in.aclientd wait 259\nEdit the following line to include SSL setting in $FWDIR/conf/fwauthd.conf file.\n900 fwssd in.ahclientd wait 900 ssl:defaultCert",
+            "+@fixref": "F-0F0EDAFAr01_fix"
+          },
+          "fix": {
+            "+@id": "F-0F0EDAFAr01_fix"
+          },
+          "check": {
+            "+@system": "C-0F0EDAFA_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify telnet is disabled for Client Authentication.\nVerify following lines are commented out or not present in\n$FWDIR/conf/fwauthd.conf file.\n259 fwssd in.aclientd wait 259\nVerify Secure HTTP is used for Client Authentication.\nVerify following lines have SSL setting enabled in $FWDIR/conf/fwauthd.conf.\n900 fwssd in.ahclientd wait 900 ssl:defaultCert\n76 | P a g e"
+          }
+        }
+      },
+      {
+        "+@id": "V-359C1E9F",
+        "title": "2.5 Authentication Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-359C1E9Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5.4",
+          "title": "Ensure Radius or TACACS+ server is configured",
+          "description": "<VulnDiscussion>Configured the TACACS-Servers or Radius server for central authentication.\n\nRationale:\nAuthentication, authorization and accounting (AAA) scheme provide an authoritative source for managing and monitoring access for devices.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.5.4"
+          },
+          "fixtext": {
+            "+content": "run the following command to enable and add TACACS+ servers.\nCLI:\nHostname> set aaa tacacs-servers state on\nHostname> add aaa tacacs-servers priority <priority_value> server\n<IP_Address> key <Key> timeout <timeout_value>\nGUI:\nNavigate to User Management > Authentication Servers > TACACS+ configuration\n> Ensuere Enable TACACS+ authentication is checked\nNavigate to User Management > Authentication Servers > TACACS+ configuration\n> Enable TACACS+ Servers > Add Provide <Server_IP_Address>, <Priority> and\n<Timeout>.\nRun the following command to enable and add Radius servers.\nCLI:\nHostname>add aaa radius-servers priority <priority_value> host <IP_Address>\nsecret <Key> port <Port_number> timeout <timeout_value>\nGUI:\nNavigate to User Management > Authentication Servers > Radius Servers > Add\nProvide <Server_IP_Address>, <Priority>, <UDP_Port> and <Timeout>.",
+            "+@fixref": "F-359C1E9Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-359C1E9Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-359C1E9F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to check TACACS+ server status and TACACS+ servers list.\nCLI:\nHostname> show aaa tacacs-servers state\nHostname> show aaa tacacs-servers list\nGUI:\nNavigate to User Management > Authentication Servers > TACACS+ configuration\n> Enable TACACS+ authentication\nNavigate to User Management > Authentication Servers > TACACS+ configuration\n> Enable TACACS+ Servers\nRun the following command to check radius servers list.\nCLI:\nHostname> show aaa radius-servers list\nGUI:\nNavigate to User Management > Authentication Servers > Radius Servers\n78 | P a g e"
+          }
+        }
+      },
+      {
+        "+@id": "V-168EBF59",
+        "title": "2.5 Authentication Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-168EBF59r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.5.5",
+          "title": "Ensure allowed-client is set to those necessary for device management",
+          "description": "<VulnDiscussion>Permit only the necessary IP addresses to be used to manage the device.\n\nRationale:\nManagement access to the device should be restricted to the IP addresses or subnets used by firewall administrators. Permitting management access from other IP addresses increases the risk of unauthorized access through password guessing, stolen credentials, or other means.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.5.5"
+          },
+          "fixtext": {
+            "+content": "Run the following command to remove the IP Address or Network from allowed-client list.\nCLI:\nHostname> delete allowed-client host (ipv4-address | ipv6-address) <IP\nAddress>\nHostname> delete allowed-client network (ipv4-address | ipv6-address)\n<Network>\n80 | P a g e GUI:\nNavigate to System Management > Host Access > Allowed Hosts > Select and\nDelete the not required IP address or Network",
+            "+@fixref": "F-168EBF59r01_fix"
+          },
+          "fix": {
+            "+@id": "F-168EBF59r01_fix"
+          },
+          "check": {
+            "+@system": "C-168EBF59_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the Device access restrictions. Verify IP Addresses in allowed-client is limited to those necessary for device management.\nCLI:\nHostname> show allowed-client all\nType Address Mask Length\nHost Any\nHost 10.22.2.1\nNetwork 172.16.31.0 24\nGUI:\nNavigate to System Management > Host Access > Allowed Hosts"
+          }
+        }
+      },
+      {
+        "+@id": "V-9E61E3FE",
+        "title": "2.6 Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9E61E3FEr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.6.1",
+          "title": "Ensure mgmtauditlogs is set to on",
+          "description": "<VulnDiscussion>The mgmtauditlogs specifies if the Gaia sends the Gaia audit logs (for configuration changes that authorized users make) to a Check Point Management Server.\n\nRationale:\nThe mgmtauditlogs enables the logging functionality for configuration change done by the user. In Gaia os, we can export the Syslog messages from security gateway to Syslog server or security management server, and it can be reviewed as normal logs in SmartView Tracker. This enables organizations to monitor and analyze configuration change made by users.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.6.1"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable the mgmtauditlogs.\nCLI:\nHostname> set syslog mgmtauditlogs on\n82 | P a g e GUI:\nNavigate to System Management > System Logging > System Logging\nchecked the Send audit logs to management server upon successful\nconfiguration",
+            "+@fixref": "F-9E61E3FEr01_fix"
+          },
+          "fix": {
+            "+@id": "F-9E61E3FEr01_fix"
+          },
+          "check": {
+            "+@system": "C-9E61E3FE_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the mgmtauditlogs.\nCLI:\nHostname> show syslog mgmtauditlogs\nSending audit logs to Management Server is enabled\nGUI:\nNavigate to System Management > System Logging > System Logging\nVerify Send audit logs to management server upon successful configuration is\nchecked"
+          }
+        }
+      },
+      {
+        "+@id": "V-2437A5F5",
+        "title": "2.6 Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2437A5F5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.6.2",
+          "title": "Ensure auditlog is set to permanent",
+          "description": "<VulnDiscussion>The auditlog specifies if the Gaia saves the logs for configuration changes that authorized users have done.\n\nRationale:\nThe auditlogs defines how it saves the configuration change logs. The configuration change log helps organizations to monitor and analyze configuration change made by users.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.6.2"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable the auditlog.\nCLI:\nHostname> set syslog auditlog permanent\nGUI:\nNavigate to System Management > System Logging > System Logging\nchecked the Send audit logs to syslog upon successful configuration\n84 | P a g e",
+            "+@fixref": "F-2437A5F5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2437A5F5r01_fix"
+          },
+          "check": {
+            "+@system": "C-2437A5F5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the auditlog.\nCLI:\nHostname> show syslog auditlog\npermanent\nGUI:\nNavigate to System Management > System Logging > System Logging\nVerify Send audit logs to syslog upon successful configuration is checked"
+          }
+        }
+      },
+      {
+        "+@id": "V-813015DF",
+        "title": "2.6 Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-813015DFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.6.3",
+          "title": "Ensure cplogs is set to on",
+          "description": "<VulnDiscussion>The cplogs specifies if the Gaia sends the Gaia system logs to a Check Point Management Server:</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "2.6.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to enable the cplogs.\nCLI:\nHostname> set syslog cplogs on\nGUI:\nNavigate to System Management > System Logging > System Logging\nchecked the Send Syslog messages to management server",
+            "+@fixref": "F-813015DFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-813015DFr01_fix"
+          },
+          "check": {
+            "+@system": "C-813015DF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify the cplogs.\nCLI:\nHostname> show syslog cplogs\nSending syslog syslogs to CheckPoint's logs is disabled\nGUI:\nNavigate to System Management > System Logging > System Logging\nVerify Send Syslog messages to management server is checked"
+          }
+        }
+      },
+      {
+        "+@id": "V-23F7519C",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-23F7519Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.1",
+          "title": "Enable the Firewall Stealth Rule",
+          "description": "<VulnDiscussion>Create a rule to drop Any Service from Any Source or Any VPN that attempts to connect to the gateway.\n\nRationale:\nThe stealth rule will limit access to the gateway to the control and service connections enabled as part of the design. As such, it is very important to enable access to the gateway as its role changes, for example, become a client VPN gateway. Another common example is enabling Client Authentication. If ports TCP 259 and 900 are not opened (or if you change the ports in the conf file), access will not work. Organizations with many Check Point gateways may want to document each gateway and the Check Point services it is intended and configured to accept.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.1"
+          },
+          "fixtext": {
+            "+content": "Login to the Management Server via SmartDashboard and create or edit the stealth rule, allowed only required IP address to manage the gateway and make sure it is on top of all rules.",
+            "+@fixref": "F-23F7519Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-23F7519Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-23F7519C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Login to the Management Server via SmartConsole and create or edit the stealth rule and make sure it is on top of all rules and only allowed sources and services are allowed to access the Gateway."
+          }
+        }
+      },
+      {
+        "+@id": "V-F2BE6AC5",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F2BE6AC5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.2",
+          "title": "Configure a Default Drop/Cleanup Rule",
+          "description": "<VulnDiscussion>Ensure that the final rule in the rulebase explicitly drops all services, destinations, etc not specifically allowed in the previous rules. It is important that any access not explicitly allowed be explicitly dropped.\n\nRationale:\nThe Clean up rule is necessary to block all the traffic which is not allowed by earlier rules in the firewall. Ideally, Clean up rule be at the bottom in the Firewall rule base. By default an Implied Rule in Checkpoint firewall which does the same thing, but logging is not enabled for this rule.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.2"
+          },
+          "fixtext": {
+            "+content": "Create or edit the last rule in the rulebase which is denying all traffic from any source to any destination.\n89 | P a g e",
+            "+@fixref": "F-F2BE6AC5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-F2BE6AC5r01_fix"
+          },
+          "check": {
+            "+@system": "C-F2BE6AC5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the last rule is present in the rulebase which is denying all traffic from any source to any destination."
+          }
+        }
+      },
+      {
+        "+@id": "V-CFE20DAE",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CFE20DAEr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.3",
+          "title": "Use Checkpoint Sections and Titles",
+          "description": "<VulnDiscussion>Use Sections to organize rules into related groups, whenever possible. Set each off with a descriptive Section Title.\n\nRationale:\nRulebase clarity helps all workers and reviewers. By organizing rules, inserting new rules is easier, and all can see the relationships among rules.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.3"
+          },
+          "fixtext": {
+            "+content": "Add a description for each rule.",
+            "+@fixref": "F-CFE20DAEr01_fix"
+          },
+          "fix": {
+            "+@id": "F-CFE20DAEr01_fix"
+          },
+          "check": {
+            "+@system": "C-CFE20DAE_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify each rule has a description added and sections are used as per the requirement."
+          }
+        }
+      },
+      {
+        "+@id": "V-38E3BAA8",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-38E3BAA8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.4",
+          "title": "Ensure Hit count is Enable for the rules",
+          "description": "<VulnDiscussion>The Hit Count setting shows the number of hits for the rules if enabled. When a new connection crosses a Firewall, hits are incremented for the matching rule.\n\nRationale:\nThe Hit Count is a very useful feature which helps in finding the unused rules, which can be reviewed and removed or update the rules accordingly as per the requirement.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.4"
+          },
+          "fixtext": {
+            "+content": "Go to the following path in Smart Console and Enable the Enable Hit Count setting.\nNavigate to Global Properties > Hit Count\nChecked the 'Enable Hit Count' setting",
+            "+@fixref": "F-38E3BAA8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-38E3BAA8r01_fix"
+          },
+          "check": {
+            "+@system": "C-38E3BAA8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Go to the following path in Smart Console and verify Enable Hit Count is enabled.\nNavigate to Global Properties > Hit Count\nVerify 'Enable Hit Count' is checked"
+          }
+        }
+      },
+      {
+        "+@id": "V-B452DCA5",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B452DCA5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.5",
+          "title": "Ensure no Allow Rule with Any in Destination filed present in the Firewall Rules",
+          "description": "<VulnDiscussion>The Firewall Rules with Any in Source field allows all the IP Addresses of the Network to access the specified destination configured in the Firewall rules for specific services.\n\nRationale:\nIdeally, the traffic should be explicitly allowed from specific Source to specific Destination for the required services. This provides better control over the traffic passes through the firewall and reduce the chances of an exploit because of service misconfiguration.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.5"
+          },
+          "fixtext": {
+            "+content": "Delete the rule from the firewall which has Any used in the Source field.",
+            "+@fixref": "F-B452DCA5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B452DCA5r01_fix"
+          },
+          "check": {
+            "+@system": "C-B452DCA5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify there are no allowed rules present in the firewall which has Any used in the Source field. If there is any such rule present in the firewall, it should have a business justification and also it should be documented."
+          }
+        }
+      },
+      {
+        "+@id": "V-A579CFED",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A579CFEDr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.6",
+          "title": "Ensure no Allow Rule with Any in Source filed present in the Firewall Rules",
+          "description": "<VulnDiscussion>The Firewall Rules with Any in the Destination field allows accessing all the IP Addresses of Network from specified Sources configured in the Firewall rules for specific services.\n\nRationale:\nIdeally, the traffic should be explicitly allowed from the specific Source to specific Destination for the required services. This provides better control over the traffic passes through the firewall and reduce the chances of an exploit because of service misconfiguration.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.6"
+          },
+          "fixtext": {
+            "+content": "Delete the rule from the firewall which has Any used in the Destination field.",
+            "+@fixref": "F-A579CFEDr01_fix"
+          },
+          "fix": {
+            "+@id": "F-A579CFEDr01_fix"
+          },
+          "check": {
+            "+@system": "C-A579CFED_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify there are no allowed rules present in the firewall which has Any used in the Destination field. If there is any such rule present in the firewall, it should have a business justification and also it should be documented."
+          }
+        }
+      },
+      {
+        "+@id": "V-709C2768",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-709C2768r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.7",
+          "title": "Ensure no Allow Rule with Any in Services filed present in the Firewall Rules",
+          "description": "<VulnDiscussion>The Firewall Rules with Any in the Service field allows accessing all the Services from specified Source to specified Destination configured in the Firewall rules.\n\nRationale:\nThere are many services like telnet, FTP, TFTP which are having many security issues.\nHackers can take advantage of these services to gain the credentials, access to the systems or they can use these services for DoS attacks. These services need to be configured as per the needs of the business.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.7"
+          },
+          "fixtext": {
+            "+content": "Delete the rule from the firewall which has Any used in the Service field.",
+            "+@fixref": "F-709C2768r01_fix"
+          },
+          "fix": {
+            "+@id": "F-709C2768r01_fix"
+          },
+          "check": {
+            "+@system": "C-709C2768_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify there are no allowed rules present in the firewall which has Any used in the Service field."
+          }
+        }
+      },
+      {
+        "+@id": "V-E7D13E90",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E7D13E90r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.8",
+          "title": "Logging should be enable for all Firewall Rules",
+          "description": "<VulnDiscussion>The Track Field defines how the events of the rule are captured.\n\nRationale:\nThe event log of firewall rules helps in identifying the allowed and blocked traffic and also helps in troubleshooting and forensic investigation. It is always good to enable logging for all the firewall rules, but by logging multiple firewall rules results in a huge log files, which requires huge disk space and management operations. Logs play an important role in security auditing, incident response, system maintenance and forensic investigation, and should be configured as per the business needs.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.8"
+          },
+          "fixtext": {
+            "+content": "Set the Track field to Log in all firewall rules.",
+            "+@fixref": "F-E7D13E90r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E7D13E90r01_fix"
+          },
+          "check": {
+            "+@system": "C-E7D13E90_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify all Track field in all firewall rules should have set to Log."
+          }
+        }
+      },
+      {
+        "+@id": "V-D1A7A12E",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D1A7A12Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.9",
+          "title": "Review and Log Implied Rules",
+          "description": "<VulnDiscussion>Rulebase clarity helps all workers and reviewers. Stating rules explicitly in the rulebase makes policy analysis and review significantly easier. Select the ‗Log Implied Rules‘ to ensure all understand when connectivity is denied or allowed through a subtle Implied Rule.\n\nRationale:\nIt is recommended to define rules explicitly rather than state them implicitly in the Implied Rules section of Global Properties. If Implied Rules are used, configure logging for implied rules by accessing the ‗Global Properties‘ dialog box.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.9"
+          },
+          "fixtext": {
+            "+content": "Go to the following path in the Smart Console and enabled the Log Implied Rules.\nNavigate to Global Properties > Firewall\nEnable the Log Implied Rules",
+            "+@fixref": "F-D1A7A12Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-D1A7A12Er01_fix"
+          },
+          "check": {
+            "+@system": "C-D1A7A12E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Go to the following path in the Smart Console and verify Log Implied Rules is enabled.\nNavigate to Global Properties > Firewall\nVerify Log Implied Rules is enabled"
+          }
+        }
+      },
+      {
+        "+@id": "V-5AF7051D",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5AF7051Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.10",
+          "title": "Ensure Drop Out of State TCP Packets is enabled",
+          "description": "<VulnDiscussion>The Drop out of state TCP Packets setting will drop the out of state or non-synchronized TCP Packets for which firewall does not have a matching state table entry.\n\nRationale:\nBypassing security setting Drop out of state TCP Packets means that non-synchronized packets which do not belong to an established connection in the Firewall's connections table or non-TCP compliant traffic will not be dropped. This can be potentially used by attackers for Denial-of-service attacks by flooding non-synchronized TCP packets.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.10"
+          },
+          "fixtext": {
+            "+content": "Go to the following path and checked the Drop Out of State TCP Packets and Log on Drop.\nSmartConsole > Global Properties > Stateful Inspection\nChecked the Drop Out of State TCP Packets and Log on Drop",
+            "+@fixref": "F-5AF7051Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-5AF7051Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-5AF7051D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Go to the following path and verify Drop Out of State TCP Packets and Log on Drop is enabled.\nSmartConsole > Global Properties > Stateful Inspection\nVerify Drop Out of State TCP Packets and Log on Drop is checked."
+          }
+        }
+      },
+      {
+        "+@id": "V-736A55A0",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-736A55A0r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.11",
+          "title": "Ensure Drop Out of State ICMP Packets is enabled",
+          "description": "<VulnDiscussion>This drops the out of state ICMP packets.\n\nRationale:\nThe Firewall verifies that each ICMP reply packet matches a previous request, and each ICMP error matches an existing connection. Out of State ICMP packets should be dropped and logged.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.11"
+          },
+          "fixtext": {
+            "+content": "Go to the following path and checked the Drop Out of State ICMP Packets and Log on Drop.\nSmartConsole > Global Properties > Stateful Inspection\nChecked the Drop Out of State ICMP Packets and Log on Drop",
+            "+@fixref": "F-736A55A0r01_fix"
+          },
+          "fix": {
+            "+@id": "F-736A55A0r01_fix"
+          },
+          "check": {
+            "+@system": "C-736A55A0_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Go to the following path and verify Drop Out of State ICMP Packets and Log on Drop is enabled.\nSmartConsole > Global Properties > Stateful Inspection\nVerify Drop Out of State ICMP Packets and Log on Drop is checked."
+          }
+        }
+      },
+      {
+        "+@id": "V-1A70F032",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1A70F032r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.12",
+          "title": "Ensure Anti-Spoofing is enabled and action is set to Prevent for all Interfaces",
+          "description": "<VulnDiscussion>The Anti-Spoofing is a technique which is used to identify and drop the packets that have a false source IP address. The Anti-Spoofing detect mode is only monitor the Anti-spoofing events while prevent mode drops the Anti-spoofing events.\n\nRationale:\nHackers change the packet's IP address and make a packet which looks like it is from a trusted source. If your network is not protected with the IP-spoofing, hackers can exploit the vulnerability to gain access to the network.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.12"
+          },
+          "fixtext": {
+            "+content": "For all managed gateways enable the Anti-Spoofing, set the Anti-Spoofing action to Prevent and set the tracking to Log.\nSmartConsole > Gateways & Servers > select managed Gateway > Network\nManagement > Select each interface > General > Modify\n- Checked the Perform Anti-Spoofing based on Interface topology\n- Set the Anti-Spoofing action to Prevent\n- Set the Spoof Tracking to Log\n100 | P a g e",
+            "+@fixref": "F-1A70F032r01_fix"
+          },
+          "fix": {
+            "+@id": "F-1A70F032r01_fix"
+          },
+          "check": {
+            "+@system": "C-1A70F032_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "For all managed gateways verify that Anti-Spoofing is enabled, Anti-Spoofing action is set to Prevent and tracking is set to Log.\nSmartConsole > Gateways & Servers > select managed Gateway > Network\nManagement > Select each interface > General > Modify\n- Verify Perform Anti-Spoofing based on Interface topology is checked\n- Verify Anti-Spoofing action is set to Prevent\n- Verify Spoof Tracking is set to Log"
+          }
+        }
+      },
+      {
+        "+@id": "V-7E429E38",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7E429E38r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.13",
+          "title": "Ensure Disk Space Alert is set",
+          "description": "<VulnDiscussion>This is used to generate the Log and Alert when disk space reaches the configured limit.\n\nRationale:\nThe device might get inaccessible and the logs are not getting stored once the disk space reaches to the maximum capacity. It is imperative that organizations log critical infrastructure appropriately, store and archive these logs in a central location</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.13"
+          },
+          "fixtext": {
+            "+content": "Go to the following path and configured the Disk Space Alert.\nSmartConsole > Gateways & Servers > Select each Gateway > Logs > Local\nStorage\n* Checked the When disk space is below and value MBytes or Percentage is\nconfigured as per the Organization Policy.\n* Set the Issue alert to Log, Popup Alert, Mail or SNMP trap alert.",
+            "+@fixref": "F-7E429E38r01_fix"
+          },
+          "fix": {
+            "+@id": "F-7E429E38r01_fix"
+          },
+          "check": {
+            "+@system": "C-7E429E38_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Disk Space Alert is configured if disk space goes beyond the organization defined configured limit.\nSmartConsole > Gateways & Servers > Select each Gateway > Logs > Local\nStorage\n* When disk space is below is checked and value MBytes or Percentage is\nconfigured\n* Issue alert is set to Log, Popup Alert, Mail or SNMP trap alert."
+          }
+        }
+      },
+      {
+        "+@id": "V-1DE40F1A",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1DE40F1Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.14",
+          "title": "Ensure Accept RIP is not enabled",
+          "description": "<VulnDiscussion>The Accept RIP is a Global property setting which you can set either to accept or reject the RIP packets which is using UDP Port 520. RIP maintains information about reachable systems and routes to those systems.\n\nRationale:\nThe security policy is made up of rules in the Firewall Rule Base. Other than the rules defined by the administrator, The Check Point Security Gateway also creates Implied Rules, which are defined in the Firewall Global Properties. The Check Point Security Gateway places the implied rules first, last, or before last in the Firewall Rule Base. The administrator can decide whether or not to log implied rules.\nFirst — The Implicit rule will be placed before the explicit rules. Last — The Implicit rule will be placed after the explicit rules. Before Last — The Implicit rule will be placed before the last explicit rule.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.14"
+          },
+          "fixtext": {
+            "+content": "Go to the following path and Configured the Accept RIP.\nSmartConsole > Gateways & Servers > select each Gateway > Firewall\nUnchecked the Accept RIP",
+            "+@fixref": "F-1DE40F1Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-1DE40F1Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-1DE40F1A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Accept RIP under Global Properties is not enabled.\nSmartConsole > Gateways & Servers > select each Gateway > Firewall\nVeiry Accept RIP is unchecked."
+          }
+        }
+      },
+      {
+        "+@id": "V-3404C898",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3404C898r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.15",
+          "title": "Ensure Accept Domain Name over TCP (Zone Transfer) is not enabled",
+          "description": "<VulnDiscussion>The 'Domain Name Over TCP (Zone transfer)' is a global property setting which is used to allow or reject all the TCP-type DNS packets to and from anywhere. These rules are considered as rule zero which are executed before any user-defined rules.\n\nRationale:\nIf this rule is enabled, it accepts Domain Name (DNS) queries and replies over TCP, to allow downloading of the domain name-resolving tables used for zone transfers between servers.\nFor clients, DNS over TCP is only used if the tables to be transferred are very large. The security policy is made up of rules in the Firewall Rule Base. Other than the rules defined by the administrator, The Check Point Security Gateway also creates Implied Rules, which are defined in the Firewall Global Properties. The Check Point Security Gateway places the implied rules first, last, or before last in the Firewall Rule Base. The administrator can decide whether or not to log implied rules.\n• First > The Implicit rule will be placed before the explicit rules.\n• Last > The Implicit rule will be placed after the explicit rules.\n• Before Last > The Implicit rule will be placed before the last explicit rule.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.15"
+          },
+          "fixtext": {
+            "+content": "Go to the following path and Configured the Accept Accept Domain Name over TCP (Zone Transfer).\nSmartConsole > Gateways & Servers > select each Gateway > Firewall\nUnchecked the Accept Accept Domain Name over TCP (Zone Transfer)\n105 | P a g e",
+            "+@fixref": "F-3404C898r01_fix"
+          },
+          "fix": {
+            "+@id": "F-3404C898r01_fix"
+          },
+          "check": {
+            "+@system": "C-3404C898_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Accept Accept Domain Name over TCP (Zone Transfer) under Global Properties is not enabled.\nSmartConsole > Gateways & Servers > select each Gateway > Firewall\nVeiry Accept Accept Domain Name over TCP (Zone Transfer) is unchecked."
+          }
+        }
+      },
+      {
+        "+@id": "V-F3833E6C",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F3833E6Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.16",
+          "title": "Ensure Accept Domain Name over UDP (Queries) is not enabled",
+          "description": "<VulnDiscussion>The 'Domain Name Over UDP (Queries)' is a global property setting which is used to allow or reject all the UDP-type DNS packets to and from anywhere. These rules are considered as rule zero which are execute before any user-defined rules.\n\nRationale:\nIf this rule is set to enable it allows the DNS traffic to pass over the firewall without any control. The security policy is made up of rules in the Firewall Rule Base. Other than the rules defined by the administrator, The Check Point Security Gateway also creates Implied Rules, which are defined in the Firewall Global Properties. The Check Point Security Gateway places the implied rules first, last, or before last in the Firewall Rule Base. The administrator can decide whether or not to log implied rules.\n• First > The Implicit rule will be placed before the explicit rules.\n• Last > The Implicit rule will be placed after the explicit rules.\n• Before Last > The Implicit rule will be placed before the last explicit rule.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.16"
+          },
+          "fixtext": {
+            "+content": "Go to the following path and Configured the Accept Accept Domain Name over UDP (Queries).\nSmartConsole > Gateways & Servers > select each Gateway > Firewall\nUnchecked the Accept Accept Domain Name over UDP (Queries)\n107 | P a g e",
+            "+@fixref": "F-F3833E6Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-F3833E6Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-F3833E6C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Accept Accept Domain Name over UDP (Queries) under Global Properties is not enabled.\nSmartConsole > Gateways & Servers > select each Gateway > Firewall\nVerify Accept Accept Domain Name over UDP (Queries) is unchecked."
+          }
+        }
+      },
+      {
+        "+@id": "V-C49031C8",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C49031C8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.17",
+          "title": "Ensure Accept ICMP Requests is not enabled",
+          "description": "<VulnDiscussion>The 'Accept ICMP requests' is a global property setting which is used to allow the ICMP requests from any location. ICMP is used to send control messages (for example, ping, destination unreachable, source quench, route change) to other systems. These rules are considered as rule zero which are executed before any user-defined rules.\n\nRationale:\nIf this rule is enabled, it allows the echo requests, timestamp requests, information requests, and mask requests. This can be used by a malicious user to create a denial of service condition by flooding the network with broadcast echo requests and revealing mask request information. The security policy is made up of rules in the Firewall Rule Base.\nOther than the rules defined by the administrator, The Check Point Security Gateway also creates Implied Rules, which are defined in the Firewall Global Properties. The Check Point Security Gateway places the implied rules first, last, or before last in the Firewall Rule Base.\nThe administrator can decide whether or not to log implied rules.\n• First > The Implicit rule will be placed before the explicit rules.\n• Last > The Implicit rule will be placed after the explicit rules.\n• Before Last > The Implicit rule will be placed before the last explicit rule.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.17"
+          },
+          "fixtext": {
+            "+content": "Go to the following path and Configured the Accept Accept ICMP Requests.\nSmartConsole > Gateways & Servers > select each Gateway > Firewall\nUnchecked the Accept Accept ICMP Requests\n109 | P a g e",
+            "+@fixref": "F-C49031C8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C49031C8r01_fix"
+          },
+          "check": {
+            "+@system": "C-C49031C8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Accept Accept ICMP Requests under Global Properties is not enabled.\nSmartConsole > Gateways & Servers > select each Gateway > Firewall\nVerify Accept Accept ICMP Requests is unchecked."
+          }
+        }
+      },
+      {
+        "+@id": "V-BD9BEDAD",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BD9BEDADr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.18",
+          "title": "Ensure Allow bi-directional NAT is enabled",
+          "description": "<VulnDiscussion>Allow bi-directional NAT applies to automatic NAT rules in the NAT Rule Base and allows two automatic NAT rules to match a connection. Without Bidirectional NAT, only one automatic NAT rule can match a connection.\n\nRationale:\nWhen NAT is defined for a network object, an automatic NAT rule is generated which performs the required translation. If there are two such objects and one is the source of a connection and the other the destination, then without Bidirectional NAT, only one of these objects will be translated, because only one of the automatically generated NAT rules will be applied, and so a connection between the two objects will only be allowed in one direction. With Bidirectional NAT, both automatic NAT rules are applied, and both objects will be translated, so connections between the two objects will be allowed in both directions.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.18"
+          },
+          "fixtext": {
+            "+content": "Go to the following path and Configured the Allow bi-directional NAT.\nSmartConsole > Gateways & Servers > select each Gateway > NAT - Network\nAddress Translation\nUnchecked the Allow bi-directional NAT\n110 | P a g e",
+            "+@fixref": "F-BD9BEDADr01_fix"
+          },
+          "fix": {
+            "+@id": "F-BD9BEDADr01_fix"
+          },
+          "check": {
+            "+@system": "C-BD9BEDAD_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Allow bi-directional NAT under Global Properties is enabled.\nSmartConsole > Gateways & Servers > select each Gateway > NAT - Network\nAddress Translation\nVerify Allow bi-directional NAT is checked."
+          }
+        }
+      },
+      {
+        "+@id": "V-1442DF56",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1442DF56r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.19",
+          "title": "Ensure Automatic ARP Configuration NAT is enabled",
+          "description": "<VulnDiscussion>Proxy ARP is a mechanism that allows the configuration of a Gateway to respond to ARP requests on behalf of other hosts.\n\nRationale:\nAutomatic ARP configuration ensures that ARP requests for a translated (NATed) machine, network or address range are answered by the Check Point Security Gateway. This option removes the requirement for manual ARP configuration for automatic NAT rules (using the arp command in Unix or the local.arp file in Windows).\nThe command fw ctl arp displays the ARP proxy table on Check Point Security Gateways that run on Windows. On Unix, use the arp -a command.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.19"
+          },
+          "fixtext": {
+            "+content": "Go to the following path and Configured the Automatic ARP Configuration NAT.\nSmartConsole > Gateways & Servers > select each Gateway > NAT - Network\nAddress Translation\nUnchecked the Automatic ARP Configuration NAT",
+            "+@fixref": "F-1442DF56r01_fix"
+          },
+          "fix": {
+            "+@id": "F-1442DF56r01_fix"
+          },
+          "check": {
+            "+@system": "C-1442DF56_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Automatic ARP Configuration NAT under Global Properties is enabled.\nSmartConsole > Gateways & Servers > select each Gateway > NAT - Network\nAddress Translation\nVerify Automatic ARP Configuration NAT is checked."
+          }
+        }
+      },
+      {
+        "+@id": "V-E8A40347",
+        "title": "3 Firewall Secure Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E8A40347r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.20",
+          "title": "Ensure Logging is enabled for Track Options of Global Properties",
+          "description": "<VulnDiscussion>This defines the system-wide logging and alerting of parameters.\n\nRationale:\nThis enables the logging and alerting for specific types of parameters.\nVPN successful key exchange: specifies the action to be taken when VPN keys are successfully exchanged.\nVPN packet handling errors: specifies the action to be taken when encryption or decryption errors occur. A log entry contains the action performed (Drop or Reject) and a short description of the error cause, for example, scheme or method mismatch.\nVPN configuration & key exchange errors: specifies the action to be taken when logging configuration or key exchange errors occur, for example, when attempting to establish encrypted communication with a network object inside the same encryption domain.\nIP Options drop: specifies the action to take when a packet with IP Options is encountered.\nThe Check Point Security Gateway always drops these packets, but you can log them or issue an alert.\nAdministrative notifications: specifies the action to be taken when an administrative event (for example, when a certificate is about to expire) occurs.\nSLA violation: specifies the action to be taken when an SLA violation occurs, as defined in the Virtual Links window.\nConnection matched by SAM: specifies the action to be taken when a connection is blocked by SAM (Suspicious Activities Monitoring).\nDynamic object resolution failure: specifies the action to be taken when a dynamic object cannot be resolved.\nLog every authenticated HTTP connection: specifies that a log entry should be generated for every authenticated HTTP connection.\n113 | P a g e</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Check Point Firewall Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Check Point Firewall Benchmark",
+            "dc:identifier": "3.20"
+          },
+          "fixtext": {
+            "+content": "Logging is set to Log or Popup Alert or Mail Alert or SNMP Trap Alert for the following events\nSmartConsole > Global Properties > Log and Alert > Track Options\nVPN successful key exchange\nVPN packet handling errors\nVPN configuration & key exchange errors\nIP Options drop\nAdministrative Notification\nConnection matched by SAM\nDynamic object resolution failure\nPacket is incorrectly tagged\nPacket tagging brute force attack\nChecked the Log every authenticated HTTP connection.\n114 | P a g e",
+            "+@fixref": "F-E8A40347r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E8A40347r01_fix"
+          },
+          "check": {
+            "+@system": "C-E8A40347_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Check_Point_Firewall_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Logging is set to Log or Popup Alert or Mail Alert or SNMP Trap Alert for the following events\nSmartConsole > Global Properties > Log and Alert > Track Options\nVPN successful key exchange\nVPN packet handling errors\nVPN configuration & key exchange errors\nIP Options drop\nAdministrative Notification\nConnection matched by SAM\nDynamic object resolution failure\nPacket is incorrectly tagged\nPacket tagging brute force attack\nVerify Log every authenticated HTTP connection is enabled."
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,2764 @@
+<?xml version="1.0" encoding="utf-8"?><Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd" id="CIS_Microsoft_IIS_10_Benchmark" xml:lang="en" xmlns="http://checklists.nist.gov/xccdf/1.1">
+  <status date="2023-07-17">accepted</status>
+  <title>CIS Microsoft IIS 10 Benchmark</title>
+  <description>All CIS Benchmarks focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system for vulnerabilities and quickly updating with the latest security patches • Monitoring applications and libraries for vulnerabilities and quickly updating with the latest security patches In the end, the CIS Benchmarks are designed as a key component of a comprehensive cybersecurity program. This document provides prescriptive guidance for establishing a secure configuration posture for Microsoft Windows IIS 10. This secure configuration guide is based on Microsoft Windows IIS 10 and is intended for all versions of Microsoft Windows IIS 10. This secure configuration guide was tested on Microsoft Windows Server 2022 Datacenter. To obtain the latest version of this secure configuration guide, please visit https://www.cisecurity.org/cis-benchmarks/. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.</description>
+  <notice id="terms-of-use" xml:lang="en"/>
+  <front-matter xml:lang="en"/>
+  <rear-matter xml:lang="en"/>
+  <reference href="https://www.cisecurity.org/cis-benchmarks">
+    <dc:publisher>Center for Internet Security</dc:publisher>
+    <dc:source>CIS Benchmarks</dc:source>
+  </reference>
+  <plain-text id="release-info">Release: 1.2.1 Benchmark Date: 2023-07-17</plain-text>
+  <version>1.2.1</version>
+  <Profile id="L1-IIS-10_Public">
+    <title>Level 1 - IIS 10</title>
+    <description>be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-307DB872" selected="true"/>
+    <select idref="V-49C6E61B" selected="true"/>
+    <select idref="V-F71ED82B" selected="true"/>
+    <select idref="V-F535B19F" selected="true"/>
+    <select idref="V-D13D10E3" selected="true"/>
+    <select idref="V-CA596D1E" selected="true"/>
+    <select idref="V-FE71293C" selected="true"/>
+    <select idref="V-1E679DE3" selected="true"/>
+    <select idref="V-F30CE2F0" selected="true"/>
+    <select idref="V-0D968EB9" selected="true"/>
+    <select idref="V-BE8AEB8D" selected="true"/>
+    <select idref="V-A83167A6" selected="true"/>
+    <select idref="V-C4C6808A" selected="true"/>
+    <select idref="V-EEAD2939" selected="true"/>
+    <select idref="V-0D42E84D" selected="true"/>
+    <select idref="V-217876A9" selected="true"/>
+    <select idref="V-7F5F7D17" selected="true"/>
+    <select idref="V-A39EBAE1" selected="true"/>
+    <select idref="V-92A75FFD" selected="true"/>
+    <select idref="V-D04804CB" selected="true"/>
+    <select idref="V-C0F38180" selected="true"/>
+    <select idref="V-464A5B3B" selected="true"/>
+    <select idref="V-16003ADE" selected="true"/>
+    <select idref="V-B74E01E1" selected="true"/>
+    <select idref="V-67B6B333" selected="true"/>
+    <select idref="V-4A960C83" selected="true"/>
+    <select idref="V-9BFAC27A" selected="true"/>
+    <select idref="V-F9D0D075" selected="true"/>
+    <select idref="V-210D5B4D" selected="true"/>
+    <select idref="V-BD203104" selected="true"/>
+    <select idref="V-6E45318C" selected="true"/>
+    <select idref="V-760782BD" selected="true"/>
+    <select idref="V-313F008B" selected="true"/>
+    <select idref="V-5D8FC377" selected="true"/>
+    <select idref="V-D964365D" selected="true"/>
+    <select idref="V-BE9665AA" selected="true"/>
+    <select idref="V-E8EB63FF" selected="true"/>
+    <select idref="V-11ADC896" selected="true"/>
+    <select idref="V-826A85A6" selected="true"/>
+    <select idref="V-158574A4" selected="true"/>
+  </Profile>
+  <Profile id="L1-IIS-10_Classified">
+    <title>Level 1 - IIS 10</title>
+    <description>be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-307DB872" selected="true"/>
+    <select idref="V-49C6E61B" selected="true"/>
+    <select idref="V-F71ED82B" selected="true"/>
+    <select idref="V-F535B19F" selected="true"/>
+    <select idref="V-D13D10E3" selected="true"/>
+    <select idref="V-CA596D1E" selected="true"/>
+    <select idref="V-FE71293C" selected="true"/>
+    <select idref="V-1E679DE3" selected="true"/>
+    <select idref="V-F30CE2F0" selected="true"/>
+    <select idref="V-0D968EB9" selected="true"/>
+    <select idref="V-BE8AEB8D" selected="true"/>
+    <select idref="V-A83167A6" selected="true"/>
+    <select idref="V-C4C6808A" selected="true"/>
+    <select idref="V-EEAD2939" selected="true"/>
+    <select idref="V-0D42E84D" selected="true"/>
+    <select idref="V-217876A9" selected="true"/>
+    <select idref="V-7F5F7D17" selected="true"/>
+    <select idref="V-A39EBAE1" selected="true"/>
+    <select idref="V-92A75FFD" selected="true"/>
+    <select idref="V-D04804CB" selected="true"/>
+    <select idref="V-C0F38180" selected="true"/>
+    <select idref="V-464A5B3B" selected="true"/>
+    <select idref="V-16003ADE" selected="true"/>
+    <select idref="V-B74E01E1" selected="true"/>
+    <select idref="V-67B6B333" selected="true"/>
+    <select idref="V-4A960C83" selected="true"/>
+    <select idref="V-9BFAC27A" selected="true"/>
+    <select idref="V-F9D0D075" selected="true"/>
+    <select idref="V-210D5B4D" selected="true"/>
+    <select idref="V-BD203104" selected="true"/>
+    <select idref="V-6E45318C" selected="true"/>
+    <select idref="V-760782BD" selected="true"/>
+    <select idref="V-313F008B" selected="true"/>
+    <select idref="V-5D8FC377" selected="true"/>
+    <select idref="V-D964365D" selected="true"/>
+    <select idref="V-BE9665AA" selected="true"/>
+    <select idref="V-E8EB63FF" selected="true"/>
+    <select idref="V-11ADC896" selected="true"/>
+    <select idref="V-826A85A6" selected="true"/>
+    <select idref="V-158574A4" selected="true"/>
+  </Profile>
+  <Profile id="L1-IIS-10_Sensitive">
+    <title>Level 1 - IIS 10</title>
+    <description>be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-307DB872" selected="true"/>
+    <select idref="V-49C6E61B" selected="true"/>
+    <select idref="V-F71ED82B" selected="true"/>
+    <select idref="V-F535B19F" selected="true"/>
+    <select idref="V-D13D10E3" selected="true"/>
+    <select idref="V-CA596D1E" selected="true"/>
+    <select idref="V-FE71293C" selected="true"/>
+    <select idref="V-1E679DE3" selected="true"/>
+    <select idref="V-F30CE2F0" selected="true"/>
+    <select idref="V-0D968EB9" selected="true"/>
+    <select idref="V-BE8AEB8D" selected="true"/>
+    <select idref="V-A83167A6" selected="true"/>
+    <select idref="V-C4C6808A" selected="true"/>
+    <select idref="V-EEAD2939" selected="true"/>
+    <select idref="V-0D42E84D" selected="true"/>
+    <select idref="V-217876A9" selected="true"/>
+    <select idref="V-7F5F7D17" selected="true"/>
+    <select idref="V-A39EBAE1" selected="true"/>
+    <select idref="V-92A75FFD" selected="true"/>
+    <select idref="V-D04804CB" selected="true"/>
+    <select idref="V-C0F38180" selected="true"/>
+    <select idref="V-464A5B3B" selected="true"/>
+    <select idref="V-16003ADE" selected="true"/>
+    <select idref="V-B74E01E1" selected="true"/>
+    <select idref="V-67B6B333" selected="true"/>
+    <select idref="V-4A960C83" selected="true"/>
+    <select idref="V-9BFAC27A" selected="true"/>
+    <select idref="V-F9D0D075" selected="true"/>
+    <select idref="V-210D5B4D" selected="true"/>
+    <select idref="V-BD203104" selected="true"/>
+    <select idref="V-6E45318C" selected="true"/>
+    <select idref="V-760782BD" selected="true"/>
+    <select idref="V-313F008B" selected="true"/>
+    <select idref="V-5D8FC377" selected="true"/>
+    <select idref="V-D964365D" selected="true"/>
+    <select idref="V-BE9665AA" selected="true"/>
+    <select idref="V-E8EB63FF" selected="true"/>
+    <select idref="V-11ADC896" selected="true"/>
+    <select idref="V-826A85A6" selected="true"/>
+    <select idref="V-158574A4" selected="true"/>
+  </Profile>
+  <Profile id="L2-IIS-10_Public">
+    <title>Level 2 - IIS 10</title>
+    <description>are intended for environments or use cases where security is paramount; acts as defense in depth measure; may negatively inhibit the utility or performance of the technology.</description>
+    <select idref="V-945F8A00" selected="true"/>
+    <select idref="V-AFBAE231" selected="true"/>
+    <select idref="V-AC5F3D1D" selected="true"/>
+    <select idref="V-BF9CC6E0" selected="true"/>
+    <select idref="V-D557FCA3" selected="true"/>
+    <select idref="V-DF42D4D5" selected="true"/>
+    <select idref="V-A479B843" selected="true"/>
+    <select idref="V-DDD527E8" selected="true"/>
+    <select idref="V-A667BB9E" selected="true"/>
+    <select idref="V-5C79BCF3" selected="true"/>
+    <select idref="V-24D5D015" selected="true"/>
+    <select idref="V-E105B162" selected="true"/>
+    <select idref="V-A8C78B8A" selected="true"/>
+    <select idref="V-899FE499" selected="true"/>
+    <select idref="V-E6D73875" selected="true"/>
+  </Profile>
+  <Profile id="L2-IIS-10_Classified">
+    <title>Level 2 - IIS 10</title>
+    <description>are intended for environments or use cases where security is paramount; acts as defense in depth measure; may negatively inhibit the utility or performance of the technology.</description>
+    <select idref="V-945F8A00" selected="true"/>
+    <select idref="V-AFBAE231" selected="true"/>
+    <select idref="V-AC5F3D1D" selected="true"/>
+    <select idref="V-BF9CC6E0" selected="true"/>
+    <select idref="V-D557FCA3" selected="true"/>
+    <select idref="V-DF42D4D5" selected="true"/>
+    <select idref="V-A479B843" selected="true"/>
+    <select idref="V-DDD527E8" selected="true"/>
+    <select idref="V-A667BB9E" selected="true"/>
+    <select idref="V-5C79BCF3" selected="true"/>
+    <select idref="V-24D5D015" selected="true"/>
+    <select idref="V-E105B162" selected="true"/>
+    <select idref="V-A8C78B8A" selected="true"/>
+    <select idref="V-899FE499" selected="true"/>
+    <select idref="V-E6D73875" selected="true"/>
+  </Profile>
+  <Profile id="L2-IIS-10_Sensitive">
+    <title>Level 2 - IIS 10</title>
+    <description>are intended for environments or use cases where security is paramount; acts as defense in depth measure; may negatively inhibit the utility or performance of the technology.</description>
+    <select idref="V-945F8A00" selected="true"/>
+    <select idref="V-AFBAE231" selected="true"/>
+    <select idref="V-AC5F3D1D" selected="true"/>
+    <select idref="V-BF9CC6E0" selected="true"/>
+    <select idref="V-D557FCA3" selected="true"/>
+    <select idref="V-DF42D4D5" selected="true"/>
+    <select idref="V-A479B843" selected="true"/>
+    <select idref="V-DDD527E8" selected="true"/>
+    <select idref="V-A667BB9E" selected="true"/>
+    <select idref="V-5C79BCF3" selected="true"/>
+    <select idref="V-24D5D015" selected="true"/>
+    <select idref="V-E105B162" selected="true"/>
+    <select idref="V-A8C78B8A" selected="true"/>
+    <select idref="V-899FE499" selected="true"/>
+    <select idref="V-E6D73875" selected="true"/>
+  </Profile>
+  <Group id="V-307DB872">
+    <title>1 Basic Configurations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-307DB872r01_rule" weight="10.0" severity="medium">
+      <version>1.1</version>
+      <title>(L1) Ensure 'Web content' is on non-system partition</title>
+      <description>&lt;VulnDiscussion&gt;Web resources published through IIS are mapped via Virtual Directories to physical locations on disk. It is recommended to map all Virtual Directories to a non-system disk volume.
+
+Rationale:
+Isolating web content from system files may reduce the probability of web sites/applications exhausting system disk space. It can also reduce the file IO vulnerability in the web site/application from affecting the confidentiality and/or integrity of system files.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-307DB872r01_fix">1. Browse to web content in C:\inetpub\wwwroot\ 2. Copy or cut content onto a dedicated and restricted web folder on a non-system drive such as D:\webroot\ 3. Change mappings for any applications or Virtual Directories to reflect the new location To change the mapping for the application named app1 which resides under the Default Web Site, open IIS Manager:
+1. Expand the server node 2. Expand Sites 3. Expand Default Web Site 4. Click on app1 5. In the Actions pane, select Basic Settings 6. In the Physical path text box, put the new location of the application, D:\wwwroot\app1 in the example above</fixtext>
+      <fix id="F-307DB872r01_fix"/>
+      <check system="C-307DB872_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Execute the following command to ensure no virtual directories are mapped to the system drive:
+To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd list vdir
+OR To verify using PowerShell enter the following command:
+Get-Website | Format-List Name, PhysicalPath</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-49C6E61B">
+    <title>1 Basic Configurations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-49C6E61Br01_rule" weight="10.0" severity="medium">
+      <version>1.2</version>
+      <title>(L1) Ensure 'Host headers' are on all sites</title>
+      <description>&lt;VulnDiscussion&gt;Host headers provide the ability to host multiple websites on the same IP address and port. It is recommended that host headers be configured for all sites.
+Note: Wildcard host headers are now supported.
+
+Rationale:
+Requiring a Host header for all sites may reduce the probability of DNS rebinding attacks successfully compromising or abusing site data or functionality and IP-based scans successfully identifying or interacting with a target application hosted on IIS.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-49C6E61Br01_fix">Obtain a listing of all sites by using the following appcmd.exe command:
+Enter the following command in AppCmd.exe to configure the host header:
+%systemroot%\system32\inetsrv\appcmd.exe set config -
+section:system.applicationHost/sites /"[name='&lt;website
+name&gt;'].bindings.[protocol='http',bindingInformation='*:80:&lt;host
+header&gt;'].bindingInformation:"*:80:&lt;host header&gt;"" /commit:apphost
+OR Enter the following command in PowerShell to configure the host header:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+'system.applicationHost/sites/site[@name='&lt;website
+name&gt;']/bindings/binding[@protocol='http' and @bindingInformation='*:80:']' -
+name 'bindingInformation' -value '*:80:&lt;host header value&gt;'
+OR Perform the following in IIS Manager to configure host headers for the Default Web Site:
+1. Open IIS Manager 2. In the Connections pane expand the Sites node and select Default Web Site 3. In the Actions pane click Bindings 4. In the Site Bindings dialog box, select the binding for which host headers are going to be configured, Port 80 in this example 5. Click Edit 6. Under host name, enter the sites FQDN, such as &lt;www.examplesite.com&gt; 7. Click OK, then Close Note: Requiring a host header may impair site functionality for HTTP/1.0 clients.</fixtext>
+      <fix id="F-49C6E61Br01_fix"/>
+      <check system="C-49C6E61B_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Execute the following command to identify sites that are not configured to require host headers:
+To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd list sites
+OR To verify using PowerShell enter the following command:
+Get-WebBinding -Port * | Format-List bindingInformation
+All sites will be listed as such: SITE "Default Web Site"
+(id:1,bindings:http/\*:80:test.com,state:Started) SITE "badsite"
+(id:3,bindings:http/\*:80:,state:Started) For all non-SSL sites, ensure that the IP:port:host binding triplet contains a host name. In the example above, the first site is configured as recommended given the Default Web Site has a host header of test.com. badsite, however, does not have a host header configured - it shows \*:80:
+which means all IPs over port 80, with no host header.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F71ED82B">
+    <title>1 Basic Configurations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F71ED82Br01_rule" weight="10.0" severity="medium">
+      <version>1.3</version>
+      <title>(L1) Ensure 'Directory browsing' is set to Disabled</title>
+      <description>&lt;VulnDiscussion&gt;Directory browsing allows the contents of a directory to be displayed upon request from a web client. If directory browsing is enabled for a directory in Internet Information Services, users receive a page that lists the contents of the directory when the following two conditions are met:
+1. No specific file is requested in the URL 2. The Default Documents feature is disabled in IIS, or if it is enabled, IIS is unable to locate a file in the directory that matches a name specified in the IIS default document list Note: If directory browsing is enabled (an exception to this recommendation), make sure that it is only enabled on the particular directory or directories that need to be shared.
+
+Rationale:
+Ensuring that directory browsing is disabled may reduce the probability of disclosing sensitive content that is inadvertently accessible via IIS.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>1.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F71ED82Br01_fix">Directory Browsing can be set by using the UI, running appcmd.exe commands, by editing configuration files directly, or by writing WMI scripts. To disable directory browsing at the server level using an appcmd.exe command:
+Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config /section:directoryBrowse
+/enabled:false
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -Filter system.webserver/directorybrowse -PSPath
+iis:\ -Name Enabled -Value False</fixtext>
+      <fix id="F-F71ED82Br01_fix"/>
+      <check system="C-F71ED82B_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify that Directory Browsing has been disabled at the server level:
+To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd list config /section:directoryBrowse
+If the server is configured as recommended, the following will be displayed:
+&lt;system.webServer&gt;
+&lt;directoryBrowse enabled="false" /&gt;
+&lt;system.webServer&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -Filter system.webserver/directorybrowse -PSPath
+iis:\ -Name Enabled | select Value</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F535B19F">
+    <title>1 Basic Configurations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F535B19Fr01_rule" weight="10.0" severity="medium">
+      <version>1.4</version>
+      <title>(L1) Ensure 'application pool identity' is configured for all application pools</title>
+      <description>&lt;VulnDiscussion&gt;Application Pool Identities are the actual users/authorities that will run the worker process - w3wp.exe. Assigning the correct user authority will help ensure that applications can function properly, while not giving overly permissive permissions on the system. These identities can further be used in ACLs to protect system content. It is recommended that each Application Pool run under a unique identity.
+IIS has additional built-in least privilege identities intended for use by Application Pools.
+It is recommended that the default Application Pool Identity be changed to a least privilege principle other than Network Service. Furthermore, it is recommended that all application pool identities be assigned a unique least privilege principal.
+To achieve isolation in IIS, application pools can be run as separate identities. IIS can be configured to automatically use the application pool identity if no anonymous user account is configured for a Web site. This can greatly reduce the number of accounts needed for Web sites and make management of the accounts easier. It is recommended the Application Pool Identity be set as the Anonymous User Identity.
+The name of the Application Pool account corresponds to the name of the Application Pool. Application Pool Identities were introduced in Windows Server 2008 SP2. It is recommended that Application Pools be set to run as ApplicationPoolIdentity unless there is an underlying reason that the application pool needs to run as a specified end user account. One example where this is needed is for web farms using Kerberos authentication.
+
+Rationale:
+Setting Application Pools to use unique least privilege identities such as ApplicationPoolIdentity reduces the potential harm the identity could cause should the application ever become compromised.
+Additionally, it will simplify application pools configuration and account management.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>1.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F535B19Fr01_fix">The default Application Pool identity may be set for an application using the IIS Manager GUI, using AppCmd.exe commands in a command-line window, directly editing the configuration files, or by writing WMI scripts. Perform the following to change the default identity to the built-in ApplicationPoolIdentity in the IIS Manager GUI:
+1. Open the IIS Manager GUI 2. In the connections pane, expand the server node and click Application Pools 3. On the Application Pools page, select the DefaultAppPool, and then click Advanced Settings in the Actions pane 4. For the Identity property, click the '...' button to open the Application Pool Identity dialog box 5. Select the Built-in account option choose ApplicationPoolIdentity from the list, or input a unique application user created for this purpose 6. Restart IIS To change the ApplicationPool identity to the built-in ApplicationPoolIdentity using AppCmd.exe, run the following from a command prompt:
+Enter the following command in AppCmd.exe to configure
+%systemroot%\system32\inetsrv\appcmd set config /section:applicationPools
+/[name='&lt;apppool name&gt;'].processModel.identityType:ApplicationPoolIdentity
+OR To change the ApplicationPool identity to the built-in ApplicationPoolIdentity using PowerShell:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+'system.applicationHost/applicationPools/add[@name='&lt;apppool
+name&gt;']/processModel' -name 'identityType' -value 'ApplicationPoolIdentity'
+The example code above will set just the DefaultAppPool. Run this command for each configured Application Pool. Additionally, ApplicationPoolIdentity can be made the default for all Application Pools by using the Set Application Pool Defaults action on the Application Pools node.
+If using a custom defined Windows user such as a dedicated service account, that user will need to be a member of the IIS_IUSRS group. The IIS_IUSRS group has access to all the necessary file and system resources so that an account, when added to this group, can seamlessly act as an application pool identity.</fixtext>
+      <fix id="F-F535B19Fr01_fix"/>
+      <check system="C-F535B19F_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify the Application Pools have been set to run under the ApplicationPoolIdentity using IIS Manager:
+1. Open IIS Manager 2. Open the Application Pools node underneath the machine node; select Application Pool to be verified 3. Right click the Application Pool and select Advanced Settings… 4. Under the Process Model section, locate the Identity option and ensure that ApplicationPoolIdentity is set This configuration is stored in the same applicationHost.config file for web sites and application/virtual directories, at the bottom of the file, surrounded by &lt;location path="path/to/resource"&gt; tags.
+To verify that any new Application Pools use the ApplicationPoolIdentity, execute the following command to determine if the Application Pool default has been changed to ApplicationPoolIdentity:
+To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd list config /section:applicationPools
+OR To verify using PowerShell enter the following command:
+Get-ChildItem -Path IIS:\AppPools\ |
+Select-Object name, state, &lt;#@{e={$_.processModel.password};l="password"}, #&gt;
+@{e={$_.processModel.identityType};l="identityType"}</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D13D10E3">
+    <title>1 Basic Configurations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D13D10E3r01_rule" weight="10.0" severity="medium">
+      <version>1.5</version>
+      <title>(L1) Ensure 'unique application pools' is set for sites</title>
+      <description>&lt;VulnDiscussion&gt;Application Pool Identities allows Application Pools to be run under unique accounts without the need to create and manage local or domain accounts.
+It is recommended that all Sites run under unique, dedicated Application Pools.
+
+Rationale:
+By setting sites to run under unique Application Pools, resource-intensive applications can be assigned to their own application pools which could improve server and application performance. In addition, it can help maintain application availability: if an application in one pool fails, applications in other pools are not affected. Last, isolating applications helps mitigate the potential risk of one application being allowed access to the resources of another application. It is also recommended to stop any application pool that is not in use or was created by an installation such as .Net 4.0.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>1.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D13D10E3r01_fix">The following appcmd.exe command will set the application pool for a given application:
+%systemroot%\system32\inetsrv\appcmd set app '&lt;website name&gt;/'
+/applicationpool:&lt;apppool name&gt;
+The output of this command will be similar to the following: APP object "Default Web Site/" changed (applicationPool:DefaultAppPool) Run the above command to ensure a unique application pool is assigned for each site listed OR Enter the following command in PowerShell to configure:
+Set-ItemProperty -Path 'IIS:\Sites\&lt;website name&gt;' -Name applicationPool -
+Value &lt;apppool name&gt;
+OR 1. Open IIS Manager 2. Open the Sites node underneath the machine node 3. Select the Site to be changed 4. In the Actions pane, select Basic Settings 5. Click the Select… box next to the Application Pool text box 6. Select the desired Application Pool 7. Once selected, click OK</fixtext>
+      <fix id="F-D13D10E3r01_fix"/>
+      <check system="C-D13D10E3_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>The following appcmd.exe command will give a listing of all applications configured, which site they are in, which application pool is serving them and which application pool identity they are running under:
+%systemroot%\system32\inetsrv\appcmd list app
+The output of this command will be similar to the following: APP "Default Web Site/"
+(applicationPool:DefaultAppPool)
+Run the above command and ensure a unique application pool is assigned for each site listed.
+OR To verify using PowerShell enter the following command:
+Get-Website | Select-Object Name, applicationPool</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-CA596D1E">
+    <title>1 Basic Configurations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-CA596D1Er01_rule" weight="10.0" severity="medium">
+      <version>1.6</version>
+      <title>(L1) Ensure 'application pool identity' is configured for anonymous user identity</title>
+      <description>&lt;VulnDiscussion&gt;To achieve isolation in IIS, application pools can be run as separate identities. IIS can be configured to automatically use the application pool identity if no anonymous user account is configured for a web site. This can greatly reduce the number of accounts needed for Web sites and make management of the accounts easier.
+It is recommended the Application Pool Identity be set as the Anonymous User Identity.
+
+Rationale:
+Configuring the anonymous user identity to use the application pool identity will help ensure site isolation - provided sites are set to use the application pool identity. Since a unique principal will run each application pool, it will ensure the identity is least privilege.
+Additionally, it will simplify Site management.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>1.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-CA596D1Er01_fix">The Anonymous User Identity can be set to Application Pool Identity by using the IIS Manager GUI, using AppCmd.exe commands in a command-line window, directly editing the configuration files, or by writing WMI scripts. Perform the following to set the username attribute of the anonymousAuthentication node in the IIS Manager GUI:
+1. Open the IIS Manager GUI and navigate to the desired server, site, or application 2. In Features View, find and double-click the Authentication icon 3. Select the Anonymous Authentication option and in the Actions pane select Edit...
+4. Choose Application pool identity in the modal window and then press the OK button OR To use AppCmd.exe to configure anonymousAuthentication at the server level, the command would look like this:
+%systemroot%\system32\inetsrv\appcmd set config -
+section:anonymousAuthentication /username:"" --password
+OR Enter the following command in PowerShell to configure:
+Set-ItemProperty -Path IIS:\AppPools\&lt;apppool name&gt; -Name passAnonymousToken
+-Value True</fixtext>
+      <fix id="F-CA596D1Er01_fix"/>
+      <check system="C-CA596D1E_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Find and open the applicationHost.config file and verify that the userName attribute of the anonymousAuthentication tag is set to a blank string:
+&lt;system.webServer&gt;
+&lt;security&gt;
+&lt;authentication&gt;
+&lt;anonymousAuthentication userName="" /&gt;
+&lt;/authentication&gt;
+&lt;/security&gt;
+&lt;/system.webServer&gt;
+This configuration is stored in the same applicationHost.config file for web sites and application/virtual directories, at the bottom of the file, surrounded by &lt;location path="path/to/resource"&gt; tags.
+To verify using PowerShell enter the following command:
+Get-WebConfiguration
+system.webServer/security/authentication/anonymousAuthentication -Recurse |
+where {$_.enabled -eq $true} | format-list location</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FE71293C">
+    <title>1 Basic Configurations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FE71293Cr01_rule" weight="10.0" severity="medium">
+      <version>1.7</version>
+      <title>(L1) Ensure' WebDav' feature is disabled</title>
+      <description>&lt;VulnDiscussion&gt;WebDAV is an extension to the HTTP protocol which allows clients to create, move, and delete files and resources on the web server.
+Note: The WebDAV feature must be enabled for this functionality to be available in IIS.
+
+Rationale:
+WebDAV is not widely used, and it has serious security concerns because it may allow clients to modify unauthorized files on the web server. Therefore, the WebDav feature should be disabled.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>1.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FE71293Cr01_fix">To disable this feature using PowerShell, enter the following command:
+Uninstall-WindowsFeature Web-DAV-Publishing
+Verify that Success is True</fixtext>
+      <fix id="F-FE71293Cr01_fix"/>
+      <check system="C-FE71293C_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify using PowerShell, enter the following command:
+Install-WindowsFeature Web-DAV-Publishing
+Verify that the Install State is Available</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-1E679DE3">
+    <title>2 Configure Authentication and Authorization</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-1E679DE3r01_rule" weight="10.0" severity="medium">
+      <version>2.1</version>
+      <title>(L1) Ensure 'global authorization rule' is set to restrict access</title>
+      <description>&lt;VulnDiscussion&gt;IIS introduced URL Authorization, which allows the addition of Authorization rules to the actual URL, instead of the underlying file system resource, as a way to protect it.
+Authorization rules can be configured at the server, web site, folder (including Virtual Directories), or file level. The native URL Authorization module applies to all requests, whether they are .NET managed or other types of files (e.g., static files or ASP files). It is recommended that URL Authorization be configured to only grant access to the necessary security principals.
+
+Rationale:
+Configuring a global Authorization rule that restricts access will ensure inheritance of the settings down through the hierarchy of web directories; if that content is copied elsewhere, the authorization rules flow with it. This will ensure access to current and future content is only granted to the appropriate principals, mitigating risk of accidental or unauthorized access.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>2.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-1E679DE3r01_fix">To configure URL Authorization at the server level using command line utilities:
+Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config -
+section:system.webServer/security/authorization /-
+"[users='*',roles='',verbs='']"
+%systemroot%\system32\inetsrv\appcmd set config -
+section:system.webServer/security/authorization
+/+"[accessType='Allow',roles='Administrators']"
+OR Enter the following command in PowerShell to configure:
+Remove-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/authorization" -name "." -AtElement
+@{users='*';roles='';verbs=''}
+Add-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/authorization" -name "." -value
+@{accessType='Allow';roles='Administrators'}
+OR To configure URL Authorization at the server level using IIS Manager:
+1. Connect to Internet Information Services (IIS Manager) 2. Select the server 3. Select Authorization Rules 4. Remove the "Allow All Users" rule 5. Click Add Allow Rule… 6. Allow access to the user(s), user groups, or roles that are authorized across all of the web sites and applications (e.g. the Administrators group)</fixtext>
+      <fix id="F-1E679DE3r01_fix"/>
+      <check system="C-1E679DE3_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Verify an authorization rule specifying no access to all users except the Administrators group:
+To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd list config -
+section:system.webserver/security/authorization
+OR To verify using PowerShell enter the following command:
+Get-WebConfiguration -pspath 'IIS:\' -filter
+'system.webServer/security/authorization'
+OR At the web site or application level, verify that the authorization rule configured has been applied:
+1. Connect to Internet Information Services (IIS Manager) 2. Select the site or application where Authorization was configured 3. Select Authorization Rules and verify the configured rules were added Browse to and open the web.config file for the configured site/application/content:
+&lt;configuration&gt;
+&lt;system.webServer&gt;
+&lt;security&gt;
+&lt;authorization&gt;
+&lt;remove users="*" roles="" verbs="" /&gt;
+&lt;add accessType="Allow" roles="administrators" /&gt;
+&lt;/authorization&gt;
+&lt;/security&gt;
+&lt;/system.webServer&gt;
+&lt;/configuration&gt;</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F30CE2F0">
+    <title>2 Configure Authentication and Authorization</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F30CE2F0r01_rule" weight="10.0" severity="medium">
+      <version>2.2</version>
+      <title>(L1) Ensure access to sensitive site features is restricted to authenticated principals only</title>
+      <description>&lt;VulnDiscussion&gt;IIS supports both challenge-based and login redirection-based authentication methods.
+Challenge-based authentication methods, such as Integrated Windows Authentication, require a client to respond correctly to a server-initiated challenge. A login redirection- based authentication method such as Forms Authentication relies on redirection to a login page to determine the identity of the principal. Challenge-based authentication and login redirection-based authentication methods cannot be used in conjunction with one another.
+Public servers/sites are typically configured to use Anonymous Authentication. This method typically works, provided the content or services is intended for use by the public. When sites, applications, or specific content containers are not intended for anonymous public use, an appropriate authentication mechanism should be utilized.
+Authentication will help confirm the identity of clients who request access to sites, application, and content. IIS provides the following authentication modules by default:
+• Anonymous Authentication - allows anonymous users to access sites, applications, and/or content
+• Integrated Windows Authentication - authenticates users using the NTLM or Kerberos protocols; Kerberos v5 requires a connection to Active Directory
+• ASP.NET Impersonation - allows ASP.NET applications to run under a security context different from the default security context for an application
+• Forms Authentication - enables a user to login to the configured space with a valid username and password which is then validated against a database or other credentials store
+• Basic authentication - requires a valid username and password to access content
+• Client Certificate Mapping Authentication - allows automatic authentication of users who log on with client certificates that have been configured; requires SSL
+• Digest Authentication - uses Windows domain controller to authenticate users who request access Note that none of the challenge-based authentication modules can be used at the same time Forms Authentication is enabled for certain applications/content. Forms Authentication does not rely on IIS authentication, so anonymous access for the ASP.NET application can be configured if Forms Authentication will be used.
+It is recommended that sites containing sensitive information, confidential data, or non- public web services be configured with a credentials-based authentication mechanism.
+
+Rationale:
+Configuring authentication will help mitigate the risk of unauthorized users accessing data and/or services, and in some cases reduce the potential harm that can be done to a system.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>2.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F30CE2F0r01_fix">When configuring an authentication module for the first time, each mechanism must be completely configured before use.
+Enabling authentication can be performed by using the user interface (UI), running AppCmd.exe commands in a command-line window, editing configuration files directly, or by writing WMI scripts. To verify an authentication mechanism is in place for sensitive content using the IIS Manager GUI:
+1. Open IIS Manager and navigate to level with sensitive content 2. In Features View, double-click Authentication 3. On the Authentication page, make sure an authentication module is enabled, while anonymous authentication is enabled (Forms Authentication can have anonymous as well) 4. If necessary, select the desired authentication module, then in the Actions pane, click Enable OR Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config -
+section:system.web/authentication /mode:&lt;Windows|Passport|Forms&gt;
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -location
+'&lt;website location&gt;' -filter
+'system.webServer/security/authentication/anonymousAuthentication' -name
+'enabled' -value 'False'
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -location
+'&lt;website location&gt;' -filter
+'system.webServer/security/authentication/windowsAuthentication' -name
+'enabled' -value 'True'</fixtext>
+      <fix id="F-F30CE2F0r01_fix"/>
+      <check system="C-F30CE2F0_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify that the authentication module is enabled for a specific site, application, or content, browse to and open the web.config file pertaining to the content. Verify the configuration file now has a mode defined within the &lt;authentication&gt; tags. The example below shows that Forms Authentication is configured, cookies will always be used, and SSL is required:
+&lt;system.web&gt;
+&lt;authentication&gt;
+&lt;forms cookieless="UseCookies" requireSSL="true" /&gt;
+&lt;/authentication&gt;
+&lt;/system.web&gt;
+OR To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd list config -
+section:system.web/authentication
+OR To verify using PowerShell enter the following command:
+Get-WebConfiguration system.webServer/security/authentication/* -Recurse |
+Where-Object {$_.enabled -eq $true} | Format-Table</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-0D968EB9">
+    <title>2 Configure Authentication and Authorization</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-0D968EB9r01_rule" weight="10.0" severity="medium">
+      <version>2.3</version>
+      <title>(L1) Ensure 'forms authentication' require SSL</title>
+      <description>&lt;VulnDiscussion&gt;Forms-based authentication can pass credentials across the network in clear text. It is therefore imperative that the traffic between client and server be encrypted using SSL, especially in cases where the site is publicly accessible. It is recommended that communications with any portion of a site using Forms Authentication be encrypted using SSL.
+NOTE Due to identified security vulnerabilities, SSL no longer provides adequate protection for a sensitive information.
+
+Rationale:
+Requiring SSL for Forms Authentication will protect the confidentiality of credentials during the login process, helping mitigate the risk of stolen user information.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>2.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-0D968EB9r01_fix">1. Open IIS Manager and navigate to the appropriate tier 2. In Features View, double-click Authentication 3. On the Authentication page, select Forms Authentication 4. In the Actions pane, click Edit 5. Check the Requires SSL checkbox in the cookie settings section, click OK OR Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config -
+section:system.web/authentication /mode:Forms
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/Default Web
+Site' -filter 'system.web/authentication/forms' -name 'requireSSL' -value
+'True'</fixtext>
+      <fix id="F-0D968EB9r01_fix"/>
+      <check system="C-0D968EB9_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify that SSL is required for forms authentication for a specific site, application, or content, browse to and open the web.config file for the level in which forms authentication was enabled. Verify the tag &lt;forms requireSSL="true" /&gt;:
+&lt;system.web&gt;
+&lt;authentication&gt;
+&lt;forms requireSSL="true" /&gt;
+&lt;/authentication&gt;
+&lt;/system.web&gt;
+OR To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd list config -
+section:system.web/authentication
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/Default Web
+Site' -filter 'system.web/authentication/forms' -name 'requireSSL' | Format-
+Table Name, Value</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-945F8A00">
+    <title>2 Configure Authentication and Authorization</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-945F8A00r01_rule" weight="10.0" severity="high">
+      <version>2.4</version>
+      <title>(L2) Ensure 'forms authentication' is set to use cookies</title>
+      <description>&lt;VulnDiscussion&gt;Forms Authentication can be configured to maintain the site visitor's session identifier in either a URI or cookie. It is recommended that Forms Authentication be set to use cookies.
+
+Rationale:
+Using cookies to manage session state may help mitigate the risk of session hi-jacking attempts by preventing ASP.NET from having to move session information to the URL.
+Moving session information identifiers into the URL may cause session IDs to show up in proxy logs, browsing history, and be accessible to client scripting via document.location.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>2.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-945F8A00r01_fix">1. Open IIS Manager and navigate to the level where Forms Authentication is enabled 2. In Features View, double-click Authentication 3. On the Authentication page, select Forms Authentication 4. In the Actions pane, click Edit 5. In the Cookie settings section, select Use cookies from the Mode dropdown OR Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config -
+section:system.web/authentication /forms.cookieless:"UseCookies"
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/Default Web
+Site' -filter 'system.web/authentication/forms' -name 'cookieless' -value
+'UseCookies'</fixtext>
+      <fix id="F-945F8A00r01_fix"/>
+      <check system="C-945F8A00_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Locate and open the web.config for the configured application. Verify the presence of &lt;forms cookieless="UseCookies" /&gt;.
+&lt;system.web&gt;
+&lt;authentication&gt;
+&lt;forms cookieless="UseCookies" requireSSL="true" timeout="30" /&gt;
+&lt;/authentication&gt;
+&lt;/system.web&gt;
+OR To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd list config -
+section:system.web/authentication
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/Default Web
+Site' -filter 'system.web/authentication/forms' -Recurse -name 'cookieless'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-BE8AEB8D">
+    <title>2 Configure Authentication and Authorization</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-BE8AEB8Dr01_rule" weight="10.0" severity="medium">
+      <version>2.5</version>
+      <title>(L1) Ensure 'cookie protection mode' is configured for forms authentication</title>
+      <description>&lt;VulnDiscussion&gt;The cookie protection mode defines the protection Forms Authentication cookies will be given within a configured application. The four cookie protection modes that can be defined are:
+• Encryption and validation - Specifies that the application use both data validation and encryption to help protect the cookie; this option uses the configured data validation algorithm (based on the machine key) and triple-DES (3DES) for encryption, if available and if the key is long enough (48 bytes or more)
+• None - Specifies that both encryption and validation are disabled for sites that are using cookies only for personalization and have weaker security requirements
+• Encryption - Specifies that the cookie is encrypted by using Triple-DES or DES, but data validation is not performed on the cookie; cookies used in this manner might be subject to plain text attacks
+• Validation - Specifies that a validation scheme verifies that the contents of an encrypted cookie have not been changed in transit It is recommended that cookie protection mode always encrypt and validate Forms Authentication cookies.
+
+Rationale:
+By encrypting and validating the cookie, the confidentiality and integrity of data within the cookie is assured. This helps mitigate the risk of attacks such as session hijacking and impersonation.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>2.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-BE8AEB8Dr01_fix">Cookie protection mode can be configured by using the user interface (UI), by running Appcmd.exe commands in a command-line window, by editing configuration files directly, or by writing WMI scripts. Using IIS Manager:
+1. Open IIS Manager and navigate to the level where Forms Authentication is enabled 2. In Features View, double-click Authentication 3. On the Authentication page, select Forms Authentication 4. In the Actions pane, click Edit 5. In the Cookie settings section, verify the drop-down for Protection mode is set for Encryption and validation OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter 'system.web/authentication/forms' -name 'protection' -value 'All'</fixtext>
+      <fix id="F-BE8AEB8Dr01_fix"/>
+      <check system="C-BE8AEB8D_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Locate and open the web.config for the configured application. Verify the presence of &lt;forms protection="All" /&gt;.
+&lt;system.web&gt;
+&lt;authentication&gt;
+&lt;forms cookieless="UseCookies" protection="All" /&gt;
+&lt;/authentication&gt;
+&lt;/system.web&gt;
+The protection="All" property will only show up if cookie protection mode was set to something different, and then changed to Encryption and validation. To truly verify the protection="All " property in the web.config, the protection mode can be changed, and then changed back. Conversely, the protection="All" line can be added to the web.config manually.
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter 'system.web/authentication/forms' -name 'protection'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A83167A6">
+    <title>2 Configure Authentication and Authorization</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A83167A6r01_rule" weight="10.0" severity="medium">
+      <version>2.6</version>
+      <title>(L1) Ensure transport layer security for 'basic authentication' is configured</title>
+      <description>&lt;VulnDiscussion&gt;Basic Authentication can pass credentials across the network in clear text. It is therefore imperative that the traffic between client and server be encrypted, especially in cases where the site is publicly accessible and is recommended that TLS be configured and required for any Site or Application using Basic Authentication.
+
+Rationale:
+Credentials sent in clear text can be easily intercepted by malicious code or persons.
+Enforcing the use of Transport Layer Security will help mitigate the chances of hijacked credentials.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>2.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A83167A6r01_fix">To protect Basic Authentication with transport layer security:
+1. Open IIS Manager 2. In the Connections pane on the left, select the server to be configured 3. In the Connections pane, expand the server, then expand Sites and select the site to be configured 4. In the Actions pane, click Bindings; the Site Bindings dialog appears 5. If an HTTPS binding is available, click Close and see below "To require SSL" 6. If no HTTPS binding is visible, perform the following steps To add an HTTPS binding:
+1. In the Site Bindings dialog, click Add; the Add Site Binding dialog appears 2. Under Type, select https 3. Under SSL certificate, select an X.509 certificate 4. Click OK, then close To require SSL:
+1. In Features View, double-click SSL Settings 2. On the SSL Settings page, select Require SSL.
+3. In the Actions pane, click Apply OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -location
+'&lt;website name&gt;' -filter 'system.webServer/security/access' -name 'sslFlags'
+-value 'Ssl'</fixtext>
+      <fix id="F-A83167A6r01_fix"/>
+      <check system="C-A83167A6_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Once transport layer security has been configured and required for a Site or application, only the https:// address will be available. Attempt loading the Site or application for which Basic Authentication is configured using http://, the requests will fail and IIS will throw a 403.4 - Forbidden error.
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -location
+'&lt;website name&gt;' -filter 'system.webServer/security/access' -name 'sslFlags'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-C4C6808A">
+    <title>2 Configure Authentication and Authorization</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-C4C6808Ar01_rule" weight="10.0" severity="medium">
+      <version>2.7</version>
+      <title>(L1) Ensure 'passwordFormat' is not set to clear</title>
+      <description>&lt;VulnDiscussion&gt;The &lt;credentials&gt; element of the &lt;authentication&gt; element allows optional definitions of name and password for IIS Manager User accounts within the configuration file.
+Forms based authentication also uses these elements to define the users. IIS Manager Users can use the administration interface to connect to sites and applications in which they've been granted authorization.
+Note: The &lt;credentials&gt; element only applies when the default provider, ConfigurationAuthenticationProvider, is configured as the authentication provider.
+It is recommended that passwordFormat be set to a value other than Clear, such as SHA1.
+
+Rationale:
+Authentication credentials should always be protected to reduce the risk of stolen authentication credentials.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>2.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-C4C6808Ar01_fix">Authentication mode is configurable at the machine.config, root-level web.config, or application-level web.config:
+1. Locate and open the configuration file where the credentials are stored 2. Find the &lt;credentials&gt; element 3. If present, ensure passwordFormat is not set to Clear 4. Change passwordFormat to SHA1 The clear text passwords will need to be replaced with the appropriate hashed version.
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter 'system.web/authentication/forms/credentials' -name 'passwordFormat'
+-value 'SHA1'</fixtext>
+      <fix id="F-C4C6808Ar01_fix"/>
+      <check system="C-C4C6808A_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Locate and open the configuration file for the configured application. Verify the credentials element is not present:
+&lt;configuration&gt;
+&lt;system.web&gt;
+&lt;authentication mode="Forms"&gt;
+&lt;forms name="SampleApp" loginUrl="/login.aspx"&gt;
+&lt;credentials passwordFormat="SHA1"&gt;
+&lt;user
+name="&lt;em&gt;UserName1&lt;/em&gt;"
+password="&lt;em&gt;SHA1EncryptedPassword1&lt;/em&gt;"/&gt;
+&lt;user
+name="&lt;em&gt;UserName2&lt;/em&gt;"
+password="&lt;em&gt;SHA1EncryptedPassword2&lt;/em&gt;"/&gt;
+&lt;/credentials&gt;
+&lt;/forms&gt;
+&lt;/authentication&gt;
+&lt;/system.web&gt;
+&lt;/configuration&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter 'system.web/authentication/forms/credentials' -name 'passwordFormat'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-AFBAE231">
+    <title>2 Configure Authentication and Authorization</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-AFBAE231r01_rule" weight="10.0" severity="high">
+      <version>2.8</version>
+      <title>(L2) Ensure 'credentials' are not stored in configuration files</title>
+      <description>&lt;VulnDiscussion&gt;The &lt;credentials&gt; element of the &lt;authentication&gt; element allows optional definitions of name and password for IIS Manager User accounts within the configuration file.
+Forms based authentication also uses these elements to define the users. IIS Manager Users can use the administration interface to connect to sites and applications in which they've been granted authorization.
+Note: The &lt;credentials&gt; element only applies when the default provider, ConfigurationAuthenticationProvider, is configured as the authentication provider.
+It is recommended to avoid storing passwords in the configuration file even in form of hash.
+
+Rationale:
+Authentication credentials should always be protected to reduce the risk of stolen authentication credentials. For security reasons, it is recommended that user credentials not be stored an any IIS configuration files.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>2.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-AFBAE231r01_fix">Authentication mode is configurable at the machine.config, root-level web.config, or application-level web.config:
+1. Locate and open the configuration file where the credentials are stored 2. Find the &lt;credentials&gt; element 3. If present, remove the section This will remove all references to stored users in the configuration files.
+OR Enter the following command in PowerShell to configure:
+Remove-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website
+name&gt;' -filter 'system.web/authentication/forms/credentials' -name '.'</fixtext>
+      <fix id="F-AFBAE231r01_fix"/>
+      <check system="C-AFBAE231_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Locate and open the configuration file for the configured application. Verify the credentials element is not present:
+&lt;configuration&gt;
+&lt;system.web&gt;
+&lt;authentication mode="Forms"&gt;
+&lt;forms name="SampleApp" loginUrl="/login.aspx"&gt;
+&lt;/forms&gt;
+&lt;/authentication&gt;
+&lt;/system.web&gt;
+&lt;/configuration&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter 'system.web/authentication/forms/credentials' -name 'passwordFormat'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-EEAD2939">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-EEAD2939r01_rule" weight="10.0" severity="medium">
+      <version>3.1</version>
+      <title>(L1) Ensure 'deployment method retail' is set</title>
+      <description>&lt;VulnDiscussion&gt;The &lt;deployment retail&gt; switch is intended for use by production IIS servers. This switch is used to help applications run with the best possible performance and least possible security information leakages by disabling the application's ability to generate trace output on a page, disabling the ability to display detailed error messages to end users, and disabling the debug switch. Often times, switches and options that are developer-focused, such as failed request tracing and debugging, are enabled during active development.
+It is recommended that the deployment method on any production server be set to retail.
+
+Rationale:
+Utilizing the switch specifically intended for production IIS servers will eliminate the risk of vital application and system information leakages that would otherwise occur if tracing or debug were to be left enabled, or customErrors were to be left off.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-EEAD2939r01_fix">1. Open the machine.config file located in:
+%systemroot%\Microsoft.NET\Framework&lt;bitness (if not the 32
+bit)&gt;\&lt;framework version&gt;\CONFIG
+2. Add the line &lt;deployment retail="true" /&gt; within the &lt;system.web&gt; section 3. If systems are 64-bit, do the same for the machine.config located in:
+%systemroot%\Microsoft.NET\Framework&lt;bitness (if not the 32
+bit)&gt;\&lt;framework version&gt;\CONFIG</fixtext>
+      <fix id="F-EEAD2939r01_fix"/>
+      <check system="C-EEAD2939_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>After the next time IIS is restarted, open the machine.config file and verify that &lt;deployment retail="true" /&gt; remains set to true.
+&lt;system.web&gt;
+&lt;deployment retail="true" /&gt;
+&lt;/system.web&gt;</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-AC5F3D1D">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-AC5F3D1Dr01_rule" weight="10.0" severity="high">
+      <version>3.2</version>
+      <title>(L2) Ensure 'debug' is turned off</title>
+      <description>&lt;VulnDiscussion&gt;Developers often enable the debug mode during active ASP.NET development so that they do not have to continually clear their browsers cache every time they make a change to a resource handler. The problem would arise from this being left "on" or set to "true". Compilation debug output is displayed to the end user, allowing malicious persons to obtain detailed information about applications.
+This is a defense in depth recommendation due to the &lt;deployment retail="true" /&gt; in the machine.config configuration file overriding any debug settings.
+It is recommended that debugging still be turned off.
+
+Rationale:
+Setting &lt;compilation debug&gt; to false ensures that detailed error information does not inadvertently display during live application usage, mitigating the risk of application information leakage falling into unscrupulous hands.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-AC5F3D1Dr01_fix">To use the UI to make this change:
+1. Open IIS Manager and navigate desired server, site, or application 2. In Features View, double-click .NET Compilation 3. On the .NET Compilation page, in the Behavior section, ensure the Debug field is set to False 4. When finished, click Apply in the Actions pane Note: The &lt;compilation debug&gt; switch will not be present in the web.config file unless it has been added manually, or has previously been configured using the IIS Manager GUI.
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter "system.web/compilation" -name "debug" -value "False"</fixtext>
+      <fix id="F-AC5F3D1Dr01_fix"/>
+      <check system="C-AC5F3D1D_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Browse to and open the web.config file pertaining to the server or specific application that has been configured. Locate the &lt;compilation debug&gt; switch and verify it is set to false.
+&lt;configuration&gt;
+&lt;system.web&gt;
+&lt;compilation debug="false" /&gt;
+&lt;/system.web&gt;
+&lt;/configuration&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter "system.web/compilation" -name "debug" | format-list Name, Value</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-BF9CC6E0">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-BF9CC6E0r01_rule" weight="10.0" severity="high">
+      <version>3.3</version>
+      <title>(L2) Ensure custom error messages are not off</title>
+      <description>&lt;VulnDiscussion&gt;When an ASP.NET application fails and causes an HTTP/1.x 500 Internal Server Error, or a feature configuration (such as Request Filtering) prevents a page from being displayed, an error message will be generated. Administrators can choose whether or not the application should display a friendly message to the client, detailed error message to the client, or detailed error message to localhost only. The &lt;customErrors&gt; tag in the web.config has three modes:
+• On: Specifies that custom errors are enabled. If no defaultRedirect attribute is specified, users see a generic error. The custom errors are shown to the remote clients and to the local host
+• Off: Specifies that custom errors are disabled. The detailed ASP.NET errors are shown to the remote clients and to the local host
+• RemoteOnly: Specifies that custom errors are shown only to the remote clients, and that ASP.NET errors are shown to the local host. This is the default value This is a defense in depth recommendation due to the &lt;deployment retail="true" /&gt; in the machine.config file overriding any settings for customErrors to be turned Off.
+It is recommended that customErrors still be turned to On or RemoteOnly.
+
+Rationale:
+customErrors can be set to On or RemoteOnly without leaking detailed application information to the client. Ensuring that customErrors is not set to Off will help mitigate the risk of malicious persons learning detailed application error and server configuration information.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-BF9CC6E0r01_fix">customErrors may be set for a server, site, or application using the IIS Manager GUI, using AppCmd.exe commands in a command-line window, directly editing the configuration files, or by writing WMI scripts. Perform the following to set the customErrors mode to RemoteOnly or On for a Web Site in the IIS Manager GUI:
+1. Open the IIS Manager GUI and navigate to the site to be configured 2. In Features View, find and double-click .NET Error Pages icon 3. In the Actions Pane, click Edit Feature Settings 4. In modal dialog, choose On or Remote Only for Mode settings 5. Click OK OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/Default Web
+Site' -filter "system.web/customErrors" -name "mode" -value "RemoteOnly"</fixtext>
+      <fix id="F-BF9CC6E0r01_fix"/>
+      <check system="C-BF9CC6E0_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Find and open the web.config file for the application/site and verify that the tag has either &lt;customErrors mode="RemoteOnly" /&gt; or &lt;customErrors mode="On" /&gt; defined.
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter "system.web/customErrors" -name "mode"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-0D42E84D">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-0D42E84Dr01_rule" weight="10.0" severity="medium">
+      <version>3.4</version>
+      <title>(L1) Ensure IIS HTTP detailed errors are hidden from displaying remotely</title>
+      <description>&lt;VulnDiscussion&gt;A Web site's error pages are often set to show detailed error information for troubleshooting purposes during testing or initial deployment. To prevent unauthorized users from viewing this privileged information, detailed error pages must not be seen by remote users. This setting can be modified in the errorMode attribute setting for a Web site's error pages. By default, the errorMode attribute is set in the Web.config file for the Web site or application and is located in the &lt;httpErrors&gt; element of the &lt;system.webServer&gt; section.
+It is recommended that custom errors be prevented from displaying remotely.
+
+Rationale:
+The information contained in custom error messages can provide clues as to how applications function, opening up unnecessary attack vectors. Ensuring custom errors are never displayed remotely can help mitigate the risk of malicious persons obtaining information as to how the application works.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-0D42E84Dr01_fix">The following describes how to change the errorMode attribute to DetailedLocalOnly or Custom for a Web site by using IIS Manager:
+1. Open IIS Manager with Administrative privileges 2. In the Connections pane on the left, expand the server, then expand the Sites folder 3. Select the Web site or application to be configured 4. In Features View, select Error Pages, in the Actions pane, select Open Feature 5. In the Actions pane, select Edit Feature Settings 6. In the Edit Error Pages Settings dialog, under Error Responses, select either Custom error pages or Detailed errors for local requests and custom error pages for remote requests 7. Click OK and exit the Edit Error Pages Settings dialog OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter "system.webServer/httpErrors" -name "errorMode" -value
+"DetailedLocalOnly"</fixtext>
+      <fix id="F-0D42E84Dr01_fix"/>
+      <check system="C-0D42E84D_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>The errorMode attribute is set in the Web.config file for the Web site or application in the &lt;httpErrors&gt; element of the &lt;system.webServer&gt; section. Browse to the web.config and verify the errorMode is set to DetailedLocalOnly or Custom:
+&lt;system.web&gt;
+&lt;system.webServer&gt;
+&lt;httpErrors errorMode="DetailedLocalOnly"&gt;
+&lt;/httpErrors&gt;
+&lt;/system.webServer&gt;
+&lt;/system.web&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter "system.webServer/httpErrors" -name "errorMode"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D557FCA3">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D557FCA3r01_rule" weight="10.0" severity="high">
+      <version>3.5</version>
+      <title>(L2) Ensure ASP.NET stack tracing is not enabled</title>
+      <description>&lt;VulnDiscussion&gt;The trace element configures the ASP.NET code tracing service that controls how trace results are gathered, stored, and displayed. When tracing is enabled, each page request generates trace messages that can be appended to the page output or stored in an application trace log.
+This is a defense in depth recommendation due to the &lt;deployment retail="true" /&gt; in the machine.config file overriding any settings for ASP.NET stack tracing that are left on.
+It is recommended that ASP.NET stack tracing still be turned off.
+
+Rationale:
+In an active Web Site, tracing should not be enabled because it can display sensitive configuration and detailed stack trace information to anyone who views the pages in the site.
+If necessary, the localOnly attribute can be set to true to have trace information displayed only for localhost requests. Ensuring that ASP.NET stack tracing is not on will help mitigate the risk of malicious persons learning detailed stack trace information.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D557FCA3r01_fix">1. Ensure &lt;deployment retail="true" /&gt; is enabled in the machine.config.
+2. Remove all attribute references to ASP.NET tracing by deleting the trace and trace enable attributes.
+Per Page:
+Remove any references to:
+Trace="true"
+Per Application:
+&lt;configuration&gt;
+&lt;system.web&gt;
+&lt;trace enabled="true"&gt;
+&lt;/system.web&gt;
+&lt;/configuration&gt;
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter "system.web/trace" -name "enabled" -value "False"</fixtext>
+      <fix id="F-D557FCA3r01_fix"/>
+      <check system="C-D557FCA3_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Tracing is configurable at numerous levels:
+1. Machine.config 2. Root-level web.config 3. Application-level web.config 4. Virtual or physical directory-level web.config 5. Individual ASP.Net page level Verify ASP.NET tracing is not turned on, via a per-page basis in the application.
+Ensure the trace attribute is not enabled:
+Trace="true"
+On an application basis like in the web.config ensure that tracing is not enabled like:
+&lt;configuration&gt;
+&lt;system.web&gt;
+&lt;trace enabled="true"&gt;
+&lt;/system.web&gt;
+&lt;/configuration&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter "system.web/trace" -name "enabled" | Format-List Name,Value</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-DF42D4D5">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-DF42D4D5r01_rule" weight="10.0" severity="high">
+      <version>3.6</version>
+      <title>(L2) Ensure 'httpcookie' mode is configured for session state</title>
+      <description>&lt;VulnDiscussion&gt;A session cookie associates session information with client information for that session, which can be the duration of a user's connection to a site. The cookie is passed in a HTTP header together with all requests between the client and server.
+Session information can also be stored in the URL. However, storing session information in this manner has security implications that can open attack vectors such as session hijacking. An effective method used to prevent session hijacking attacks is to force web applications to use cookies to store the session token. This is accomplished by setting the cookieless attribute of the sessionState node to UseCookies or False which will in turn keep session state data out of URI.
+It is recommended that session state be configured to UseCookies.
+
+Rationale:
+Cookies that have been properly configured help mitigate the risk of attacks such as session hi-jacking attempts by preventing ASP.NET from having to move session information to the URL; moving session information in URI causes session IDs to show up in proxy logs and is accessible to client scripting via document.location.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-DF42D4D5r01_fix">SessionState can be set to UseCookies by using the IIS Manager GUI, using AppCmd.exe commands in a command-line window, directly editing the configuration files, or by writing WMI scripts. Perform the following to set the cookieless attribute of the sessionState node to UseCookies in the IIS Manager GUI:
+1. Open the IIS Manager GUI and navigate desired server, site, or application 2. In Features View, find and double-click the Session State icon 3. In the Cookie Settings section, choose Use Cookies from the Mode dropdown 4. In the Actions Pane, click Apply To use AppCmd.exe to configure sessionState at the server level, the command would look like this:
+%systemroot%\system32\inetsrv\appcmd set config /commit:WEBROOT
+/section:sessionState /cookieless:UseCookies /cookieName:ASP.NET_SessionID
+/timeout:20
+When Appcmd.exe is used to configure the &lt;sessionstate&gt; element at the global level in IIS, the /commit:WEBROOT switch must be included so that configuration changes are made to the root web.config file instead of ApplicationHost.config.
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter "system.web/sessionState" -name "mode" -value "StateServer"</fixtext>
+      <fix id="F-DF42D4D5r01_fix"/>
+      <check system="C-DF42D4D5_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Find and open the web.config file for the application/site and verify that the sessionState tag is set to use cookies:
+&lt;system.web&gt;
+&lt;sessionState cookieless="UseCookies" /&gt;
+&lt;/system.web&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/&lt;website name&gt;'
+-filter "system.web/sessionState" -name "mode"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-217876A9">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-217876A9r01_rule" weight="10.0" severity="medium">
+      <version>3.7</version>
+      <title>(L1) Ensure 'cookies' are set with HttpOnly attribute</title>
+      <description>&lt;VulnDiscussion&gt;The httpOnlyCookies attribute of the httpCookies node determines if IIS will set the HttpOnly flag on HTTP cookies it sets. The HttpOnly flag indicates to the user agent that the cookie must not be accessible by client-side script (i.e document.cookie).
+It is recommended that the httpOnlyCookies attribute be set to true.
+
+Rationale:
+When cookies are set with the HttpOnly flag, they cannot be accessed by client-side scripting running in the user's browser. Preventing client-side scripting from accessing cookie content may reduce the probability of a cross site scripting attack materializing into a successful session hijack.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-217876A9r01_fix">1. Locate and open the application's web.config file 2. Add the &lt;httpCookies httpOnlyCookies="true" /&gt; tag within &lt;system.web&gt;:
+&lt;configuration&gt;
+&lt;system.web&gt;
+&lt;httpCookies httpOnlyCookies="true" /&gt;
+&lt;/system.web&gt;
+&lt;/configuration&gt;
+Setting the value of the httpOnlyCookies attribute of the httpCookies element to true will add the HttpOnly flag to all the cookies set by the application. All modern versions of browsers recognize HttpOnly attribute; older versions will either treat them as normal cookies or simply ignore them altogether.</fixtext>
+      <fix id="F-217876A9r01_fix"/>
+      <check system="C-217876A9_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>After the next time IIS is restarted, browse to and open the web.config for the application in which httpOnly cookies have been turned on. Confirm the httpOnlyCookies attribute is set to true: &lt;httpCookies httpOnlyCookies="true" /&gt;.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A479B843">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A479B843r01_rule" weight="10.0" severity="high">
+      <version>3.8</version>
+      <title>(L2) Ensure 'MachineKey validation method - .Net 3.5' is configured</title>
+      <description>&lt;VulnDiscussion&gt;The machineKey element of the ASP.NET web.config specifies the algorithm and keys that ASP.NET will use for encryption. The Machine Key feature can be managed to specify hashing and encryption settings for application services such as view state, Forms authentication, membership and roles, and anonymous identification.
+The following validation methods are available:
+• Advanced Encryption Standard (AES) is relatively easy to implement and requires little memory. AES has a key size of 128, 192, or 256 bits. This method uses the same private key to encrypt and decrypt data, whereas a public-key method must use a pair of keys
+• Message Digest 5 (MD5) is used for digital signing of applications. This method produces a 128-bit message digest, which is a compressed form of the original data
+• Secure Hash Algorithm (SHA1) is considered more secure than MD5 because it produces a 160-bit message digest
+• Triple Data Encryption Standard (TripleDES) is a minor variation of Data Encryption Standard (DES). It is three times slower than regular DES but can be more secure because it has a key size of 192 bits. If performance is not a primary consideration, consider using TripleDES It is recommended that AES or SHA1 methods be configured for use at the global level.
+
+Rationale:
+Setting the validation property to AES will provide confidentiality and integrity protection to the viewstate. AES is the strongest encryption algorithm supported by the validation property. Setting the validation property to SHA1 will provide integrity protection to the viewstate. SHA1 is the strongest hashing algorithm supported by the validation property.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A479B843r01_fix">Machine key encryption can be set by using the UI, running appcmd.exe commands, by editing configuration files directly, or by writing WMI scripts. To set the Machine Key encryption at the global level using an appcmd.exe command:
+%systemroot%\system32\inetsrv\appcmd set config /commit:WEBROOT
+/section:machineKey /validation:SHA1
+Note: When Appcmd.exe is used to configure the &lt;machineKey&gt; element at the global level in IIS, the /commit:WEBROOT switch must be included so that configuration changes are made to the root web.config file instead of ApplicationHost.config.</fixtext>
+      <fix id="F-A479B843r01_fix"/>
+      <check system="C-A479B843_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify the Machine Key validation method using IIS Manager:
+1. Open IIS Manager and navigate to the level that was configured, the WEBROOT, or server in this case 2. In the features view, double click Machine Key 3. On the Machine Key page, verify that SHA1 is selected in the validation method dropdown</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-7F5F7D17">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-7F5F7D17r01_rule" weight="10.0" severity="medium">
+      <version>3.9</version>
+      <title>(L1) Ensure 'MachineKey validation method - .Net 4.5' is configured</title>
+      <description>&lt;VulnDiscussion&gt;The machineKey element of the ASP.NET web.config specifies the algorithm and keys that ASP.NET will use for encryption. The Machine Key feature can be managed to specify hashing and encryption settings for application services such as view state, Forms authentication, membership and roles, and anonymous identification.
+The following validation methods are available:
+• Advanced Encryption Standard (AES) is relatively easy to implement and requires little memory. AES has a key size of 128, 192, or 256 bits. This method uses the same private key to encrypt and decrypt data, whereas a public-key method must use a pair of keys
+• Message Digest 5 (MD5) is used for digital signing of applications. This method produces a 128-bit message digest, which is a compressed form of the original data
+• Secure Hash Algorithm (SHA1) is considered more secure than MD5 because it produces a 160-bit message digest
+• Triple Data Encryption Standard (TripleDES) is a minor variation of Data Encryption Standard (DES). It is three times slower than regular DES but can be more secure because it has a key size of 192 bits. If performance is not a primary consideration, consider using TripleDES
+• Secure Hash Algorithm (SHA-2) is a family of two similar hash functions, with different block sizes known as SHA-256 and SHA-512. They differ in the word size; SHAS-256 used 32-bit words and SHA-512 uses 64-bit words.
+It is recommended that SHA-2 methods be configured for use at the global level.
+
+Rationale:
+SHA-2 is the strongest hashing algorithm supported by the validation property so it should be used as the validation method for the MachineKey in .Net 4.5.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-7F5F7D17r01_fix">Machine key encryption can be set by using the UI, running appcmd.exe commands, by editing configuration files directly, or by writing WMI scripts. To set the Machine Key encryption at the global level using an appcmd.exe command:
+%systemroot%\system32\inetsrv\appcmd set config /commit:WEBROOT
+/section:machineKey /validation:&lt;validation method&gt;
+Note: When Appcmd.exe is used to configure the &lt;machineKey&gt; element at the global level in IIS, the /commit:WEBROOT switch must be included so that configuration changes are made to the root web.config file instead of ApplicationHost.config.
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT' -filter
+"system.web/machineKey" -name "validation" -value "&lt;validation method&gt;"</fixtext>
+      <fix id="F-7F5F7D17r01_fix"/>
+      <check system="C-7F5F7D17_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify the Machine Key validation method using IIS Manager:
+1. Open IIS Manager and navigate to the level that was configured, the WEBROOT, or server in this case 2. In the features view, double click Machine Key 3. On the Machine Key page, verify that HMACSHA256 is selected in the validation method dropdown OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT' -filter
+"system.web/machineKey" -name "validation"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A39EBAE1">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A39EBAE1r01_rule" weight="10.0" severity="medium">
+      <version>3.10</version>
+      <title>(L1) Ensure global .NET trust level is configured</title>
+      <description>&lt;VulnDiscussion&gt;An application's trust level determines the permissions that are granted by the ASP.NET code access security (CAS) policy. CAS defines two trust categories: full trust and partial trust. An application that has full trust permissions may access all resource types on a server and perform privileged operations, while applications that run with partial trust have varying levels of operating permissions and access to resources.
+The possible values for the Level property of the TrustSection class are:
+• Full: Specifies unrestricted permissions and grants the ASP.NET application permissions to access any resource that is subject to operating system security;
+all privileged operations are supported
+• High: specifies a high level of code access security which limits the application from doing the following:
+o Call unmanaged code
+o Call serviced components
+o Write to the event log
+o Access Microsoft Windows Message Queuing queues
+o Access ODBC, OLD DB, or Oracle data sources
+• Medium: specifies a medium level of code access security, which means that in addition to the restrictions for High, the ASP.NET application cannot do any of the following things:
+o Access files outside the application directory
+o Access the registry
+• Low: specifies a low level of code access security, which means that in addition to the restrictions for Medium, the application is prevented from performing any of the following actions:
+o Write to the file system
+o Call the System.Security.CodeAccessPermission.Assert method to expand permissions to resources
+o Minimal: specifies a minimal level of code access security, which means that the application has only execute permission It is recommended that the global .NET Trust Level be set to Medium or lower.
+
+Rationale:
+The CAS determines the permissions that are granted to the application on the server.
+Setting a minimal level of trust that is compatible with the applications will limit the potential harm that a compromised application could cause to a system.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A39EBAE1r01_fix">Trust level can be set by using the UI, running appcmd.exe commands, by editing configuration files directly, or by writing WMI scripts. To set the .Net Trust Level to Medium at the server level using an appcmd.exe command:
+%systemroot%\system32\inetsrv\appcmd set config /commit:WEBROOT
+/section:trust /level:Medium
+When Appcmd.exe is used to configure the element at the global level in IIS, the /commit:WEBROOT switch must be included so that configuration changes are made to the root web.config file instead of ApplicationHost.config.
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT' -filter
+"system.web/trust" -name "level" -value "Medium"</fixtext>
+      <fix id="F-A39EBAE1r01_fix"/>
+      <check system="C-A39EBAE1_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify the global .NET Trust Level using IIS Manager:
+1. Open IIS Manager and navigate to the level that was configured, the server in this example 2. In the features view, double click .NET Trust Levels 3. On the .NET Trust Levels page, verify that Medium (web_mediumtrust.config) is selected in the Trust Level dropdown OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT' -filter
+"system.web/trust" -name "level"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-DDD527E8">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-DDD527E8r01_rule" weight="10.0" severity="high">
+      <version>3.11</version>
+      <title>(L2) Ensure X-Powered-By Header is removed</title>
+      <description>&lt;VulnDiscussion&gt;The x-powered-by headers specify the underlying technology used by the webserver.
+
+Rationale:
+Attackers are able to conduct reconnaissance on a website using these response headers. This header could be used to target attacks for specific known vulnerabilities associated with the underlying technology. Removing this header will prevent targeting of your application for specific exploits by non-determined attackers.
+While this is not the only way to fingerprint a site through the response headers, it makes it harder and prevents some potential attackers.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.11</dc:identifier>
+      </reference>
+      <fixtext fixref="F-DDD527E8r01_fix">Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd.exe set config -
+section:system.webServer/httpProtocol /-"customHeaders.[name='X-Powered-By']"
+/commit:apphost
+OR Enter the following command in PowerShell to configure:
+Remove-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webserver/httpProtocol/customHeaders" -name "." -AtElement @{name='X-
+Powered-By'}</fixtext>
+      <fix id="F-DDD527E8r01_fix"/>
+      <check system="C-DDD527E8_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd.exe list config -
+section:system.webServer/httpProtocol</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A667BB9E">
+    <title>3 ASP.NET Configuration Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A667BB9Er01_rule" weight="10.0" severity="high">
+      <version>3.12</version>
+      <title>(L2) Ensure Server Header is removed</title>
+      <description>&lt;VulnDiscussion&gt;The server header headers specify the underlying technology used by the application.
+
+Rationale:
+While this is not the only way to fingerprint a site through the response headers, it makes it harder and prevents some potential attackers. The server header removal directive is a new feature in IIS 10 that can assist in mitigating this risk.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>3.12</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A667BB9Er01_fix">Enter the following command to use AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd.exe set config -
+section:system.webServer/security/requestFiltering /removeServerHeader:"True"
+/commit:apphost
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST/' -filter
+"system.webServer/security/requestFiltering" -name "removeServerHeader" -
+value "True"</fixtext>
+      <fix id="F-A667BB9Er01_fix"/>
+      <check system="C-A667BB9E_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd.exe list config -
+section:system.webServer/security/requestFiltering
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath machine/webroot/apphost -filter
+'system.webserver/security/requestfiltering
+' -name 'removeServerHeader'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-5C79BCF3">
+    <title>4 Request Filtering and Other Restriction Modules</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-5C79BCF3r01_rule" weight="10.0" severity="high">
+      <version>4.1</version>
+      <title>(L2) Ensure 'maxAllowedContentLength' is configured</title>
+      <description>&lt;VulnDiscussion&gt;The maxAllowedContentLength Request Filter is the maximum size of the http request, measured in bytes, which can be sent from a client to the server. Configuring this value enables the total request size to be restricted to a configured value.
+It is recommended that the overall size of requests be restricted to a maximum value appropriate for the server, site, or application.
+
+Rationale:
+Setting an appropriate value that has been tested for the maxAllowedContentLength filter will lower the impact an abnormally large request would otherwise have on IIS and/or web applications. This helps to ensure availability of web content and services, and may also help mitigate the risk of buffer overflow type attacks in unmanaged components.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>4.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-5C79BCF3r01_fix">The MaxAllowedContentLength Request Filter may be set for a server, website, or application using the IIS Manager GUI, using AppCmd.exe commands in a command-line window, and/or directly editing the configuration files. To configure using the IIS Manager GUI:
+1. Open Internet Information Services (IIS) Manager 2. In the Connections pane, click on the server, site, application, or directory to be configured 3. In the Home pane, double-click Request Filtering 4. Click Edit Feature Settings... in the Actions pane 5. Under the Request Limits section, key the maximum content length in bytes that will allow applications to retain their intended functionality, such as 30000000 (approx. 28.6 MB) Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config /section:requestfiltering
+/requestLimits.maxAllowedContentLength:30000000
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering/requestLimits" -name
+"maxAllowedContentLength" -value 30000000</fixtext>
+      <fix id="F-5C79BCF3r01_fix"/>
+      <check system="C-5C79BCF3_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Upon exceeding the configured value set for the Request Filter, IIS will throw a Status Code 404.13.
+To manually verify the change, locate and open the web.config for the web site or application in which the request filter was set. Ensure the value defined for maxAllowedContentLength is what was set. The 28.6MB max example would show:
+&lt;configuration&gt;
+&lt;system.webServer&gt;
+&lt;security&gt;
+&lt;requestFiltering&gt;
+&lt;requestLimits
+maxAllowedContentLength="30000000" /&gt;
+&lt;/requestFiltering&gt;
+&lt;/security&gt;
+&lt;/system.webServer&gt;
+&lt;/configuration&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering/requestLimits" -name
+"maxAllowedContentLength"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-24D5D015">
+    <title>4 Request Filtering and Other Restriction Modules</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-24D5D015r01_rule" weight="10.0" severity="high">
+      <version>4.2</version>
+      <title>(L2) Ensure 'maxURL request filter' is configured</title>
+      <description>&lt;VulnDiscussion&gt;The maxURL attribute of the &lt;requestLimits&gt; property is the maximum length (in Bytes) in which a requested URL can be (excluding query string) in order for IIS to accept.
+Configuring this Request Filter enables administrators to restrict the length of the requests that the server will accept.
+It is recommended that a limit be put on the length of URL.
+
+Rationale:
+With a properly configured Request Filter limiting the amount of data accepted in the URL, chances of undesired application behaviors affecting the availability of content and services are reduced.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>4.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-24D5D015r01_fix">The MaxURL Request Filter may be set for a server, website, or application using the IIS Manager GUI, using AppCmd.exe commands in a command-line window, and/or directly editing the configuration files. To configure using the IIS Manager GUI:
+1. Open Internet Information Services (IIS) Manager 2. In the Connections pane, click on the connection, site, application, or directory to be configured 3. In the Home pane, double-click Request Filtering 4. Click Edit Feature Settings... in the Actions pane 5. Under the Request Limits section, key the maximum URL length in bytes that has been tested with web applications Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config /section:requestfiltering
+/requestLimits.maxURL:4096
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering/requestLimits" -name "maxUrl" -
+value 4096</fixtext>
+      <fix id="F-24D5D015r01_fix"/>
+      <check system="C-24D5D015_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>IIS will log a 404.14 HTTP status if the requested URL was rejected because it exceeded the length defined in the filter.
+To manually verify the change, locate and open the web.config for the web site or application in which the request filter was set. Verify the value defined for maxURL.
+&lt;configuration&gt;
+&lt;system.webServer&gt;
+&lt;security&gt;
+&lt;requestFiltering&gt;
+&lt;requestLimits
+maxURL="4096" /&gt;
+&lt;/requestFiltering&gt;
+&lt;/security&gt;
+&lt;/system.webServer&gt;
+&lt;/configuration&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering/requestLimits" -name "maxUrl"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E105B162">
+    <title>4 Request Filtering and Other Restriction Modules</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E105B162r01_rule" weight="10.0" severity="high">
+      <version>4.3</version>
+      <title>(L2) Ensure 'MaxQueryString request filter' is configured</title>
+      <description>&lt;VulnDiscussion&gt;The MaxQueryString Request Filter describes the upper limit on the length of the query string that the configured IIS server will allow for websites or applications.
+It is recommended that values always be established to limit the amount of data that can be accepted in the query string.
+
+Rationale:
+With a properly configured Request Filter limiting the amount of data accepted in the query string, chances of undesired application behaviors such as app pool failures are reduced.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>4.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E105B162r01_fix">The MaxQueryString Request Filter may be set for a server, website, or application using the IIS Manager GUI, using AppCmd.exe commands in a command-line window, and/or directly editing the configuration files. To configure using the IIS Manager GUI:
+1. Open Internet Information Services (IIS) Manager 2. In the Connections pane, go to the connection, site, application, or directory to be configured 3. In the Home pane, double-click Request Filtering 4. Click Edit Feature Settings... in the Actions pane 5. Under the Request Limits section, key in a safe upper bound in the Maximum query string (Bytes) textbox Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config /section:requestfiltering
+/requestLimits.maxQueryString:2048
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering/requestLimits" -name
+"maxQueryString" -value 2048</fixtext>
+      <fix id="F-E105B162r01_fix"/>
+      <check system="C-E105B162_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>If a request is rejected because it exceeds the value set in the maxQueryString Request Filter, a 404.15 HTTP status is logged to the IIS log file.
+To manually verify the change, locate and open the web.config for the web site or application in which the filter was set. Ensure the value defined for maxQueryString is what was configured.
+&lt;configuration&gt;
+&lt;system.webServer&gt;
+&lt;security&gt;
+&lt;requestFiltering&gt;
+&lt;requestLimits
+maxQueryString="2048" /&gt;
+&lt;/requestFiltering&gt;
+&lt;/security&gt;
+&lt;/system.webServer&gt;
+&lt;/configuration&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering/requestLimits" -name
+"maxQueryString"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A8C78B8A">
+    <title>4 Request Filtering and Other Restriction Modules</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A8C78B8Ar01_rule" weight="10.0" severity="high">
+      <version>4.4</version>
+      <title>(L2) Ensure non-ASCII characters in URLs are not allowed</title>
+      <description>&lt;VulnDiscussion&gt;This feature is used to allow or reject all requests to IIS that contain non-ASCII characters. When using this feature, Request Filtering will deny the request if high-bit characters are present in the URL. The UrlScan equivalent is AllowHighBitCharacters.
+It is recommended that requests containing non-ASCII characters be rejected, where possible.
+
+Rationale:
+This feature can help defend against canonicalization attacks, reducing the potential attack surface of servers, sites, and/or applications.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>4.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A8C78B8Ar01_fix">The AllowHighBitCharacters Request Filter may be set for a server, website, or application using the IIS Manager GUI, using AppCmd.exe commands in a command-line window, and/or directly editing the configuration files. To configure using the IIS Manager GUI:
+1. Open Internet Information Services (IIS) Manager 2. In the Connections pane, go to the connection, site, application, or directory to be configured 3. In the Home pane, double-click Request Filtering 4. Click Edit Feature Settings... in the Actions pane 5. Under the General section, uncheck Allow high-bit characters Note: Disallowing high-bit ASCII characters in the URL may negatively impact the functionality of sites requiring international language support.
+Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config /section:requestfiltering
+/allowHighBitCharacters:false
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering" -name "allowHighBitCharacters" -
+value "False"</fixtext>
+      <fix id="F-A8C78B8Ar01_fix"/>
+      <check system="C-A8C78B8A_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>If a request is rejected because it contains a high-bit character, a 404.12 HTTP status is logged to the IIS log file.
+To manually verify the change, locate and open the web.config for the web site or application in which the request filter was set. Ensure the value defined for the filter is false, as such:
+&lt;configuration&gt;
+&lt;system.webServer&gt;
+&lt;security&gt;
+&lt;requestFiltering
+allowHighBitCharacters="false"&gt;
+&lt;/requestFiltering&gt;
+&lt;/security&gt;
+&lt;/system.webServer&gt;
+&lt;/configuration&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+'system.webServer/security/requestFiltering' -name 'allowHighBitCharacters'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-92A75FFD">
+    <title>4 Request Filtering and Other Restriction Modules</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-92A75FFDr01_rule" weight="10.0" severity="medium">
+      <version>4.5</version>
+      <title>(L1) Ensure Double-Encoded requests will be rejected</title>
+      <description>&lt;VulnDiscussion&gt;This Request Filter feature prevents attacks that rely on double-encoded requests and applies if an attacker submits a double-encoded request to IIS. When the double- encoded requests filter is enabled, IIS will go through a two iteration process of normalizing the request. If the first normalization differs from the second, the request is rejected and the error code is logged as a 404.11. The double-encoded requests filter was the VerifyNormalization option in UrlScan.
+It is recommended that double-encoded requests be rejected.
+
+Rationale:
+This feature will help prevent attacks that rely on URLs that have been crafted to contain double-encoded request(s).&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>4.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-92A75FFDr01_fix">The allowDoubleEscaping Request Filter may be set for a server, website, or application using the IIS Manager GUI, using AppCmd.exe commands in a command-line window, and/or directly editing the configuration files. To configure using the IIS Manager GUI:
+1. Open Internet Information Services (IIS) Manager 2. In the Connections pane, select the site, application, or directory to be configured 3. In the Home pane, double-click Request Filtering 4. Click Edit Feature Settings... in the Actions pane 5. Under the General section, uncheck Allow double escaping If a file name in a URL includes "+" then allowDoubleEscaping must be set to true to allow functionality.
+Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config /section:requestfiltering
+/allowDoubleEscaping:false
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering" -name "allowDoubleEscaping" -
+value "True"</fixtext>
+      <fix id="F-92A75FFDr01_fix"/>
+      <check system="C-92A75FFD_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>If a request is rejected because it contains a double-encoded request, a 404.11 HTTP status is logged to the IIS log file.
+To manually verify the change, locate and open the web.config for the web site or application in which the request filter was set. Ensure the value defined for allowDoubleEscaping is false:
+&lt;configuration&gt;
+&lt;system.webServer&gt;
+&lt;security&gt;
+&lt;requestFiltering
+allowDoubleEscaping="false"&gt;
+&lt;/requestFiltering&gt;
+&lt;/security&gt;
+&lt;/system.webServer&gt;
+&lt;/configuration&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering" -name "allowDoubleEscaping"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D04804CB">
+    <title>4 Request Filtering and Other Restriction Modules</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D04804CBr01_rule" weight="10.0" severity="medium">
+      <version>4.6</version>
+      <title>(L1) Ensure 'HTTP Trace Method' is disabled</title>
+      <description>&lt;VulnDiscussion&gt;The HTTP TRACE method returns the contents of client HTTP requests in the entity- body of the TRACE response. Attackers could leverage this behavior to access sensitive information, such as authentication data or cookies, contained in the HTTP headers of the request. One such way to mitigate this is by using the &lt;verbs&gt; element of the &lt;requestFiltering&gt; collection. The &lt;verbs&gt; element replaces the [AllowVerbs] and [DenyVerbs] features in UrlScan.
+It is recommended the HTTP TRACE method be denied.
+
+Rationale:
+Attackers may abuse HTTP TRACE functionality to gain access to information in HTTP headers such as cookies and authentication data. This risk can be mitigated by not allowing the TRACE verb.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>4.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D04804CBr01_fix">1. Open Internet Information Services (IIS) Manager 2. In the Connections pane, select the site, application, or directory to be configured 3. In the Home pane, double-click Request Filtering 4. In the Request Filtering pane, click the HTTP verbs tab, and then click Deny Verb... in the Actions pane 5. In the Deny Verb dialog box, enter the TRACE, and then click OK Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config /section:requestfiltering
+/+verbs.[verb='TRACE',allowed='false']
+OR Enter the following command in PowerShell to configure:
+Add-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering/verbs" -name "." -value
+@{verb='TRACE';allowed='False'}</fixtext>
+      <fix id="F-D04804CBr01_fix"/>
+      <check system="C-D04804CB_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>IIS will return an HTTP 404.6 error to the client when Request Filtering blocks an HTTP request because of a denied HTTP verb. To manually verify the change, browse to the web.config file for which the change was made and verify the below configuration:
+&lt;configuration&gt;
+&lt;system.webServer&gt;
+&lt;security&gt;
+&lt;requestFiltering&gt;
+&lt;verbs&gt;
+&lt;add verb="TRACE" allowed="false" /&gt;
+&lt;/verbs&gt;
+&lt;/requestFiltering&gt;
+&lt;/security&gt;
+&lt;/system.webServer&gt;
+&lt;/configuration&gt;
+To view this Request Filter using an AppCmd.exe command, run the following command at an elevated command prompt:
+%systemroot%\system32\inetsrv\appcmd listconfig /section:requestfiltering</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-C0F38180">
+    <title>4 Request Filtering and Other Restriction Modules</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-C0F38180r01_rule" weight="10.0" severity="medium">
+      <version>4.7</version>
+      <title>(L1) Ensure Unlisted File Extensions are not allowed</title>
+      <description>&lt;VulnDiscussion&gt;The FileExtensions Request Filter allows administrators to define specific extensions their web server(s) will allow and disallow. The property allowUnlisted will cover all other file extensions not explicitly allowed or denied. Often times, extensions such as .config,.bat,.exe, to name a few, should never be served. The AllowExtensions and DenyExtensions options are the UrlScan equivalents.
+It is recommended that all extensions be disallowed at the most global level possible, with only those necessary being allowed.
+
+Rationale:
+Disallowing all but the necessary file extensions can greatly reduce the attack surface of applications and servers.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>4.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-C0F38180r01_fix">The allowUnlisted Request Filter may be set for a server, website, or application using the IIS Manager GUI, using AppCmd.exe commands in a command-line window, and/or directly editing the configuration files. To configure at the server level using the IIS Manager GUI:
+1. Open Internet Information Services (IIS) Manager 2. In the Connections pane, select the server 3. In the Home pane, double-click Request Filtering 4. Click Edit Feature Settings... in the Actions pane 5. Under the General section, uncheck Allow unlisted file name extensions Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config /section:requestfiltering
+/fileExtensions.allowunlisted:false
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering/fileExtensions" -name
+"allowUnlisted" -value "False"</fixtext>
+      <fix id="F-C0F38180r01_fix"/>
+      <check system="C-C0F38180_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>When IIS rejects a request based on a file extensions filter, the error code logged is 404.7.
+To manually verify the change, locate and open the web.config for the web site or application in which the Request Filter was set. Ensure &lt;fileExtensions allowUnlisted="false"&gt;. The following web.config will disallow any requests for files that do not have.asp,.aspx, or.html as their extension:
+&lt;configuration&gt;
+&lt;system.webServer&gt;
+&lt;security&gt;
+&lt;requestFiltering&gt;
+&lt;fileExtensions allowUnlisted="false"&gt;
+&lt;add fileExtension=".asp" allowed="true" /&gt;
+&lt;add fileExtension=".aspx" allowed="true" /&gt;
+&lt;add fileExtension=".html" allowed="true" /&gt;
+&lt;/fileExtensions&gt;
+&lt;/requestFiltering&gt;
+&lt;/security&gt;
+&lt;/system.webServer&gt;
+&lt;/configuration&gt;
+OR To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd list config /section:requestfiltering
+OR To verify using PowerShell enter the following command
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/requestFiltering/fileExtensions" -name
+"allowUnlisted"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-464A5B3B">
+    <title>4 Request Filtering and Other Restriction Modules</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-464A5B3Br01_rule" weight="10.0" severity="medium">
+      <version>4.8</version>
+      <title>(L1) Ensure Handler is not granted Write and Script/Execute</title>
+      <description>&lt;VulnDiscussion&gt;Handler mappings can be configured to give permissions to Read, Write, Script, or Execute depending on what the use is for - reading static content, uploading files, executing scripts, etc.
+It is recommended to grant a handler either Execute/Script or Write permissions, but not both.
+
+Rationale:
+By allowing both Execute/Script and Write permissions, a handler can run malicious code on the target server. Ensuring these two permissions are never together will help lower the risk of malicious code being executed on the server.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>4.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-464A5B3Br01_fix">The accessPolicy attribute in the &lt;handlers&gt; section of either the ApplicationHost.config (server-wide) or web.config (site or application) must not have Write present when Script or Execute are present. To resolve this issue for a Web server, the attribute in the &lt;handlers&gt; section of the ApplicationHost.config file for the server must manually be edited. To edit the ApplicationHost.config file by using Notepad, perform the following steps:
+1. Open Notepad as Administrator 2. Open the ApplicationHost.config file in %systemroot%\system32\inetsrv\config 3. Edit the &lt;handlers&gt; section accessPolicy attribute so that Write is not present when Script or Execute are present Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config /section:handlers
+/accessPolicy:Read,Script
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/handlers" -name "accessPolicy" -value "Read,Script"
+Note: This configuration change cannot be made by using IIS Manager.</fixtext>
+      <fix id="F-464A5B3Br01_fix"/>
+      <check system="C-464A5B3B_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Open the ApplicationHost.config file in %systemroot%\system32\inetsrv\config. Find the &lt;handlers&gt; section and verify that the accessPolicy attribute does not contain Write when Script or Execute are present. The following is an acceptable example:
+&lt;system.webserver&gt;
+&lt;handlers accessPolicy="Read, Script"&gt;
+&lt;/handlers&gt;
+&lt;/system.webserver&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/handlers" -name "accessPolicy"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-16003ADE">
+    <title>4 Request Filtering and Other Restriction Modules</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-16003ADEr01_rule" weight="10.0" severity="medium">
+      <version>4.9</version>
+      <title>(L1) Ensure 'notListedIsapisAllowed' is set to false</title>
+      <description>&lt;VulnDiscussion&gt;The notListedIsapisAllowed attribute is a server-level setting that is located in the ApplicationHost.config file in the &lt;isapiCgiRestriction&gt; element of the &lt;system.webServer&gt; section under &lt;security&gt;. This element ensures that malicious users cannot copy unauthorized ISAPI binaries to the Web server and then run them.
+It is recommended that notListedIsapisAllowed be set to false.
+
+Rationale:
+Restricting this attribute to false will help prevent potentially malicious ISAPI extensions from being run.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>4.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-16003ADEr01_fix">To use IIS Manager to set the notListedIsapisAllowed attribute to false:
+1. Open IIS Manager as Administrator 2. In the Connections pane on the left, select server to be configured 3. In Features View, select ISAPI and CGI Restrictions; in the Actions pane, select Open Feature 4. In the Actions pane, select Edit Feature Settings 5. In the Edit ISAPI and CGI Restrictions Settings dialog, clear the Allow unspecified ISAPI modules check box, if checked 6. Click OK Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd.exe set config -
+section:system.webServer/security/isapiCgiRestriction
+/notListedIsapisAllowed:false
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/isapiCgiRestriction" -name
+"notListedIsapisAllowed" -value "False"</fixtext>
+      <fix id="F-16003ADEr01_fix"/>
+      <check system="C-16003ADE_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Open the applicationHost.config file in %systemroot%\system32\inetsrv\config.
+Verify that the notListedIsapisAllowed attribute in the &lt;isapiCgiRestriction&gt; element is set to false:
+&lt;system.webServer&gt;
+&lt;security&gt;
+&lt;isapiCgiRestriction notListedIsapisAllowed="false"&gt;
+&lt;/isapiCgiRestriction&gt;
+&lt;/security&gt;
+&lt;/system.webServer&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/isapiCgiRestriction" -name
+"notListedIsapisAllowed"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-B74E01E1">
+    <title>4 Request Filtering and Other Restriction Modules</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-B74E01E1r01_rule" weight="10.0" severity="medium">
+      <version>4.10</version>
+      <title>(L1) Ensure 'notListedCgisAllowed' is set to false</title>
+      <description>&lt;VulnDiscussion&gt;The notListedCgisAllowed attribute is a server-level setting that is located in the ApplicationHost.config file in the &lt;isapiCgiRestriction&gt; element of the &lt;system.webServer&gt; section under &lt;security&gt;. This element ensures that malicious users cannot copy unauthorized CGI binaries to the Web server and then run them.
+It is recommended that notListedCgisAllowed be set to false.
+
+Rationale:
+Restricting this attribute to false will help prevent unlisted CGI extensions, including potentially malicious CGI scripts from being run.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>4.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-B74E01E1r01_fix">To set the notListedCgisAllowed attribute to false using IIS Manager:
+1. Open IIS Manager as Administrator 2. In the Connections pane on the left, select the server to configure 3. In Features View, select ISAPI and CGI Restrictions; in the Actions pane, select Open Feature 4. In the Actions pane, select Edit Feature Settings 5. In the Edit ISAPI and CGI Restrictions Settings dialog, clear the Allow unspecified CGI modules check box 6. Click OK Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd.exe set config -
+section:system.webServer/security/isapiCgiRestriction
+/notListedCgisAllowed:false
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/isapiCgiRestriction" -name "notListedCgisAllowed"
+-value "False"</fixtext>
+      <fix id="F-B74E01E1r01_fix"/>
+      <check system="C-B74E01E1_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Browse to and open the applicationHost.config file and verify that the notListedCgisAllowed attribute in the &lt;isapiCgiRestriction&gt; element is set to false:
+&lt;system.webServer&gt;
+&lt;security&gt;
+&lt;isapiCgiRestriction notListedCgisAllowed="false"&gt;
+&lt;/isapiCgiRestriction&gt;
+&lt;/security&gt;
+&lt;/system.webServer&gt;
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/isapiCgiRestriction" -name "notListedCgisAllowed"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-67B6B333">
+    <title>4 Request Filtering and Other Restriction Modules</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-67B6B333r01_rule" weight="10.0" severity="medium">
+      <version>4.11</version>
+      <title>(L1) Ensure 'Dynamic IP Address Restrictions' is enabled</title>
+      <description>&lt;VulnDiscussion&gt;Dynamic IP address filtering allows administrators to configure the server to block access for IPs that exceed the specified number of requests or request frequency.
+Note: Ensure that you receive the Forbidden page once the block has been enforced.
+
+Rationale:
+IIS Dynamic IP Address Restrictions capability can be used to thwart DDos attacks.
+This is complimentary to the IP Addresses and Domain names Restrictions lists that can be manually maintained within IIS. In contrast, Dynamic IP address filtering allows administrators to configure the server to block access for IPs that exceed the specified request threshold. The default action Deny action for restrictions is to return a Forbidden response to the client.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>4.11</dc:identifier>
+      </reference>
+      <fixtext fixref="F-67B6B333r01_fix">1. Open IIS Manager.
+2. Open the IP Address and Domain Restrictions feature.
+3. Click Edit Dynamic Restrictions Settings..
+4. Check the Deny IP Address based on the number of concurrent requests and the Deny IP Address based on the number of requests over a period of time boxes.
+The values can be tweaked as needed for your specific environment.
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/dynamicIpSecurity/denyByConcurrentRequests" -name
+"enabled" -value "True"
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/dynamicIpSecurity/denyByConcurrentRequests" -name
+"maxConcurrentRequests" -value &lt;number of requests&gt;</fixtext>
+      <fix id="F-67B6B333r01_fix"/>
+      <check system="C-67B6B333_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Access the web server enough times to trigger the IP restriction based on the settings entered.
+OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/dynamicIpSecurity/denyByConcurrentRequests" -name
+"enabled"
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.webServer/security/dynamicIpSecurity/denyByConcurrentRequests" -name
+"maxConcurrentRequests"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-4A960C83">
+    <title>5 IIS Logging Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-4A960C83r01_rule" weight="10.0" severity="medium">
+      <version>5.1</version>
+      <title>(L1) Ensure Default IIS web log location is moved</title>
+      <description>&lt;VulnDiscussion&gt;IIS will log relatively detailed information on every request. These logs are usually the first item looked at in a security response and can be the most valuable. Malicious users are aware of this and will often try to remove evidence of their activities.
+It is recommended that the default location for IIS log files be changed to a restricted, non-system drive.
+
+Rationale:
+Moving IIS logging to a restricted, non-system drive will help mitigate the risk of logs being maliciously altered, removed, or lost in the event of system drive failure(s).&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>5.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-4A960C83r01_fix">Moving the default log location can be easily accomplished using the Logging feature in the IIS Management UI, AppCmd.exe, or PowerShell.
+Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd set config -section:sites -
+siteDefaults.logfile.directory:&lt;new log location&gt;
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.applicationHost/sites/siteDefaults/logFile" -name "directory" -value
+&lt;new log location&gt;
+Moving log file stores to a non-system drive or partition separate from where web applications run and/or content is served is preferred. Additionally, folder-level NTFS permissions should be set as restrictive as possible; Administrators and SYSTEM are typically the only principals requiring access.
+While standard IIS logs can be moved and edited using IIS Manager, additional management tool add-ons are required in order to manage logs generated by other IIS features, such as Request Filtering and IIS Advanced Logging. These add-ons can be obtained using the Web Platform Installer or from Microsoft's site. The HTTPErr logging location can be changed by adding a registry key.</fixtext>
+      <fix id="F-4A960C83r01_fix"/>
+      <check system="C-4A960C83_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify web logs are being logged to the new location, open Windows Explorer and browse to the path that was defined. Depending on how the logging was configured, there will be either:
+1. A folder containing .log files or 2. .log files in the root of the specified directory OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.applicationHost/sites/siteDefaults/logFile" -name "directory"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-9BFAC27A">
+    <title>5 IIS Logging Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-9BFAC27Ar01_rule" weight="10.0" severity="medium">
+      <version>5.2</version>
+      <title>(L1) Ensure Advanced IIS logging is enabled</title>
+      <description>&lt;VulnDiscussion&gt;IIS Advanced Logging is a module which provides flexibility in logging requests and client data. It provides controls that allow businesses to specify what fields are important, easily add additional fields, and provide policies pertaining to log file rollover and Request Filtering. HTTP request/response headers, server variables, and client- side fields can be easily logged with minor configuration in the IIS management console.
+
+Rationale:
+Many of the fields available in Advanced Logging can provide extensive, real-time data and details not otherwise obtainable. Developers and security professionals can use this information to identify and remediate application vulnerabilities/attack patterns.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>5.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-9BFAC27Ar01_fix">IIS Advanced Logging can be configured for servers, Web sites, and directories in IIS Manager. To enable Advanced Logging using the UI:
+1. Open Internet Information Services (IIS) Manager 2. Click the server in the Connections pane 3. Double-click the Logging icon on the Home page 4. Click Select Fields The fields that will be logged need to be configured using the Add or Edit Fields button.
+Note: There may be performance considerations depending on the extent of the configuration.</fixtext>
+      <fix id="F-9BFAC27Ar01_fix"/>
+      <check system="C-9BFAC27A_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Browse to the location of the Advanced Logs and verify .log files are being generated.
+Note that logs will be written to disk after a non-determined period of time. They can be written into their specified directory immediately if, in the Log Definition, the Publish real- time events and Write to disk options are selected.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F9D0D075">
+    <title>5 IIS Logging Recommendations</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F9D0D075r01_rule" weight="10.0" severity="medium">
+      <version>5.3</version>
+      <title>(L1) Ensure 'ETW Logging' is enabled</title>
+      <description>&lt;VulnDiscussion&gt;Event Tracing for Windows (ETW) is a Windows feature that allows Administrators to send logging information to another location. This information is then compiled on the server and can be queried.
+
+Rationale:
+IIS flushes log information to disk, therefore prior to IIS, administrators do not have access to real-time logging information. Text-based log files can also be difficult and time consuming to process. By enabling ETW, administrators have access to use standard query tools for viewing real-time logging information.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>5.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F9D0D075r01_fix">To configure ETW logging:
+1. Open IIS Manager 2. Select the server or site to enable ETW 3. Select Logging.
+4. Ensure Log file format is W3C.
+5. Select Both log file and ETW event 6. Save your settings.</fixtext>
+      <fix id="F-F9D0D075r01_fix"/>
+      <check system="C-F9D0D075_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Using Message Analyzer, configure the query for Microsoft-Windows-IIS-Logging. Verify you see live logging data by accessing the website.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-210D5B4D">
+    <title>6 FTP Requests</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-210D5B4Dr01_rule" weight="10.0" severity="medium">
+      <version>6.1</version>
+      <title>(L1) Ensure FTP requests are encrypted</title>
+      <description>&lt;VulnDiscussion&gt;FTP Publishing Service for IIS supports adding an SSL certificate to an FTP site. Using an SSL certificate with an FTP site is also known as FTP-S or FTP over Secure Socket Layers (SSL). FTP-S is an RFC standard (RFC 4217) where an SSL certificate is added to an FTP site and thereby making it possible to perform secure file transfers.
+
+Rationale:
+By using SSL, the FTP transmission is encrypted and secured from point to point and all FTP traffic as well as credentials are thereby guarded against interception.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>6.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-210D5B4Dr01_fix">To configure FTP over SSL at the server level using AppCmd.exe or PowerShell:
+Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd.exe set config -
+section:system.applicationHost/sites
+/siteDefaults.ftpServer.security.ssl.controlChannelPolicy:"SslRequire"
+/siteDefaults.ftpServer.security.ssl.dataChannelPolicy:"SslRequire"
+/commit:apphost
+OR Enter the following commands in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.applicationHost/sites/siteDefaults/ftpServer/security/ssl" -name
+"controlChannelPolicy" -value "SslRequire"
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.applicationHost/sites/siteDefaults/ftpServer/security/ssl" -name
+"dataChannelPolicy" -value "SslRequire"</fixtext>
+      <fix id="F-210D5B4Dr01_fix"/>
+      <check system="C-210D5B4D_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify using PowerShell enter the following commands:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.applicationHost/sites/siteDefaults/ftpServer/security/ssl" -name
+"controlChannelPolicy"
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.applicationHost/sites/siteDefaults/ftpServer/security/ssl" -name
+"dataChannelPolicy"
+The output should be SslRequire for both commands.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-BD203104">
+    <title>6 FTP Requests</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-BD203104r01_rule" weight="10.0" severity="medium">
+      <version>6.2</version>
+      <title>(L1) Ensure FTP Logon attempt restrictions is enabled</title>
+      <description>&lt;VulnDiscussion&gt;FTP Logon attempt restrictions is a built-in network security feature to automatically block brute force FTP attacks. This can be used to mitigate a malicious client from attempting a brute-force attack on a discovered account, such as the local administrator account.
+
+Rationale:
+Successful brute force FTP attacks can allow an otherwise unauthorized user to make changes to data that should not be made. This could allow the unauthorized user to modify website code by uploading malicious software or even changing functionality for items such as online payments.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>6.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-BD203104r01_fix">To configure FTP Logon Attempt Restrictions at the server level using AppCmd.exe or PowerShell:
+Enter the following command in AppCmd.exe to configure:
+%systemroot%\system32\inetsrv\appcmd.exe set config -
+section:system.ftpServer/security/authentication
+/denyByFailure.enabled:"True" /commit:apphost
+OR Enter the following command in PowerShell to configure:
+Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.ftpServer/security/authentication/denyByFailure" -name "enabled" -
+value "True"</fixtext>
+      <fix id="F-BD203104r01_fix"/>
+      <check system="C-BD203104_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>To verify using AppCmd.exe enter the following command:
+%systemroot%\system32\inetsrv\appcmd.exe list config -
+section:system.ftpServer/security/authentication
+The output should include denyByFailure = true OR To verify using PowerShell enter the following command:
+Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter
+"system.ftpServer/security/authentication/denyByFailure" -name "enabled"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-899FE499">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-899FE499r01_rule" weight="10.0" severity="high">
+      <version>7.1</version>
+      <title>(L2) Ensure HSTS Header is set</title>
+      <description>&lt;VulnDiscussion&gt;HTTP Strict Transport Security (HSTS) allows a site to inform the user agent to communicate with the site only over HTTPS. This header takes two parameters: max- age, "specifies the number of seconds, after the reception of the STS header field, during which the user agent regards the host (from whom the message was received) as a Known HSTS Host [speaks only HTTPS]"; and includeSubDomains.
+includeSubDomains is an optional directive that defines how this policy is applied to subdomains. If includeSubDomains is included in the header, it provides the following definition: this HSTS Policy also applies to any hosts whose domain names are subdomains of the Known HSTS Host's domain name.
+
+Rationale:
+HTTP Strict Transport Security (HSTS) is a simple and widely supported standard to protect visitors by ensuring that their browsers always connect to a website over HTTPS. HSTS exists to remove the need for the common, insecure practice of redirecting users from http:// to https:// URLs. HSTS relies on the User Agent/Browser to enforce the required behavior. All major browsers support it. If the browser doesn't support HSTS, it will be ignored.
+When a browser knows that a domain has enabled HSTS, it does two things:
+1. Always uses an https:// connection, even when clicking on an http:// link or after typing a domain into the location bar without specifying a protocol.
+2. Removes the ability for users to click through warnings about invalid certificates.
+A domain instructs browsers that it has enabled HSTS by returning an HTTP header over an HTTPS connection.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-899FE499r01_fix">Any value greater than 0 meets this recommendation. The examples below are specific to 8 minutes but can be adjusted to meet your requirements.
+To set the HTTP Header at the server level using an AppCmd.exe command, run the following command from an elevated command prompt:
+%systemroot%\system32\inetsrv\appcmd.exe set config -
+section:system.webServer/httpProtocol /+"customHeaders.[name='Strict-
+Transport-Security',value='max-age=480; preload']"
+To set the HTTP Header and include subdomains at the server level using an AppCmd.exe command, run the following command from an elevated command prompt:
+%systemroot%\system32\inetsrv\appcmd.exe set config -
+section:system.webServer/httpProtocol /+"customHeaders.[name='Strict-
+Transport-Security',value='max-age=480; includeSubDomains; preload']"
+To set the HTTP Header at the Website level using an AppCmd.exe command, run the following command from an elevated command prompt:
+%systemroot%\system32\inetsrv\appcmd.exe set config "&lt;em&gt;Website"&lt;/em&gt; -
+section:system.webServer/httpProtocol /+"customHeaders.[name='Strict-
+Transport-Security',value='max-age=480; preload']"
+To set the HTTP Header and include subdomains at the Website level using an AppCmd.exe command, run the following command from an elevated command prompt:
+%systemroot%\system32\inetsrv\appcmd.exe set config "&lt;em&gt;Website"&lt;/em&gt; -
+section:system.webServer/httpProtocol /+"customHeaders.[name='Strict-
+Transport-Security',value='max-age=480; includeSubDomains; preload']"</fixtext>
+      <fix id="F-899FE499r01_fix"/>
+      <check system="C-899FE499_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>The recommended max age is 8 minutes (480 seconds) or greater. Any value greater than 0 is acceptable. Perform the following in IIS Manager to view host headers configured for the server:
+1. Open IIS Manager 2. In the Connections pane, select your server 3. In the Features View pane, double click HTTP Response Headers 4. Verify an entry exists named Strict-Transport-Security 5. Double click Strict-Transport-Security and verify the Value: box contains any value greater than 0 6. Click OK.
+Perform the following in IIS Manager to view host headers configured for the Website:
+1. Open IIS Manager 2. In the Connections pane, expand the tree and select Website 3. In the Features View pane, double click HTTP Response Headers 4. Verify an entry exists name Strict-Transport-Security 5. Double click Strict-Transport-Security and verify the Value: box contains any value greater than 0 6. Click OK.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6E45318C">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6E45318Cr01_rule" weight="10.0" severity="medium">
+      <version>7.2</version>
+      <title>(L1) Ensure SSLv2 is Disabled</title>
+      <description>&lt;VulnDiscussion&gt;The SSLv2 protocol is not considered cryptographically secure, therefore should be disabled.
+
+Rationale:
+Disabling weak protocols will help ensure the confidentiality and integrity of in-transit data.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6E45318Cr01_fix">Perform the following to disable SSL 2.0:
+1. Set the following Registry key to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 2.0\Server:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 2.0\Client:Enabled
+2. Set the following Registry key to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 2.0\Server:DisabledByDefault
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 2.0\Client:DisabledByDefault
+To disable using PowerShell enter the following command:
+New-Item
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 2.0\Server' -Force | Out-Null
+New-Item
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 2.0\Client' -Force | Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 2.0\Server' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force |
+Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 2.0\Client' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force |
+Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 2.0\Server' -name 'DisabledByDefault' -value '1' -PropertyType 'DWord' -
+Force | Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 2.0\Client' -name 'DisabledByDefault' -value '1' -PropertyType 'DWord' -
+Force | Out-Null</fixtext>
+      <fix id="F-6E45318Cr01_fix"/>
+      <check system="C-6E45318C_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify SSL 2.0 is disabled.
+1. Ensure the following key is set to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 2.0\Server:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 2.0\Client:Enabled
+2. Ensure the following key is set to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 2.0\Server:DisabledByDefault
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 2.0\Client:DisabledByDefault
+To verify using PowerShell enter the following command:
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\SSL 2.0\Server' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\SSL 2.0\Client' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\SSL 2.0\Server' -name 'DisabledByDefault'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\SSL 2.0\Client' -name 'DisabledByDefault'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-760782BD">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-760782BDr01_rule" weight="10.0" severity="medium">
+      <version>7.3</version>
+      <title>(L1) Ensure SSLv3 is Disabled</title>
+      <description>&lt;VulnDiscussion&gt;The SSLv3 protocol is not considered cryptographically secure, therefore should be disabled.
+
+Rationale:
+Disabling weak protocols will help ensure the confidentiality and integrity of in-transit data.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-760782BDr01_fix">Perform the following to disable SSL 3.0:
+1. Set the following Registry key to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 3.0\Server:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 3.0\Client:Enabled
+2. Set the following Registry key to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 3.0\Server:DisabledByDefault
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 3.0\Client:DisabledByDefault
+To disable using PowerShell enter the following command:
+New-Item
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 3.0\Server' -Force | Out-Null
+New-Item
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 3.0\Client' -Force | Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 3.0\Server' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force |
+Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 3.0\Client' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force |
+Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 3.0\Server' -name 'DisabledByDefault' -value '1' -PropertyType 'DWord' -
+Force | Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+SSL 3.0\Client' -name 'DisabledByDefault' -value '1' -PropertyType 'DWord' -
+Force | Out-Null</fixtext>
+      <fix id="F-760782BDr01_fix"/>
+      <check system="C-760782BD_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify SSL 3.0 is disabled:
+1. Ensure the following key is set to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 3.0\Server:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 3.0\Client:Enabled
+2. Ensure the following key is set to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 3.0\Server:DisabledByDefault
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
+L 3.0\Client:DisabledByDefault
+To verify using PowerShell enter the following command:
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\SSL 3.0\Server' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\SSL 3.0\Client' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\SSL 3.0\Server' -name 'DisabledByDefault'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\SSL 3.0\Client' -name 'DisabledByDefault'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-313F008B">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-313F008Br01_rule" weight="10.0" severity="medium">
+      <version>7.4</version>
+      <title>(L1) Ensure TLS 1.0 is Disabled</title>
+      <description>&lt;VulnDiscussion&gt;The TLS 1.0 protocol is not considered cryptographically secure, therefore should be disabled.
+
+Rationale:
+Disabling weak protocols will help ensure the confidentiality and integrity of in-transit data.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-313F008Br01_fix">Perform the following to disable TLS 1.0:
+1. Set the following Registry key to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.0\Server:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.0\Client:Enabled
+2. Set the following Registry key to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.0\Server:DisabledByDefault
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.0\Client:DisabledByDefault
+To disable using PowerShell enter the following command:
+New-Item
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.0\Server' -Force | Out-Null
+New-Item
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.0\Client' -Force | Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.0\Server' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force |
+Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.0\Client' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force |
+Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.0\Server' -name 'DisabledByDefault' -value '1' -PropertyType 'DWord' -
+Force | Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.0\Client' -name 'DisabledByDefault' -value '1' -PropertyType 'DWord' -
+Force | Out-Null</fixtext>
+      <fix id="F-313F008Br01_fix"/>
+      <check system="C-313F008B_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify TLS 1.0 is disabled:
+1. Ensure the following Registry key is set to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.0\Server:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.0\Client:Enabled
+2. Ensure the following Registry key is set to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.0\Server:DisabledByDefault
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.0\Client:DisabledByDefault
+To verify using PowerShell enter the following command:
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\TLS 1.0\Server' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\TLS 1.0\Client' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\TLS 1.0\Server' -name 'DisabledByDefault'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\TLS 1.0\Client' -name 'DisabledByDefault'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-5D8FC377">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-5D8FC377r01_rule" weight="10.0" severity="medium">
+      <version>7.5</version>
+      <title>(L1) Ensure TLS 1.1 is Disabled</title>
+      <description>&lt;VulnDiscussion&gt;The TLS 1.1 protocol is not considered cryptographically secure, therefore should be disabled.
+
+Rationale:
+Disabling weak protocols will help ensure the confidentiality and integrity of in-transit data.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-5D8FC377r01_fix">Perform the following to disable TLS 1.1:
+1. Set the following Registry key to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.1\Server:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.1\Client:Enabled
+2. Set the following Registry key to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.1\Server:DisabledByDefault
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.1\Client:DisabledByDefault
+To disable using PowerShell enter the following command:
+New-Item
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.1\Server' -Force | Out-Null
+New-Item
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.1\Client' -Force | Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.1\Server' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force |
+Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.1\Client' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force |
+Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.1\Server' -name 'DisabledByDefault' -value '1' -PropertyType 'DWord' -
+Force | Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.1\Client' -name 'DisabledByDefault' -value '1' -PropertyType 'DWord' -
+Force | Out-Null</fixtext>
+      <fix id="F-5D8FC377r01_fix"/>
+      <check system="C-5D8FC377_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify TLS 1.1 is disabled:
+1. Ensure the following Registry key is set to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.1\Server:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.1\Client:Enabled
+2. Ensure the following Registry key is set to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.1\Server:DisabledByDefault
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.1\Client:DisabledByDefault
+To verify using PowerShell enter the following command:
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\TLS 1.1\Server' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\TLS 1.1\Client' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\TLS 1.1\Server' -name 'DisabledByDefault'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\TLS 1.1\Client' -name 'DisabledByDefault'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D964365D">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D964365Dr01_rule" weight="10.0" severity="medium">
+      <version>7.6</version>
+      <title>(L1) Ensure TLS 1.2 is Enabled</title>
+      <description>&lt;VulnDiscussion&gt;TLS 1.2 is the most recent and mature protocol for protecting the confidentiality and integrity of HTTP traffic.
+
+Rationale:
+Enabling this protocol will help ensure the confidentiality and integrity of data in transit.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D964365Dr01_fix">Perform the following to enable TLS 1.2:
+1. Set the following Registry key to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.2\Server:Enabled
+2. Set the following Registry key to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.2\Server:DisabledByDefault
+To enable using PowerShell enter the following command:
+New-Item
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.2\Server' -Force | Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.2\Server' -name 'Enabled' -value '1' -PropertyType 'DWord' -Force |
+Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\
+TLS 1.2\Server' -name 'DisabledByDefault' -value '0' -PropertyType 'DWord' -
+Force | Out-Null</fixtext>
+      <fix id="F-D964365Dr01_fix"/>
+      <check system="C-D964365D_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify TLS 1.2 is enabled:
+1. Ensure the following Registry key is set to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.2\Server:Enabled
+2. Ensure the following Registry key is set to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TL
+S 1.2\Server:DisabledByDefault
+To verify using PowerShell enter the following command:
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\TLS 1.2\Server' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocol
+s\TLS 1.2\Server' -name 'DisabledByDefault'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-BE9665AA">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-BE9665AAr01_rule" weight="10.0" severity="medium">
+      <version>7.7</version>
+      <title>(L1) Ensure NULL Cipher Suites is Disabled</title>
+      <description>&lt;VulnDiscussion&gt;The NULL cipher does not provide data confidentiality or integrity, therefore it is recommended that the NULL cipher be disabled.
+
+Rationale:
+By disabling the NULL cipher, there is a better chance of maintaining data confidentiality and integrity.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-BE9665AAr01_fix">Perform the following to disable NULL cipher:
+1. Set the following Registry key to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\NULL
+:Enabled
+To disable using PowerShell enter the following command:
+New-Item
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\NU
+LL' -Force | Out-Null
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\NU
+LL' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force | Out-Null</fixtext>
+      <fix id="F-BE9665AAr01_fix"/>
+      <check system="C-BE9665AA_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify NULL cipher is disabled:
+1. Ensure the following Registry key is set to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\NULL
+:Enabled
+To verify using PowerShell enter the following command:
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\NU
+LL' -name 'Enabled'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E8EB63FF">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E8EB63FFr01_rule" weight="10.0" severity="medium">
+      <version>7.8</version>
+      <title>(L1) Ensure DES Cipher Suites is Disabled</title>
+      <description>&lt;VulnDiscussion&gt;The DES Cipher Suite is considered a weak symmetric-key cipher, therefore it is recommended that it be disabled.
+
+Rationale:
+By disabling DES, there is a better chance of maintaining data confidentiality and integrity.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E8EB63FFr01_fix">Perform the following to disable DES 56/56 cipher:
+1. Set the following Registry key to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\DES
+56/56:Enabled
+To disable using PowerShell enter the following command:
+(Get-Item
+'HKLM:\').OpenSubKey('SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHA
+NNEL\Ciphers', $true).CreateSubKey('DES 56/56')
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\DE
+S 56/56' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force | Out-Null</fixtext>
+      <fix id="F-E8EB63FFr01_fix"/>
+      <check system="C-E8EB63FF_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify DES 56/56 cipher is disabled:
+1. Ensure the following Registry key is set to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\DES
+56/56:Enabled
+To verify using PowerShell enter the following command:
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\DE
+S 56/56' -name 'Enabled'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-11ADC896">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-11ADC896r01_rule" weight="10.0" severity="medium">
+      <version>7.9</version>
+      <title>(L1) Ensure RC4 Cipher Suites is Disabled</title>
+      <description>&lt;VulnDiscussion&gt;The RC4 Cipher Suites are considered insecure, therefore should be disabled.
+Note: RC4 cipher enabled by default on Server 2012 and 2012 R2 is RC4 128/128.
+
+Rationale:
+The use of RC4 may increase an adversaries ability to read sensitive information sent over SSL/TLS.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-11ADC896r01_fix">Perform the following to disable RC4 40/128, RC4 56/128, RC4 64/128, RC4 128/128 ciphers:
+1. Set the following Registry keys to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4
+40/128:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4
+56/128:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4
+64/128:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4
+128/128:Enabled
+To disable using PowerShell enter the following commands:
+(Get-Item
+'HKLM:\').OpenSubKey('SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHA
+NNEL\Ciphers', $true).CreateSubKey('RC4 40/128')
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC
+4 40/128' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force | Out-Null
+(Get-Item
+'HKLM:\').OpenSubKey('SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHA
+NNEL\Ciphers', $true).CreateSubKey('RC4 56/128')
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC
+4 56/128' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force | Out-Null
+(Get-Item
+'HKLM:\').OpenSubKey('SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHA
+NNEL\Ciphers', $true).CreateSubKey('RC4 64/128')
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC
+4 64/128' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force | Out-Null
+(Get-Item
+'HKLM:\').OpenSubKey('SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHA
+NNEL\Ciphers', $true).CreateSubKey('RC4 128/128')
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC
+4 128/128' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force | Out-Null</fixtext>
+      <fix id="F-11ADC896r01_fix"/>
+      <check system="C-11ADC896_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify RC4 40/128, RC4 56/128, RC4 64/128, RC4 128/128 ciphers have been disabled.
+1. Ensure the following Registry keys are set to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4
+40/128:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4
+56/128:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4
+64/128:Enabled
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4
+128/128:Enabled
+To verify using PowerShell enter the following commands:
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC
+4 40/128' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC
+4 56/128' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC
+4 64/128' -name 'Enabled'
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC
+4 128/128' -name 'Enabled'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-826A85A6">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-826A85A6r01_rule" weight="10.0" severity="medium">
+      <version>7.10</version>
+      <title>(L1) Ensure AES 128/128 Cipher Suite is Disabled</title>
+      <description>&lt;VulnDiscussion&gt;The AES 128/128 Cipher Suite is not considered secure and therefore should be disabled, if possible.
+
+Rationale:
+This item is Scored for the following reasons and should be disabled:
+• Enabling AES 256/256 is recommended.
+• This cipher does not suffer from known practical attacks.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-826A85A6r01_fix">Perform the following to disable AES 128/128 cipher:
+1. Set the following Registry key to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES
+128/128:Enabled
+To disable using PowerShell enter the following command:
+(Get-Item
+'HKLM:\').OpenSubKey('SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHA
+NNEL\Ciphers', $true).CreateSubKey('AES 128/128')
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AE
+S 128/128' -name 'Enabled' -value '0' -PropertyType 'DWord' -Force | Out-Null</fixtext>
+      <fix id="F-826A85A6r01_fix"/>
+      <check system="C-826A85A6_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify AES 128/128 cipher is disabled:
+1. Ensure the following Registry key is set to 0.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES
+128/128:Enabled
+To verify using PowerShell enter the following command:
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AE
+S 128/128' -name 'Enabled'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-158574A4">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-158574A4r01_rule" weight="10.0" severity="medium">
+      <version>7.11</version>
+      <title>(L1) Ensure AES 256/256 Cipher Suite is Enabled</title>
+      <description>&lt;VulnDiscussion&gt;AES 256/256 is the most recent and mature cipher suite for protecting the confidentiality and integrity of HTTP traffic. Enabling AES 256/256 is recommended.
+Note: AES 256/256 is enabled by default starting with Server 2012 and 2012 R2.
+
+Rationale:
+Enabling this cipher will help ensure the confidentiality and integrity of data in transit.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.11</dc:identifier>
+      </reference>
+      <fixtext fixref="F-158574A4r01_fix">Perform the following to enable AES 256/256 cipher:
+1. Set the following Registry key to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES
+256/256:Enabled
+To enable using PowerShell enter the following command:
+(Get-Item
+'HKLM:\').OpenSubKey('SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHA
+NNEL\Ciphers', $true).CreateSubKey('AES 256/256')
+New-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AE
+S 256/256' -name 'Enabled' -value '1' -PropertyType 'DWord' -Force | Out-Null</fixtext>
+      <fix id="F-158574A4r01_fix"/>
+      <check system="C-158574A4_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify AES 256/256 cipher is enabled:
+1. Ensure the following Registry key is set to 1.
+HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES
+256/256:Enabled
+To verify using PowerShell enter the following command:
+Get-ItemProperty -path
+'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AE
+S 256/256' -name 'Enabled'</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E6D73875">
+    <title>7 Transport Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E6D73875r01_rule" weight="10.0" severity="high">
+      <version>7.12</version>
+      <title>(L2) Ensure TLS Cipher Suite ordering is Configured</title>
+      <description>&lt;VulnDiscussion&gt;Cipher suites are a named combination of authentication, encryption, message authentication code, and key exchange algorithms used for the security settings of a network connection using TLS protocol. Clients send a cipher list and a list of ciphers that it supports in order of preference to a server. The server then replies with the cipher suite that it selects from the client cipher suite list.
+
+Rationale:
+Cipher suites should be ordered from strongest to weakest in order to ensure that the more secure configuration is used for encryption between the server and client.
+TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 Avoid cipher suits that do not provide Perfect Forward Secrecy or use weak hashing function, use them only if you need to support backwards compatibility and in the bottom of the list and you will have to create exceptions for the items that cause this to become out of compliance:
+TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (uses SHA-1) TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (uses SHA-1) TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (uses SHA-1) TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (uses SHA-1) TLS_RSA_WITH_AES_256_GCM_SHA384 (lack of Perfect Forward Secrecy) TLS_RSA_WITH_AES_128_GCM_SHA256 (lack of Perfect Forward Secrecy) TLS_RSA_WITH_AES_256_CBC_SHA256 (lack of Perfect Forward Secrecy) TLS_RSA_WITH_AES_128_CBC_SHA256 (lack of Perfect Forward Secrecy) TLS_RSA_WITH_AES_256_CBC_SHA (uses SHA-1, lack of Perfect Forward Secrecy) TLS_RSA_WITH_AES_128_CBC_SHA (uses SHA-1, lack of Perfect Forward Secrecy) Note: HTTP/2 compatibility: first 4 ciphers (in bold) in the top part list are compatible with HTTP/2&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft IIS 10 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft IIS 10 Benchmark</dc:subject>
+        <dc:identifier>7.12</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E6D73875r01_fix">Perform the following to configure TLS cipher suite order:
+1. Set the following Registry key to TLS_AES_256_GCM_SHA384,
+TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDH
+E_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,T
+LS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_CBC_S
+HA384,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_25
+6_CBC_SHA384,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256.
+HKLM\SOFTWARE\Policies\Microsoft\Cryptography\Configuration\SSL\00010002:Func
+tions
+To configure TLS cipher suite order using PowerShell enter the following command:
+New-Item
+'HKLM:\SOFTWARE\Policies\Microsoft\Cryptography\Configuration\SSL\00010002' -
+Force | Out-Null
+New-ItemProperty -path
+'HKLM:\SOFTWARE\Policies\Microsoft\Cryptography\Configuration\SSL\00010002' -
+name 'Functions' -value
+'TLS_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_G
+CM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_
+GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256
+_CBC_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_25
+6_CBC_SHA384,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256' -PropertyType
+'MultiString' -Force | Out-Null</fixtext>
+      <fix id="F-E6D73875r01_fix"/>
+      <check system="C-E6D73875_chk">
+        <check-content-ref href="CIS_Microsoft_IIS_10_Benchmark.xml" name="M"/>
+        <check-content>Perform the following to verify the TLS cipher suite order is configured properly:
+1. Ensure the following Registry key is set to
+TLS_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_
+256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WI
+TH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_E
+CDSA_WITH_AES_256_CBC_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256,TL
+S_ECDHE_RSA_WITH_AES_256_CBC_SHA384,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA2
+56.
+HKLM\SOFTWARE\Policies\Microsoft\Cryptography\Configuration\SSL\00010002:Func
+tions
+To verify using PowerShell enter the following command:
+Get-ItemProperty -path
+'HKLM:\SOFTWARE\Policies\Microsoft\Cryptography\Configuration\SSL\00010002' -
+name 'Functions'
+TLS_AES_256_GCM_SHA384 TLS_AES_128_GCM_SHA256</check-content>
+      </check>
+    </Rule>
+  </Group>
+</Benchmark>
+

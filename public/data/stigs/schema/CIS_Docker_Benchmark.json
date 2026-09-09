@@ -12,10 +12,10 @@
     "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
     "status": {
       "+content": "accepted",
-      "+@date": "2023-06-14"
+      "+@date": "2024-07-25"
     },
     "title": "CIS Docker Benchmark",
-    "description": "All CIS Benchmarks focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system for vulnerabilities and quickly updating with the latest security patches • Monitoring applications and libraries for vulnerabilities and quickly updating with the latest security patches In the end, the CIS Benchmarks are designed as a key component of a comprehensive cybersecurity program. This document, CIS Docker Benchmark, provides prescriptive guidance for establishing a secure configuration posture for Docker Engine v20.10. This guide was tested against Docker Engine 20.10.20 on RHEL 7 and Ubuntu 20.04. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.",
+    "description": "All CIS Benchmarks™ focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system for vulnerabilities and quickly updating with the latest security patches. • Monitoring applications and libraries for vulnerabilities and quickly updating with the latest security patches. In the end, the CIS Benchmarks are designed as a key component of a comprehensive cybersecurity program. This document, CIS Docker Benchmark, provides prescriptive guidance for establishing a secure configuration posture for Docker Engine v26.1.4 This guide was tested against Docker Engine 26.1.4 on RHEL 7 and Ubuntu 20.04. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.",
     "notice": {
       "+@id": "terms-of-use",
       "+@xml:lang": "en"
@@ -32,10 +32,10 @@
       "dc:source": "CIS Benchmarks"
     },
     "plain-text": {
-      "+content": "Release: 1.6.0 Benchmark Date: 2023-06-14",
+      "+content": "Release: 1.7.0 Benchmark Date: 2024-07-25",
       "+@id": "release-info"
     },
-    "version": "1.6.0",
+    "version": "1.7.0",
     "Profile": [
       {
         "+@id": "L1-Docker-Linux_Public",
@@ -64,6 +64,14 @@
           },
           {
             "+@idref": "V-DF1349CB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6A7C51C3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-10142F89",
             "+@selected": "true"
           },
           {
@@ -332,6 +340,14 @@
           },
           {
             "+@idref": "V-01DB0DE8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A1AACB11",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-17B4E2FE",
             "+@selected": "true"
           }
         ]
@@ -366,6 +382,14 @@
             "+@selected": "true"
           },
           {
+            "+@idref": "V-6A7C51C3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-10142F89",
+            "+@selected": "true"
+          },
+          {
             "+@idref": "V-717FBAEB",
             "+@selected": "true"
           },
@@ -631,6 +655,14 @@
           },
           {
             "+@idref": "V-01DB0DE8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A1AACB11",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-17B4E2FE",
             "+@selected": "true"
           }
         ]
@@ -665,6 +697,14 @@
             "+@selected": "true"
           },
           {
+            "+@idref": "V-6A7C51C3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-10142F89",
+            "+@selected": "true"
+          },
+          {
             "+@idref": "V-717FBAEB",
             "+@selected": "true"
           },
@@ -930,6 +970,14 @@
           },
           {
             "+@idref": "V-01DB0DE8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A1AACB11",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-17B4E2FE",
             "+@selected": "true"
           }
         ]
@@ -1069,22 +1117,6 @@
         "description": "Are intended for environments or use cases where security is paramount Acts as defense in depth measure May negatively inhibit the utility or performance of the technology",
         "select": [
           {
-            "+@idref": "V-EECA0AEE",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-E6C79D2E",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-45534983",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-DF1349CB",
-            "+@selected": "true"
-          },
-          {
             "+@idref": "V-E5D8F5C3",
             "+@selected": "true"
           },
@@ -1093,7 +1125,7 @@
             "+@selected": "true"
           },
           {
-            "+@idref": "V-A3E64ECE",
+            "+@idref": "V-1169EF95",
             "+@selected": "true"
           },
           {
@@ -1157,62 +1189,6 @@
             "+@selected": "true"
           },
           {
-            "+@idref": "V-DE39BEF4",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-8F8EF5CA",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-CF0A54F9",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-677AC714",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-C8950791",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-6B0C74C1",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-AA199D29",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-085BF961",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-99F02398",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-9432D152",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-375824FA",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-EFD82693",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-11B9CB86",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-B372256D",
-            "+@selected": "true"
-          },
-          {
             "+@idref": "V-C81F58EE",
             "+@selected": "true"
           },
@@ -1237,14 +1213,6 @@
             "+@selected": "true"
           },
           {
-            "+@idref": "V-A68B36C4",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-A849B37E",
-            "+@selected": "true"
-          },
-          {
             "+@idref": "V-312D8397",
             "+@selected": "true"
           },
@@ -1254,10 +1222,6 @@
           },
           {
             "+@idref": "V-8A5A4AE4",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-325E286F",
             "+@selected": "true"
           },
           {
@@ -1284,22 +1248,6 @@
         "description": "Are intended for environments or use cases where security is paramount Acts as defense in depth measure May negatively inhibit the utility or performance of the technology",
         "select": [
           {
-            "+@idref": "V-EECA0AEE",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-E6C79D2E",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-45534983",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-DF1349CB",
-            "+@selected": "true"
-          },
-          {
             "+@idref": "V-E5D8F5C3",
             "+@selected": "true"
           },
@@ -1308,7 +1256,7 @@
             "+@selected": "true"
           },
           {
-            "+@idref": "V-A3E64ECE",
+            "+@idref": "V-1169EF95",
             "+@selected": "true"
           },
           {
@@ -1372,62 +1320,6 @@
             "+@selected": "true"
           },
           {
-            "+@idref": "V-DE39BEF4",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-8F8EF5CA",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-CF0A54F9",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-677AC714",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-C8950791",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-6B0C74C1",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-AA199D29",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-085BF961",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-99F02398",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-9432D152",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-375824FA",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-EFD82693",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-11B9CB86",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-B372256D",
-            "+@selected": "true"
-          },
-          {
             "+@idref": "V-C81F58EE",
             "+@selected": "true"
           },
@@ -1452,14 +1344,6 @@
             "+@selected": "true"
           },
           {
-            "+@idref": "V-A68B36C4",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-A849B37E",
-            "+@selected": "true"
-          },
-          {
             "+@idref": "V-312D8397",
             "+@selected": "true"
           },
@@ -1469,10 +1353,6 @@
           },
           {
             "+@idref": "V-8A5A4AE4",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-325E286F",
             "+@selected": "true"
           },
           {
@@ -1499,22 +1379,6 @@
         "description": "Are intended for environments or use cases where security is paramount Acts as defense in depth measure May negatively inhibit the utility or performance of the technology",
         "select": [
           {
-            "+@idref": "V-EECA0AEE",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-E6C79D2E",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-45534983",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-DF1349CB",
-            "+@selected": "true"
-          },
-          {
             "+@idref": "V-E5D8F5C3",
             "+@selected": "true"
           },
@@ -1523,7 +1387,7 @@
             "+@selected": "true"
           },
           {
-            "+@idref": "V-A3E64ECE",
+            "+@idref": "V-1169EF95",
             "+@selected": "true"
           },
           {
@@ -1587,62 +1451,6 @@
             "+@selected": "true"
           },
           {
-            "+@idref": "V-DE39BEF4",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-8F8EF5CA",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-CF0A54F9",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-677AC714",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-C8950791",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-6B0C74C1",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-AA199D29",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-085BF961",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-99F02398",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-9432D152",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-375824FA",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-EFD82693",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-11B9CB86",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-B372256D",
-            "+@selected": "true"
-          },
-          {
             "+@idref": "V-C81F58EE",
             "+@selected": "true"
           },
@@ -1667,14 +1475,6 @@
             "+@selected": "true"
           },
           {
-            "+@idref": "V-A68B36C4",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-A849B37E",
-            "+@selected": "true"
-          },
-          {
             "+@idref": "V-312D8397",
             "+@selected": "true"
           },
@@ -1684,10 +1484,6 @@
           },
           {
             "+@idref": "V-8A5A4AE4",
-            "+@selected": "true"
-          },
-          {
-            "+@idref": "V-325E286F",
             "+@selected": "true"
           },
           {
@@ -1787,7 +1583,7 @@
         "Rule": {
           "+@id": "SV-EECA0AEEr01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "1.1.3",
           "title": "Ensure auditing is configured for the Docker daemon",
           "description": "<VulnDiscussion>Audit all Docker daemon activities.\n\nRationale:\nAs well as auditing the normal Linux file system and system calls, you should also audit the Docker daemon. Because this daemon runs with root privileges. It is very important to audit its activities and usage.</VulnDiscussion>",
@@ -1822,7 +1618,7 @@
         "Rule": {
           "+@id": "SV-E6C79D2Er01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "1.1.4",
           "title": "Ensure auditing is configured for Docker files and directories - /run/containerd",
           "description": "<VulnDiscussion>Audit /run/containerd.\n\nRationale:\nAs well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privileges and its behaviour depends on some key files and directories. /run/containerd is one such directory. As it holds all the information about containers it should be audited.</VulnDiscussion>",
@@ -1834,7 +1630,7 @@
             "dc:identifier": "1.1.4"
           },
           "fixtext": {
-            "+content": "You should add a rule for the /run/containerd directory.\nFor example, Add the line as below to the /etc/audit/audit.rules file:\n-a exit,always -F path=/run/containerd -F perm=war -k docker\nThen, restart the audit daemon using the following command\nsystemctl restart auditd",
+            "+content": "You should add a rule for the /run/containerd directory.\nFor example, Add the line as below to the /etc/audit/rules.d/audit.rules file:\n-a exit,always -F path=/run/containerd -F perm=war -k docker\nThen, restart the audit daemon using the following command\nsystemctl restart auditd",
             "+@fixref": "F-E6C79D2Er01_fix"
           },
           "fix": {
@@ -1857,7 +1653,7 @@
         "Rule": {
           "+@id": "SV-45534983r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "1.1.5",
           "title": "Ensure auditing is configured for Docker files and directories - /var/lib/docker",
           "description": "<VulnDiscussion>Audit /var/lib/docker.\n\nRationale:\nAs well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privileges and its behaviour depends on some key files and directories. /var/lib/docker is one such directory. As it holds all the information about containers it should be audited.</VulnDiscussion>",
@@ -1869,7 +1665,7 @@
             "dc:identifier": "1.1.5"
           },
           "fixtext": {
-            "+content": "You should add a rule for the /var/lib/docker directory.\nFor example, Add the line as below to the /etc/audit/audit.rules file:\n-a exit,always -F path=/var/lib/docker -F perm=war -k docker\nThen, restart the audit daemon using the following command\nsystemctl restart auditd",
+            "+content": "You should add a rule for the /var/lib/docker directory.\nAdding exclusions for /var/lib/docker/overlay2 & /var/lib/docker/volumes reduces the audit messages to a more manageable level.\nFor example, Add the line as below to the /etc/audit/rules.d/audit.rules file:\n-a exit,always -F path=/var/lib/docker -F perm=war -k docker\n-a exit,never -F dir=/var/lib/docker/volumes\n-a exit,never -F dir=/var/lib/docker/overlay2\nor for systems with namespace-remapping enabled\n-a exit,always -F path=/var/lib/docker -F perm=war -k docker\n-a exit,never -F dir=/var/lib/docker/165536.165536/volumes\n-a exit,never -F dir=/var/lib/docker/165536.165536/overlay2\nThen, restart the audit daemon using the following command Internal Only - General\nsystemctl restart auditd",
             "+@fixref": "F-45534983r01_fix"
           },
           "fix": {
@@ -1892,10 +1688,10 @@
         "Rule": {
           "+@id": "SV-DF1349CBr01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "1.1.6",
           "title": "Ensure auditing is configured for Docker files and directories - /etc/docker",
-          "description": "<VulnDiscussion>Audit /etc/docker.\n\nRationale:\nAs well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privilege and its behavior depends on some key files and directories, one of these being /etc/docker.\nThis holds various certificates and keys used for TLS communication between Docker daemon and Docker client and as such it should be audited.</VulnDiscussion>",
+          "description": "<VulnDiscussion>Audit /etc/docker.\n\nRationale:\nAs well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privilege and its behavior depends on some key files and directories, one of these being /etc/docker. This holds various certificates and keys used for TLS communication between Docker daemon and Docker client and as such it should be audited.</VulnDiscussion>",
           "reference": {
             "dc:title": "CIS Docker Benchmark",
             "dc:publisher": "CIS",
@@ -1904,7 +1700,7 @@
             "dc:identifier": "1.1.6"
           },
           "fixtext": {
-            "+content": "You should add a rule for the /etc/docker directory.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /etc/docker -k docker\nThen restart the audit daemon. For example:\nsystemctl restart auditd",
+            "+content": "You should add a rule for the /etc/docker directory.\nFor example:\nAdd the line below to the /etc/audit/rules.d/audit.rules file:\n-w /etc/docker -k docker\nThen restart the audit daemon. For example:\nsystemctl restart auditd",
             "+@fixref": "F-DF1349CBr01_fix"
           },
           "fix": {
@@ -1939,7 +1735,7 @@
             "dc:identifier": "1.1.7"
           },
           "fixtext": {
-            "+content": "If the file exists, a rule for it should be added.\nFor example:\nAdd the line as below in /etc/audit/audit.rules file:\n-w /usr/lib/systemd/system/docker.service -k docker\nThen restart the audit daemon.\nFor example:\nsystemctl restart auditd",
+            "+content": "If the file exists, a rule for it should be added.\nFor example:\nAdd the line as below in /etc/audit/rules.d/audit.rules file:\n-w /usr/lib/systemd/system/docker.service -k docker\nThen restart the audit daemon.\nFor example:\nInternal Only - General\nsystemctl restart auditd",
             "+@fixref": "F-E5D8F5C3r01_fix"
           },
           "fix": {
@@ -1974,7 +1770,7 @@
             "dc:identifier": "1.1.8"
           },
           "fixtext": {
-            "+content": "If the file exists, you should add a rule for it.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /run/containerd/containerd.sock -k docker\nThen restart the audit daemon.\nFor example:\nsystemctl restart auditd",
+            "+content": "If the file exists, you should add a rule for it.\nFor example:\nAdd the line below to the /etc/audit/rules.d/audit.rules file:\n-w /run/containerd/containerd.sock -k docker\nThen restart the audit daemon.\nFor example:\nInternal Only - General\nsystemctl restart auditd",
             "+@fixref": "F-75680822r01_fix"
           },
           "fix": {
@@ -1991,16 +1787,16 @@
         }
       },
       {
-        "+@id": "V-A3E64ECE",
+        "+@id": "V-1169EF95",
         "title": "1.1 Linux Hosts Specific Configuration",
         "description": "<GroupDescription></GroupDescription>",
         "Rule": {
-          "+@id": "SV-A3E64ECEr01_rule",
+          "+@id": "SV-1169EF95r01_rule",
           "+@weight": "10.0",
           "+@severity": "high",
           "version": "1.1.9",
-          "title": "Ensure auditing is configured for Docker files and directories - docker.socket",
-          "description": "<VulnDiscussion>Audit docker.socket, if applicable.\n\nRationale:\nAs well as auditing the normal Linux file system and system calls, you should also audit the Docker daemon. Because this daemon runs with root privileges, it is very important to audit its activities and usage. Its behavior depends on some key files and directories with docker.socket being one such file, and as this holds various parameters for the Docker daemon, it should be audited.</VulnDiscussion>",
+          "title": "Ensure auditing is configured for Docker files and directories - docker.sock",
+          "description": "<VulnDiscussion>Audit docker.sock, if applicable.\n\nRationale:\nAs well as auditing the normal Linux file system and system calls, you should also audit the Docker daemon. Because this daemon runs with root privileges, it is very important to audit its activities and usage. Its behavior depends on some key files and directories with docker.socket being one such file, and as this holds various parameters for the Docker daemon, it should be audited.</VulnDiscussion>",
           "reference": {
             "dc:title": "CIS Docker Benchmark",
             "dc:publisher": "CIS",
@@ -2009,19 +1805,19 @@
             "dc:identifier": "1.1.9"
           },
           "fixtext": {
-            "+content": "If the file exists, you should add a rule for it.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /var/run/docker.sock -k docker\nThen restart the audit daemon.\nFor example:\nsystemctl restart auditd",
-            "+@fixref": "F-A3E64ECEr01_fix"
+            "+content": "If the file exists, you should add a rule for it.\nFor example:\nAdd the line below to the /etc/audit/rules.d/audit.rules file:\n-w /var/run/docker.sock -k docker\nThen restart the audit daemon.\nFor example:\nInternal Only - General\nsystemctl restart auditd",
+            "+@fixref": "F-1169EF95r01_fix"
           },
           "fix": {
-            "+@id": "F-A3E64ECEr01_fix"
+            "+@id": "F-1169EF95r01_fix"
           },
           "check": {
-            "+@system": "C-A3E64ECE_chk",
+            "+@system": "C-1169EF95_chk",
             "check-content-ref": {
               "+@href": "CIS_Docker_Benchmark.xml",
               "+@name": "M"
             },
-            "check-content": "Step 1: Find out the configuration file location:\nsystemctl show -p FragmentPath docker.socket\nStep 2: Locate the socket file location:\ngrep ListenStream <FragmentPath from previous step>\nStep 3: If the file does not exist, this recommendation is not applicable. If the file exists, you should verify that there is an audit rule corresponding to the file:\nFor example, you could execute the command below:\nauditctl -l | grep docker.socket\nThis should display a rule for docker.socket."
+            "check-content": "Step 1: Find out the configuration file location:\nsystemctl show -p FragmentPath docker.sock\nStep 2: Locate the socket file location:\ngrep ListenStream <FragmentPath from previous step>\nStep 3: If the file does not exist, this recommendation is not applicable. If the file exists, you should verify that there is an audit rule corresponding to the file:\nFor example, you could execute the command below:\nauditctl -l | grep docker.sock\nThis should display a rule for docker.sock."
           }
         }
       },
@@ -2044,7 +1840,7 @@
             "dc:identifier": "1.1.10"
           },
           "fixtext": {
-            "+content": "You should add a rule for the /etc/default/docker file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /etc/default/docker -k docker\nThen restart the audit daemon.\nFor example:\nsystemctl restart auditd",
+            "+content": "You should add a rule for the /etc/default/docker file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /etc/default/docker -k docker\nThen restart the audit daemon.\nFor example:\nInternal Only - General\nsystemctl restart auditd",
             "+@fixref": "F-8BE8FC39r01_fix"
           },
           "fix": {
@@ -2070,7 +1866,7 @@
           "+@severity": "high",
           "version": "1.1.11",
           "title": "Ensure auditing is configured for Docker files and directories - /etc/docker/daemon.json",
-          "description": "<VulnDiscussion>Audit /etc/docker/daemon.json, if applicable.\n\nRationale:\nAs well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privileges and its behavior depends on some key files and directories. /etc/docker/daemon.json is one such file. This holds various parameters for the Docker daemon, and as such it should be audited.</VulnDiscussion>",
+          "description": "<VulnDiscussion>Audit /etc/docker/daemon.json, if applicable.\n\nRationale:\nAs well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privileges and its behavior depends on some key files and directories.\n/etc/docker/daemon.json is one such file. This holds various parameters for the Docker daemon, and as such it should be audited.</VulnDiscussion>",
           "reference": {
             "dc:title": "CIS Docker Benchmark",
             "dc:publisher": "CIS",
@@ -2079,7 +1875,7 @@
             "dc:identifier": "1.1.11"
           },
           "fixtext": {
-            "+content": "You should add a rule for the /etc/docker/daemon.json file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /etc/docker/daemon.json -k docker\nThen restart the audit daemon.\nFor example:\nsystemctl restart auditd",
+            "+content": "You should add a rule for the /etc/docker/daemon.json file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /etc/docker/daemon.json -k docker\nThen restart the audit daemon.\nFor example:\nInternal Only - General\nsystemctl restart auditd",
             "+@fixref": "F-2C0A66C9r01_fix"
           },
           "fix": {
@@ -2105,7 +1901,7 @@
           "+@severity": "high",
           "version": "1.1.12",
           "title": "Ensure auditing is configured for Docker files and directories - /etc/containerd/config.toml",
-          "description": "<VulnDiscussion>Audit /etc/containerd/config.toml if applicable\n\nRationale:\nAs well as auditing the normal Linux file system and system calls, you should also audit the Docker daemon. Because this daemon runs with root privileges it is very important to audit its activities and usage. Its behavior depends on some key files and directories and /etc/containerd/config.toml is one such file as it contains various parameters. If present, it is important that it is audited.</VulnDiscussion>",
+          "description": "<VulnDiscussion>Audit /etc/containerd/config.toml if applicable\n\nRationale:\nAs well as auditing the normal Linux file system and system calls, you should also audit the Docker daemon. Because this daemon runs with root privileges it is very important to audit its activities and usage. Its behavior depends on some key files and directories and /etc/containerd/config.toml is one such file as it contains various parameters.\nIf present, it is important that it is audited.</VulnDiscussion>",
           "reference": {
             "dc:title": "CIS Docker Benchmark",
             "dc:publisher": "CIS",
@@ -2114,7 +1910,7 @@
             "dc:identifier": "1.1.12"
           },
           "fixtext": {
-            "+content": "You should add a rule for /etc/containerd/config.toml file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /etc/containerd/config.toml -k docker\nThen restart the audit daemon.\nFor example:\nsystemctl restart auditd",
+            "+content": "You should add a rule for /etc/containerd/config.toml file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /etc/containerd/config.toml -k docker\nThen restart the audit daemon.\nFor example:\nInternal Only - General\nsystemctl restart auditd",
             "+@fixref": "F-3B46ED45r01_fix"
           },
           "fix": {
@@ -2149,7 +1945,7 @@
             "dc:identifier": "1.1.13"
           },
           "fixtext": {
-            "+content": "You should add a rule for /etc/sysconfig/docker file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /etc/sysconfig/docker -k docker\nThen restart the audit daemon.\nFor example:\nsystemctl restart auditd",
+            "+content": "You should add a rule for /etc/sysconfig/docker file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /etc/sysconfig/docker -k docker\nThen restart the audit daemon.\nFor example:\nInternal Only - General\nsystemctl restart auditd",
             "+@fixref": "F-8C076373r01_fix"
           },
           "fix": {
@@ -2184,7 +1980,7 @@
             "dc:identifier": "1.1.14"
           },
           "fixtext": {
-            "+content": "You should add a rule for the /usr/bin/containerd file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /usr/bin/containerd -k docker\nThen restart the audit daemon.\nFor example:\nsystemctl restart auditd",
+            "+content": "You should add a rule for the /usr/bin/containerd file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /usr/bin/containerd -k docker\nThen restart the audit daemon.\nFor example:\nInternal Only - General\nsystemctl restart auditd",
             "+@fixref": "F-384824BEr01_fix"
           },
           "fix": {
@@ -2219,7 +2015,7 @@
             "dc:identifier": "1.1.15"
           },
           "fixtext": {
-            "+content": "You should add a rule for the /usr/bin/containerd-shim file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /usr/bin/containerd-shim -k docker\nThen restart the audit daemon.\nFor example:\nsystemctl restart auditd",
+            "+content": "You should add a rule for the /usr/bin/containerd-shim file.\nFor example:\nAdd the line below to the /etc/audit/rules.d/audit.rules file:\n-w /usr/bin/containerd-shim -k docker\nThen restart the audit daemon.\nFor example:\nInternal Only - General\nsystemctl restart auditd",
             "+@fixref": "F-801CAA69r01_fix"
           },
           "fix": {
@@ -2231,7 +2027,7 @@
               "+@href": "CIS_Docker_Benchmark.xml",
               "+@name": "M"
             },
-            "check-content": "You should verify that there is an audit rule corresponding to /usr/bin/containerd-shim file.\nFor example, you could execute the command below:\nauditctl -l | grep /usr/bin/containerd-shim\nThis should display a rule for /usr/bin/containerd-shim file."
+            "check-content": "You should verify that there is an audit rule corresponding to /usr/bin/containerd- shim file.\nFor example, you could execute the command below:\nauditctl -l | grep /usr/bin/containerd-shim\nThis should display a rule for /usr/bin/containerd-shim file."
           }
         }
       },
@@ -2254,7 +2050,7 @@
             "dc:identifier": "1.1.16"
           },
           "fixtext": {
-            "+content": "You should add a rule for the /usr/bin/containerd-shim-runc-v1 file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /usr/bin/containerd-shim-runc-v1 -k docker\nThen restart the audit daemon.\nFor example:\nsystemctl restart auditd",
+            "+content": "You should add a rule for the /usr/bin/containerd-shim-runc-v1 file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /usr/bin/containerd-shim-runc-v1 -k docker\nThen restart the audit daemon.\nFor example:\nInternal Only - General\nsystemctl restart auditd",
             "+@fixref": "F-3890DDBBr01_fix"
           },
           "fix": {
@@ -2289,7 +2085,7 @@
             "dc:identifier": "1.1.17"
           },
           "fixtext": {
-            "+content": "You should add a rule for the /usr/bin/containerd-shim-runc-v2 file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /usr/bin/containerd-shim-runc-v2 -k docker\nThen restart the audit daemon.\nFor example:\nsystemctl restart auditd",
+            "+content": "You should add a rule for the /usr/bin/containerd-shim-runc-v2 file.\nFor example:\nAdd the line below to the /etc/audit/audit.rules file:\n-w /usr/bin/containerd-shim-runc-v2 -k docker\nThen restart the audit daemon.\nFor example:\nInternal Only - General\nsystemctl restart auditd",
             "+@fixref": "F-44A0342Br01_fix"
           },
           "fix": {
@@ -2464,7 +2260,7 @@
             "dc:identifier": "2.2"
           },
           "fixtext": {
-            "+content": "Edit the Docker daemon configuration file to ensure that icc is disabled. It should include the following setting\n\"icc\": false\nAlernatively, run the docker daemon directly and pass --icc=false as an argument.\nFor Example,\ndockerd --icc=false\nAlternatively, you can follow the Docker documentation and create a custom network and only join containers that need to communicate to that custom network. The --icc parameter only applies to the default docker bridge, if custom networks are used then the approach of segmenting networks should be adopted instead.\nIn order for this control to be fully effective, all containers connected to the docker0 bridge should drop the NET_RAW capability, otherwise a compromised container could use raw ethernet packets to communicate with other containers despite this restriction.",
+            "+content": "Edit the Docker daemon configuration file to ensure that icc is disabled. It should include the following setting\n\"icc\": false\nAlernatively, run the docker daemon directly and pass --icc=false as an argument.\nFor Example, Internal Only - General\ndockerd --icc=false\nAlternatively, you can follow the Docker documentation and create a custom network and only join containers that need to communicate to that custom network. The --icc parameter only applies to the default docker bridge, if custom networks are used then the approach of segmenting networks should be adopted instead.\nIn order for this control to be fully effective, all containers connected to the docker0 bridge should drop the NET_RAW capability, otherwise a compromised container could use raw ethernet packets to communicate with other containers despite this restriction.",
             "+@fixref": "F-3CCCCB7Er01_fix"
           },
           "fix": {
@@ -2534,7 +2330,7 @@
             "dc:identifier": "2.4"
           },
           "fixtext": {
-            "+content": "Do not run the Docker daemon with --iptables=false parameter. For example, do not start the Docker daemon as below:\ndockerd --iptables=false",
+            "+content": "Do not run the Docker daemon with --iptables=false parameter. For example, do not start the Docker daemon as below:\nInternal Only - General\ndockerd --iptables=false",
             "+@fixref": "F-78F797A0r01_fix"
           },
           "fix": {
@@ -2639,7 +2435,7 @@
             "dc:identifier": "2.7"
           },
           "fixtext": {
-            "+content": "Follow the steps mentioned in the Docker documentation or other references.",
+            "+content": "Follow the steps mentioned in the Docker documentation or other references.\nInternal Only - General",
             "+@fixref": "F-13A38B69r01_fix"
           },
           "fix": {
@@ -2721,7 +2517,7 @@
               "+@href": "CIS_Docker_Benchmark.xml",
               "+@name": "M"
             },
-            "check-content": "docker inspect --format='{{ .State.Pid }}' $(docker ps -q) | while read -r\nline; do ps -h -p \"$line\" -o pid,user; done\nThe above command will find the PID of the container and then list the host user associated with the container process. If the container process is running as root, then this configuration may be non-compliant with your organization's security policy.\nAlternatively, you can run docker info to ensure that the userns is listed under\nSecurity Options:\ndocker info --format '{{ .SecurityOptions }}'"
+            "check-content": "docker inspect --format='{{ .State.Pid }}' $(docker ps -q) | while read -r\nline; do ps -h -p \"$line\" -o pid,user; done\nThe above command will find the PID of the container and then list the host user associated with the container process. If the container process is running as root, then this configuration may be non-compliant with your organization's security policy.\nAlternatively, you can run docker info to ensure that the userns is listed under Security Options:\nInternal Only - General\ndocker info --format '{{ .SecurityOptions }}'"
           }
         }
       },
@@ -2744,7 +2540,7 @@
             "dc:identifier": "2.10"
           },
           "fixtext": {
-            "+content": "The default setting is in line with good security practice and can be left in situ. If you wish to specifically set a non-default cgroup, pass the --cgroup-parent parameter to the Docker daemon when starting it.\nFor example,\ndockerd --cgroup-parent=/foobar",
+            "+content": "The default setting is in line with good security practice and can be left in situ. If you wish to specifically set a non-default cgroup, pass the --cgroup-parent parameter to the Docker daemon when starting it.\nFor example, Internal Only - General\ndockerd --cgroup-parent=/foobar",
             "+@fixref": "F-74A349B4r01_fix"
           },
           "fix": {
@@ -2814,7 +2610,7 @@
             "dc:identifier": "2.12"
           },
           "fixtext": {
-            "+content": "Step 1: Install/Create an authorization plugin.\nStep 2: Configure the authorization policy as desired.\nStep 3: Start the docker daemon as below:\ndockerd --authorization-plugin=<PLUGIN_ID>",
+            "+content": "Step 1: Install/Create an authorization plugin.\nStep 2: Configure the authorization policy as desired.\nStep 3: Start the docker daemon as below:\nInternal Only - General\ndockerd --authorization-plugin=<PLUGIN_ID>",
             "+@fixref": "F-29B915D9r01_fix"
           },
           "fix": {
@@ -2989,7 +2785,7 @@
             "dc:identifier": "2.17"
           },
           "fixtext": {
-            "+content": "By default, Docker's default seccomp profile is applied. If this is adequate for your environment, no action is necessary. Alternatively, if you choose to apply your own seccomp profile, use the --seccomp-profile flag at daemon start or put it in the daemon runtime parameters file.\ndockerd --seccomp-profile </path/to/seccomp/profile>",
+            "+content": "By default, Docker's default seccomp profile is applied. If this is adequate for your environment, no action is necessary. Alternatively, if you choose to apply your own seccomp profile, use the --seccomp-profile flag at daemon start or put it in the daemon runtime parameters file.\nInternal Only - General\ndockerd --seccomp-profile </path/to/seccomp/profile>",
             "+@fixref": "F-69887F18r01_fix"
           },
           "fix": {
@@ -3047,7 +2843,7 @@
         "Rule": {
           "+@id": "SV-DE39BEF4r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.1",
           "title": "Ensure that the docker.service file ownership is set to root:root",
           "description": "<VulnDiscussion>You should verify that the docker.service file ownership and group ownership are correctly set to root.\n\nRationale:\nThe docker.service file contains sensitive parameters that may alter the behavior of the Docker daemon. It should therefore be individually and group owned by the root user in order to ensure that it is not modified or corrupted by a less privileged user.</VulnDiscussion>",
@@ -3059,7 +2855,7 @@
             "dc:identifier": "3.1"
           },
           "fixtext": {
-            "+content": "Step 1: Find out the file location:\nsystemctl show -p FragmentPath docker.service\nStep 2: If the file does not exist, this recommendation is not applicable. If the file does exist, you should execute the command below, including the correct file path, in order to set the ownership and group ownership for the file to root.\nFor example,\nchown root:root /usr/lib/systemd/system/docker.service",
+            "+content": "Step 1: Find out the file location:\nsystemctl show -p FragmentPath docker.service\nStep 2: If the file does not exist, this recommendation is not applicable. If the file does exist, you should execute the command below, including the correct file path, in order to set the ownership and group ownership for the file to root.\nFor example, Internal Only - General\nchown root:root /usr/lib/systemd/system/docker.service",
             "+@fixref": "F-DE39BEF4r01_fix"
           },
           "fix": {
@@ -3082,7 +2878,7 @@
         "Rule": {
           "+@id": "SV-8F8EF5CAr01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.2",
           "title": "Ensure that docker.service file permissions are appropriately set",
           "description": "<VulnDiscussion>You should verify that the docker.service file permissions are either set to 644 or to a more restrictive value.\n\nRationale:\nThe docker.service file contains sensitive parameters that may alter the behavior of the Docker daemon. It should therefore not be writable by any other user other than root in order to ensure that it can not be modified by less privileged users.</VulnDiscussion>",
@@ -3117,7 +2913,7 @@
         "Rule": {
           "+@id": "SV-CF0A54F9r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.3",
           "title": "Ensure that docker.socket file ownership is set to root:root",
           "description": "<VulnDiscussion>You should verify that the docker.socket file ownership and group ownership are correctly set to root.\n\nRationale:\nThe docker.socket file contains sensitive parameters that may alter the behavior of the Docker remote API. For this reason, it should be owned and group owned by root in order to ensure that it is not modified by less privileged users.</VulnDiscussion>",
@@ -3129,7 +2925,7 @@
             "dc:identifier": "3.3"
           },
           "fixtext": {
-            "+content": "Step 1: Find out the file location:\nsystemctl show -p FragmentPath docker.socket\nStep 2: If the file does not exist, this recommendation is not applicable. If the file exists, execute the command below, including the correct file path to set the ownership and group ownership for the file to root.\nFor example,\nchown root:root /usr/lib/systemd/system/docker.socket",
+            "+content": "Step 1: Find out the file location:\nsystemctl show -p FragmentPath docker.socket\nStep 2: If the file does not exist, this recommendation is not applicable. If the file exists, execute the command below, including the correct file path to set the ownership and group ownership for the file to root.\nFor example, Internal Only - General\nchown root:root /usr/lib/systemd/system/docker.socket",
             "+@fixref": "F-CF0A54F9r01_fix"
           },
           "fix": {
@@ -3152,7 +2948,7 @@
         "Rule": {
           "+@id": "SV-677AC714r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.4",
           "title": "Ensure that docker.socket file permissions are set to 644 or more restrictive",
           "description": "<VulnDiscussion>You should verify that the file permissions on the docker.socket file are correctly set to 644 or more restrictively.\n\nRationale:\nThe docker.socket file contains sensitive parameters that may alter the behavior of the Docker remote API. It should therefore be writeable only by root in order to ensure that it is not modified by less privileged users.</VulnDiscussion>",
@@ -3164,7 +2960,7 @@
             "dc:identifier": "3.4"
           },
           "fixtext": {
-            "+content": "Step 1: Find out the file location:\nsystemctl show -p FragmentPath docker.socket\nStep 2: If the file does not exist, this recommendation is not applicable. If the file does exist, you should execute the command below, including the correct file path to set the file permissions to 644.\nFor example,\nchmod 644 /usr/lib/systemd/system/docker.socket",
+            "+content": "Step 1: Find out the file location:\nsystemctl show -p FragmentPath docker.socket\nStep 2: If the file does not exist, this recommendation is not applicable. If the file does exist, you should execute the command below, including the correct file path to set the file permissions to 644.\nFor example, Internal Only - General\nchmod 644 /usr/lib/systemd/system/docker.socket",
             "+@fixref": "F-677AC714r01_fix"
           },
           "fix": {
@@ -3187,7 +2983,7 @@
         "Rule": {
           "+@id": "SV-C8950791r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.5",
           "title": "Ensure that the /etc/docker directory ownership is set to root:root",
           "description": "<VulnDiscussion>You should verify that the /etc/docker directory ownership and group ownership is correctly set to root.\n\nRationale:\nThe /etc/docker directory contains certificates and keys in addition to various other sensitive files. It should therefore be individual owned and group owned by root in order to ensure that it can not be modified by less privileged users.</VulnDiscussion>",
@@ -3222,7 +3018,7 @@
         "Rule": {
           "+@id": "SV-6B0C74C1r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.6",
           "title": "Ensure that /etc/docker directory permissions are set to 755 or more restrictively",
           "description": "<VulnDiscussion>You should verify that the /etc/docker directory permissions are correctly set to 755 or more restrictively.\n\nRationale:\nThe /etc/docker directory contains certificates and keys in addition to various sensitive files. It should therefore only be writeable by root to ensure that it can not be modified by a less privileged user.</VulnDiscussion>",
@@ -3257,7 +3053,7 @@
         "Rule": {
           "+@id": "SV-AA199D29r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.7",
           "title": "Ensure that registry certificate file ownership is set to root:root",
           "description": "<VulnDiscussion>You should verify that all the registry certificate files (usually found under /etc/docker/certs.d/<registry-name> directory) are individually owned and group owned by root.\n\nRationale:\nThe /etc/docker/certs.d/<registry-name> directory contains Docker registry certificates. These certificate files must be individually owned and group owned by root to ensure that less privileged users are unable to modify the contents of the directory.</VulnDiscussion>",
@@ -3292,7 +3088,7 @@
         "Rule": {
           "+@id": "SV-085BF961r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.8",
           "title": "Ensure that registry certificate file permissions are set to 444 or more restrictively",
           "description": "<VulnDiscussion>You should verify that all the registry certificate files (usually found under /etc/docker/certs.d/<registry-name> directory) have permissions of 444 or are set more restrictively.\nNote that, by default, this directory might not exist if no registry certificate files are in place.\n\nRationale:\nThe /etc/docker/certs.d/<registry-name> directory contains Docker registry certificates. These certificate files must have permissions of 444 or more restrictive permissions in order to ensure that unprivileged users do not have full access to them..</VulnDiscussion>",
@@ -3327,10 +3123,10 @@
         "Rule": {
           "+@id": "SV-99F02398r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.9",
           "title": "Ensure that TLS CA certificate file ownership is set to root:root",
-          "description": "<VulnDiscussion>You should verify that the TLS CA certificate file (the file that is passed along with the -- tlscacert parameter) is individually owned and group owned by root.\n\nRationale:\nThe TLS CA certificate file should be protected from any tampering. It is used to authenticate the Docker server based on a given CA certificate. It must be therefore be individually owned and group owned by root to ensure that it cannot be modified by less privileged users.</VulnDiscussion>",
+          "description": "<VulnDiscussion>You should verify that the TLS CA certificate file (the file that is passed along with the - -tlscacert parameter) is individually owned and group owned by root.\n\nRationale:\nThe TLS CA certificate file should be protected from any tampering. It is used to authenticate the Docker server based on a given CA certificate. It must be therefore be individually owned and group owned by root to ensure that it cannot be modified by less privileged users.</VulnDiscussion>",
           "reference": {
             "dc:title": "CIS Docker Benchmark",
             "dc:publisher": "CIS",
@@ -3362,10 +3158,10 @@
         "Rule": {
           "+@id": "SV-9432D152r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.10",
           "title": "Ensure that TLS CA certificate file permissions are set to 444 or more restrictively",
-          "description": "<VulnDiscussion>You should verify that the TLS CA certificate file (the file that is passed along with the -- tlscacert parameter) has permissions of 444 or is set more restrictively.\n\nRationale:\nThe TLS CA certificate file should be protected from any tampering. It is used to authenticate the Docker server based on a given CA certificate. It must therefore have permissions of 444, or more restrictive permissions to ensure that the file cannot be modified by a less privileged user.</VulnDiscussion>",
+          "description": "<VulnDiscussion>You should verify that the TLS CA certificate file (the file that is passed along with the - -tlscacert parameter) has permissions of 444 or is set more restrictively.\n\nRationale:\nThe TLS CA certificate file should be protected from any tampering. It is used to authenticate the Docker server based on a given CA certificate. It must therefore have permissions of 444, or more restrictive permissions to ensure that the file cannot be modified by a less privileged user.</VulnDiscussion>",
           "reference": {
             "dc:title": "CIS Docker Benchmark",
             "dc:publisher": "CIS",
@@ -3397,7 +3193,7 @@
         "Rule": {
           "+@id": "SV-375824FAr01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.11",
           "title": "Ensure that Docker server certificate file ownership is set to root:root",
           "description": "<VulnDiscussion>You should verify that the Docker server certificate file (the file that is passed along with the --tlscert parameter) is individual owned and group owned by root.\n\nRationale:\nThe Docker server certificate file should be protected from any tampering. It is used to authenticate the Docker server based on the given server certificate. It must therefore be individually owned and group owned by root to prevent modification by less privileged users.</VulnDiscussion>",
@@ -3432,7 +3228,7 @@
         "Rule": {
           "+@id": "SV-EFD82693r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.12",
           "title": "Ensure that the Docker server certificate file permissions are set to 444 or more restrictively",
           "description": "<VulnDiscussion>You should verify that the Docker server certificate file (the file that is passed along with the --tlscert parameter) has permissions of 444 or more restrictive permissions.\n\nRationale:\nThe Docker server certificate file should be protected from any tampering. It is used to authenticate the Docker server based on the given server certificate. It should therefore have permissions of 444 to prevent its modification.</VulnDiscussion>",
@@ -3537,7 +3333,7 @@
         "Rule": {
           "+@id": "SV-11B9CB86r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.15",
           "title": "Ensure that the Docker socket file ownership is set to root:docker",
           "description": "<VulnDiscussion>You should verify that the Docker socket file is owned by root and group owned by docker.\n\nRationale:\nThe Docker daemon runs as root. The default Unix socket therefore must be owned by root. If any other user or process owns this socket, it might be possible for that non- privileged user or process to interact with the Docker daemon. Additionally, in this case a non-privileged user or process might be able to interact with containers which is neither a secure nor desired behavior.\nAdditionally, the Docker installer creates a Unix group called docker. You can add users to this group, and in this case, those users would be able to read and write to the default Docker Unix socket. The membership of the docker group is tightly controlled by the system administrator. However, ff any other group owns this socket, then it might be possible for members of that group to interact with the Docker daemon. Such a group might not be as tightly controlled as the docker group. Again, this is not in line with good security practice.\nFor these reason, the default Docker Unix socket file should be owned by root and group owned by docker to maintain the integrity of the socket file.</VulnDiscussion>",
@@ -3549,7 +3345,7 @@
             "dc:identifier": "3.15"
           },
           "fixtext": {
-            "+content": "You should execute the following command:\nchown root:docker /var/run/docker.sock\nThis sets the ownership to root and group ownership to docker for the default Docker socket file.",
+            "+content": "You should execute the following command:\nInternal Only - General\nchown root:docker /var/run/docker.sock\nThis sets the ownership to root and group ownership to docker for the default Docker socket file.",
             "+@fixref": "F-11B9CB86r01_fix"
           },
           "fix": {
@@ -3572,7 +3368,7 @@
         "Rule": {
           "+@id": "SV-B372256Dr01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.16",
           "title": "Ensure that the Docker socket file permissions are set to 660 or more restrictively",
           "description": "<VulnDiscussion>You should verify that the Docker socket file has permissions of 660 or are configured more restrictively.\n\nRationale:\nOnly root and the members of the docker group should be allowed to read and write to the default Docker Unix socket. The Docker socket file should therefore have permissions of 660 or more restrictive permissions.</VulnDiscussion>",
@@ -3817,7 +3613,7 @@
         "Rule": {
           "+@id": "SV-A68B36C4r01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.23",
           "title": "Ensure that the Containerd socket file ownership is set to root:root",
           "description": "<VulnDiscussion>You should verify that the Containerd socket file is owned by root and group owned by root.\n\nRationale:\nContainerd is an underlying component used by Docker to create and manage containers. It provides a socket file similar to the Docker socket, which must be protected from unauthorized access. If any other user or process owns this socket, it might be possible for that non-privileged user or process to interact with the Containerd daemon. Additionally, in this case a non-privileged user or process might be able to interact with containers which is neither a secure nor desired behavior.\nUnlike the Docker socket, there is usually no requirement for non-privileged users to connect to the socket, so the ownership should be root:root.</VulnDiscussion>",
@@ -3852,7 +3648,7 @@
         "Rule": {
           "+@id": "SV-A849B37Er01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "3.24",
           "title": "Ensure that the Containerd socket file permissions are set to 660 or more restrictively",
           "description": "<VulnDiscussion>You should verify that the Containerd socket file has permissions of 660 or are configured more restrictively.\n\nRationale:\nOnly root and the members of the root group should be allowed to read and write to the default Containerd Unix socket. The Containerd socket file should therefore have permissions of 660 or more restrictive permissions.</VulnDiscussion>",
@@ -3899,7 +3695,7 @@
             "dc:identifier": "4.1"
           },
           "fixtext": {
-            "+content": "You should ensure that the Dockerfile for each container image contains the information below:\nUSER <username or ID>\nIn this case, the user name or ID refers to the user that was found in the container base image. If there is no specific user created in the container base image, then make use of the useradd command to add a specific user before the USER instruction in the Dockerfile.\nFor example, add the below lines in the Dockerfile to create a user in the container:\nRUN useradd -d /home/username -m -s /bin/bash username\nUSER username\nNote: If there are users in the image that are not needed, you should consider deleting them. After deleting those users, commit the image and then generate new instances of the containers.\nAlternatively, if it is not possible to set the USER directive in the Dockerfile, a script running as part of the CMD or ENTRYPOINT sections of the Dockerfile should be used to ensure that the container process switches to a non-root user.",
+            "+content": "You should ensure that the Dockerfile for each container image contains the information below:\nUSER <username or ID>\nIn this case, the user name or ID refers to the user that was found in the container base image. If there is no specific user created in the container base image, then make use of the useradd command to add a specific user before the USER instruction in the Dockerfile.\nFor example, add the below lines in the Dockerfile to create a user in the container:\nInternal Only - General\nRUN useradd -d /home/username -m -s /bin/bash username\nUSER username\nNote: If there are users in the image that are not needed, you should consider deleting them. After deleting those users, commit the image and then generate new instances of the containers.\nAlternatively, if it is not possible to set the USER directive in the Dockerfile, a script running as part of the CMD or ENTRYPOINT sections of the Dockerfile should be used to ensure that the container process switches to a non-root user.",
             "+@fixref": "F-F6DFF00Er01_fix"
           },
           "fix": {
@@ -4004,7 +3800,7 @@
             "dc:identifier": "4.4"
           },
           "fixtext": {
-            "+content": "Images should be re-built ensuring that the latest version of the base images are used, to keep the operating system patch level at an appropriate level. Once the images have been re-built, containers should be re-started making use of the updated images.",
+            "+content": "Images should be re-built ensuring that the latest version of the base images are used, to keep the operating system patch level at an appropriate level. Once the images have been re-built, containers should be re-started making use of the updated images.\nInternal Only - General",
             "+@fixref": "F-92F76845r01_fix"
           },
           "fix": {
@@ -4284,7 +4080,7 @@
             "dc:identifier": "4.12"
           },
           "fixtext": {
-            "+content": "Validate every artifact with its signature. It is recommended to do so automatically.\nControls Control IG 1 IG 2 IG 3 Version 2.7 Allowlist Authorized Scripts Use technical controls, such as digital signatures and version control, to ensure v8 that only authorized scripts, such as specific .ps1, .py, etc., files, are allowed to ● execute. Block unauthorized scripts from executing. Reassess bi-annually, or more frequently.\n2.7 Utilize Application Whitelisting v7 Utilize application whitelisting technology on all assets to ensure that only ● authorized software executes and all unauthorized software is blocked from executing on assets.",
+            "+content": "Validate every artifact with its signature. It is recommended to do so automatically.",
             "+@fixref": "F-6741085Cr01_fix"
           },
           "fix": {
@@ -4307,7 +4103,7 @@
         "Rule": {
           "+@id": "SV-325E286Fr01_rule",
           "+@weight": "10.0",
-          "+@severity": "high",
+          "+@severity": "medium",
           "version": "5.1",
           "title": "Ensure swarm mode is not Enabled, if not needed",
           "description": "<VulnDiscussion>Do not enable swarm mode on a Docker engine instance unless this is needed.\n\nRationale:\nBy default, a Docker engine instance will not listen on any network ports, with all communications with the client coming over the Unix socket. When Docker swarm mode is enabled on a Docker engine instance, multiple network ports are opened on the system and made available to other systems on the network for the purposes of cluster management and node communications.\nOpening network ports on a system increases its attack surface and this should be avoided unless required.\nIt should be noted that swarm mode is required for the operation of Docker Enterprise components.</VulnDiscussion>",
@@ -4354,7 +4150,7 @@
             "dc:identifier": "5.2"
           },
           "fixtext": {
-            "+content": "If AppArmor is applicable for your Linux OS, you should enable it.\n1. Verify AppArmor is installed.\n2. Create or import a AppArmor profile for Docker containers.\n3. Enable enforcement of the policy.\n4. Start your Docker container using the customized AppArmor profile. For example:\ndocker run --interactive --tty --security-opt=\"apparmor:PROFILENAME\" ubuntu\n/bin/bash\nAlternatively, Docker's default AppArmor policy can be used.",
+            "+content": "If AppArmor is applicable for your Linux OS, you should enable it.\n1. Verify AppArmor is installed.\n2. Create or import a AppArmor profile for Docker containers.\n3. Enable enforcement of the policy.\n4. Start your Docker container using the customized AppArmor profile. For example:\ndocker run --interactive --tty --security-opt=\"apparmor:PROFILENAME\" ubuntu\n/bin/bash\nAlternatively, Docker's default AppArmor policy can be used.\nInternal Only - General",
             "+@fixref": "F-96D7D56Br01_fix"
           },
           "fix": {
@@ -4389,7 +4185,7 @@
             "dc:identifier": "5.3"
           },
           "fixtext": {
-            "+content": "If SELinux is applicable for your Linux OS, you should use it.\n1. Set the SELinux State.\n2. Set the SELinux Policy.\n3. Create or import a SELinux policy template for Docker containers.\n4. Start Docker in daemon mode with SELinux enabled. For example:\ndocker daemon --selinux-enabled\nor by adding the following to the daemon.json configuration file:\n{\n\"selinux-enabled\": true\n}\n5. Start your Docker container using the security options. For example,\ndocker run --interactive --tty --security-opt label=level:TopSecret centos\n/bin/bash",
+            "+content": "If SELinux is applicable for your Linux OS, you should use it.\n1. Set the SELinux State.\n2. Set the SELinux Policy.\n3. Create or import a SELinux policy template for Docker containers.\n4. Start Docker in daemon mode with SELinux enabled. For example:\ndocker daemon --selinux-enabled\nor by adding the following to the daemon.json configuration file:\nInternal Only - General\n{\n\"selinux-enabled\": true\n}\n5. Start your Docker container using the security options. For example,\ndocker run --interactive --tty --security-opt label=level:TopSecret centos\n/bin/bash",
             "+@fixref": "F-65178E0Er01_fix"
           },
           "fix": {
@@ -4424,7 +4220,7 @@
             "dc:identifier": "5.4"
           },
           "fixtext": {
-            "+content": "You should execute the command below to add required capabilities:\ndocker run --cap-add={\"Capability 1\",\"Capability 2\"} <Run arguments>\n<Container Image Name or ID> <Command>\nYou should execute the command below to remove unneeded capabilities:\ndocker run --cap-drop={\"Capability 1\",\"Capability 2\"} <Run arguments>\n<Container Image Name or ID> <Command>\nAlternatively, you could remove all the currently configured capabilities and then restore only the ones you specifically use:\ndocker run --cap-drop=all --cap-add={\"Capability 1\",\"Capability 2\"} <Run\narguments> <Container Image Name or ID> <Command>\nNote that some settings also can be configured using the --sysctl option, reducing the need for container capabilities even further. This includes unprivileged ICMP echo sockets without NET_RAW and allow opening any port less than 1024 without NET_BIND_SERVICE.\nAdding and removing capabilities are also possible when the docker service command is used:\ndocker service create --cap-drop=all --cap-add={\"Capability 1\",\"Capability\n2\"} <Run arguments> <Container Image Name or ID> <Command>",
+            "+content": "You should execute the command below to add required capabilities:\ndocker run --cap-add={\"Capability 1\",\"Capability 2\"} <Run arguments>\n<Container Image Name or ID> <Command>\nYou should execute the command below to remove unneeded capabilities:\ndocker run --cap-drop={\"Capability 1\",\"Capability 2\"} <Run arguments>\n<Container Image Name or ID> <Command>\nAlternatively, you could remove all the currently configured capabilities and then restore only the ones you specifically use:\nInternal Only - General\ndocker run --cap-drop=all --cap-add={\"Capability 1\",\"Capability 2\"} <Run\narguments> <Container Image Name or ID> <Command>\nNote that some settings also can be configured using the --sysctl option, reducing the need for container capabilities even further. This includes unprivileged ICMP echo sockets without NET_RAW and allow opening any port less than 1024 without NET_BIND_SERVICE.\nAdding and removing capabilities are also possible when the docker service command is used:\ndocker service create --cap-drop=all --cap-add={\"Capability 1\",\"Capability\n2\"} <Run arguments> <Container Image Name or ID> <Command>",
             "+@fixref": "F-2BC93B68r01_fix"
           },
           "fix": {
@@ -4529,7 +4325,7 @@
             "dc:identifier": "5.7"
           },
           "fixtext": {
-            "+content": "Uninstall the SSH daemon from the container and use and use docker exec to enter a container on the remote host.\ndocker exec --interactive --tty <CONTAINER ID> sh\nOR\ndocker attach <CONTAINER ID>",
+            "+content": "Uninstall the SSH daemon from the container and use and use docker exec to enter a container on the remote host.\ndocker exec --interactive --tty <CONTAINER ID> sh\nOR Internal Only - General\ndocker attach <CONTAINER ID>",
             "+@fixref": "F-BEBA8181r01_fix"
           },
           "fix": {
@@ -4599,7 +4395,7 @@
             "dc:identifier": "5.9"
           },
           "fixtext": {
-            "+content": "You should ensure that the Dockerfile for each container image only exposes needed ports. You can also completely ignore the list of ports defined in the Dockerfile by NOT using -P (UPPERCASE) or the --publish-all flag when starting the container. Instead, use the -p (lowercase) or --publish flag to explicitly define the ports that you need for a particular container instance.\nFor example:\ndocker run --interactive --tty --publish 5000 --publish 5001 --publish 5002\ncentos /bin/bash",
+            "+content": "You should ensure that the Dockerfile for each container image only exposes needed ports. You can also completely ignore the list of ports defined in the Dockerfile by NOT using -P (UPPERCASE) or the --publish-all flag when starting the container.\nInstead, use the -p (lowercase) or --publish flag to explicitly define the ports that you need for a particular container instance.\nFor example:\nInternal Only - General\ndocker run --interactive --tty --publish 5000 --publish 5001 --publish 5002\ncentos /bin/bash",
             "+@fixref": "F-B1D7EA0Ar01_fix"
           },
           "fix": {
@@ -4669,7 +4465,7 @@
             "dc:identifier": "5.11"
           },
           "fixtext": {
-            "+content": "You should run the container with only as much memory as it requires by using the -- memory argument.\nFor example, you could run a container using the command below:\ndocker run -d --memory 256m centos sleep 1000\nIn the example above, the container is started with a memory limit of 256 MB.\nVerify the memory settings by using the command below:\ndocker inspect --format='{{ .Id }}: Memory={{.HostConfig.Memory}}\nKernelMemory={{.HostConfig.KernelMemory}} Swap={{.HostConfig.MemorySwap}}'\n<CONTAINER ID>",
+            "+content": "You should run the container with only as much memory as it requires by using the -- memory argument.\nFor example, you could run a container using the command below:\ndocker run -d --memory 256m centos sleep 1000\nIn the example above, the container is started with a memory limit of 256 MB.\nVerify the memory settings by using the command below:\nInternal Only - General\ndocker inspect --format='{{ .Id }}: Memory={{.HostConfig.Memory}}\nKernelMemory={{.HostConfig.KernelMemory}} Swap={{.HostConfig.MemorySwap}}'\n<CONTAINER ID>",
             "+@fixref": "F-67384A53r01_fix"
           },
           "fix": {
@@ -4704,7 +4500,7 @@
             "dc:identifier": "5.12"
           },
           "fixtext": {
-            "+content": "You should manage the CPU runtime between your containers dependent on their priority within your organization. To do so start the container using the --cpu-shares argument.\nFor example, you could run a container as below:\ndocker run -d --cpu-shares 512 centos sleep 1000\nIn the example above, the container is started with CPU shares of 50% of what other containers use. So if the other container has CPU shares of 80%, this container will have CPU shares of 40%.\nEvery new container will have 1024 shares of CPU by default. However, this value is shown as 0 if you run the command mentioned in the audit section.\nIf you set one container’s CPU shares to 512 it will receive half of the CPU time compared to the other containers. So if you take 1024 as 100% you can then derive the number that you should set for respective CPU shares. For example, use 512 if you want to set it to 50% and 256 if you want to set it 25%.\nYou can also view the current CPU shares in the file /sys/fs/cgroup/cpu/docker/<CONTAINER ID>/cpu.shares.",
+            "+content": "You should manage the CPU runtime between your containers dependent on their priority within your organization. To do so start the container using the --cpu-shares argument.\nFor example, you could run a container as below:\nInternal Only - General\ndocker run -d --cpu-shares 512 centos sleep 1000\nIn the example above, the container is started with CPU shares of 50% of what other containers use. So if the other container has CPU shares of 80%, this container will have CPU shares of 40%.\nEvery new container will have 1024 shares of CPU by default. However, this value is shown as 0 if you run the command mentioned in the audit section.\nIf you set one container’s CPU shares to 512 it will receive half of the CPU time compared to the other containers. So if you take 1024 as 100% you can then derive the number that you should set for respective CPU shares. For example, use 512 if you want to set it to 50% and 256 if you want to set it 25%.\nYou can also view the current CPU shares in the file /sys/fs/cgroup/cpu/docker/<CONTAINER ID>/cpu.shares.",
             "+@fixref": "F-DB705DA4r01_fix"
           },
           "fix": {
@@ -4739,7 +4535,7 @@
             "dc:identifier": "5.13"
           },
           "fixtext": {
-            "+content": "You should add a --read-only flag at a container's runtime to enforce the container's root filesystem being mounted as read only.\ndocker run <Run arguments> --read-only <Container Image Name or ID> <Command>\nEnabling the --read-only option at a container's runtime should be used by administrators to force a container's executable processes to only write container data to explicit storage locations during its lifetime.\nExamples of explicit storage locations during a container's runtime include, but are not limited to:\n1. Using the --tmpfs option to mount a temporary file system for non-persistent data writes.\ndocker run --interactive --tty --read-only --tmpfs \"/run\" --tmpfs \"/tmp\"\ncentos /bin/bash\n2. Enabling Docker rw mounts at a container's runtime to persist container data directly on the Docker host filesystem.\ndocker run --interactive --tty --read-only -v /opt/app/data:/run/app/data:rw\ncentos /bin/bash\n3. Utilizing the Docker shared-storage volume plugin for Docker data volume to persist container data.\ndocker volume create -d convoy --opt o=size=20GB my-named-volume\ndocker run --interactive --tty --read-only -v my-named-volume:/run/app/data\ncentos /bin/bash\n3. Transmitting container data outside of the Docker controlled area during the container's runtime for container data in order to ensure that it is persistent.\nExamples include hosted databases, network file shares and APIs.",
+            "+content": "You should add a --read-only flag at a container's runtime to enforce the container's root filesystem being mounted as read only.\nInternal Only - General\ndocker run <Run arguments> --read-only <Container Image Name or ID> <Command>\nEnabling the --read-only option at a container's runtime should be used by administrators to force a container's executable processes to only write container data to explicit storage locations during its lifetime.\nExamples of explicit storage locations during a container's runtime include, but are not limited to:\n1. Using the --tmpfs option to mount a temporary file system for non-persistent data writes.\ndocker run --interactive --tty --read-only --tmpfs \"/run\" --tmpfs \"/tmp\"\ncentos /bin/bash\n2. Enabling Docker rw mounts at a container's runtime to persist container data directly on the Docker host filesystem.\ndocker run --interactive --tty --read-only -v /opt/app/data:/run/app/data:rw\ncentos /bin/bash\n3. Utilizing the Docker shared-storage volume plugin for Docker data volume to persist container data.\ndocker volume create -d convoy --opt o=size=20GB my-named-volume\ndocker run --interactive --tty --read-only -v my-named-volume:/run/app/data\ncentos /bin/bash\n3. Transmitting container data outside of the Docker controlled area during the container's runtime for container data in order to ensure that it is persistent.\nExamples include hosted databases, network file shares and APIs.",
             "+@fixref": "F-77122A4Er01_fix"
           },
           "fix": {
@@ -4774,7 +4570,7 @@
             "dc:identifier": "5.14"
           },
           "fixtext": {
-            "+content": "You should bind the container port to a specific host interface on the desired host port.\nFor example,\ndocker run --detach --publish 10.2.3.4:49153:80 nginx\nIn the example above, the container port 80 is bound to the host port on 49153 and would accept incoming connection only from the 10.2.3.4 external interface.",
+            "+content": "You should bind the container port to a specific host interface on the desired host port.\nFor example, Internal Only - General\ndocker run --detach --publish 10.2.3.4:49153:80 nginx\nIn the example above, the container port 80 is bound to the host port on 49153 and would accept incoming connection only from the 10.2.3.4 external interface.",
             "+@fixref": "F-A1D4E24Ar01_fix"
           },
           "fix": {
@@ -4786,7 +4582,7 @@
               "+@href": "CIS_Docker_Benchmark.xml",
               "+@name": "M"
             },
-            "check-content": "You should list all running instances of containers and their port mappings by executing the command below:\ndocker ps --quiet | xargs docker inspect --format '{{ .Id }}: Ports={{\n.NetworkSettings.Ports }}'\nThen review the list and ensure that the exposed container ports are bound to a specific interface and not to the wildcard IP address 0.0.0.0.\nFor example, if the command above returns the results below, this is non-compliant and the container can accept connections on any host interface on the specified port 49153.\nPorts=map[443/tcp:<nil> 80/tcp:[map[HostPort:49153 HostIp:0.0.0.0]]]\nHowever, if the exposed port is bound to a specific interface on the host as below, then this is configured in line with good security practice.\nPorts=map[443/tcp:<nil> 80/tcp:[map[HostIp:10.2.3.4 HostPort:49153]]]"
+            "check-content": "You should list all running instances of containers and their port mappings by executing the command below:\ndocker ps --quiet | xargs docker inspect --format '{{ .Id }}: Ports={{\n.NetworkSettings.Ports }}'\nThen review the list and ensure that the exposed container ports are bound to a specific interface and not to the wildcard IP address 0.0.0.0.\nFor example, if the command above returns the results below, this is non-compliant and the container can accept connections on any host interface on the specified port 49153.\nPorts=map[443/tcp:<nil> 80/tcp:[map[HostPort:49153 HostIp:0.0.0.0]]] However, if the exposed port is bound to a specific interface on the host as below, then this is configured in line with good security practice.\nPorts=map[443/tcp:<nil> 80/tcp:[map[HostIp:10.2.3.4 HostPort:49153]]]"
           }
         }
       },
@@ -4809,7 +4605,7 @@
             "dc:identifier": "5.15"
           },
           "fixtext": {
-            "+content": "If you wish a container to be automatically restarted, a sample command is as below:\ndocker run --detach --restart=on-failure:5 nginx",
+            "+content": "If you wish a container to be automatically restarted, a sample command is as below:\nInternal Only - General\ndocker run --detach --restart=on-failure:5 nginx",
             "+@fixref": "F-50CAC1F3r01_fix"
           },
           "fix": {
@@ -4856,7 +4652,7 @@
               "+@href": "CIS_Docker_Benchmark.xml",
               "+@name": "M"
             },
-            "check-content": "You should run the following command:\ndocker ps --quiet --all | xargs docker inspect --format '{{ .Id }}:\nPidMode={{ .HostConfig.PidMode }}'\nIf the command above returns host, it means that the host PID namespace is shared with its containers; any other result means that the system is configured in line with good security practice."
+            "check-content": "You should run the following command:\ndocker ps --quiet --all | xargs docker inspect --format '{{ .Id }}:\nPidMode={{ .HostConfig.PidMode }}'\nIf the command above returns host, it means that the host PID namespace is shared with its containers; any other result means that the system is configured in line with good security practice.\nInternal Only - General"
           }
         }
       },
@@ -4879,7 +4675,7 @@
             "dc:identifier": "5.17"
           },
           "fixtext": {
-            "+content": "You should not start a container with the --ipc=host argument. For example, do not start a container as below:\ndocker run --interactive --tty --ipc=host centos /bin/bash",
+            "+content": "You should not start a container with the --ipc=host argument. For example, do not start a container as below:\nInternal Only - General\ndocker run --interactive --tty --ipc=host centos /bin/bash",
             "+@fixref": "F-76C6AF8Er01_fix"
           },
           "fix": {
@@ -4926,7 +4722,7 @@
               "+@href": "CIS_Docker_Benchmark.xml",
               "+@name": "M"
             },
-            "check-content": "You should use the command below:\ndocker ps --quiet --all | xargs docker inspect --format '{{ .Id }}:\nDevices={{ .HostConfig.Devices }}'\nThe above command would list out each device with below information:\n• CgroupPermissions - For example, rwm\n• PathInContainer - Device path within the container\n• PathOnHost - Device path on the host You should verify that the host device is needed to be accessed from within the container and that the permissions required are correctly set. If the above command returns [], then the container does not have access to host devices and is configured in line with good security practice."
+            "check-content": "You should use the command below:\ndocker ps --quiet --all | xargs docker inspect --format '{{ .Id }}:\nDevices={{ .HostConfig.Devices }}'\nThe above command would list out each device with below information:\n• CgroupPermissions - For example, rwm\n• PathInContainer - Device path within the container\n• PathOnHost - Device path on the host Internal Only - General You should verify that the host device is needed to be accessed from within the container and that the permissions required are correctly set. If the above command returns [], then the container does not have access to host devices and is configured in line with good security practice."
           }
         }
       },
@@ -5255,7 +5051,7 @@
           "+@severity": "medium",
           "version": "5.28",
           "title": "Ensure that Docker commands always make use of the latest version of their image",
-          "description": "<VulnDiscussion>You should always ensure that you are using the latest version of the images within your repository and not cached older versions.\n\nRationale:\nMultiple Docker commands such as docker pull, docker run etc. are known to have an issue where by default, they extract the local copy of the image, if present, even though there is an updated version of the image with the same tag in the upstream repository.\nThis could lead to using older images containing known vulnerabilites.</VulnDiscussion>",
+          "description": "<VulnDiscussion>You should always ensure that you are using the latest version of the images within your repository and not cached older versions.\n\nRationale:\nMultiple Docker commands such as docker pull, docker run etc. are known to have an issue where by default, they extract the local copy of the image, if present, even though there is an updated version of the image with the same tag in the upstream repository. This could lead to using older images containing known vulnerabilites.</VulnDiscussion>",
           "reference": {
             "dc:title": "CIS Docker Benchmark",
             "dc:publisher": "CIS",
@@ -5439,7 +5235,7 @@
             "dc:identifier": "6.1"
           },
           "fixtext": {
-            "+content": "You should keep only the images that you actually need and establish a workflow to remove old or stale images from the host. Additionally, you should use features such as pull-by-digest to get specific images from the registry.\nYou can follow the steps below to find unused images on the system so they can be deleted.\nStep 1 Make a list of all image IDs that are currently instantiated by executing the command below:\ndocker images --quiet | xargs docker inspect --format '{{ .Id }}: Image={{\n.Config.Image }}'\nStep 2: List all the images present on the system by executing the command below:\ndocker images\nStep 3: Compare the list of image IDs created from Step 1 and Step 2 to find out images which are currently not being instantiated.\nStep 4: Decide if you want to keep the images that are not currently in use. If they are not needed, delete them by executing the following command:\ndocker rmi <IMAGE ID>\nAlternatively, the docker system prune command can be used to remove dangling images which are not tagged or, if necessary, all images that are not currently used by a running container when used with the -a option.",
+            "+content": "You should keep only the images that you actually need and establish a workflow to remove old or stale images from the host. Additionally, you should use features such as pull-by-digest to get specific images from the registry.\nYou can follow the steps below to find unused images on the system so they can be deleted.\nStep 1 Make a list of all image IDs that are currently instantiated by executing the command below:\nInternal Only - General\ndocker images --quiet | xargs docker inspect --format '{{ .Id }}: Image={{\n.Config.Image }}'\nStep 2: List all the images present on the system by executing the command below:\ndocker images\nStep 3: Compare the list of image IDs created from Step 1 and Step 2 to find out images which are currently not being instantiated.\nStep 4: Decide if you want to keep the images that are not currently in use. If they are not needed, delete them by executing the following command:\ndocker rmi <IMAGE ID>\nAlternatively, the docker system prune command can be used to remove dangling images which are not tagged or, if necessary, all images that are not currently used by a running container when used with the -a option.",
             "+@fixref": "F-A1AACB11r01_fix"
           },
           "fix": {
@@ -5535,7 +5331,7 @@
           "+@severity": "medium",
           "version": "7.2",
           "title": "Ensure that swarm services are bound to a specific host interface",
-          "description": "<VulnDiscussion>By default, Docker swarm services will listen on all interfaces on the host. This may not be necessary for the operation of the swarm where the host has multiple network interfaces.\n\nRationale:\nWhen a swarm is initialized the default value for the --listen-addr flag is 0.0.0.0:2377 which means that swarm services will listen on all interfaces on the host. If a host has multiple network interfaces this may be undesirable as it could expose swarm services to networks which are not involved with the operation of the swarm.\nBy passing a specific IP address to the --listen-addr, a specific network interface can be specified, limiting this exposure.</VulnDiscussion>",
+          "description": "<VulnDiscussion>By default, Docker swarm services will listen on all interfaces on the host. This may not be necessary for the operation of the swarm where the host has multiple network interfaces.\n\nRationale:\nWhen a swarm is initialized the default value for the --listen-addr flag is 0.0.0.0:2377 which means that swarm services will listen on all interfaces on the host.\nIf a host has multiple network interfaces this may be undesirable as it could expose swarm services to networks which are not involved with the operation of the swarm.\nBy passing a specific IP address to the --listen-addr, a specific network interface can be specified, limiting this exposure.</VulnDiscussion>",
           "reference": {
             "dc:title": "CIS Docker Benchmark",
             "dc:publisher": "CIS",
@@ -5649,7 +5445,7 @@
             "dc:identifier": "7.5"
           },
           "fixtext": {
-            "+content": "If you are initializing a swarm, use the command below.\ndocker swarm init --autolock\nIf you want to set --autolock on an existing swarm manager node, use the following command.\ndocker swarm update --autolock",
+            "+content": "If you are initializing a swarm, use the command below.\nInternal Only - General\ndocker swarm init --autolock\nIf you want to set --autolock on an existing swarm manager node, use the following command.\ndocker swarm update --autolock",
             "+@fixref": "F-37D90CFEr01_fix"
           },
           "fix": {

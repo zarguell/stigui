@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?><Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd" id="CIS_Microsoft_Intune_MDM_Service_Desktop_Mobile_STIG_Benchmark" xml:lang="en" xmlns="http://checklists.nist.gov/xccdf/1.1">
+  <status date="2025-04-22">accepted</status>
+  <title>CIS Microsoft Intune MDM Service Desktop &amp; Mobile STIG Benchmark</title>
+  <description>Target Technology Details Microsoft Intune MDM Service Desktop &amp; Mobile Secure Technical Implementation Guide (STIG) Version: 1 Release: 1 Benchmark Date: 22 Apr 2025</description>
+  <notice id="terms-of-use" xml:lang="en"/>
+  <front-matter xml:lang="en"/>
+  <rear-matter xml:lang="en"/>
+  <reference href="https://www.cisecurity.org/cis-benchmarks">
+    <dc:publisher>Center for Internet Security</dc:publisher>
+    <dc:source>CIS Benchmarks</dc:source>
+  </reference>
+  <plain-text id="release-info">Release: 1.0.0 Benchmark Date: 2025-04-22</plain-text>
+  <version>1.0.0</version>
+  <Profile id="CIS-Benchmark-All-Recommendations_Public">
+    <title>CIS Benchmark - All Recommendations</title>
+    <description>CIS profile: CIS Benchmark - All Recommendations</description>
+    <select idref="V-273867" selected="true"/>
+    <select idref="V-273868" selected="true"/>
+  </Profile>
+  <Profile id="CIS-Benchmark-All-Recommendations_Classified">
+    <title>CIS Benchmark - All Recommendations</title>
+    <description>CIS profile: CIS Benchmark - All Recommendations</description>
+    <select idref="V-273867" selected="true"/>
+    <select idref="V-273868" selected="true"/>
+  </Profile>
+  <Profile id="CIS-Benchmark-All-Recommendations_Sensitive">
+    <title>CIS Benchmark - All Recommendations</title>
+    <description>CIS profile: CIS Benchmark - All Recommendations</description>
+    <select idref="V-273867" selected="true"/>
+    <select idref="V-273868" selected="true"/>
+  </Profile>
+  <Group id="V-273867">
+    <title>1 STIG RULES</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-273867r1101448_rule" weight="10.0" severity="medium">
+      <version>1.1</version>
+      <title>MSIN-25-000030</title>
+      <description>&lt;VulnDiscussion&gt;Microsoft Intune service must initiate a session lock after a 15-minute period of inactivity.
+
+Rationale:
+A session time-out lock is a temporary action taken when a user stops work and moves away from the immediate physical vicinity of the information system but does not log out because of the temporary nature of the absence. Rather than relying on the user to manually lock their application session prior to vacating the vicinity, applications need to be able to identify when a user's application session has idled and take action to initiate the session lock.
+The session lock is implemented at the point where session activity can be determined and/or controlled. This is typically at the operating system level and results in a system lock but may be at the application level where the application interface window is secured instead.
+Satisfies: SRG-APP-000003-UEM-000003, SRG-APP-000295-UEM-000169&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Intune MDM Service Desktop &amp; Mobile STIG Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Intune MDM Service Desktop &amp; Mobile STIG Benchmark</dc:subject>
+        <dc:identifier>1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-SV-273867r1101448_fix">Sign in to portal.office365.com (or .us if the user is a GCCH or DOD tenant).
+1. Navigate to Admin &gt;&gt; Settings &gt;&gt; Org Settings &gt;&gt; Security and Privacy (tab on top of page) &gt;&gt; Idle Session Timeout.
+2. Select the check box to enable "Turn on to set the period of inactivity".
+3. Select custom option, then enter "15".
+4. Select "Save".</fixtext>
+      <fix id="F-SV-273867r1101448_fix"/>
+      <check system="C-SV-273867r1101448_chk">
+        <check-content-ref href="CIS_Microsoft_Intune_MDM_Service_Desktop_Mobile_STIG_Benchmark.xml" name="M"/>
+        <check-content>To verify the inactivity timeout is configured for 15 minutes or less, follow the steps outlined below:
+1. Sign in to portal.office365.com (or .us if the user is a GCCH or DOD tenant).
+2. Navigate to Admin &gt;&gt; Settings &gt;&gt; Org Settings &gt;&gt; Security and Privacy (tab on top of page) &gt;&gt; Idle Session Timeout.
+3. Select the check box to enable "Turn on to set the period of inactivity".
+4. Select custom option, then verify it has been set to 15.
+If the inactivity timeout is not set to 15 minutes or less, this is a finding.
+Internal Only - General</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-273868">
+    <title>1 STIG RULES</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-273868r1101588_rule" weight="10.0" severity="medium">
+      <version>1.2</version>
+      <title>MSIN-25-000370</title>
+      <description>&lt;VulnDiscussion&gt;Microsoft Intune service must be configured to transfer Intune logs to another server for storage, analysis, and reporting at least every seven days.
+
+Rationale:
+Note: UEM server logs include logs of UEM events and logs transferred to Microsoft Intune service by UEM agents of managed devices.
+Protection of log data includes ensuring log data is not accidentally lost or deleted.
+Backing up audit records to a different system or onto separate media than the system being audited on an organizationally defined frequency helps ensure, in the event of a catastrophic system failure, the audit records will be retained.
+This helps to ensure a compromise of the information system being audited does not also result in a compromise of the audit records.
+This requirement only applies to applications that have a native backup capability for audit records. Operating system backup requirements cover applications that do not provide native backup functions.
+Satisfies: SRG-APP-000125-UEM-000074, SRG-APP-000275-UEM-000157, SRG- APP-000358-UEM-000228 Internal Only - General&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Intune MDM Service Desktop &amp; Mobile STIG Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Intune MDM Service Desktop &amp; Mobile STIG Benchmark</dc:subject>
+        <dc:identifier>1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-SV-273868r1101588_fix">There are many methods for off-loading Intune logs, including downloading to a third- party log management server and sending logs to Azure Storage, Event Hubs, or Log Analytics, which are all part of Diagnostics Settings in Intune. Procedures will vary depending on which log management process is used at the site.
+If the site is sending logs to Azure Monitor, follow the setup procedures found here:
+https://learn.microsoft.com/en-us/mem/intune-service/fundamentals/review-logs-using- azure-monitor 1. Sign in to the Microsoft Intune admin center.
+2. Select Reports &gt;&gt; Diagnostics settings. The first time opening it, turn it on.
+Otherwise, add a setting.
+If the Azure subscription is not shown, navigate to the top right corner, select the signed in account, and choose "Switch directory". Enter the Azure subscription account, if necessary.
+3. Enter the following properties:
+• Name: Enter a name for the diagnostic settings. This setting includes all the properties entered. For example, enter Route audit logs to storage account.
+• Archive to a storage account: Saves the log data to an Azure Storage account.
+To save or archive the data, choose this option, then select "Configure". Choose an existing storage account from the list, then click "OK".
+• Stream to an event hub: Streams the logs to Azure Event Hubs. To have analytics on log data using SIEM tools such as Splunk and QRadar, choose this option, then select "Configure". Choose an existing Event Hubs namespace and policy from the list, then click "OK".
+• Send to Log Analytics: Sends the data to Azure Log Analytics. To use visualizations, monitoring and alerting for logs, choose this option, then select "Configure". Create a new workspace and enter the workspace details or choose an existing workspace from the list, then click "OK".
+• LOG &gt; AuditLogs: Choose this option to send the Intune audit logs to the storage account, Event Hubs, or Log Analytics. The audit logs show the history of every task that generates a change in Intune, including who did it and when. For more information, go to IntuneAuditLogs.
+Note: If using a storage account, enter how many days to keep the data (retention). To keep data forever, set Retention (days) to "0".
+• LOG &gt; OperationalLogs: Operational logs show the success or failure of users and devices that enroll in Intune, and details on noncompliant devices. Choose this option to send the enrollment logs to the storage account, Event Hubs, or Log Analytics. For more information, go to IntuneOperationalLogs.
+To use a storage account, enter how many days to keep the data (retention). To keep data forever, set Retention (days) to "0".
+• LOG &gt; DeviceComplianceOrg: Device compliance organizational logs show the organizational report for Device Compliance in Intune and details of noncompliant devices. Choose this option to send the compliance logs to the storage account, Event Hubs, or Log Analytics. For more information, go to Internal Only - General IntuneDeviceComplianceOrg.
+To use a storage account, enter how many days to keep the data (retention). To keep data forever, set Retention (days) to "0".
+• LOG &gt; IntuneDevices: The Intune Device log shows device inventory and status information for Intune enrolled and managed devices. Choose this option to send the IntuneDevices logs to your storage account, Event Hubs, or Log Analytics.
+For more reference information, go to IntuneDevices.
+Note: To use a storage account, enter how many days to keep the data (retention). To keep data forever, set Retention (days) to "0".
+4. Save the changes. The setting is shown in the list. Once the settings are created, settings can be changed by selecting Edit setting &gt;&gt; Save.</fixtext>
+      <fix id="F-SV-273868r1101588_fix"/>
+      <check system="C-SV-273868r1101588_chk">
+        <check-content-ref href="CIS_Microsoft_Intune_MDM_Service_Desktop_Mobile_STIG_Benchmark.xml" name="M"/>
+        <check-content>Verify the site has configured Intune to off-load Intune logs to a third-party log management server or to an Azure log storage and monitoring service like Azure monitor. Verification procedures are determined by the method used at the site. Ask the site Intune Administrator how logs are managed by the site and demonstrate that Intune logs are being off-loaded.
+If site is off-loading Intune logs to the Azure monitor, do the following (refer to https://learn.microsoft.com/en-us/mem/intune-service/fundamentals/review-logs-using- azure-monitor):
+1. Sign in to the Microsoft Intune admin center.
+2. Select Reports &gt;&gt; Diagnostics settings.
+3. Verify logs are being sent to the Azure monitor:
+a. A storage account has been configured.
+b. A Stream has been configured to stream logs to the Azure Event Hubs.
+c. Intune logs have been configured to be sent to Log Analytics.
+If the site is not transferring Intune audit logs to a third-party audit log management server or to an Azure audit log storage and monitoring service, this is a finding.
+Internal Only - General</check-content>
+      </check>
+    </Rule>
+  </Group>
+</Benchmark>
+

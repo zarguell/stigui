@@ -1,0 +1,1684 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_AWS_End_User_Compute_Services_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2025-07-01"
+    },
+    "title": "CIS AWS End User Compute Services Benchmark",
+    "description": "All CIS Benchmarks™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Internal Only - General Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Internal Only - General Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completes successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Internal Only - General Target Technology Details This document provides prescriptive guidance for configuring security options for the services within End User Computing category in AWS. This Benchmark is intended to be used in conjunction with the CIS Amazon Web Services Foundations Benchmark. For more information about this approach see the Introduction section of this document. The specific AWS Services in scope for this document include: • Amazon WorkSpaces • Amazon Workspaces Web • Amazon WorkDocs • Amazon AppStream 2.0 To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at benchmarkinfo@cisecurity.org.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.2.0 Benchmark Date: 2025-07-01",
+      "+@id": "release-info"
+    },
+    "version": "1.2.0",
+    "Profile": [
+      {
+        "+@id": "L1_Public",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-7CFBACFF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B6763489",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2DA9A336",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B2E80CF2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D3ADAD4F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F2BB4705",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5598794B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B287B59",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B54CB99",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-089B95B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4CEBA6A1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-70905DB5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-74135CEB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD9B02F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B0506D2E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A540864C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5722A109",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-59A048ED",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC3221E7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1DE6AFBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-02C99896",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-23466C2F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-95C571B2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-87EA0603",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D29780D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B359B85A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-947BD578",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28CCF9A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9C1E4C81",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Classified",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-7CFBACFF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B6763489",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2DA9A336",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B2E80CF2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D3ADAD4F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F2BB4705",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5598794B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B287B59",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B54CB99",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-089B95B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4CEBA6A1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-70905DB5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-74135CEB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD9B02F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B0506D2E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A540864C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5722A109",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-59A048ED",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC3221E7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1DE6AFBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-02C99896",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-23466C2F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-95C571B2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-87EA0603",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D29780D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B359B85A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-947BD578",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28CCF9A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9C1E4C81",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Sensitive",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-7CFBACFF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B6763489",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2DA9A336",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B2E80CF2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D3ADAD4F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F2BB4705",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5598794B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B287B59",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B54CB99",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-089B95B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4CEBA6A1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-70905DB5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-74135CEB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD9B02F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B0506D2E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A540864C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5722A109",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-59A048ED",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC3221E7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1DE6AFBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-02C99896",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-23466C2F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-95C571B2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-87EA0603",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D29780D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B359B85A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-947BD578",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-28CCF9A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9C1E4C81",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Public",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-1825DAD0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FD0BD93A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A164AE8A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E669D2B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D17F4E5",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Classified",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-1825DAD0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FD0BD93A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A164AE8A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E669D2B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D17F4E5",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Sensitive",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-1825DAD0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FD0BD93A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A164AE8A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E669D2B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D17F4E5",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-7CFBACFF",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7CFBACFFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1",
+          "title": "Ensure Administration of WorkSpaces is defined using IAM",
+          "description": "<VulnDiscussion>To allow users to administer Amazon WorkSpaces, IAM policies must be created and attached with the required permissions to an IAM Principal used for administration of Amazon WorkSpaces. An IAM Principal may be a IAM Role or an IAM User, or an IAM User Group with Users within the User Group.\nAWS has an AWS Managed Policy, AmazonWorkSpacesAdmin that grants permissions to administer Amazon WorkSpaces. A custom managed policy or inline policy may be used to grant WorkSpaces permissions to the IAM Principal\n\nRationale:\nCreating and managing Workspaces specific users is not done in AWS IAM. Creating and managing Workspaces specific users is done within the Workspace service console. In order to properly administer Workspaces specific users, an IAM Principal with proper permissions must be created.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.1"
+          },
+          "fixtext": {
+            "+content": "If the IAM Principal for WorkSpaces Administration exists but does not have the policy attached.\nFrom the Console:\n1. Login to the IAM console at https://console.aws.amazon.com/iam/.\n2. In the left pane click on either User Groups, Users, or Roles 3. Click the proper IAM Principal.\n4. Click on the Permissions tab 5. Click on Attach Policy.\n6. Select the AmazonWorkSpacesAdmin Policy or attach the desired Managed Policy.\n7. Click Attach Policy From the Console 1. Login to the IAM console at https://console.aws.amazon.com/iam/.\n2. In the left pane click on Groups 3. Select the Group.\n4. Click on the Permissions tab 5. Click on Attach Policy.\n6. Select the AmazonWorkSpacesAdmin Policy 7. Click Attach Policy From the Command Line:\n1. Attach the AmazonWorkSpacesAdmin policy by running the aws iam attach- role-policy command Internal Only - General\naws iam attach-role-policy --policy-arn\narn:aws:iam::aws:policy/AmazonWorkSpacesAdmin --role-name\n<WorkSpaces_Admin_Role>",
+            "+@fixref": "F-7CFBACFFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-7CFBACFFr01_fix"
+          },
+          "check": {
+            "+@system": "C-7CFBACFF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine what policies are created and how the policies are used:\nFrom the Console:\n1. Login in and open the IAM console at https://console.aws.amazon.com/iam/.\n2. In the left pane click on User Groups, Users, or Roles.\n3. Click on the IAM Principal (User, Group, or Role) that is to be used to administer Workspaces.\n4. Click on Permissions and confirm that the AmazonWorkSpacesAdmin policy or the proper permissions are attached.\nFrom the Command Line:\n1. Run the appropriate command to determine permissions for the IAM Principal.\nsuch as list-attached-role-policies for attached managed policies or get- role-policy for inline policies.\nInternal Only - General\naws iam list-attached-role-policies --role-name <workspace_group_name>\nIf the AWS managed policy or a custom WorkSpaces Admin policy is not attached to the IAM Principal for administration of Workspaces, refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-1825DAD0",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1825DAD0r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.2",
+          "title": "Ensure MFA is enabled for WorkSpaces users",
+          "description": "<VulnDiscussion>Multi-Factor Authentication (MFA) adds an extra layer of authentication assurance beyond traditional username and password. With MFA enabled, when a user signs in to Amazon WorkSpaces, they will be prompted for their user name and password as well as for an authentication code from their physical or virtual MFA token. It is recommended that MFA be enabled for all accounts that utilize WorkSpaces.\n\nRationale:\nEnabling MFA provides increased security to a username and password as it requires the user to have a virtual or physical hardware solution that displays a time-sensitive code.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.2"
+          },
+          "fixtext": {
+            "+content": "Perform the steps below to enable multi-factor authentication for WorkSpaces From the console:\nFor AWS Managed Microsoft AD based Workspaces Environments:\n1. Identify the IP address of your RADIUS MFA server and your AWS Managed Microsoft AD directory.\n2. In the AWS Directory Service console navigation pane, select Directories.\n3. Choose the directory ID link for your AWS Managed Microsoft AD directory.\n4. On the Directories page, scroll to the Multi-factor authentication section.\n5. In the Multi-factor authentication section, click Actions, and then click Enable.\n6. On the Enable multi-factor authentication (MFA) page, provide the following values:\n• Display label - Provide a label name.\n• RADIUS server DNS name or IP addresses Note - AWS Directory Service does not support RADIUS Challenge/Response authentication.\n• Port - default 1812\n• Shared secret code\n• Confirm shared secret code\n• Protocol - MS-CHAPv2\n• Server timeout (in seconds) - 20\n• Max RADIUS request retries - 3 *** Multi-factor authentication is available when the RADIUS Status changes to Enabled.\n7. Click Enable.\nFor AD Connector based Workspaces Environments:\n1. Identify the IP address and port of your RADIUS MFA server and, your AWS Managed Microsoft AD Connector Identifier.\n2. In the AWS Workspaces console navigation pane, select Directories.\nInternal Only - General 3. Choose the directory ID link for your AWS Managed Microsoft AD directory connector.\n4. On the Directories page, scroll to the Multi-factor authentication section and select Edit.\n5. In the Multi-factor authentication section, select Enable Multi-factor authentication.\n6. On the Multi-Factor Authentication section, provide the following values:\n• RADIUS server DNS name (s) or IP address (s)\n• Port - default 1812\n• Shared secret code\n• Confirm shared secret code\n• Protocol - MS-CHAPv2\n• Server timeout (in seconds) - 20\n• Max RADIUS request retries - 3 *** Multi-factor authentication is available when the RADIUS Status changes to Enabled.\n7. Click Save",
+            "+@fixref": "F-1825DAD0r01_fix"
+          },
+          "fix": {
+            "+@id": "F-1825DAD0r01_fix"
+          },
+          "check": {
+            "+@system": "C-1825DAD0_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Preform the following steps to check multi-factor authentication is enabled for WorkSpaces From the Console:\nFor AWS Managed AD Authenticated Amazon Workspaces Environments:\n1. Identify the IP address of your RADIUS MFA server and your AWS Managed Microsoft AD directory.\n2. In the AWS Directory Service console navigation pane, select Directories.\n3. Choose the directory ID link for your AWS Managed Microsoft AD directory.\n4. On the Directories page, scroll to the Multi-factor authentication section.\n5. In the Multi-factor authentication section, confirm that it is enabled and that Radius Status is completed.\nFor Self-Managed AD (with AD Connector) Amazon Workspaces Environments:\n1. Identify the IP address and port of your RADIUS MFA server and your AWS Managed Microsoft AD Connector Identifier.\n2. In the AWS Workspaces console navigation pane, select Directories.\n3. Choose the directory ID link for your AWS Managed Microsoft AD connector.\nInternal Only - General 4. On the Directories page, select the Actions > Update Details.\n5. In the Multi-factor authentication section, confirm that it is enabled and that Radius Status is completed, Enable Multi-Factor Authentication is checked and the IP Address of your Radius MFA server matches that of the RADIUS server IP address(es) field.\nIf it is not enabled or the Radius status is in another state refer to the remediation steps below."
+          }
+        }
+      },
+      {
+        "+@id": "V-B6763489",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B6763489r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.3",
+          "title": "Ensure WorkSpace volumes are encrypted.",
+          "description": "<VulnDiscussion>Encrypt WorkSpaces root volume (C:drive for Windows and root for Amazon Linux) and user volume (D:drive for Windows and /home for Amazon Linux).\n\nRationale:\nWhen you launch a WorkSpace, you can encrypt the root volume and the user volume.\nThis ensures that the data stored at rest for WorkSpaces is encrypted.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.3"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to encrypt WorkSpace volumes From the Console:\n1. Login to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. Click Launch WorkSpaces and complete the first three steps.\n3. For the WorkSpaces Configuration step, do the following:\n- Select the volumes to encrypt: Root Volume, User Volume, or both\nvolumes.\n- For Encryption Key, select an AWS KMS CMK. The CMK that you select must\nbe symmetric.\n4. Click Next Step.\n5. Click Launch WorkSpaces.\nNOTE:\nTo encrypt existing AWS WorkSpaces data you must re-create the necessary WorkSpaces instances with the volumes encryption feature enabled as outlined above.\nFrom the Command line:\n1. Run the create-workspaces command\naws workspaces create-workspaces --workspaces DirectoryId=`your_directoryID`,\nUserName=`user_for_workspace`, BundleId=`bundle_to_build`,\nVolumeEncryptionKey=`AWS_KMS_customer_master_key_(CMK)`,\nUserVolumeEncryptionEnabled=`true`, RootVolumeEncryptionEnabled='true',\nWorkspaceProperties={RunningMode=`AUTO_STOP`,\nRunningModeAutoStopTimeoutInMinutes=`10`, RootVolumeSizeGib=`root_GB`,\nUserVolumeSizeGib=`user_GB`, ComputeTypeName=`STANDARD`}\n2. You will receive output highlighting:\n- FailedRequests - Will contain information about the WorkSpaces that could\nnot be created, and the command failed\n- PendingRequests - Will contain information about the WorkSpaces that were\ncreated and the command was successful.",
+            "+@fixref": "F-B6763489r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B6763489r01_fix"
+          },
+          "check": {
+            "+@system": "C-B6763489_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to confirm that data at rest is encrypted for WorkSpaces From the Console:\n1. Login to the WorkSpaces dashboard at https://console.aws.amazon.com/workspaces/.\n2. In the left pane click WorkSpaces to access the instances listing page.\n3. Check the storage volume(s) encryption status for each Amazon WorkSpaces instance available in the current AWS region\n• It will be listed in the Volume Encryption column If the value listed in the Volume Encryption column is Disabled, the selected AWS WorkSpaces instance volumes are not encrypted.\n4. Change the AWS region from the navigation bar and repeat step 3 for all other regions.\nFrom the Command line:\n1. Run describe-workspaces command (OSX/Linux/UNIX) using custom query filters to list the IDs of all AWS WorkSpaces instances available within the selected region:\nInternal Only - General\naws workspaces describe-workspaces --region us-east-1 --output table --query\n'Workspaces[*].WorkspaceId'\n2. The command output should return a table with the requested WorkSpaces IDs:\n--------------------\n|DescribeWorkspaces|\n+------------------+\n| ws-aaabbbccc |\n| ws-ccceeefff |\n+------------------+\n3. Execute again describe-workspaces command (OSX/Linux/UNIX) using the name of the WorkSpaces instance as identifier and custom query filters to get the encryption status for both root and user storage volumes:\naws workspaces describe-workspaces --region us-east-1 --workspace-ids ws-\naaabbbccc --query\n'Workspaces[*].[RootVolumeEncryptionEnabled,UserVolumeEncryptionEnabled]'\n4. The command output should return the encryption status (flag) for both root and user instance volumes (true for enabled, false for disabled):\n[\n[\nfalse,\nfalse\n]\n]\nIf the returned flag value for both root and user volumes is false (as shown in the output example above), the selected AWS WorkSpaces instance volumes are not encrypted.\n5. Repeat step 3 and 4 to verify the storage volumes encryption status for other AWS WorkSpaces instances provisioned in the current region.\n6. Change the AWS region by updating the --region command parameter value and repeat steps 1 - 5 to perform the audit process for other regions.\nIf the selected AWS WorkSpaces instance volumes are not encrypted, refer to the remediation procedure below.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-2DA9A336",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2DA9A336r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4",
+          "title": "Ensure WorkSpaces are deployed in their own virtual private cloud",
+          "description": "<VulnDiscussion>Amazon WorkSpaces VPC should be created with two private subnets for your WorkSpaces and a NAT gateway in a public subnet.\n\nRationale:\nThe NAT gateway will provide WorkSpaces access to the internet for updates to the operating system and so that applications can be deployed using Amazon WorkSpaces Application Manager if that is applicable for your environment.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.4"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to create a VPC for Workspaces From the Console:\nAllocate an Elastic IP Address 1. Login in to the VPC console at https://console.aws.amazon.com/vpc/ 2. In the left pane, click Elastic IPs.\n3. Click Allocate new address.\n4. On the Allocate new address page, for iPv4 address pool, click Amazon pool or Owned by me 5. Click Allocate.\n6. Make a note of the Elastic IP address, click Close.\nCreate a VPC with one public subnet and two private subnets as follows.\n1. Login in to the VPC console at https://console.aws.amazon.com/vpc/ 2. In the left pane, click VPC Dashboard in the upper-left corner.\n3. Click Launch VPC Wizard.\n4. Click VPC with Public and Private Subnets 5. Click Select.\n6. Configure the VPC as follows:\nInternal Only - General\n- For IPv4 CIDR block, enter the CIDR block from the private (non-publicly\nroutable) IP address ranges. - example 10.0.0.0/16.\n- For IPv6 CIDR Block, keep `No IPv6 CIDR Block`.\n- For VPC name, enter a `name for the VPC` (example: WorkspacesVPC)\n- Public subnet's IPv4 CIDR - enter a CIDR block from the private (non-\npublicly routable) IP address range - ie. 10.0.0.0/24.\n- For Availability Zone, keep `No Preference`.\n- For Public subnet name, enter a `name for the subnet` (example: WorkSpaces\nPublic Subnet).\n- For Private subnet's IPv4 CIDR, enter the CIDR block for the subnet.\n- `Availability Zone` - Accept the default value - No Preference\n- For Private subnet name, enter a `name for the subnet` (example: WorkSpaces\nPrivate Subnet 1).\n- For Elastic IP Allocation ID, enter the Elastic IP address that you\ncreated.\n- For Service endpoints, `do nothing`.\n- For Enable DNS hostnames, keep `Yes`.\n- For Hardware tenancy, keep `Default`.\n7. Click Create VPC. Note that it takes several minutes to set up your VPC. After the VPC is created.\n8. Click OK.\nCreate a Second Private Subnet 1. In the left pane, click Subnets.\n2. Click Create Subnet.\n- For Name tag, enter a `name for the private subnet` (example: WorkSpaces\nPrivate Subnet 2).\n- For VPC, `select the VPC` that you created.\n- For Availability Zone. Make sure you select a different Availability Zone\nfrom the one used in WorkSpaces Private Subnet 1.\n- For IPv4 CIDR block, enter the CIDR block for the subnet.\n3. Click Create.\nVerify and Name the Route Tables for Public 1. In the left pane, click Subnets 2. Click the public subnet that you created. (example: WorkSpaces Public Subnet) 3. On the Route Table tab, choose the ID of the route table (example: rtb- 12345678).\n4. Click the route table.\n5. Under Name, choose the edit icon, enter a name (example: workspaces-public- routetable) 6. Click the check mark to save the name.\nInternal Only - General 7. On the Routes tab, verify that there is one route for local traffic and another route that sends all other traffic to the internet gateway for the VPC.\nVerify and Name the Route Tables for Private 1. In the left pane, click Subnets 2. Click the private subnet 1 that you created. (example: WorkSpaces Private Subnet 1) 3. On the Route Table tab, choose the ID of the route table (example: rtb- 12345678).\n4. Click the route table.\n5. Under Name, choose the edit icon, enter a name (example: workspaces- private-routetable) 6. Click the check mark to save the name.\n7. On the Routes tab, verify that there is one route for local traffic and another route that sends all other traffic to the NAT gateway.\n8. Repeat steps 1-7 under Verify and Name the Route Tables for Private' for WorkSpaces Private Subnet 2`",
+            "+@fixref": "F-2DA9A336r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2DA9A336r01_fix"
+          },
+          "check": {
+            "+@system": "C-2DA9A336_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to confirm that a VPC exists for WorkSpaces and is configured correctly.\nFrom the Console:\n1. Login to the VPC console at https://console.aws.amazon.com/vpc/ 2. In the left pane, click Your VPC's 3. Select the VPC for WorkSpaces 4. Confirm the IPv4 settings are using a CIDR block from the private (non-publicly routable) IP address ranges. For example, 10.0.0.0/16. For more information, see the references below.\n5. Confirm the IPv6 CIDR Block, set to No.\n6. Confirm the IPv4 CIDR block for the public subnet (example - WorkSpaces Public Subnet)\n• Availability Zone, set to No Preference.\n7. Confirm the IPv4 CIDR block for the first private subnet (example - WorkSpaces Private Subnet 1) Internal Only - General\n- Availability Zone, set for Amazon WorkSpaces.\n- Elastic IP Allocation ID\n- Service endpoints - `Blank`\n- Enable DNS hostnames, set to `Yes`.\n- Hardware tenancy, Default.\n8. Confirm the IPv4 CIDR block for the first private subnet (example - WorkSpaces Private Subnet 2)\n- Availability Zone set for Amazon WorkSpaces.\nNOTE-Make sure you select a different Availability Zone from the one you\nselected for the Workspaces Private Subnet 1\n- Elastic IP Allocation ID\n- Service endpoints - Blank\n- Enable DNS hostnames, set to `Yes`.\n- Hardware tenancy, Default.\nIf this is not set as referenced above refer to the remediation procedure below."
+          }
+        }
+      },
+      {
+        "+@id": "V-B2E80CF2",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B2E80CF2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5",
+          "title": "Ensure WorkSpaces traffic is controlled and routed through a NAT Gateway.",
+          "description": "<VulnDiscussion>A network address translation (NAT) gateway enables instances in a private subnet to connect to the internet or other AWS services, but prevents the internet from initiating a direct connection with those instances.\n\nRationale:\nWorkSpaces must have access to the internet so that you can install updates to the operating system and deploy applications.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.5"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to create a NAT gateway From the Console:\n1. Login to the VPC console at https://console.aws.amazon.com/vpc/ 2. In the left pane, click NAT Gateways 3. Click Create NAT Gateway.\n4. For NAT Gateway settings Internal Only - General\n- Name - although optional use something to identify it with WorkSpaces\n- Specify the subnet in which to create the NAT gateway\n- Select the Elastic IP Allocation ID\n5. Click Create a NAT Gateway.\n_The NAT gateway will display in the console and after a few moments, its status will change to Available.\nIf the NAT gateway goes to a status of Failed, there was an error during creation._ After you've created your NAT gateway, you must update your route tables for your private subnets to point internet traffic to the NAT gateway.\nTo create a route for a NAT gateway 1. Log in to the VPC console at https://console.aws.amazon.com/vpc/.\n2. In the left pane, Click Route Tables.\n3. Select the route table associated with your private subnet.\n4. Click Routes tab.\n5. Click Edit routes 6. Click Add route 7. For Edit routes\n- Destination, enter 0.0.0.0/0.\n- Target, select the ID of your NAT gateway.\n8. Click Save routes",
+            "+@fixref": "F-B2E80CF2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B2E80CF2r01_fix"
+          },
+          "check": {
+            "+@system": "C-B2E80CF2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to verify a NAT Gateway is configured and utilized.\nFrom the Console:\n1. Login to the VPC console at https://console.aws.amazon.com/vpc/ 2. In the left pane, click Route Tables.\n3. On the Route Table tab.\n4. Select the public route table set for WorkSpaces.\n5. Click the Subnet Associations Tab 6. Confirm that the Subnet ID is set to the WorkSpaces Public subnet.\n7. De-select the public route table and select the WorkSpaces Private route table.\n8. Click the Subnet Associations Tab 9. Confirm that the Subnet ID is set to the 2 WorkSpaces Private subnet.\nIf the Route tables aren't set for one route for local traffic and another route that sends all other traffic to the internet gateway for the VPC refer to the remediation procedure below."
+          }
+        }
+      },
+      {
+        "+@id": "V-D3ADAD4F",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D3ADAD4Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.6",
+          "title": "Ensure Web Access to Workspaces is Disabled",
+          "description": "<VulnDiscussion>WorkSpaces access should be restricted to trusted operating systems and clients\n\nRationale:\nWorkSpaces access is supported from a variety of clients and operating systems, including HTML5 based browsers. Disabling Web Access prevents access to the Workspace from HTML5 based browsers, ensuring access can only occur from known operating systems.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.6"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to disable Web Access.\nFrom the Console:\n1. Log in to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, click Directories.\n3. Select the directory id link.\n4. Scroll to the Other platforms section.\n5. Uncheck Web Access.\n6. Click Save",
+            "+@fixref": "F-D3ADAD4Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-D3ADAD4Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-D3ADAD4F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to confirm that Web Access is disabled.\nFrom the Console:\n1. Log in to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, click Directories.\n3. Select the directory id link you wish to view.\n4. Scroll to the Other platforms section.\n5. Confirm that Web Access is denied.\nIf everything is not configured as above refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-FD0BD93A",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FD0BD93Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.7",
+          "title": "Ensure access is limited to trusted devices",
+          "description": "<VulnDiscussion>WorkSpaces access should be restricted to trusted devices with valid certificates.\n\nRationale:\nWorkSpaces is accessible from any supported device that is connected to the internet.\nWhen you enable access to trusted devices, Amazon WorkSpaces uses certificate- based authentication to determine whether a device is trusted.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.7"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to set the restriction Allow Trusted Devices Create the Certificates Note - It requires root certificates generated by an internal Certificate Authority (CA) and client certificates that chain up to a root certificate.\nInternal Only - General\nRequirements\n- Certificates must be Base64-encoded certificate files in CRT, CERT, or PEM\nformat.\n- Certificates must include a Common Name.\n- The maximum length of certificate chain supported is 4.\n- Use a strong encryption algorithm. Minimum SHA256 with RSA, SHA256 with\nECDSA. Other options SHA381 with ECDSA, or SHA512 with ECDSA.\n- Make sure \"key usage: Digital signature\" is present on the public key.\n- For macOS, if the device certificate is in the system keychain, authorize\nthe WorkSpaces client application to access those certificates.\nDeploy Client Certificates to the Trusted Devices\n- Client certificates must be installed on the trusted devices for your\nusers.\nUtilize a third party tool to install the certificates or have the\ncertificates installed locally by an administrator.\n- On Windows, the WorkSpaces client application searches for client\ncertificates in both the user and root certificate stores.\n- On macOS, the WorkSpaces client application searches for client\ncertificates in the entire keychain.\nConfigure the Restriction From the Console:\n1. Login to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, click Directories.\n3. Select the directory id link.\n4. Scroll to the Access Control Options section and click Edit.\n- [Windows] Choose Only Allow Trusted Windows Devices to Access\nWorkSpaces.\n- [macOS] Choose Only Allow Trusted macOS Devices to Access\nWorkSpaces.\n5. Import up to two root certificates. For each root certificate, do the following:\n- Choose Import.\n- Copy the body of the certificate to the form.\n- Choose Import.\n(Optional) Specify whether other types of devices have access to\nWorkSpaces.\n6. Scroll down to the Trusted devices section.\n7. Select the device types allowed to Trusted devices.\n8. To block access from all selected device types, click Deny All.\n9. Click Save.\nInternal Only - General",
+            "+@fixref": "F-FD0BD93Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-FD0BD93Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-FD0BD93A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to confirm that Allow Trusted Devices is set.\nFrom the Console:\n1. Log in to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, click Directories.\n3. Select the directory id link.\n4. Scroll to the Access Control Options section.\n5. Confirm that the correct Allow settings are in place.\n6. Confirm that certificates have been imported.\n7. Confirm that the correct device types have been enabled.\nIf everything is not configured as above refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-F2BB4705",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F2BB4705r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.8",
+          "title": "Ensure the default IP access control group is disassociated.",
+          "description": "<VulnDiscussion>The default IP Access Control group allows all traffic. Once you create and attach an IP Access Control Group the default is disassociated.\n\nRationale:\nIP Access Control group acts as a virtual firewall for your WorkSpaces allowing you to add your trusted networks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.8"
+          },
+          "fixtext": {
+            "+content": "Perform the steps below to create an IP Access control group.\nFrom the Console.\n1. Login to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, Click IP Access Controls.\n3. Click Create IP Group.\n4. In the Create IP Group dialog box, enter a name and description for the group.\n5. Click Create.\n6. Select the group 7. Click Edit.\n8. For each IP address, click Add Rule.\n9. For Source, enter the IP address or IP address range.\n10.For Description, enter a description.\nWhen you are done adding rules, 11.Click Save.\nNext Associate an IP Access Control Group with a Directory 1. Login to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, click Directories.\n3. Select the directory id link.\n4. Scroll to the IP access control groups section and click Edit.\n5. Select the IP access control group and click Associate Note* - If you associate an IP access control group that has no rules with a directory, this blocks all access to all WorkSpaces.\nFrom the command line:\nRun the create-ip-group command\naws workspaces create-ip-group --group-name name-of-group --user-rules\nipRule=ipaddress_list\nAssociate an IP Access Control Group with a Directory Run the 'associate-ip-groups' command Internal Only - General\naws workspaces associate-ip-groups --directory-id directory_ID --group-ids\nIDs_of_IP_access_ctrl_group",
+            "+@fixref": "F-F2BB4705r01_fix"
+          },
+          "fix": {
+            "+@id": "F-F2BB4705r01_fix"
+          },
+          "check": {
+            "+@system": "C-F2BB4705_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to review your Directory From the Console:\n1. Login to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, click Directories.\n3. Select your directory id link.\n4. Scroll to the IP access control groups section and click Edit.\n5. Confirm that you have an IP Access Control Group Associated with this Directory.\n6. Make note of the name(s) of the IP Access Control Group.\n7. Next review the IP Access Control Group 8. In the navigation pane, click IP Access Controls.\n9. Select the name of the IP Access Control Group(s) you record from the Directory.\n10.For each IP Access Control Group confirm the source IP address or IP address range, and the Description.\nIf an IP Access Control group doesn't exist follow the remediation below.\nFrom the Command line:\nRun the describe-ip-groups command Internal Only - General\naws workspaces describe-ip-groups\nReview the output for the name and the IP Access controls.\nIf an IP Access Control group doesn't exist refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-5598794B",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5598794Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.9",
+          "title": "Ensure CloudWatch is set up for WorkSpaces",
+          "description": "<VulnDiscussion>Set up and utilize Amazon CloudWatch Events for successful logins to WorkSpaces.\n\nRationale:\nUse Cloudwatch to store/archive WorkSpaces login events for future reference, analysis, and action based on the patterns. Utilize the IP address collected to figure out where users are logged in from, and then build policies to allow access only to files or data from those WorkSpaces that meet company access criteria. With this information you can also use policy controls to block access from unauthorized IP addresses.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.9"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to create a Rule for CloudWatch WorkSpaces Events From the Console:\n1. Login to the CloudWatch console at https://console.aws.amazon.com/cloudwatch/ 2. In the left pane click Rules.\n3. Click Create rule.\n4. For Event Source, do the following:\n- Click `Event Pattern` and Build event pattern to match events by service\n(the default).\n5. For Service Name, click WorkSpaces.\n6. For Event Type, click WorkSpaces Access.\n7. For Targets, click Add target\n- Click and Change the Lambda Function to `CloudWatch log group`\n8. For Log Group, enter /aws/events/workspaces_access Note - You can add additional targets for other services to act when a WorkSpaces Access event is detected.\n9. Click Configure details.\n10.For Rule definition, enter a name and description.\n11.Click `Create rule' 12.Click Create rule.",
+            "+@fixref": "F-5598794Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-5598794Br01_fix"
+          },
+          "check": {
+            "+@system": "C-5598794B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to review the rules for CloudWatch and WorkSpaces Events From the Console:\n1. Login to the CloudWatch console at https://console.aws.amazon.com/cloudwatch/ 2. In the left pane click Rules.\n3. Click Rules.\n4. Click on the Rule Name for your WorkSpaces Access Events 5. Confirm the Event Pattern\n{\n\"source\": [\n\"aws.workspaces\"\n],\n\"detail-type\": [\n\"WorkSpaces Access\"\n]\n}\n6. Confirm Status is Enabled 7. Confirm at least one Target is created for CloudWatch Log Group If there is no CloudWatch Event created with the rule as outlined above refer to the remediation below.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-4B287B59",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4B287B59r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.10",
+          "title": "Ensure that patches and updates are performed on the operating system for Workstations",
+          "description": "<VulnDiscussion>In order for Windows updates to occur auto-stop WorkSpaces must be utilized and the default for maintenance mode must be set to enabled.\n\nRationale:\nWindows Operating systems updates can be a high security vulnerability and normal updates and patches can help eliminate these vulnerabilities.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.10"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to enable maintenance mode From the Console:\n1. Login to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, click Directories.\n3. Select your directory id link.\n4. Scroll to the Maintenance mode section and click Edit 5. Select Enable maintenance mode.\n6. Click Save.\nNote** If you prefer to manage updates manually or with another tool document usage of that, and choose Disabled.\nFrom the Command line:\n1. Run the WorkSpaces modify-workspace-creation-property command\naws workspaces modify-workspace-creation-property --resource-id\n<directory_id> --workspace-creation-properties EnableMaintenanceMode=true",
+            "+@fixref": "F-4B287B59r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4B287B59r01_fix"
+          },
+          "check": {
+            "+@system": "C-4B287B59_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the steps to check maintenance mode for your WorkSpaces:\nFrom the Console:\n1. Login to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, click Directories.\n3. Select your directory id link.\n4. Scroll to the Maintenance mode section and ensure maintenance mode is set to Enabled.\nIf it is set to Enabled you are meeting this recommendation.\nIf it is set to Disabled, refer to the remediation below.\nFrom the Command line:\n1. Run the workspaces command describe-workspace-directories\naws workspaces describe-workspace-directories\n2. Review the output under \"WorkspaceCreationProperties\" for \"EnableMaintenanceMode\" : true Internal Only - General\nExample output:\n\"WorkspaceCreationProperties\" :\n{\n\"EnableInternetAccess\" : false,\n\"EnableWorkDocs\" : true,\n\"UserEnabledAsLocalAdministrator\" : true\n\"EnableMaintenanceMode\" : true\n},\nIf it is set to true you are meeting this recommendation.\nIf it is set to false or is not listed in the output at all, refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-1B54CB99",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1B54CB99r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.11",
+          "title": "Ensure your WorkSpaces image has the appropriate CIS Operating System Benchmark applied",
+          "description": "<VulnDiscussion>Utilize the CIS Benchmark to secure the Operating system image that you are utilizing for your WorkSpaces.\n\nRationale:\nSecuring the Operating system with a CIS Benchmark ensures all systems remain in a secure, compliant and hardened state.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.11"
+          },
+          "fixtext": {
+            "+content": "Perform the steps below using the downloaded free version of the applicable CIS Operating System Benchmark and manually apply the recommendations for the WorkSpaces instance. Or Utilize a 3rd Party tool to assess and apply the CIS Operating System Benchmark.\n1. Launch a WorkSpaces Bundle 2. Access that WorkSpace as an Administrator utilize SSH or RDP.\n3. Apply the Benchmark:\n- Manually\n- Using Active Directory by creating a GPO that matches the Benchmark.\n- Or using a Third Party tool that will apply the Benchmark recommendations.\n4. Assess the WorkSpaces instance manually or with a 3rd Party tool.\n5. Create a workspace bundle that can then be used to launch your production WorkSpaces instances.",
+            "+@fixref": "F-1B54CB99r01_fix"
+          },
+          "fix": {
+            "+@id": "F-1B54CB99r01_fix"
+          },
+          "check": {
+            "+@system": "C-1B54CB99_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Spin up a WorkSpaces instance and run a manual assessment by confirming the CIS Operating System Benchmark recommendations for the applicable operating system are applied. You can also utilize a 3rd Party Assessment tool that has been certified for the specific CIS Operating System Benchmark to automate this process."
+          }
+        }
+      },
+      {
+        "+@id": "V-089B95B5",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-089B95B5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.12",
+          "title": "Restrict WorkSpaces Bundle options to organization approved versions",
+          "description": "<VulnDiscussion>Limit the existing WorkSpaces bundles that can be utilized and provisioned within your AWS account.\n\nRationale:\nLimiting the type of AWS WorkSpaces bundle that can be utilized can address internal security and compliance requirements.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.12"
+          },
+          "fixtext": {
+            "+content": "Preform the following to limit the bundle type Create the required AWS support case:\nFrom the Console:\n1. Login in to AWS Support Center dashboard at https://console.aws.amazon.com/support/.\n2. Click Create a case.\n3. For Case details:\n- Type, choose `Account`\n- Category, choose `Other Account Issues`\n- Subject, \"Limit AWS WorkSpaces instances launch to approved bundle types\".\n- Description textbox, explain that security and compliance requires the need\nto limit the provisioning of WorkSpaces instances to an approved bundle type.\n- Contact options, leave as default or change as needed.\n4. Click Submit",
+            "+@fixref": "F-089B95B5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-089B95B5r01_fix"
+          },
+          "check": {
+            "+@system": "C-089B95B5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to ensure available workspace bundles are set.\nFrom the Console:\n1. Login to the WorkSpaces dashboard at https://console.aws.amazon.com/workspaces/.\n2. In the left pane click WorkSpaces to access the instances listing page.\n3. Check the bundle type value for each Amazon WorkSpaces instance available in the current AWS region, listed in Bundle column, e.g.\n4. If the value listed in the Bundle column is the same for all listed resources, the WorkSpaces instances were launched using the approved bundle type.\n5. Change the AWS region from the navigation bar and repeat step no. 4 for all other regions.\nIf the value listed in the Bundle column is not the same for all listed resources, the WorkSpaces instances were not launched using the approved bundle type, refer to the remediation procedure below.\nFrom the Command line:\n1. Run describe-workspaces command available within the selected region:\naws workspaces describe-workspaces\n--region us-east-1\n--output table\n--query 'Workspaces[*].WorkspaceId'\n2 The command output should return a table with the requested WorkSpaces IDs:\nInternal Only - General\n--------------------\n|DescribeWorkspaces|\n+------------------+\n| ws-bbbdddeee |\n| ws-aaabbbccc |\n| ws-ccceeefff |\n+------------------+\n3. Run describe-workspaces command again using the name of the WorkSpaces instance as identifier and custom query filters get the ID of the bundle used by the selected instance:\naws workspaces describe-workspaces\n--region us-east-1\n--workspace-ids ws-bbbdddeee\n--query 'Workspaces[*].BundleId'\n4. The command output should return the requested WorkSpaces bundle ID:\n[ \"wsb-ccc333fff\" ] 5. Run describe-workspace-bundles command to describe the type of the bundle utilized by the selected AWS WorkSpaces instance:\naws workspaces describe-workspace-bundles\n--region us-east-1\n--bundle-ids wsb-ccc333fff\n--query 'Bundles[*].ComputeType.Name'\n6. The command output should return the selected WorkSpaces bundle type:\n[\n\"PERFORMANCE\"\n]\n7. Repeat steps no. 3 – 6 to verify the bundle type used by the rest of the AWS WorkSpaces instances created in the current region.\n8. If the value listed for the Bundle is the same for all listed resources, the WorkSpaces instances were launched using the approved bundle type.\n9. Repeat steps 1 – 8 to perform the entire audit process for all other AWS regions.\nIf the value listed in the Bundle output is not the same for all listed resources, the WorkSpaces instances were not launched using the approved bundle type, refer to the remediation procedure below.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-4CEBA6A1",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4CEBA6A1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.13",
+          "title": "Ensure Workspaces images are not older than 90 days.",
+          "description": "<VulnDiscussion>WorkSpaces images should not have a creation time stamp over 90 days.\n\nRationale:\nWorkSpaces images require Operating system patches to be applied and updated and by confirming the creation date is not over 90 days old can help ensure that updates are being applied.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.13"
+          },
+          "fixtext": {
+            "+content": "To create a custom image From the Console:\nNote - If you are still connected to the WorkSpace, disconnect.\n1. Log in to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, choose WorkSpaces.\n3. Select the WorkSpace and choose Actions, Create Image.\n- A message displays, prompting you to restart your WorkSpace before\ncontinuing. Restarting your WorkSpace updates your Amazon WorkSpaces software\nto the latest version.\nOnce you have restarted your WorkSpace, repeat Step 4 of this procedure.\n5. Click Next.\nInternal Only - General 6. Enter an image name and a description.\n7. Click Create Image. While the image is being created, the status of the WorkSpace is Suspended and the WorkSpace is unavailable.\nIn the left pane, click Images. The image is complete when the status of the WorkSpace changes to Available.",
+            "+@fixref": "F-4CEBA6A1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4CEBA6A1r01_fix"
+          },
+          "check": {
+            "+@system": "C-4CEBA6A1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine the age of WorkSpaces images.\nFrom the Console:\n1. Login to the WorkSpaces dashboard at https://console.aws.amazon.com/workspaces/ 2. In the left pane click Images.\n3. Review the Created date and confirm that all images are newer than 90 days.\nIf any images are older than 90 days refer to the remediation procedure below."
+          }
+        }
+      },
+      {
+        "+@id": "V-70905DB5",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-70905DB5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.14",
+          "title": "Ensure WorkSpaces that are not being utilized are removed.",
+          "description": "<VulnDiscussion>Identify and remove any WorkSpace instances available within your AWS account that are not being utilized.\n\nRationale:\nAn AWS WorkSpaces instance is considered unused if has 0 (zero) known user connections registered within the past 30 days.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.14"
+          },
+          "fixtext": {
+            "+content": "Perform the following to remove unused WorkSpaces based on the output collected from the audit procedure From the Console:\n1. Log in to WorkSpaces dashboard at https://console.aws.amazon.com/workspaces/.\n2. In the left panel click WorkSpaces 3. Select the WorkSpace ID that you have identified as not being used.\n4. Click Actions, Remove WorkSpaces 5. Confirm using the Audit that this is the WorkSpaces ID you should remove.\n6. Click Remove WorkSpaces From the Command line:\nNote that running this command does not prompt you to confirm that you are removing the correct WorkSpaces ID.\n1. Run terminate-workspaces command using the ID of the WorkSpaces instance from the Audit that you want to delete:\naws workspaces terminate-workspaces\n--region us-east-1\n--terminate-workspace-requests ws-0cgsl1k23",
+            "+@fixref": "F-70905DB5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-70905DB5r01_fix"
+          },
+          "check": {
+            "+@system": "C-70905DB5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to ensure WorkSpaces not being utilized have been removed.\nFrom the Console:\n1. Log in to the WorkSpaces dashboard at https://console.aws.amazon.com/workspaces/.\n2. In the left panel click WorkSpaces 3. Choose the WorkSpaces instance that you want to examine.\n4. Click on WorkSpace id link.\n-Verify the User Last Active attribute value is less than 30 days old 5. Repeat step 4 to verify the last user login, returned by the User Last Active attribute value, for all WorkSpaces.\n6. Change the AWS region and repeat the audit process for other regions.\nIf the User Last Active was registered more than 30 days ago (e.g. Feb 16, 2017 10:32:54 UTC), the selected WorkSpaces instance is not in use anymore and can be safely removed from your AWS account. Refer to the remediation procedure below.\nFrom the Command line:\n1. Run the describe-workspaces command to list the IDs of all WorkSpaces instances available within the selected region:\naws workspaces describe-workspaces\n--region us-east-1\n--output table\n--query 'Workspaces[*].WorkspaceId'\n2. The command should return a table with the requested WorkSpaces IDs:\nInternal Only - General\n--------------------\n|DescribeWorkspaces|\n+------------------+\n| ws-7cgsl2k65 |\n| ws-8d6il5kr3 |\n| ws-2dtyl1g47 |\n+------------------+\n3. Run the describe-workspaces-connection-status command using the ID of the WorkSpaces instance in the table output\naws workspaces describe-workspaces-connection-status\n--region us-east-1\n--workspace-ids ws-7cgsl2k65\n--query\n'WorkspacesConnectionStatus[*].LastKnownUserConnectionTimestamp'\n4. The command should return the timestamp of the User last active for the selected instance:\n[\n1489139777.721\n]\n5. Run the date command using the timestamp value returned at the previous step to convert it to a human readable date value:\ndate -d @1489139777.721\n6. Verify the User Last Active attribute value is less than 30 days old\nFri Mar 10 09:56:17 UTC 2017\nIf the User last active date returned is more than 30 days ago, the selected WorkSpaces instance is not utilized anymore and can be safely removed from your AWS account.\nRefer to the remediation procedure below to remove the WorkSpaces.\n7. Repeat steps 3 – 6 to verify the User Last active date for the other WorkSpaces instances listed in the current region.\n8. Change the AWS region by updating the --region command parameter value and repeat steps no. 1 – 7 to perform the entire audit process for other regions.- Internal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-74135CEB",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-74135CEBr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.15",
+          "title": "Ensure primary interface ports for Workspaces are not open to all inbound traffic.",
+          "description": "<VulnDiscussion>Ensure that the inbound traffic of the primary network interface for all WorkSpaces is not open to all connections 0.0.0.0\\00.\n\nRationale:\nAttached security groups to the primary elastic network interface (ENI) to manage ports and network communication should not be open to all communication. They should be restricted to what is required by WorkSpaces, the Organization and other services.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.15"
+          },
+          "fixtext": {
+            "+content": "Perform the steps below to remove Inbound rule that allows all traffic from all IP addresses.\nFrom the console:\n1. Login to the VPC console at https://console.aws.amazon.com/vpc/ 2. In the left pane, click Your VPCs 3. Note the VPC Id for WorkSpaces 4. In the left pane, click Security Groups 5. In the Filter security groups enter the name of the WorkSpaces VPC 6. Select the WorkSpaces Security Group 7. Click on Inbound rules Internal Only - General 8. Click on Edit inbound rules 9. Click on Delete for the rule that shows\n-All traffic, All, All, 0.0.0.0/0, -\n10.Click on Save rules Note - Make sure you have all the required ports add to Inbound rules as listed in the WorkSpaces documentation outlined in the references so that connectivity to WorkSpaces is not impacted.",
+            "+@fixref": "F-74135CEBr01_fix"
+          },
+          "fix": {
+            "+@id": "F-74135CEBr01_fix"
+          },
+          "check": {
+            "+@system": "C-74135CEB_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the steps below to confirm security groups are configured correctly From the console:\n1. Login to the VPC console at https://console.aws.amazon.com/vpc/ 2. In the left pane, click Your VPCs 3. Note the VPC Id for WorkSpaces 4. In the left pane, click Security Groups 5. In the Filter security groups enter the name of the WorkSpaces VPC 6. Select the WorkSpaces Security Group 7. Click on Inbound rules 8. Confirm that there is no rule for All traffic, All, All, 0.0.0.0/0, - If there is a rule for Inbound traffic that is open to all traffic and all ip addresses refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-A164AE8A",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A164AE8Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.16",
+          "title": "Ensure FIPS Endpoint encryption is enabled for WorkSpaces.",
+          "description": "<VulnDiscussion>To meet a high level of security and comply with different compliance standards, you must use Federal Information Processing Standards (FIPS) endpoint encryption at the directory level with WorkSpaces.\n\nRationale:\nYou must also use an AWS Region that is authorized for the same compliance standard that you are trying to achieve.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.16"
+          },
+          "fixtext": {
+            "+content": "Perform the steps below to enable FIPS endpoint encryption at the directory level From the Console:\n1. Log in to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, click Directories.\n3. Verify that the directory does not have any existing WorkSpaces associated with it.\n4. Select the directory id link.\n5. Click Actions, Update Details.\n6. Scroll to the Endpoint encryption section and select Edit Internal Only - General 7. For Endpoint Encryption, choose FIPS 140-2 Validated Mode.\n8. Click Save.\nYou can now create WorkSpaces from this directory that utilize FIPS endpoint encryption modules.",
+            "+@fixref": "F-A164AE8Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-A164AE8Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-A164AE8A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the steps below to determine if FIPS endpoint encryption is enabled.\nFrom the Console:\n1. Log in to the WorkSpaces console at https://console.aws.amazon.com/workspaces/ 2. In the left pane, click Directories.\n3. Select the directory id link.\n4. Scroll to the Endpoint encryption section.\n5. Endpoint Encryption should read\n- FIPS 140-2 Validated Mode.\nIf Endpoint Encryption is not listed as FIPS 140-2 Validated Mode refer to the remediation procedure below."
+          }
+        }
+      },
+      {
+        "+@id": "V-BD9B02F7",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BD9B02F7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.17",
+          "title": "Ensure WorkSpaces API requests flow through a VPC Endpoint",
+          "description": "<VulnDiscussion>For any WorkSpaces API requests setup the connection through an interface endpoint in your VPC.\n\nRationale:\nUtilizing a VPC interface endpoint for WorkSpaces API requests keeps the communication within the AWS network.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.17"
+          },
+          "fixtext": {
+            "+content": "Perform the steps below if you need to create a VPC interface endpoint.\nFrom the Console 1. Log in to the VPC console at https://console.aws.amazon.com/vpc/ 2. In the left pane, click Endpoints Internal Only - General 3. Click Create Endpoint.\n4. For Service category, ensure that AWS services is selected.\n5. For Service Name, choose Workspaces. For Type, ensure that it indicates Interface.\n6. Complete the following information.\n- For VPC, select a VPC in which to create the endpoint.\n- For Subnets, select the subnets (Availability Zones) in which to create the\nendpoint network interfaces. Not all Availability Zones may be supported for\nall AWS services.\n- To enable private DNS for the interface endpoint, for Enable Private DNS\nName, select the check box.\n- For Security group, select the security groups to associate with the\nendpoint network interfaces.\n8. Click Create endpoint From the Command line 1. Run the create-vpc-endpoint command\naws ec2 create-vpc-endpoint --vpc-id vpc-ec43eb89 --vpc-endpoint-type\nInterface --service-name com.amazonaws.us-east-1.elasticloadbalancing --\nsubnet-id subnet-abababab --security-group-id sg-1a2b3c4d\nIn the output that's returned, take note of the DnsName fields. You can use these DNS names to access the AWS service.\nNext perform the steps to add the Endpoint to the WorkSpace image From the Command line 1. Run the copy-workspace-image command including the endpoint url you just created.\naws workspaces copy-workspace-image --endpoint-url\nVPC_Endpoint_ID.workspaces.Region.vpce.amazonaws.com",
+            "+@fixref": "F-BD9B02F7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-BD9B02F7r01_fix"
+          },
+          "check": {
+            "+@system": "C-BD9B02F7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the steps to determine if WorkSpaces is using a VPC endpoint for API From the Command line:\n1. Run the WorkSpaces `describe-workspace-budles' command\naws workspaces describe-workspace-bundles --endpoint-url\nVPC_Endpoint_ID.workspaces.Region.vpce.amazonaws.com\n2. Example output of that command:\n--endpoint-name Endpoint_Name\n--body \"Endpoint_Body\"\n--content-type \"Content_Type\"\nOutput_File\nConfirm the --endpoint-name is equal to the VPC Endpoint that you have created. If the endpoint name does not match what you created or is blank, refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-E669D2B9",
+        "title": "2 WorkSpaces",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E669D2B9r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.18",
+          "title": "Ensure Radius server is using the recommended security protocol",
+          "description": "<VulnDiscussion>The authentication protocol between the Microsoft AD DCs and the RADIUS server supported are PAP, CHAP, MS-CHAPv1, and MS-CHAPv2.\n\nRationale:\nMS-CHAPv2 provides the strongest security of the options supported.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "2.18"
+          },
+          "fixtext": {
+            "+content": "Perform the steps below to set the protocol to MS-CHAPv2 for multi-factor authentication.\nFrom the console:\nFor AWS Managed AD based environments;\n1. Log in to the Directory Service console at https://console.aws.amazon.com/directoryservicev2 2. In the left pane select Directories.\n3. On the Directory details page, select the Networking & security tab.\n4. In the Multi-factor authentication section, choose Actions, and then choose Edit.\n5. On the Enable multi-factor authentication (MFA) page change the following value:\n6. Protocol - MS-CHAPv2 7. Click Save.\nFor directory connector / self-managed AD environments 1. Log in to the AWS Workspaces console at https://console.aws.amazon.com/workspaces 2. In the left pane select Directories.\n3. Select the directory ID link for your AWS Managed Microsoft AD directory.\n4. On the Directories page, scroll to the Multi-factor authentication section and select Edit.\n5. In the Multi-factor authentication section modify the protocol using the dropdown menu to be MS-CHAPv2 from the currently selected option.\n6. Click Save once settings are as desired.",
+            "+@fixref": "F-E669D2B9r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E669D2B9r01_fix"
+          },
+          "check": {
+            "+@system": "C-E669D2B9_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the steps to check multi-factor authentication using the radius server protocol is set to MS-CHAP v2.\nFrom the Console:\nFor AWS Managed AD based environments;\n1. Log in to the Directory Service console at https://console.aws.amazon.com/directoryservicev2 2. In the left pane select Directories.\n3. Choose the directory ID link for your AWS Managed Microsoft AD directory.\n4. On the Directory details page, select the Networking & security tab.\n5. In the Multi-factor authentication section, confirm that the Protocol is set to MS- CHAPv2.\nFor directory connector / self-managed AD environments 1. Log in to the AWS Workspaces console at https://console.aws.amazon.com/workspaces 2. In the left pane select Directories.\n3. Select the directory ID link for your AWS Managed Microsoft AD directory.\n4. On the Directories page, scroll to the Multi-factor authentication section and select Edit.\n5. In the Multi-factor authentication section confirm that, in the Protocol field MS- CHAPv2 is selected from the dropdown list.\nIf it is not set to MS-CHAPv2 refer to the remediation steps below.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-B0506D2E",
+        "title": "3 Workspaces Web",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B0506D2Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1",
+          "title": "Ensure User Access Logging is enabled",
+          "description": "<VulnDiscussion>User Access Logging can record the following user events:\n• Session Start - when a WorkSpaces Web sessions begins.\n• Session End - when a WorkSpaces Web session ends.\n• URL Navigation - when a user loads a URL.\nUser Access logging can be setup to record user events.\n\nRationale:\nLogging user activity will assist in event correlation if response to an incident is needed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "3.1"
+          },
+          "fixtext": {
+            "+content": "From the Console:\n1. Log in to the Amazon Kinesis console at https://console.aws.amazon.com/kinesis/home 2. In the left pane, click Data Streams then Create data stream.\n3. Enter a name for your data stream. The name must be prefixed with amazon- workspaces-web 4. Select the desired data stream capacity and click Create data stream 5. Log into the Amazon WorkSpaces console at https://console.aws.amazon.com/workspaces/v2/home 6. In the left pane click Web Portals 7. Click the link for the web portal you wish to edit.\n8. Click Edit 9. Scroll to User access logging and select the Kinesis data stream you created above.\n10.Click Save From the Command Line:\n1. Run the create-user-access-logging-settings command\naws workspaces-web create-user-access-logging-settings --kinesis-stream-arn\n<kinesis_data_stream_arn>. --output table\n2. The output will return a list of settings Internal Only - General\n-----------------------------------------------------------------------------\n---------------------------------------------------------------------\n|\nCreateUserAccessLoggingSettings\n|\n+------------------------------+---------------------------------------------\n--------------------------------------------------------------------+\n| userAccessLoggingSettingsArn| arn:aws:workspaces-\nweb:[region]:[account]:userAccessLoggingSettings/[guid]\n|\n+------------------------------+---------------------------------------------\n--------------------------------------------------------------------+",
+            "+@fixref": "F-B0506D2Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-B0506D2Er01_fix"
+          },
+          "check": {
+            "+@system": "C-B0506D2E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "From the Console:\n1. Log in to the WorkSpaces console at https://console.aws.amazon.com/workspaces-web/ 2. In the left pane, click Web portals.\n3. Click the link for correspoinding web portal.\n4. Scroll to the User access logging section 5. Verify the Kinesis data stream arn is set.\nIf no Kinesis data streams are listed are defined then user access logging is not enabled From the Command Line:\n1. From the command line run the list-user-access-logging-settings\naws workspaces-web list-user-access-logging-settings --output table\n2. The command should output a table with the listed settings.\nIf no settings are defined then user access logging is not enabled Internal Only - General\n-----------------------------------------------------------------------------\n-----------------------------------------------------------------------\n|\nListUserAccessLoggingSettings\n|\n+----------------------------------------------------------------------------\n----------------------------------------------------------------------+\n||\nuserAccessLoggingSettings\n||\n|+------------------------------+--------------------------------------------\n---------------------------------------------------------------------+|\n|| kinesisStreamArn |\narn:aws:kinesis:[region]:[account]:stream/[stream]\n||\n|| userAccessLoggingSettingsArn| arn:aws:workspaces-\nweb:[region]:[account]:userAccessLoggingSettings/[stream]\n||\n|+------------------------------+--------------------------------------------\n---------------------------------------------------------------------+|"
+          }
+        }
+      },
+      {
+        "+@id": "V-A540864C",
+        "title": "4 WorkDocs",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A540864Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1",
+          "title": "Ensure Administrators of WorkDocs is defined using IAM",
+          "description": "<VulnDiscussion>To allow users to administer Amazon WorkDocs resources, you must create an IAM policy that explicitly grants them the correct permissions. This policy should then be attached to the group or role defined for this administration.\n\nRationale:\nWorkDocs Administrators control access and authorization for users of the WorkDocs resources.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "4.1"
+          },
+          "fixtext": {
+            "+content": "Perform the following to create an IAM group and assign the Amazon WorkDocs Full Access policy to it:\nFrom the Console:\n1. Log in to the IAM console at https://console.aws.amazon.com/iam/.\n2. In the left pane, click Groups and then click Create New Group.\n3. In the Group Name box, type the name of the group and then click Next Step.\n4. In the list of policies, select the check box for AmazonWorkDocsFullAccess 5. Click Next Step.\n6. Click Create Group Perform the following to add a user to a Amazon WorkDocs Full Access group:\n1. Log in to the the IAM console at https://console.aws.amazon.com/iam/.\n2. In the left pane, click Groups 3. Select the group you created above 4. Click Add Users To Group 5. Select the users to be added to the group 6. Click Add Users",
+            "+@fixref": "F-A540864Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-A540864Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-A540864C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine what policies are created:\nFrom the Console:\n1. Login in and open the IAM console at https://console.aws.amazon.com/iam/.\n2. In the left pane click on Groups.\n3. Click on the group name that should administer WorkDocs.\n4. Click on Permissions and confirm that the AmazonWorkDocsFullAccess policy is attached.\n5. Click on Users and confirm that the list of names are the users approved to administer WorkDocs.\n6. To confirm that the WorkDocs policy (AmazonWorkDocsFullAccess) for admin control is attached to the correct group.\nFrom the Command Line:\n1. Run the list-attached-group-policies.\naws iam list-attached-group-policies --group-name <workdocs_group_name>\n2. Confirm that the list of users in that Group is correct\naws iam get-group --group-name <workdocs_group_name>\nIf the AWS manage policy or a custom WorkDocs Full Access policy is not attached to the group or the users in the group list is not correct refer to the remediation below.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-1D17F4E5",
+        "title": "4 WorkDocs",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1D17F4E5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.2",
+          "title": "Ensure MFA is enabled for WorkDoc users",
+          "description": "<VulnDiscussion>Multi-Factor Authentication (MFA) adds an extra layer of authentication assurance beyond traditional username and password. With MFA enabled, when a user signs in to Amazon WorkDocs, they will be prompted for their user name and password as well as for an authentication code from their MFA token.\n\nRationale:\nEnabling MFA provides increased security to a user name and password as it requires the user to possess a solution that displays a time-sensitive authentication code.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "4.2"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to setup MFA on the server and in WorkDocs.\nFrom the Console:\nInternal Only - General 1. Identify the IP address of your RADIUS MFA server and your AWS Managed Microsoft AD directory.\n2. In the AWS Directory Service console navigation pane, select Directories.\n3. Choose the directory ID link for your AWS Managed Microsoft AD directory.\n4. On the Directory details page, select the Networking & security tab.\n5. In the Multi-factor authentication section, choose Actions, and then choose Enable.\n6. On the Enable multi-factor authentication (MFA) page, provide the following values:\n- Display label - Provide a label name.\n- RADIUS server DNS name or IP addresses\n- Port - default 1812\n- Shared secret code\n- Confirm shared secret code\nTo enable multi-factor authentication in WorkDocs:\n1. Open WorkDocs console at https://console.aws.amazon.com/zocalo/ 2. In the Manage Your WorkDocs Sites page, select the desired site and choose Actions and Manage MFA.\n3. Enter the following values:\n- Enable Multi-Factor Authentication\n- Check to enable multi-factor authentication.\n- RADIUS server IP address(es) - The IP addresses of your RADIUS server\nendpoints\n- Port - The port that your RADIUS server is using for communications.\nDefault RADIUS server port (1812)\n- Shared secret code - The shared secret code that was specified when your\nRADIUS endpoints were created.\n- Confirm shared secret code\n- Protocol - MS-CHAPv2\n- Server timeout - (in seconds) - 20\n- Max retries - 3\n4. Choose Enable.\nInternal Only - General Multi-factor authentication is available when the RADIUS Status changes to Enabled.\nTo enable RADIUS-based MFA protection for your Active Directory (AD) Connector directories, perform the following actions:\nNote: Enabling Multi-Factor authentication for AD Connector directories using the AWS Management Console is not currently supported.\nFrom the Command line:\n1. Run the enable-radius command:\naws ds enable-radius --region us-east-1 --directory-id <value> --radius-\nsettings { \"RadiusServers\": [\"radius.<your-radius-server>.com\"],\"RadiusPort\":\n1812,\"RadiusTimeout\": 20,\"RadiusRetries\": 3,\"SharedSecret\":\n\"radiusmfa\",\"AuthenticationProtocol\": \"MS-CHAPv2\",\"DisplayLabel\": \"RADIUS\nMulti-Factor Authentication\",\"UseSameUsername\": true }\n2. Repeat step 1 for other AD Connectors and the Selected regions.",
+            "+@fixref": "F-1D17F4E5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-1D17F4E5r01_fix"
+          },
+          "check": {
+            "+@system": "C-1D17F4E5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the steps below to confirm MFA setup and configuration.\nFrom the console:\n1. Log in to the Directory Service console at https://console.aws.amazon.com/directoryservicev2 2. Select Directories.\n3. Choose the directory ID link for your AWS Managed Microsoft AD directory.\n4. On the Directory details page, select the Networking & security tab.\n5. In the Multi-factor authentication section, Confirm Radius status is set to Enabled.\n6. Open the WorkDocs console at https://console.aws.amazon.com/zocalo/ 7. In the Manage Your WorkDocs Sites page, select the desired site and choose Actions and Manage MFA.\n8. Confirm the values are set correctly.\nMulti-factor authentication is available when the RADIUS Status reads Enabled.\nFrom the Command line:\nInternal Only - General 1. Run describe-directories command to list the identifiers of all the Active Directory (AD) Connector directories, available in the selected AWS region:\naws ds describe-directories\n--region us-east-1\n--output table\n--query 'DirectoryDescriptions[*].DirectoryId'\n2. The command output should return a table with the requested resource IDs:\n---------------------\n|DescribeDirectories|\n+-------------------+\n| d-12345abcde |\n| d-abcd012345 |\n| d-aabbcc1234 |\n+-------------------+\n3. Run describe-directories command using the ID of the AD Connector directory to get the status of the RADIUS MFA server connection:\naws ds describe-directories\n--region us-east-1\n--directory-ids d-12345abcde\n--query 'DirectoryDescriptions[*].RadiusStatus'\n4. The command output should return the requested status information:\n[]\n5. Repeat steps 3 and 4 to determine the MFA status for other AD Connector directories.\n6. Change the AWS region by updating the --region command parameter value and repeat steps 1 – 5 to perform the audit process for other regions.\nIf describe-directories command output returns an empty array, as shown in the example above, there is no RADIUS MFA server configured for the selected AD Directory, therefore the resource does not have Multi-Factor Authentication (MFA) protection enabled. Refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-5722A109",
+        "title": "4 WorkDocs",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5722A109r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.3",
+          "title": "Ensure Workdocs access is limited to a range of allowable IP addresses",
+          "description": "<VulnDiscussion>Access to WorkDocs can be limited to an allowed range of IP addresses.\n\nRationale:\nUsing IP address allow lists, you define and permit access to your WorkDocs site from trusted networks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "4.3"
+          },
+          "fixtext": {
+            "+content": "Perform the steps below to create or edit the IP Allow list for WorkDocs From the Console:\n1. Log into the AWS console.\n2. Navigate to WorkDocs or go to WorkDocs Console at https://console.aws.amazon.com/zocalo/ 3. Under My Account, choose Open admin control panel.\n4. For IP Allow List, choose Change.\nInternal Only - General 5. For Enter CIDR value, enter the IP address ranges to allowlist. To allow access from a single IP address, specify /32 as the CIDR prefix.\n6. Click Add.\n7. Click Save Changes.",
+            "+@fixref": "F-5722A109r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5722A109r01_fix"
+          },
+          "check": {
+            "+@system": "C-5722A109_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform these steps to review the list of IP addresses allowed to access WorkDocs From the Console:\n1. Log into the AWS console.\n2. Navigate to WorkDocs or go to WorkDocs Console at https://console.aws.amazon.com/zocalo/ 3. Under My Account, choose Open admin control panel.\n4. For IP Allow List, choose Change.\n5. Review the IP address ranges and any single IP addresses 6. Click Cancel.\nIf the IP address ranges do not match trusted networks refer to the remediation below to create or edit the IP Allow list."
+          }
+        }
+      },
+      {
+        "+@id": "V-59A048ED",
+        "title": "4 WorkDocs",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-59A048EDr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.4",
+          "title": "Utilize site wide activity feed for monitoring.",
+          "description": "<VulnDiscussion>Admins can view and export the activity feed for an entire WorkDocs site.\n\nRationale:\nWorkDoc admins should monitor and export activity feeds for the site as record of activity. These activity reports should be reviewed every month for any abnormalities and rotated every 90 days.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "4.4"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to Export site-wide activity feed From the WorkDocs web application:\n1. Click Activity feed.\n2. Click Filter, then Click Site-wide activity.\n3. Select Activity Type filters and choose Date Modified settings as needed, then click Apply.\n4. When the filtered activity feed results appear, search by file, folder, or user name to narrow your results. You can also add or remove filters as needed.\n5. Click Export 6. Export the activity feed as a .csv or .json file. Any filters you applied are reflected in the exported file.\nInternal Only - General",
+            "+@fixref": "F-59A048EDr01_fix"
+          },
+          "fix": {
+            "+@id": "F-59A048EDr01_fix"
+          },
+          "check": {
+            "+@system": "C-59A048ED_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the steps below to view site-wide activity feed From the WorkDocs web application:\n1. Click Activity feed.\n2. Click Filter, then Click Site-wide activity.\n3. Select Activity Type filters and choose Date Modified settings as needed, then click Apply.\n4. When the filtered activity feed results appear, search by file, folder, or user name to narrow your results. You can also add or remove filters as needed."
+          }
+        }
+      },
+      {
+        "+@id": "V-FC3221E7",
+        "title": "4 WorkDocs",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FC3221E7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.5",
+          "title": "Ensure new users can only be invited from allowed domains.",
+          "description": "<VulnDiscussion>Users that are allowed access to shared files or folders in WorkDocs should be limited to specific domains.\n\nRationale:\nTo control who should be allowed to join your WorkDocs site, users should be limited on who they can invite sharing files or folders with new people from the specified domains.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "4.5"
+          },
+          "fixtext": {
+            "+content": "Perform the steps to set WorkDocs file and sharing folders to be controlled by specified domains.\nFrom the WorkDocs Admin control panel 1. Log in to WorkDocs as an Administrator 2. Click Security 3. Under - Invite settings Internal Only - General 4. Select Users can invite new people from a few specific domains by sharing files or folders with them 5. Add in or edit the listed allowed Domains.",
+            "+@fixref": "F-FC3221E7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-FC3221E7r01_fix"
+          },
+          "check": {
+            "+@system": "C-FC3221E7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the steps to confirm WorkDocs file and sharing folders is controlled by specified domains.\nFrom the WorkDocs Admin control panel 1. Log in to WorkDocs as an Administrator 2. Click Security 3. Under - Invite settings 4. Confirm that only Users can invite new people from a few specific domains by sharing files or folders with them 5. Confirm the listed Domains is accurate.\nIf the setting is not set to \"Users can invite new people from a few specific domains by sharing files or folders with them\" or the domains listed is not accurate refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-1DE6AFBF",
+        "title": "4 WorkDocs",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1DE6AFBFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.6",
+          "title": "Ensure only specific users are allowed to invite external users",
+          "description": "<VulnDiscussion>The organization should only allow administrators the ability to invite external users to the WorkDocs site.\n\nRationale:\nIf anyone can invite a user outside of the organization it could potentially lead to security or information leak.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "4.6"
+          },
+          "fixtext": {
+            "+content": "Perform the steps to Set Only Administrators can invite new external users for WorkDocs.\nFrom the WorkDocs Admin control panel 1. Log in to WorkDocs as an Administrator 2. Click Security 3. Under - external invites 4. Select Only administrators can invite new external users\n- Only administrators can invite external users to use Amazon WorkDocs.\nInternal Only - General",
+            "+@fixref": "F-1DE6AFBFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-1DE6AFBFr01_fix"
+          },
+          "check": {
+            "+@system": "C-1DE6AFBF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the steps to confirm Only Administrators can invite new external users for WorkDocs.\nFrom the WorkDocs Admin control panel 1. Log in to WorkDocs as an Administrator 2. Click Security 3. Under - external invites 4. Confirm that only Only administrators can invite new external users If this is not set to \"Only administrators can invite new external users\" refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-02C99896",
+        "title": "4 WorkDocs",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-02C99896r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.7",
+          "title": "Ensure publicly shareable links is not allowed in WorkDocs",
+          "description": "<VulnDiscussion>The organization should not allow publicly shareable links for WorkDocs.\n\nRationale:\nIf a user can create and send a publicly shareable links allowing a file to be viewed by people outside of the organization it could potentially lead to an security or information leak.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "4.7"
+          },
+          "fixtext": {
+            "+content": "Perform the steps to set set publicly shareable links for WorkDocs to not allowed.\nFrom the WorkDocs Admin control panel 1. Log in to WorkDocs as an Administrator 2. Click Security 3. Under - public share settings 4. Select - No public sharing. - Users cannot send view links to anyone outside the organization.",
+            "+@fixref": "F-02C99896r01_fix"
+          },
+          "fix": {
+            "+@id": "F-02C99896r01_fix"
+          },
+          "check": {
+            "+@system": "C-02C99896_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the steps to confirm publicly shareable links for WorkDocs is not allowed.\nFrom the WorkDocs Admin control panel 1. Log in to WorkDocs as an Administrator 2. Click Security 3. Under - public share settings 4. Confirm that - No public sharing is selected.\nIf this is not selected choice refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-23466C2F",
+        "title": "4 WorkDocs",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-23466C2Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.8",
+          "title": "Ensure any user that has not accessed WorkDocs in 30 days is set to inactive.",
+          "description": "<VulnDiscussion>User accounts that are not actively using the WorkDocs service should be set to inactive after a period of 30 days.\n\nRationale:\nInactive accounts may appear to not pose a problem but they can provide unauthorized access to files within WorkDocs.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "4.8"
+          },
+          "fixtext": {
+            "+content": "Perform the steps below to disable a user's access by changing their status to Inactive.\nFrom the WorkDocs Admin control panel 1. Log in to WorkDocs as an Administrator.\n2. Under My Account, click Open admin control panel.\n3. Under Manage Users, choose the pencil icon next to the user's name that needs to be set as inactive.\n4. Choose Inactive, and Click Save Changes Internal Only - General The inactivated user no longer has access to your Amazon WorkDocs site.",
+            "+@fixref": "F-23466C2Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-23466C2Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-23466C2F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to review list of users From the WorkDocs Admin control panel 1. Log in to WorkDocs as an Administrator 2. Under My Account, choose Open admin control panel.\n3. Under Manage User s, choose Download user.\n4. For Download user, choose All users 5. Review the file to determine if any users have not accessed WorkDocs in the past 30 days.\nIf you find any users that have not accessed WorkDocs in the past 30 days refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-95C571B2",
+        "title": "5 AppStream 2.0",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-95C571B2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1",
+          "title": "Ensure AppStream is utilizing its own virtual private cloud",
+          "description": "<VulnDiscussion>AppStream 2.0 should be configured using a VPC with Private subnets and a NAT Gateway.\n\nRationale:\nFor AppStream 2.0 the public subnet will have direct access to the internet through the NAT gateway. This setup allows the streaming instances in your private subnets to connect to the internet or other AWS services.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "5.1"
+          },
+          "fixtext": {
+            "+content": "Perform the steps below to create a VPC, subnets and routing table for AppStream 2.0 From the Console Allocate an Elastic IP address 1. Login in to the Amazon VPC console at https://console.aws.amazon.com/vpc/ 2. In the left pane, click Elastic IPs.\n3. Click Allocate new address.\n4. Then click on Allocate.\n5. Make a note of the Elastic IP address.\n6. Click Close.\nCreate a New VPC with one public subnet and two private subnet's.\n1. Login to the VPC console at https://console.aws.amazon.com/vpc/ 2. Click Launch VPC Wizard.\n3. Choose VPC with Public and Private Subnet's and then click Select`.\n4. Configure the VPC as follows:\nInternal Only - General\n- `IPv4 CIDR block` - enter a CIDR block from the private (non-publicly\nroutable) IP address range - example. 10.0.0.0/16.\n- `IPv6 CIDR block` - Accept the default value - No IPv6 CIDR Block\n- `VPC name` enter a name for the VPC (example, AppStream VPC).\n- `Public subnet's IPv4 CIDR` - enter a CIDR block from the private\n(non-publicly routable) IP address range - ie. 10.0.0.0/24.\n- `Availability Zone` - Accept the default value - No Preference\n- `Public subnet name` - enter a name for the subnet (example, AppStream\nPublic Subnet)\n- `Private subnet's IPv4 CIDR` - enter the CIDR block for the subnet.\n- `Availability Zone` - Accept the default value - No Preference\n- `Private subnet name` - enter a name for the subnet (example,\nAppStream Private Subnet 1).\n- `Elastic IP Allocation ID` - enter the Elastic IP address that you\ncreated.\n- `Service Endpoints` - Accept the default value - Blank\n- `Enable DNS hostnames` - Accept the default value - Yes\n- `Hardware tenancy` - Accept the default value - Default\n5. Click on Create VPC ***Note that it takes several minutes to set up your VPC. After the VPC is created, choose OK.\nCreate the Second Private subnet to the VPC 1. In the left pane, choose Subnets.\n2. Click Create subnet.\n- `Name tag` - enter a name for the private subnet (example, AppStream\nPrivate subnet 2).\n- `VPC` - select the VPC that you created for AppStream 2.0.\n- `Availability Zone` - select a different one than you are using for\nAppStream2 Private subnet 1.\n- `IPv4 CIDR block` - enter the CIDR block for the subnet.\n3. Click Create.\nVerify and Name the Route Tables 1. In the left pane, choose Subnets 2. Select the public subnet that you created (example, AppStream Public subnet) 3. On the Route Table tab, click the ID of the route table (example, rtb-12345678).\n4. Select the route table.\n5. Under Name, choose the edit icon (the pencil), enter a name (for example, appstream-public-routetable), then click the check mark to save.\n6. On the Routes tab, confirm one destination and target for local traffic and another destination and target that sends all other traffic to the internet gateway (example, igw-0518a307898725db2).\nInternal Only - General 7. In the left pane, choose Subnets.\n8. Select the first private subnet that you created (example, AppStream Private subnet 1) 9. On the Route Table tab, click the ID of the route table (example, rtb-12345678).\n10.Select the route table. Under Name, choose the edit icon (the pencil), enter a name (for example, appstream-private-routetable1), then click the check mark to save.\n11.On the Routes tab, confirm one destination and target for local traffic and another destination and target that sends all other traffic to the NAT gateway (example, nat-06ea352539b2fddfc).\n12.In the left pane, choose Subnets.\n13.Select the second private subnet that you created (example, AppStream Private subnet 2) 14.On the Route Table tab, click the ID of the route table (example, rtb-12345678).\n15.Select the route table. Under Name, choose the edit icon (the pencil), enter a name (for example, appstream-private-routetable2), then click the check mark to save.\n16.On the Routes tab, confirm one destination and target for local traffic and another destination and target that sends all other traffic to the NAT gateway (example, nat-06ea352539b2fddfc).",
+            "+@fixref": "F-95C571B2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-95C571B2r01_fix"
+          },
+          "check": {
+            "+@system": "C-95C571B2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if a VPC is setup for AppStream 2.0 correctly.\nFrom Console:\n1. Login to the VPC console at https://console.aws.amazon.com/vpc/ 2. In the left pane, click Your VPCs 3. Select the VPC for AppStream 2.0 and take note of the name and the VPC ID 4. In the left pane, click Subnets 5. Confirm you have 3 subnets labeled and associated with the VPC 1 AppStream Public Subnet and 2 AppStream Private Subnets 6. Confirm the AppStream Public Subnet is configured correctly.\no Select AppStream Public subnet\nDescription tab - VPC matches `AppStream ID and name`\nRoute Table tab - verify contains rules\n`-Example` - Destination - 10.0.0.0/20, Target - local\n`-Example` - Destination - 0.0.0.0/0, Target - internet_gateway_ID\n7. Confirm the 2 AppStream Private Subnets are configured correctly.\no Select AppStream Private subnet 1 Internal Only - General\nDescription Tab - VPC matches `AppStream ID and name` and note Availability\nzone\nRoute Table tab - verify contains routes\n`-Example` - Destination - 10.0.0.0/20, Target - local\n`-Example` - Destination - 0.0.0.0/0, Target - nat_gateway_ID\n`-Example- optional` - Destination - S3bucket_enpoint_ID, Target -\nstorage_vpce_ID\n- Select AppStream Private subnet 2\nDescription Tab - VPC matches `AppStream ID and name` and Availability zone\nis set to something different than Private subnet 1\nRoute Table tab - verify contains routes\n`-Example` - Destination - 10.0.0.0/20, Target - local\n`-Example` - Destination - 0.0.0.0/0, Target - nat_gateway_ID\n`-Example- optional` - Destination - S3bucket_enpoint_ID, Target -\nstorage_vpce_ID\nIf The AppStream VPC, subnets and route tables are not configured correctly refer to the remediation procedure below."
+          }
+        }
+      },
+      {
+        "+@id": "V-87EA0603",
+        "title": "5 AppStream 2.0",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-87EA0603r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2",
+          "title": "Ensure a VPC Endpoint is set for AppStream",
+          "description": "<VulnDiscussion>When you select Using a VPC endpoint, this allows users to only stream from this AppStream 2.0 stack when they have network access to the VPC.\n\nRationale:\nVirtual Private Cloud (VPC) endpoints allow your users to stream from AppStream 2.0 through your VPC. You can create a VPC endpoint in the VPC of your choosing, then use the endpoint with AppStream 2.0 VPC to maintain the streaming traffic within the VPC.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "5.2"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to create an interface endpoint From the Console:\n1. Log in to the VPC console at https://console.aws.amazon.com/vpc/ 2. In the left pane, click Endpoints, Create Endpoint.\n3. Click Create Endpoint.\nInternal Only - General\n- For Service category, ensure that AWS services is selected.\n- For Service Name, choose com.amazonaws.<AWS Region>.appstream.streaming.\n- For VPC, choose a VPC in which to create the interface endpoint.\n- For Subnets, choose the subnets (Availability Zones) in which to create the\nendpoint network interfaces.\n- Ensure that the Enable Private DNS Name check box is selected.\n- For Security group, select the security group for AppStream\n4. Click Create endpoint.\nTo update a stack to use a new interface endpoint 1. Log in to AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. In the left pane, click Stacks, and click the link of the stack name wish to edit.\n3. Scroll to the VPC Endpoints, and then choose Edit.\n4. In the Edit VPC Endpoint dialog box, for Streaming Endpoint, choose the endpoint you just created.\n5. Click Save Changes.\nTraffic for new streaming sessions will be routed through this endpoint. However, traffic for current streaming sessions continues to be routed through the previously specified endpoint.",
+            "+@fixref": "F-87EA0603r01_fix"
+          },
+          "fix": {
+            "+@id": "F-87EA0603r01_fix"
+          },
+          "check": {
+            "+@system": "C-87EA0603_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the steps to review the interface endpoint set for AppStream 2.0 From the Console 1. Log in to the AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. In the left pane, click Stacks, click the link for the stack you wish to view.\n3. Scroll to the VPC Endpoints section.\n4. Confirm the Streaming Endpoint listed is the endpoint through which to stream traffic.\nIf there is no Streaming endpoint pointing to a specific VPC Endpoint and it is labeled as Internet refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-D29780D7",
+        "title": "5 AppStream 2.0",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D29780D7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.3",
+          "title": "Ensure maximum session duration is no longer than 10 hours",
+          "description": "<VulnDiscussion>When creating a fleet for AppStream 2.0 configure the Maximum session duration in minutes to be no greater than 600.\n\nRationale:\nHaving a session duration lasting longer than 10 hours should not be necessary and if running for any malicious reasons provides a greater time for usage than should be allowed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "5.3"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to edit the Fleet settings in AppStream From the Console 1. Log in to the AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. In the left pane click on Fleets.\n3. Select the link for the fleet name you wish to edit.\n4. Click Actions, Stop 5. Scroll to the Fleet configuration section and click Edit 6. Change the Maximum session duration is set to 600 minutes or less and click Save Changes 7. Click Actions, Start Internal Only - General",
+            "+@fixref": "F-D29780D7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D29780D7r01_fix"
+          },
+          "check": {
+            "+@system": "C-D29780D7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to view the Fleet settings in AppStream From the Console 1. Log in to the AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. In the left pane click on Fleets.\n3. Select the link for the fleet name you wish to view.\n4. On the Fleet configuration section confirm that Maximum session duration is set to 600 minutes or less.\nIf Maximum session duration is set to anything greater than 600 minutes refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-B359B85A",
+        "title": "5 AppStream 2.0",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B359B85Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.4",
+          "title": "Ensure session disconnect timeout is set to 5 minutes or less",
+          "description": "<VulnDiscussion>Disconnect timeout in minutes, is the amount of of time that a streaming session remains active after users disconnect.\n\nRationale:\nIf users try to reconnect to the streaming session after a disconnection or network interruption within the 5 minutes, they are connected to their previous session.\nOtherwise, they are connected to a new session with a new streaming instance and that instance isn't sitting out there not being used.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "5.4"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to update the Fleet settings in AppStream From the Console 1. Log in to the AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. In the left pane click on Fleets.\n3. Select the link for the fleet name you wish to edit.\n4. Scroll to the Fleet configuration section and click Edit 5. Change the Disconnect timeout to 5 minutes or less.\nInternal Only - General",
+            "+@fixref": "F-B359B85Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-B359B85Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-B359B85A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to view the Fleet settings in AppStream From the Console 1. Log in to the AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. In the left pane click on Fleets.\n3. Select the link for the fleet name you wish to view.\n4. On the Fleet configuration section confirm that Disconnect timeout is set to 5 minutes minutes or less.\nIf Disconnect timeout is set to anything greater than 5 minutes refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-947BD578",
+        "title": "5 AppStream 2.0",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-947BD578r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.5",
+          "title": "Ensure session Idle disconnect timeout is set to 10 minutes or less",
+          "description": "<VulnDiscussion>Idle disconnect timeout in minutes is the amount of time that users can be inactive before they are disconnected from their streaming session and the Disconnect timeout in minutes time begins.\n\nRationale:\nUsers are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. Once disconnected from their streaming session the Disconnect timeout begins.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "5.5"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to view the Fleet settings in AppStream From the Console 1. Log in to the AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. In the left pane click on Fleets.\n3. Select the link for the fleet name you wish to view.\n4. Scroll to the Fleet configuration section and click Edit 5. Change the Idle disconnect timeout to 5 minutes or less and click Save changes Internal Only - General",
+            "+@fixref": "F-947BD578r01_fix"
+          },
+          "fix": {
+            "+@id": "F-947BD578r01_fix"
+          },
+          "check": {
+            "+@system": "C-947BD578_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to view the Fleet settings in AppStream From the Console 1. Log in to the AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. In the left pane click on Fleets.\n3. Select the link for the fleet name you wish to view.\n4. Scroll to the Fleet configuration section and confirm that Idle disconnect timeout is set to 10 minutes or less.\nIf Idle disconnect timeout is set to anything greater than 10 minutes refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-28CCF9A2",
+        "title": "5 AppStream 2.0",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-28CCF9A2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.6",
+          "title": "Ensure internet access is granted and managed through your VPC",
+          "description": "<VulnDiscussion>Default Internet Access from your fleet streaming instances should remain unchecked.\n\nRationale:\nWhen Default Internet Access is enabled, AppStream 2.0 uses the internet gateway in the VPC public subnet to connect to the public internet. The streaming instances are then assigned public IP addresses that are directly accessible from the internet.\nInternet Access from fleet streaming instances should be controlled using a NAT gateway in the VPC. When Default Internet Access is not enabled, streaming instances are assigned a private IP address that are not directly accessible from the internet.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "5.6"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to view the Fleet settings in AppStream From the console 1. Log in to the AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. In the left pane click on Fleets.\n3. Select the link for the fleet name you wish to edit.\n4. Click Actions, Stop 5. Scroll to the Network details section and click Edit 6. Deselect Default Internet Access 7. Click Save changes Internal Only - General",
+            "+@fixref": "F-28CCF9A2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-28CCF9A2r01_fix"
+          },
+          "check": {
+            "+@system": "C-28CCF9A2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to view the Fleet settings in AppStream From the Console 1. Log in to the AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. In the left pane click on Fleets.\n3. Select the link for the fleet name you wish to view.\n4. On the Network details section confirm that Default Internet Access is set to Disabled.\nIf Default internet access is not set to disabled refer to the remediation below."
+          }
+        }
+      },
+      {
+        "+@id": "V-9C1E4C81",
+        "title": "5 AppStream 2.0",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9C1E4C81r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.7",
+          "title": "Ensure Operating system updates are applied to your base image every 30 days.",
+          "description": "<VulnDiscussion>To ensure that your fleet instances have the latest Windows updates installed, we recommend that you install Windows updates on your image builder, create a new image, and then update your fleet with the new image once a month.\n\nRationale:\nAll fleet instances used in user streaming sessions have only the Windows and application updates that were installed on the underlying image when it was created. In addition, any updates made to Windows or to applications on the instance during the streaming session will not persist to future sessions by the same user or other users.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS AWS End User Compute Services Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS AWS End User Compute Services Benchmark",
+            "dc:identifier": "5.7"
+          },
+          "fixtext": {
+            "+content": "Perform the steps below to create an image and update it.\nFrom the Console 1. Log in to the AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. Click Images in the left pane, then Click the Image Builder tab, and Click Launch Image Builder.\n3. Choose a base image. The latest base images released by AWS is recommended and selected by default.\n4. Click Next.\n5. Configure Image Builder, by doing the following:\nInternal Only - General\n- Name: Type a unique name identifier for the image builder.\n-Display name (optional): Type a name to display for the image builder\n(maximum of 100 characters).\n- Tags (optional): Choose Add Tag, and type the key and value for the tag. To\nadd more tags, repeat this step.\n- Instance Type: Select the instance type for the image builder.\n- Network Access Points (Optional): You can create a private link, which is\nan interface VPC endpoint (interface endpoint), in your virtual private cloud\n(VPC). To start creating the interface endpoint, select Create PrivateLink.\n- After you create the interface endpoint, you can use it to keep streaming\ntraffic within your VPC.\n- AppStream 2.0 Agent: This section displays only if you are not using the\nlatest version of the agent.\n- If you are not using the latest AppStream 2.0 agent always select the\noption to launch your image builder with the latest agent.\n- IAM role (Advanced): Use existing or create a new IAM role\n6. Click Next.\n7. Configure Network, do the following:\n- Leave Default Internet Access unselected.\n- For VPC and Subnet 1, choose a VPC and two subnets in different\nAvailability Zones.\n- For Security group(s), choose up to five security groups to associate with\nthis image builder.\n- For Active Directory Domain (Optional), expand this section to choose the\nActive Directory configuration and organizational unit in which to place your\nstreaming instance computer objects. Ensure that the selected network access\nsettings enable DNS resolvability and communication with your directory.\n- Choose Review and confirm the details for the image builder.\n- Review the configuration details.\nClick Launch.\nNext Steps Install Operating system updates and install, configure and update your applications for streaming, and then create an image by creating a snapshot of the image builder instance.",
+            "+@fixref": "F-9C1E4C81r01_fix"
+          },
+          "fix": {
+            "+@id": "F-9C1E4C81r01_fix"
+          },
+          "check": {
+            "+@system": "C-9C1E4C81_chk",
+            "check-content-ref": {
+              "+@href": "CIS_AWS_End_User_Compute_Services_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following steps to review the Image date.\nFrom the Console 1. Log in to the AppStream 2.0 console at https://console.aws.amazon.com/appstream2 2. In the left pane click on Images 3. Select the Image Builder tab 4. Select the link for the Image builder name you wish to view.\n5. In the Image builder details tab review the Created at date and the AppStream agent version.\nIf the created at date is over 30 days old refer to the remediation below."
+          }
+        }
+      }
+    ]
+  }
+}

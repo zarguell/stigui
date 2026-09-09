@@ -1,0 +1,838 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_Microsoft_Dynamics_365_Power_Platform",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2022-12-20"
+    },
+    "title": "CIS Microsoft Dynamics 365 Power Platform",
+    "description": "All CIS Benchmarks focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system for vulnerabilities and quickly updating with the latest security patches • Monitoring applications and libraries for vulnerabilities and quickly updating with the latest security patches In the end, the CIS Benchmarks are designed as a key component of a comprehensive cybersecurity program. This document provides prescriptive guidance for establishing a secure configuration posture for Microsoft Dynamics 365 Power Platform running in the Cloud on any OS. This guide was tested against Microsoft Dynamics 365. To obtain the latest version of this guide, please visit http://cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.0.0 Benchmark Date: 2022-12-20",
+      "+@id": "release-info"
+    },
+    "version": "1.0.0",
+    "Profile": [
+      {
+        "+@id": "L1_Public",
+        "title": "Level 1 (L1) - Corporate/Enterprise Environment (general use)",
+        "description": "CIS profile: Level 1 (L1) - Corporate/Enterprise Environment (general use)",
+        "select": [
+          {
+            "+@idref": "V-EA2477F5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A4F51660",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A8C4DA32",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-579162BC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B1F71541",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3992A90D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5672E65E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-10ABA0F8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F96E4304",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-30A86F3C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-584D4E49",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B24BD4B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-59297EB3",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Classified",
+        "title": "Level 1 (L1) - Corporate/Enterprise Environment (general use)",
+        "description": "CIS profile: Level 1 (L1) - Corporate/Enterprise Environment (general use)",
+        "select": [
+          {
+            "+@idref": "V-EA2477F5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A4F51660",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A8C4DA32",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-579162BC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B1F71541",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3992A90D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5672E65E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-10ABA0F8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F96E4304",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-30A86F3C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-584D4E49",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B24BD4B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-59297EB3",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Sensitive",
+        "title": "Level 1 (L1) - Corporate/Enterprise Environment (general use)",
+        "description": "CIS profile: Level 1 (L1) - Corporate/Enterprise Environment (general use)",
+        "select": [
+          {
+            "+@idref": "V-EA2477F5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A4F51660",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A8C4DA32",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-579162BC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B1F71541",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3992A90D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5672E65E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-10ABA0F8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F96E4304",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-30A86F3C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-584D4E49",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1B24BD4B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-59297EB3",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Public",
+        "title": "Level 2 (L2) - High Security/Sensitive Data Environment (limited functionality)",
+        "description": "CIS profile: Level 2 (L2) - High Security/Sensitive Data Environment (limited functionality)",
+        "select": [
+          {
+            "+@idref": "V-08C97324",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BC1A29C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C074072B",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Classified",
+        "title": "Level 2 (L2) - High Security/Sensitive Data Environment (limited functionality)",
+        "description": "CIS profile: Level 2 (L2) - High Security/Sensitive Data Environment (limited functionality)",
+        "select": [
+          {
+            "+@idref": "V-08C97324",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BC1A29C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C074072B",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Sensitive",
+        "title": "Level 2 (L2) - High Security/Sensitive Data Environment (limited functionality)",
+        "description": "CIS profile: Level 2 (L2) - High Security/Sensitive Data Environment (limited functionality)",
+        "select": [
+          {
+            "+@idref": "V-08C97324",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BC1A29C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C074072B",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-EA2477F5",
+        "title": "1 Accounts and Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-EA2477F5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1",
+          "title": "(L1) Ensure 'User access to environments is controlled with Security Groups'",
+          "description": "<VulnDiscussion>If the organization has multiple Microsoft Dataverse environments, security groups can be used to control which licensed users can be a member of a particular environment.\n\nRationale:\nLimiting the access and permissions for the accounts that needs access to the information, reduces the risk of having users with improper access to data in the environment.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "1.1"
+          },
+          "fixtext": {
+            "+content": "Ensure that user access to environments is controlled with security groups.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Edit on the Details pane of the environment.\n3. Select the pencil icon under Security group.\n4. Select the appropriate security group.\n5. Select Done followed by Save.",
+            "+@fixref": "F-EA2477F5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-EA2477F5r01_fix"
+          },
+          "check": {
+            "+@system": "C-EA2477F5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that user access to environments is controlled with security groups.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Edit on the Details pane of the environment.\n3. Select the pencil icon under Security group.\n4. Ensure the appropriate group(s) are selected."
+          }
+        }
+      },
+      {
+        "+@id": "V-A4F51660",
+        "title": "1 Accounts and Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A4F51660r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2",
+          "title": "(L1) Ensure 'User sessions are terminated upon time limit exceeded and user logoff'",
+          "description": "<VulnDiscussion>The Dynamics 365 platform can be configured with a user session expiration time and inactivity timeout.\nThe recommended state for this setting is: 120 minutes.\n\nRationale:\nBy default, the timeout for a user’s session is set to 24 hours which means the user is not required to re-enter their login details for up to 24 hours.\nWhenever a Dynamics 365 user sessions is started, a unique session ID and other session information are generated. Such information can be used be a malicious user to hijack the session. By terminating sessions upon user logoff and idle time limit, the underlying session information is invalidated. Therefore, the potential for the session to be hijacked is removed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "1.2"
+          },
+          "fixtext": {
+            "+content": "Ensure that user sessions are terminated upon user logoff and when the idle time limit is exceeded.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings.\n3. Expand Product then select Privacy + Security.\n4. Under Session Expiration move the slider to On.\nEnter the session length and timeout as determined by organizational policy.\n5. Under Inactivity timeout move the slider to On.\nEnter the duration for timeout and warning as determined by organizational policy.\n6. Click Save.\nNote: These settings apply to all users in the environment.",
+            "+@fixref": "F-A4F51660r01_fix"
+          },
+          "fix": {
+            "+@id": "F-A4F51660r01_fix"
+          },
+          "check": {
+            "+@system": "C-A4F51660_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that user sessions are terminated upon user logoff and when the idle time limit is exceeded.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings.\n3. Expand Product then select Privacy + Security.\n4. Under Session Expiration ensure the slider is set to On.\nConfirm the length and timeout as determined by organizational policy.\n5. Under Inactivity timeout ensure the slider is set to On.\nConfirm the duration for timeout and warning as determined by organizational policy.\n6. Click Save."
+          }
+        }
+      },
+      {
+        "+@id": "V-A8C4DA32",
+        "title": "1 Accounts and Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A8C4DA32r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3",
+          "title": "(L1) Ensure 'Administrative accounts are separate, unassigned, and cloud-only'",
+          "description": "<VulnDiscussion>Administrative accounts are special privileged accounts that could have varying levels of access to data, users, and settings.\nEach system administrator should utilize two (2) separate accounts, an administrator account to perform administrative tasks and a separate account for daily activities such as checking email. Users should only sign in with system administrator account to perform administrative tasks in the environment.\n\nRationale:\nUsers with the system administrator role automatically have access to records, system, and custom entities. Creating separate administrative accounts can reduce the risk of credential theft and other types of attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "1.3"
+          },
+          "fixtext": {
+            "+content": "Ensure each administrator has an administrative and regular user account.\nIn the Microsoft 365 Admin Center:\n1. Log in to https://admin.microsoft.com as a Global Administrator.\n2. Go to Users and then Active users and select Add a user.\n3. Fill out the appropriate fields for Name, user, domain, password etc.\n4. When prompted to assign licenses select Create user without product license (not recommended), then click Next.\n5. Under the Option settings choose Admin center access followed by the appropriate role then click Next.\n6. Select Finish adding.\nNote: Take into account the proper and valid licensing requirements and attribute the security roles inside power platform with the least privilege approach.",
+            "+@fixref": "F-A8C4DA32r01_fix"
+          },
+          "fix": {
+            "+@id": "F-A8C4DA32r01_fix"
+          },
+          "check": {
+            "+@system": "C-A8C4DA32_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify there are separate administrative accounts being utilized.\nIn the Microsoft 365 Admin Center:\n1. Log in to https://admin.microsoft.com as a Global Administrator.\n2. Select Users > Active users then sort by the User type column.\n3. Verify that Administrators have a dedicated administrative and regular user account."
+          }
+        }
+      },
+      {
+        "+@id": "V-08C97324",
+        "title": "1 Accounts and Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-08C97324r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.4",
+          "title": "(L2) Ensure 'Multifactor authentication for all users' is 'Enabled'",
+          "description": "<VulnDiscussion>Enable multifactor authentication (MFA) for all users in the Microsoft 365 tenant. MFA is an authentication method which requires the user to provide two (or more) pieces of information to gain access to the system or application.\nThere are several options for MFA within the Microsoft 365 tenant:\n• Authentication code received via text message to a registered mobile phone number.\n• Mobile authentication application like Microsoft Authenticator.\n\nRationale:\nMultifactor authentication requires an individual to present a minimum of two separate forms of authentication before access is granted. Multifactor authentication provides additional assurance that the individual attempting to gain access is who they claim to be. With multifactor authentication, an attacker would need to compromise at least two different authentication mechanisms, increasing the difficulty of compromise and thus reducing the risk.\nUsers will be prompted to authenticate with a second factor upon logging in to Microsoft 365 services.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "1.4"
+          },
+          "fixtext": {
+            "+content": "Enable multifactor authentication for all users.\nIn the Microsoft 365 Admin Center:\n1. Log in to https://admin.microsoft.com as a Global Administrator.\n2. Go to Admin centers and click on Azure Active Directory.\n3. Select Enterprise applications then, under Security, select Conditional Access.\n4. Click New policy 5. Select Cloud apps or actions > All cloud apps (and don't exclude any apps) 6. Go to Assignments > Users and groups > Include > select All users (and do not exclude any user).\n7. Access Controls > Grant > Require multi-factor authentication (and nothing else) 8. Conditions > Client Apps > Configure (Yes) > Explicitly select Browser, Mobile apps and desktop clients, Modern authentication clients, Exchange ActiveSync clients, and Other clients 9. Leave all other conditions blank 10.Make sure the policy is enabled 11.Create",
+            "+@fixref": "F-08C97324r01_fix"
+          },
+          "fix": {
+            "+@id": "F-08C97324r01_fix"
+          },
+          "check": {
+            "+@system": "C-08C97324_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the multifactor authentication is configured for all users.\nIn the Microsoft 365 Admin Center:\n1. Log in to https://admin.microsoft.com as a Global Administrator.\n2. Go to Admin centers and click on Azure Active Directory.\n3. Select Enterprise applications then, under Security, select Conditional Access.\n4. Review the list of policies and ensure that there is a policy that requires the Grant access control with Require multi-factor authentication for All users under\nUsers and groups\nVerify the multifactor authentication configuration for administrators, using the M365 SecureScore service:\n1. Log in to the Secure Score portal https://security.microsoft.com as a Global Administrator or another custom admin role.\n2. Click on Require MFA for all users policy to check MFA for all users.\n3. It will show the number of users who do not have MFA configured.\nThis information is also available via the Microsoft Graph Security API:\nGET https://graph.microsoft.com/beta/security/secureScores"
+          }
+        }
+      },
+      {
+        "+@id": "V-579162BC",
+        "title": "2 Permissions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-579162BCr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1",
+          "title": "(L1) Ensure 'Creation of new trial, production, and sandbox environments' is restricted to 'Administrators'",
+          "description": "<VulnDiscussion>An environment is a space to store, manage, and share organizational data, apps, and flows. It also serves as a container to separate apps that may have different roles, security requirements, or target audiences. Power Apps automatically creates a single default environment for each tenant, which is shared by all users in that tenant.\nFor managing environments centrally and to prevent environment sprawl, it is suggested to limit the ability of environment creation to specific users.\n\nRationale:\nAny PowerApps licensed user can create an environment. If someone in the organization is on a Power Apps or Power Automate per-user plan, they may have permission to create their own environment. These environments can be used and shared by Dynamics 365, Power Apps portals and apps, and Power Automate flows.\nEnvironments can store multiple Dataverse tables. Power Platform apps and Dynamics 365 can then connect to, read from, and write to these tables, which would likely be shared across multiple applications/processes.\nIt is suggested to restrict the power platform environment creation for just administrators and restrict the access for this feature for a limited number of users.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "2.1"
+          },
+          "fixtext": {
+            "+content": "Ensure that the creation of new trial, production, and sandbox environment is restricted to administrators.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select the gear icon in the top right corner then select Power Platform Settings.\n3. Under Who can create production and sandbox environments select Only specific admins.\nNote: This restricts creation to Global admins, Dynamics 365 service admins, Power Platform service admins, and Delegated admins 4. Under Who can create trial environments select Only specific admins.\nNote: This restricts creation to Global admins, Dynamics 365 service admins, Power Platform service admins, and Delegated admins 5. Click Save",
+            "+@fixref": "F-579162BCr01_fix"
+          },
+          "fix": {
+            "+@id": "F-579162BCr01_fix"
+          },
+          "check": {
+            "+@system": "C-579162BC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that the creation of new trial, production, and sandbox environment is restricted to administrators.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select the gear icon in the top right corner then select Power Platform Settings.\n3. Under Who can create production and sandbox environments ensure that Only specific admins is selected.\nNote: This restricts creation to Global admins, Dynamics 365 service admins, Power Platform service admins, and Delegated admins.\n4. Under Who can create trial environments ensure that Only specific admins is selected.\nNote: This restricts creation to Global admins, Dynamics 365 service admins, Power Platform service admins, and Delegated admins."
+          }
+        }
+      },
+      {
+        "+@id": "V-B1F71541",
+        "title": "2 Permissions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B1F71541r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2",
+          "title": "(L1) Ensure 'Security roles provide access to the minimum amount of business data required'",
+          "description": "<VulnDiscussion>Users should only have access to data that they really require access to. Make use of the predefined security roles whenever possible and assure the minimum privileges required for the roles and for the users to perform their activities.\n\nRationale:\nMicrosoft Dynamics 365 makes use of the Dataverse and role-based security model to help secure the access. It also comes with predefined security roles that can be used for granting user access. If the permission for a predefined role requires customization, copy one that exists and work under the copied role, keeping the integrity of the original role.\nIt is important to apply the least privilege and need-to-know principle when customizing and granting users and roles permissions. Details in the reference links.\nLimiting the access and permissions for the accounts that needs access to the information, reduces the risk of having users with improper access to data in the environment and compromising the integrity/confidentiality of the data.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "2.2"
+          },
+          "fixtext": {
+            "+content": "Change user roles to meet environment needs via security groups.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings.\n3. Expand Users + permissions then select Security roles.\n4. Edit the Security Role to fit environmental needs.",
+            "+@fixref": "F-B1F71541r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B1F71541r01_fix"
+          },
+          "check": {
+            "+@system": "C-B1F71541_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure that user access to the environment is controlled with security groups.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings.\n3. Expand Users + permissions then select Security roles.\n4. Analyze the predefined Security Roles to determine which fits the environmental needs.\n5. Under the More actions click the 3 dots and select copy to audit the roles."
+          }
+        }
+      },
+      {
+        "+@id": "V-3992A90D",
+        "title": "2 Permissions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3992A90Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.3",
+          "title": "(L1) Ensure 'Set blocked file extensions' is configured to match the enterprise block list",
+          "description": "<VulnDiscussion>This setting prevents the upload or download of certain attachment types that are considered dangerous.\n\nRationale:\nDynamics 365 comes with a predefined extensions list that is blocked in the tool; it is required to have it as restricted as possible, allowing just the extensions that are required for business purposes. Consider updating the blocked extensions periodically.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "2.3"
+          },
+          "fixtext": {
+            "+content": "Ensure the 'Set blocked file extensions' is configured to match the organizations block list.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings.\n3. Expand Product then select Privacy + Security.\n4. Add extensions as relevant to the organization.",
+            "+@fixref": "F-3992A90Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-3992A90Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-3992A90D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the 'Set blocked file extensions' is configured to match the organizations block list.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings.\n3. Expand Product then select Privacy + Security.\n4. Review the list extensions to ensure it matches the organizations block list."
+          }
+        }
+      },
+      {
+        "+@id": "V-BC1A29C7",
+        "title": "2 Permissions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BC1A29C7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.4",
+          "title": "(L2) Ensure 'Access to the environment is restricted by location'",
+          "description": "<VulnDiscussion>Location condition in Azure AD Conditional Access, controls access to cloud apps based on the network location of a user. The location condition is commonly used to block access from countries/regions where organizations know traffic should not come from.\nRestrict access to users by location to reduce unauthorized access.\n\nRationale:\nConditional access policies controls access to cloud apps based on the network location of a user. It then blocks access from countries/regions where it knows traffic should not come from reducing the risk of a breach.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "2.4"
+          },
+          "fixtext": {
+            "+content": "Ensure access to the environment is restricted by location.\nIn the Microsoft 365 Admin Center:\n1. Log in to https://admin.microsoft.com as a Global Administrator or Conditional Access administrator.\n2. Go to Admin centers and click on Azure Active Directory.\n3. Select Enterprise applications then, under Security, select Conditional Access.\n4. Click New policy and create a name.\n5. Go to Assignments > Users or workload identity > Users and groups > 6. Under Include > select All users (and do not exclude any user).\n7. Under Exclude, select Users and groups, add the organizations emergency access or break-glass accounts.\n8. Select Cloud apps or actions > Include and click Select apps 9. Choose Microsoft Dataverse Application or Microsoft Dynamics ERP for Finance and Operations application.\n10.Select Conditions > Location configure to Yes 11.Under Include select Selected locations a. Select the blocked location created for the organization.\nb. Click Select.\n12.Select Access controls > click Block Access and click Select.\n13.Confirm the settings and set Enable policy to Report-only.\n14.Click Create to create and enable the policy.",
+            "+@fixref": "F-BC1A29C7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-BC1A29C7r01_fix"
+          },
+          "check": {
+            "+@system": "C-BC1A29C7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that access to the environment is restricted by location.\nIn the Microsoft 365 Admin Center:\n1. Log in to https://admin.microsoft.com as a Global Administrator or Conditional Access administrator.\n2. Go to Admin centers and click on Azure Active Directory.\n3. Select Enterprise applications then, under Security, select Conditional Access.\n4. Ensure a policy exists to restrict location."
+          }
+        }
+      },
+      {
+        "+@id": "V-5672E65E",
+        "title": "2 Permissions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5672E65Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5",
+          "title": "(L1) Ensure 'Cross-tenant isolation is enabled for Power Platform Apps and Flows'",
+          "description": "<VulnDiscussion>Microsoft Power Platform has a rich ecosystem of connectors based on Azure Active Directory (Azure AD) that allow authorized Azure AD users to build compelling apps and flows establishing connections to the business data available through these data stores.\nTenant isolation makes it easy for administrators to ensure that these connectors can be harnessed in a safe and secure way within the tenant while minimizing the risk of data exfiltration outside the tenant. Tenant isolation allows admins to effectively govern the movement of tenant data from Azure AD authorized data sources to and from their tenant.\nWith tenant isolation On, all tenants are restricted. Inbound (connections to the tenant from external tenants) and outbound (connections from the tenant to external tenants) cross-tenant connections are blocked by Power Platform even if the user presents valid credentials to the Azure AD-secured data source. Rules can be used to add exceptions.\nNote: Power Platform tenant isolation is different from Azure AD-wide tenant restriction.\nIt doesn't impact Azure AD-based access outside of Power Platform. Power Platform tenant isolation only works for connectors using Azure AD-based authentication such as Office 365 Outlook or SharePoint.\n\nRationale:\nCross-tenant isolation restricts how other tenants connect. Applied at the connector level, cross-tenant isolation blocks inbound or outbound connections for canvas apps and flows.\nAn attacker can compromise an account and create a connection in order to maintain persistent access to the user’s account.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "2.5"
+          },
+          "fixtext": {
+            "+content": "Ensure that tenant restrictions for outbound connections are setup:\nThere are two steps to get started with tenant restrictions. First, make sure that clients can connect to the right addresses. Second, configure proxy infrastructure.\n1. URLs and IP addresses:\na) To use tenant restrictions, clients must be able to connect to the following Azure AD URLs to authenticate: login.microsoftonline.com, login.microsoft.com, and login.windows.net.\nb) Additionally, to access Office 365, clients must also be able to connect to the fully qualified domain names (FQDNs), URLs, and IP addresses defined in Office 365 URLs and IP address ranges.\n2. Proxy configuration and requirements:\na) The following configuration is required to enable tenant restrictions through the proxy infrastructure. This guidance is generic, refer to the proxy vendor' documentation for specific implementation steps.\nb) Prerequisites:\n1. The proxy must be able to perform TLS interception, HTTP header insertion, and filter destinations using FQDNs/URLs.\n2. Clients must trust the certificate chain presented by the proxy for TLS communications. For example, if certificates from an internal public key infrastructure (PKI) are used, the internal issuing root certificate authority certificate must be trusted.\n3. Azure AD Premium 1 licenses are required for use of Tenant Restrictions.\nc) Configuration:\n1. For each outgoing request to login.microsoftonline.com, login.microsoft.com, and login.windows.net, insert two HTTP headers: Restrict-Access-To-Tenants and Restrict-Access- Context.\nNote: Do not include subdomains under *.login.microsoftonline.com in the proxy configuration. Doing so will include device.login.microsoftonline.com and will interfere with Client Certificate authentication, which is used in Device Registration and Device- based Conditional Access scenarios. Configure the proxy server to exclude device.login.microsoftonline.com and enterpriseregistration.windows.net from TLS break-and-inspect and header injection.\n3. The headers should include the following elements:\n1. For Restrict-Access-To-Tenants, use a value of permitted tenant list, which is a comma-separated list of tenants that allow users to access. Any domain that is registered with a tenant can be used to identify the tenant in this list, as well as the directory ID itself. For an example of all three ways of describing a tenant, the name/value pair to allow Contoso, Fabrikam, and Microsoft looks like: Restrict-Access-To-Tenants:\ncontoso.com,fabrikam.onmicrosoft.com,72f988bf-86f1-41af-91ab- 2d7cd011db47 2. For Restrict-Access-Context, use a value of a single directory ID, declaring which tenant is setting the tenant restrictions.\nExample: Declare Contoso as the tenant that set the tenant restrictions policy, the name/value pair looks like: Restrict-Access-Context: 456ff232-35l2-5h23-b3b3- 3236w0826f3d. Use the environments directory ID here to get logs for these authentications. If any directory ID other than the environments being set up, those sign-in logs will appear in another tenant, with all personal information removed. For more information, see Admin experience.\nTo prevent users from inserting their own HTTP header with non-approved tenants, the proxy needs to replace the Restrict-Access-To-Tenants header if it is already present in the incoming request.\nClients must be forced to use the proxy for all requests to login.microsoftonline.com, login.microsoft.com, and login.windows.net. For example, if PAC files are used to direct clients to use the proxy, end users shouldn't be able to edit or disable the PAC files.\n4. Inbound Connections:\n1. Browse to the Power Platform admin center, select Help + support.\n2. Under the New support request option, fill out the information required regarding the environment.",
+            "+@fixref": "F-5672E65Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-5672E65Er01_fix"
+          },
+          "check": {
+            "+@system": "C-5672E65E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that cross-tenant isolation is enabled.\nIn the Power Platform Admin Center:\n• Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n• Select Tenant isolation (preview).\n• Confirm that tenant isolation is on."
+          }
+        }
+      },
+      {
+        "+@id": "V-C074072B",
+        "title": "3 Data Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C074072Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.1",
+          "title": "(L2) Ensure 'Environments with Critical Data are Encrypted with Customer Managed Keys'",
+          "description": "<VulnDiscussion>All environments of Microsoft Dataverse use SQL Server Transparent Data Encryption (TDE) to perform real-time encryption of data when written to disk, also known as encryption at rest.\nBy default, Microsoft stores and manages the database encryption key for environments. The manage keys feature in the Microsoft Power Platform admin center gives administrators the ability to self-manage the database encryption key that is associated with the Dataverse tenant.\nEnable sensitive data encryption at rest using Customer Managed Keys rather than Microsoft Managed keys.\nNote: This feature is only available in tenants with 1,000 or more users. An exception to this recommendation will be needed for those tenants that have under 1,000 users.\n\nRationale:\nBy default, Microsoft stores and manages the database encryption key for organizational environments, so administrators don't have to. The manage keys feature in the Microsoft Power Platform admin center gives administrators the ability to self- manage the database encryption key that is associated with the Dataverse tenant.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "3.1"
+          },
+          "fixtext": {
+            "+content": "Configure Customer Managed Keys.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings at the top of the screen.\n3. Expand Encryption then select Data encryption A new window will open and may be slow to load 4. Ensure Encryption status is set to Active 5. Under Change Encryption Key insert the new key followed by Change Note: It is important to safeguard the encryption key.\n6. Click Close",
+            "+@fixref": "F-C074072Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-C074072Br01_fix"
+          },
+          "check": {
+            "+@system": "C-C074072B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure that Customer Managed Keys are utilized.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings at the top of the screen.\n3. Expand Encryption then select Data encryption A new window will open and may be slow to load 4. Ensure Encryption status is set to Active 5. Ensure self-managed encryption keys are utilized.\n6. Click Close (data will not be re-encrypted)."
+          }
+        }
+      },
+      {
+        "+@id": "V-10ABA0F8",
+        "title": "3 Data Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-10ABA0F8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.2",
+          "title": "(L1) Ensure 'Extract customer data privileges from Microsoft Dynamics 365 is controlled'",
+          "description": "<VulnDiscussion>Ensure that privileges related to customer data extraction are well tailored for the business needs considering the minimum privileges required.\n\nRationale:\nWhen users are able to export data deliberately, data governance and security can become an impossible activity and can also lead data leakage.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "3.2"
+          },
+          "fixtext": {
+            "+content": "To configure the extract customer data privileges from Microsoft Dynamics 365 privilege, use the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings 3. Expand Users + permissions then click Security roles.\n4. Select Edit under More Actions for each security role 5. Select the Business Management tab then review the permissions under Privacy Related Privileges.\n6. Enable or disable privilege based on organizational policy.\nNote: Enabling these privileges will allow users to extract customer data from Microsoft Dynamics 365. For more information, review the corresponding user documentation.",
+            "+@fixref": "F-10ABA0F8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-10ABA0F8r01_fix"
+          },
+          "check": {
+            "+@system": "C-10ABA0F8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure that the extract customer data privileges from Microsoft Dynamics 365 controlled.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings 3. Expand Users + permissions then click Security roles.\n4. Select Edit under More Actions for each security role 5. Select the Business Management tab then review the permissions under Privacy Related Privileges.\n6. Ensure that the appropriate privileges are assigned based on organizational policy."
+          }
+        }
+      },
+      {
+        "+@id": "V-F96E4304",
+        "title": "3 Data Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F96E4304r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.3",
+          "title": "(L1) Ensure 'Dynamics 365 restricts incoming email actions for public queue mailboxes'",
+          "description": "<VulnDiscussion>Microsoft Dynamics 365 can be used in Outlook to track email messages, contacts, tasks, and appointments. When an email message, contact, task, or appointment record is tracked, a copy of that record is saved as an activity in Dynamics 365 for Customer Engagement and synchronized with the Outlook record.\nThis can be viewed and edited in Dynamics 365 for Outlook or Customer Engagement.\nIf Outlook is synced to a mobile device, the mobile device will also have access to these records.\nOptions to automatically track email messages:\nEmail messages from Dynamics 365 apps Leads, Contacts, and Accounts: Tracks email messages only if they originate from someone with a Dynamics 365 for Customer Engagement lead, contact, or account record.\nThe recommended state for this setting is: Email messages from Dynamics 365 apps\n\nRationale:\nAn unauthenticated attacker can create arbitrary contacts and email activities within the Dynamics 365 system. This can lead to several problems of varying severity:\n• Spam and reduction of data quality.\n• Denial of Service (DoS).\n• Sophisticated attacks aiming at human error. For example, an attacker may create a new contact that has the same name as an already existing contact.\n• A Dynamics 365 application user may accidentally choose the attacker-controlled contact for communication instead of the legitimate one and thereby cause exposure of sensitive information.\nIf possible, emails should only be converted to Dynamics 365 entities when the sender address is known or considered trustworthy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "3.3"
+          },
+          "fixtext": {
+            "+content": "Ensure that the option Email messages from Dynamics 365 apps Leads, Contacts, and Accounts selected.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings at the top.\n3. Expand Business followed by Queues This will open in a new window.\n4. Click on the email boxes to modify.\n5. Under EMAIL SETTINGS set Convert Incoming Email to Activities to Email\nmessages from Dynamics 365 Leads, Contacts, and Accounts\n6. Click Save.\nNote: Avoid setting the option to All email messages as Dynamics 365 apps will track junk mail as well as business conversations.",
+            "+@fixref": "F-F96E4304r01_fix"
+          },
+          "fix": {
+            "+@id": "F-F96E4304r01_fix"
+          },
+          "check": {
+            "+@system": "C-F96E4304_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that the option Email messages from Dynamics 365 apps Leads, Contacts, and Accounts is selected.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings at the top.\n3. Expand Business followed by Queues.\nThis will open in a new window.\n4. Click on the email boxes to modify.\n5. Under EMAIL SETTINGS ensure that the Email messages from Dynamics 365 Leads, Contacts, and Accounts options is selected."
+          }
+        }
+      },
+      {
+        "+@id": "V-30A86F3C",
+        "title": "3 Data Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-30A86F3Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.4",
+          "title": "(L1) Ensure 'DLP policies are enabled and restrict the connectors usage'",
+          "description": "<VulnDiscussion>Power Platform data loss prevention policies (DLP) act as guardrails to help prevent users from unintentionally exposing organizational data. These data loss prevention policies enforce rules for which connectors can be used together in apps and flows. The policies can be scoped to one environment, many environments, or tenant-wide\n\nRationale:\nPower Apps and automation are becoming increasingly connected across multiple data sources and multiple services. Some of these might be external, third-party services and might even include some social networks. Users generally have good intentions, but they can easily overlook the potential for exposure from data leakage to services and audiences that shouldn't have access to the data. Categorize the data connectors into one of three data groups, \"Business data only\", \"No business data allowed\" and “Blocked”. Users will be prevented from creating flows and apps that combine connectors from the \"Business data only\" and \"No business data allowed\" data groups and also will not have access to connectors blocked.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "3.4"
+          },
+          "fixtext": {
+            "+content": "Ensure DLP policies are enabled.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com.\n2. Expand Policies in the left pane then select Data policies.\n3. Click New Policy to initiate the policy wizard.\n4. Name the policy, then click next.\n5. At the Custom Connectors choose which connectors should fit in every data group:\n1. Business 2. Non-business (Default) 3. Blocked 4. Ignore.\n6. For the Scope ensure to select all applicable environments.\n7. Click Create policy.",
+            "+@fixref": "F-30A86F3Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-30A86F3Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-30A86F3C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify DLP policies are enabled.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com.\n2. Expand Policies in the left pane then select Data policies 3. Verify that organizational policies are set and applied."
+          }
+        }
+      },
+      {
+        "+@id": "V-584D4E49",
+        "title": "4 Logging and Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-584D4E49r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1",
+          "title": "(L1) Ensure 'System Administrator security role changes are reviewed periodically'",
+          "description": "<VulnDiscussion>Security roles define how different users access different types of records. To control access to data, security roles can be modified to create new security roles or change which security roles are assigned to each user. Each user can have multiple security roles and are cumulative meaning having more than one security role gives a user every privilege available in every role.\n\nRationale:\nIllicit role group changes could give an attacker access to data that is privileged and perform tasks in the environment.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "4.1"
+          },
+          "fixtext": {
+            "+content": "Ensure no unauthorized users have been added to the System Administrator Security Role.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Edit on the Details pane of the environment.\n3. Select Settings at the top of the window.\n4. Expand Users + permissions then select Security roles.\n5. Click on System Administrator (not the three dots and edit) 6. Add/Remove users as appropriate.",
+            "+@fixref": "F-584D4E49r01_fix"
+          },
+          "fix": {
+            "+@id": "F-584D4E49r01_fix"
+          },
+          "check": {
+            "+@system": "C-584D4E49_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify which users have been added to the System Administrator Security Role.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Edit on the Details pane of the environment.\n3. Select Settings at the top of the window.\n4. Expand Users + permissions then select Security roles.\n5. Click on System Administrator (not the three dots and edit) 6. Review the list of users"
+          }
+        }
+      },
+      {
+        "+@id": "V-1B24BD4B",
+        "title": "4 Logging and Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1B24BD4Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.2",
+          "title": "(L1) Ensure 'Environment Activity logging is Enabled'",
+          "description": "<VulnDiscussion>Activity logging track changes to organizational data and maintain a log of those changes.\n\nRationale:\nEnabling Power Platform Activity logging helps the security teams to investigate activities for regular security operational or forensic purposes. The auditing feature is designed to meet the auditing, compliance, security, and governance policies of many regulated enterprises.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "4.2"
+          },
+          "fixtext": {
+            "+content": "Ensure that the Environment Activity logging is Enabled.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Select Settings at the top of the window.\n3. Expand Audit and logs then select Audit settings.\n4. Select the following:\na. Start b. Auditing Log access c. Read logs 5. Set the retention for logs to the appropriate timeframe according to organizational policy.\n6. Click Save.\nNote: Logs are found in the Security and Compliance Center",
+            "+@fixref": "F-1B24BD4Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-1B24BD4Br01_fix"
+          },
+          "check": {
+            "+@system": "C-1B24BD4B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that the Environment Activity logging is Enabled.\nIn the Power Platform Admin Center:\n1. Log in to https://admin.powerplatform.microsoft.com and select the appropriate environment.\n2. Click Settings at the top of the window.\n3. Expand Audit and logs then select Audit settings.\n4. Ensure the following are set:\na. Start Auditing b. Log access c. Read logs 5. Ensure that the retention for logs to the appropriate timeframe according to organizational policy."
+          }
+        }
+      },
+      {
+        "+@id": "V-59297EB3",
+        "title": "4 Logging and Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-59297EB3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.3",
+          "title": "(L1) Ensure 'App creation notification is enabled in the environment'",
+          "description": "<VulnDiscussion>App creation alerting can be used to inform admins and stakeholders about specific events, or provide a summary of activity in the environment.\n\nRationale:\nAlerting on the creation of apps allows for administrators to look for risky apps that users have created that could cause data spillage or accidental elevation of privilege.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Dynamics 365 Power Platform",
+            "dc:identifier": "4.3"
+          },
+          "fixtext": {
+            "+content": "Ensure that App creation notifications are set to enabled.\nIn the Microsoft 365 Security & Compliance Center:\n• Log in to the Microsoft 365 Security & Compliance Center https://compliance.microsoft.com/ as a tenant Administrator.\n• Go to Policies > Alert Policy > +New Alert policy.\n• Name policy and select the Severity and Category for the policy.\n• In the Activity section scroll down to PowerApps app or search for Publish.\n• Name the alert and select users (emails) to send alerts to.\nEnsure that a notification is triggered when a new app is created in the environment.",
+            "+@fixref": "F-59297EB3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-59297EB3r01_fix"
+          },
+          "check": {
+            "+@system": "C-59297EB3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Dynamics_365_Power_Platform.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that App creation notifications are set to enabled.\nIn the Microsoft 365 Security & Compliance Center:\n• Log in to the Microsoft 365 Security & Compliance Center https://compliance.microsoft.com/ as a tenant Administrator.\n• Go to Policies > Alert Policy.\n• Verify a policy exists for app creation notification."
+          }
+        }
+      }
+    ]
+  }
+}

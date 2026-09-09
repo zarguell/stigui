@@ -1,0 +1,2060 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2026-05-28"
+    },
+    "title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+    "description": "All CIS Benchmarks ™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks ™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completed successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks ™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks ™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Target Technology Details This document, CIS OceanBase Enterprise Edition V4 Benchmark, provides prescriptive guidance for establishing a secure configuration posture for OceanBase Enterprise Edition V4. This guide was tested against OceanBase Enterprise Edition V4 running on Ubuntu Linux, but applies to other Linux distributions as well. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.0.0 Benchmark Date: 2026-05-28",
+      "+@id": "release-info"
+    },
+    "version": "1.0.0",
+    "Profile": [
+      {
+        "+@id": "L1-OceanBase-RDBMS-on-Linux_Public",
+        "title": "Level 1 - OceanBase RDBMS on Linux",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-1CBBEA7A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DACEE838",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B0B4A88",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F0A82253",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3C41869D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6E4D4B4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97547A94",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-341DDA4C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8C466E79",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C9DF2EF8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4982B00C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A452C84D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F4546C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FA9CF13A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-783D647D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97CD6D42",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EAAEDCD4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2389AEF2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D9324FFA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-515EBCB3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C2EAA7AD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2678C27F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AC13B1E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E2D4A97",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1C1362F8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F13749A6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0721A811",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9B21A2FA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05DE9271",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5C0D53FB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2DD773D1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A02BDF73",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C3651500",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3DDEE24",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-OceanBase-RDBMS-on-Linux_Classified",
+        "title": "Level 1 - OceanBase RDBMS on Linux",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-1CBBEA7A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DACEE838",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B0B4A88",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F0A82253",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3C41869D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6E4D4B4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97547A94",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-341DDA4C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8C466E79",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C9DF2EF8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4982B00C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A452C84D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F4546C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FA9CF13A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-783D647D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97CD6D42",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EAAEDCD4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2389AEF2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D9324FFA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-515EBCB3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C2EAA7AD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2678C27F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AC13B1E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E2D4A97",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1C1362F8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F13749A6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0721A811",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9B21A2FA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05DE9271",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5C0D53FB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2DD773D1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A02BDF73",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C3651500",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3DDEE24",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-OceanBase-RDBMS-on-Linux_Sensitive",
+        "title": "Level 1 - OceanBase RDBMS on Linux",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-1CBBEA7A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DACEE838",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B0B4A88",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F0A82253",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3C41869D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6E4D4B4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97547A94",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-341DDA4C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8C466E79",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C9DF2EF8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4982B00C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A452C84D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F4546C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FA9CF13A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-783D647D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97CD6D42",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EAAEDCD4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2389AEF2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D9324FFA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-515EBCB3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C2EAA7AD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2678C27F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AC13B1E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E2D4A97",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1C1362F8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F13749A6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0721A811",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9B21A2FA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05DE9271",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5C0D53FB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2DD773D1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A02BDF73",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C3651500",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3DDEE24",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-OceanBase-RDBMS-on-Linux_Public",
+        "title": "Level 2 -OceanBase RDBMS on Linux",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-306F013E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2559A175",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C63230BC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BE4331D4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EC847DC8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8DC81ACB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-99E18A50",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F4836E19",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-OceanBase-RDBMS-on-Linux_Classified",
+        "title": "Level 2 -OceanBase RDBMS on Linux",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-306F013E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2559A175",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C63230BC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BE4331D4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EC847DC8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8DC81ACB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-99E18A50",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F4836E19",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-OceanBase-RDBMS-on-Linux_Sensitive",
+        "title": "Level 2 -OceanBase RDBMS on Linux",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-306F013E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2559A175",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C63230BC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BE4331D4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EC847DC8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8DC81ACB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-99E18A50",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F4836E19",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-1CBBEA7A",
+        "title": "1 Operating System Level Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1CBBEA7Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1",
+          "title": "Place Databases on Non-System Partitions",
+          "description": "<VulnDiscussion>It is generally accepted that host operating systems should include different filesystem partitions for different purposes. One set of filesystems is typically called system partitions, and these are generally reserved for host system/application operation. The other set of filesystems is typically called \"non-system partitions\", and such locations are generally reserved for storing data.\n\nRationale:\nMoving the database off the system partition will reduce the probability of denial of service caused by exhaustion of available disk space to the operating system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "1.1"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps to remediate this setting for the datadir:\n1. Backup the database.\n2. Choose a non-system partition new location for OceanBase data files.\n3. Stop observer using a command like: pkill -9 observer.\n4. Copy the data using a command like: cp -rp <datadir> <new location>.\n5. Delete datadir and create a symlink instead to point to the new location using a command like: ln -s <new location> <datadir> 6. Restart observer.",
+            "+@fixref": "F-1CBBEA7Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-1CBBEA7Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-1CBBEA7A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following procedure to assess compliance:\n1. Connect to the OceanBase database as an administrative user and run:\nSELECT svr_ip, name, value\nFROM oceanbase.GV$OB_PARAMETERS\nWHERE name = 'data_dir';\n2. For each returned value (e.g., /data/1), determine its filesystem mount point by running:\ndf -h <datadir>/sstable\n3. Examine the \"Mounted on\" column in the output.\nThis recommendation is compliant if the filesystem mounted at the OceanBase data_dir path (and any associated subdirectories such as log or sstable directories) is not the root ( /), /var, or /usr filesystem.\nRepeat this check for other critical OceanBase directories if they are configured separately, such as <datadir>/clog 、 <datadir>/slog."
+          }
+        }
+      },
+      {
+        "+@id": "V-DACEE838",
+        "title": "1 Operating System Level Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-DACEE838r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2",
+          "title": "Ensure the Partition Size for Log Files is Large Enough",
+          "description": "<VulnDiscussion>The database files and directories should place to a non-system partition and the partition size should be large enough. For OceanBase stable running and accommondating log growth, the partition size for OceanBase log files must have at least 3-4 times the available memory .\n\nRationale:\nDesignating enough partition size for OceanBase log files will accommodate log growth, prevent performance bottlenecks and reduce the probability of denial of service caused by exhaustion of available disk space.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "1.2"
+          },
+          "fixtext": {
+            "+content": "Assume the disk used for the log partition is large enough. Then perform the following steps to remediate this setting for the log directory:\n1. Backup the database.\n2. Stop observer using a command like: pkill -9 observer.\n3. Dismount the log partition usming command like: umount /data/log1.\n4. Resize the log partition and the filesystem.\n5. Mount the log partition to the original directory: mount <partition> /data/log1.\n6. Restart observer.\n7. Connect to the OceanBase database as an administrative user and increase the log_disk_size parameter to satisfy the 3-4 times memory requirement. For example, if the observer's available memory is 20G and the new partition size is sufficient (e.g., > 60G), set the log_disk_size to 60G (3 times the memory).\nALTER SYSTEM SET log_disk_size = '60G';",
+            "+@fixref": "F-DACEE838r01_fix"
+          },
+          "fix": {
+            "+@id": "F-DACEE838r01_fix"
+          },
+          "check": {
+            "+@system": "C-DACEE838_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following procedure to assess compliance:\n1. Connect to the OceanBase database as an administrative user and retrieve the data directory:\nSELECT svr_ip, name, value\nFROM oceanbase.GV$OB_PARAMETERS\nWHERE name = 'data_dir';\n2. Determine the observer’s available memory:\n• Run:\nSELECT svr_ip,name,value FROM oceanbase.GV$OB_PARAMETERS WHERE name like\n'memory_limit%';\n• If memory_limit is not zero, use its value (in bytes).\n• If memory_limit is zero, calculate available memory as:\navailable_memory = memory_limit_percentage × total_system_memory\nObtain total_system_memory from the OS:\ngrep MemTotal /proc/meminfo\n3. For each log directory path (e.g., /data/log1), run:\ndf -h /data/log1\nThis recommendation is satisfied if the total size of the filesystem hosting the OceanBase log directories is at least three to four times the observer’s configured available memory. If the log partition size is less than this threshold, the system is non- compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-4B0B4A88",
+        "title": "1 Operating System Level Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4B0B4A88r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3",
+          "title": "Ensure 'data_dir' Has Appropriate Permissions",
+          "description": "<VulnDiscussion>The cluster-level configuration parameter 'data_dir' displays the directory for storing data such as SSTables. Currently, it is read-only and cannot be modified.\n\nRationale:\nRestricting access permissions to this directory helps protect the confidentiality, integrity, and availability of the OceanBase database.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "1.3"
+          },
+          "fixtext": {
+            "+content": "To remediate incorrect permissions or ownership on the OceanBase data directory:\n1. Confirm the current permissions and ownership:\nls -ld /data/1\n2. Set the correct ownership to the admin user and group:\nsudo chown admin:admin /data/1\n3. Restrict permissions to owner read/write/execute and group read/execute only:\nsudo chmod 750 /data/1\n4. Verify the change:\nls -ld /data/1\nExpected output:\ndrwxr-x--- 10 admin admin 4096 Jan 1 10:00 /data/1",
+            "+@fixref": "F-4B0B4A88r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4B0B4A88r01_fix"
+          },
+          "check": {
+            "+@system": "C-4B0B4A88_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following procedure to assess compliance:\n1. Connect to the OceanBase database as an administrative user and retrieve the data directory path:\nSELECT svr_ip,name,value\nFROM oceanbase.GV$OB_PARAMETERS\nWHERE name='data_dir';\nExample output: /data/1 or./store.\n2. On the host system, inspect the permissions and ownership of the returned path:\nls -ld /data/1\nNote: If the path is a symbolic link, use ls -ldL /data/1 to examine the target directory’s attributes.\nThis recommendation is satisfied if the directory has permissions set to 750 (i.e., drwxr-x---) and is owned by the admin user and admin group. Any deviation — such as world-readable permissions ( o+r), group-write access ( g+w), or incorrect ownership — constitutes non-compliance."
+          }
+        }
+      },
+      {
+        "+@id": "V-F0A82253",
+        "title": "1 Operating System Level Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F0A82253r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4",
+          "title": "Use Dedicated Least Privileged Account for OceanBase Daemon/Service",
+          "description": "<VulnDiscussion>As with any service installed on a host, it can be provided with its own user context.\nProviding a dedicated user to the service provides the ability to precisely constrain the service within the larger host context.\n\nRationale:\nUtilizing a least privilege account for OceanBase to execute as needed may reduce the impact of a OceanBase-born vulnerability. A restricted account will be unable to access resources unrelated to OceanBase, such as operating system configurations.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "1.4"
+          },
+          "fixtext": {
+            "+content": "To ensure OceanBase runs under a dedicated service account:\n1. Create a dedicated user (skip this step if using the default admin user, provided it is not shared):\nsudo useradd -r /sbin/nologin -c \"OceanBase Service Account\" obuser\n2. Identify all OceanBase-related paths, including:\n• Installation directory (e.g., /home/admin/oceanbase)\n• Data directory (data_dir, e.g., /data/1)\n• Log directories (e.g., /data/log1) 3. Stop observer using a command like:\npkill -9 observer.\n4. Copy the OceanBase installation directory to the dedicated user's home directory:\nsudo cp -a /home/admin/oceanbase /home/obuser/\n5. Change ownership of all relevant directories to the dedicated user:\nsudo chown -R obuser:obuser /data/1 /data/log1 /home/obuser/oceanbase\n6. Restart observer.\n7. Verify:\nps -eo user,comm | grep observer\nConfirm the process runs as obuser (or admin) and not root.\n8. Test database connectivity and basic operations to ensure functionality is unaffected.",
+            "+@fixref": "F-F0A82253r01_fix"
+          },
+          "fix": {
+            "+@id": "F-F0A82253r01_fix"
+          },
+          "check": {
+            "+@system": "C-F0A82253_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following procedure to assess compliance:\n1. Identify the user under which the OceanBase observer process is running:\nps -eo pid,user,comm | grep observer\nExample compliant output:\n12345 admin observer\n2. Verify that the user is:\n• Not root\n• A dedicated service account (e.g., admin, obuser, or similar), not a shared or interactive user account.\nThis recommendation is satisfied if the observer process runs under a non-root, dedicated user account created specifically for OceanBase. The system is non- compliant if the process runs as root or under a general-purpose user account (e.g., ubuntu, ec2-user)."
+          }
+        }
+      },
+      {
+        "+@id": "V-3C41869D",
+        "title": "2 Database Installation and Patching Requirements",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3C41869Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1",
+          "title": "Ensure the Appropriate Version for OceanBase Software Is Installed",
+          "description": "<VulnDiscussion>The OceanBase installation version should be the most recent that are compatible with the organization's operational needs.\n\nRationale:\nUsing the most recent OceanBase database software can help limit the possibilities for vulnerabilities in the software, the installation version applied during setup should be established according to the needs of the organization. Ensure you are using a release that is covered by a level of support that includes the generation of critical patches.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "2.1"
+          },
+          "fixtext": {
+            "+content": "Perform the following steps for remediation:\n1. Identify the target version:\n• Check the Release Notes to find the latest LTS (Long Term Support) version or the latest compatible patch version.\n2. Download and apply the upgrade:\n• Download the installation package for the target version.\n• Upgrade the observer using the OceanBase Control Platform (OCP) or your standard upgrade procedure.",
+            "+@fixref": "F-3C41869Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-3C41869Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-3C41869D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following procedure to assess compliance:\n1. Retrieve the currently running OceanBase version:\nSELECT ob_version();\nExample output:\n4.2.1.0\n2. Consult the OceanBase Product Lifecycle documentation to verify the support status:\n• Link: OceanBase Product Lifecycle\n• Check: Ensure the current date is before the EOS (End of Standard Support) or EOES (End of Extended Support) date for your version.\n• Identify: Check if your version is marked as LTS (Long Term Support), which is recommended for production environments.\n3. This recommendation is satisfied if the running version is active (not EOL) and preferably an LTS version."
+          }
+        }
+      },
+      {
+        "+@id": "V-D6E4D4B4",
+        "title": "2 Database Installation and Patching Requirements",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D6E4D4B4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2",
+          "title": "Use OceanBase Official Signed Installation Packages",
+          "description": "<VulnDiscussion>OceanBase official release packages are signed with a GPG key. Before using the packages, users can verify their integrity by checking the signature, thereby preventing supply chain poisoning attacks caused by tampered or untrusted installation packages.\n\nRationale:\nEnsuring the integrity and authenticity of installation packages during software distribution is a core security measure to defend against supply chain attacks. GPG signatures, based on asymmetric encryption technology, provide a digital fingerprint for software packages, ensuring they have not been altered since signing and verifying the identity of the publisher.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "2.2"
+          },
+          "fixtext": {
+            "+content": "Ensure that all OceanBase installation packages used in production environments are obtained directly from official OceanBase distribution channels and bear valid digital signatures issued by OceanBase. Coordinate with authorized OceanBase support or delivery personnel to confirm the authenticity and integrity of software packages prior to deployment. Under no circumstances should unsigned, modified, or third-party redistributed packages be deployed in production systems.",
+            "+@fixref": "F-D6E4D4B4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D6E4D4B4r01_fix"
+          },
+          "check": {
+            "+@system": "C-D6E4D4B4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "For environments deployed using the OceanBase Cloud Platform (OCP), verify that installation packages are sourced exclusively from official OceanBase channels and that OCP’s built -in signature validation mechanism is enabled. Review deployment logs or audit records from OCP to confirm that no unsigned or untrusted packages were installed. The presence of alerts or rejection events related to package signature validation indicates that the control is active. This recommendation is satisfied if the organization can demonstrate, through deployment documentation or OCP audit trails, that only officially signed OceanBase packages have been used in production deployments."
+          }
+        }
+      },
+      {
+        "+@id": "V-97547A94",
+        "title": "3.1 Backup and Disaster Recovery",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-97547A94r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1.1",
+          "title": "Backup Strategy in Place",
+          "description": "<VulnDiscussion>A backup strategy should be in place.\n\nRationale:\nBacking up OceanBase tenants will help to ensure the availability of data in the event of an incident. Without backups, it might be hard to recover from an incident.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "3.1.1"
+          },
+          "fixtext": {
+            "+content": "Establish a formal backup strategy aligned with business continuity requirements:\n• Define backup scope (which tenants/databases), frequency, retention period, and storage location.\n• If using OCP, configure automated backup policies through the platform’s backup management interface.\n• If not using OCP, implement and document a repeatable backup procedure using supported OceanBase tools, and schedule it via cron or orchestration systems.\n• Regularly test backup restoration in a non-production environment to validate recoverability.\nNote: Backups should be stored securely, preferably on separate storage systems or offsite, to protect against site-wide failures.",
+            "+@fixref": "F-97547A94r01_fix"
+          },
+          "fix": {
+            "+@id": "F-97547A94r01_fix"
+          },
+          "check": {
+            "+@system": "C-97547A94_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that a backup strategy exists and is actively configured for OceanBase tenants:\n• If OceanBase Cloud Platform (OCP) is used, review the backup policies and schedules configured in OCP for each production tenant. Confirm that backups are scheduled at an appropriate frequency (e.g., daily) and that recent successful backup jobs are recorded in the OCP job history.\n• If OCP is not deployed, examine organizational documentation (e.g., operations runbooks, disaster recovery plans) or database logs to confirm that manual or script-based backups (e.g., using obd tools) are performed regularly and verified.\nThis recommendation is satisfied if the organization can demonstrate — through OCP configuration, backup logs, or documented procedures — that a consistent and recoverable backup process is in place for all critical OceanBase tenants."
+          }
+        }
+      },
+      {
+        "+@id": "V-341DDA4C",
+        "title": "3.1 Backup and Disaster Recovery",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-341DDA4Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1.2",
+          "title": "Enable Automatic Major Compaction before Backup",
+          "description": "<VulnDiscussion>Automatic major compaction should be enabled before the backup is scheduled.\n\nRationale:\nIf automatic major compaction is enabled, a major compaction will be automatically triggered during backup scheduling when the backup depends on a major compaction.If automatic major compaction is disabled, automatic major compaction will not be triggered during backup scheduling, and this may cause a backup scheduling failure.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "3.1.2"
+          },
+          "fixtext": {
+            "+content": "Ensure that automatic major compaction is enabled for all tenants that are configured for backup:\n• When using OceanBase Cloud Platform (OCP), update the tenant’s backup policy to include automatic major compaction as a prerequisite step.\n• In environments managed without OCP, work with database administrators to configure the system to trigger major compaction automatically prior to backup execution, in accordance with OceanBase best practices.\n• Document this configuration in the organization’s operational procedures and validate that subsequent backup jobs complete successfully.",
+            "+@fixref": "F-341DDA4Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-341DDA4Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-341DDA4C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the backup configuration for each OceanBase tenant to confirm that automatic major compaction is enabled as part of the backup policy:\n• If the OceanBase Cloud Platform (OCP) is used, examine the tenant-level backup settings within OCP and verify that the option to enable automatic major compaction (or equivalent setting related to compaction triggering during backup) is activated.\n• If OCP is not used, consult the organization’s deployment documentation, change records, or operational runbooks to confirm that automatic major compaction has been explicitly enabled for all tenants included in backup schedules.\nThis recommendation is satisfied if there is documented evidence — through OCP configuration, operational procedures, or change management records — that automatic major compaction is enabled for all tenants subject to scheduled backups."
+          }
+        }
+      },
+      {
+        "+@id": "V-8C466E79",
+        "title": "3.1 Backup and Disaster Recovery",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8C466E79r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1.3",
+          "title": "Configure Alert Threshold for Unexpected Backup Events",
+          "description": "<VulnDiscussion>An alert should be triggered when the unexpected backup events occur such as data backup timeout, log backup delay or no successful data backup in many days.\n\nRationale:\nAlerts for unexpected events can enable timely detection of potential failure events, preventing data loss of backup data due to undetected errors.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "3.1.3"
+          },
+          "fixtext": {
+            "+content": "Configure or adjust backup alert thresholds to ensure timely notification of failures:\n• In OceanBase Cloud Platform (OCP), update the tenant’s backup strategy to define appropriate alert thresholds based on observed backup behavior and business requirements.\no For Data Backup Timeout, set the threshold to a value greater than the typical completion time of recent successful backups (e.g., 1.5× average duration).\no For Log Backup Delay, consider log generation rate and network/storage performance when setting the threshold.\no For Consecutive Days Without Successful Backup, ensure the alert period is no longer than the backup scheduling interval (e.g., if backups run daily, the alert should trigger within 1 – 2 days of failure).\n• Document the rationale for selected thresholds in operational runbooks or change records.\n• Validate that alerts are delivered to the appropriate monitoring or incident management system.",
+            "+@fixref": "F-8C466E79r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8C466E79r01_fix"
+          },
+          "check": {
+            "+@system": "C-8C466E79_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the backup alert configuration for each OceanBase tenant to confirm that meaningful thresholds are defined and aligned with organizational requirements:\n• If OceanBase Cloud Platform (OCP) is used, examine the tenant-level backup policy settings and verify that alert thresholds are configured for the following conditions:\no Data backup timeout\no Log backup delay\no Consecutive days without a successful data backup\n• Confirm that the configured thresholds reflect the organization’s operational needs —for example, the “days without backup” threshold should not exceed the backup frequency, and timeout thresholds should account for typical backup durations under normal load.\nThis recommendation is satisfied if OCP (or equivalent operational documentation) demonstrates that alert thresholds for backup anomalies are explicitly configured, non- default where necessary, and consistent with the organization’s data protection and incident response policies."
+          }
+        }
+      },
+      {
+        "+@id": "V-C9DF2EF8",
+        "title": "3.1 Backup and Disaster Recovery",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C9DF2EF8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1.4",
+          "title": "Point-in-Time Recovery",
+          "description": "<VulnDiscussion>With clogs it is possible to implement point-in-time recovery. This makes it possible to restore the changes between the last full backup and the point-in-time.\nThe clogs need to be backed up with data backup. The restore procedure should be created and tested.\n\nRationale:\nUsing clogs can reduce the amount of information lost when recovering from a backup.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "3.1.4"
+          },
+          "fixtext": {
+            "+content": "Enable clog backup and establish a recovery validation process:\n• In OceanBase Cloud Platform (OCP), modify the tenant’s backup policy to enable the Log Backup feature. Ensure the log backup destination is reliable and monitored.\n• Develop a formal point-in-time recovery procedure that outlines how to restore from a full backup and replay clogs to a specified timestamp.\n• Conduct periodic recovery drills (e.g., quarterly or annually) to validate that PITR works as expected and meets business continuity requirements.\n• Document the procedure, test results, and any lessons learned in the organization’s operational knowledge base.",
+            "+@fixref": "F-C9DF2EF8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C9DF2EF8r01_fix"
+          },
+          "check": {
+            "+@system": "C-C9DF2EF8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that clog (log) backup is enabled and that a restore procedure exists:\n• If OceanBase Cloud Platform (OCP) is used, review the tenant-level backup configuration and confirm that log backup is explicitly enabled as part of the backup strategy.\n• Additionally, examine operational documentation or disaster recovery plans to confirm that a point-in-time recovery procedure has been defined and tested within the past 12 months (or per organizational policy).\nThis recommendation is satisfied if log backup is enabled for all critical tenants and there is documented evidence of a tested restore procedure that demonstrates successful point-in-time recovery using clog backups."
+          }
+        }
+      },
+      {
+        "+@id": "V-4982B00C",
+        "title": "3.1 Backup and Disaster Recovery",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4982B00Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1.5",
+          "title": "Verify Backups are Good",
+          "description": "<VulnDiscussion>Backups should be validated on a regular basis.\n\nRationale:\nVerifying that backups are occurring appropriately will help ensure data availability in the event of an incident. Without a well-tested backup, it might be hard to recover from an incident if the backup procedure contains errors or doesn't include all required data.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "3.1.5"
+          },
+          "fixtext": {
+            "+content": "Establish a formal backup validation program:\n• Implement regular recovery sampling tasks via OceanBase Cloud Platform (OCP), scheduled at intervals aligned with business risk (e.g., quarterly for critical systems).\n• Ensure each test includes:\no Restoration of a representative tenant or dataset;\no Verification of data completeness and consistency;\no Validation that applications can operate correctly on the restored data.\n• Document test results, including success/failure status, issues encountered, and remediation actions.\n• Retain validation records for audit and continuous improvement purposes.",
+            "+@fixref": "F-4982B00Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-4982B00Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-4982B00C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review evidence that backup validation is performed systematically:\n• Examine backup validation or recovery test reports from the past 12 months (or per organizational policy). These may include:\no Test plans and execution records from OceanBase Control Platform (OCP) recovery sampling tasks;\no Screenshots, logs, or audit trails showing successful restore operations;\no Post-test summaries confirming data consistency and application functionality.\n• If OCP is used, confirm that recovery sampling tasks are configured and have executed successfully within the review period.\nThis recommendation is satisfied if the organization maintains documented evidence of regular backup validation activities that demonstrate successful restoration of OceanBase tenant data using current backup sets."
+          }
+        }
+      },
+      {
+        "+@id": "V-A452C84D",
+        "title": "3.2 Cluster-Level Parameter Setting",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A452C84Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.2.1",
+          "title": "Limit Accepted Transport Layer Security (TLS) Versions",
+          "description": "<VulnDiscussion>OceanBase supports multiple protocols of TLS. The higher the version the stronger the security and/or better the performance.\n\nRationale:\nRequiring clients attempting to connect to OceanBase to use higher versions of TLS to better protect data in transit.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "3.2.1"
+          },
+          "fixtext": {
+            "+content": "Set the system parameter to require TLSv1.2 or higher:\nALTER SYSTEM SET sql_protocol_min_tls_version = 'TLSv1.2';",
+            "+@fixref": "F-A452C84Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-A452C84Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-A452C84D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Determine the minimum TLS version enforced by the OceanBase server:\n1. Execute the following SQL query as a user with system view access:\nSELECT svr_ip,name,value\nFROM oceanbase.GV$OB_PARAMETERS\nWHERE name='sql_protocol_min_tls_version';\n2. Review the returned value of the sql_protocol_min_tls_version parameter:\n• The configuration is compliant if the value is explicitly set to TLSv1.2, TLSv1.3, or a higher TLS version supported by the system.\n• The configuration is non-compliant if the value is TLSv1, TLSv1.1, or if the parameter is not configured (in which case the system permits connections using insecure legacy TLS versions by default).\nThis recommendation is satisfied only if sql_protocol_min_tls_version is explicitly set to TLSv1.2 or higher on all observer nodes."
+          }
+        }
+      },
+      {
+        "+@id": "V-7F4546C7",
+        "title": "3.2 Cluster-Level Parameter Setting",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7F4546C7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.2.2",
+          "title": "Only Approved Servers can Access",
+          "description": "<VulnDiscussion>Specify an allowlist of approved servers that can access to the cluster.\n\nRationale:\nWhen using cluster by specifying the allowlist explicitly, it can increase the security of the cluster as only servers in the allowlist are allowed to connect to the cluster.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "3.2.2"
+          },
+          "fixtext": {
+            "+content": "Configure a restrictive allowlist of approved clients:\n1. Identify all legitimate hosts that require SSL/TLS connectivity to the OceanBase cluster (e.g., application servers, OCP nodes, backup servers).\n2. Set the parameter using the following SQL statement, replacing <approved_ips> with a comma-separated list of trusted IPs:\nALTER SYSTEM SET _ob_ssl_invited_nodes='<ips_list_in_cluster>';\n3. Verify the change by re-running the audit query and confirming that only intended IPs are listed.\n4. Test connectivity from approved and unapproved hosts to validate enforcement.",
+            "+@fixref": "F-7F4546C7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-7F4546C7r01_fix"
+          },
+          "check": {
+            "+@system": "C-7F4546C7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following SQL query to inspect the current SSL client allowlist configuration:\nSELECT svr_ip,name,value\nFROM oceanbase.GV$OB_PARAMETERS\nWHERE name='_ob_ssl_invited_nodes';\n• The configuration is compliant if the value is explicitly set to a non-empty list of trusted IP addresses or hostnames (e.g., 192.168.1.10, 192.168.1.11).\n• The configuration is non-compliant if the value is set to 0.0.0.0/0, ALL, None, or effectively permits unrestricted access.\nThis recommendation is satisfied only when _ob_ssl_invited_nodes is configured to a specific, limited set of authorized client or application server IPs."
+          }
+        }
+      },
+      {
+        "+@id": "V-306F013E",
+        "title": "3.2 Cluster-Level Parameter Setting",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-306F013Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.2.3",
+          "title": "Limit Accepted TLS Versions",
+          "description": "<VulnDiscussion>OceanBase supports communication encryption to ensure that traffic between nodes cannot be eavesdropped or tampered with.\n\nRationale:\nRequire clients attempting to connect to MySQL to use a higher version of TLS, to better protect data in transit. Disabling older versions known to have security vulnerabilities (such as TLS 1.0 and TLS 1.1) can effectively prevent downgrade attacks and man-in-the-middle attacks, ensuring the confidentiality and integrity of communications.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "3.2.3"
+          },
+          "fixtext": {
+            "+content": "Currently, OceanBase supports TLSv1.2 and TLSv1.3. After specifying the TLS version, if a connection uses SSL encryption, it will use the specified version or a higher supported version. Example setting the minimum version to TLSv1.2:\nALTER SYSTEM SET sql_protocol_min_tls_version = 'TLSv1.2';",
+            "+@fixref": "F-306F013Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-306F013Er01_fix"
+          },
+          "check": {
+            "+@system": "C-306F013E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following command to view the current specified TLS version:\nSHOW PARAMETERS LIKE 'sql_protocol_min_tls_version';\nThis recommendation is satisfied if the returned value for sql_protocol_min_tls_versio n is set to TLSv1.2 or TLSv1.3 on all OBServer nodes.\nThis recommendation is not satisfied if the returned value is none, any, TLSv1, or TLSv1.1, or if the value differs across OBServer nodes."
+          }
+        }
+      },
+      {
+        "+@id": "V-FA9CF13A",
+        "title": "3 OceanBase Cluster Level Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FA9CF13Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.3",
+          "title": "Ensure Replication Traffic is Secured",
+          "description": "<VulnDiscussion>The replication traffic between servers in OceanBase cluster should be secured.\nSecurity measures should include ensuring the confidentiality and integrity of the traffic, and performing mutual authentication between the servers before performing replication.\n\nRationale:\nThe replication traffic should be secured as it gives access to all transferred information and might leak passwords.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "3.3"
+          },
+          "fixtext": {
+            "+content": "Secure the replication traffic by enabling TLS-based confidentiality, integrity, and mutual authentication between servers.\nPerform the following steps to remediate this setting:\n1. Specify the minimum SSL/TLS protocol version to ensure strong encryption:\nALTER SYSTEM SET sql_protocol_min_tls_version = 'TLSv1.2';\n2. Enable SSL client authentication to require cryptographic verification of connecting nodes:\nALTER SYSTEM SET ssl_client_authentication = True;\n3. Set the server authentication method to enforce SSL-based identity validation:\nALTER SYSTEM SET rpc_server_authentication_method = 'SSL_NO_ENCRYPT';\nNote: Although setting the server authentication method to ALL (e.g., ALTER SYSTEM SET rpc_server_authentication_method = 'ALL';) permits multiple authentication mechanisms, it allows unauthenticated plaintext connections, which introduces significant security risks. This configuration is not recommended in production environments.",
+            "+@fixref": "F-FA9CF13Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-FA9CF13Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-FA9CF13A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that mutual authentication and TLS are enforced for inter-node communication:\n1. Confirm that mutual SSL authentication is required for clients (including other observer nodes):\nSELECT svr_ip,name,value FROM oceanbase.GV$OB_PARAMETERS WHERE\nname='ssl_client_authentication';\n• Compliant if value = 'True'.\n• Non-compliant if value = 'False' or not set.\n2. Confirm that the RPC authentication method enforces SSL-based identity verification:\nSELECT svr_ip,name,value FROM oceanbase.GV$OB_PARAMETERS WHERE\nname='rpc_server_authentication_method';\n• Compliant if value = 'SSL_NO_ENCRYPT' and SSL certificates are properly deployed on all observer nodes.\n• Non-compliant if value = 'ALL' or any setting that permits unauthenticated or non-SSL connections.\nThis recommendation is satisfied only when both parameters are correctly configured AND valid SSL certificates are installed on all observer nodes, enabling encrypted, mutually authenticated replication traffic."
+          }
+        }
+      },
+      {
+        "+@id": "V-783D647D",
+        "title": "4.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-783D647Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.1",
+          "title": "Ensure Passwords are Set for All OceanBase Accounts",
+          "description": "<VulnDiscussion>If any account exists without a password (i.e., a null-password account), it reduces the attack cost — attackers only need to guess the username correctly to gain access without requiring a password. Therefore, it is essential to ensure that all OceanBase accounts are configured with passwords to prevent unauthorized malicious users from accessing the database.\n\nRationale:\nPassword is one of the core elements of authentication. If an account has no password, authentication is reduced to an authorization check based solely on \"who you are (username)\" and \"where you are connecting from (host)\". This removes the most critical security barrier, allowing any attacker with network access to gain entry to the database simply by guessing or knowing the username.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.1.1"
+          },
+          "fixtext": {
+            "+content": "Database administrators can use the following statement to set a password for a password-less account:\nSET PASSWORD FOR u0 = PASSWORD('auth_string');",
+            "+@fixref": "F-783D647Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-783D647Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-783D647D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following statements to query internal OB Server system tables to check for accounts with empty passwords:\nSELECT user, password FROM mysql.user WHERE LENGTH(password)=0;\nSELECT user_id, user_name, passwd FROM oceanbase.__all_user WHERE\nLENGTH(passwd)=0;\nNo rows will be returned if all OceanBase accounts have a password set.\nIf either query returns one or more rows, at least one account has an empty password."
+          }
+        }
+      },
+      {
+        "+@id": "V-97CD6D42",
+        "title": "4.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-97CD6D42r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.2",
+          "title": "Disable creating accounts via the GRANT statement",
+          "description": "<VulnDiscussion>When using the GRANT statement, if the target user does not exist, the system will attempt to create the user. This may lead to unintentional creation of a user with an empty password when the GRANT statement contains errors, introducing account management risks. Enabling the NO_AUTO_CREATE_USER setting in the sql_mode configuration option can prevent the GRANT statement from creating users.\n\nRationale:\nAllowing the GRANT statement to automatically create users is an implicit behavior that poses significant security risks in production environments. For example, if an administrator misspells a username during privilege assignment, the system will automatically create a new user — potentially with no password or using default settings — resulting in unintended privilege grants that could be exploited maliciously.\nAdditionally, auto-created users may bypass organizational account provisioning processes and audit mechanisms, violating compliance requirements. Enabling the NO_AUTO_CREATE_USER mode enforces explicit user creation beforehand, improving control and security in user account management.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.1.2"
+          },
+          "fixtext": {
+            "+content": "Use an administrator account with SUPER privilege to execute the following SQL:\nSET @@global.sql_mode=CONCAT(@@global.sql_mode, ',NO_AUTO_CREATE_USER');",
+            "+@fixref": "F-97CD6D42r01_fix"
+          },
+          "fix": {
+            "+@id": "F-97CD6D42r01_fix"
+          },
+          "check": {
+            "+@system": "C-97CD6D42_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following SQL statements to evaluate whether the configuration is correct:\nSELECT @@global.sql_mode;\nSELECT @@session.sql_mode;\nEnsure that the result of each query contains the NO_AUTO_CREATE_USER option"
+          }
+        }
+      },
+      {
+        "+@id": "V-2559A175",
+        "title": "4.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2559A175r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.1.3",
+          "title": "Ensure Password Complexity Policies are in Place",
+          "description": "<VulnDiscussion>OceanBase MySQL tenants support configuring password complexity policies through tenant-level system variables. Enabling password complexity policies helps prevent weak password usage and raises the bar for password cracking.\nVariable Name Function Checks whether a user's password can be the same as the username.<br>- on:\nvalidate_password_check_user_name Password cannot be the same as the username.<br>- off: Password can be the same as the username.\nvalidate_password_length Sets the minimum length for user passwords.\nSets the minimum number of uppercase and validate_password_mixed_case_count lowercase letters that the password must contain.\nSets the minimum number of digits that the validate_password_number_count password must contain.\nSets the password complexity policy.<br>- low: Only checks password length.<br>- medium: Checks password length, validate_password_policy uppercase letters, lowercase letters, digits, special characters, and whether the password is the same as the username.\nSets the minimum number of special validate_password_special_char_count characters that the password must contain.\n\nRationale:\nComplex passwords help defend against dictionary attacks, brute-force cracking, and other types of password-based attacks. This recommendation prevents users from choosing weak, easily guessable passwords, significantly enhancing account security.\nBy enforcing a strong password policy that requires a combination of character types (uppercase, lowercase, digits, and special characters), the risk of unauthorized access is effectively reduced.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.1.3"
+          },
+          "fixtext": {
+            "+content": "1. List text hereEnable and configure the password complexity policy for the tenant (execute as a privileged user within the tenant):\nSET GLOBAL validate_password_length = 14;\nSET GLOBAL validate_password_check_user_name = ON;\nSET GLOBAL validate_password_policy = MEDIUM;\nSET GLOBAL validate_password_mixed_case_count = 1;\nSET GLOBAL validate_password_number_count = 1;\nSET GLOBAL validate_password_special_char_count = 1;\n2. Verify the configuration:\nSHOW GLOBAL VARIABLES LIKE 'validate_password%';\n3. List text hereUpdate non-compliant passwords, for example, passwords that are the same as the username. reset affected accounts to a compliant password, for example:\nALTER USER 'some_user' IDENTIFIED BY 'New_Compliant_Password_Here';",
+            "+@fixref": "F-2559A175r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2559A175r01_fix"
+          },
+          "check": {
+            "+@system": "C-2559A175_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following SQL statements to view the current password complexity configuration for the tenant:\nSHOW VARIABLES LIKE \"validate_password%\";\nThe result set should show settings that meet or exceed the following recommended baseline:\n• validate_password_length is 14 or more\n• validate_password_check_user_name is ON\n• validate_password_policy is MEDIUM\n• validate_password_mixed_case_count is 1 or more\n• validate_password_number_count is 1 or more\n• validate_password_special_char_count is 1 or more This recommendation is satisfied if the returned values meet or exceed the baseline above.\nThis recommendation is not satisfied if any returned value does not meet the baseline."
+          }
+        }
+      },
+      {
+        "+@id": "V-C63230BC",
+        "title": "4.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C63230BCr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.1.4",
+          "title": "Do Not Reuse Usernames",
+          "description": "<VulnDiscussion>Each database user account should be assigned a unique purpose (e.g., dedicated to a specific individual or application) and should not be shared among multiple different applications or users.\n\nRationale:\nSharing accounts expands the scope of security risks. Once a shared account is compromised, all applications and services using that account will be exposed to threats.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.1.4"
+          },
+          "fixtext": {
+            "+content": "1. List text hereCreate dedicated accounts for each application/user:\nCREATE USER 'app1_user'@'10.%' IDENTIFIED BY 'Strong_Password_Here';\nCREATE USER 'app2_user'@'10.%' IDENTIFIED BY 'Strong_Password_Here';\n2. List text hereGrant only the required privileges (examples; adjust to your schema and least-privilege requirements):\nGRANT SELECT, INSERT, UPDATE, DELETE ON app1_db.* TO 'app1_user'@'10.%';\nGRANT SELECT ON app2_db.* TO 'app2_user'@'10.%';\n3. Migrate applications to the new dedicated accounts, then disable or remove the shared account.\n• Disable (lock) the shared account (preferred first step if supported):\nALTER USER 'shared_user'@'%' ACCOUNT LOCK;\n• Optionally expire credentials to force reset (if supported):\nALTER USER 'shared_user'@'%' PASSWORD EXPIRE;\n• After confirming it is no longer used, drop the shared account:\nDROP USER 'shared_user'@'%';\n4. Verify:\nSELECT User, Host\nFROM mysql.user\nWHERE User IN ('shared_user','app1_user','app2_user');",
+            "+@fixref": "F-C63230BCr01_fix"
+          },
+          "fix": {
+            "+@id": "F-C63230BCr01_fix"
+          },
+          "check": {
+            "+@system": "C-C63230BC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "This recommendation requires a manual review to map database accounts to real-world owners (applications or individuals) and to confirm that accounts are not shared.\n1. Obtain a list of non-reserved (non-system) users:\nSELECT User, Host\nFROM mysql.user\nWHERE User NOT IN ('root','ORAAUDITOR','proxyro');\n2. For each returned account, review with the DBA team, system architects, and application owners to determine:\n• the account owner (application/service name or individual),\n• the business purpose of the account,\n• whether the same username is used by more than one application or person.\nThe recommendation is satisfied if each non-reserved account has a single documented owner and purpose and is not used by multiple applications or users."
+          }
+        }
+      },
+      {
+        "+@id": "V-BE4331D4",
+        "title": "4.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BE4331D4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.1.5",
+          "title": "Configure account locking after consecutive authentication failures",
+          "description": "<VulnDiscussion>OceanBase MySQL tenants support using the tenant-level configuration parameter connection_control_failed_connections_threshold to specify the threshold for failed login attempts. Accounts exceeding this threshold will be locked, and the lock duration can be set via the parameters connection_control_min_connection_delay and connection_control_max_connection_delay. This helps prevent brute-force attacks on account passwords and enhances database security.\n\nRationale:\nBrute-force attacks and automated password guessing are common database intrusion methods, where attackers use scripts to repeatedly attempt common password combinations to gain access to legitimate accounts. Enabling a login failure attempt limit significantly increases the difficulty and time cost of such attacks, disrupting automated attack processes. By setting appropriate failure thresholds and connection delay strategies, password brute-force attempts can be effectively prevented without impacting normal user operations.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.1.5"
+          },
+          "fixtext": {
+            "+content": "1. Configure login failure controls by setting the threshold to 5 (or fewer) failed attempts and appropriate delays (delay units are milliseconds, adjust values to organizational policy):\nALTER SYSTEM SET connection_control_failed_connections_threshold = 5;\nALTER SYSTEM SET connection_control_min_connection_delay = 86400000;\nALTER SYSTEM SET connection_control_max_connection_delay = 86400001;\n2. Verify:\nSHOW PARAMETERS LIKE 'connection_control%';",
+            "+@fixref": "F-BE4331D4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-BE4331D4r01_fix"
+          },
+          "check": {
+            "+@system": "C-BE4331D4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following statement to review the current tenant parameter configuration:\nSHOW PARAMETERS LIKE 'connection_control%';\nThis recommendation is satisfied if the result set shows that connection_control_failed_connections_threshold is not 0 and the configured values for connection_control_min_connection_delay and connection_control_max_connection_delay meet organizational policy.\nThis recommendation is not satisfied if connection_control_failed_connections_threshold is 0, or if the threshold and delay values do not meet organizational policy."
+          }
+        }
+      },
+      {
+        "+@id": "V-EC847DC8",
+        "title": "4.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-EC847DC8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.1.6",
+          "title": "Set 'default_password_lifetime' to Require a Yearly Password Change",
+          "description": "<VulnDiscussion>The system parameter default_password_lifetime can be used to configure the global password expiration period for OceanBase tenant users. After a password expires, it must be reset before any further operations can be performed. Configuring a password expiration period enhances operational security and system compliance, reducing the risks associated with password leakage.\n\nRationale:\nThe default_password_lifetime global variable prevents passwords from being set to never expire. Overly frequent password expiration imposes more harm than benefit, as it encourages users to choose predictable passwords, such as sequential words or numbers that are easily guessed. More importantly, when a security incident occurs that may compromise passwords, account passwords should be expired immediately. It is recommended to set the password expiration period to 365 days.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.1.6"
+          },
+          "fixtext": {
+            "+content": "1. Set the password expiration period to the approved standard:\nSET GLOBAL default_password_lifetime = 365;\n2. Verify:\nSELECT @@default_password_lifetime;",
+            "+@fixref": "F-EC847DC8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-EC847DC8r01_fix"
+          },
+          "check": {
+            "+@system": "C-EC847DC8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following SQL statement to determine the configured password expiration period:\nSELECT @@default_password_lifetime;\nThis recommendation is satisfied if the returned value is set to the approved standard (for example, 365) and is not 0.\nThis recommendation is not satisfied if the returned value is 0 (passwords never expire) or does not match the approved standard."
+          }
+        }
+      },
+      {
+        "+@id": "V-8DC81ACB",
+        "title": "4.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8DC81ACBr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.1.7",
+          "title": "Ensure No Users Have Wildcard Hostnames",
+          "description": "<VulnDiscussion>All user accounts in the database should be strictly restricted to connect only from specific hosts or IP addresses explicitly required for their business operations.\n\nRationale:\nThe core rationale for this recommendation is the principle of least privilege and defense in depth at the network level.\n1. Limit attack sources: If a user's credentials (password) are compromised, but the account is restricted to connect only from a specific application server IP, an attacker who obtains the password still cannot access the database from unauthorized locations.\n2. Reduce attack surface: If a user is configured as 'user'@'%', attackers can attempt connections to the database from any location. Restricting the host/IP range significantly reduces the potential avenues for attack.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.1.7"
+          },
+          "fixtext": {
+            "+content": "For each user found in the audit step using the '%' host, immediate remediation should be performed. Use the RENAME USER command (or ALTER USER, depending on the specific operation) to change the user's host from '%' to the specific IP or hostname identified in the previous step.\nRENAME USER 'app_user'@'%' TO 'app_user'@'10.1.2.3';",
+            "+@fixref": "F-8DC81ACBr01_fix"
+          },
+          "fix": {
+            "+@id": "F-8DC81ACBr01_fix"
+          },
+          "check": {
+            "+@system": "C-8DC81ACB_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following SQL query to identify accounts that are allowed to connect from any host:\nSELECT user, host\nFROM mysql.user\nWHERE host = '%';\nNo rows will be returned if no accounts are configured with a wildcard host ('%').\nIf one or more rows are returned, at least one account allows connections from any host, and this recommendation is not satisfied."
+          }
+        }
+      },
+      {
+        "+@id": "V-EAAEDCD4",
+        "title": "4.2 Access Control",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-EAAEDCD4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.2.1",
+          "title": "Ensure 'CREATE USER' is Not Granted to Non- Administrative Users",
+          "description": "<VulnDiscussion>The \"CREATE USER\" privilege controls the ability of a specific user to add or delete users, modify existing usernames, and revoke permissions from existing users.\n\nRationale:\nReducing the number of users granted the \"CREATE USER\" privilege minimizes the number of users who can add or delete users, modify existing usernames, and control permissions of existing users.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.2.1"
+          },
+          "fixtext": {
+            "+content": "Use the REVOKE command to revoke the CREATE USER privilege from a regular user:\nREVOKE CREATE USER ON *.* FROM '<user>';",
+            "+@fixref": "F-EAAEDCD4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-EAAEDCD4r01_fix"
+          },
+          "check": {
+            "+@system": "C-EAAEDCD4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following command to view non-root users with CREATE USER privilege:\nSELECT * FROM information_schema.user_privileges WHERE GRANTEE NOT LIKE\n(\"'root'%\") AND PRIVILEGE_TYPE = \"CREATE USER\"\\G\nNo rows will be returned if no non-administrative users have the CREATE USER privilege.\nIf one or more rows are returned, at least one non-administrative user has the CREATE USER privilege, and this recommendation is not satisfied."
+          }
+        }
+      },
+      {
+        "+@id": "V-2389AEF2",
+        "title": "4.2 Access Control",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2389AEF2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.2.2",
+          "title": "Ensure 'PROCESS' is Not Granted to Non-Administrative Users",
+          "description": "<VulnDiscussion>The \"PROCESS\" privilege controls whether a specified user can view the statement execution information of all sessions.\n\nRationale:\nThe \"PROCESS\" privilege allows a user to view the statements currently being executed by other users, even beyond their own privileges (including password management statements). Attackers may exploit this privilege to obtain potentially sensitive data or achieve privilege escalation.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.2.2"
+          },
+          "fixtext": {
+            "+content": "Use the REVOKE command to remove the PROCESS privilege from a regular user:\nREVOKE PROCESS ON *.* FROM '<user>';",
+            "+@fixref": "F-2389AEF2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2389AEF2r01_fix"
+          },
+          "check": {
+            "+@system": "C-2389AEF2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following command to view non-root users with the PROCESS privilege:\nSELECT * FROM information_schema.user_privileges WHERE GRANTEE NOT LIKE\n(\"'root'%\") AND PRIVILEGE_TYPE = \"PROCESS\"\\G\nNo rows will be returned if no non-administrative users have the PROCESS privilege.\nIf one or more rows are returned, at least one non-administrative user has the PROCESS privilege, and this recommendation is not satisfied."
+          }
+        }
+      },
+      {
+        "+@id": "V-D9324FFA",
+        "title": "4.2 Access Control",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D9324FFAr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.2.3",
+          "title": "Ensure 'SUPER' is Not Granted to Non-Administrative Users",
+          "description": "<VulnDiscussion>The SUPER privilege determines whether a user can perform certain powerful administrative functions, including terminating user sessions via the KILL command, modifying global MySQL variables using SET GLOBAL, and executing various commands related to replication and logging.\n\nRationale:\nThe SUPER privilege determines whether a user can perform certain powerful administrative functions and should not be granted lightly. Restricting the number of accounts with the \"SUPER\" privilege reduces the risk of attackers exploiting these capabilities.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.2.3"
+          },
+          "fixtext": {
+            "+content": "Use the REVOKE command to remove the SUPER privilege from a regular user:\nREVOKE SUPER ON *.* FROM '<user>';",
+            "+@fixref": "F-D9324FFAr01_fix"
+          },
+          "fix": {
+            "+@id": "F-D9324FFAr01_fix"
+          },
+          "check": {
+            "+@system": "C-D9324FFA_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following command to view non-root users with the SUPER privilege:\nSELECT * FROM information_schema.user_privileges WHERE GRANTEE NOT LIKE\n(\"'root'%\") AND PRIVILEGE_TYPE = \"SUPER\"\\G\nNo rows will be returned if no non-administrative users have the PROCESS privilege.\nIf one or more rows are returned, at least one non-administrative user has the PROCESS privilege, and this recommendation is not satisfied."
+          }
+        }
+      },
+      {
+        "+@id": "V-515EBCB3",
+        "title": "4.3 Data Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-515EBCB3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.3.1",
+          "title": "Use TDE for At-Rest Data Encryption",
+          "description": "<VulnDiscussion>OceanBase supports table-granularity transparent encryption to achieve secure data storage.\n\nRationale:\nStatic data is one of the key protection targets for database security. In scenarios where physical storage is at risk — such as when hard drives are discarded without proper destruction, backup media is leaked, or shared storage in cloud environments is accessed without authorization — unencrypted data can be directly read, leading to severe data breaches. Enabling TDE (Transparent Data Encryption) ensures that even if attackers obtain the underlying data files, they cannot decipher their contents.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.3.1"
+          },
+          "fixtext": {
+            "+content": "Execute the following statement to enable transparent encryption using the internal method:\nALTER SYSTEM SET tde_method='internal';\nExecute the following statement to confirm that the parameter tde_method is set to internal on all OBServer nodes in the tenant:\nSHOW PARAMETERS LIKE 'tde_method';\nAfter confirmation, execute the following statement to generate the master key:\nALTER INSTANCE ROTATE INNODB MASTER KEY;\nCreate a tablespace and specify the encryption algorithm.\nSupported encryption algorithms include: aes-256, aes-128, aes-192, sm4-cbc, aes- 128-gcm, aes-192-gcm, aes-256-gcm, sm4-gcm. Use 'y' to specify the default algorithm aes-256.\nCREATE TABLESPACE sectest_ts1 encryption = 'y';\nWhen creating a new table, specify the encrypted tablespace to enable encryption. For example, create a new table t1:\nCREATE TABLE t1 (id1 int, id2 int) TABLESPACE sectest_ts1;",
+            "+@fixref": "F-515EBCB3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-515EBCB3r01_fix"
+          },
+          "check": {
+            "+@system": "C-515EBCB3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "For OceanBase MySQL tenants, use the following statement:\nSHOW PARAMETERS LIKE 'tde_method';\nIf no rows are returned, this recommendation is not satisfied.\nThis recommendation is satisfied if the returned value for tde_method is not none (for example, internal or bkmi) on all OBServer nodes.\nThis recommendation is not satisfied if the returned value for tde_method is none on any OBServer node."
+          }
+        }
+      },
+      {
+        "+@id": "V-99E18A50",
+        "title": "4.3 Data Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-99E18A50r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.3.2",
+          "title": "Ensure AES Encryption Mode is Configured Correctly",
+          "description": "<VulnDiscussion>When using AES_ENCRYPT() and AES_DECRYPT() functions for encryption, it is recommended to use block cipher encryption in Cipher Block Chaining (CBC) mode with a 256-bit key length.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.3.2"
+          },
+          "fixtext": {
+            "+content": "To change the instance-level default encryption mode, use:\nSET GLOBAL block_encryption_mode = 'aes-256-cbc';\nNote:\n• This change applies to new sessions. Existing sessions may continue to use their current session value until they reconnect or explicitly set the session variable.\n• Before making this change, verify application compatibility and ensure that any required initialization vector (IV) handling is implemented correctly for CBC mode.\nExample:\nSET SESSION block_encryption_mode = 'aes-256-cbc';\nSET @crypt_str = AES_ENCRYPT('text', @key_str, @init_vector);\nSELECT AES_DECRYPT(@crypt_str, @key_str, @init_vector);",
+            "+@fixref": "F-99E18A50r01_fix"
+          },
+          "fix": {
+            "+@id": "F-99E18A50r01_fix"
+          },
+          "check": {
+            "+@system": "C-99E18A50_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following command to check whether the current configuration parameter block_encryption_mode is set to the default value aes-128-ecb:\nSELECT @@GLOBAL.block_encryption_mode;\nThis recommendation is satisfied if the returned value is aes-256-cbc (or another organizationally approved strong mode).\nThis recommendation is not satisfied if the returned value is a weak/unapproved mode (for example, aes-128-ecb) or does not meet the approved standard."
+          }
+        }
+      },
+      {
+        "+@id": "V-F4836E19",
+        "title": "4.4 Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F4836E19r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.4.1",
+          "title": "Ensure ALL Events are Audited",
+          "description": "<VulnDiscussion>The database audit function must record all critical operations to support security incident traceability, compliance reviews, and behavioral analysis.\n\nRationale:\nWhen comprehensive auditing is not enabled, attackers may perform covert operations (e.g., data theft, privilege escalation) through legitimate accounts and remain undetected due to lack of log evidence, making incident tracing impossible.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.4.1"
+          },
+          "fixtext": {
+            "+content": "For OceanBase 4.2.4 and later, create and apply an audit filter:\nSELECT AUDIT_LOG_FILTER_SET_FILTER('log_all', '{ \"filter\": { \"log\": true }\n}');\nSELECT AUDIT_LOG_FILTER_SET_USER('%', 'log_all');\nFor versions earlier than 4.2.4, these functions are not supported. Use the auditing configuration method available in the target release.",
+            "+@fixref": "F-F4836E19r01_fix"
+          },
+          "fix": {
+            "+@id": "F-F4836E19r01_fix"
+          },
+          "check": {
+            "+@system": "C-F4836E19_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following statement to review the tenant audit configuration:\nSHOW PARAMETERS LIKE 'audit_trail';\nOptionally review whether SQL auditing is enabled at the cluster level:\nSHOW PARAMETERS LIKE 'enable_sql_audit';\nThis recommendation is satisfied if the result set shows audit_trail is not set to None (for example, DB / DB,EXTENDED / DB_EXTENDED or OS, according to organizational policy).\nThis recommendation is not satisfied if audit_trail is None, or if auditing is otherwise disabled by policy.\nOptional verification (check audit records exist/are being written):\nSELECT COUNT(*) FROM oceanbase.V$OB_SQL_AUDIT;"
+          }
+        }
+      },
+      {
+        "+@id": "V-C2EAA7AD",
+        "title": "4.4 Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C2EAA7ADr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.4.2",
+          "title": "Ensure Audit Filters Capture Connection Attempts",
+          "description": "<VulnDiscussion>The functions audit_log_filter_set_filter and audit_log_filter_set_user are used to define audit rules, which can audit both successful and failed connection events and write them to the audit log file.\n\nRationale:\nThe audit_log_filter_set_filter function is used to define audit filter rules, and the audit_log_filter_set_user function specifies which users these filter rules apply to. By creating one or more filters, audit log entries can be generated to record events for successful or failed connections.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "4.4.2"
+          },
+          "fixtext": {
+            "+content": "For OceanBase 4.2.4 and later:\nSELECT AUDIT_LOG_FILTER_SET_FILTER(\n'conn_attempt_filter',\n'{\n\"filter\": {\n\"log\": true,\n\"class\": [\n{ \"name\": \"connection\" }\n]\n}\n}'\n);\nSELECT AUDIT_LOG_FILTER_SET_USER('test_user', 'conn_attempt_filter');\nFor versions earlier than 4.2.4: The above functions are not supported. Use the auditing features available in that version to capture successful and failed connection attempts.",
+            "+@fixref": "F-C2EAA7ADr01_fix"
+          },
+          "fix": {
+            "+@id": "F-C2EAA7ADr01_fix"
+          },
+          "check": {
+            "+@system": "C-C2EAA7AD_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following statement to determine whether auditing is enabled for the tenant:\nSHOW PARAMETERS LIKE 'audit_trail';\nReview available audit records to confirm that connection/authentication attempts are being captured (including failures). Use one or more of the following queries, depending on what is available in the deployment:\nSELECT * FROM oceanbase.__all_tenant_security_audit_record\nORDER BY gmt_create DESC\nLIMIT 20;\nSELECT * FROM oceanbase.__all_tenant_user_failed_login_stat\nLIMIT 20;\nThis recommendation is satisfied if tenant auditing is enabled (that is, audit_trail is not None) and the audit records demonstrate that connection/authentication activity (successful connections and failed login attempts) is being captured for the required scope (for example, all users or all non-administrative users), in accordance with organizational policy.\nThis recommendation is not satisfied if tenant auditing is disabled ( audit_trail is None), or if the available audit records do not provide evidence that connection/authentication attempts are being captured as required by policy."
+          }
+        }
+      },
+      {
+        "+@id": "V-2678C27F",
+        "title": "5.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2678C27Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.1",
+          "title": "Ensure 'FAILED_LOGIN_ATTEMPTS' Is Less than or Equal to '5'",
+          "description": "<VulnDiscussion>The FAILED_LOGIN_ATTEMPTS setting determines how many failed login attempts are permitted before the system locks the user's account. While different profiles can have different and more restrictive settings, such as USERS, the minimum(s) recommended here should be set on the DEFAULT profile.\n\nRationale:\nRepeated failed login attempts can indicate the initiation of a brute-force login attack, this value should be set according to the needs of the organization.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.1.1"
+          },
+          "fixtext": {
+            "+content": "Remediate this setting by executing the following SQL statement for each PROFILE returned by the audit procedure.\nALTER PROFILE &lt;profile_name&gt; LIMIT FAILED_LOGIN_ATTEMPTS 5;",
+            "+@fixref": "F-2678C27Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-2678C27Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-2678C27F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\nSELECT PROFILE,RESOURCE_NAME,LIMIT FROM SYS.DBA_PROFILES where\nPROFILE='DEFAULT' and RESOURCE_NAME='FAILED_LOGIN_ATTEMPTS';\nWhen the value of FAILED_LOGIN_ATTEMPTS is too high, this recommendation is not met."
+          }
+        }
+      },
+      {
+        "+@id": "V-AC13B1E5",
+        "title": "5.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AC13B1E5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.2",
+          "title": "Ensure 'PASSWORD_LOCK_TIME' Is Greater than or Equal to '1'",
+          "description": "<VulnDiscussion>The PASSWORD_LOCK_TIME setting determines how many days must pass for the user's account to be unlocked after the set number of failed login attempts has occurred. The suggested value for this is one day or greater.\n\nRationale:\nLocking the user account after repeated failed login attempts can block further brute- force login attacks, but can create administrative headaches as this account unlocking process always requires DBA intervention.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.1.2"
+          },
+          "fixtext": {
+            "+content": "Remediate this setting by executing the following SQL statement for each PROFILE returned by the audit procedure.\nALTER PROFILE &lt;profile_name&gt; LIMIT PASSWORD_LOCK_TIME 1;",
+            "+@fixref": "F-AC13B1E5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-AC13B1E5r01_fix"
+          },
+          "check": {
+            "+@system": "C-AC13B1E5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\nSELECT PROFILE,RESOURCE_NAME,LIMIT FROM SYS.DBA_PROFILES where\nPROFILE='DEFAULT' and RESOURCE_NAME='PASSWORD_LOCK_TIME';\nThe return should be 1 or greater."
+          }
+        }
+      },
+      {
+        "+@id": "V-8E2D4A97",
+        "title": "5.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8E2D4A97r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.3",
+          "title": "Ensure 'PASSWORD_LIFE_TIME' Is LESS than or Equal to '365'",
+          "description": "<VulnDiscussion>The PASSWORD_LIFE_TIME setting determines how long a password may be used before the user is required to be change it. The suggested value for this is 365 days or less.\n\nRationale:\nAllowing passwords to remain unchanged for long periods makes the success of brute- force login attacks more likely.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.1.3"
+          },
+          "fixtext": {
+            "+content": "Remediate this setting by executing the following SQL statement for each PROFILE returned by the audit procedure.\nALTER PROFILE &lt;profile_name&gt; LIMIT PASSWORD_LIFE_TIME 365;",
+            "+@fixref": "F-8E2D4A97r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8E2D4A97r01_fix"
+          },
+          "check": {
+            "+@system": "C-8E2D4A97_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\nSELECT PROFILE,RESOURCE_NAME,LIMIT FROM SYS.DBA_PROFILES where\nPROFILE='DEFAULT' and RESOURCE_NAME='PASSWORD_LIFE_TIME';\nThe return should be 365 or less."
+          }
+        }
+      },
+      {
+        "+@id": "V-1C1362F8",
+        "title": "5.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1C1362F8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.4",
+          "title": "Ensure 'PASSWORD_GRACE_TIME' Is LESS than or Equal to '5'",
+          "description": "<VulnDiscussion>The PASSWORD_GRACE_TIME setting determines how many days can pass after the user's password expires before the user's login capability is automatically locked out.\nThe suggested value for this is five days or less.\n\nRationale:\nLocking the user account after the expiration of the password change requirement's grace period can help prevent password-based attacks against any forgotten or disused accounts, while still allowing the account and its information to be accessible by DBA intervention.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.1.4"
+          },
+          "fixtext": {
+            "+content": "Remediate this setting by executing the following SQL statement for each PROFILE returned by the audit procedure.\nALTER PROFILE &lt;profile_name&gt; LIMIT PASSWORD_GRACE_TIME 5;",
+            "+@fixref": "F-1C1362F8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-1C1362F8r01_fix"
+          },
+          "check": {
+            "+@system": "C-1C1362F8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\nSELECT PROFILE,RESOURCE_NAME,LIMIT FROM SYS.DBA_PROFILES where\nPROFILE='DEFAULT' and RESOURCE_NAME='PASSWORD_GRACE_TIME';\nThe return should be 5 or less."
+          }
+        }
+      },
+      {
+        "+@id": "V-F13749A6",
+        "title": "5.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F13749A6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.5",
+          "title": "Ensure 'PASSWORD_VERIFY_FUNCTION' Is Set for All Profiles",
+          "description": "<VulnDiscussion>The PASSWORD_VERIFY_FUNCTION determines password settings requirements when a user password is changed at the SQL command prompt. It should be set for all profiles.\n\nRationale:\nThrough database profiles, password complexity rules (mixed cases with digits and special characters), blocking of simple combinations, and enforcing change/history settings can potentially thwart unauthorized logins by an unauthorized user.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.1.5"
+          },
+          "fixtext": {
+            "+content": "Create a custom password verification function which fulfills the password requirements of the organization.\nALTER PROFILE &lt;profile_name&gt; LIMIT PASSWORD_VERIFY_FUNCTION\n&lt;password_verify_func&gt;;\nIt is recommended that the password verification feature implement the following requirements to meet security standards:\n• Passwords must be at least 14 characters long.\n• Passwords must contain at least one uppercase letter, one lowercase letter, and one special character (e.g., !@#$%^&*).\n• Passwords must not be the same as the username, the reverse of the username, or the database server name.\nNOTE: Please review the reference below for an example PASSWORD_VERIFY_FUNCTION.\ndelimiter //\nCREATE OR REPLACE FUNCTION complexity_check\n(password varchar2,\nchars integer := NULL,\nletter integer := NULL,\nupper_c integer := NULL,\nlower_c integer := NULL,\ndigit integer := NULL,\nspecial integer := NULL)\nRETURN boolean IS\ndigit_array varchar2(10) := '0123456789';\nalpha_array varchar2(26) := 'abcdefghijklmnopqrstuvwxyz';\ncnt_letter integer := 0;\ncnt_upper integer := 0;\ncnt_lower integer := 0;\ncnt_digit integer := 0;\ncnt_special integer := 0;\nflag boolean := FALSE;\nlen INTEGER := NVL(length(password), 0);\ni integer ;\nch CHAR(1);\nBEGIN\n-- Check that the password length does not exceed 2 * (max DB pwd len)\n-- The maximum length of any DB User password is 128 bytes.\n-- This limit improves the performance of the Edit Distance calculation\n-- between old and new passwords.\nIF len > 256 THEN\nraise_application_error(-20020, 'Password length more than 256');\nEND IF;\n-- Classify each character in the password.\nFOR i in 1..len LOOP\nch := substr(password, i, 1);\nIF ch = '\"' THEN\nflag := TRUE;\nELSIF instr(digit_array, ch) > 0 THEN\ncnt_digit := cnt_digit + 1;\nELSIF instr(alpha_array, LOWER(ch)) > 0 THEN\ncnt_letter := cnt_letter + 1;\nIF ch = LOWER(ch) THEN\ncnt_lower := cnt_lower + 1;\nELSE\ncnt_upper := cnt_upper + 1;\nEND IF;\nELSE\ncnt_special := cnt_special + 1;\nEND IF;\nEND LOOP;\nIF flag = 1 THEN\nraise_application_error(-20012, 'password must NOT contain a '\n|| 'double-quote\ncharacter, which is '\n|| 'reserved as a\npassword delimiter');\nEND IF;\nIF chars IS NOT NULL AND len < chars THEN\nraise_application_error(-20001, 'Password length less than ' ||\nchars);\nEND IF;\nIF letter IS NOT NULL AND cnt_letter < letter THEN\nraise_application_error(-20022, 'Password must contain at least ' ||\nletter || '\nletter(s)');\nEND IF;\nIF upper_c IS NOT NULL AND cnt_upper < upper_c THEN\nraise_application_error(-20023, 'Password must contain at least ' ||\nupper_c || '\nuppercase character(s)');\nEND IF;\nIF lower_c IS NOT NULL AND cnt_lower < lower_c THEN\nraise_application_error(-20024, 'Password must contain at least ' ||\nlower_c || '\nlowercase character(s)');\nEND IF;\nIF digit IS NOT NULL AND cnt_digit < digit THEN\nraise_application_error(-20025, 'Password must contain at least ' ||\ndigit || '\ndigit(s)');\nEND IF;\nIF special IS NOT NULL AND cnt_special < special THEN\nraise_application_error(-20026, 'Password must contain at least ' ||\nspecial || '\nspecial character(s)');\nEND IF;\nRETURN(TRUE);\nEND;\n//\nCREATE OR REPLACE FUNCTION verify_function\n(username varchar2,\npassword varchar2,\nold_password varchar2)\n-- In this example, three function parameters are defined: username, new\npassword, and old password.\nRETURN boolean IS\ndiffer integer;\npw_lower varchar2(256);\ndb_name varchar2(40);\ni integer;\nsimple_password varchar2(10);\nreverse_user varchar2(32);\nBEGIN\nIF NOT complexity_check(password, 14, NULL, 1, 1, NULL, 1) THEN\nRETURN(FALSE);\nEND IF;\n-- Check if the password contains the username\npw_lower := LOWER(password);\nIF instr(pw_lower, LOWER(username)) > 0 THEN\nraise_application_error(-20002, 'Password contains the username');\nEND IF;\n-- Check if the password contains the username reversed\nreverse_user := '';\nFOR i in REVERSE 1..length(username) LOOP\nreverse_user := reverse_user || substr(username, i, 1);\nEND LOOP;\nIF instr(pw_lower, LOWER(reverse_user)) > 0 THEN\nraise_application_error(-20003, 'Password contains the username ' ||\n'reversed');\nEND IF;\n-- Check if the password contains the server name\ndb_name := 'oceanbase';\nIF instr(pw_lower, LOWER(db_name)) > 0 THEN\nraise_application_error(-20004, 'Password contains the server name');\nEND IF;\n-- Check if the password contains 'oracle'\nIF instr(pw_lower, 'oracle') > 0 THEN\nraise_application_error(-20006, 'Password too simple');\nEND IF;\nRETURN(TRUE);\nEND;\n//\ndelimiter ;\nobclient> GRANT EXECUTE ON verify_function TO PUBLIC;\nobclient> CREATE PUBLIC SYNONYM verify_function FOR sys.verify_function;",
+            "+@fixref": "F-F13749A6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-F13749A6r01_fix"
+          },
+          "check": {
+            "+@system": "C-F13749A6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\nSELECT PROFILE,RESOURCE_NAME,LIMIT FROM SYS.DBA_PROFILES where\nRESOURCE_NAME='PASSWORD_VERIFY_FUNCTION';\nThe query result should not show NULL. Instead, it should return a valid password verification function name."
+          }
+        }
+      },
+      {
+        "+@id": "V-0721A811",
+        "title": "5.1 Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0721A811r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.6",
+          "title": "Ensure Passwords are Set for All Accounts",
+          "description": "<VulnDiscussion>Blank passwords allow a user to login without using a password.\n\nRationale:\nWithout a password only knowing the username will allow someone to connect to the server and assume the identity of the user. This, in effect, bypasses authentication mechanisms.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.1.6"
+          },
+          "fixtext": {
+            "+content": "For each user from the audit procedure which password is NULL, reset the password for the given user using the following statement.\nALTER USER &lt;username&gt; IDENTIFIED BY &lt;password&gt;;",
+            "+@fixref": "F-0721A811r01_fix"
+          },
+          "fix": {
+            "+@id": "F-0721A811r01_fix"
+          },
+          "check": {
+            "+@system": "C-0721A811_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\nSELECT USERNAME,PASSWORD FROM SYS.DBA_USERS;\nThe query should return a list of usernames with non-null, non-default password values."
+          }
+        }
+      },
+      {
+        "+@id": "V-9B21A2FA",
+        "title": "5.2 Access Control",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9B21A2FAr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.1",
+          "title": "Public Role Privileges",
+          "description": "<VulnDiscussion>The unnecessary privileges should be revoked from default public role to minimize security risks and adhere to the principle of least privilege.\n\nRationale:\nThe privileges must be structured to block unauthorized use and/or corruption of vital data and services by setting restrictions on user capabilities, particularly those of the role PUBLIC. Such security measures help to ensure successful logins cannot be easily redirected.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.2.1"
+          },
+          "fixtext": {
+            "+content": "Remediate this setting by executing the following SQL statement:\nREVOKE &lt;role&gt; FROM PUBLIC;\nREVOKE &lt;system_privilege&gt; FROM PUBLIC;\nREVOKE &lt;operation_privilege&gt; on &lt;object&gt; FROM PUBLIC;",
+            "+@fixref": "F-9B21A2FAr01_fix"
+          },
+          "fix": {
+            "+@id": "F-9B21A2FAr01_fix"
+          },
+          "check": {
+            "+@system": "C-9B21A2FA_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\nSELECT * FROM DBA_SYS_PRIVS WHERE GRANTEE = 'PUBLIC';\nSELECT * FROM DBA_ROLE_PRIVS WHERE GRANTEE = 'PUBLIC';\nSELECT * FROM USER_TAB_PRIVS WHERE GRANTEE = 'PUBLIC';\nIf all queries return no results, it indicates that the PUBLIC role has not been granted any privileges. If results are returned, the returned PUBLIC's privileges should address the needs of the organization."
+          }
+        }
+      },
+      {
+        "+@id": "V-05DE9271",
+        "title": "5.2 Access Control",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-05DE9271r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.2",
+          "title": "Minimum Privileges",
+          "description": "<VulnDiscussion>The unnecessary privileges should be revoked from user to minimize security risks and adhere to the principle of least privilege.\n\nRationale:\nThe privileges must be structured to block unauthorized use and/or corruption of vital data and services by setting restrictions on user capabilities. Minimum privilege security measures help to ensure successful logins cannot be easily redirected.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.2.2"
+          },
+          "fixtext": {
+            "+content": "Remediate this setting by executing the following SQL statement:\nREVOKE &lt;role&gt; FROM &lt;username&gt;;\nREVOKE &lt;system_privilege&gt; FROM &lt;username&gt;;\nREVOKE &lt;operation_privilege&gt; on &lt;object&gt; FROM &lt;username&gt;;",
+            "+@fixref": "F-05DE9271r01_fix"
+          },
+          "fix": {
+            "+@id": "F-05DE9271r01_fix"
+          },
+          "check": {
+            "+@system": "C-05DE9271_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\nSELECT * FROM DBA_SYS_PRIVS;\nSELECT * FROM DBA_ROLE_PRIVS;\nSELECT * FROM USER_TAB_PRIVS;\nThe returned user's privileges should address the needs of the organization, should not have unnecessary or excessive system, role, or object permissions."
+          }
+        }
+      },
+      {
+        "+@id": "V-5C0D53FB",
+        "title": "5.2 Access Control",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5C0D53FBr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.3",
+          "title": "Only Allowed Client can Access to Cluster",
+          "description": "<VulnDiscussion>Specify an client whitelist of approved servers that can access to the cluster.\n\nRationale:\nWhen using clients by specifying the allowlist explicitly, it can increase the security of the cluster as only servers in the allowlist are allowed to connect to the cluster.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.2.3"
+          },
+          "fixtext": {
+            "+content": "Remediate this setting by executing the following SQL statement:\nSET GLOBAL ob_tcp_invited_nodes='<all_ip_list>';",
+            "+@fixref": "F-5C0D53FBr01_fix"
+          },
+          "fix": {
+            "+@id": "F-5C0D53FBr01_fix"
+          },
+          "check": {
+            "+@system": "C-5C0D53FB_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\nSHOW VARIABLES LIKE 'ob_tcp_invited_nodes';\nThe return should be an ip list. It failed if the value is %."
+          }
+        }
+      },
+      {
+        "+@id": "V-2DD773D1",
+        "title": "5.3 Data Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2DD773D1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.3.1",
+          "title": "Use TDE for At-Rest Data Encryption",
+          "description": "<VulnDiscussion>Transparent Data Encryption (TDE) at-rest encryption protects your critical data by enabling data-at-rest encryption in the database. It protects the privacy of your information, prevents data breaches and helps meet regulatory requirements.\n\nRationale:\nFile system based encryption does a good job of protecting against data theft on devices unable to limit physical access. It does not, however, protect against users who have or gain access to the operating system, backups, over the network copies, etc.\nEncrypting data from database adds an additional layer of data protection.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.3.1"
+          },
+          "fixtext": {
+            "+content": "Remediate this setting by executing the following SQL statements to enable TDE for tables according to the organization requirements:\n1. Create a tablespace and specify the encryption algorithm.\nCREATE TABLESPACE &lt;tablespace_name&gt; ENCRYPTION USING '&lt;encryption\nalgorithm&gt;'\n2. Move the unencrypted table to the tablespace.\nALTER TALBE &lt;table_name&gt; TABLESPACE &lt;tablespace_name&gt;;\n3. Perform a full compaction on the table.\nALTER TABLE &lt;table_name&gt; set progressive_merge_num=1;\nALTER SYSTEM MAJOR FREEZE;\nNOTE: OceanBase supports the following encryption algorithms: aes-256, aes-128, aes-192, sm4-cbc, aes-128-gcm, aes-192-gcm, aes-256-gcm, and sm4-gcm.",
+            "+@fixref": "F-2DD773D1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2DD773D1r01_fix"
+          },
+          "check": {
+            "+@system": "C-2DD773D1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check for the tables of at-rest encryption enabled.\nSELECT TABLE_NAME, ENCRYPTED FROM V$OB_ENCRYPTED_TABLES;\nIf no line returned or return 'NO', it indicate at-rest encryption is not enabled."
+          }
+        }
+      },
+      {
+        "+@id": "V-A02BDF73",
+        "title": "5.4 Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A02BDF73r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.4.1",
+          "title": "Ensure 'AUDIT_TRAIL' is not set to NONE",
+          "description": "<VulnDiscussion>The audit_trail setting determines whether or not OceanBase's basic audit features are enabled. It can be set to OS (Operating System); DB; DB_EXTENDED; or DB, EXTENDED. The value should be set according to the needs of the organization. NONE means audit is disabled.\n\nRationale:\nEnabling the basic auditing features for the OceanBase permits the collection of data to troubleshoot problems, as well as provides valuable forensic logs in the case of a system breach this value should be set according to the needs of the organization.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.4.1"
+          },
+          "fixtext": {
+            "+content": "To remediate this setting, execute one of the following SQL statements.\nALTER SYSTEM SET AUDIT_TRAIL = 'OS';\nALTER SYSTEM SET AUDIT_TRAIL = 'DB';\nALTER SYSTEM SET AUDIT_TRAIL = 'DB_EXTENDED';\nALTER SYSTEM SET AUDIT_TRAIL = 'DB,EXTENDED';",
+            "+@fixref": "F-A02BDF73r01_fix"
+          },
+          "fix": {
+            "+@id": "F-A02BDF73r01_fix"
+          },
+          "check": {
+            "+@system": "C-A02BDF73_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\nSELECT svr_ip,name,value FROM oceanbase.GV$OB_PARAMETERS WHERE\nname='audit_trail';\nThe return should be OS or DB or DB_EXTENDED or DB,EXTENDED."
+          }
+        }
+      },
+      {
+        "+@id": "V-C3651500",
+        "title": "5.4 Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C3651500r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.4.2",
+          "title": "Ensure 'AUDIT_SYS_OPERATIONS' is set to TRUE",
+          "description": "<VulnDiscussion>The AUDIT_SYS_OPERATIONS setting provides for the auditing of all user activities conducted under the SYS accounts. The setting should be set to TRUE to enable this auditing.\n\nRationale:\nIf the parameter AUDIT_SYS_OPERATIONS is FALSE, all statements by SYS users are not audited.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.4.2"
+          },
+          "fixtext": {
+            "+content": "To remediate this setting, execute one of the following SQL statements.\nALTER SYSTEM SET AUDIT_SYS_OPERATIONS = TRUE;",
+            "+@fixref": "F-C3651500r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C3651500r01_fix"
+          },
+          "check": {
+            "+@system": "C-C3651500_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\nSELECT svr_ip,name,value FROM oceanbase.GV$OB_PARAMETERS WHERE\nname='audit_sys_operations';\nThe return should be TRUE."
+          }
+        }
+      },
+      {
+        "+@id": "V-B3DDEE24",
+        "title": "5.4 Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B3DDEE24r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.4.3",
+          "title": "Enable Audit Options According to Requirements",
+          "description": "<VulnDiscussion>Enabling the audit option causes auditing of any attempt, successful or not to do database operations. For auditing requests, audit rule should be configured to align with specific requirements.\n\nRationale:\nLogging of all database operations can provide forensic evidence about a pattern of suspect/unauthorized activities. Any unauthorized attempt may be cause for further investigation.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OceanBase Enterprise Edition V4 Benchmark",
+            "dc:identifier": "5.4.3"
+          },
+          "fixtext": {
+            "+content": "To remediate this setting, execute one of the following SQL statements.\n1. Audit specified statement operation:\nAUDIT &lt;statement_operation&gt; BY &lt;username&gt; WHENEVER [NOT]\nSUCCESSFUL;\n2. Audit specified operations on a specififed database object:\nAUDIT &lt;object_operations&gt; ON &lt;obj_name&gt; | ON DEFAULT;",
+            "+@fixref": "F-B3DDEE24r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B3DDEE24r01_fix"
+          },
+          "check": {
+            "+@system": "C-B3DDEE24_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OceanBase_Enterprise_Edition_V4_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To assess this recommendation, execute the following SQL statement.\n1. Records default audit rules of new objects:\nSELECT * FROM SYS.ALL_DEF_AUDIT_OPTS;\n2. Records audit configuration details at the statement level:\nSELECT * FROM SYS.DBA_STMT_AUDIT_OPTS;\n3. Records audit configuration details at the object level:\nSELECT * FROM SYS.DBA_OBJ_AUDIT_OPTS;\nAudit views return non-empty results showing auditing is enabled for critical operations.\nAny of the views is empty or shows no auditing for high-risk activities."
+          }
+        }
+      }
+    ]
+  }
+}

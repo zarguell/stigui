@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd" id="CIS_Docker_Benchmark" xml:lang="en" xmlns="http://checklists.nist.gov/xccdf/1.1">
-  <status date="2023-06-14">accepted</status>
+  <status date="2024-07-25">accepted</status>
   <title>CIS Docker Benchmark</title>
-  <description>All CIS Benchmarks focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system for vulnerabilities and quickly updating with the latest security patches • Monitoring applications and libraries for vulnerabilities and quickly updating with the latest security patches In the end, the CIS Benchmarks are designed as a key component of a comprehensive cybersecurity program. This document, CIS Docker Benchmark, provides prescriptive guidance for establishing a secure configuration posture for Docker Engine v20.10. This guide was tested against Docker Engine 20.10.20 on RHEL 7 and Ubuntu 20.04. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.</description>
+  <description>All CIS Benchmarks™ focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system for vulnerabilities and quickly updating with the latest security patches. • Monitoring applications and libraries for vulnerabilities and quickly updating with the latest security patches. In the end, the CIS Benchmarks are designed as a key component of a comprehensive cybersecurity program. This document, CIS Docker Benchmark, provides prescriptive guidance for establishing a secure configuration posture for Docker Engine v26.1.4 This guide was tested against Docker Engine 26.1.4 on RHEL 7 and Ubuntu 20.04. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.</description>
   <notice id="terms-of-use" xml:lang="en"/>
   <front-matter xml:lang="en"/>
   <rear-matter xml:lang="en"/>
@@ -9,8 +9,8 @@
     <dc:publisher>Center for Internet Security</dc:publisher>
     <dc:source>CIS Benchmarks</dc:source>
   </reference>
-  <plain-text id="release-info">Release: 1.6.0 Benchmark Date: 2023-06-14</plain-text>
-  <version>1.6.0</version>
+  <plain-text id="release-info">Release: 1.7.0 Benchmark Date: 2024-07-25</plain-text>
+  <version>1.7.0</version>
   <Profile id="L1-Docker-Linux_Public">
     <title>Level 1 - Docker - Linux</title>
     <description>Be practical and prudent; Provide a clear security benefit; and Not inhibit the utility of the technology beyond acceptable means.</description>
@@ -20,6 +20,8 @@
     <select idref="V-E6C79D2E" selected="true"/>
     <select idref="V-45534983" selected="true"/>
     <select idref="V-DF1349CB" selected="true"/>
+    <select idref="V-6A7C51C3" selected="true"/>
+    <select idref="V-10142F89" selected="true"/>
     <select idref="V-717FBAEB" selected="true"/>
     <select idref="V-3CCCCB7E" selected="true"/>
     <select idref="V-0C0DBE82" selected="true"/>
@@ -87,6 +89,8 @@
     <select idref="V-F9EEA3FF" selected="true"/>
     <select idref="V-F80065AB" selected="true"/>
     <select idref="V-01DB0DE8" selected="true"/>
+    <select idref="V-A1AACB11" selected="true"/>
+    <select idref="V-17B4E2FE" selected="true"/>
   </Profile>
   <Profile id="L1-Docker-Linux_Classified">
     <title>Level 1 - Docker - Linux</title>
@@ -97,6 +101,8 @@
     <select idref="V-E6C79D2E" selected="true"/>
     <select idref="V-45534983" selected="true"/>
     <select idref="V-DF1349CB" selected="true"/>
+    <select idref="V-6A7C51C3" selected="true"/>
+    <select idref="V-10142F89" selected="true"/>
     <select idref="V-717FBAEB" selected="true"/>
     <select idref="V-3CCCCB7E" selected="true"/>
     <select idref="V-0C0DBE82" selected="true"/>
@@ -164,6 +170,8 @@
     <select idref="V-F9EEA3FF" selected="true"/>
     <select idref="V-F80065AB" selected="true"/>
     <select idref="V-01DB0DE8" selected="true"/>
+    <select idref="V-A1AACB11" selected="true"/>
+    <select idref="V-17B4E2FE" selected="true"/>
   </Profile>
   <Profile id="L1-Docker-Linux_Sensitive">
     <title>Level 1 - Docker - Linux</title>
@@ -174,6 +182,8 @@
     <select idref="V-E6C79D2E" selected="true"/>
     <select idref="V-45534983" selected="true"/>
     <select idref="V-DF1349CB" selected="true"/>
+    <select idref="V-6A7C51C3" selected="true"/>
+    <select idref="V-10142F89" selected="true"/>
     <select idref="V-717FBAEB" selected="true"/>
     <select idref="V-3CCCCB7E" selected="true"/>
     <select idref="V-0C0DBE82" selected="true"/>
@@ -241,6 +251,8 @@
     <select idref="V-F9EEA3FF" selected="true"/>
     <select idref="V-F80065AB" selected="true"/>
     <select idref="V-01DB0DE8" selected="true"/>
+    <select idref="V-A1AACB11" selected="true"/>
+    <select idref="V-17B4E2FE" selected="true"/>
   </Profile>
   <Profile id="L1-Docker-Swarm_Public">
     <title>Level 1 - Docker Swarm</title>
@@ -284,13 +296,9 @@
   <Profile id="L2-Docker-Linux_Public">
     <title>Level 2 - Docker - Linux</title>
     <description>Are intended for environments or use cases where security is paramount Acts as defense in depth measure May negatively inhibit the utility or performance of the technology</description>
-    <select idref="V-EECA0AEE" selected="true"/>
-    <select idref="V-E6C79D2E" selected="true"/>
-    <select idref="V-45534983" selected="true"/>
-    <select idref="V-DF1349CB" selected="true"/>
     <select idref="V-E5D8F5C3" selected="true"/>
     <select idref="V-75680822" selected="true"/>
-    <select idref="V-A3E64ECE" selected="true"/>
+    <select idref="V-1169EF95" selected="true"/>
     <select idref="V-8BE8FC39" selected="true"/>
     <select idref="V-2C0A66C9" selected="true"/>
     <select idref="V-3B46ED45" selected="true"/>
@@ -306,32 +314,15 @@
     <select idref="V-29B915D9" selected="true"/>
     <select idref="V-A8805662" selected="true"/>
     <select idref="V-69887F18" selected="true"/>
-    <select idref="V-DE39BEF4" selected="true"/>
-    <select idref="V-8F8EF5CA" selected="true"/>
-    <select idref="V-CF0A54F9" selected="true"/>
-    <select idref="V-677AC714" selected="true"/>
-    <select idref="V-C8950791" selected="true"/>
-    <select idref="V-6B0C74C1" selected="true"/>
-    <select idref="V-AA199D29" selected="true"/>
-    <select idref="V-085BF961" selected="true"/>
-    <select idref="V-99F02398" selected="true"/>
-    <select idref="V-9432D152" selected="true"/>
-    <select idref="V-375824FA" selected="true"/>
-    <select idref="V-EFD82693" selected="true"/>
-    <select idref="V-11B9CB86" selected="true"/>
-    <select idref="V-B372256D" selected="true"/>
     <select idref="V-C81F58EE" selected="true"/>
     <select idref="V-1847228F" selected="true"/>
     <select idref="V-E0251C01" selected="true"/>
     <select idref="V-CEBEDB8C" selected="true"/>
     <select idref="V-F8C29EC6" selected="true"/>
     <select idref="V-B0A29EEC" selected="true"/>
-    <select idref="V-A68B36C4" selected="true"/>
-    <select idref="V-A849B37E" selected="true"/>
     <select idref="V-312D8397" selected="true"/>
     <select idref="V-067CB8C8" selected="true"/>
     <select idref="V-8A5A4AE4" selected="true"/>
-    <select idref="V-325E286F" selected="true"/>
     <select idref="V-65178E0E" selected="true"/>
     <select idref="V-2E0DF2FB" selected="true"/>
     <select idref="V-CBD71E59" selected="true"/>
@@ -340,13 +331,9 @@
   <Profile id="L2-Docker-Linux_Classified">
     <title>Level 2 - Docker - Linux</title>
     <description>Are intended for environments or use cases where security is paramount Acts as defense in depth measure May negatively inhibit the utility or performance of the technology</description>
-    <select idref="V-EECA0AEE" selected="true"/>
-    <select idref="V-E6C79D2E" selected="true"/>
-    <select idref="V-45534983" selected="true"/>
-    <select idref="V-DF1349CB" selected="true"/>
     <select idref="V-E5D8F5C3" selected="true"/>
     <select idref="V-75680822" selected="true"/>
-    <select idref="V-A3E64ECE" selected="true"/>
+    <select idref="V-1169EF95" selected="true"/>
     <select idref="V-8BE8FC39" selected="true"/>
     <select idref="V-2C0A66C9" selected="true"/>
     <select idref="V-3B46ED45" selected="true"/>
@@ -362,32 +349,15 @@
     <select idref="V-29B915D9" selected="true"/>
     <select idref="V-A8805662" selected="true"/>
     <select idref="V-69887F18" selected="true"/>
-    <select idref="V-DE39BEF4" selected="true"/>
-    <select idref="V-8F8EF5CA" selected="true"/>
-    <select idref="V-CF0A54F9" selected="true"/>
-    <select idref="V-677AC714" selected="true"/>
-    <select idref="V-C8950791" selected="true"/>
-    <select idref="V-6B0C74C1" selected="true"/>
-    <select idref="V-AA199D29" selected="true"/>
-    <select idref="V-085BF961" selected="true"/>
-    <select idref="V-99F02398" selected="true"/>
-    <select idref="V-9432D152" selected="true"/>
-    <select idref="V-375824FA" selected="true"/>
-    <select idref="V-EFD82693" selected="true"/>
-    <select idref="V-11B9CB86" selected="true"/>
-    <select idref="V-B372256D" selected="true"/>
     <select idref="V-C81F58EE" selected="true"/>
     <select idref="V-1847228F" selected="true"/>
     <select idref="V-E0251C01" selected="true"/>
     <select idref="V-CEBEDB8C" selected="true"/>
     <select idref="V-F8C29EC6" selected="true"/>
     <select idref="V-B0A29EEC" selected="true"/>
-    <select idref="V-A68B36C4" selected="true"/>
-    <select idref="V-A849B37E" selected="true"/>
     <select idref="V-312D8397" selected="true"/>
     <select idref="V-067CB8C8" selected="true"/>
     <select idref="V-8A5A4AE4" selected="true"/>
-    <select idref="V-325E286F" selected="true"/>
     <select idref="V-65178E0E" selected="true"/>
     <select idref="V-2E0DF2FB" selected="true"/>
     <select idref="V-CBD71E59" selected="true"/>
@@ -396,13 +366,9 @@
   <Profile id="L2-Docker-Linux_Sensitive">
     <title>Level 2 - Docker - Linux</title>
     <description>Are intended for environments or use cases where security is paramount Acts as defense in depth measure May negatively inhibit the utility or performance of the technology</description>
-    <select idref="V-EECA0AEE" selected="true"/>
-    <select idref="V-E6C79D2E" selected="true"/>
-    <select idref="V-45534983" selected="true"/>
-    <select idref="V-DF1349CB" selected="true"/>
     <select idref="V-E5D8F5C3" selected="true"/>
     <select idref="V-75680822" selected="true"/>
-    <select idref="V-A3E64ECE" selected="true"/>
+    <select idref="V-1169EF95" selected="true"/>
     <select idref="V-8BE8FC39" selected="true"/>
     <select idref="V-2C0A66C9" selected="true"/>
     <select idref="V-3B46ED45" selected="true"/>
@@ -418,32 +384,15 @@
     <select idref="V-29B915D9" selected="true"/>
     <select idref="V-A8805662" selected="true"/>
     <select idref="V-69887F18" selected="true"/>
-    <select idref="V-DE39BEF4" selected="true"/>
-    <select idref="V-8F8EF5CA" selected="true"/>
-    <select idref="V-CF0A54F9" selected="true"/>
-    <select idref="V-677AC714" selected="true"/>
-    <select idref="V-C8950791" selected="true"/>
-    <select idref="V-6B0C74C1" selected="true"/>
-    <select idref="V-AA199D29" selected="true"/>
-    <select idref="V-085BF961" selected="true"/>
-    <select idref="V-99F02398" selected="true"/>
-    <select idref="V-9432D152" selected="true"/>
-    <select idref="V-375824FA" selected="true"/>
-    <select idref="V-EFD82693" selected="true"/>
-    <select idref="V-11B9CB86" selected="true"/>
-    <select idref="V-B372256D" selected="true"/>
     <select idref="V-C81F58EE" selected="true"/>
     <select idref="V-1847228F" selected="true"/>
     <select idref="V-E0251C01" selected="true"/>
     <select idref="V-CEBEDB8C" selected="true"/>
     <select idref="V-F8C29EC6" selected="true"/>
     <select idref="V-B0A29EEC" selected="true"/>
-    <select idref="V-A68B36C4" selected="true"/>
-    <select idref="V-A849B37E" selected="true"/>
     <select idref="V-312D8397" selected="true"/>
     <select idref="V-067CB8C8" selected="true"/>
     <select idref="V-8A5A4AE4" selected="true"/>
-    <select idref="V-325E286F" selected="true"/>
     <select idref="V-65178E0E" selected="true"/>
     <select idref="V-2E0DF2FB" selected="true"/>
     <select idref="V-CBD71E59" selected="true"/>
@@ -507,7 +456,7 @@ getent group docker</check-content>
   <Group id="V-EECA0AEE">
     <title>1.1 Linux Hosts Specific Configuration</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-EECA0AEEr01_rule" weight="10.0" severity="high">
+    <Rule id="SV-EECA0AEEr01_rule" weight="10.0" severity="medium">
       <version>1.1.3</version>
       <title>Ensure auditing is configured for the Docker daemon</title>
       <description>&lt;VulnDiscussion&gt;Audit all Docker daemon activities.
@@ -539,7 +488,7 @@ This should show the rules associated with the Docker daemon.</check-content>
   <Group id="V-E6C79D2E">
     <title>1.1 Linux Hosts Specific Configuration</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-E6C79D2Er01_rule" weight="10.0" severity="high">
+    <Rule id="SV-E6C79D2Er01_rule" weight="10.0" severity="medium">
       <version>1.1.4</version>
       <title>Ensure auditing is configured for Docker files and directories - /run/containerd</title>
       <description>&lt;VulnDiscussion&gt;Audit /run/containerd.
@@ -554,7 +503,7 @@ As well as auditing the normal Linux file system and system calls, you should al
         <dc:identifier>1.1.4</dc:identifier>
       </reference>
       <fixtext fixref="F-E6C79D2Er01_fix">You should add a rule for the /run/containerd directory.
-For example, Add the line as below to the /etc/audit/audit.rules file:
+For example, Add the line as below to the /etc/audit/rules.d/audit.rules file:
 -a exit,always -F path=/run/containerd -F perm=war -k docker
 Then, restart the audit daemon using the following command
 systemctl restart auditd</fixtext>
@@ -571,7 +520,7 @@ This should list a rule for the /run/containerd directory.</check-content>
   <Group id="V-45534983">
     <title>1.1 Linux Hosts Specific Configuration</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-45534983r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-45534983r01_rule" weight="10.0" severity="medium">
       <version>1.1.5</version>
       <title>Ensure auditing is configured for Docker files and directories - /var/lib/docker</title>
       <description>&lt;VulnDiscussion&gt;Audit /var/lib/docker.
@@ -586,9 +535,16 @@ As well as auditing the normal Linux file system and system calls, you should al
         <dc:identifier>1.1.5</dc:identifier>
       </reference>
       <fixtext fixref="F-45534983r01_fix">You should add a rule for the /var/lib/docker directory.
-For example, Add the line as below to the /etc/audit/audit.rules file:
+Adding exclusions for /var/lib/docker/overlay2 &amp; /var/lib/docker/volumes reduces the audit messages to a more manageable level.
+For example, Add the line as below to the /etc/audit/rules.d/audit.rules file:
 -a exit,always -F path=/var/lib/docker -F perm=war -k docker
-Then, restart the audit daemon using the following command
+-a exit,never -F dir=/var/lib/docker/volumes
+-a exit,never -F dir=/var/lib/docker/overlay2
+or for systems with namespace-remapping enabled
+-a exit,always -F path=/var/lib/docker -F perm=war -k docker
+-a exit,never -F dir=/var/lib/docker/165536.165536/volumes
+-a exit,never -F dir=/var/lib/docker/165536.165536/overlay2
+Then, restart the audit daemon using the following command Internal Only - General
 systemctl restart auditd</fixtext>
       <fix id="F-45534983r01_fix"/>
       <check system="C-45534983_chk">
@@ -603,14 +559,13 @@ This should list a rule for the /var/lib/docker directory.</check-content>
   <Group id="V-DF1349CB">
     <title>1.1 Linux Hosts Specific Configuration</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-DF1349CBr01_rule" weight="10.0" severity="high">
+    <Rule id="SV-DF1349CBr01_rule" weight="10.0" severity="medium">
       <version>1.1.6</version>
       <title>Ensure auditing is configured for Docker files and directories - /etc/docker</title>
       <description>&lt;VulnDiscussion&gt;Audit /etc/docker.
 
 Rationale:
-As well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privilege and its behavior depends on some key files and directories, one of these being /etc/docker.
-This holds various certificates and keys used for TLS communication between Docker daemon and Docker client and as such it should be audited.&lt;/VulnDiscussion&gt;</description>
+As well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privilege and its behavior depends on some key files and directories, one of these being /etc/docker. This holds various certificates and keys used for TLS communication between Docker daemon and Docker client and as such it should be audited.&lt;/VulnDiscussion&gt;</description>
       <reference>
         <dc:title>CIS Docker Benchmark</dc:title>
         <dc:publisher>CIS</dc:publisher>
@@ -620,7 +575,7 @@ This holds various certificates and keys used for TLS communication between Dock
       </reference>
       <fixtext fixref="F-DF1349CBr01_fix">You should add a rule for the /etc/docker directory.
 For example:
-Add the line below to the /etc/audit/audit.rules file:
+Add the line below to the /etc/audit/rules.d/audit.rules file:
 -w /etc/docker -k docker
 Then restart the audit daemon. For example:
 systemctl restart auditd</fixtext>
@@ -653,10 +608,11 @@ As well as auditing the normal Linux file system and system calls, you should al
       </reference>
       <fixtext fixref="F-E5D8F5C3r01_fix">If the file exists, a rule for it should be added.
 For example:
-Add the line as below in /etc/audit/audit.rules file:
+Add the line as below in /etc/audit/rules.d/audit.rules file:
 -w /usr/lib/systemd/system/docker.service -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd</fixtext>
       <fix id="F-E5D8F5C3r01_fix"/>
       <check system="C-E5D8F5C3_chk">
@@ -689,10 +645,11 @@ As well as auditing the normal Linux file system and system calls, you should al
       </reference>
       <fixtext fixref="F-75680822r01_fix">If the file exists, you should add a rule for it.
 For example:
-Add the line below to the /etc/audit/audit.rules file:
+Add the line below to the /etc/audit/rules.d/audit.rules file:
 -w /run/containerd/containerd.sock -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd</fixtext>
       <fix id="F-75680822r01_fix"/>
       <check system="C-75680822_chk">
@@ -707,13 +664,13 @@ This should display a rule for containerd.sock.</check-content>
       </check>
     </Rule>
   </Group>
-  <Group id="V-A3E64ECE">
+  <Group id="V-1169EF95">
     <title>1.1 Linux Hosts Specific Configuration</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-A3E64ECEr01_rule" weight="10.0" severity="high">
+    <Rule id="SV-1169EF95r01_rule" weight="10.0" severity="high">
       <version>1.1.9</version>
-      <title>Ensure auditing is configured for Docker files and directories - docker.socket</title>
-      <description>&lt;VulnDiscussion&gt;Audit docker.socket, if applicable.
+      <title>Ensure auditing is configured for Docker files and directories - docker.sock</title>
+      <description>&lt;VulnDiscussion&gt;Audit docker.sock, if applicable.
 
 Rationale:
 As well as auditing the normal Linux file system and system calls, you should also audit the Docker daemon. Because this daemon runs with root privileges, it is very important to audit its activities and usage. Its behavior depends on some key files and directories with docker.socket being one such file, and as this holds various parameters for the Docker daemon, it should be audited.&lt;/VulnDiscussion&gt;</description>
@@ -724,24 +681,25 @@ As well as auditing the normal Linux file system and system calls, you should al
         <dc:subject>CIS Docker Benchmark</dc:subject>
         <dc:identifier>1.1.9</dc:identifier>
       </reference>
-      <fixtext fixref="F-A3E64ECEr01_fix">If the file exists, you should add a rule for it.
+      <fixtext fixref="F-1169EF95r01_fix">If the file exists, you should add a rule for it.
 For example:
-Add the line below to the /etc/audit/audit.rules file:
+Add the line below to the /etc/audit/rules.d/audit.rules file:
 -w /var/run/docker.sock -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd</fixtext>
-      <fix id="F-A3E64ECEr01_fix"/>
-      <check system="C-A3E64ECE_chk">
+      <fix id="F-1169EF95r01_fix"/>
+      <check system="C-1169EF95_chk">
         <check-content-ref href="CIS_Docker_Benchmark.xml" name="M"/>
         <check-content>Step 1: Find out the configuration file location:
-systemctl show -p FragmentPath docker.socket
+systemctl show -p FragmentPath docker.sock
 Step 2: Locate the socket file location:
 grep ListenStream &lt;FragmentPath from previous step&gt;
 Step 3: If the file does not exist, this recommendation is not applicable. If the file exists, you should verify that there is an audit rule corresponding to the file:
 For example, you could execute the command below:
-auditctl -l | grep docker.socket
-This should display a rule for docker.socket.</check-content>
+auditctl -l | grep docker.sock
+This should display a rule for docker.sock.</check-content>
       </check>
     </Rule>
   </Group>
@@ -768,6 +726,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /etc/default/docker -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd</fixtext>
       <fix id="F-8BE8FC39r01_fix"/>
       <check system="C-8BE8FC39_chk">
@@ -788,7 +747,8 @@ This should display a rule for the /etc/default/docker file.</check-content>
       <description>&lt;VulnDiscussion&gt;Audit /etc/docker/daemon.json, if applicable.
 
 Rationale:
-As well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privileges and its behavior depends on some key files and directories. /etc/docker/daemon.json is one such file. This holds various parameters for the Docker daemon, and as such it should be audited.&lt;/VulnDiscussion&gt;</description>
+As well as auditing the normal Linux file system and system calls, you should also audit all Docker related files and directories. The Docker daemon runs with root privileges and its behavior depends on some key files and directories.
+/etc/docker/daemon.json is one such file. This holds various parameters for the Docker daemon, and as such it should be audited.&lt;/VulnDiscussion&gt;</description>
       <reference>
         <dc:title>CIS Docker Benchmark</dc:title>
         <dc:publisher>CIS</dc:publisher>
@@ -802,6 +762,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /etc/docker/daemon.json -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd</fixtext>
       <fix id="F-2C0A66C9r01_fix"/>
       <check system="C-2C0A66C9_chk">
@@ -822,7 +783,8 @@ This should display a rule for the /etc/docker/daemon.json file.</check-content>
       <description>&lt;VulnDiscussion&gt;Audit /etc/containerd/config.toml if applicable
 
 Rationale:
-As well as auditing the normal Linux file system and system calls, you should also audit the Docker daemon. Because this daemon runs with root privileges it is very important to audit its activities and usage. Its behavior depends on some key files and directories and /etc/containerd/config.toml is one such file as it contains various parameters. If present, it is important that it is audited.&lt;/VulnDiscussion&gt;</description>
+As well as auditing the normal Linux file system and system calls, you should also audit the Docker daemon. Because this daemon runs with root privileges it is very important to audit its activities and usage. Its behavior depends on some key files and directories and /etc/containerd/config.toml is one such file as it contains various parameters.
+If present, it is important that it is audited.&lt;/VulnDiscussion&gt;</description>
       <reference>
         <dc:title>CIS Docker Benchmark</dc:title>
         <dc:publisher>CIS</dc:publisher>
@@ -836,6 +798,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /etc/containerd/config.toml -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd</fixtext>
       <fix id="F-3B46ED45r01_fix"/>
       <check system="C-3B46ED45_chk">
@@ -870,6 +833,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /etc/sysconfig/docker -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd</fixtext>
       <fix id="F-8C076373r01_fix"/>
       <check system="C-8C076373_chk">
@@ -904,6 +868,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /usr/bin/containerd -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd</fixtext>
       <fix id="F-384824BEr01_fix"/>
       <check system="C-384824BE_chk">
@@ -934,15 +899,16 @@ As well as auditing the normal Linux file system and system calls, you should au
       </reference>
       <fixtext fixref="F-801CAA69r01_fix">You should add a rule for the /usr/bin/containerd-shim file.
 For example:
-Add the line below to the /etc/audit/audit.rules file:
+Add the line below to the /etc/audit/rules.d/audit.rules file:
 -w /usr/bin/containerd-shim -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd</fixtext>
       <fix id="F-801CAA69r01_fix"/>
       <check system="C-801CAA69_chk">
         <check-content-ref href="CIS_Docker_Benchmark.xml" name="M"/>
-        <check-content>You should verify that there is an audit rule corresponding to /usr/bin/containerd-shim file.
+        <check-content>You should verify that there is an audit rule corresponding to /usr/bin/containerd- shim file.
 For example, you could execute the command below:
 auditctl -l | grep /usr/bin/containerd-shim
 This should display a rule for /usr/bin/containerd-shim file.</check-content>
@@ -972,6 +938,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /usr/bin/containerd-shim-runc-v1 -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd</fixtext>
       <fix id="F-3890DDBBr01_fix"/>
       <check system="C-3890DDBB_chk">
@@ -1006,6 +973,7 @@ Add the line below to the /etc/audit/audit.rules file:
 -w /usr/bin/containerd-shim-runc-v2 -k docker
 Then restart the audit daemon.
 For example:
+Internal Only - General
 systemctl restart auditd</fixtext>
       <fix id="F-44A0342Br01_fix"/>
       <check system="C-44A0342B_chk">
@@ -1150,7 +1118,7 @@ By default, unrestricted network traffic is enabled between all containers on th
       <fixtext fixref="F-3CCCCB7Er01_fix">Edit the Docker daemon configuration file to ensure that icc is disabled. It should include the following setting
 "icc": false
 Alernatively, run the docker daemon directly and pass --icc=false as an argument.
-For Example,
+For Example, Internal Only - General
 dockerd --icc=false
 Alternatively, you can follow the Docker documentation and create a custom network and only join containers that need to communicate to that custom network. The --icc parameter only applies to the default docker bridge, if custom networks are used then the approach of segmenting networks should be adopted instead.
 In order for this control to be fully effective, all containers connected to the docker0 bridge should drop the NET_RAW capability, otherwise a compromised container could use raw ethernet packets to communicate with other containers despite this restriction.</fixtext>
@@ -1215,6 +1183,7 @@ We recommended letting Docker make changes to iptables automatically in order to
         <dc:identifier>2.4</dc:identifier>
       </reference>
       <fixtext fixref="F-78F797A0r01_fix">Do not run the Docker daemon with --iptables=false parameter. For example, do not start the Docker daemon as below:
+Internal Only - General
 dockerd --iptables=false</fixtext>
       <fix id="F-78F797A0r01_fix"/>
       <check system="C-78F797A0_chk">
@@ -1302,7 +1271,8 @@ If you must expose the Docker daemon via a network socket, you should configure 
         <dc:subject>CIS Docker Benchmark</dc:subject>
         <dc:identifier>2.7</dc:identifier>
       </reference>
-      <fixtext fixref="F-13A38B69r01_fix">Follow the steps mentioned in the Docker documentation or other references.</fixtext>
+      <fixtext fixref="F-13A38B69r01_fix">Follow the steps mentioned in the Docker documentation or other references.
+Internal Only - General</fixtext>
       <fix id="F-13A38B69r01_fix"/>
       <check system="C-13A38B69_chk">
         <check-content-ref href="CIS_Docker_Benchmark.xml" name="M"/>
@@ -1382,8 +1352,8 @@ dockerd --userns-remap=default</fixtext>
         <check-content>docker inspect --format='{{ .State.Pid }}' $(docker ps -q) | while read -r
 line; do ps -h -p "$line" -o pid,user; done
 The above command will find the PID of the container and then list the host user associated with the container process. If the container process is running as root, then this configuration may be non-compliant with your organization's security policy.
-Alternatively, you can run docker info to ensure that the userns is listed under
-Security Options:
+Alternatively, you can run docker info to ensure that the userns is listed under Security Options:
+Internal Only - General
 docker info --format '{{ .SecurityOptions }}'</check-content>
       </check>
     </Rule>
@@ -1407,7 +1377,7 @@ It is possible to attach to a different cgroup other than the one which is the d
         <dc:identifier>2.10</dc:identifier>
       </reference>
       <fixtext fixref="F-74A349B4r01_fix">The default setting is in line with good security practice and can be left in situ. If you wish to specifically set a non-default cgroup, pass the --cgroup-parent parameter to the Docker daemon when starting it.
-For example,
+For example, Internal Only - General
 dockerd --cgroup-parent=/foobar</fixtext>
       <fix id="F-74A349B4r01_fix"/>
       <check system="C-74A349B4_chk">
@@ -1472,6 +1442,7 @@ Third party integrations of Docker may implement their own authorization models 
       <fixtext fixref="F-29B915D9r01_fix">Step 1: Install/Create an authorization plugin.
 Step 2: Configure the authorization policy as desired.
 Step 3: Start the docker daemon as below:
+Internal Only - General
 dockerd --authorization-plugin=&lt;PLUGIN_ID&gt;</fixtext>
       <fix id="F-29B915D9r01_fix"/>
       <check system="C-29B915D9_chk">
@@ -1629,6 +1600,7 @@ Alternatively, if Docker's default profile is adequate for your environment, you
         <dc:identifier>2.17</dc:identifier>
       </reference>
       <fixtext fixref="F-69887F18r01_fix">By default, Docker's default seccomp profile is applied. If this is adequate for your environment, no action is necessary. Alternatively, if you choose to apply your own seccomp profile, use the --seccomp-profile flag at daemon start or put it in the daemon runtime parameters file.
+Internal Only - General
 dockerd --seccomp-profile &lt;/path/to/seccomp/profile&gt;</fixtext>
       <fix id="F-69887F18r01_fix"/>
       <check system="C-69887F18_chk">
@@ -1667,7 +1639,7 @@ docker version --format '{{ .Server.Experimental }}'</check-content>
   <Group id="V-DE39BEF4">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-DE39BEF4r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-DE39BEF4r01_rule" weight="10.0" severity="medium">
       <version>3.1</version>
       <title>Ensure that the docker.service file ownership is set to root:root</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the docker.service file ownership and group ownership are correctly set to root.
@@ -1684,7 +1656,7 @@ The docker.service file contains sensitive parameters that may alter the behavio
       <fixtext fixref="F-DE39BEF4r01_fix">Step 1: Find out the file location:
 systemctl show -p FragmentPath docker.service
 Step 2: If the file does not exist, this recommendation is not applicable. If the file does exist, you should execute the command below, including the correct file path, in order to set the ownership and group ownership for the file to root.
-For example,
+For example, Internal Only - General
 chown root:root /usr/lib/systemd/system/docker.service</fixtext>
       <fix id="F-DE39BEF4r01_fix"/>
       <check system="C-DE39BEF4_chk">
@@ -1701,7 +1673,7 @@ The command above should not return anything.</check-content>
   <Group id="V-8F8EF5CA">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-8F8EF5CAr01_rule" weight="10.0" severity="high">
+    <Rule id="SV-8F8EF5CAr01_rule" weight="10.0" severity="medium">
       <version>3.2</version>
       <title>Ensure that docker.service file permissions are appropriately set</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the docker.service file permissions are either set to 644 or to a more restrictive value.
@@ -1734,7 +1706,7 @@ stat -c %a /usr/lib/systemd/system/docker.service</check-content>
   <Group id="V-CF0A54F9">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-CF0A54F9r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-CF0A54F9r01_rule" weight="10.0" severity="medium">
       <version>3.3</version>
       <title>Ensure that docker.socket file ownership is set to root:root</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the docker.socket file ownership and group ownership are correctly set to root.
@@ -1751,7 +1723,7 @@ The docker.socket file contains sensitive parameters that may alter the behavior
       <fixtext fixref="F-CF0A54F9r01_fix">Step 1: Find out the file location:
 systemctl show -p FragmentPath docker.socket
 Step 2: If the file does not exist, this recommendation is not applicable. If the file exists, execute the command below, including the correct file path to set the ownership and group ownership for the file to root.
-For example,
+For example, Internal Only - General
 chown root:root /usr/lib/systemd/system/docker.socket</fixtext>
       <fix id="F-CF0A54F9r01_fix"/>
       <check system="C-CF0A54F9_chk">
@@ -1768,7 +1740,7 @@ The command above should not return a value.</check-content>
   <Group id="V-677AC714">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-677AC714r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-677AC714r01_rule" weight="10.0" severity="medium">
       <version>3.4</version>
       <title>Ensure that docker.socket file permissions are set to 644 or more restrictive</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the file permissions on the docker.socket file are correctly set to 644 or more restrictively.
@@ -1785,7 +1757,7 @@ The docker.socket file contains sensitive parameters that may alter the behavior
       <fixtext fixref="F-677AC714r01_fix">Step 1: Find out the file location:
 systemctl show -p FragmentPath docker.socket
 Step 2: If the file does not exist, this recommendation is not applicable. If the file does exist, you should execute the command below, including the correct file path to set the file permissions to 644.
-For example,
+For example, Internal Only - General
 chmod 644 /usr/lib/systemd/system/docker.socket</fixtext>
       <fix id="F-677AC714r01_fix"/>
       <check system="C-677AC714_chk">
@@ -1801,7 +1773,7 @@ stat -c %a /usr/lib/systemd/system/docker.socket</check-content>
   <Group id="V-C8950791">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-C8950791r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-C8950791r01_rule" weight="10.0" severity="medium">
       <version>3.5</version>
       <title>Ensure that the /etc/docker directory ownership is set to root:root</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the /etc/docker directory ownership and group ownership is correctly set to root.
@@ -1830,7 +1802,7 @@ This command should not return any data.</check-content>
   <Group id="V-6B0C74C1">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-6B0C74C1r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-6B0C74C1r01_rule" weight="10.0" severity="medium">
       <version>3.6</version>
       <title>Ensure that /etc/docker directory permissions are set to 755 or more restrictively</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the /etc/docker directory permissions are correctly set to 755 or more restrictively.
@@ -1858,7 +1830,7 @@ stat -c %a /etc/docker</check-content>
   <Group id="V-AA199D29">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-AA199D29r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-AA199D29r01_rule" weight="10.0" severity="medium">
       <version>3.7</version>
       <title>Ensure that registry certificate file ownership is set to root:root</title>
       <description>&lt;VulnDiscussion&gt;You should verify that all the registry certificate files (usually found under /etc/docker/certs.d/&lt;registry-name&gt; directory) are individually owned and group owned by root.
@@ -1887,7 +1859,7 @@ The above command should not return any value.</check-content>
   <Group id="V-085BF961">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-085BF961r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-085BF961r01_rule" weight="10.0" severity="medium">
       <version>3.8</version>
       <title>Ensure that registry certificate file permissions are set to 444 or more restrictively</title>
       <description>&lt;VulnDiscussion&gt;You should verify that all the registry certificate files (usually found under /etc/docker/certs.d/&lt;registry-name&gt; directory) have permissions of 444 or are set more restrictively.
@@ -1916,10 +1888,10 @@ find /etc/docker/certs.d/ -type f -exec stat -c "%a %n" {} \;</check-content>
   <Group id="V-99F02398">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-99F02398r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-99F02398r01_rule" weight="10.0" severity="medium">
       <version>3.9</version>
       <title>Ensure that TLS CA certificate file ownership is set to root:root</title>
-      <description>&lt;VulnDiscussion&gt;You should verify that the TLS CA certificate file (the file that is passed along with the -- tlscacert parameter) is individually owned and group owned by root.
+      <description>&lt;VulnDiscussion&gt;You should verify that the TLS CA certificate file (the file that is passed along with the - -tlscacert parameter) is individually owned and group owned by root.
 
 Rationale:
 The TLS CA certificate file should be protected from any tampering. It is used to authenticate the Docker server based on a given CA certificate. It must be therefore be individually owned and group owned by root to ensure that it cannot be modified by less privileged users.&lt;/VulnDiscussion&gt;</description>
@@ -1945,10 +1917,10 @@ The above command should return no results.</check-content>
   <Group id="V-9432D152">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-9432D152r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-9432D152r01_rule" weight="10.0" severity="medium">
       <version>3.10</version>
       <title>Ensure that TLS CA certificate file permissions are set to 444 or more restrictively</title>
-      <description>&lt;VulnDiscussion&gt;You should verify that the TLS CA certificate file (the file that is passed along with the -- tlscacert parameter) has permissions of 444 or is set more restrictively.
+      <description>&lt;VulnDiscussion&gt;You should verify that the TLS CA certificate file (the file that is passed along with the - -tlscacert parameter) has permissions of 444 or is set more restrictively.
 
 Rationale:
 The TLS CA certificate file should be protected from any tampering. It is used to authenticate the Docker server based on a given CA certificate. It must therefore have permissions of 444, or more restrictive permissions to ensure that the file cannot be modified by a less privileged user.&lt;/VulnDiscussion&gt;</description>
@@ -1973,7 +1945,7 @@ stat -c %a &lt;path to TLS CA certificate file&gt;</check-content>
   <Group id="V-375824FA">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-375824FAr01_rule" weight="10.0" severity="high">
+    <Rule id="SV-375824FAr01_rule" weight="10.0" severity="medium">
       <version>3.11</version>
       <title>Ensure that Docker server certificate file ownership is set to root:root</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the Docker server certificate file (the file that is passed along with the --tlscert parameter) is individual owned and group owned by root.
@@ -2002,7 +1974,7 @@ The above command should return no results.</check-content>
   <Group id="V-EFD82693">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-EFD82693r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-EFD82693r01_rule" weight="10.0" severity="medium">
       <version>3.12</version>
       <title>Ensure that the Docker server certificate file permissions are set to 444 or more restrictively</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the Docker server certificate file (the file that is passed along with the --tlscert parameter) has permissions of 444 or more restrictive permissions.
@@ -2088,7 +2060,7 @@ stat -c %a &lt;path to Docker server certificate key file&gt;</check-content>
   <Group id="V-11B9CB86">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-11B9CB86r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-11B9CB86r01_rule" weight="10.0" severity="medium">
       <version>3.15</version>
       <title>Ensure that the Docker socket file ownership is set to root:docker</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the Docker socket file is owned by root and group owned by docker.
@@ -2105,6 +2077,7 @@ For these reason, the default Docker Unix socket file should be owned by root an
         <dc:identifier>3.15</dc:identifier>
       </reference>
       <fixtext fixref="F-11B9CB86r01_fix">You should execute the following command:
+Internal Only - General
 chown root:docker /var/run/docker.sock
 This sets the ownership to root and group ownership to docker for the default Docker socket file.</fixtext>
       <fix id="F-11B9CB86r01_fix"/>
@@ -2119,7 +2092,7 @@ The command above should return no results.</check-content>
   <Group id="V-B372256D">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-B372256Dr01_rule" weight="10.0" severity="high">
+    <Rule id="SV-B372256Dr01_rule" weight="10.0" severity="medium">
       <version>3.16</version>
       <title>Ensure that the Docker socket file permissions are set to 660 or more restrictively</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the Docker socket file has permissions of 660 or are configured more restrictively.
@@ -2321,7 +2294,7 @@ The command above should return no results.</check-content>
   <Group id="V-A68B36C4">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-A68B36C4r01_rule" weight="10.0" severity="high">
+    <Rule id="SV-A68B36C4r01_rule" weight="10.0" severity="medium">
       <version>3.23</version>
       <title>Ensure that the Containerd socket file ownership is set to root:root</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the Containerd socket file is owned by root and group owned by root.
@@ -2351,7 +2324,7 @@ The command above should return no results.</check-content>
   <Group id="V-A849B37E">
     <title>3 Docker daemon configuration files</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-A849B37Er01_rule" weight="10.0" severity="high">
+    <Rule id="SV-A849B37Er01_rule" weight="10.0" severity="medium">
       <version>3.24</version>
       <title>Ensure that the Containerd socket file permissions are set to 660 or more restrictively</title>
       <description>&lt;VulnDiscussion&gt;You should verify that the Containerd socket file has permissions of 660 or are configured more restrictively.
@@ -2397,6 +2370,7 @@ It is good practice to run the container as a non-root user, where possible. Thi
 USER &lt;username or ID&gt;
 In this case, the user name or ID refers to the user that was found in the container base image. If there is no specific user created in the container base image, then make use of the useradd command to add a specific user before the USER instruction in the Dockerfile.
 For example, add the below lines in the Dockerfile to create a user in the container:
+Internal Only - General
 RUN useradd -d /home/username -m -s /bin/bash username
 USER username
 Note: If there are users in the image that are not needed, you should consider deleting them. After deleting those users, commit the image and then generate new instances of the containers.
@@ -2493,7 +2467,8 @@ Care should be taken with the results returned by vulnerability assessment tools
         <dc:subject>CIS Docker Benchmark</dc:subject>
         <dc:identifier>4.4</dc:identifier>
       </reference>
-      <fixtext fixref="F-92F76845r01_fix">Images should be re-built ensuring that the latest version of the base images are used, to keep the operating system patch level at an appropriate level. Once the images have been re-built, containers should be re-started making use of the updated images.</fixtext>
+      <fixtext fixref="F-92F76845r01_fix">Images should be re-built ensuring that the latest version of the base images are used, to keep the operating system patch level at an appropriate level. Once the images have been re-built, containers should be re-started making use of the updated images.
+Internal Only - General</fixtext>
       <fix id="F-92F76845r01_fix"/>
       <check system="C-92F76845_chk">
         <check-content-ref href="CIS_Docker_Benchmark.xml" name="M"/>
@@ -2723,9 +2698,7 @@ Cryptographic signature is a tool to verify artifact authenticity. Every artifac
         <dc:subject>CIS Docker Benchmark</dc:subject>
         <dc:identifier>4.12</dc:identifier>
       </reference>
-      <fixtext fixref="F-6741085Cr01_fix">Validate every artifact with its signature. It is recommended to do so automatically.
-Controls Control IG 1 IG 2 IG 3 Version 2.7 Allowlist Authorized Scripts Use technical controls, such as digital signatures and version control, to ensure v8 that only authorized scripts, such as specific .ps1, .py, etc., files, are allowed to ● execute. Block unauthorized scripts from executing. Reassess bi-annually, or more frequently.
-2.7 Utilize Application Whitelisting v7 Utilize application whitelisting technology on all assets to ensure that only ● authorized software executes and all unauthorized software is blocked from executing on assets.</fixtext>
+      <fixtext fixref="F-6741085Cr01_fix">Validate every artifact with its signature. It is recommended to do so automatically.</fixtext>
       <fix id="F-6741085Cr01_fix"/>
       <check system="C-6741085C_chk">
         <check-content-ref href="CIS_Docker_Benchmark.xml" name="M"/>
@@ -2736,7 +2709,7 @@ Controls Control IG 1 IG 2 IG 3 Version 2.7 Allowlist Authorized Scripts Use tec
   <Group id="V-325E286F">
     <title>5 Container Runtime Configuration</title>
     <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
-    <Rule id="SV-325E286Fr01_rule" weight="10.0" severity="high">
+    <Rule id="SV-325E286Fr01_rule" weight="10.0" severity="medium">
       <version>5.1</version>
       <title>Ensure swarm mode is not Enabled, if not needed</title>
       <description>&lt;VulnDiscussion&gt;Do not enable swarm mode on a Docker engine instance unless this is needed.
@@ -2787,7 +2760,8 @@ AppArmor protects the Linux OS and applications from various threats by enforcin
 4. Start your Docker container using the customized AppArmor profile. For example:
 docker run --interactive --tty --security-opt="apparmor:PROFILENAME" ubuntu
 /bin/bash
-Alternatively, Docker's default AppArmor policy can be used.</fixtext>
+Alternatively, Docker's default AppArmor policy can be used.
+Internal Only - General</fixtext>
       <fix id="F-96D7D56Br01_fix"/>
       <check system="C-96D7D56B_chk">
         <check-content-ref href="CIS_Docker_Benchmark.xml" name="M"/>
@@ -2822,6 +2796,7 @@ SELinux provides a Mandatory Access Control (MAC) system that greatly augments t
 4. Start Docker in daemon mode with SELinux enabled. For example:
 docker daemon --selinux-enabled
 or by adding the following to the daemon.json configuration file:
+Internal Only - General
 {
 "selinux-enabled": true
 }
@@ -2865,6 +2840,7 @@ You should execute the command below to remove unneeded capabilities:
 docker run --cap-drop={"Capability 1","Capability 2"} &lt;Run arguments&gt;
 &lt;Container Image Name or ID&gt; &lt;Command&gt;
 Alternatively, you could remove all the currently configured capabilities and then restore only the ones you specifically use:
+Internal Only - General
 docker run --cap-drop=all --cap-add={"Capability 1","Capability 2"} &lt;Run
 arguments&gt; &lt;Container Image Name or ID&gt; &lt;Command&gt;
 Note that some settings also can be configured using the --sysctl option, reducing the need for container capabilities even further. This includes unprivileged ICMP echo sockets without NET_RAW and allow opening any port less than 1024 without NET_BIND_SERVICE.
@@ -2961,7 +2937,7 @@ Running SSH within the container increases the complexity of security management
       </reference>
       <fixtext fixref="F-BEBA8181r01_fix">Uninstall the SSH daemon from the container and use and use docker exec to enter a container on the remote host.
 docker exec --interactive --tty &lt;CONTAINER ID&gt; sh
-OR
+OR Internal Only - General
 docker attach &lt;CONTAINER ID&gt;</fixtext>
       <fix id="F-BEBA8181r01_fix"/>
       <check system="C-BEBA8181_chk">
@@ -3021,8 +2997,10 @@ Additionally, in the course of time, the Dockerfile may undergo various changes 
         <dc:subject>CIS Docker Benchmark</dc:subject>
         <dc:identifier>5.9</dc:identifier>
       </reference>
-      <fixtext fixref="F-B1D7EA0Ar01_fix">You should ensure that the Dockerfile for each container image only exposes needed ports. You can also completely ignore the list of ports defined in the Dockerfile by NOT using -P (UPPERCASE) or the --publish-all flag when starting the container. Instead, use the -p (lowercase) or --publish flag to explicitly define the ports that you need for a particular container instance.
+      <fixtext fixref="F-B1D7EA0Ar01_fix">You should ensure that the Dockerfile for each container image only exposes needed ports. You can also completely ignore the list of ports defined in the Dockerfile by NOT using -P (UPPERCASE) or the --publish-all flag when starting the container.
+Instead, use the -p (lowercase) or --publish flag to explicitly define the ports that you need for a particular container instance.
 For example:
+Internal Only - General
 docker run --interactive --tty --publish 5000 --publish 5001 --publish 5002
 centos /bin/bash</fixtext>
       <fix id="F-B1D7EA0Ar01_fix"/>
@@ -3085,6 +3063,7 @@ For example, you could run a container using the command below:
 docker run -d --memory 256m centos sleep 1000
 In the example above, the container is started with a memory limit of 256 MB.
 Verify the memory settings by using the command below:
+Internal Only - General
 docker inspect --format='{{ .Id }}: Memory={{.HostConfig.Memory}}
 KernelMemory={{.HostConfig.KernelMemory}} Swap={{.HostConfig.MemorySwap}}'
 &lt;CONTAINER ID&gt;</fixtext>
@@ -3117,6 +3096,7 @@ By default, CPU time is divided between containers equally. If you wish to contr
       </reference>
       <fixtext fixref="F-DB705DA4r01_fix">You should manage the CPU runtime between your containers dependent on their priority within your organization. To do so start the container using the --cpu-shares argument.
 For example, you could run a container as below:
+Internal Only - General
 docker run -d --cpu-shares 512 centos sleep 1000
 In the example above, the container is started with CPU shares of 50% of what other containers use. So if the other container has CPU shares of 80%, this container will have CPU shares of 40%.
 Every new container will have 1024 shares of CPU by default. However, this value is shown as 0 if you run the command mentioned in the audit section.
@@ -3151,6 +3131,7 @@ This also reduces security attack vectors since the container instance's filesys
         <dc:identifier>5.13</dc:identifier>
       </reference>
       <fixtext fixref="F-77122A4Er01_fix">You should add a --read-only flag at a container's runtime to enforce the container's root filesystem being mounted as read only.
+Internal Only - General
 docker run &lt;Run arguments&gt; --read-only &lt;Container Image Name or ID&gt; &lt;Command&gt;
 Enabling the --read-only option at a container's runtime should be used by administrators to force a container's executable processes to only write container data to explicit storage locations during its lifetime.
 Examples of explicit storage locations during a container's runtime include, but are not limited to:
@@ -3195,7 +3176,7 @@ If you have multiple network interfaces on your host machine, the container can 
         <dc:identifier>5.14</dc:identifier>
       </reference>
       <fixtext fixref="F-A1D4E24Ar01_fix">You should bind the container port to a specific host interface on the desired host port.
-For example,
+For example, Internal Only - General
 docker run --detach --publish 10.2.3.4:49153:80 nginx
 In the example above, the container port 80 is bound to the host port on 49153 and would accept incoming connection only from the 10.2.3.4 external interface.</fixtext>
       <fix id="F-A1D4E24Ar01_fix"/>
@@ -3206,8 +3187,7 @@ docker ps --quiet | xargs docker inspect --format '{{ .Id }}: Ports={{
 .NetworkSettings.Ports }}'
 Then review the list and ensure that the exposed container ports are bound to a specific interface and not to the wildcard IP address 0.0.0.0.
 For example, if the command above returns the results below, this is non-compliant and the container can accept connections on any host interface on the specified port 49153.
-Ports=map[443/tcp:&lt;nil&gt; 80/tcp:[map[HostPort:49153 HostIp:0.0.0.0]]]
-However, if the exposed port is bound to a specific interface on the host as below, then this is configured in line with good security practice.
+Ports=map[443/tcp:&lt;nil&gt; 80/tcp:[map[HostPort:49153 HostIp:0.0.0.0]]] However, if the exposed port is bound to a specific interface on the host as below, then this is configured in line with good security practice.
 Ports=map[443/tcp:&lt;nil&gt; 80/tcp:[map[HostIp:10.2.3.4 HostPort:49153]]]</check-content>
       </check>
     </Rule>
@@ -3230,6 +3210,7 @@ If you indefinitely keep trying to start the container, it could possibly lead t
         <dc:identifier>5.15</dc:identifier>
       </reference>
       <fixtext fixref="F-50CAC1F3r01_fix">If you wish a container to be automatically restarted, a sample command is as below:
+Internal Only - General
 docker run --detach --restart=on-failure:5 nginx</fixtext>
       <fix id="F-50CAC1F3r01_fix"/>
       <check system="C-50CAC1F3_chk">
@@ -3270,7 +3251,8 @@ docker run --interactive --tty --pid=host centos /bin/bash</fixtext>
         <check-content>You should run the following command:
 docker ps --quiet --all | xargs docker inspect --format '{{ .Id }}:
 PidMode={{ .HostConfig.PidMode }}'
-If the command above returns host, it means that the host PID namespace is shared with its containers; any other result means that the system is configured in line with good security practice.</check-content>
+If the command above returns host, it means that the host PID namespace is shared with its containers; any other result means that the system is configured in line with good security practice.
+Internal Only - General</check-content>
       </check>
     </Rule>
   </Group>
@@ -3292,6 +3274,7 @@ The IPC namespace provides separation of IPC between the host and containers. If
         <dc:identifier>5.17</dc:identifier>
       </reference>
       <fixtext fixref="F-76C6AF8Er01_fix">You should not start a container with the --ipc=host argument. For example, do not start a container as below:
+Internal Only - General
 docker run --interactive --tty --ipc=host centos /bin/bash</fixtext>
       <fix id="F-76C6AF8Er01_fix"/>
       <check system="C-76C6AF8E_chk">
@@ -3340,7 +3323,7 @@ Devices={{ .HostConfig.Devices }}'
 The above command would list out each device with below information:
 • CgroupPermissions - For example, rwm
 • PathInContainer - Device path within the container
-• PathOnHost - Device path on the host You should verify that the host device is needed to be accessed from within the container and that the permissions required are correctly set. If the above command returns [], then the container does not have access to host devices and is configured in line with good security practice.</check-content>
+• PathOnHost - Device path on the host Internal Only - General You should verify that the host device is needed to be accessed from within the container and that the permissions required are correctly set. If the above command returns [], then the container does not have access to host devices and is configured in line with good security practice.</check-content>
       </check>
     </Rule>
   </Group>
@@ -3618,8 +3601,7 @@ docker ps --quiet | xargs docker inspect --format '{{ .Id }}: Health={{
       <description>&lt;VulnDiscussion&gt;You should always ensure that you are using the latest version of the images within your repository and not cached older versions.
 
 Rationale:
-Multiple Docker commands such as docker pull, docker run etc. are known to have an issue where by default, they extract the local copy of the image, if present, even though there is an updated version of the image with the same tag in the upstream repository.
-This could lead to using older images containing known vulnerabilites.&lt;/VulnDiscussion&gt;</description>
+Multiple Docker commands such as docker pull, docker run etc. are known to have an issue where by default, they extract the local copy of the image, if present, even though there is an updated version of the image with the same tag in the upstream repository. This could lead to using older images containing known vulnerabilites.&lt;/VulnDiscussion&gt;</description>
       <reference>
         <dc:title>CIS Docker Benchmark</dc:title>
         <dc:publisher>CIS</dc:publisher>
@@ -3773,6 +3755,7 @@ Tagged images are useful if you need to fall back from the "latest" version to a
       <fixtext fixref="F-A1AACB11r01_fix">You should keep only the images that you actually need and establish a workflow to remove old or stale images from the host. Additionally, you should use features such as pull-by-digest to get specific images from the registry.
 You can follow the steps below to find unused images on the system so they can be deleted.
 Step 1 Make a list of all image IDs that are currently instantiated by executing the command below:
+Internal Only - General
 docker images --quiet | xargs docker inspect --format '{{ .Id }}: Image={{
 .Config.Image }}'
 Step 2: List all the images present on the system by executing the command below:
@@ -3864,7 +3847,8 @@ docker node ls | grep 'Leader'</check-content>
       <description>&lt;VulnDiscussion&gt;By default, Docker swarm services will listen on all interfaces on the host. This may not be necessary for the operation of the swarm where the host has multiple network interfaces.
 
 Rationale:
-When a swarm is initialized the default value for the --listen-addr flag is 0.0.0.0:2377 which means that swarm services will listen on all interfaces on the host. If a host has multiple network interfaces this may be undesirable as it could expose swarm services to networks which are not involved with the operation of the swarm.
+When a swarm is initialized the default value for the --listen-addr flag is 0.0.0.0:2377 which means that swarm services will listen on all interfaces on the host.
+If a host has multiple network interfaces this may be undesirable as it could expose swarm services to networks which are not involved with the operation of the swarm.
 By passing a specific IP address to the --listen-addr, a specific network interface can be specified, limiting this exposure.&lt;/VulnDiscussion&gt;</description>
       <reference>
         <dc:title>CIS Docker Benchmark</dc:title>
@@ -3955,6 +3939,7 @@ This has benefits in a high security environment, however these should be balanc
         <dc:identifier>7.5</dc:identifier>
       </reference>
       <fixtext fixref="F-37D90CFEr01_fix">If you are initializing a swarm, use the command below.
+Internal Only - General
 docker swarm init --autolock
 If you want to set --autolock on an existing swarm manager node, use the following command.
 docker swarm update --autolock</fixtext>

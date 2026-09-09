@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="utf-8"?><Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd" id="CIS_Arista_EOS_benchmark" xml:lang="en" xmlns="http://checklists.nist.gov/xccdf/1.1">
+  <status date="2026-08-03">accepted</status>
+  <title>CIS Arista EOS benchmark</title>
+  <description>All CIS Benchmarks ™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks ™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Internal Only - General Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Internal Only - General Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completed successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks ™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks ™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Internal Only - General Target Technology Details This guide is provided as a template to securing Arista devices running Arista EOS. This guide was tested against Arista EOS 4.35.4M. Configurations alone are not able to completely secure a network. Due operational diligence including threat assessment and reaction are necessary to ensure device security. This guide provides recommendations that you are advised to implement, however, no document can be comprehensive for every unique environment. The audit commands within broadly assume that operations are being performed at privilege level 15. The default prompt for this privilege level is # and as such all sample commands will have # as an additional indication that it is to be executed at privilege level 15. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at benchmarkinfo@cisecurity.org.</description>
+  <notice id="terms-of-use" xml:lang="en"/>
+  <front-matter xml:lang="en"/>
+  <rear-matter xml:lang="en"/>
+  <reference href="https://www.cisecurity.org/cis-benchmarks">
+    <dc:publisher>Center for Internet Security</dc:publisher>
+    <dc:source>CIS Benchmarks</dc:source>
+  </reference>
+  <plain-text id="release-info">Release: 1.0.0 Benchmark Date: 2026-08-03</plain-text>
+  <version>1.0.0</version>
+  <Profile id="L1_Public">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-CCEE6ADA" selected="true"/>
+    <select idref="V-AFF3DC24" selected="true"/>
+    <select idref="V-EACF98F9" selected="true"/>
+    <select idref="V-159CB322" selected="true"/>
+    <select idref="V-31CE449C" selected="true"/>
+    <select idref="V-FCAB1667" selected="true"/>
+    <select idref="V-69F64C08" selected="true"/>
+    <select idref="V-F1F258EF" selected="true"/>
+    <select idref="V-B369DB11" selected="true"/>
+    <select idref="V-32937354" selected="true"/>
+    <select idref="V-275D7085" selected="true"/>
+    <select idref="V-100723C6" selected="true"/>
+    <select idref="V-905E91CC" selected="true"/>
+    <select idref="V-FB81C651" selected="true"/>
+    <select idref="V-16049014" selected="true"/>
+    <select idref="V-765A43E8" selected="true"/>
+    <select idref="V-AFE3325E" selected="true"/>
+    <select idref="V-B5D4C999" selected="true"/>
+    <select idref="V-40A2DA7B" selected="true"/>
+    <select idref="V-4D6F003F" selected="true"/>
+    <select idref="V-E201C5D5" selected="true"/>
+    <select idref="V-FE4B285B" selected="true"/>
+    <select idref="V-D6DE46FF" selected="true"/>
+    <select idref="V-A544D48E" selected="true"/>
+    <select idref="V-20EDCDD2" selected="true"/>
+  </Profile>
+  <Profile id="L1_Classified">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-CCEE6ADA" selected="true"/>
+    <select idref="V-AFF3DC24" selected="true"/>
+    <select idref="V-EACF98F9" selected="true"/>
+    <select idref="V-159CB322" selected="true"/>
+    <select idref="V-31CE449C" selected="true"/>
+    <select idref="V-FCAB1667" selected="true"/>
+    <select idref="V-69F64C08" selected="true"/>
+    <select idref="V-F1F258EF" selected="true"/>
+    <select idref="V-B369DB11" selected="true"/>
+    <select idref="V-32937354" selected="true"/>
+    <select idref="V-275D7085" selected="true"/>
+    <select idref="V-100723C6" selected="true"/>
+    <select idref="V-905E91CC" selected="true"/>
+    <select idref="V-FB81C651" selected="true"/>
+    <select idref="V-16049014" selected="true"/>
+    <select idref="V-765A43E8" selected="true"/>
+    <select idref="V-AFE3325E" selected="true"/>
+    <select idref="V-B5D4C999" selected="true"/>
+    <select idref="V-40A2DA7B" selected="true"/>
+    <select idref="V-4D6F003F" selected="true"/>
+    <select idref="V-E201C5D5" selected="true"/>
+    <select idref="V-FE4B285B" selected="true"/>
+    <select idref="V-D6DE46FF" selected="true"/>
+    <select idref="V-A544D48E" selected="true"/>
+    <select idref="V-20EDCDD2" selected="true"/>
+  </Profile>
+  <Profile id="L1_Sensitive">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-CCEE6ADA" selected="true"/>
+    <select idref="V-AFF3DC24" selected="true"/>
+    <select idref="V-EACF98F9" selected="true"/>
+    <select idref="V-159CB322" selected="true"/>
+    <select idref="V-31CE449C" selected="true"/>
+    <select idref="V-FCAB1667" selected="true"/>
+    <select idref="V-69F64C08" selected="true"/>
+    <select idref="V-F1F258EF" selected="true"/>
+    <select idref="V-B369DB11" selected="true"/>
+    <select idref="V-32937354" selected="true"/>
+    <select idref="V-275D7085" selected="true"/>
+    <select idref="V-100723C6" selected="true"/>
+    <select idref="V-905E91CC" selected="true"/>
+    <select idref="V-FB81C651" selected="true"/>
+    <select idref="V-16049014" selected="true"/>
+    <select idref="V-765A43E8" selected="true"/>
+    <select idref="V-AFE3325E" selected="true"/>
+    <select idref="V-B5D4C999" selected="true"/>
+    <select idref="V-40A2DA7B" selected="true"/>
+    <select idref="V-4D6F003F" selected="true"/>
+    <select idref="V-E201C5D5" selected="true"/>
+    <select idref="V-FE4B285B" selected="true"/>
+    <select idref="V-D6DE46FF" selected="true"/>
+    <select idref="V-A544D48E" selected="true"/>
+    <select idref="V-20EDCDD2" selected="true"/>
+  </Profile>
+  <Profile id="L2_Public">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-55540637" selected="true"/>
+    <select idref="V-B4A16F35" selected="true"/>
+    <select idref="V-FACE3934" selected="true"/>
+    <select idref="V-E8C9E8F2" selected="true"/>
+    <select idref="V-5B44D88C" selected="true"/>
+    <select idref="V-A85C2F69" selected="true"/>
+    <select idref="V-EB6DD391" selected="true"/>
+    <select idref="V-3B3D8461" selected="true"/>
+  </Profile>
+  <Profile id="L2_Classified">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-55540637" selected="true"/>
+    <select idref="V-B4A16F35" selected="true"/>
+    <select idref="V-FACE3934" selected="true"/>
+    <select idref="V-E8C9E8F2" selected="true"/>
+    <select idref="V-5B44D88C" selected="true"/>
+    <select idref="V-A85C2F69" selected="true"/>
+    <select idref="V-EB6DD391" selected="true"/>
+    <select idref="V-3B3D8461" selected="true"/>
+  </Profile>
+  <Profile id="L2_Sensitive">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-55540637" selected="true"/>
+    <select idref="V-B4A16F35" selected="true"/>
+    <select idref="V-FACE3934" selected="true"/>
+    <select idref="V-E8C9E8F2" selected="true"/>
+    <select idref="V-5B44D88C" selected="true"/>
+    <select idref="V-A85C2F69" selected="true"/>
+    <select idref="V-EB6DD391" selected="true"/>
+    <select idref="V-3B3D8461" selected="true"/>
+  </Profile>
+  <Group id="V-CCEE6ADA">
+    <title>1.1.1 Control Plane Traffic</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-CCEE6ADAr01_rule" weight="10.0" severity="medium">
+      <version>1.1.1.1</version>
+      <title>Ensure the Management VRF Exists</title>
+      <description>&lt;VulnDiscussion&gt;Ensure that the mgmt vrf exists and is assigned to the interface that connects to the management network for out of band access. The switch has a dedicated management interface that should be assigned to this vrf.
+
+Rationale:
+A Management VRF (Virtual Routing and Forwarding) is a dedicated, isolated routing instance on a network device used exclusively for out-of-band management traffic. It separates administrator access (like SSH, SNMP, and Syslog) from production data traffic.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>1.1.1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-CCEE6ADAr01_fix">Creat a vrf, assign it to the management interface and create a static route to the rest of the network. The vrf instance should have a meaningful name and description indicating its purpose.
+vrf instance mgmt
+description Management VRF
+!
+interface Management1
+vrf mgmt
+ip route vrf mgmt 0/0 {Gateway Address}
+no ip routing vrf mgmt</fixtext>
+      <fix id="F-CCEE6ADAr01_fix"/>
+      <check system="C-CCEE6ADA_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Verify vrf exists and is applied to management interface.
+sho run section vrf instance mgmt
+show running-config section interface Management</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-AFF3DC24">
+    <title>1.1 Control Plane</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-AFF3DC24r01_rule" weight="10.0" severity="medium">
+      <version>1.1.2</version>
+      <title>Control Plane ACL</title>
+      <description>&lt;VulnDiscussion&gt;A default control plane ACL is provided and applied to the system control-plane. The default control-place ACL is read-only, but you can create and assign a different ACL to the system control-plane if customization is needed. However, it is strongly recommended to use the default control-plane ACL as a template for any custom ACL that you may apply to ensure protocol and management operations function correctly.
+
+Rationale:
+The default control plane ACL filters all IP traffic inbound and outbound on any management interface. SSH, Telnet, NTP, SNMP, IP protocols, and logging/matching on management traffic are done by this ACL. The default control plane ACL permits the following protocols:
+• Telnet
+• SSH
+• HTTP/S
+• BootP
+• SNMP
+• ICMP
+• MLAG
+• IGMP
+• OSPF
+• BGP
+• VRRP
+• PIM
+• AHP
+• VNC&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>1.1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-AFF3DC24r01_fix">Apply a control plane ACL to the default vrf and all non default vrfs
+switch(config)#system control-plane
+switch(config-system-cp)# ip access-group custom-control-plane-acl in
+switch(config-system-cp)# ip access-group custom-control-plane-acl vrf MGMT
+in</fixtext>
+      <fix id="F-AFF3DC24r01_fix"/>
+      <check system="C-AFF3DC24_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Run the following command to check that either your custom ACL or the default ACL is applied
+switch#show running-config all section system control-plane
+system control-plane
+ip access-group custom-control-plane-acl in
+ip access-group default-control-plane-acl vrf MGMT in
+switch#
+The control plane ACL is referenced by the ip[v6] access-group &lt;ACLNAME&gt; in configuration.
+If a customer access list is specified, verify this acl exists
+switch#show run section access-list custom-control-plane-acl
+Example output of a custom acl based on the default acl. This removed telnet and http access.
+ip access-list custom-control-plane-acl
+counters per-entry
+10 permit icmp any any
+20 permit ip any any tracked
+30 permit udp any any eq bfd ttl eq 255
+40 permit udp any any eq bfd-echo ttl eq 254
+50 permit udp any any eq multihop-bfd micro-bfd sbfd
+60 permit udp any eq sbfd any eq sbfd-initiator
+70 permit ospf any any
+80 permit tcp any any eq ssh snmp bgp https msdp ldp netconf-ssh gnmi
+90 permit udp any any eq bootps bootpc ntp snmp ptp-event ptp-general rip
+ldp
+100 permit tcp any any eq mlag ttl eq 255
+110 permit udp any any eq mlag ttl eq 255
+120 permit vrrp any any
+130 permit ahp any any
+140 permit pim any any
+150 permit igmp any any
+160 permit tcp any any range 5900 5910
+170 permit tcp any any range 50000 50100
+180 permit udp any any range 51000 51100
+190 permit tcp any any eq 3333
+200 permit tcp any any eq nat ttl eq 255
+210 permit tcp any eq bgp any
+220 permit rsvp any any
+230 permit tcp any any eq 9340
+240 permit tcp any any eq 9559
+250 permit udp any any eq 8503
+260 permit udp any any eq lsp-ping
+270 permit udp any eq lsp-ping any range 51900 51999
+switch#
+Internal Only - General</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-EACF98F9">
+    <title>1.1 Control Plane</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-EACF98F9r01_rule" weight="10.0" severity="medium">
+      <version>1.1.3</version>
+      <title>Control Plane Policy Map</title>
+      <description>&lt;VulnDiscussion&gt;The default configuration comes with a pre-configured policy map to ensure adequate rate limiting for most traffic types punted to the CPU.
+
+Rationale:
+Control plane policing can be used to increase the security of Arista switches by protecting the control plane from unnecessary or malicious traffic. It is recommended to implement control plane protection by classifying traffic types based on importance levels and configure filters to restrict and rate limit the traffic punted to the processor according to each class.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>1.1.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-EACF98F9r01_fix">If no policy is configured, enable the default policy
+system control-plane
+service-policy input copp-system-policy</fixtext>
+      <fix id="F-EACF98F9r01_fix"/>
+      <check system="C-EACF98F9_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Verify a policy map is applied to the control plane
+switch#show running-config all section system control-plane
+Expected output
+system control-plane
+ip access-group default-control-plane-acl in
+ip access-group default-control-plane-acl vrf MGMT in
+ipv6 access-group default-control-plane-acl in
+ipv6 access-group default-control-plane-acl vrf MGMT in
+service-policy input copp-system-policy
+switch#
+Check the configuration of the service policy Internal Only - General
+#show policy-map type control-plane copp-system-policy
+Service-policy input: copp-system-policy
+Number of units programmed: 1
+Hardware programming status: Successful
+Class-map: copp-system-bpdu (match-any)
+shape : 5000 pps
+bandwidth : 5000 pps
+Class-map: copp-system-lacp (match-any)
+shape : 5000 pps
+bandwidth : 5000 pps
+Class-map: copp-system-bfd (match-any)
+shape : 10000 pps
+bandwidth : 500 pps
+Class-map: copp-system-mlag (match-any)
+shape : 5000 pps
+bandwidth : 5000 pps
+Class-map: copp-system-selfip-tc6to7 (match-any)
+shape : 5000 pps
+bandwidth : 5000 pps
+Class-map: copp-system-selfip (match-any)
+shape : 5000 pps
+bandwidth : 5000 pps
+Class-map: copp-system-tc6to7 (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-vrrp (match-any)
+shape : 5000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-lldp (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-bgp (match-any)
+shape : 5000 pps
+bandwidth : 5000 pps
+Class-map: copp-system-OspfIsis (match-any)
+shape : 10000 pps
+bandwidth : 5000 pps
+Class-map: copp-system-pim (match-any)
+shape : 10000 pps
+bandwidth : 5000 pps
+Class-map: copp-system-ptp (match-any)
+shape : 2500 pps
+bandwidth : 500 pps
+Internal Only - General
+Class-map: copp-system-ipmcrsvd (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-igmp (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-ipmcmiss (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-glean (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-tc3to5 (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-arp (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-iplocking (match-any)
+shape : 2500 pps
+bandwidth : 500 pps
+Class-map: copp-system-l3slowpath (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-l3ttl1 (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-cvx-heartbeat (match-any)
+shape : 5000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-cvx (match-any)
+shape : 10000 pps
+bandwidth : 5000 pps
+Class-map: copp-system-dot1x-mba (match-any)
+shape : 2500 pps
+bandwidth : 250 pps
+Class-map: copp-system-vxlan-vtep-learn (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-vxlan-encapsulation (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-mod (match-any)
+Internal Only - General
+shape : 2500 pps
+bandwidth : 500 pps
+Class-map: copp-system-default (match-any)
+shape : 8000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-l3destmiss (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-acllog (match-any)
+shape : 10000 pps
+bandwidth : 1000 pps
+Class-map: copp-system-sflow (match-any)
+shape : 25024 pps
+bandwidth : 0 pps</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-159CB322">
+    <title>1.1 Control Plane</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-159CB322r01_rule" weight="10.0" severity="medium">
+      <version>1.1.4</version>
+      <title>Network Time Protocol</title>
+      <description>&lt;VulnDiscussion&gt;EOS enables Network Time Protocol (ntp) on the switch by default, and time settings from any properly configured ntp server override the manual setting of the system clock.
+ntp servers synchronize time settings of systems running an ntp client. The switch supports ntp versions 1 through 4, and uses version 4 by default.
+
+Rationale:
+Without synchronized time accurately correlating information between devices becomes difficult, if not impossible. If logs cannot be successfully compared between each of the routers, switches, and firewalls, it will be very difficult to determine the exact events that resulted in a network breach incident. NTP provides an efficient and scalable method for network elements to synchronize to an accurate time source. A trusted time source is important to ensure proper logging and correlation of events to a syslog server where forensic information can be gathered in addition to any information concerning potential threats. If possible it is recommended to configure more than one NTP server.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>1.1.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-159CB322r01_fix">Configure one or more NTP servers. NTP should be provided via the management network.
+switch(config)# ntp server vrf {management vrf} {Hostname|IPaddr} prefer
+switch(config)# ntp server vrf {management vrf} {Hostname|IPaddr}</fixtext>
+      <fix id="F-159CB322r01_fix"/>
+      <check system="C-159CB322_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>hostname#show running-config section ntp</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-55540637">
+    <title>1.1 Control Plane</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-55540637r01_rule" weight="10.0" severity="high">
+      <version>1.1.5</version>
+      <title>NTP authentication</title>
+      <description>&lt;VulnDiscussion&gt;NTP authentication verifies that time updates come from a trusted server, preventing bad actors from spoofing time or altering your clock.
+The NTP authentication model is the opposite of the typical client-server authentication model. NTP authentication enables an NTP client or peer to authenticate time received from their servers and peers. It’s not used to authenticate NTP clients because N TP servers don’t care about the authenticity of their clients as they never accept any time from them.
+
+Rationale:
+Authentication support allows the NTP client to verify that servers are in fact known and trusted and not intruders intending accidentally or intentionally to masquerade as a legitimate server.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>1.1.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-55540637r01_fix">switch(config)#ntp authentication-key 1 sha1 timesync
+switch(config)#ntp trusted-key 1</fixtext>
+      <fix id="F-55540637r01_fix"/>
+      <check system="C-55540637_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>switch#show run section ntp.*key
+Example output
+ntp authentication-key 1 sha1 7 120D0C1A1718150A29
+ntp trusted-key 1</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-31CE449C">
+    <title>1.1 Control Plane</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-31CE449Cr01_rule" weight="10.0" severity="medium">
+      <version>1.1.6</version>
+      <title>DNS Configuration</title>
+      <description>&lt;VulnDiscussion&gt;It is recommended that a DNS server be defined for client resolver. This allows for the use of hostnames when configuring services such as ntp or syslog.
+
+Rationale:
+The susceptibility of IP addresses to spoofing translates to DNS host name and IP address mapping vulnerabilities. For example, suppose a source host wishes to establish a connection with a destination host and queries a DNS server for the IP address of the destination host name. If the response to this query is the IP address of a host operated by an attacker, the source host will establish a connection with the attacker’s host, rather than the intended target. The user on the source host might then provide logon, authentication, and other sensitive data.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>1.1.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-31CE449Cr01_fix">Configure at least one name server and a domain name. DNS services should be provided over the management network.
+switch(config)# ip name-server {vrf [Management VRF]} {ip address}</fixtext>
+      <fix id="F-31CE449Cr01_fix"/>
+      <check system="C-31CE449C_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Verify at least one name server is configured and the correct VRF is used for reachability to the name server
+show running-config section name-server
+Example output
+ip name-server vrf MGMT 8.8.8.8</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FCAB1667">
+    <title>1.1 Control Plane</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FCAB1667r01_rule" weight="10.0" severity="medium">
+      <version>1.1.7</version>
+      <title>Logging</title>
+      <description>&lt;VulnDiscussion&gt;Logging is a critical part of network security. Maintaining an audit trail of system activity logs (syslog) can help identify configuration errors, understand past intrusions, troubleshoot service disruptions, and react to probes and scans of the network.
+
+Rationale:
+Syslog levels 0-6 are the levels required to collect the necessary information to help in the recovery process. It is recommended to log all messages except debugging and send all log data to a syslog server.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>1.1.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FCAB1667r01_fix">Configure a destination for syslog messages. Logging should be sent over the management vrf.
+switch(config)# logging trap 6
+switch(config)# logging {vrf [management vrf]} host {ip address}</fixtext>
+      <fix id="F-FCAB1667r01_fix"/>
+      <check system="C-FCAB1667_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Perform the following to determine if a syslog server is enabled. Verify one or more IP address(es) returns
+show running-config section logging host</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-69F64C08">
+    <title>1.1 Control Plane</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-69F64C08r01_rule" weight="10.0" severity="medium">
+      <version>1.1.8</version>
+      <title>VLAN Management</title>
+      <description>&lt;VulnDiscussion&gt;VLAN 1 is a special VLAN that tags and handles most of the control plane traffic. VLAN 1 is enabled on all trunks and ports by default. Ensure VLAN1 is pruned from all trunk and access ports that do not require it.
+
+Rationale:
+Instability in one part of the network could affect VLAN 1, thereby influencing control- plane stability and therefore STP stability for all other VLANs.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>1.1.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-69F64C08r01_fix">switch(config)# vlan 1
+switch(config-vlan-1)# state suspend
+switch(config)# interface Ethernet[X]
+switch(config-if-EtX)# switchport trunk allowed vlan except 1</fixtext>
+      <fix id="F-69F64C08r01_fix"/>
+      <check system="C-69F64C08_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Vlan 1 should be suspended and not appear in the allowed list of trunk interfaces.
+show running-config section ^vlan 1$
+show running-config section switchport trunk allowed
+Expected output
+vlan 1
+state suspend
+interface Ethernet48
+switchport trunk allowed vlan 2-4094</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-B4A16F35">
+    <title>1.1 Control Plane</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-B4A16F35r01_rule" weight="10.0" severity="high">
+      <version>1.1.9</version>
+      <title>Syslog with TLS support</title>
+      <description>&lt;VulnDiscussion&gt;Syslog over TLS is a secure standard (RFC 5425) that encrypts log messages in transit using Transport Layer Security. It protects sensitive operational and security data from interception and tampering
+
+Rationale:
+Syslog messages may transit several hops to arrive at the intended collector. Some intermediary networks may not be trusted by the originator, relay, or receiver because the network is in a different security domain or at a different security level from the originator, relay, or collector. Another security concern is that the originator, relay, or receiver itself is in an insecure network.
+By using TLS connections, syslog is better protected against attacks and information leakage.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>1.1.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-B4A16F35r01_fix">1. Create an SSL profile
+switch(config-mgmt-security)#ssl profile syslog-profile
+switch(config-mgmt-sec-ssl-profile-syslog-profile)#certificate clientCert key
+ClientKey
+switch(config-mgmt-sec-ssl-profile-syslog-profile)# trust certificate
+serverCA
+switch(config-mgmt-sec-ssl-profile-syslog-profile)#
+2. Define syslog server
+switch(config)#logging vrf MGMT host 10.1.1.1 protocol tls ssl-profile
+syslog-profile</fixtext>
+      <fix id="F-B4A16F35r01_fix"/>
+      <check system="C-B4A16F35_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>The logging host needs to be configured to use tls and the ssl profile must exist
+show running-config section ssl.profile
+Expected output
+logging vrf MGMT host 10.1.1.1 protocol tls ssl-profile **syslog-profile**
+management security
+ssl profile **syslog-profile**
+certificate clientCert key ClientKey
+trust certificate serverCA
+```
+Internal Only - General</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F1F258EF">
+    <title>1 EOS Services</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F1F258EFr01_rule" weight="10.0" severity="medium">
+      <version>1.2</version>
+      <title>Enable AES-GCM Encryption of EOS Secrets</title>
+      <description>&lt;VulnDiscussion&gt;AES-GCM has been added as a method for storing symmetric secrets in EOS. This applies to secrets that must be used to remote systems, as found in NTP, TACACS+, and other places.
+A new secret type “8a”, which stands for AES -256-GCM encryption type, has been introduced. Secrets can either be entered in type 0, plaintext, and automatically converted or entered directly as type 8a. Upon accepting a value which is encrypted using the n ew type “8a”, the CLI will validate the encrypted value to ensure that it is correctly encoded.
+
+Rationale:
+The default method of storing shared secrets is to obfuscate them in the running configuration. This obfuscation mean secrets can be easily reversed by copying the configuration out of the box. With AES-GCM, the configuration can be secured since the secrets cannot be easily reversed or decrypted by copying the configuration out of the box.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F1F258EFr01_fix">switch#conf
+switch(config)#management security
+switch(config-mgmt-security)#password encryption reversible aes-256-gcm</fixtext>
+      <fix id="F-F1F258EFr01_fix"/>
+      <check system="C-F1F258EF_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>switch#sho running-config section password encryption
+Expected output
+management security
+password encryption reversible aes-256-gcm</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-B369DB11">
+    <title>2.1 Password Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-B369DB11r01_rule" weight="10.0" severity="medium">
+      <version>2.1.1</version>
+      <title>Do not allow remote login without a password</title>
+      <description>&lt;VulnDiscussion&gt;The default switch configuration allows usernames that are not password-protected to log in only from the console. It is possible to configure the switch to allow unprotected usernames to log in from any port.
+
+Rationale:
+Allowing remote access to accounts without passwords is a severe security risk.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-B369DB11r01_fix">Reset the feature to the default value
+#default aaa authentication policy local allow-nopassword-remote-login</fixtext>
+      <fix id="F-B369DB11r01_fix"/>
+      <check system="C-B369DB11_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Check if remote login without a password is enabled. By default this will return nothing.
+#show running-config section allow-nopassword-remote-login
+Output with feature enabled
+#sho run section allow-nopassword-remote-login
+aaa authentication policy local allow-nopassword-remote-login</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-32937354">
+    <title>2.1 Password Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-32937354r01_rule" weight="10.0" severity="medium">
+      <version>2.1.2</version>
+      <title>Configure an enable password</title>
+      <description>&lt;VulnDiscussion&gt;The enable command controls access to Privileged EXEC and all configuration command modes. The enable password authorizes users to execute the enable command. When the enable password is set, the CLI displays a password prompt when a user attempts to enter Privileged EXEC mode.
+
+Rationale:
+It is recommended that the enable secret password be used at all times to grant administrative access to the Arista switch.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-32937354r01_fix">Configure and enable password
+(config)#enable password {password string}</fixtext>
+      <fix id="F-32937354r01_fix"/>
+      <check system="C-32937354_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Verify and enable password is set
+#show running-config section enable password</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-275D7085">
+    <title>2.1 Password Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-275D7085r01_rule" weight="10.0" severity="medium">
+      <version>2.1.3</version>
+      <title>Create a password complexity policy</title>
+      <description>&lt;VulnDiscussion&gt;A password policy can be used to mandate password requirements
+
+Rationale:
+The policy enforces recommendations when creating local users.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.1.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-275D7085r01_fix">switch(config)#management security
+switch(config-mgmt-security)#password policy PasswordPolicy
+switch(config-pwd-policy-PasswordPolicy)#minimum length 8
+switch(config-pwd-policy-PasswordPolicy)#minimum special 1
+switch(config-pwd-policy-PasswordPolicy)#minimum upper 1
+switch(config-pwd-policy-PasswordPolicy)#minimum lower 1
+switch(config-pwd-policy-PasswordPolicy)#minimum digits 1
+switch(config-pwd-policy-PasswordPolicy)#exit
+switch(config-mgmt-security)#management accounts
+switch(config-mgmt-accounts)#password policy PasswordPolicy</fixtext>
+      <fix id="F-275D7085r01_fix"/>
+      <check system="C-275D7085_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Verify that a password policy is defined and applied
+switch(config)#show run section password policy
+management accounts
+password policy PasswordPolicy
+management security
+password policy PasswordPolicy
+minimum digits 1
+minimum length 8
+minimum lower 1
+minimum special 1
+minimum upper 1</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-100723C6">
+    <title>2.1 Password Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-100723C6r01_rule" weight="10.0" severity="medium">
+      <version>2.1.4</version>
+      <title>Verify root login is disabled</title>
+      <description>&lt;VulnDiscussion&gt;EOS can be configured to allow logging in as root directly by using the aaa root secret config command. This should be not be enabled. An authenticated, authorized user can obtain superuser access after logging in by accessing the bash shell if permitted.
+
+Rationale:
+Allowing remote root login bypasses the EOS cli and gives direct access to the bash shell.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.1.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-100723C6r01_fix">Reset to default value
+switch(config)#default aaa root</fixtext>
+      <fix id="F-100723C6r01_fix"/>
+      <check system="C-100723C6_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>switch(config)#sho run section root
+Expected output
+no aaa root</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-905E91CC">
+    <title>2.3 User Role Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-905E91CCr01_rule" weight="10.0" severity="medium">
+      <version>2.3.1</version>
+      <title>Roles</title>
+      <description>&lt;VulnDiscussion&gt;A role consists of rules that permit or deny access to a set of commands within specified command modes.
+
+Rationale:
+For local users a role limits the commands they can run to the appropriate set for their job.
+Additional custom roles can be defined as needed or AAA services - such as TACACS+
+- can be used to provide more granular access to the switch.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.3.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-905E91CCr01_fix">Assign roles to local users with the username command
+username name [PRIVILEGE_LEVEL] SECURITY [ROLE_USER]
+SECURITY specifies the password assignment.
+Internal Only - General</fixtext>
+      <fix id="F-905E91CCr01_fix"/>
+      <check system="C-905E91CC_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>show run all section ^role|username.*role
+This shows two local users with different roles
+username admin privilege 15 role network-admin secret sha512 XXXX
+username operations privilege 15 role network-operator secret sha512 XXX
+username user privilege 1 role network-admin nopassword
+role network-admin
+10 permit command .*
+role network-operator
+10 deny mode exec command configure|bash|python-shell|\|
+20 permit mode exec command .*</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FB81C651">
+    <title>2.4 Console Access</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FB81C651r01_rule" weight="10.0" severity="medium">
+      <version>2.4.1</version>
+      <title>Idle Timeout</title>
+      <description>&lt;VulnDiscussion&gt;Tine out access to the console after a period of inactivity.
+
+Rationale:
+Inactive unattended console sessions provide the opportunity for anyone with physical access to the device to make configuration changes enabling them to disrupt network operations resulting in a network outage.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.4.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FB81C651r01_fix">Configure idle timeout
+switch#configure
+switch(config)#management console
+switch(config-mgmt-console)#idle-timeout ?
+&lt;0-86400&gt; Idle session timeout in minutes
+switch(config-mgmt-console)#idle-timeout 10</fixtext>
+      <fix id="F-FB81C651r01_fix"/>
+      <check system="C-FB81C651_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Verify idle-timeout is configured
+switch#show running-config section management console
+management console
+idle-timeout 10
+switch#</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-16049014">
+    <title>2.4 Console Access</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-16049014r01_rule" weight="10.0" severity="medium">
+      <version>2.4.2</version>
+      <title>Emergency Console Access</title>
+      <description>&lt;VulnDiscussion&gt;Authentication for administrative access to the device should be required at all times. A single account should be created on the device's local database for use in an emergency such as when the authentication server is down or connectivity between the device and the authentication server is not operable. The console or emergency account logon credentials should be stored in a secure location. SHA512 password hash should always be used and is the default in EOS.
+
+Rationale:
+Console access should be available even if authentication servers are down or unreachable, but should not be accessible without authentication or with simple passwords.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.4.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-16049014r01_fix">switch(config-mgmt-defaults)#username admin privilege 15 role network-admin
+secret ?
+0 Specify an UNENCRYPTED password will follow
+5 Specify an ENCRYPTED MD5 password will follow
+LINE The UNENCRYPTED (cleartext) password
+sha512 Specifies an ENCRYPTED SHA512 password will follow
+* Specify a password that cannot be used to login
+switch(config-mgmt-defaults)#username admin privilege 15 role network-admin
+secret &lt;password&gt;
+switch(config)#</fixtext>
+      <fix id="F-16049014r01_fix"/>
+      <check system="C-16049014_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Verify a local username is configured
+switch#show running-config section username
+username admin privilege 15 role network-admin secret sha512
+$6$5TvDKp7afe5OBM2/$0BB5GMrdBbKox/wLhVaoLnUV9F2s6k8n9bs42StHnEi37owhb/BHpAIcw
+lomotORDmIBoCvfMie5myiemsJkd.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-765A43E8">
+    <title>2.5 TACACS+/RADIUS</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-765A43E8r01_rule" weight="10.0" severity="medium">
+      <version>2.5.1</version>
+      <title>Configure TACACS+/RADIUS server</title>
+      <description>&lt;VulnDiscussion&gt;The switch defines a TACACS+ server connection by its address and port. It is recommended to use two or more authentication servers for the purpose of granting administrative access.
+
+Rationale:
+At least one TACACS+ server must be configured.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.5.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-765A43E8r01_fix">This command configures the switch to communicate with the TACACS+ server assigned the host name TAC_1 using the encryption key rp31E2v.
+switch(config)# tacacs-server host TAC-1 key rp31E2v</fixtext>
+      <fix id="F-765A43E8r01_fix"/>
+      <check system="C-765A43E8_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>switch#show run section tacacs
+Expected output
+switch(config)#sho run section tacacs+
+tacacs-server host 192.168.0.10 vrf MGMT key 8a XXXX
+aaa group server tacacs+ TACPLUS
+server 192.168.0.10 vrf MGMT
+aaa authentication login default group tacacs+ local
+switch(config)#</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-AFE3325E">
+    <title>2.5 TACACS+/RADIUS</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-AFE3325Er01_rule" weight="10.0" severity="medium">
+      <version>2.5.2</version>
+      <title>Server Groups</title>
+      <description>&lt;VulnDiscussion&gt;A server group is a collection of servers associated with a single group name.
+Subsequent authorization and authentication commands can access all servers in a group by invoking the group name. The switch supports TACACS+ and RADIUS server groups.
+
+Rationale:
+Server groups allow AAA commands to access multiple servers, providing redundancy and load sharing. Before they are added to a group, servers must have been previously configured with a radius-server host or tacacs-server host command.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.5.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-AFE3325Er01_fix">Configure a server group if required
+aaa group server tacacs+ TACPLUS
+server {ip address}
+server {ip address}</fixtext>
+      <fix id="F-AFE3325Er01_fix"/>
+      <check system="C-AFE3325E_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>switch#show running-config section aaa group server
+aaa group server tacacs+ TACPLUS
+server {ip address} vrf {management vrf}
+server {ip address} vrf {management vrf}
+switch#</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-B5D4C999">
+    <title>2.5 TACACS+/RADIUS</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-B5D4C999r01_rule" weight="10.0" severity="medium">
+      <version>2.5.3</version>
+      <title>Authentication, Authorization, and Accounting</title>
+      <description>&lt;VulnDiscussion&gt;The use of Authentication, Authorization, and Accounting (AAA) affords the best methods for controlling user access, authorization levels, and activity logging. By enabling AAA on the switches in conjunction with an authentication server such as TACACS+ or RADIUS the administrators can easily add or remove user accounts, add or remove command authorizations, and maintain a log of user activity.
+
+Rationale:
+The Authentication, Authorization, and Accounting (AAA) framework is essential to securing a network device. The AAA framework provides a mechanism to authenticate and limit specific actions being performed within a management session. AAA also allows for accounting and logging of any commands that are executed within a management session.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.5.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-B5D4C999r01_fix">Configure AAA. Servers should be reachable via the management vrf.
+switch(config)# aaa group server tacacs+ TACPLUS
+switch(config-sg-tacacs+-TACPLUS)# server {ip address} vrf {management vrf}
+switch(config-sg-tacacs+-TACPLUS)# server {ip address2} vrf {management vrf}
+switch(config-sg-tacacs+-TACPLUS)# exit
+switch(config)# aaa authentication default enable group TACACS+ local
+switch(config)# aaa authentication login default group TACPLUS local
+switch(config)# aaa authentication enable default group TACPLUS local
+switch(config)# aaa authorization exec default group TACPLUS local
+switch(config)# aaa authorization commands all default group TACPLUS local</fixtext>
+      <fix id="F-B5D4C999r01_fix"/>
+      <check system="C-B5D4C999_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>switch#show running-config section aaa
+aaa group server tacacs+ TACPLUS
+server {ip address} vrf mgmt
+!
+aaa authentication login default group TACPLUS local
+aaa authentication enable default group TACPLUS local
+aaa authorization exec default group TACPLUS local
+aaa authorization commands all default group TACPLUS local
+!
+Internal Only - General</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-40A2DA7B">
+    <title>2.6 SSH Access</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-40A2DA7Br01_rule" weight="10.0" severity="medium">
+      <version>2.6.1</version>
+      <title>Limit SSH Access Only To The Network Management Segment</title>
+      <description>&lt;VulnDiscussion&gt;The network element should only allow management connections for administrative access from hosts residing in the management network. It is recommended to review the configuration and verify management access to the device is allowed only from hosts within the management network.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.6.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-40A2DA7Br01_fix">switch(config)#management ssh
+switch(config-mgmt-ssh)#sho active
+switch(config-mgmt-ssh)#vrf MGMT
+switch(config-mgmt-ssh-vrf-MGMT)#no shutdown
+switch(config-mgmt-ssh-vrf-MGMT)#exit
+switch(config-mgmt-ssh)#shutdown
+switch(config-mgmt-ssh)#end</fixtext>
+      <fix id="F-40A2DA7Br01_fix"/>
+      <check system="C-40A2DA7B_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>show running-config section management ssh
+management ssh
+shutdown
+!
+vrf MGMT
+no shutdown</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-4D6F003F">
+    <title>2.6 SSH Access</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-4D6F003Fr01_rule" weight="10.0" severity="medium">
+      <version>2.6.2</version>
+      <title>Set Idle Timeout for SSH to 10 Minutes or Less</title>
+      <description>&lt;VulnDiscussion&gt;Idle ssh sessions can be re-used by unathorized users who have access to an unlocked workstation where a network admin has connected to network devices via ssh and has stepped away.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.6.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-4D6F003Fr01_fix">management ssh
+idle-timeout 10</fixtext>
+      <fix id="F-4D6F003Fr01_fix"/>
+      <check system="C-4D6F003F_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>show running-config | sec ssh</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FACE3934">
+    <title>2.6 SSH Access</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FACE3934r01_rule" weight="10.0" severity="high">
+      <version>2.6.3</version>
+      <title>Remove cryptographically weak algorithms</title>
+      <description>&lt;VulnDiscussion&gt;Outdated and insecure ciphers and algorithms should not be used.
+
+Rationale:
+An attacker can possibly break the encryption of transported data if weak ciphers and algorithms are used to access sensitive data.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.6.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FACE3934r01_fix">management ssh
+cipher aes128-ctr aes256-ctr
+key-exchange diffie-hellman-group14-sha256
+mac hmac-sha2-256</fixtext>
+      <fix id="F-FACE3934r01_fix"/>
+      <check system="C-FACE3934_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>The allowed algorithms and methods are configured under management ssh
+switch#show run all section management ssh
+management ssh
+idle-timeout 0
+no login user match-list
+authentication protocol keyboard-interactive public-key
+server-port 22
+**cipher aes256-gcm@openssh.com aes128-gcm@openssh.com aes256-ctr aes192-
+ctr aes128-ctr
+key-exchange curve25519-sha256@libssh.org ecdh-sha2-nistp521 ecdh-sha2-
+nistp256 ecdh-sha2-nistp384 diffie-hellman-group14-sha1
+mac hmac-sha2-512-etm@openssh.com hmac-sha2-256-etm@openssh.com hmac-sha1-
+etm@openssh.com hmac-sha2-512 hmac-sha2-256 hmac-sha1**</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E201C5D5">
+    <title>2.7 SNMP</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E201C5D5r01_rule" weight="10.0" severity="medium">
+      <version>2.7.1</version>
+      <title>Limit SNMP Access To Management VRF</title>
+      <description>&lt;VulnDiscussion&gt;SNMP access should be restricted to the management vrf.
+
+Rationale:
+Detailed information about the network is sent across the network via SNMP. If this information is discovered by attackers it could be used to trace the network, show the network topology, and possibly gain access to network devices. Only allow SNMP access from addresses belonging to the management network.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.7.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E201C5D5r01_fix">snmp-server vrf {management VRF}
+no snmp-server vrf default</fixtext>
+      <fix id="F-E201C5D5r01_fix"/>
+      <check system="C-E201C5D5_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>switch(config)# show running-config section snmp-server vrf
+Expected output
+no snmp-server vrf default
+snmp-server vrf MGMT</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FE4B285B">
+    <title>2.7 SNMP</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FE4B285Br01_rule" weight="10.0" severity="medium">
+      <version>2.7.2</version>
+      <title>Ensure SNMP Community</title>
+      <description>&lt;VulnDiscussion&gt;Only allow SNMP read access and ensure that the default or well-known SNMP community strings public and private are not used. An ACL should be used to further restrict which remote hosts can query the switch.
+
+Rationale:
+Enabling write access to the device via SNMP provides a mechanism that can be exploited by an attacker to set configuration variables that can disrupt network operations.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.7.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FE4B285Br01_fix">no snmp-server community public
+no snmp-server community private
+snmp-server community {community string} ro {snmp security acl}</fixtext>
+      <fix id="F-FE4B285Br01_fix"/>
+      <check system="C-FE4B285B_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>show running-config section snmp-server community</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D6DE46FF">
+    <title>2.7 SNMP</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D6DE46FFr01_rule" weight="10.0" severity="medium">
+      <version>2.7.3</version>
+      <title>Use SNMPv3 Instead of Earlier Versions</title>
+      <description>&lt;VulnDiscussion&gt;The network element should use SNMP Version 3 for any SNMP agent configured on the device.
+
+Rationale:
+SNMPv2 only requires a community string to be specified, which the client needs to use in their requests to "authenticate".
+SNMPv3 uses an actual security model called "User-based Security Model" (USM) codified in RFC3414 (originally in RFC2264 1998). USM supports authentication and encryption.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.7.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D6DE46FFr01_fix">snmp-server group group1 v3 priv
+snmp-server user user1 group1 v3 auth sha256 12345 priv aes256 {password}
+snmp-server host server1 version 3 priv user1</fixtext>
+      <fix id="F-D6DE46FFr01_fix"/>
+      <check system="C-D6DE46FF_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>switch(config)#show run section snmp-server.*v3
+This should show a configured user and matching group, with both authentication and priv enabled
+snmp-server group snmpGroup v3 priv
+snmp-server user snmpUser snmpGroup v3 localized {ENGINE ID} auth sha256
+{auth string} priv aes256 {priv string}</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A544D48E">
+    <title>2.9 Login Banner</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A544D48Er01_rule" weight="10.0" severity="medium">
+      <version>2.9.1</version>
+      <title>Login Banner</title>
+      <description>&lt;VulnDiscussion&gt;The login banner precedes the login prompt. Use a login banner to warn against unauthorized network access attempts or other messages to users.
+
+Rationale:
+A legal banner is recommended on all external administrative interfaces. The purpose of a legal banner is to:
+• Provide Legal Protection should evidence need to be used from a device.
+• Act as a deterrent to potential intruders.
+• This banner must be displayed prior to login.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.9.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A544D48Er01_fix">Configure a banner. An example banner is provided as a reference.
+switch(config)#banner login
+Enter TEXT message. Type 'EOF' on its own line to end.
+*** WARNING ***
+This system is private and may be accessed only by authorized users for
+official purposes.
+The system owner reserves the right to monitor any and all activity taking
+place on this system and any attempts to connect to it.
+Individuals using this computer system are subject to having all of their
+activities monitored and recorded by system personnel.
+Use of this system evidences an express consent to such monitoring and
+agreement that if such monitoring reveals evidence of possible abuse or
+criminal activity, system personnel may provide the results of such
+monitoring to appropriate officials.
+Unauthorized users or users who exceed (or attempt to exceed), their
+authorized level of access are subject to prosecution under any local or
+international laws that apply as well as Company initiated proceedings.
+EOF
+switch(config)#</fixtext>
+      <fix id="F-A544D48Er01_fix"/>
+      <check system="C-A544D48E_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>This command will display to login banner if it is configured.
+show run section banner login
+If a banner is configured this will be displayed.
+banner login
+The contents of the banner are up to the end user. There are certain items that must be included in a legal banner. These include:
+• Statement that the device is for authorized users only.
+• The device is for official use only.
+• Users have no expectations of privacy.
+• All access and use may (not will) be monitored and/or recorded.
+• Monitoring and/or recording may be turned over to the appropriate authorities.
+• Use of the system implies consent to the previously mentioned conditions.
+The banner must not contain:
+• Mention of the purpose, location or owner of the device or any other identification information.
+• It should not say “Welcome” anywhere in the description.
+Internal Only - General</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-20EDCDD2">
+    <title>2 Device Access</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-20EDCDD2r01_rule" weight="10.0" severity="medium">
+      <version>2.8</version>
+      <title>Telnet access</title>
+      <description>&lt;VulnDiscussion&gt;Telnet transmits credentials and data in cleartext. It is disabled by default and should not be enabled.
+
+Rationale:
+Telnet is an obsolete protocol vulnerable to eavesdropping.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-20EDCDD2r01_fix">Disable telnet
+switch#conf
+switch(config)#management telnet
+switch(config-mgmt-telnet)#shutdown
+switch(config-mgmt-telnet)#end
+switch#</fixtext>
+      <fix id="F-20EDCDD2r01_fix"/>
+      <check system="C-20EDCDD2_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Verify telnet is shutdown
+switch#show run all section management telnet
+management telnet
+shutdown
+idle-timeout 0
+no login user match-list
+session-limit 20
+session-limit per-host 20
+switch#</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E8C9E8F2">
+    <title>2 Device Access</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E8C9E8F2r01_rule" weight="10.0" severity="high">
+      <version>2.9</version>
+      <title>API access using https</title>
+      <description>&lt;VulnDiscussion&gt;The Arista Command eAPI is a simple and complete API that allows you to configure and monitor your Arista switches. Once the API is enabled, the switch accepts HTTPS requests containing a list of industry standard CLI commands, and responds with machine-readable output and errors serialized in JSON (served over HTTP or HTTPS).
+HTTP can be enabled but should be left disabled.
+
+Rationale:
+EOS API provides structured output more suitable for programmatic parsing than cli scraping. If the API is enabled, it should only use https, not http.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>2.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E8C9E8F2r01_fix">switch(config)#management api http-commands
+switch(config-mgmt-api-http-cmds)#no shutdown
+switch(config-mgmt-api-http-cmds)#default protocol http
+switch(config-mgmt-api-http-cmds)#vrf MGMT
+switch(config-mgmt-api-http-cmds-vrf-MGMT)#no shutdown
+switch(config-mgmt-api-http-cmds-vrf-MGMT)#</fixtext>
+      <fix id="F-E8C9E8F2r01_fix"/>
+      <check system="C-E8C9E8F2_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>switch#show run section api http-commands
+This output shows the api is enabled in the default vrf and both http and https are enabled.
+management api http-commands
+protocol http
+no shutdown
+!
+vrf MGMT
+no shutdown</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-5B44D88C">
+    <title>3.1 IGP Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-5B44D88Cr01_rule" weight="10.0" severity="high">
+      <version>3.1.1</version>
+      <title>OSPF Interface Authentication</title>
+      <description>&lt;VulnDiscussion&gt;OSPF authentication secures routing updates by verifying the identity of neighboring routers, preventing malicious devices from injecting false routing information.
+The OSPFv2 Secure Hash Algorithms (SHA) Authentication support as defined in RFC 5709 supports the configuration of SHA1, SHA256, SHA384 and SHA512 Message- Digest authentication as an alternative to the MD5 Message-Digest authentication.
+
+Rationale:
+Because a routing protocol contains information that need not be kept secret, privacy is not a requirement. However, authentication of the messages within the protocol is of interest in order to reduce the risk of an adversary compromising the routing system by deliberately injecting false information into the routing system.
+SHA256 or higher should be used due to concerns about the overall strength of the MD5 and SHA1 algorithm.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>3.1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-5B44D88Cr01_fix">Configure OSPF authentication on interfaces connected to OSPF neighbors
+interface {interface-name}
+ip ospf authentication message-digest
+ip ospf authentication message-digest-key {number} sha256 {key text}</fixtext>
+      <fix id="F-5B44D88Cr01_fix"/>
+      <check system="C-5B44D88C_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Verify OSPF authentication is enabled.
+show running-config section ip ospf authentication
+Sample output
+#show running-config section ip ospf authentication
+interface Vlan10
+ip ospf authentication message-digest
+ip ospf authentication message-digest-key 10 sha256 7 xxxxxxxx</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A85C2F69">
+    <title>3.1 IGP Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A85C2F69r01_rule" weight="10.0" severity="high">
+      <version>3.1.2</version>
+      <title>ISIS Interface and Instance Authentication</title>
+      <description>&lt;VulnDiscussion&gt;Enable authentication of ISIS hellos on interfaces and LSPs, CSNPs, and PSNPs for the protocol instance.
+
+Rationale:
+IS-IS authentication secures routing adjacencies and LSDB updates by validating the source of protocol packets.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>3.1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A85C2F69r01_fix">interface Ethernet {X}
+isis authentication mode md5
+isis authentication key {key}
+router isis {protocol instance}
+authentication mode md5
+authentication key {key}</fixtext>
+      <fix id="F-A85C2F69r01_fix"/>
+      <check system="C-A85C2F69_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>To verify authentication is enabled for ISIS hellos, look for isis authentication configuration on interfaces connected to ISIS neighbors.
+show running-config section isis authentication
+Sample output
+#show running-config section isis authentication
+interface Vlan100
+isis authentication mode md5
+isis authentication key 7 Xe8ywYMTkcpNrvJCQ+qXOg==
+To verify authentication for the IS-IS instance causing LSPs, CSNPs, and PSNPs to be authenticated is enable:
+switch#show running-config section ^router isis | section authentication
+router isis 1
+authentication mode md5
+authentication key 7 /Dtzvo8XRzKTpt1DkyhexQ==</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-EB6DD391">
+    <title>3.2 BGP Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-EB6DD391r01_rule" weight="10.0" severity="high">
+      <version>3.2.1</version>
+      <title>BGP Authentication</title>
+      <description>&lt;VulnDiscussion&gt;The neighbor password command enables authentication on a TCP connection with a BGP peer
+
+Rationale:
+When utilizing BGP the threat profile becomes much larger as routes external to the data center will be updating routing information in the devices. Much like with the IGP an attacker could redirect traffic to an insecure location where traffic could be analyzed and confidential information extracted. In the case of BGP a peer AS can send erroneous prefix information and as a result could allow packets to be sent to an insecure network. It is recommended that peer authentication be used for all peers. A password or key should be defined for each BGP neighbor regardless of the peer's autonomous system.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>3.2.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-EB6DD391r01_fix">Configure passwords for each neighbor as appropriate
+router bgp
+neighbor {IP address} password</fixtext>
+      <fix id="F-EB6DD391r01_fix"/>
+      <check system="C-EB6DD391_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>Verify each bgp neighbor has a password
+show running-config section neighbor.*password
+router bgp 65013
+neighbor 1.1.1.1 password 8a XXXXX</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-3B3D8461">
+    <title>3.2 BGP Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-3B3D8461r01_rule" weight="10.0" severity="high">
+      <version>3.2.2</version>
+      <title>BGP TCP Authentication Option</title>
+      <description>&lt;VulnDiscussion&gt;BGP TCP Authentication Option (TCP-AO) (RFC 5925) support adds a new option for BGP message and TCP segments authentication using superior hashing algorithms such as HMACs and CMACs as an improvement over TCP MD5, with stronger hashing algorithms providing higher security and protection against replays attacks. It also provides better key management by coordinating between the endpoints to rotate to a new secret key or the master key tuple (MKT) without resetting the TCP connection.
+
+Rationale:
+EOS supports BGP message authentication via the TCP MD5 Signature (TCP MD5) option (RFC 2385) to protect the BGP sessions from spoofed TCP segments. However, research has shown many concerns that the TCP MD5 algorithm is cryptographically ineffective with a just simple keyed hash for authentication.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Arista EOS benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Arista EOS benchmark</dc:subject>
+        <dc:identifier>3.2.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-3B3D8461r01_fix">Enable TCP-AO using the secret keys in Shared Secret Profile NAME with a specified algorithm:
+router bgp {ASN}
+neighbor NEIGHBOR_ID password shared-secret profile NAME algorithm ALGORITHM</fixtext>
+      <fix id="F-3B3D8461r01_fix"/>
+      <check system="C-3B3D8461_chk">
+        <check-content-ref href="CIS_Arista_EOS_benchmark.xml" name="M"/>
+        <check-content>TCP-AO requires a shared secret profile with a valid lifetime and a per-neighbor configuration to use the shared secret.
+#show running-config section shared-secret
+management security
+session shared-secret profile TCPAO
+secret 1 7 $1c$G8BQN0ezkiJOX2cuAYpsEA== receive-lifetime 2026-01-01
+00:00:00 2026-12-31 23:59:59 transmit-lifetime 2026-01-01 00:00:00 2026-12-31
+23:59:59
+router bgp 65013
+neighbor {IP Address} password shared-secret profile TCPAO algorithm hmac-
+sha-256</check-content>
+      </check>
+    </Rule>
+  </Group>
+</Benchmark>
+

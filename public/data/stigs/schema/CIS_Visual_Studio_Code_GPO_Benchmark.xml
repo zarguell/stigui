@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?><Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd" id="CIS_Visual_Studio_Code_GPO_Benchmark" xml:lang="en" xmlns="http://checklists.nist.gov/xccdf/1.1">
+  <status date="2025-09-25">accepted</status>
+  <title>CIS Visual Studio Code GPO Benchmark</title>
+  <description>All CIS Benchmarks ™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks ™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completes successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks ™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks ™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Target Technology Details This document provides prescriptive guidance for establishing a secure configuration posture for Visual Studio Code. This guide was tested against VS Code version 1.104 on a Windows Server 2025 operating system. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.</description>
+  <notice id="terms-of-use" xml:lang="en"/>
+  <front-matter xml:lang="en"/>
+  <rear-matter xml:lang="en"/>
+  <reference href="https://www.cisecurity.org/cis-benchmarks">
+    <dc:publisher>Center for Internet Security</dc:publisher>
+    <dc:source>CIS Benchmarks</dc:source>
+  </reference>
+  <plain-text id="release-info">Release: 1.0.0 Benchmark Date: 2025-09-25</plain-text>
+  <version>1.0.0</version>
+  <Profile id="L1_Public">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-63190C7D" selected="true"/>
+    <select idref="V-88C779D2" selected="true"/>
+    <select idref="V-738CB68E" selected="true"/>
+  </Profile>
+  <Profile id="L1_Classified">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-63190C7D" selected="true"/>
+    <select idref="V-88C779D2" selected="true"/>
+    <select idref="V-738CB68E" selected="true"/>
+  </Profile>
+  <Profile id="L1_Sensitive">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-63190C7D" selected="true"/>
+    <select idref="V-88C779D2" selected="true"/>
+    <select idref="V-738CB68E" selected="true"/>
+  </Profile>
+  <Profile id="L2_Public">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-331AE858" selected="true"/>
+    <select idref="V-8E80802E" selected="true"/>
+    <select idref="V-A21155F6" selected="true"/>
+  </Profile>
+  <Profile id="L2_Classified">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-331AE858" selected="true"/>
+    <select idref="V-8E80802E" selected="true"/>
+    <select idref="V-A21155F6" selected="true"/>
+  </Profile>
+  <Profile id="L2_Sensitive">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-331AE858" selected="true"/>
+    <select idref="V-8E80802E" selected="true"/>
+    <select idref="V-A21155F6" selected="true"/>
+  </Profile>
+  <Group id="V-331AE858">
+    <title>1.1 Chat</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-331AE858r01_rule" weight="10.0" severity="high">
+      <version>1.1.1</version>
+      <title>(L2) Ensure 'ChatMCP' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting controls integration with Model Context Protocol (MCP) servers.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Integration with third-party MCP servers may result in unintended disclosure of information to the party running the server.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Visual Studio Code GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Visual Studio Code GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-331AE858r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative Templates\Visual Studio
+Code\Chat\ChatMCP
+Note: This Group Policy path may not exist by default. It is provided by the Group Policy template VScode.admx, which is available in the VS Code installation directory under the policies folder.</fixtext>
+      <fix id="F-331AE858r01_fix"/>
+      <check system="C-331AE858_chk">
+        <check-content-ref href="CIS_Visual_Studio_Code_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Microsoft\VSCode:ChatMCP</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-63190C7D">
+    <title>1.1 Chat</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-63190C7Dr01_rule" weight="10.0" severity="medium">
+      <version>1.1.2</version>
+      <title>(L1) Ensure 'ChatToolsAutoApprove' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting controls auto-approval for agent mode chat tools.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Automatic activation of agent mode tools may result in inadvertent disclosure of sensitive data to third-party servers backing the chat tool or unexpected modification to project files.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Visual Studio Code GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Visual Studio Code GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-63190C7Dr01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative Templates\Visual Studio
+Code\Chat\ChatToolsAutoApprove
+Note: This Group Policy path may not exist by default. It is provided by the Group Policy template VScode.admx, which is available in the VS Code installation directory under the policies folder.</fixtext>
+      <fix id="F-63190C7Dr01_fix"/>
+      <check system="C-63190C7D_chk">
+        <check-content-ref href="CIS_Visual_Studio_Code_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Microsoft\VSCode:ChatToolsAutoApprove</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-8E80802E">
+    <title>1.2 Extensions</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-8E80802Er01_rule" weight="10.0" severity="high">
+      <version>1.2.1</version>
+      <title>(L2) Ensure 'AllowedExtensions' is configured</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures a list of extension selectors that determine which extensions are allowed or blocked.
+The recommended state for this setting is: Enabled with a list of allowed extensions.
+
+Rationale:
+Allowing users to install any extension may result in unintended information disclosure to third parties, or the installation of malware.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Visual Studio Code GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Visual Studio Code GPO Benchmark</dc:subject>
+        <dc:identifier>1.2.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-8E80802Er01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled along with a JSON string defining the approved extensions:
+Computer Configuration\Policies\Administrative Templates\Visual Studio
+Code\Extensions\AllowedExtensions
+Note: This Group Policy path may not exist by default. It is provided by the Group Policy template VScode.admx, which is available in the VS Code installation directory under the policies folder.</fixtext>
+      <fix id="F-8E80802Er01_fix"/>
+      <check system="C-8E80802E_chk">
+        <check-content-ref href="CIS_Visual_Studio_Code_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_SZ value containing a JSON string.
+HKLM\SOFTWARE\Policies\Microsoft\VSCode:AllowedExtensions</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A21155F6">
+    <title>1.3 Telemetry</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A21155F6r01_rule" weight="10.0" severity="high">
+      <version>1.3.1</version>
+      <title>(L2) Ensure 'EnableFeedback' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting controls feedback mechanisms, such as the issue reporter and surveys.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+The VS Code issue reporter can be configured to submit context such as basic system configuration and application settings. This may inadvertently disclose information that some organizations consider confidential.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Visual Studio Code GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Visual Studio Code GPO Benchmark</dc:subject>
+        <dc:identifier>1.3.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A21155F6r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative Templates\Visual Studio
+Code\Telemetry\EnableFeedback
+Note: This Group Policy path may not exist by default. It is provided by the Group Policy template VScode.admx, which is available in the VS Code installation directory under the policies folder.</fixtext>
+      <fix id="F-A21155F6r01_fix"/>
+      <check system="C-A21155F6_chk">
+        <check-content-ref href="CIS_Visual_Studio_Code_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Microsoft\VSCode:EnableFeedback</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-88C779D2">
+    <title>1.3 Telemetry</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-88C779D2r01_rule" weight="10.0" severity="medium">
+      <version>1.3.2</version>
+      <title>(L1) Ensure 'TelemetryLevel' is set to 'Enabled: off'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting controls telemetry for VS Code and extensions.
+The recommended state for this setting is: Enabled: off.
+
+Rationale:
+Enabling this feature sends data to Microsoft and potentially third-party extension developers, which could lead to sensitive data being exposed.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Visual Studio Code GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Visual Studio Code GPO Benchmark</dc:subject>
+        <dc:identifier>1.3.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-88C779D2r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled: off:
+Computer Configuration\Policies\Administrative Templates\Visual Studio
+Code\Telemetry\TelemetryLevel
+Note: This Group Policy path may not exist by default. It is provided by the Group Policy template VScode.admx, which is available in the VS Code installation directory under the policies folder.</fixtext>
+      <fix id="F-88C779D2r01_fix"/>
+      <check system="C-88C779D2_chk">
+        <check-content-ref href="CIS_Visual_Studio_Code_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_SZ value of off.
+HKLM\SOFTWARE\Policies\Microsoft\VSCode:TelemetryLevel</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-738CB68E">
+    <title>1.4 Update</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-738CB68Er01_rule" weight="10.0" severity="medium">
+      <version>1.4.1</version>
+      <title>(L1) Ensure 'UpdateMode' is set to 'Enabled: Enable Automatic Update Checks. Code will check for updates automatically and periodically.'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting controls whether VS Code automatically updates when a new version is released.
+The recommended state for this setting is: Enabled: Enable Automatic Update Checks. Code will check for updates automatically and periodically.
+
+Rationale:
+Software needs to be patched regularly to address vulnerabilities.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Visual Studio Code GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Visual Studio Code GPO Benchmark</dc:subject>
+        <dc:identifier>1.4.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-738CB68Er01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled: Enable Automatic Update Checks. Code will check for updates automatically and periodically.:
+Computer Configuration\Policies\Administrative Templates\Visual Studio
+Code\Update\UpdateMode
+Note: This Group Policy path may not exist by default. It is provided by the Group Policy template VScode.admx, which is available in the VS Code installation directory under the policies folder.</fixtext>
+      <fix id="F-738CB68Er01_fix"/>
+      <check system="C-738CB68E_chk">
+        <check-content-ref href="CIS_Visual_Studio_Code_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_SZ value of default.
+HKLM\SOFTWARE\Policies\Microsoft\VSCode:UpdateMode</check-content>
+      </check>
+    </Rule>
+  </Group>
+</Benchmark>
+

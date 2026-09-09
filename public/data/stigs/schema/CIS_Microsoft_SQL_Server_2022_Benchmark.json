@@ -1,0 +1,2723 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_Microsoft_SQL_Server_2022_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2026-05-29"
+    },
+    "title": "CIS Microsoft SQL Server 2022 Benchmark",
+    "description": "All CIS Benchmarks ™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks ™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completed successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks ™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks ™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Target Technology Details This document provides prescriptive guidance for establishing a secure configuration posture for Microsoft SQL Server 2022. This guide was tested against Microsoft SQL Server 2022. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.3.0 Benchmark Date: 2026-05-29",
+      "+@id": "release-info"
+    },
+    "version": "1.3.0",
+    "Profile": [
+      {
+        "+@id": "L1-AWS-RDS_Public",
+        "title": "Level 1 - AWS RDS",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-3BBA8E27",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-52D7C8E0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7BF3B18F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A2AB94BF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9C2FE5C5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B87BEA6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0B0F9D92",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A6DB41E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3E423356",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8593D406",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FDF329F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B42AE50B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-415289DC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA21C415",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D5B74874",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FAE271B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7C68476F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2AA7B427",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A76E3DC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-556A3B9C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DA1CE40F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4CE18407",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC1742D3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C1238297",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-84FE9787",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3383086B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-65A6F428",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-12C64EDB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C2B09436",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71361FC4",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-AWS-RDS_Classified",
+        "title": "Level 1 - AWS RDS",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-3BBA8E27",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-52D7C8E0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7BF3B18F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A2AB94BF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9C2FE5C5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B87BEA6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0B0F9D92",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A6DB41E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3E423356",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8593D406",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FDF329F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B42AE50B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-415289DC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA21C415",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D5B74874",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FAE271B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7C68476F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2AA7B427",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A76E3DC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-556A3B9C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DA1CE40F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4CE18407",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC1742D3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C1238297",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-84FE9787",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3383086B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-65A6F428",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-12C64EDB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C2B09436",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71361FC4",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-AWS-RDS_Sensitive",
+        "title": "Level 1 - AWS RDS",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-3BBA8E27",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-52D7C8E0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7BF3B18F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A2AB94BF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9C2FE5C5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B87BEA6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0B0F9D92",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A6DB41E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3E423356",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8593D406",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FDF329F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B42AE50B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-415289DC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA21C415",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D5B74874",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FAE271B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7C68476F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2AA7B427",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A76E3DC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-556A3B9C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DA1CE40F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4CE18407",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC1742D3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C1238297",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-84FE9787",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3383086B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-65A6F428",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-12C64EDB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C2B09436",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71361FC4",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Database-Engine_Public",
+        "title": "Level 1 - Database Engine",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-3BBA8E27",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-52D7C8E0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7BF3B18F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A2AB94BF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9C2FE5C5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B87BEA6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-222EBFEF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0B0F9D92",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-83ACA996",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA586F8B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-630C0483",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4650027F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A6DB41E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B9DAFC0B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3E423356",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1E5CF3AC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8593D406",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FDF329F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B42AE50B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD84DF5F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-415289DC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA21C415",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D5B74874",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FAE271B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7C68476F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2AA7B427",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A76E3DC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-556A3B9C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DA1CE40F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BB3E7315",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5EFBA9A8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2558DC4B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-06C661A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-96F2C559",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4CE18407",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC1742D3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C1238297",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-84FE9787",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3383086B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-65A6F428",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA28DF67",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-12C64EDB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C2B09436",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71361FC4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8F4A4B7",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Database-Engine_Classified",
+        "title": "Level 1 - Database Engine",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-3BBA8E27",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-52D7C8E0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7BF3B18F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A2AB94BF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9C2FE5C5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B87BEA6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-222EBFEF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0B0F9D92",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-83ACA996",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA586F8B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-630C0483",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4650027F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A6DB41E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B9DAFC0B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3E423356",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1E5CF3AC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8593D406",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FDF329F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B42AE50B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD84DF5F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-415289DC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA21C415",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D5B74874",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FAE271B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7C68476F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2AA7B427",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A76E3DC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-556A3B9C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DA1CE40F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BB3E7315",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5EFBA9A8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2558DC4B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-06C661A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-96F2C559",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4CE18407",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC1742D3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C1238297",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-84FE9787",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3383086B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-65A6F428",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA28DF67",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-12C64EDB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C2B09436",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71361FC4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8F4A4B7",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Database-Engine_Sensitive",
+        "title": "Level 1 - Database Engine",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-3BBA8E27",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-52D7C8E0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7BF3B18F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A2AB94BF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9C2FE5C5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B87BEA6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-222EBFEF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0B0F9D92",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-83ACA996",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA586F8B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-630C0483",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4650027F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A6DB41E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B9DAFC0B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3E423356",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1E5CF3AC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8593D406",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FDF329F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B42AE50B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD84DF5F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-415289DC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA21C415",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D5B74874",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0FAE271B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7C68476F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2AA7B427",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A76E3DC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-556A3B9C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DA1CE40F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BB3E7315",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5EFBA9A8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2558DC4B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-06C661A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-96F2C559",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4CE18407",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC1742D3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C1238297",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-84FE9787",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3383086B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-65A6F428",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AA28DF67",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-12C64EDB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C2B09436",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-71361FC4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8F4A4B7",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Database-Engine_Public",
+        "title": "Level 2 - Database Engine",
+        "description": "are intended for environments or use cases where security is paramount; acts as defense in depth measure; and may impact the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-E3436ED3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-68D477D3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6E8CB009",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Database-Engine_Classified",
+        "title": "Level 2 - Database Engine",
+        "description": "are intended for environments or use cases where security is paramount; acts as defense in depth measure; and may impact the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-E3436ED3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-68D477D3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6E8CB009",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Database-Engine_Sensitive",
+        "title": "Level 2 - Database Engine",
+        "description": "are intended for environments or use cases where security is paramount; acts as defense in depth measure; and may impact the utility or performance of the technology.",
+        "select": [
+          {
+            "+@idref": "V-E3436ED3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-68D477D3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6E8CB009",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-3BBA8E27",
+        "title": "1 Installation, Updates and Patches",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3BBA8E27r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1",
+          "title": "Ensure Latest SQL Server Cumulative and Security Updates are Installed",
+          "description": "<VulnDiscussion>SQL Server patches contain program updates that fix security and product functionality issues found in the software. These patches can be installed with a security update, which is a single patch, or a cumulative update which is a group of patches. The SQL Server version and patch levels should be the most recent compatible with the organizations' operational needs.\n\nRationale:\nUsing the most recent SQL Server software, along with all applicable patches can help limit the possibilities for vulnerabilities in the software. The installation version and/or patches applied during setup should be established according to the needs of the organization.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "1.1"
+          },
+          "fixtext": {
+            "+content": "Identify the current version and patch level of your SQL Server instances and ensure they contain the latest security fixes. Make sure to test these fixes in your test environments before updating production instances.\nThe most recent SQL Server patches can be found here:\nhttps://learn.microsoft.com/en-us/troubleshoot/sql/releases/download-and-install-latest- updates",
+            "+@fixref": "F-3BBA8E27r01_fix"
+          },
+          "fix": {
+            "+@id": "F-3BBA8E27r01_fix"
+          },
+          "check": {
+            "+@system": "C-3BBA8E27_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To determine your SQL Server patch level, run the following code snippet.\nSELECT SERVERPROPERTY('ProductLevel') as SP_installed,\nSERVERPROPERTY('ProductVersion') as Version,\nSERVERPROPERTY('ProductUpdateLevel') as 'ProductUpdate_Level',\nSERVERPROPERTY('ProductUpdateReference') as 'KB_Number';"
+          }
+        }
+      },
+      {
+        "+@id": "V-52D7C8E0",
+        "title": "1 Installation, Updates and Patches",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-52D7C8E0r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2",
+          "title": "Ensure Single-Function Member Servers are Used",
+          "description": "<VulnDiscussion>It is recommended that SQL Server software be installed on a dedicated server. This architectural consideration affords security flexibility in that the database server can be placed on a separate subnet allowing access only from particular hosts and over particular protocols. Degrees of availability are easier to achieve as well - over time, an enterprise can move from a single database server to a failover to a cluster using load balancing or to some combination thereof.\n\nRationale:\nIt is easier to manage (i.e. reduce) the attack surface of the server hosting SQL Server software if the only surfaces to consider are the underlying operating system, SQL Server itself, and any security/operational tooling that may additionally be installed. As noted in the description, availability can be more easily addressed if the database is on a dedicated server.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "1.2"
+          },
+          "fixtext": {
+            "+content": "Uninstall excess tooling and/or remove unnecessary roles from the underlying operating system.\nControls Control IG 1 IG 2 IG 3 Version 3.12 Segment Data Processing and Storage Based on Sensitivity v8 Segment data processing and storage based on the sensitivity of the data. Do ● ● not process sensitive data on enterprise assets intended for lower sensitivity data.\n2.10 Physically or Logically Segregate High Risk Applications v7 Physically or logically segregated systems should be used to isolate and run ● software that is required for business operations but incur higher risk for the organization.",
+            "+@fixref": "F-52D7C8E0r01_fix"
+          },
+          "fix": {
+            "+@id": "F-52D7C8E0r01_fix"
+          },
+          "check": {
+            "+@system": "C-52D7C8E0_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure that no other roles are enabled for the underlying operating system and that no excess tooling is installed, per enterprise policy."
+          }
+        }
+      },
+      {
+        "+@id": "V-7BF3B18F",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7BF3B18Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1",
+          "title": "Ensure 'Ad Hoc Distributed Queries' Server Configuration Option is set to '0'",
+          "description": "<VulnDiscussion>Enabling Ad Hoc Distributed Queries allows users to query data and execute statements on external data sources. This functionality should be disabled.\n\nRationale:\nThis feature can be used to remotely access and exploit vulnerabilities on remote SQL Server instances and to run unsafe Visual Basic for Application functions.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.1"
+          },
+          "fixtext": {
+            "+content": "For AWS RDS Instances, please refer to the documentation for using Parameter Groups here:\nWorking with parameter groups Run the following T-SQL command:\nEXECUTE sp_configure 'show advanced options', 1;\nRECONFIGURE;\nEXECUTE sp_configure 'Ad Hoc Distributed Queries', 0;\nRECONFIGURE;\nGO\nEXECUTE sp_configure 'show advanced options', 0;\nRECONFIGURE;",
+            "+@fixref": "F-7BF3B18Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-7BF3B18Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-7BF3B18F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL command:\nSELECT name, CAST(value as int) as value_configured, CAST(value_in_use as\nint) as value_in_use\nFROM sys.configurations\nWHERE name = 'Ad Hoc Distributed Queries';\nBoth value columns must show 0 to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-A2AB94BF",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A2AB94BFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2",
+          "title": "Ensure 'CLR Enabled' Server Configuration Option is set to '0'",
+          "description": "<VulnDiscussion>The clr enabled option specifies whether user assemblies can be run by SQL Server.\n\nRationale:\nEnabling use of CLR assemblies widens the attack surface of SQL Server and puts it at risk from both inadvertent and malicious assemblies.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.2"
+          },
+          "fixtext": {
+            "+content": "For AWS RDS Instances, please refer to the documentation for using Parameter Groups here: Working with parameter groups Run the following T-SQL command:\nEXECUTE sp_configure 'clr enabled', 0;\nRECONFIGURE;",
+            "+@fixref": "F-A2AB94BFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-A2AB94BFr01_fix"
+          },
+          "check": {
+            "+@system": "C-A2AB94BF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL command:\nSELECT name,\nCAST(value as int) as value_configured,\nCAST(value_in_use as int) as value_in_use\nFROM sys.configurations\nWHERE name = 'clr strict security';\nIf both values are 1, this recommendation is Not Applicable. Otherwise, run the following T-SQL command:\nSELECT name,\nCAST(value as int) as value_configured,\nCAST(value_in_use as int) as value_in_use\nFROM sys.configurations\nWHERE name = 'clr enabled';\nBoth value columns must show 0 to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-9C2FE5C5",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9C2FE5C5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.3",
+          "title": "Ensure 'Cross DB Ownership Chaining' Server Configuration Option is set to '0'",
+          "description": "<VulnDiscussion>The cross db ownership chaining option controls cross-database ownership chaining across all databases at the instance (or server) level.\n\nRationale:\nWhen enabled, this option allows a member of the db_owner role in a database to gain access to objects owned by a login in any other database, causing an unnecessary information disclosure. When required, cross-database ownership chaining should only be enabled for the specific databases requiring it instead of at the instance level for all databases by using the ALTER DATABASE <database_name> SET DB_CHAINING ON command. This database option may not be changed on the master, model, or tempdb system databases.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.3"
+          },
+          "fixtext": {
+            "+content": "For AWS RDS Instances, please refer to the documentation for using Parameter Groups here: Working with parameter groups Run the following T-SQL command:\nEXECUTE sp_configure 'cross db ownership chaining', 0;\nRECONFIGURE;\nGO",
+            "+@fixref": "F-9C2FE5C5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-9C2FE5C5r01_fix"
+          },
+          "check": {
+            "+@system": "C-9C2FE5C5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL command:\nSELECT name,\nCAST(value as int) as value_configured,\nCAST(value_in_use as int) as value_in_use\nFROM sys.configurations\nWHERE name = 'cross db ownership chaining';\nBoth value columns must show 0 to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-4B87BEA6",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4B87BEA6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4",
+          "title": "Ensure 'Database Mail XPs' Server Configuration Option is set to '0'",
+          "description": "<VulnDiscussion>The Database Mail XPs option controls the ability to generate and transmit email messages from SQL Server.\n\nRationale:\nDisabling the Database Mail XPs option reduces the SQL Server surface, eliminates a DOS attack vector and channel to exfiltrate data from the database server to a remote host.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.4"
+          },
+          "fixtext": {
+            "+content": "Run the following T-SQL command:\nEXECUTE sp_configure 'show advanced options', 1;\nRECONFIGURE;\nEXECUTE sp_configure 'Database Mail XPs', 0;\nRECONFIGURE;\nGO\nEXECUTE sp_configure 'show advanced options', 0;\nRECONFIGURE;",
+            "+@fixref": "F-4B87BEA6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4B87BEA6r01_fix"
+          },
+          "check": {
+            "+@system": "C-4B87BEA6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL command:\nSELECT name,\nCAST(value as int) as value_configured,\nCAST(value_in_use as int) as value_in_use\nFROM sys.configurations\nWHERE name = 'Database Mail XPs';\nBoth value columns must show 0 to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-222EBFEF",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-222EBFEFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5",
+          "title": "Ensure 'Ole Automation Procedures' Server Configuration Option is set to '0'",
+          "description": "<VulnDiscussion>The Ole Automation Procedures option controls whether OLE Automation objects can be instantiated within Transact-SQL batches. These are extended stored procedures that allow SQL Server users to execute functions external to SQL Server.\n\nRationale:\nEnabling this option will increase the attack surface of SQL Server and allow users to execute functions in the security context of SQL Server.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.5"
+          },
+          "fixtext": {
+            "+content": "Run the following T-SQL command:\nEXECUTE sp_configure 'show advanced options', 1;\nRECONFIGURE;\nEXECUTE sp_configure 'Ole Automation Procedures', 0;\nRECONFIGURE;\nGO\nEXECUTE sp_configure 'show advanced options', 0;\nRECONFIGURE;",
+            "+@fixref": "F-222EBFEFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-222EBFEFr01_fix"
+          },
+          "check": {
+            "+@system": "C-222EBFEF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL command:\nSELECT name,\nCAST(value as int) as value_configured,\nCAST(value_in_use as int) as value_in_use\nFROM sys.configurations\nWHERE name = 'Ole Automation Procedures';\nBoth value columns must show 0 to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-0B0F9D92",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0B0F9D92r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.6",
+          "title": "Ensure 'Remote Access' Server Configuration Option is set to '0'",
+          "description": "<VulnDiscussion>The remote access option controls the execution of local stored procedures on remote servers or remote stored procedures on local server.\n\nRationale:\nFunctionality can be abused to launch a Denial-of-Service (DoS) attack on remote servers by off-loading query processing to a target.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.6"
+          },
+          "fixtext": {
+            "+content": "For AWS RDS Instances, please refer to the documentation for using Parameter Groups here: Working with parameter groups Otherwise, run the following T-SQL command:\nEXECUTE sp_configure 'show advanced options', 1;\nRECONFIGURE;\nEXECUTE sp_configure 'remote access', 0;\nRECONFIGURE;\nGO\nEXECUTE sp_configure 'show advanced options', 0;\nRECONFIGURE;\nRestart the Database Engine.",
+            "+@fixref": "F-0B0F9D92r01_fix"
+          },
+          "fix": {
+            "+@id": "F-0B0F9D92r01_fix"
+          },
+          "check": {
+            "+@system": "C-0B0F9D92_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL command:\nSELECT name,\nCAST(value as int) as value_configured,\nCAST(value_in_use as int) as value_in_use\nFROM sys.configurations\nWHERE name = 'remote access';\nBoth value columns must show 0 to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-83ACA996",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-83ACA996r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.7",
+          "title": "Ensure 'Remote Admin Connections' Server Configuration Option is set to '0'",
+          "description": "<VulnDiscussion>The remote admin connections option controls whether a client application on a remote computer can use the Dedicated Administrator Connection (DAC).\n\nRationale:\nThe Dedicated Administrator Connection (DAC) lets an administrator access a running server to execute diagnostic functions or Transact-SQL statements, or to troubleshoot problems on the server, even when the server is locked or running in an abnormal state and not responding to a SQL Server Database Engine connection. In a cluster scenario, the administrator may not actually be logged on to the same node that is currently hosting the SQL Server instance and thus is considered \"remote\". Therefore, this setting should usually be enabled ( 1) for SQL Server failover clusters; otherwise, it should be disabled ( 0) which is the default.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.7"
+          },
+          "fixtext": {
+            "+content": "Run the following T-SQL command on non-clustered installations:\nEXECUTE sp_configure 'remote admin connections', 0;\nRECONFIGURE;\nGO",
+            "+@fixref": "F-83ACA996r01_fix"
+          },
+          "fix": {
+            "+@id": "F-83ACA996r01_fix"
+          },
+          "check": {
+            "+@system": "C-83ACA996_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL command:\nSELECT name,\nCAST(value as int) as value_configured,\nCAST(value_in_use as int) as value_in_use\nFROM sys.configurations\nWHERE name = 'remote admin connections'\nAND SERVERPROPERTY('IsClustered') = 0;\nIf no data is returned, the instance is a cluster and this recommendation is not applicable. If data is returned, then both the value columns must show 0 to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-AA586F8B",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AA586F8Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.8",
+          "title": "Ensure 'Scan For Startup Procs' Server Configuration Option is set to '0'",
+          "description": "<VulnDiscussion>The scan for startup procs option, if enabled, causes SQL Server to scan for and automatically run all stored procedures that are set to execute upon service startup.\n\nRationale:\nEnforcing this control reduces the threat of an entity leveraging these facilities for malicious purposes.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.8"
+          },
+          "fixtext": {
+            "+content": "Run the following T-SQL command:\nEXECUTE sp_configure 'show advanced options', 1;\nRECONFIGURE;\nEXECUTE sp_configure 'scan for startup procs', 0;\nRECONFIGURE;\nGO\nEXECUTE sp_configure 'show advanced options', 0;\nRECONFIGURE;\nRestart the Database Engine.",
+            "+@fixref": "F-AA586F8Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-AA586F8Br01_fix"
+          },
+          "check": {
+            "+@system": "C-AA586F8B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL command:\nSELECT name,\nCAST(value as int) as value_configured,\nCAST(value_in_use as int) as value_in_use\nFROM sys.configurations\nWHERE name = 'scan for startup procs';\nBoth value columns must show 0 to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-630C0483",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-630C0483r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.9",
+          "title": "Ensure 'Trustworthy' Database Property is set to 'Off'",
+          "description": "<VulnDiscussion>The TRUSTWORTHY database option allows database objects to access objects in other databases under certain circumstances.\n\nRationale:\nProvides protection from malicious CLR assemblies or extended procedures.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.9"
+          },
+          "fixtext": {
+            "+content": "Execute the following T-SQL statement against the databases (replace <database_name> below) returned by the Audit Procedure:\nALTER DATABASE [<database_name>] SET TRUSTWORTHY OFF;",
+            "+@fixref": "F-630C0483r01_fix"
+          },
+          "fix": {
+            "+@id": "F-630C0483r01_fix"
+          },
+          "check": {
+            "+@system": "C-630C0483_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL query to list any databases with a Trustworthy database property value of ON:\nSELECT name\nFROM sys.databases\nWHERE is_trustworthy_on = 1\nAND name != 'msdb';\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-4650027F",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4650027Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.10",
+          "title": "Ensure Unnecessary SQL Server Protocols are set to 'Disabled'",
+          "description": "<VulnDiscussion>SQL Server supports Shared Memory, Named Pipes, and TCP/IP protocols. However, SQL Server should be configured to use the bare minimum required based on the organization's needs.\n\nRationale:\nUsing fewer protocols minimizes the attack surface of SQL Server and, in some cases, can protect it from remote attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.10"
+          },
+          "fixtext": {
+            "+content": "Open SQL Server 2022 Configuration Manager; go to the SQL Server Network Configuration. Ensure that only required protocols are enabled. Disable protocols not necessary.",
+            "+@fixref": "F-4650027Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-4650027Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-4650027F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Open SQL Server 2022 Configuration Manager; go to the SQL Server Network Configuration. Ensure that only required protocols are enabled."
+          }
+        }
+      },
+      {
+        "+@id": "V-A6DB41E5",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A6DB41E5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.11",
+          "title": "Ensure SQL Server is configured to use non-standard ports",
+          "description": "<VulnDiscussion>If installed, a default SQL Server instance will be assigned a default port of TCP:1433 for TCP/IP communication. Administrators can also manually configure named instances to use TCP:1433 for communication. TCP:1433 is a widely known SQL Server port and this port assignment should be changed. In a multi-instance scenario, each instance must be assigned its own dedicated TCP/IP port.\n\nRationale:\nChanging the default SQL Server port from TCP:1433 reduces exposure to automated reconnaissance and opportunistic attacks that specifically target this well-known port.\nMost large-scale scanning tools and exploit frameworks focus on default service ports and do not perform exhaustive enumeration, so servers operating on non-standard ports are less likely to appear in mass vulnerability datasets or automated attack campaigns. While this measure does not prevent targeted attacks, it supports defense- in-depth by increasing the time and effort required for adversary discovery and lateral movement.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.11"
+          },
+          "fixtext": {
+            "+content": "1. In SQL Server Configuration Manager, in the console pane, expand SQL Server Network Configuration, expand Protocols for <InstanceName>, and then double-click the TCP/IP protocol 2. In the TCP/IP Properties dialog box, on the IP Addresses tab, several IP addresses appear in the format IP1, IP2, up to IPAll. One of these is for the IP address of the loopback adapter, 127.0.0.1. Additional IP addresses appear for each IP Address on the computer.\n3. Under IPAll, change the TCP Port field from 1433 to a non-standard port or leave the TCP Port field empty and set the TCP Dynamic Ports value to 0 to enable dynamic port assignment and then click OK.\n4. In the console pane, click SQL Server Services.\n5. In the details pane, right-click SQL Server ( <InstanceName>) and then click Restart, to stop and restart SQL Server.",
+            "+@fixref": "F-A6DB41E5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-A6DB41E5r01_fix"
+          },
+          "check": {
+            "+@system": "C-A6DB41E5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL:\nIF (select value_data from sys.dm_server_registry where value_name =\n'ListenOnAllIPs') = 1\nSELECT count(*) FROM sys.dm_server_registry WHERE registry_key like '%IPAll%'\nand value_name like '%Tcp%' and value_data='1433'\nELSE\nSELECT count(*) FROM sys.dm_server_registry WHERE value_name like '%Tcp%' and\nvalue_data='1433';\nA value of 0 is required to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-B9DAFC0B",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B9DAFC0Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.12",
+          "title": "Ensure 'Hide Instance' option is set to 'Yes' for Production SQL Server instances",
+          "description": "<VulnDiscussion>Non-clustered SQL Server instances within production environments should be designated as hidden to prevent advertisement by the SQL Server Browser service.\n\nRationale:\nDesignating production SQL Server instances as hidden leads to a more secure installation because they cannot be enumerated. However, clustered instances may break if this option is selected.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.12"
+          },
+          "fixtext": {
+            "+content": "Perform either the GUI or T-SQL method shown:\nGUI Method 1. In SQL Server 2022 Configuration Manager, expand SQL Server Network Configuration, right-click Protocols for <InstanceName>, and then select Properties.\n2. On the Flags tab, in the Hide Instance box, select Yes, and then click OK to close the dialog box. The change takes effect immediately for new connections.\nT-SQL Method Execute the following T-SQL to remediate:\nEXEC master.sys.xp_instance_regwrite\n@rootkey = N'HKEY_LOCAL_MACHINE',\n@key = N'SOFTWARE\\Microsoft\\Microsoft SQL\nServer\\MSSQLServer\\SuperSocketNetLib',\n@value_name = N'HideInstance',\n@type = N'REG_DWORD',\n@value = 1;",
+            "+@fixref": "F-B9DAFC0Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-B9DAFC0Br01_fix"
+          },
+          "check": {
+            "+@system": "C-B9DAFC0B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform either the GUI or T-SQL method shown:\nGUI Method 1. In SQL Server 2022 Configuration Manager, expand SQL Server Network Configuration, right-click Protocols for <InstanceName>, and then select Properties.\n2. On the Flags tab, in the Hide Instance box, if Yes is selected, it is compliant.\nT-SQL Method Execute the following T-SQL.\nDECLARE @getValue INT;\nEXEC master.sys.xp_instance_regread\n@rootkey = N'HKEY_LOCAL_MACHINE',\n@key = N'SOFTWARE\\Microsoft\\Microsoft SQL\nServer\\MSSQLServer\\SuperSocketNetLib',\n@value_name = N'HideInstance',\n@value = @getValue OUTPUT;\nSELECT @getValue;\nA value of 1 should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-3E423356",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3E423356r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.13",
+          "title": "Ensure the 'sa' Login Account is set to 'Disabled'",
+          "description": "<VulnDiscussion>The sa account is a widely known and often widely used SQL Server account with sysadmin privileges. This is the original login created during installation and always has the principal_id=1 and sid=0x01.\n\nRationale:\nEnforcing this control reduces the probability of an attacker executing brute force attacks against a well-known principal.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.13"
+          },
+          "fixtext": {
+            "+content": "Execute the following T-SQL query:\nUSE [master]\nGO\nDECLARE @tsql nvarchar(max)\nSET @tsql = 'ALTER LOGIN ' + SUSER_NAME(0x01) + ' DISABLE'\nEXEC (@tsql)\nGO",
+            "+@fixref": "F-3E423356r01_fix"
+          },
+          "fix": {
+            "+@id": "F-3E423356r01_fix"
+          },
+          "check": {
+            "+@system": "C-3E423356_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following syntax to determine if the sa account is disabled. Checking for sid=0x01 ensures that the original sa account is being checked in case it has been renamed per best practices.\nSELECT name, is_disabled\nFROM sys.server_principals\nWHERE sid = 0x01\nAND is_disabled = 0;\nNo rows should be returned to be compliant. An is_disabled value of 0 indicates the login is currently enabled and therefore needs remediation."
+          }
+        }
+      },
+      {
+        "+@id": "V-1E5CF3AC",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1E5CF3ACr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.14",
+          "title": "Ensure the 'sa' Login Account has been renamed",
+          "description": "<VulnDiscussion>The sa account is a widely known and often widely used SQL Server login with sysadmin privileges. The sa login is the original login created during installation and always has principal_id=1 and sid=0x01.\n\nRationale:\nIt is more difficult to launch password-guessing and brute-force attacks against the sa login if the name is not known.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.14"
+          },
+          "fixtext": {
+            "+content": "Replace the <different_user> value within the below syntax and execute to rename the sa login.\nALTER LOGIN sa WITH NAME = <different_user>;",
+            "+@fixref": "F-1E5CF3ACr01_fix"
+          },
+          "fix": {
+            "+@id": "F-1E5CF3ACr01_fix"
+          },
+          "check": {
+            "+@system": "C-1E5CF3AC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following syntax to determine if the sa login (principal) is renamed.\nSELECT name\nFROM sys.server_principals\nWHERE sid = 0x01;\nA name of sa indicates the account has not been renamed and therefore needs remediation."
+          }
+        }
+      },
+      {
+        "+@id": "V-8593D406",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8593D406r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.15",
+          "title": "Ensure 'AUTO_CLOSE' is set to 'OFF' on contained databases",
+          "description": "<VulnDiscussion>AUTO_CLOSE determines if a given database is closed or not after a connection terminates. If enabled, subsequent connections to the given database will require the database to be reopened and relevant procedure caches to be rebuilt.\n\nRationale:\nBecause authentication of users for contained databases occurs within the database not at the server\\instance level, the database must be opened every time to authenticate a user. The frequent opening/closing of the database consumes additional server resources and may contribute to a denial of service.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.15"
+          },
+          "fixtext": {
+            "+content": "Execute the following T-SQL, replacing <database_name> with each database name found by the Audit Procedure:\nALTER DATABASE <database_name> SET AUTO_CLOSE OFF;",
+            "+@fixref": "F-8593D406r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8593D406r01_fix"
+          },
+          "check": {
+            "+@system": "C-8593D406_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to find contained databases that are not configured as prescribed:\nSELECT name, containment, containment_desc, is_auto_close_on\nFROM sys.databases\nWHERE containment <> 0 and is_auto_close_on = 1;\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-0FDF329F",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0FDF329Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.16",
+          "title": "Ensure no login exists with the name 'sa'",
+          "description": "<VulnDiscussion>The sa login (e.g. principal) is a widely known and often widely used SQL Server account. Therefore, there should not be a login called sa even when the original sa login ( principal_id = 1) has been renamed.\n\nRationale:\nEnforcing this control reduces the probability of an attacker executing brute force attacks against a well-known principal name.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.16"
+          },
+          "fixtext": {
+            "+content": "Execute the appropriate ALTER statement below based on the principal_id returned for the login named sa. Replace the <different_name> value within the below syntax and execute to rename the sa login.\nUSE [master]\nGO\n-- If principal_id = 1 or the login owns database objects, rename the sa\nlogin\nALTER LOGIN [sa] WITH NAME = <different_name>;\nGO",
+            "+@fixref": "F-0FDF329Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-0FDF329Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-0FDF329F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following syntax to determine if there is an account named sa.\nSELECT principal_id, name\nFROM sys.server_principals\nWHERE name = 'sa';\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-B42AE50B",
+        "title": "2 Surface Area Reduction",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B42AE50Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.17",
+          "title": "Ensure 'clr strict security' Server Configuration Option is set to '1'",
+          "description": "<VulnDiscussion>The clr strict security option specifies whether the engine applies the PERMISSION_SET on the assemblies.\n\nRationale:\nEnabling use of CLR assemblies widens the attack surface of SQL Server and puts it at risk from both inadvertent and malicious assemblies.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "2.17"
+          },
+          "fixtext": {
+            "+content": "Run the following T-SQL command:\nEXECUTE sp_configure 'show advanced options', 1;\nRECONFIGURE;\nEXECUTE sp_configure 'clr strict security', 1;\nRECONFIGURE;\nGO\nEXECUTE sp_configure 'show advanced options', 0;\nRECONFIGURE;",
+            "+@fixref": "F-B42AE50Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-B42AE50Br01_fix"
+          },
+          "check": {
+            "+@system": "C-B42AE50B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL command:\nSELECT name,\nCAST(value as int) as value_configured,\nCAST(value_in_use as int) as value_in_use\nFROM sys.configurations\nWHERE name = 'clr strict security';\nBoth value columns must show 1 to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-BD84DF5F",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BD84DF5Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1",
+          "title": "Ensure 'Server Authentication' Property is set to 'Windows Authentication Mode'",
+          "description": "<VulnDiscussion>Use Windows Authentication to validate attempted connections.\n\nRationale:\nWindows provides a more robust authentication mechanism than SQL Server authentication.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.1"
+          },
+          "fixtext": {
+            "+content": "Perform either the GUI or T-SQL method shown:\nGUI Method 1. Open SQL Server Management Studio.\n2. Open the Object Explorer tab and connect to the target SQL Server instance.\n3. Right click the instance name and select Properties.\n4. Select the Security page from the left menu.\n5. Set the Server authentication setting to Windows Authentication Mode.\nT-SQL Method Run the following T-SQL in a Query Window:\nUSE [master]\nGO\nEXEC xp_instance_regwrite N'HKEY_LOCAL_MACHINE',\nN'Software\\Microsoft\\MSSQLServer\\MSSQLServer', N'LoginMode', REG_DWORD, 1\nGO\nRestart the SQL Server service for the change to take effect.",
+            "+@fixref": "F-BD84DF5Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-BD84DF5Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-BD84DF5F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following syntax:\nSELECT SERVERPROPERTY('IsIntegratedSecurityOnly') as [login_mode];\nA login_mode of 1 indicates the Server Authentication property is set to Windows Authentication Mode. A login_mode of 0 indicates mixed mode authentication. A value of 1 is required to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-415289DC",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-415289DCr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.2",
+          "title": "Ensure CONNECT permissions on the 'guest' user is Revoked within all SQL Server databases",
+          "description": "<VulnDiscussion>Remove the right of the guest user to connect to SQL Server databases, except for master, msdb, tempdb, and, on AWS RDS instances, rdsadmin.\n\nRationale:\nA login assumes the identity of the guest user when a login has access to SQL Server but does not have access to a database through its own account and the database has a guest user account. Revoking the CONNECT permission for the guest user will ensure that a login is not able to access database information without explicit access to do so.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.2"
+          },
+          "fixtext": {
+            "+content": "The following code snippet revokes CONNECT permissions from the guest user in a database. Replace <database_name> as appropriate:\nUSE <database_name>;\nGO\nREVOKE CONNECT FROM guest;",
+            "+@fixref": "F-415289DCr01_fix"
+          },
+          "fix": {
+            "+@id": "F-415289DCr01_fix"
+          },
+          "check": {
+            "+@system": "C-415289DC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following code snippet for each database (replacing <database_name> as appropriate) in the instance to determine if the guest user has CONNECT permission.\nUSE <database_name>;\nGO\nSELECT DB_NAME() AS DatabaseName, 'guest' AS Database_User,\n[permission_name], [state_desc]\nFROM sys.database_permissions\nWHERE [grantee_principal_id] = DATABASE_PRINCIPAL_ID('guest')\nAND [state_desc] LIKE 'GRANT%'\nAND [permission_name] = 'CONNECT'\nAND DB_NAME() NOT IN ('master','tempdb','msdb');\nNo rows should be returned. On AWS RDS instance, if only rdsadmin is returned, this is considered a pass and therefore compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-AA21C415",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AA21C415r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.3",
+          "title": "Ensure 'Orphaned Users' are Dropped From SQL Server Databases",
+          "description": "<VulnDiscussion>A database user for which the corresponding SQL Server login is undefined or is incorrectly defined on a server instance cannot log in to the instance and is referred to as orphaned and should be removed.\n\nRationale:\nOrphan users should be removed to avoid potential misuse of those broken users in any way.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.3"
+          },
+          "fixtext": {
+            "+content": "If the orphaned user cannot or should not be matched to an existing or new login using the Microsoft documented process referenced below, run the following T-SQL query in the appropriate database to remove an orphan user:\nUSE <database_name>;\nGO\nDROP USER <username>;",
+            "+@fixref": "F-AA21C415r01_fix"
+          },
+          "fix": {
+            "+@id": "F-AA21C415r01_fix"
+          },
+          "check": {
+            "+@system": "C-AA21C415_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL query in each database to identify orphan users.\nUSE <database_name>;\nGO\nSELECT *\nFROM sys.database_principals DP\nWHERE DP.sid NOT IN (\nSELECT L.sid\nFROM sys.syslogins L\nWHERE L.sid = DP.sid\n)\nAND (SELECT containment FROM sys.databases WHERE name = DB_NAME()) = 0\nAND DP.type_desc NOT IN ('DATABASE_ROLE', 'APPLICATION_ROLE')\nAND DP.name NOT IN ('dbo', 'guest', 'INFORMATION_SCHEMA', 'sys',\n'MS_DataCollectorInternalUser')\nAND NOT (\nDP.name = 'cdc'\nAND (SELECT is_cdc_enabled FROM sys.databases WHERE name = DB_NAME())\n= 1\n);\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-D5B74874",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D5B74874r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.4",
+          "title": "Ensure SQL Authentication is not used in contained databases",
+          "description": "<VulnDiscussion>Contained databases do not enforce password complexity rules for SQL Authenticated users.\n\nRationale:\nThe absence of an enforced password policy may increase the likelihood of a weak credential being established in a contained database.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.4"
+          },
+          "fixtext": {
+            "+content": "Leverage Windows Authenticated users in contained databases.",
+            "+@fixref": "F-D5B74874r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D5B74874r01_fix"
+          },
+          "check": {
+            "+@system": "C-D5B74874_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following T-SQL in each contained database to find database users that are using SQL authentication:\nSELECT name AS DBUser\nFROM sys.database_principals\nWHERE name NOT IN ('dbo','Information_Schema','sys','guest')\nAND type IN ('U','S','G')\nAND authentication_type = 2;\nGO\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-0FAE271B",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0FAE271Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.5",
+          "title": "Ensure the SQL Server’s MSSQL Service Account is Not an Administrator",
+          "description": "<VulnDiscussion>The service account and/or service SID used by the MSSQLSERVER service for a default instance or MSSQL$<InstanceName> service for a named instance should not be a member of the Windows Administrator group either directly or indirectly (via a group).\nThis also means that the account known as LocalSystem (aka NT AUTHORITY\\SYSTEM) should not be used for any of the SQL Server services as this account has higher privileges than any of the SQL Server services require.\n\nRationale:\nFollowing the principle of least privilege, the service account should have no more privileges than required to do its job. For SQL Server services, the SQL Server Setup will assign the required permissions directly to the service SID. No additional permissions or privileges should be necessary.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.5"
+          },
+          "fixtext": {
+            "+content": "In the case where LocalSystem is used, use SQL Server Configuration Manager to change to a less privileged account. Otherwise, remove the account or service SID from the Administrators group. You may need to run the SQL Server Configuration Manager if underlying permissions had been changed or if SQL Server Configuration Manager was not originally used to set the service account.",
+            "+@fixref": "F-0FAE271Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-0FAE271Br01_fix"
+          },
+          "check": {
+            "+@system": "C-0FAE271B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that the service account for running MSSQL is not LocalSystem, by executing the below query:\nSELECT servicename, service_account\nFROM sys.dm_server_services\nWHERE servicename LIKE 'SQL Server (%' AND service_account IN ( 'NT\nAUTHORITY\\SYSTEM', 'LocalSystem', 'NT AUTHORITY\\LocalSystem' );\nIf a record is returned then this is a finding and requires remediation. If no record is returned, verify that the account used is not part of the Local Administrators group."
+          }
+        }
+      },
+      {
+        "+@id": "V-7C68476F",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7C68476Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.6",
+          "title": "Ensure the SQL Server’s SQLAgent Service Account is Not an Administrator",
+          "description": "<VulnDiscussion>The service account and/or service SID used by the SQLSERVERAGENT service for a default instance or SQLAGENT$ <InstanceName> service for a named instance should not be a member of the Windows Administrator group either directly or indirectly (via a group). This also means that the account known as LocalSystem (AKA NT AUTHORITY\\SYSTEM) should not be used for the SQLAGENT service as this account has higher privileges than the SQL Server service requires.\n\nRationale:\nFollowing the principle of least privilege, the service account should have no more privileges than required to do its job. For SQL Server services, the SQL Server Setup will assign the required permissions directly to the service SID. No additional permissions or privileges should be necessary.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.6"
+          },
+          "fixtext": {
+            "+content": "In the case where LocalSystem is used, use SQL Server Configuration Manager to change to a less privileged account. Otherwise, remove the account or service SID from the Administrators group. You may need to run the SQL Server Configuration Manager if underlying permissions had been changed or if SQL Server Configuration Manager was not originally used to set the service account.",
+            "+@fixref": "F-7C68476Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-7C68476Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-7C68476F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that the service account (in case of a local or AD account) and service SID are not members of the Windows Administrators group.\nVerify that the service account for running SQLAgent is not LocalSystem, by executing the below query:\nSELECT servicename, service_account\nFROM sys.dm_server_services\nWHERE servicename LIKE 'SQL Server Agent (%' AND service_account IN ( 'NT\nAUTHORITY\\SYSTEM', 'LocalSystem', 'NT AUTHORITY\\LocalSystem' );\nIf a record is returned then this is a finding and requires remediation. If no record is returned, verify that the account used is not part of the Local Administrators group."
+          }
+        }
+      },
+      {
+        "+@id": "V-2AA7B427",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2AA7B427r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.7",
+          "title": "Ensure the SQL Server’s Full -Text Service Account is Not an Administrator",
+          "description": "<VulnDiscussion>The service account and/or service SID used by the MSSQLFDLauncher service for a default instance or MSSQLFDLauncher$ <InstanceName> service for a named instance should not be a member of the Windows Administrator group either directly or indirectly (via a group). This also means that the account known as LocalSystem (aka NT AUTHORITY\\SYSTEM) should not be used for the Full-Text service as this account has higher privileges than the SQL Server service requires.\n\nRationale:\nFollowing the principle of least privilege, the service account should have no more privileges than required to do its job. For SQL Server services, the SQL Server Setup will assign the required permissions directly to the service SID. No additional permissions or privileges should be necessary.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.7"
+          },
+          "fixtext": {
+            "+content": "In the case where LocalSystem is used, use SQL Server Configuration Manager to change to a less privileged account. Otherwise, remove the account or service SID from the Administrators group. You may need to run the SQL Server Configuration Manager if underlying permissions had been changed or if SQL Server Configuration Manager was not originally used to set the service account.",
+            "+@fixref": "F-2AA7B427r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2AA7B427r01_fix"
+          },
+          "check": {
+            "+@system": "C-2AA7B427_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that the service account (in case of a local or AD account) and service SID are not members of the Windows Administrators group."
+          }
+        }
+      },
+      {
+        "+@id": "V-A76E3DC5",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A76E3DC5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.8",
+          "title": "Ensure only the default permissions specified by Microsoft are granted to the public server role",
+          "description": "<VulnDiscussion>public is a special fixed server role containing all logins. Unlike other fixed server roles, permissions can be changed for the public role. In keeping with the principle of least privileges, the public server role should not be used to grant permissions at the server scope as these would be inherited by all users.\n\nRationale:\nEvery SQL Server login belongs to the public role and cannot be removed from this role. Therefore, any permissions granted to this role will be available to all logins unless they have been explicitly denied to specific logins or user-defined server roles.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.8"
+          },
+          "fixtext": {
+            "+content": "1. Add the extraneous permissions found in the Audit query results to the specific logins to user-defined server roles which require the access.\n2. Revoke the <permission_name> from the public role as shown below\nUSE [master]\nGO\nREVOKE <permission_name> FROM public;\nGO",
+            "+@fixref": "F-A76E3DC5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-A76E3DC5r01_fix"
+          },
+          "check": {
+            "+@system": "C-A76E3DC5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following syntax to determine if extra permissions have been granted to the public server role.\nSELECT *\nFROM master.sys.server_permissions\nWHERE (grantee_principal_id = SUSER_SID(N'public') and state_desc LIKE\n'GRANT%')\nAND NOT (state_desc = 'GRANT' and [permission_name] = 'VIEW ANY DATABASE' and\nclass_desc = 'SERVER')\nAND NOT (state_desc = 'GRANT' and [permission_name] = 'CONNECT' and\nclass_desc = 'ENDPOINT' and major_id = 2)\nAND NOT (state_desc = 'GRANT' and [permission_name] = 'CONNECT' and\nclass_desc = 'ENDPOINT' and major_id = 3)\nAND NOT (state_desc = 'GRANT' and [permission_name] = 'CONNECT' and\nclass_desc = 'ENDPOINT' and major_id = 4)\nAND NOT (state_desc = 'GRANT' and [permission_name] = 'CONNECT' and\nclass_desc = 'ENDPOINT' and major_id = 5);\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-556A3B9C",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-556A3B9Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.9",
+          "title": "Ensure Windows BUILTIN groups are not SQL Logins",
+          "description": "<VulnDiscussion>Prior to SQL Server 2008, the BUILTIN\\Administrators group was added as a SQL Server login with sysadmin privileges during installation by default. Best practices promote creating an Active Directory level group containing approved DBA staff accounts and using this controlled AD group as the login with sysadmin privileges. The AD group should be specified during SQL Server installation and the BUILTIN\\Administrators group would therefore have no need to be a login.\n\nRationale:\nThe BUILTIN groups (Administrators, Everyone, Authenticated Users, Guests, etc.) generally contain very broad memberships which would not meet the best practice of ensuring only the necessary users have been granted access to a SQL Server instance.\nThese groups should not be used for any level of access into a SQL Server Database Engine instance.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.9"
+          },
+          "fixtext": {
+            "+content": "1. For each BUILTIN login, if needed create a more restrictive AD group containing only the required user accounts.\n2. Add the AD group or individual Windows accounts as a SQL Server login and grant it the permissions required.\n3. Drop the BUILTIN login using the syntax below after replacing <name> in [BUILTIN\\ <name> ].\nUSE [master]\nGO\nDROP LOGIN [BUILTIN\\<name>]\nGO",
+            "+@fixref": "F-556A3B9Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-556A3B9Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-556A3B9C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following syntax to determine if any BUILTIN groups or accounts have been added as SQL Server Logins.\nSELECT pr.[name], pe.[permission_name], pe.[state_desc]\nFROM sys.server_principals pr\nJOIN sys.server_permissions pe\nON pr.principal_id = pe.grantee_principal_id\nWHERE pr.name like 'BUILTIN%';\nNo rows should be returned to be compliant. On an AWS RDS instance if only [BUILTIN]\\Administrators is returned, this is considered a pass and therefore compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-DA1CE40F",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-DA1CE40Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.10",
+          "title": "Ensure Windows local groups are not SQL Logins",
+          "description": "<VulnDiscussion>Local Windows groups should not be used as logins for SQL Server instances.\n\nRationale:\nAllowing local Windows groups as SQL Logins provides a loophole whereby anyone with OS level administrator rights (and no SQL Server rights) could add users to the local Windows groups and thereby give themselves or others access to the SQL Server instance.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.10"
+          },
+          "fixtext": {
+            "+content": "1. For each LocalGroupName login, if needed create an equivalent AD group containing only the required user accounts.\n2. Add the AD group or individual Windows accounts as a SQL Server login and grant it the permissions required.\n3. Drop the LocalGroupName login using the syntax below after replacing <name>.\nUSE [master]\nGO\nDROP LOGIN [<name>]\nGO",
+            "+@fixref": "F-DA1CE40Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-DA1CE40Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-DA1CE40F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following syntax to determine if any local groups have been added as SQL Server Logins.\nSELECT pr.[name] AS LocalGroupName, pe.[permission_name], pe.[state_desc]\nFROM sys.server_principals pr\nJOIN sys.server_permissions pe\nON pr.[principal_id] = pe.[grantee_principal_id]\nWHERE pr.[type_desc] = 'WINDOWS_GROUP'\nAND pr.[name] like CAST(SERVERPROPERTY('MachineName') AS nvarchar) + '%';\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-BB3E7315",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BB3E7315r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.11",
+          "title": "Ensure the public role in the msdb database is not granted access to SQL Agent proxies",
+          "description": "<VulnDiscussion>The public database role contains every user in the msdb database. SQL Agent proxies define a security context in which a job step can run.\n\nRationale:\nGranting access to SQL Agent proxies for the public role would allow all users to utilize the proxy which may have high privileges. This would likely break the principle of least privileges.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.11"
+          },
+          "fixtext": {
+            "+content": "1. Ensure the required security principals are explicitly granted access to the proxy (use sp_grant_login_to_proxy).\n2. Revoke access to the <proxyname> from the public role.\nUSE [msdb]\nGO\nEXEC dbo.sp_revoke_login_from_proxy @name = N'public', @proxy_name =\nN'<proxyname>';\nGO",
+            "+@fixref": "F-BB3E7315r01_fix"
+          },
+          "fix": {
+            "+@id": "F-BB3E7315r01_fix"
+          },
+          "check": {
+            "+@system": "C-BB3E7315_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following syntax to determine if access to any proxies have been granted to the msdb database's public role.\nUSE [msdb]\nGO\nSELECT sp.name AS proxyname\nFROM dbo.sysproxylogin spl\nJOIN sys.database_principals dp\nON dp.sid = spl.sid\nJOIN sysproxies sp\nON sp.proxy_id = spl.proxy_id\nWHERE principal_id = USER_ID('public');\nGO\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-5EFBA9A8",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5EFBA9A8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.12",
+          "title": "Ensure the 'SYSADMIN' Role is Limited to Administrative or Built-in Accounts",
+          "description": "<VulnDiscussion>The SYSADMIN role is the highest privileged server-level role in SQL Server database engine. Moreover, by design built-in accounts by default are granted permission to this server-level role by Microsoft design so database engine works as expected. The following virtual accounts / Service SIDs are default members of SYSADMIN: NT SERVICE\\SQLWriter NT SERVICE\\Winmgmt NT SERVICE\\MSSQLSERVER (Used by the SQL database engine service) NT SERVICE\\SQLSERVERAGENT(Used by the SQL Agent service) This means that the service accounts for the SQL Database Engine and SQL Agent does not need to, and should not have , their specific service accounts added to the SYSADMIN group seperately, as it is not needed.\nThe built-in database sa account and service accounts are automatically created during SQL Server installation are required to be granted SYSADMIN role. DBA’s can create accounts with SYSADMIN role for support and administration. Such accounts should be limited as well as protected using strict access and authorization restrictions.\n\nRationale:\nThis will greatly reduces the attack surface, as only limited and specific accounts will be granted SYSADMIN role. So, attackers can’t break into the database system with highly privileged accounts.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.12"
+          },
+          "fixtext": {
+            "+content": "Remove any un-allowed SQL Server accounts which are granted SYSADMIN role using this query:\nALTER SERVER ROLE SYSADMIN DROP MEMBER <account>;",
+            "+@fixref": "F-5EFBA9A8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5EFBA9A8r01_fix"
+          },
+          "check": {
+            "+@system": "C-5EFBA9A8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute this SQL query to find current service accounts running your SQL Server Engine with SYSADMIN role permission:\nSELECT distinct(name),type_desc\nFROM master.sys.server_principals a , sys.dm_server_services b\nWHERE IS_SRVROLEMEMBER ('sysadmin',name) = 1 and a.name=b.service_account;\nExecute this SQL query to list all SQL Server instance principles with SYSADMIN role granted to them:\nSELECT distinct(name),type_desc\nFROM master.sys.server_principals\nWHERE IS_SRVROLEMEMBER ('sysadmin',name) = 1\nAND name not in (\n'NT SERVICE\\SQLWriter',\n'NT SERVICE\\Winmgmt',\n'NT SERVICE\\MSSQLSERVER',\n'NT SERVICE\\SQLSERVERAGENT'\n);\nIf any un-allowed accounts have SYSADMIN role, this is a fail."
+          }
+        }
+      },
+      {
+        "+@id": "V-2558DC4B",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2558DC4Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.13",
+          "title": "Ensure no admin role membership in MSDB database",
+          "description": "<VulnDiscussion>Based on Microsoft design an account with DB_OWNER can elevate permissions to SYSADMIN\n\nRationale:\nMSDB must be configured with the TRUSTWORTHY flag ON to work properly. If the TRUSTWORTHY setting is set to ON, and if the owner of the database is a member of a group that has administrative credentials, such as the sysadmin group (for example the default sa login), the database owner can then be able to create and run unsafe assemblies that can compromise the instance of the SQL Server, as well as run code to elevate his privileges to SYSADMIN</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.13"
+          },
+          "fixtext": {
+            "+content": "USE [msdb]\nGO\nALTER ROLE [db_owner] DROP MEMBER <username>;",
+            "+@fixref": "F-2558DC4Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-2558DC4Br01_fix"
+          },
+          "check": {
+            "+@system": "C-2558DC4B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "USE [msdb]\nSELECT * FROM sys.database_role_members AS drm\nINNER JOIN sys.database_principals AS r\nON drm.role_principal_id = r.principal_id\nINNER JOIN sys.database_principals AS m\nON drm.member_principal_id = m.principal_id\nWHERE r.name in ('db_owner', 'db_securityadmin', 'db_ddladmin',\n'db_datawriter') and m.name <>'dbo';\nGO\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-06C661A2",
+        "title": "3 Authentication and Authorization",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-06C661A2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.14",
+          "title": "Ensure 'Control Server' permission is not granted",
+          "description": "<VulnDiscussion>The Control Server permission is a highly privileged server-level permission in SQL Server database engine. Moreover, even though this permission is not as powerful as SYSADMIN role, it has almost most of the permissions of SYSADMIN role. Also, database logins granted control server permission can easily elevate to SYSADMIN role through different exploit techniques which is a serious security problem.\n\nRationale:\nThis will greatly reduce attack surface, as accounts that get compromised by attackers with Control Server permission can escalate to SYSADMIN role. So, attackers can’t break into the database system with highly privileged accounts. Revoking control server permission will prevent privilege elevation attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "3.14"
+          },
+          "fixtext": {
+            "+content": "Remove any un-allowed SQL Server accounts which are granted Control Server using this query:\nuse [master]\nGO\nREVOKE CONTROL SERVER FROM <login_name>",
+            "+@fixref": "F-06C661A2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-06C661A2r01_fix"
+          },
+          "check": {
+            "+@system": "C-06C661A2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute this SQL query to list all SQL Server logins with Control Server permission:\nSELECT\nsys.server_permissions.type,\nsys.server_permissions.permission_name,\nsys.server_permissions.state,\nsys.server_permissions.state_desc,\ngranteeserverprincipal.name AS grantee_principal_name,\ngranteeserverprincipal.type_desc AS grantee_principal_type_desc,\ngrantorserverprinicipal.name AS grantor_name,\nCASE\nWHEN sys.server_permissions.state = N'W'\nTHEN N'GRANT'\nELSE sys.server_permissions.state_desc\nEND + N' ' + sys.server_permissions.permission_name COLLATE\nSQL_Latin1_General_CP1_CI_AS + N' TO ' +\nQUOTENAME(granteeserverprincipal.name) AS permissionstatement\nFROM sys.server_principals AS granteeserverprincipal\nINNER JOIN sys.server_permissions\nON sys.server_permissions.grantee_principal_id =\ngranteeserverprincipal.principal_id\nINNER JOIN sys.server_principals AS grantorserverprinicipal\nON grantorserverprinicipal.principal_id =\nsys.server_permissions.grantor_principal_id\nWHERE sys.server_permissions.permission_name='CONTROL SERVER'\nAND granteeserverprincipal.name <> '##MS_PolicySigningCertificate##';"
+          }
+        }
+      },
+      {
+        "+@id": "V-96F2C559",
+        "title": "4 Password Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-96F2C559r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1",
+          "title": "Ensure 'MUST_CHANGE' Option is set to 'ON' for All SQL Authenticated Logins",
+          "description": "<VulnDiscussion>Whenever this option is set to ON, SQL Server will prompt for an updated password the first time the new or altered login is used.\n\nRationale:\nEnforcing a password change after a reset or new login creation will prevent the account administrators or anyone accessing the initial password from misuse of the SQL login created without being noticed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "4.1"
+          },
+          "fixtext": {
+            "+content": "Set the MUST_CHANGE option for SQL Authenticated logins when creating a login initially:\nCREATE LOGIN <login_name> WITH PASSWORD = '<password_value>' MUST_CHANGE,\nCHECK_EXPIRATION = ON, CHECK_POLICY = ON;\nSet the MUST_CHANGE option for SQL Authenticated logins when resetting a password:\nALTER LOGIN <login_name> WITH PASSWORD = '<new_password_value>' MUST_CHANGE;",
+            "+@fixref": "F-96F2C559r01_fix"
+          },
+          "fix": {
+            "+@id": "F-96F2C559r01_fix"
+          },
+          "check": {
+            "+@system": "C-96F2C559_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Using SQL Server Management Studio 1. Open SQL Server Management Studio.\n2. Open Object Explorer and connect to the target instance.\n3. Navigate to the Logins tab in Object Explorer and expand. Right click on the desired login and select Properties.\n4. Verify the User must change password at next login checkbox is checked.\nUsing T-SQL\nSELECT name ,CAST(LOGINPROPERTY(log.name, N'IsMustChange') AS bit) AS\n[MustChangePassword],*\nFROM sys.server_principals AS log\nWHERE type = 'S' and CAST(LOGINPROPERTY(log.name, N'IsMustChange') AS bit) =\n1\nReturns \"1\" row for each new Login that has not been logged in to yet, and is correctly configured Note: This audit procedure is only applicable immediately after the login has been created or altered to force the password change. Once the password is changed, there is no way to know specifically that this option was the forcing mechanism behind a password change."
+          }
+        }
+      },
+      {
+        "+@id": "V-4CE18407",
+        "title": "4 Password Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4CE18407r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.2",
+          "title": "Ensure 'CHECK_EXPIRATION' Option is set to 'ON' for All SQL Authenticated Logins Within the Sysadmin Role",
+          "description": "<VulnDiscussion>Applies the same password expiration policy used in Windows to passwords used inside SQL Server.\n\nRationale:\nEnsuring SQL logins comply with the secure password policy applied by the Windows Server Benchmark will ensure the passwords for SQL logins with sysadmin privileges are changed on a frequent basis to help prevent compromise via a brute force attack.\nCONTROL SERVER is an equivalent permission to sysadmin and logins with that permission should also be required to have expiring passwords.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "4.2"
+          },
+          "fixtext": {
+            "+content": "For each <login_name> found by the Audit Procedure, execute the following T-SQL statement:\nALTER LOGIN [<login_name>] WITH CHECK_EXPIRATION = ON;",
+            "+@fixref": "F-4CE18407r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4CE18407r01_fix"
+          },
+          "check": {
+            "+@system": "C-4CE18407_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL statement to find sysadmin or equivalent logins with CHECK_EXPIRATION = OFF.\nSELECT l.[name], 'sysadmin membership' AS 'Access_Method'\nFROM sys.sql_logins AS l\nWHERE IS_SRVROLEMEMBER('sysadmin',name) = 1\nAND l.is_expiration_checked <> 1 AND l.is_disabled = 0\nUNION ALL\nSELECT l.[name], 'CONTROL SERVER' AS 'Access_Method'\nFROM sys.sql_logins AS l\nJOIN sys.server_permissions AS p\nON l.principal_id = p.grantee_principal_id\nWHERE p.type = 'CL' AND p.state IN ('G', 'W')\nAND l.is_expiration_checked <> 1 AND l.is_disabled = 0;\nNo rows should be returned to be compliant. On AWS RDS instances only returning the account rdsa is considered a pass and therefore compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-CC1742D3",
+        "title": "4 Password Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CC1742D3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.3",
+          "title": "Ensure 'CHECK_POLICY' Option is set to 'ON' for All SQL Authenticated Logins",
+          "description": "<VulnDiscussion>Applies the same password complexity policy used in Windows to passwords used inside SQL Server.\n\nRationale:\nEnsure SQL authenticated login passwords comply with the secure password policy applied by the Windows Server Benchmark so that they cannot be easily compromised via brute force attack.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "4.3"
+          },
+          "fixtext": {
+            "+content": "For each <login_name> found by the Audit Procedure, execute the following T-SQL statement:\nALTER LOGIN [<login_name>] WITH CHECK_POLICY = ON;\nNote: In the case of AWS RDS do not perform this remediation for the Master account.",
+            "+@fixref": "F-CC1742D3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-CC1742D3r01_fix"
+          },
+          "check": {
+            "+@system": "C-CC1742D3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following code snippet to determine the status of SQL Logins and if their password complexity is enforced.\nSELECT name, is_disabled\nFROM sys.sql_logins\nWHERE is_policy_checked = 0;\nThe is_policy_checked value of 0 indicates that the CHECK_POLICY option is OFF;\nvalue of 1 is ON. If is_disabled value is 1, then the login is disabled and unusable. If no rows are returned then either no SQL Authenticated logins exist or they all have CHECK_POLICY ON."
+          }
+        }
+      },
+      {
+        "+@id": "V-C1238297",
+        "title": "5 Auditing and Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C1238297r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1",
+          "title": "Ensure 'Maximum number of error log files' is set to greater than or equal to '12'",
+          "description": "<VulnDiscussion>SQL Server error log files must be protected from loss. The log files must be backed up before they are overwritten. Retaining more error logs helps prevent loss from frequent recycling before backups can occur.\n\nRationale:\nThe SQL Server error log contains important information about major server events and login attempt information as well.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "5.1"
+          },
+          "fixtext": {
+            "+content": "Adjust the number of logs to prevent data loss. The default value of 6 may be insufficient for a production environment. Perform either the GUI or T-SQL method shown:\nGUI Method 1. Open SQL Server Management Studio.\n2. Open Object Explorer and connect to the target instance.\n3. Navigate to the Management tab in Object Explorer and expand. Right click on the SQL Server Logs file and select Configure 4. Check the Limit the number of error log files before they are recycled 5. Set the Maximum number of error log files to greater than or equal to 12 T-SQL Method Run the following T-SQL to change the number of error log files, replace <NumberGreaterThan11> with your desired number of error log files:\nEXEC master.sys.xp_instance_regwrite\nN'HKEY_LOCAL_MACHINE',\nN'Software\\Microsoft\\MSSQLServer\\MSSQLServer',\nN'NumErrorLogs',\nREG_DWORD,\n<NumberGreaterThan11>;",
+            "+@fixref": "F-C1238297r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C1238297r01_fix"
+          },
+          "check": {
+            "+@system": "C-C1238297_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform either the GUI or T-SQL method shown:\nGUI Method 1. Open SQL Server Management Studio.\n2. Open Object Explorer and connect to the target instance.\n3. Navigate to the Management tab in Object Explorer and expand. Right click on the SQL Server Logs file and select Configure.\n4. Verify the Limit the number of error log files before they are recycled checkbox is checked 5. Verify the Maximum number of error log files is greater than or equal to 12, if a limit is configured.\nT-SQL Method Run the following T-SQL. The NumberOfLogFiles returned should be greater than or equal to 12, or equal to -1 if no limit is configured.\nDECLARE @NumErrorLogs int;\nEXEC master.sys.xp_instance_regread\nN'HKEY_LOCAL_MACHINE',\nN'Software\\Microsoft\\MSSQLServer\\MSSQLServer',\nN'NumErrorLogs',\n@NumErrorLogs OUTPUT;\nSELECT ISNULL(@NumErrorLogs, -1) AS [NumberOfLogFiles];"
+          }
+        }
+      },
+      {
+        "+@id": "V-84FE9787",
+        "title": "5 Auditing and Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-84FE9787r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2",
+          "title": "Ensure 'Default Trace Enabled' Server Configuration Option is set to '1'",
+          "description": "<VulnDiscussion>The default trace provides audit logging of database activity including account creations, privilege elevation and execution of DBCC commands.\n\nRationale:\nDefault trace provides valuable audit information regarding security-related activities on the server.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "5.2"
+          },
+          "fixtext": {
+            "+content": "Run the following T-SQL command:\nEXECUTE sp_configure 'show advanced options', 1;\nRECONFIGURE;\nEXECUTE sp_configure 'default trace enabled', 1;\nRECONFIGURE;\nGO\nEXECUTE sp_configure 'show advanced options', 0;\nRECONFIGURE;",
+            "+@fixref": "F-84FE9787r01_fix"
+          },
+          "fix": {
+            "+@id": "F-84FE9787r01_fix"
+          },
+          "check": {
+            "+@system": "C-84FE9787_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL command:\nSELECT name,\nCAST(value as int) as value_configured,\nCAST(value_in_use as int) as value_in_use\nFROM sys.configurations\nWHERE name = 'default trace enabled';\nBoth value columns must show 1 to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-3383086B",
+        "title": "5 Auditing and Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3383086Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.3",
+          "title": "Ensure 'Login Auditing' is set to 'failed logins'",
+          "description": "<VulnDiscussion>This setting will record failed authentication attempts for SQL Server logins to the SQL Server Errorlog. This is the default setting for SQL Server.\nHistorically, this setting has been available in all versions and editions of SQL Server.\nPrior to the availability of SQL Server Audit, this was the only provided mechanism for capturing logins (successful or failed).\n\nRationale:\nCapturing failed logins provides key information that can be used to detect\\confirm password guessing attacks. Capturing successful login attempts can be used to confirm server access during forensic investigations, but using this audit level setting to also capture successful logins creates excessive noise in the SQL Server Errorlog which can hamper a DBA trying to troubleshoot problems. Elsewhere in this benchmark, we recommend using the newer lightweight SQL Server Audit feature to capture both successful and failed logins.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "5.3"
+          },
+          "fixtext": {
+            "+content": "Perform either the GUI or T-SQL method shown:\nGUI Method 1. Open SQL Server Management Studio.\n2. Right click the target instance and select Properties and navigate to the Security tab.\n3. Select the option Failed logins only under the Login Auditing section and click OK.\n4. Restart the SQL Server instance.\nT-SQL Method 1. Run:\nEXEC xp_instance_regwrite N'HKEY_LOCAL_MACHINE',\nN'Software\\Microsoft\\MSSQLServer\\MSSQLServer', N'AuditLevel',\nREG_DWORD, 2\n2. Restart the SQL Server instance.",
+            "+@fixref": "F-3383086Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-3383086Br01_fix"
+          },
+          "check": {
+            "+@system": "C-3383086B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "EXEC xp_loginconfig 'audit level';\nA config_value of failure indicates a server login auditing setting of Failed logins only. If a config_value of all appears, then both failed and successful logins are being logged. Both settings should also be considered valid, but as mentioned capturing successful logins using this method creates lots of noise in the SQL Server Errorlog."
+          }
+        }
+      },
+      {
+        "+@id": "V-65A6F428",
+        "title": "5 Auditing and Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-65A6F428r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.4",
+          "title": "Ensure 'SQL Server Audit' is set to capture both 'failed' and 'successful logins'",
+          "description": "<VulnDiscussion>SQL Server Audit is capable of capturing both failed and successful logins and writing them to one of three places: the application event log, the security event log, or the file system. We will use it to capture any login attempt to SQL Server, as well as any attempts to change audit policy, changes in privileged role memberships and changes to server settings. This will also serve to be a second source to record failed login attempts.\n\nRationale:\nBy utilizing Audit instead of the traditional setting under the Security tab to capture successful logins, we reduce the noise in the ERRORLOG. This keeps it smaller and easier to read for DBAs who are attempting to troubleshoot issues with the SQL Server.\nAlso, the Audit object can write to the security event log, though this requires operating system configuration. This gives an additional option for where to store login events, especially in conjunction with an SIEM.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "5.4"
+          },
+          "fixtext": {
+            "+content": "For AWS RDS Instances, please refer to the documentation for configuring SQL Server Audit here: SQL Server Audit Perform either the GUI or T-SQL method shown:\nGUI Method 1. Expand the SQL Server in Object Explorer.\n2. Expand the Security Folder 3. Right-click on the Audits folder and choose New Audit...\n4. Specify a name for the Server Audit.\n5. Specify the audit destination details and then click OK to save the Server Audit.\n6. Right-click on Server Audit Specifications and choose New Server Audit Specification...\n7. Name the Server Audit Specification 8. Select the just created Server Audit in the Audit drop-down selection.\n9. Click the drop-down under Audit Action Type and select AUDIT_CHANGE_GROUP.\n10.Click the new drop-down Audit Action Type and select FAILED_LOGIN_GROUP.\n11.Click the new drop-down under Audit Action Type and select SUCCESSFUL_LOGIN_GROUP.\n12.Click the new drop-down under Audit Action Type and select DATABASE_ROLE_MEMBER_CHANGE_GROUP.\n13.Click the new drop-down under Audit Action Type and select SERVER_ROLE_MEMBER_CHANGE_GROUP.\n14.Click the new drop-down under Audit Action Type and select SERVER_OPERATION_GROUP.\n15.Click the new drop-down under Audit Action Type and select SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP.\n16.Click the new drop-down under Audit Action Type and select FAILED_DATABASE_AUTHENTICATION_GROUP.\n17.Click OK to save the Server Audit Specification.\n18.Right-click on the new Server Audit Specification and select Enable Server Audit Specification.\n19.Right-click on the new Server Audit and select Enable Server Audit.\nT-SQL Method Execute code similar to:\nUSE [master]\nGO\nCREATE SERVER AUDIT TrackLogins\nTO APPLICATION_LOG;\nGO\nCREATE SERVER AUDIT SPECIFICATION TrackAllLogins\nFOR SERVER AUDIT TrackLogins\nADD (FAILED_LOGIN_GROUP),\nADD (SUCCESSFUL_LOGIN_GROUP),\nADD (AUDIT_CHANGE_GROUP),\nADD (DATABASE_ROLE_MEMBER_CHANGE_GROUP),\nADD (SERVER_ROLE_MEMBER_CHANGE_GROUP),\nADD (SERVER_OPERATION_GROUP),\nADD (SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP),\nADD (FAILED_DATABASE_AUTHENTICATION_GROUP)\nWITH (STATE = ON);\nGO\nALTER SERVER AUDIT TrackLogins\nWITH (STATE = ON);\nGO\nNote: If the write destination for the Audit object is to be the security event log, see the Books Online topic Write SQL Server Audit Events to the Security Log and follow the appropriate steps.",
+            "+@fixref": "F-65A6F428r01_fix"
+          },
+          "fix": {
+            "+@id": "F-65A6F428r01_fix"
+          },
+          "check": {
+            "+@system": "C-65A6F428_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "For AWS RDS Instances, if RDS has not been configured to write to an S3 bucket, this is a fail.\nRun the following T-SQL command:\nSELECT\nS.name AS 'Audit Name'\n, CASE S.is_state_enabled\nWHEN 1 THEN 'Y'\nWHEN 0 THEN 'N' END AS 'Audit Enabled'\n, S.type_desc AS 'Write Location'\n, SA.name AS 'Audit Specification Name'\n, CASE SA.is_state_enabled\nWHEN 1 THEN 'Y'\nWHEN 0 THEN 'N' END AS 'Audit Specification Enabled'\n, SAD.audit_action_name\n, SAD.audited_result\nFROM sys.server_audit_specification_details AS SAD\nJOIN sys.server_audit_specifications AS SA\nON SAD.server_specification_id = SA.server_specification_id\nJOIN sys.server_audits AS S\nON SA.audit_guid = S.audit_guid\nWHERE SAD.audit_action_id IN ('CNAU', 'LGFL', 'LGSD', 'ADDP', 'ADSP', 'OPSV')\nor (SAD.audit_action_id IN ('DAGS', 'DAGF') and (select count(*) from\nsys.databases where containment=1) > 0);\nThe result set should contain the following rows, one for each of the following audit_action_names:\n• AUDIT_CHANGE_GROUP\n• FAILED_LOGIN_GROUP\n• SUCCESSFUL_LOGIN_GROUP\n• DATABASE_ROLE_MEMBER_CHANGE_GROUP\n• SERVER_ROLE_MEMBER_CHANGE_GROUP\n• SERVER_OPERATION_GROUP The result set should also contain these 2 rows if there are contained databases\n• SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP\n• FAILED_DATABASE_AUTHENTICATION_GROUP Both the Audit and Audit specification should be enabled and the audited_result should include both success and failure."
+          }
+        }
+      },
+      {
+        "+@id": "V-AA28DF67",
+        "title": "6 Application Development",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AA28DF67r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.1",
+          "title": "Ensure Database and Application User Input is Sanitized",
+          "description": "<VulnDiscussion>Always validate user input received from a database client or application by testing type, length, format, and range prior to transmitting it to the database server.\n\nRationale:\nSanitizing user input drastically minimizes risk of SQL injection.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "6.1"
+          },
+          "fixtext": {
+            "+content": "The following steps can be taken to remediate SQL injection vulnerabilities:\n• Review TSQL and application code for SQL Injection\n• Only permit minimally privileged accounts to send user input to the server\n• Minimize the risk of SQL injection attack by using parameterized commands and stored procedures\n• Reject user input containing binary data, escape sequences, and comment characters\n• Always validate user input and do not use it directly to build SQL statements",
+            "+@fixref": "F-AA28DF67r01_fix"
+          },
+          "fix": {
+            "+@id": "F-AA28DF67r01_fix"
+          },
+          "check": {
+            "+@system": "C-AA28DF67_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check with the application teams to ensure any database interaction is through the use of stored procedures and not dynamic SQL. Revoke any INSERT, UPDATE, or DELETE privileges to users so that modifications to data must be done through stored procedures. Verify that there's no SQL query in the application code produced by string concatenation."
+          }
+        }
+      },
+      {
+        "+@id": "V-12C64EDB",
+        "title": "6 Application Development",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-12C64EDBr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.2",
+          "title": "Ensure 'CLR Assembly Permission Set' is set to 'SAFE_ACCESS' for All CLR Assemblies",
+          "description": "<VulnDiscussion>Setting CLR Assembly Permission Sets to SAFE_ACCESS will hinder assemblies from accessing external system resources such as files, the network, environment variables, or the registry.\n\nRationale:\nAssemblies with EXTERNAL_ACCESS or UNSAFE permission sets can be used to access sensitive areas of the operating system, steal and/or transmit data and alter the state and other protection measures of the underlying Windows Operating System.\nAssemblies which are part of core SQL Server Engine ( is_user_defined = 0) are excluded from this check as they are required for overall system functionality.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "6.2"
+          },
+          "fixtext": {
+            "+content": "USE <database_name>;\nGO\nALTER ASSEMBLY <assembly_name> WITH PERMISSION_SET = SAFE;",
+            "+@fixref": "F-12C64EDBr01_fix"
+          },
+          "fix": {
+            "+@id": "F-12C64EDBr01_fix"
+          },
+          "check": {
+            "+@system": "C-12C64EDB_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following SQL statement:\nUSE <database_name>;\nGO\nSELECT name,\npermission_set_desc\nFROM sys.assemblies\nWHERE is_user_defined = 1\nAND permission_set > 1;\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-C2B09436",
+        "title": "7 Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C2B09436r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "7.1",
+          "title": "Ensure 'Symmetric Key encryption algorithm' is set to 'AES_128' or higher in non-system databases",
+          "description": "<VulnDiscussion>Per the Microsoft Best Practices, only the SQL Server AES algorithm options, AES_128, AES_192, and AES_256, should be used for a symmetric key encryption algorithm.\n\nRationale:\nThe following algorithms (as referred to by SQL Server) are considered weak or deprecated and should no longer be used in SQL Server: DES, DESX, RC2, RC4, RC4_128.\nMany organizations may accept the Triple DES algorithms ( TDEA) which use keying options 1 (3 key aka 3TDEA) or keying option 2 (2 key aka 2TDEA). In SQL Server, these are referred to as TRIPLE_DES_3KEY and TRIPLE_DES respectively. Additionally, the SQL Server algorithm named DESX is actually the same implementation as the TRIPLE_DES_3KEY option. However, using the DESX identifier as the algorithm type has been deprecated and its usage is now discouraged.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "7.1"
+          },
+          "fixtext": {
+            "+content": "Refer to Microsoft SQL Server Books Online ALTER SYMMETRIC KEY entry:\nhttps://docs.microsoft.com/en-us/sql/t-sql/statements/alter-symmetric-key-transact-sql",
+            "+@fixref": "F-C2B09436r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C2B09436r01_fix"
+          },
+          "check": {
+            "+@system": "C-C2B09436_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following code for each individual user database:\nUSE <database_name>\nGO\nSELECT db_name() AS Database_Name, name AS Key_Name\nFROM sys.symmetric_keys\nWHERE algorithm_desc NOT IN ('AES_128','AES_192','AES_256')\nAND db_id() > 4;\nGO\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-71361FC4",
+        "title": "7 Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-71361FC4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "7.2",
+          "title": "Ensure Asymmetric Key Size is set to 'greater than or equal to 2048' in non-system databases",
+          "description": "<VulnDiscussion>Microsoft Best Practices recommend to use at least a 2048-bit encryption algorithm for asymmetric keys.\n\nRationale:\nThe RSA_2048 encryption algorithm for asymmetric keys in SQL Server is the highest bit-level provided and therefore the most secure available choice (other choices are RSA_512 and RSA_1024).</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "7.2"
+          },
+          "fixtext": {
+            "+content": "Refer to Microsoft SQL Server Books Online ALTER ASYMMETRIC KEY entry:\nhttps://docs.microsoft.com/en-us/sql/t-sql/statements/alter-asymmetric-key-transact-sql",
+            "+@fixref": "F-71361FC4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-71361FC4r01_fix"
+          },
+          "check": {
+            "+@system": "C-71361FC4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following code for each individual user database:\nUSE <database_name>\nGO\nSELECT db_name() AS Database_Name, name AS Key_Name\nFROM sys.asymmetric_keys\nWHERE key_length < 2048\nAND db_id() > 4;\nGO\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-E3436ED3",
+        "title": "7 Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E3436ED3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "7.3",
+          "title": "Ensure Database Backups are Encrypted",
+          "description": "<VulnDiscussion>Ensure Database Backups are Encrypted\n\nRationale:\nDatabases may contain sensitive data. Backups of this data allow the data to easily leave the Enterprise and secure environments. Encrypting the backup makes accessing the data much more difficult.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "7.3"
+          },
+          "fixtext": {
+            "+content": "SQL Server backups need to 'Back up to a new media set', not 'Back up to the existing media set' in order to allow for encryption. The backup option to Encrypt Backup can be implemented after a Certificate or Asymmetric key has been applied to the SQL Server for this purpose.\nAlternatively, encrypt the database with TDE. This automatically encrypts the backups as well. See 7.5",
+            "+@fixref": "F-E3436ED3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E3436ED3r01_fix"
+          },
+          "check": {
+            "+@system": "C-E3436ED3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "SELECT\nb.key_algorithm, b.encryptor_type, d.is_encrypted,\nb.database_name,\nb.server_name,\nb.backup_finish_date\nFROM msdb.dbo.backupset b\ninner join sys.databases d on b.database_name = d.name\nwhere b.key_algorithm IS NULL AND b.encryptor_type IS NULL AND d.is_encrypted\n= 0;\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-68D477D3",
+        "title": "7 Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-68D477D3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "7.4",
+          "title": "Ensure Network Encryption is Configured and Enabled",
+          "description": "<VulnDiscussion>Configuring and enabling network encryption ensures traffic between the application and the database system is encrypted. This will ensure compliance to security standards such as PCI DSS, which is required if connections are through a public network.\nNetwork encryption can be configured in SQL Server either with self-signed certificates or TLS certificates.\n\nRationale:\nNetwork encryption will ensure data transmitted over the network is protected, so attackers can’t ex -filtrate passwords, and confidential data. This protects against man in the middle attack, and network sniffing attacks to ex-filtrate data transmitted between the database system and applications.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "7.4"
+          },
+          "fixtext": {
+            "+content": "Refer to Microsoft SQL Server Encryption Documentation:\nhttps://learn.microsoft.com/en-us/sql/relational-databases/security/encryption/sql-server- encryption",
+            "+@fixref": "F-68D477D3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-68D477D3r01_fix"
+          },
+          "check": {
+            "+@system": "C-68D477D3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following T-SQL code against the Master database:\nSELECT DISTINCT encrypt_option\nFROM sys.dm_exec_connections c\nWHERE net_transport <> 'Shared memory'\nAND c.endpoint_id NOT IN (\nSELECT endpoint_id\nFROM sys.database_mirroring_endpoints\nWHERE encryption_algorithm IS NOT NULL\n);\nA response of TRUE implies a pass and therefore compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-6E8CB009",
+        "title": "7 Encryption",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6E8CB009r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "7.5",
+          "title": "Ensure Databases are Encrypted with TDE",
+          "description": "<VulnDiscussion>Ensure user databases are encrypted using Transparent Data Encryption (TDE).\nBackups of databases encrypted with TDE are automatically encrypted as well.\n\nRationale:\nA malicious party who steals physical media like drives or backup tapes can restore or attach the database and browse its data.\nOne solution is to encrypt sensitive data in a database and use a certificate to protect the keys that encrypt the data. This solution prevents anyone without the keys from using the data.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "7.5"
+          },
+          "fixtext": {
+            "+content": "Implement TDE encryption on each user database with sensitive data.\nMore info on how to do this is available here: https://learn.microsoft.com/en- us/sql/relational-databases/security/encryption/transparent-data-encryption",
+            "+@fixref": "F-6E8CB009r01_fix"
+          },
+          "fix": {
+            "+@id": "F-6E8CB009r01_fix"
+          },
+          "check": {
+            "+@system": "C-6E8CB009_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "select database_id, name, is_encrypted from sys.databases\nwhere database_id > 4 and is_encrypted != 1\nNo rows should be returned to be compliant."
+          }
+        }
+      },
+      {
+        "+@id": "V-B8F4A4B7",
+        "title": "8 Appendix: Additional Considerations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B8F4A4B7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "8.1",
+          "title": "Ensure 'SQL Server Browser Service' is configured correctly",
+          "description": "<VulnDiscussion>No recommendation is being given on disabling the SQL Server Browser service.\n\nRationale:\nIn the case of a default instance installation, the SQL Server Browser service is disabled by default. Unless there is a named instance on the same server, there is typically no reason for the SQL Server Browser service to be running. In this case it is strongly suggested that the SQL Server Browser service remain disabled.\nWhen it comes to named instances, given that a security scan can fingerprint a SQL Server listening on any port, it's therefore of limited benefit to disable the SQL Server Browser service.\nHowever, if all connections against the named instance are via applications and are not visible to end users, then configuring the named instance to listening on a static port, disabling the SQL Server Browser service, and configuring the apps to connect to the specified port should be the direction taken. This follows the general practice of reducing the surface area, especially for an unneeded feature.\nOn the other hand, if end users are directly connecting to databases on the instance, then typically having them use ServerName\\InstanceName is best. This requires the SQL Server Browser service to be running. Disabling the SQL Server Browser service would mean the end users would have to remember port numbers for the instances.\nWhen they don't that will generate service calls to IT staff. Given the limited benefit of disabling the service, the trade-off is probably not worth it, meaning it makes more business sense to leave the SQL Server Browser service enabled.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft SQL Server 2022 Benchmark",
+            "dc:identifier": "8.1"
+          },
+          "fixtext": {
+            "+content": "Enable or disable the service as needed for your environment.",
+            "+@fixref": "F-B8F4A4B7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B8F4A4B7r01_fix"
+          },
+          "check": {
+            "+@system": "C-B8F4A4B7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_SQL_Server_2022_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Check the SQL Browser service's status via services.msc or similar methods."
+          }
+        }
+      }
+    ]
+  }
+}

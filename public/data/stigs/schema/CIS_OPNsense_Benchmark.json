@@ -1,0 +1,1428 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_OPNsense_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2026-03-26"
+    },
+    "title": "CIS OPNsense Benchmark",
+    "description": "All CIS Benchmarks ™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks ™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completed successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks ™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks ™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Target Technology Details This document provides prescriptive guidance for establishing a secure configuration posture for OPNsense. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.0.0 Benchmark Date: 2026-03-26",
+      "+@id": "release-info"
+    },
+    "version": "1.0.0",
+    "Profile": [
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Public",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-4AB5883B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-81A6E502",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8D409B45",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-953D7FFA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9A8671F4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6C72C951",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-91327D5F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D95D3DF7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2482DB82",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5A7BA248",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7459988D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-69858303",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8C03ACD4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-998213F1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3209F3A1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6873F106",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-782016B0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D18029BC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-07358315",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF0289E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F07FA239",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E3330165",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-213654A0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF77BF04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A2D4B36C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E80363A1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-66B99821",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-64B4EEA4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0CF86AFF",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Classified",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-4AB5883B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-81A6E502",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8D409B45",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-953D7FFA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9A8671F4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6C72C951",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-91327D5F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D95D3DF7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2482DB82",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5A7BA248",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7459988D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-69858303",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8C03ACD4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-998213F1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3209F3A1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6873F106",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-782016B0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D18029BC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-07358315",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF0289E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F07FA239",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E3330165",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-213654A0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF77BF04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A2D4B36C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E80363A1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-66B99821",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-64B4EEA4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0CF86AFF",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Sensitive",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-4AB5883B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-81A6E502",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8D409B45",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-953D7FFA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9A8671F4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6C72C951",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-91327D5F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D95D3DF7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2482DB82",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5A7BA248",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7459988D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-69858303",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8C03ACD4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-998213F1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3209F3A1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6873F106",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-782016B0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D18029BC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-07358315",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF0289E5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F07FA239",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E3330165",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-213654A0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF77BF04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A2D4B36C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E80363A1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-66B99821",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-64B4EEA4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0CF86AFF",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-4AB5883B",
+        "title": "1 General Setting Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4AB5883Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1",
+          "title": "Ensure SSH warning banner is configured",
+          "description": "<VulnDiscussion>Before authentication is allowed, a file containing its contents must be provided to the remote user, as specified by the Banner argument.\n\nRationale:\nBanners are used to inform users who are connected of the specific site's connection rules. The prosecution of computer system intruders may be aided by the display of a warning message prior to the normal user login.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "1.1"
+          },
+          "fixtext": {
+            "+content": "In the CLI:\n1. Create a banner file in the /etc/ssh/ directory via the following command\nvi /etc/ssh/my_banner\n2. To ensure your banner remains, you should utilize OPNsense's Targeted Overlays system by creating a file in the following directory:\nvi /usr/local/etc/ssh/sshd_config.d/99-custom.conf\n3. Then insert the following text in the 99-custom.conf file to reference your ssh banner file:\nBanner /etc/ssh/my_banner\nSave and exit the file 4. Restart OPNsense via the gui.",
+            "+@fixref": "F-4AB5883Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-4AB5883Br01_fix"
+          },
+          "check": {
+            "+@system": "C-4AB5883B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the CLI:\n1. Run the following command and verify that output should contain 'Banner' parameter:\ncat /etc/ssh/my_banner\nEnsure a file exists in the /etc/ssh/ directory and that it contains the information you want in your ssh banner.\n2. Run the following command and verify that a file exists, and that it references the above referenced \"my_banner\" file via a line such as:\nBanner /etc/ssh/my_banner"
+          }
+        }
+      },
+      {
+        "+@id": "V-81A6E502",
+        "title": "1 General Setting Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-81A6E502r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2",
+          "title": "Ensure Backup count is set to 5 or more.",
+          "description": "<VulnDiscussion>OPNsense is able to store a user defined number of backups in a local cache.\n\nRationale:\nAn after-the-fact backup is taken after evaluating the change and ensuring it had the intended outcome. Periodic backups are also helpful, regardless of changes, especially in cases where a manual backup may be missed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "1.2"
+          },
+          "fixtext": {
+            "+content": "In the GUI.\n- Navigate to System -> Configuration -> Backups\n- Set the \"Backup Count\" to 5 or more.\n- Click \"Save\"",
+            "+@fixref": "F-81A6E502r01_fix"
+          },
+          "fix": {
+            "+@id": "F-81A6E502r01_fix"
+          },
+          "check": {
+            "+@system": "C-81A6E502_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the GUI.\n- Navigate to System -> Configuration -> Backups\nConfirm \"Backup Count\" is set to 5 or more."
+          }
+        }
+      },
+      {
+        "+@id": "V-8D409B45",
+        "title": "1 General Setting Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8D409B45r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3",
+          "title": "Ensure 'Message Of The Day (MOTD)' is set",
+          "description": "<VulnDiscussion>Sets the MOTD message.\n\nRationale:\nNetwork banners are electronic messages that provide notice of legal rights to users of computer networks. From a legal standpoint, banners have four primary functions.\n• First, banners may be used to generate consent to real-time monitoring under Title III.\n• Second, banners may be used to generate consent to the retrieval of stored files and records pursuant to ECPA.\n• Third, in the case of government networks, banners may eliminate any Fourth Amendment \"reasonable expectation of privacy\" that government employees or other users might otherwise retain in their use of the government's network under O'Connor v.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "1.3"
+          },
+          "fixtext": {
+            "+content": "In the OPNsense Shell use vi to edit the message of the day:\nvi /var/run/motd",
+            "+@fixref": "F-8D409B45r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8D409B45r01_fix"
+          },
+          "check": {
+            "+@system": "C-8D409B45_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the OPNsense Shell type:\ncat /var/run/motd"
+          }
+        }
+      },
+      {
+        "+@id": "V-953D7FFA",
+        "title": "1 General Setting Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-953D7FFAr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4",
+          "title": "Ensure Hostname is set",
+          "description": "<VulnDiscussion>Changes the device default hostname.\n\nRationale:\nThe device hostname is crucial for asset inventory and identification as a security need, as well as for the deployment of public keys and certificates and for comparing logs from various systems while handling an issue.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "1.4"
+          },
+          "fixtext": {
+            "+content": "In the GUI:\n- Navigate to System > Settings -> General\n- Update the field 'Hostname' with the new hostname, and click \"Save\"",
+            "+@fixref": "F-953D7FFAr01_fix"
+          },
+          "fix": {
+            "+@id": "F-953D7FFAr01_fix"
+          },
+          "check": {
+            "+@system": "C-953D7FFA_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the CLI:\nhostname\nIn the GUI:\n- Navigate to System -> Settings -> General\n- Check the Hostname Field"
+          }
+        }
+      },
+      {
+        "+@id": "V-9A8671F4",
+        "title": "1 General Setting Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9A8671F4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5",
+          "title": "Ensure DNS server is configured",
+          "description": "<VulnDiscussion>You must specify the main DNS server for your system in order to enable DNS lookups.\nAdditionally, supplementary and third-party DNS servers can be specified. The system uses the main name server to resolve host names. The system examines the secondary name server, and if required, the tertiary, if a failure or time-out occurs.\n\nRationale:\nThe purpose is to perform the resolution of system hostnames to Internet Protocol (IP) addresses.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "1.5"
+          },
+          "fixtext": {
+            "+content": "In the GUI:\n- Navigate to System -> Settings -> General\n- Update the field 'DNS Servers' with the Your DNS Server, and click \"Save\"",
+            "+@fixref": "F-9A8671F4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-9A8671F4r01_fix"
+          },
+          "check": {
+            "+@system": "C-9A8671F4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the GUI:\n- Navigate to System -> Settings -> General\n- Check the 'DNS Server' Fields in the 'DNS Server' table under the\n'Networking' section"
+          }
+        }
+      },
+      {
+        "+@id": "V-6C72C951",
+        "title": "1 General Setting Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6C72C951r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.6",
+          "title": "Ensure IPv6 is disabled if not used",
+          "description": "<VulnDiscussion>Although IPv6 has many advantages over IPv4, not all organizations have IPv6 or dual stack configurations implemented.\n\nRationale:\nIf IPv6 or dual stack is not to be used, it is recommended that IPv6 be disabled to reduce the attack surface of the system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "1.6"
+          },
+          "fixtext": {
+            "+content": "In the GUI:\nNavigate to Interfaces -> Settings\nUncheck 'Allow IPv6'",
+            "+@fixref": "F-6C72C951r01_fix"
+          },
+          "fix": {
+            "+@id": "F-6C72C951r01_fix"
+          },
+          "check": {
+            "+@system": "C-6C72C951_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the GUI:\nNavigate to Interfaces -> Settings\nVerify that 'Allow IPv6' is unchecked."
+          }
+        }
+      },
+      {
+        "+@id": "V-91327D5F",
+        "title": "1 General Setting Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-91327D5Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.7",
+          "title": "Ensure 'Disable DNS Rebinding Checks' is unchecked",
+          "description": "<VulnDiscussion>Ensure that the 'Disable DNS Rebinding Checks' is unchecked to protect against DNS rebinding attacks.\n\nRationale:\nAttackers can use DNS rebinding to exploit a DNS server's response to a domain name query that resolves to a private IP address. This could provide a hacker access to private network resources that shouldn't be made available to the general public. To defend against this kind of attack, OPNsense's \"DNS Rebind Check\" function disables private IP responses from DNS servers. As advised in the CIS benchmark, disabling this feature would expose the system to DNS rebinding attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "1.7"
+          },
+          "fixtext": {
+            "+content": "In the GUI\n- Navigate to System -> Settings -> Administration\n- uncheck the 'Disable DNS Rebinding Checks' Field\n- Click save",
+            "+@fixref": "F-91327D5Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-91327D5Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-91327D5F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the GUI\n- Navigate to System -> Settings -> Administration\n- Verify that the 'Disable DNS Rebinding Checks' Field is unchecked"
+          }
+        }
+      },
+      {
+        "+@id": "V-D95D3DF7",
+        "title": "1 General Setting Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D95D3DF7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.8",
+          "title": "Ensure Web Management is Set to use HTTPS",
+          "description": "<VulnDiscussion>Web Admin Management Portal should only be accessed using HTTPS Protocol.\n\nRationale:\nHTTP transmits all data (including passwords) in clear text over the network and provides no assurance of the identity of the hosts involved. Because of this HTTP should never be used for sensitive tasks such as managing network devices or entering login credentials and HTTPS should be configured for Web Portal Management instead</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "1.8"
+          },
+          "fixtext": {
+            "+content": "In the GUI:\n- Navigate to System -> Settings -> Administration\n- Select the 'Enable HTTP Strict Transport Security' option\n- Click 'Save'",
+            "+@fixref": "F-D95D3DF7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D95D3DF7r01_fix"
+          },
+          "check": {
+            "+@system": "C-D95D3DF7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the GUI:\n- Navigate to System -> Settings -> Administration\n- Verify the 'Enable HTTP Strict Transport Security' option is enabled"
+          }
+        }
+      },
+      {
+        "+@id": "V-2482DB82",
+        "title": "2 Users Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2482DB82r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1",
+          "title": "Ensure Sessions Timeout is set to less than or equal to 10 Minutes",
+          "description": "<VulnDiscussion>The session inactivity timeout setting represents the amount of time a user can be inactive before the user's session times out and closes. It only affects user browser sessions.\n\nRationale:\nIndefinite or even long session timeout window increase the risk of attackers abusing abandoned sessions</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "2.1"
+          },
+          "fixtext": {
+            "+content": "In GUI:\n- Navigate to System > Settings > Administration\n- Scroll to the 'Session Timeout'\n- Set 10 in the 'Session Timeout' field\n- Click Save",
+            "+@fixref": "F-2482DB82r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2482DB82r01_fix"
+          },
+          "check": {
+            "+@system": "C-2482DB82_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In GUI:\n- Navigate to System > Settings > Administration\n- Scroll to the 'Session Timeout'\n- Check on the 'Session Timeout' field."
+          }
+        }
+      },
+      {
+        "+@id": "V-5A7BA248",
+        "title": "2 Users Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5A7BA248r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2",
+          "title": "Ensure LDAP or RADIUS server configured",
+          "description": "<VulnDiscussion>Configured the LDAP Servers or Radius server for central authentication.\n\nRationale:\nAuthentication, authorization and accounting (AAA) scheme provide an authoritative source for managing and monitoring access for devices.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "2.2"
+          },
+          "fixtext": {
+            "+content": "In the GUI:\n- Navigate to System > Access > Servers\n- Click the Orange Plus sign in the top right\n- Enter the details needed for your LDAP server\n- Click 'Save' at the bottom",
+            "+@fixref": "F-5A7BA248r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5A7BA248r01_fix"
+          },
+          "check": {
+            "+@system": "C-5A7BA248_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the GUI:\n- Navigate to System > Access > Servers\n- See if an LDAP or RADIUS server have been configured"
+          }
+        }
+      },
+      {
+        "+@id": "V-7459988D",
+        "title": "2 Users Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7459988Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.3",
+          "title": "Ensure Console Menu is Password Protected",
+          "description": "<VulnDiscussion>Set the Console Menu to password protected.\n\nRationale:\nAn unattended computer with an open Console Menu session to the device could allow an unauthorized user access to the firewall’s management.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "2.3"
+          },
+          "fixtext": {
+            "+content": "In the GUI:\n- Navigate to System > Settings > Administration\n- Scroll to the 'Console' Section\n- Ensure 'Password protect the console menu' is checked\n- Click 'Save'",
+            "+@fixref": "F-7459988Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-7459988Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-7459988D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the GUI:\n- Navigate to System > Settings > Administration\n- Check \"Console menu\" Setting"
+          }
+        }
+      },
+      {
+        "+@id": "V-69858303",
+        "title": "2 Users Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-69858303r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4",
+          "title": "Ensure all default accounts are either disabled or utilize strong passwords",
+          "description": "<VulnDiscussion>Disable the known default accounts configured. Note: The default admin account must remain enabled for high availability synchronization to work. Disabling it could cause issues.\n\nRationale:\nDefault accounts are accounts with predefined usernames and passwords that are typically included with software and hardware devices. Attackers often target default accounts because they are widely known and can be used to gain unauthorized access to a system. To prevent unauthorized access, all default accounts should either be disabled or have their passwords changed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "2.4"
+          },
+          "fixtext": {
+            "+content": "In GUI:\n- Navigate to System > Access > Users\n- Remove any default users that are not used.\nNote: The default admin account must remain enabled for high availability synchronization to work. Disabling it could cause issues.",
+            "+@fixref": "F-69858303r01_fix"
+          },
+          "fix": {
+            "+@id": "F-69858303r01_fix"
+          },
+          "check": {
+            "+@system": "C-69858303_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In GUI:\n- Navigate to System > Access > Users\n- View the default users"
+          }
+        }
+      },
+      {
+        "+@id": "V-8C03ACD4",
+        "title": "3 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8C03ACD4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1",
+          "title": "Ensure 'Local Account status' is set to 'Disabled'",
+          "description": "<VulnDiscussion>Disable the 'Local User' account except for the admin user.\n\nRationale:\nLocal accounts pose a threat to system security since the users are not manageable from the LDAP server.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "3.1"
+          },
+          "fixtext": {
+            "+content": "Disabled Local User Account.",
+            "+@fixref": "F-8C03ACD4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8C03ACD4r01_fix"
+          },
+          "check": {
+            "+@system": "C-8C03ACD4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Need to manually check each account."
+          }
+        }
+      },
+      {
+        "+@id": "V-998213F1",
+        "title": "3 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-998213F1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.2",
+          "title": "Ensure Login Protection methods are enabled.",
+          "description": "<VulnDiscussion>OPNsense strongly recommends enabling two-factor authentication (e.g., using TOTP) to protect user accounts, which is highly effective against password-based brute-force attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "3.2"
+          },
+          "fixtext": {
+            "+content": "- Navigate to System > Access > Servers\n- Click the Plus Sign to add a TOTP Server\n- Give the server a descriptive name\n- Select the TOTP Server Type\n- Select a Token Length of 6\n- Install Google Authenticator on your phone\n- Add a user from System > Access > Users\n- Enter a Username and Password and fill in the other fields just as you\nwould do for any other user. Then select the Generate new (160bit) secret\nunder OTP seed.\n- Click Save\n- For testing the user authentication, OPNsense offers a simple tester. Go to\nSystem ‣ Access ‣ Tester\n- Select the Authentication server you have configured, and enter the user\nname. Then enter the *token + password, remember the order is token and then\npassword in the same field.\n- Hit the test button and if all goes well you should see successfully\nauthenticated.\n- Per default the system validates user credentials against the “Local\nDatabase”. In System ‣ Settings ‣ Administration, section Authentication you\nshould change this to your newly added authentication server to make sure no\nlocal user can gain access without 2FA.",
+            "+@fixref": "F-998213F1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-998213F1r01_fix"
+          },
+          "check": {
+            "+@system": "C-998213F1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "- Navigate to System > Access > Servers\n- Check if there is a TOTP Server Configured"
+          }
+        }
+      },
+      {
+        "+@id": "V-3209F3A1",
+        "title": "3 Password Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3209F3A1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.3",
+          "title": "Ensure default password of admin is changed",
+          "description": "<VulnDiscussion>Ensure the default password is changed for the root user.\n\nRationale:\nUsing default passwords for the 'root' account could cause a compromise to the system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "3.3"
+          },
+          "fixtext": {
+            "+content": "In the GUI:\n- Navigate to System > Access > Users\n- Click the Pencil Icon under 'Commands'\n- Change the password of the default 'root' user account.\n- Click 'Save' at the bottom of the page.",
+            "+@fixref": "F-3209F3A1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-3209F3A1r01_fix"
+          },
+          "check": {
+            "+@system": "C-3209F3A1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Try to login to the GUI with: Username: root Password: opnsense"
+          }
+        }
+      },
+      {
+        "+@id": "V-6873F106",
+        "title": "4.1 Firewall Rules Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6873F106r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.1",
+          "title": "Ensure Default Deny is Enforced on All Internal Interfaces",
+          "description": "<VulnDiscussion>You must enforce a default deny policy on all internal interfaces (e.g., LAN, VLANs, DMZ, VPN).\n\nRationale:\nDefault deny prevents accidental exposure and limits lateral movement.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "4.1.1"
+          },
+          "fixtext": {
+            "+content": "- Navigate to Firewall → Rules\n- Verify each internal interface contains only explicit allow rules and no\nbroad “any/any” permits.\n- Confirm traffic not explicitly allowed is denied.\n- Remove broad allow rules.\n- Replace with explicit allow rules using aliases.",
+            "+@fixref": "F-6873F106r01_fix"
+          },
+          "fix": {
+            "+@id": "F-6873F106r01_fix"
+          },
+          "check": {
+            "+@system": "C-6873F106_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "- Navigate to Firewall → Rules\n- Verify each internal interface contains only explicit allow rules and no\nbroad “any/any” permits.\n- Confirm traffic not explicitly allowed is denied."
+          }
+        }
+      },
+      {
+        "+@id": "V-782016B0",
+        "title": "4.1 Firewall Rules Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-782016B0r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.2",
+          "title": "Ensure Least Privilege is Applied to All Permit Rules",
+          "description": "<VulnDiscussion>All allow rules must restrict traffic by:\n• Source\n• Destination\n• Protocol\n• Port/service\n\nRationale:\nOverly broad rules create hidden attack paths.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "4.1.2"
+          },
+          "fixtext": {
+            "+content": "1. Navigate to Firewall → Rules\n2. Identify allow rules with:\n- Source = any\n- Destination = any\n- Port = any\n3. Validate business justification exists.\n4. Replace broad rules with alias-driven scoped rules.",
+            "+@fixref": "F-782016B0r01_fix"
+          },
+          "fix": {
+            "+@id": "F-782016B0r01_fix"
+          },
+          "check": {
+            "+@system": "C-782016B0_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Navigate to Firewall → Rules\n2. Identify allow rules with:\n- Source = any\n- Destination = any\n- Port = any\n3. Validate business justification exists."
+          }
+        }
+      },
+      {
+        "+@id": "V-D18029BC",
+        "title": "4.1 Firewall Rules Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D18029BCr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.3",
+          "title": "Ensure “Any → Any” Rules are Prohibited",
+          "description": "<VulnDiscussion>You must not deploy any rule that permits “any source → any destination → any port.”\n\nRationale:\nThis defeats segmentation and enables unrestricted lateral movement.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "4.1.3"
+          },
+          "fixtext": {
+            "+content": "1. Navigate to Firewall → Rules → [All interfaces]\n2. Identify rules where:\n- Source = any\n- Destination = any\n- Destination port = any\n3. Remove the rule.\n- Replace with explicit rules using aliases.",
+            "+@fixref": "F-D18029BCr01_fix"
+          },
+          "fix": {
+            "+@id": "F-D18029BCr01_fix"
+          },
+          "check": {
+            "+@system": "C-D18029BC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Navigate to Firewall → Rules → [All interfaces]\n2. Identify rules where:\n- Source = any\n- Destination = any\n- Destination port = any"
+          }
+        }
+      },
+      {
+        "+@id": "V-07358315",
+        "title": "4.1 Firewall Rules Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-07358315r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.4",
+          "title": "Ensure Every Rule Has a Description Using a Standard Format",
+          "description": "<VulnDiscussion>Every firewall rule must include a description using the format: <ZONE> → <DEST> :\n<SERVICE> (Purpose)\n\nRationale:\nDescriptions are required for auditability and safe change control.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "4.1.4"
+          },
+          "fixtext": {
+            "+content": "1. Navigate to Firewall → Rules\n2. Verify no rule has an empty description field.\n3. Verify descriptions are meaningful and standardized.\n4. Update any rules that do not comply\n5. Save each rule",
+            "+@fixref": "F-07358315r01_fix"
+          },
+          "fix": {
+            "+@id": "F-07358315r01_fix"
+          },
+          "check": {
+            "+@system": "C-07358315_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Navigate to Firewall → Rules\n2. Verify no rule has an empty description field.\n3. Verify descriptions are meaningful and standardized."
+          }
+        }
+      },
+      {
+        "+@id": "V-EF0289E5",
+        "title": "4.1 Firewall Rules Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-EF0289E5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.5",
+          "title": "Ensure Aliases are Used for Hosts, Networks, and Port Groups",
+          "description": "<VulnDiscussion>You must use aliases for:\n• Any host referenced more than once\n• Any port group referenced more than once\n• All VLANs / security zones\n\nRationale:\nAliases reduce errors and simplify audits.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "4.1.5"
+          },
+          "fixtext": {
+            "+content": "1. Navigate to Firewall → Aliases\n2. Confirm:\n- Networks are defined as aliases\n- Common port groups exist (DNS, NTP, Web, AD, etc.)\n3. Confirm rules reference aliases instead of raw IPs repeatedly.\n4. Create aliases and update rules accordingly.",
+            "+@fixref": "F-EF0289E5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-EF0289E5r01_fix"
+          },
+          "check": {
+            "+@system": "C-EF0289E5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Navigate to Firewall → Aliases\n2. Confirm:\n- Networks are defined as aliases\n- Common port groups exist (DNS, NTP, Web, AD, etc.)\n3. Confirm rules reference aliases instead of raw IPs repeatedly."
+          }
+        }
+      },
+      {
+        "+@id": "V-F07FA239",
+        "title": "4.1 Firewall Rules Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F07FA239r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.6",
+          "title": "Ensure Rules are Implemented on the Ingress Interface",
+          "description": "<VulnDiscussion>You must define rules on the interface where traffic enters the firewall.\n\nRationale:\nOPNsense evaluates rules based on ingress interface. Misplaced rules cause bypass or failure.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "4.1.6"
+          },
+          "fixtext": {
+            "+content": "1. Navigate to Firewall → Rules\n2. Validate each rule exists on the correct ingress interface.\n3. Move rules to the correct interface, if they are on the wrong one.",
+            "+@fixref": "F-F07FA239r01_fix"
+          },
+          "fix": {
+            "+@id": "F-F07FA239r01_fix"
+          },
+          "check": {
+            "+@system": "C-F07FA239_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Navigate to Firewall → Rules\n2. Validate each rule exists on the correct ingress interface."
+          }
+        }
+      },
+      {
+        "+@id": "V-E3330165",
+        "title": "4.1 Firewall Rules Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E3330165r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.7",
+          "title": "Ensure Standard Rule Ordering is Used Per Interface",
+          "description": "<VulnDiscussion>Rules must be ordered as follows:\n1. Management / anti-lockout 2. Infrastructure (DNS/DHCP/NTP) 3. Internal access rules 4. Internet access rules 5. Explicit block rules (logged)\n\nRationale:\nConsistent ordering improves readability and reduces mistakes.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "4.1.7"
+          },
+          "fixtext": {
+            "+content": "- Navigate to Firewall → Rules → [Interface]\n- Confirm Ordering matches the standard\n- Reorder rules that do not comply",
+            "+@fixref": "F-E3330165r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E3330165r01_fix"
+          },
+          "check": {
+            "+@system": "C-E3330165_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "- Navigate to Firewall → Rules → [Interface]\n- Confirm Ordering matches the standard"
+          }
+        }
+      },
+      {
+        "+@id": "V-213654A0",
+        "title": "4.1 Firewall Rules Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-213654A0r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.8",
+          "title": "Ensure Floating Rules are Restricted to Cross-Zone Policy Use Cases",
+          "description": "<VulnDiscussion>Floating rules must be used only when:\n• Policy must apply across multiple interfaces\n• “Quick” evaluation is required\n\nRationale:\nFloating rules can override interface policy and cause unexpected behavior.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "4.1.8"
+          },
+          "fixtext": {
+            "+content": "1. Navigate to Firewall → Rules → Floating\n2. Validate each floating rule has:\n- documented justification\n- limited scope\n3. Move rules to interface rulesets when possible.",
+            "+@fixref": "F-213654A0r01_fix"
+          },
+          "fix": {
+            "+@id": "F-213654A0r01_fix"
+          },
+          "check": {
+            "+@system": "C-213654A0_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Navigate to Firewall → Rules → Floating\n2. Validate each floating rule has:\n- documented justification\n- limited scope"
+          }
+        }
+      },
+      {
+        "+@id": "V-AF77BF04",
+        "title": "5.1 NTP Service Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AF77BF04r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.1",
+          "title": "Ensure time zone is properly configured",
+          "description": "<VulnDiscussion>Sets the local time zone information so that the device's time display is more accurate for viewers.\n\nRationale:\nThe device's time setting needs to be accurate for two reasons in particular. The first is that digital certificates use this time to compare the validity period they specify in their Valid From and Valid To fields to a range of times. The second justification is the need for accurate time stamps when logging data. When doing packet captures, delivering messages to a Syslog server, SNMP monitoring stations, or other tasks, timestamps are only meaningful if you can be certain of their accuracy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "5.1.1"
+          },
+          "fixtext": {
+            "+content": "In the GUI:\n- Navigate to Services > Network Time > General\n- Add NTP servers under 'Time Servers'\n- Select one as preferred by checking 'Prefer'\n- Click 'Save'",
+            "+@fixref": "F-AF77BF04r01_fix"
+          },
+          "fix": {
+            "+@id": "F-AF77BF04r01_fix"
+          },
+          "check": {
+            "+@system": "C-AF77BF04_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the GUI:\n- Navigate to Services > Network Time > General\n- Verify NTP Servers are configured properly and one is checked as 'Prefer'"
+          }
+        }
+      },
+      {
+        "+@id": "V-A2D4B36C",
+        "title": "5.2 DNS Service Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A2D4B36Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.1",
+          "title": "Ensure 'DNSSEC' is Enable on DNS Service",
+          "description": "<VulnDiscussion>Enable the \"DNSSEC\" in the DNS Service Configuration.\n\nRationale:\nEnable DNSSEC Support. DNSSEC is a means of protecting DNS data from attacks which use forged or manipulated DNS data, such as DNS cache poisoning.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "5.2.1"
+          },
+          "fixtext": {
+            "+content": "In the GUI:\n- Navigate to Services > Unbound DNS > General\n- Check next to 'Enable DNSSEC Support'\n- Click 'Apply'",
+            "+@fixref": "F-A2D4B36Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-A2D4B36Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-A2D4B36C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the GUI:\n- Navigate to Services > Unbound DNS > General\n- Verify if 'Enable DNSSEC Support' is checked"
+          }
+        }
+      },
+      {
+        "+@id": "V-E80363A1",
+        "title": "5.3 VPN Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E80363A1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.3.1",
+          "title": "Ensure WireGuard is used as the default VPN method",
+          "description": "<VulnDiscussion>WireGuard must use a dedicated RFC1918 subnet that is not reused by any internal VLAN. Additionally, WireGuard must remain disabled unless explicitly required for approved remote access or site-to-site VPN use cases.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "5.3.1"
+          },
+          "fixtext": {
+            "+content": "1. Navigate to VPN → WireGuard → Instances\n2. Click the Plus Sign to add a WireGuard Instance\n3. Click 'Save' when all of your instance details are entered",
+            "+@fixref": "F-E80363A1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E80363A1r01_fix"
+          },
+          "check": {
+            "+@system": "C-E80363A1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Navigate to VPN → WireGuard\n2. Confirm no WireGuard instances are enabled unless required."
+          }
+        }
+      },
+      {
+        "+@id": "V-66B99821",
+        "title": "6 Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-66B99821r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.1",
+          "title": "Ensure Logging is Enabled for Inter-Zone Deny Rules",
+          "description": "<VulnDiscussion>All deny rules that enforce segmentation between VLANs/zones must have logging enabled.\n\nRationale:\nInter-zone denies are high-signal and reveal lateral movement attempts.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "6.1"
+          },
+          "fixtext": {
+            "+content": "1. Navigate to Firewall → Rules\n2. Identify deny rules between VLANs\n3. Enable logging for segmentation deny rules.",
+            "+@fixref": "F-66B99821r01_fix"
+          },
+          "fix": {
+            "+@id": "F-66B99821r01_fix"
+          },
+          "check": {
+            "+@system": "C-66B99821_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Navigate to Firewall → Rules\n2. Identify deny rules between VLANs\n3. Confirm “Log” is enabled on each"
+          }
+        }
+      },
+      {
+        "+@id": "V-64B4EEA4",
+        "title": "6 Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-64B4EEA4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.2",
+          "title": "Ensure Logging is Enabled for Management Plane Deny Rules",
+          "description": "<VulnDiscussion>All deny rules targeting firewall management services or MGMT networks must be logged.\n\nRationale:\nManagement targeting is a high-risk indicator and should generate security alerts.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "6.2"
+          },
+          "fixtext": {
+            "+content": "Enable logging on MGMT deny rules.",
+            "+@fixref": "F-64B4EEA4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-64B4EEA4r01_fix"
+          },
+          "check": {
+            "+@system": "C-64B4EEA4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify deny rules for MGMT subnets and firewall GUI/SSH ports have logging enabled."
+          }
+        }
+      },
+      {
+        "+@id": "V-0CF86AFF",
+        "title": "6 Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0CF86AFFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.3",
+          "title": "Ensure Remote Syslog is Configured",
+          "description": "<VulnDiscussion>OPNsense must forward logs to a remote log server or SIEM using syslog.\n\nRationale:\nLocal-only logs can be erased during compromise and are not sufficient for enterprise IR.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS OPNsense Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS OPNsense Benchmark",
+            "dc:identifier": "6.3"
+          },
+          "fixtext": {
+            "+content": "1. Navigate to System → Settings → Logging / Targets (or Syslog depending on\nbuild)\n2. Configure syslog target(s) to an enterprise log platform.",
+            "+@fixref": "F-0CF86AFFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-0CF86AFFr01_fix"
+          },
+          "check": {
+            "+@system": "C-0CF86AFF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_OPNsense_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Navigate to System → Settings → Logging / Targets (or Syslog depending on\nbuild)\n2. Confirm at least one remote syslog target exists.\n3. Confirm logs are received by the SIEM."
+          }
+        }
+      }
+    ]
+  }
+}

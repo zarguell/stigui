@@ -1,0 +1,2015 @@
+<?xml version="1.0" encoding="utf-8"?><Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd" id="CIS_Microsoft_Exchange_Server_2019_Benchmark" xml:lang="en" xmlns="http://checklists.nist.gov/xccdf/1.1">
+  <status date="2023-06-30">accepted</status>
+  <title>CIS Microsoft Exchange Server 2019 Benchmark</title>
+  <description>All CIS Benchmarks focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system for vulnerabilities and quickly updating with the latest security patches • Monitoring applications and libraries for vulnerabilities and quickly updating with the latest security patches In the end, the CIS Benchmarks are designed as a key component of a comprehensive cybersecurity program. This document provides prescriptive guidance for establishing a secure configuration posture for Microsoft Windows Exchange Server 2019. This secure configuration guide is based on Microsoft Windows Exchange Server 2019 and was tested against Microsoft Windows Exchange Server 2019. Both UI and PowerShell guidance will be provided when possible. Although deploying Windows Server Core with Exchange Server 2019 provides significant attack surface reduction, CIS aims to evaluate the UI and PowerShell methods on both Desktop Experience and Core systems. Server Core should be strongly considered when deploying a new Microsoft Server of any type. To obtain the latest version of this secure configuration guide, please visit https://www.cisecurity.org/cis-benchmarks/. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.</description>
+  <notice id="terms-of-use" xml:lang="en"/>
+  <front-matter xml:lang="en"/>
+  <rear-matter xml:lang="en"/>
+  <reference href="https://www.cisecurity.org/cis-benchmarks">
+    <dc:publisher>Center for Internet Security</dc:publisher>
+    <dc:source>CIS Benchmarks</dc:source>
+  </reference>
+  <plain-text id="release-info">Release: 1.0.0 Benchmark Date: 2023-06-30</plain-text>
+  <version>1.0.0</version>
+  <Profile id="L1-Edge-Services-Security_Public">
+    <title>Level 1 - Edge Services Security</title>
+    <description>be the starting baseline for most organizations; be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-323B7416" selected="true"/>
+    <select idref="V-1AD8F5BB" selected="true"/>
+    <select idref="V-D7BDD28A" selected="true"/>
+    <select idref="V-720A832A" selected="true"/>
+    <select idref="V-241B69CD" selected="true"/>
+    <select idref="V-9C0984DE" selected="true"/>
+    <select idref="V-60A2FD74" selected="true"/>
+    <select idref="V-A33205FC" selected="true"/>
+    <select idref="V-18AE84FA" selected="true"/>
+    <select idref="V-6C42A4DB" selected="true"/>
+    <select idref="V-663FA12D" selected="true"/>
+    <select idref="V-7F527CC8" selected="true"/>
+    <select idref="V-76E4FCE0" selected="true"/>
+    <select idref="V-3298B54F" selected="true"/>
+    <select idref="V-0EE76380" selected="true"/>
+    <select idref="V-2F33F64A" selected="true"/>
+  </Profile>
+  <Profile id="L1-Edge-Services-Security_Classified">
+    <title>Level 1 - Edge Services Security</title>
+    <description>be the starting baseline for most organizations; be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-323B7416" selected="true"/>
+    <select idref="V-1AD8F5BB" selected="true"/>
+    <select idref="V-D7BDD28A" selected="true"/>
+    <select idref="V-720A832A" selected="true"/>
+    <select idref="V-241B69CD" selected="true"/>
+    <select idref="V-9C0984DE" selected="true"/>
+    <select idref="V-60A2FD74" selected="true"/>
+    <select idref="V-A33205FC" selected="true"/>
+    <select idref="V-18AE84FA" selected="true"/>
+    <select idref="V-6C42A4DB" selected="true"/>
+    <select idref="V-663FA12D" selected="true"/>
+    <select idref="V-7F527CC8" selected="true"/>
+    <select idref="V-76E4FCE0" selected="true"/>
+    <select idref="V-3298B54F" selected="true"/>
+    <select idref="V-0EE76380" selected="true"/>
+    <select idref="V-2F33F64A" selected="true"/>
+  </Profile>
+  <Profile id="L1-Edge-Services-Security_Sensitive">
+    <title>Level 1 - Edge Services Security</title>
+    <description>be the starting baseline for most organizations; be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-323B7416" selected="true"/>
+    <select idref="V-1AD8F5BB" selected="true"/>
+    <select idref="V-D7BDD28A" selected="true"/>
+    <select idref="V-720A832A" selected="true"/>
+    <select idref="V-241B69CD" selected="true"/>
+    <select idref="V-9C0984DE" selected="true"/>
+    <select idref="V-60A2FD74" selected="true"/>
+    <select idref="V-A33205FC" selected="true"/>
+    <select idref="V-18AE84FA" selected="true"/>
+    <select idref="V-6C42A4DB" selected="true"/>
+    <select idref="V-663FA12D" selected="true"/>
+    <select idref="V-7F527CC8" selected="true"/>
+    <select idref="V-76E4FCE0" selected="true"/>
+    <select idref="V-3298B54F" selected="true"/>
+    <select idref="V-0EE76380" selected="true"/>
+    <select idref="V-2F33F64A" selected="true"/>
+  </Profile>
+  <Profile id="L1-MDM-Services-Security_Public">
+    <title>Level 1 - MDM Services Security</title>
+    <description>be the starting baseline for most organizations; be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-E7CD2F44" selected="true"/>
+    <select idref="V-0FAC78DB" selected="true"/>
+    <select idref="V-1CF95E65" selected="true"/>
+    <select idref="V-6F6003EB" selected="true"/>
+    <select idref="V-7D2F607B" selected="true"/>
+    <select idref="V-E91AC1FE" selected="true"/>
+    <select idref="V-2005A4B8" selected="true"/>
+    <select idref="V-6F2E59DC" selected="true"/>
+    <select idref="V-E8CCFD0A" selected="true"/>
+    <select idref="V-84EF72A5" selected="true"/>
+    <select idref="V-5916F3BD" selected="true"/>
+  </Profile>
+  <Profile id="L1-MDM-Services-Security_Classified">
+    <title>Level 1 - MDM Services Security</title>
+    <description>be the starting baseline for most organizations; be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-E7CD2F44" selected="true"/>
+    <select idref="V-0FAC78DB" selected="true"/>
+    <select idref="V-1CF95E65" selected="true"/>
+    <select idref="V-6F6003EB" selected="true"/>
+    <select idref="V-7D2F607B" selected="true"/>
+    <select idref="V-E91AC1FE" selected="true"/>
+    <select idref="V-2005A4B8" selected="true"/>
+    <select idref="V-6F2E59DC" selected="true"/>
+    <select idref="V-E8CCFD0A" selected="true"/>
+    <select idref="V-84EF72A5" selected="true"/>
+    <select idref="V-5916F3BD" selected="true"/>
+  </Profile>
+  <Profile id="L1-MDM-Services-Security_Sensitive">
+    <title>Level 1 - MDM Services Security</title>
+    <description>be the starting baseline for most organizations; be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-E7CD2F44" selected="true"/>
+    <select idref="V-0FAC78DB" selected="true"/>
+    <select idref="V-1CF95E65" selected="true"/>
+    <select idref="V-6F6003EB" selected="true"/>
+    <select idref="V-7D2F607B" selected="true"/>
+    <select idref="V-E91AC1FE" selected="true"/>
+    <select idref="V-2005A4B8" selected="true"/>
+    <select idref="V-6F2E59DC" selected="true"/>
+    <select idref="V-E8CCFD0A" selected="true"/>
+    <select idref="V-84EF72A5" selected="true"/>
+    <select idref="V-5916F3BD" selected="true"/>
+  </Profile>
+  <Profile id="L1-Mailbox-Services-Security_Public">
+    <title>Level 1 - Mailbox Services Security</title>
+    <description>be the starting baseline for most organizations; be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-E06481F1" selected="true"/>
+    <select idref="V-23A516BA" selected="true"/>
+    <select idref="V-341DD673" selected="true"/>
+    <select idref="V-A9553243" selected="true"/>
+    <select idref="V-2C59E70F" selected="true"/>
+    <select idref="V-076436AA" selected="true"/>
+    <select idref="V-139200A5" selected="true"/>
+    <select idref="V-638CB6E8" selected="true"/>
+    <select idref="V-39889FC0" selected="true"/>
+    <select idref="V-FA9CE266" selected="true"/>
+    <select idref="V-92975B36" selected="true"/>
+    <select idref="V-0441BC78" selected="true"/>
+    <select idref="V-E8B26F89" selected="true"/>
+    <select idref="V-F54715C7" selected="true"/>
+    <select idref="V-A21E54BF" selected="true"/>
+    <select idref="V-83A01389" selected="true"/>
+    <select idref="V-4218E458" selected="true"/>
+    <select idref="V-64BF85C9" selected="true"/>
+    <select idref="V-D6B76329" selected="true"/>
+    <select idref="V-2F2F44C7" selected="true"/>
+    <select idref="V-D51FDEC6" selected="true"/>
+    <select idref="V-9FA6EA7B" selected="true"/>
+    <select idref="V-AE81F6BA" selected="true"/>
+    <select idref="V-75318A60" selected="true"/>
+    <select idref="V-76E4FCE0" selected="true"/>
+    <select idref="V-151AF223" selected="true"/>
+    <select idref="V-3298B54F" selected="true"/>
+    <select idref="V-0EE76380" selected="true"/>
+    <select idref="V-2F33F64A" selected="true"/>
+  </Profile>
+  <Profile id="L1-Mailbox-Services-Security_Classified">
+    <title>Level 1 - Mailbox Services Security</title>
+    <description>be the starting baseline for most organizations; be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-E06481F1" selected="true"/>
+    <select idref="V-23A516BA" selected="true"/>
+    <select idref="V-341DD673" selected="true"/>
+    <select idref="V-A9553243" selected="true"/>
+    <select idref="V-2C59E70F" selected="true"/>
+    <select idref="V-076436AA" selected="true"/>
+    <select idref="V-139200A5" selected="true"/>
+    <select idref="V-638CB6E8" selected="true"/>
+    <select idref="V-39889FC0" selected="true"/>
+    <select idref="V-FA9CE266" selected="true"/>
+    <select idref="V-92975B36" selected="true"/>
+    <select idref="V-0441BC78" selected="true"/>
+    <select idref="V-E8B26F89" selected="true"/>
+    <select idref="V-F54715C7" selected="true"/>
+    <select idref="V-A21E54BF" selected="true"/>
+    <select idref="V-83A01389" selected="true"/>
+    <select idref="V-4218E458" selected="true"/>
+    <select idref="V-64BF85C9" selected="true"/>
+    <select idref="V-D6B76329" selected="true"/>
+    <select idref="V-2F2F44C7" selected="true"/>
+    <select idref="V-D51FDEC6" selected="true"/>
+    <select idref="V-9FA6EA7B" selected="true"/>
+    <select idref="V-AE81F6BA" selected="true"/>
+    <select idref="V-75318A60" selected="true"/>
+    <select idref="V-76E4FCE0" selected="true"/>
+    <select idref="V-151AF223" selected="true"/>
+    <select idref="V-3298B54F" selected="true"/>
+    <select idref="V-0EE76380" selected="true"/>
+    <select idref="V-2F33F64A" selected="true"/>
+  </Profile>
+  <Profile id="L1-Mailbox-Services-Security_Sensitive">
+    <title>Level 1 - Mailbox Services Security</title>
+    <description>be the starting baseline for most organizations; be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.</description>
+    <select idref="V-E06481F1" selected="true"/>
+    <select idref="V-23A516BA" selected="true"/>
+    <select idref="V-341DD673" selected="true"/>
+    <select idref="V-A9553243" selected="true"/>
+    <select idref="V-2C59E70F" selected="true"/>
+    <select idref="V-076436AA" selected="true"/>
+    <select idref="V-139200A5" selected="true"/>
+    <select idref="V-638CB6E8" selected="true"/>
+    <select idref="V-39889FC0" selected="true"/>
+    <select idref="V-FA9CE266" selected="true"/>
+    <select idref="V-92975B36" selected="true"/>
+    <select idref="V-0441BC78" selected="true"/>
+    <select idref="V-E8B26F89" selected="true"/>
+    <select idref="V-F54715C7" selected="true"/>
+    <select idref="V-A21E54BF" selected="true"/>
+    <select idref="V-83A01389" selected="true"/>
+    <select idref="V-4218E458" selected="true"/>
+    <select idref="V-64BF85C9" selected="true"/>
+    <select idref="V-D6B76329" selected="true"/>
+    <select idref="V-2F2F44C7" selected="true"/>
+    <select idref="V-D51FDEC6" selected="true"/>
+    <select idref="V-9FA6EA7B" selected="true"/>
+    <select idref="V-AE81F6BA" selected="true"/>
+    <select idref="V-75318A60" selected="true"/>
+    <select idref="V-76E4FCE0" selected="true"/>
+    <select idref="V-151AF223" selected="true"/>
+    <select idref="V-3298B54F" selected="true"/>
+    <select idref="V-0EE76380" selected="true"/>
+    <select idref="V-2F33F64A" selected="true"/>
+  </Profile>
+  <Profile id="L2-Mailbox-Services-Security_Public">
+    <title>Level 2 - Mailbox Services Security</title>
+    <description>are intended for environments or use cases where security is more critical may negatively inhibit the utility or performance of the technology; and limit the ability of remote management/access.</description>
+    <select idref="V-6D3F030B" selected="true"/>
+    <select idref="V-5CB505D4" selected="true"/>
+    <select idref="V-E2CFD2F8" selected="true"/>
+  </Profile>
+  <Profile id="L2-Mailbox-Services-Security_Classified">
+    <title>Level 2 - Mailbox Services Security</title>
+    <description>are intended for environments or use cases where security is more critical may negatively inhibit the utility or performance of the technology; and limit the ability of remote management/access.</description>
+    <select idref="V-6D3F030B" selected="true"/>
+    <select idref="V-5CB505D4" selected="true"/>
+    <select idref="V-E2CFD2F8" selected="true"/>
+  </Profile>
+  <Profile id="L2-Mailbox-Services-Security_Sensitive">
+    <title>Level 2 - Mailbox Services Security</title>
+    <description>are intended for environments or use cases where security is more critical may negatively inhibit the utility or performance of the technology; and limit the ability of remote management/access.</description>
+    <select idref="V-6D3F030B" selected="true"/>
+    <select idref="V-5CB505D4" selected="true"/>
+    <select idref="V-E2CFD2F8" selected="true"/>
+  </Profile>
+  <Group id="V-323B7416">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-323B7416r01_rule" weight="10.0" severity="medium">
+      <version>1.1</version>
+      <title>(L1) Ensure 'Enable sender ID agent' is configured</title>
+      <description>&lt;VulnDiscussion&gt;The Sender ID agent is an antispam agent enabled on Exchange servers that perform the Edge Transport server role. Sender ID tries to verify that every e-mail message originates from the Internet domain from which it claims to have been sent. Sender ID checks the address of the server that sends the message against a registered list of servers that the domain owner has authorized to send e-mail.
+
+Rationale:
+Spam consumes a large amount of network bandwidth and server capacity. In addition, it is often the source of malicious software. Rejecting messages that have evidence of spoofing will reduce the possibility of users falling victim to phishing attacks.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-323B7416r01_fix">To implement the recommended state, execute the below cmdlet:
+Set-SenderIDConfig -Enabled $true -SpoofedDomainAction Reject</fixtext>
+      <fix id="F-323B7416r01_fix"/>
+      <check system="C-323B7416_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the below cmdlet:
+Get-SenderIdConfig | fl Name,Enabled,SpoofedDomainAction
+• Ensure Enabled is set to True
+• Ensure SpoofedDomainAction is set to Reject</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-1AD8F5BB">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-1AD8F5BBr01_rule" weight="10.0" severity="medium">
+      <version>1.2</version>
+      <title>(L1) Ensure 'Configure sender filtering' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;Sender filtering compares a list of blocked senders that's maintained by the Exchange administrator.
+Note: For more information on how to create the list for blocked senders, please visit:
+Use the Exchange Management Shell to configure blocked senders and domains for sender filtering Note #2: Sender filtering is enabled (by default) on a system performing the Edge Transport server role.
+
+Rationale:
+Spam consumes a large amount of network bandwidth and server capacity. In addition, it is often the source of malicious software.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-1AD8F5BBr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-SenderFilterConfig -Enabled $true</fixtext>
+      <fix id="F-1AD8F5BBr01_fix"/>
+      <check system="C-1AD8F5BB_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure Enabled is set to True:
+Get-SenderFilterConfig | fl -property Enabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D7BDD28A">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D7BDD28Ar01_rule" weight="10.0" severity="medium">
+      <version>1.3</version>
+      <title>(L1) Ensure 'Sender reputation' is configured</title>
+      <description>&lt;VulnDiscussion&gt;Sender reputation filters all messages from all receive connectors on that system and only messages from external sources are filtered. External sources are defined as non- authenticated sources, which are considered anonymous internet sources.
+This recommendation configures several parameters:
+• Enabled parameter enables or disables sender reputation on the Exchange server.
+• SenderBlockingEnabled parameter specifies whether sender reputation blocks senders whose sending system fails an open proxy test.
+• OpenProxyDetectionEnabled parameter specifies whether sender reputation tries to determine whether the sender's address is an open proxy by connecting to the originating IP address.
+• SrlBlockThreshold specifies the SRL rating that must be met or exceeded for sender reputation to block a sender.
+
+Rationale:
+Sender reputation is part of the Microsoft Exchange anti-spam functionality that can help with the filtering and blocking of spam messages. Malicious actors can exploit open proxy servers to send spam, launch attacks, or engage in other attacks while masking their identity. When Exchange checks if the sender is an OpenProxy this can help mitigate attacks from those types of senders.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D7BDD28Ar01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-SenderReputationConfig -Enabled $true -SenderBlockingEnabled $true -
+OpenProxyDetectionEnabled $true -SrlBlockThreshold 6</fixtext>
+      <fix id="F-D7BDD28Ar01_fix"/>
+      <check system="C-D7BDD28A_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure SenderBlockingEnabled and OpenProxyDetectionEnabled are set to True and SrlBlockThreshold is set to 6:
+Get-SenderReputationConfig | fl
+SenderBlockingEnabled,OpenProxyDetectionEnabled,SrlBlockThreshold</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-720A832A">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-720A832Ar01_rule" weight="10.0" severity="medium">
+      <version>1.4</version>
+      <title>(L1) Ensure ‘Blank sender field’ is configured</title>
+      <description>&lt;VulnDiscussion&gt;When the Sender Filter Agent takes on messages from blocked senders or domains, the Action parameter is what is used when deciding what to do with these messages.
+
+Rationale:
+Anonymous emails (messages with blank sender fields) cannot be replied to. Emails that are sent with blank sender fields could be trying to hide their true origin and allows them to avoid responses and possibly spam receivers of the message. It is less risky and more resource-efficient to filter these messages upon receipt rather than forwarding them to be evaluated and risking possible infection.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-720A832Ar01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-SenderFilterConfig -Action Reject -BlankSenderBlockingEnabled $true</fixtext>
+      <fix id="F-720A832Ar01_fix"/>
+      <check system="C-720A832A_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure Action is set to Reject and BlankSenderBlockingEnabled is set to True:
+Get-SenderFilterConfig | fl Name, Action, BlankSenderBlockingEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-241B69CD">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-241B69CDr01_rule" weight="10.0" severity="medium">
+      <version>1.5</version>
+      <title>(L1) Ensure ‘Spam quarantine mailbox exists’ is set to ‘’</title>
+      <description>&lt;VulnDiscussion&gt;This parameter is used to specify an SMTP address to be used as a spam quarantine mailbox.
+Note: All messages that are equal to or greater than the value set in the SCLQuarantineEnabled parameter are sent to the SMTP address set in the QuarantineMailbox parameter.
+
+Rationale:
+A spam quarantine mailbox is necessary to temporarily host filtered messages for evaluation by administrators or users. Having an archive such as this can be useful to recover messages that have been wrongfully filtered, prevent data loss, and can be helpful in providing a base of analysis so that refinements can be made to the filter in the future.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-241B69CDr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-ContentFilterConfig -QuarantineMailbox &lt;'QuarantineMailbox SmtpAddress'&gt;</fixtext>
+      <fix id="F-241B69CDr01_fix"/>
+      <check system="C-241B69CD_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure QuarantineMailbox is set to a valid working e- mail address.
+Get-ContentFilterConfig | Select Name, QuarantineMailbox</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-9C0984DE">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-9C0984DEr01_rule" weight="10.0" severity="medium">
+      <version>1.6</version>
+      <title>(L1) Ensure 'SCL Quarantine' is 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;Spam Confidence Level (SCL) is a rating assigned to incoming email messages by the Content Filter agent in Exchange Server. It is a measure of the likelihood that an email is spam based on various content analysis techniques and spam detection algorithms.
+The SCL value ranges from 0 to 9, with 9 being the highest level of confidence that the email is spam.
+Ensure SCLQuarantineEnabled is set to True
+
+Rationale:
+E-mails with a high Spam Confidence Level (SCL) will be quarantined. This involves moving it to a designated quarantine e-mail address, separating it from the regular inbox of the recipient in order to prevent users interacting with malicious e-mails.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-9C0984DEr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-ContentFilterConfig -SCLQuarantineEnabled $true -SCLRejectThreshold 8 -
+SCLQuarantineThreshold 6
+NOTE: The SCLRejectThreshold must be greater than the SCLQuarantineThreshold when enabling the Quarantine and is why it is changed in this instance.</fixtext>
+      <fix id="F-9C0984DEr01_fix"/>
+      <check system="C-9C0984DE_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure SCLQuarantineEnabled is set to True and SCLQuarantineThreshold is set to 6 or lower.
+Get-ContentFilterConfig | fl Name,QuarantineMailbox,SCL*</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-60A2FD74">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-60A2FD74r01_rule" weight="10.0" severity="medium">
+      <version>1.7</version>
+      <title>(L1) Ensure ‘Nonexistent recipients’ is set to ‘True’</title>
+      <description>&lt;VulnDiscussion&gt;This parameter is used to decide if messages whose recipient doesn't exist in the organization are blocked. When this parameter is set to $true, the Recipient Filter Agent blocks these messages.
+Note: The Set-RecipientFilterConfig cmdlet must be enabled
+
+Rationale:
+Spam originators may use a technique that involves first creating fabricated names, and then monitors for rejected emails due to non-existent recipients. Emails with names who are not rejected are then used for future spam mailings. To deprive the spam originator of valuable information, it is recommended to receive all messages, then evaluate and dispose of them as deemed necessary.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-60A2FD74r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-RecipientFilterConfig -RecipientValidationEnabled $true</fixtext>
+      <fix id="F-60A2FD74r01_fix"/>
+      <check system="C-60A2FD74_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure RecipientValidationEnabled is set to True:
+Get-RecipientFilterConfig | Select Name, RecipientValidationEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A33205FC">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A33205FCr01_rule" weight="10.0" severity="medium">
+      <version>1.8</version>
+      <title>(L1) Ensure 'Attachment Filtering Agent' is configured</title>
+      <description>&lt;VulnDiscussion&gt;The attachment filtering on Edge Transport servers restricts attachments that users receive in email messages. Attachment filtering is performed by the Attachment Filtering agent, which is available only on Edge Transport servers, and is unchanged from Exchange Server 2010.
+Ensure the Attachment Filtering Agent is Enabled, and the extension filtering list is configured to the desired state.
+
+Rationale:
+Attachment filtering will allow the blocking of file extensions that are regularly abused by bad actors for nefarious purposes, including phishing, malware distribution, and macros.
+The list of extensions in the audit and remediation sections includes a collection found in the CIS Microsoft 365 Benchmark, Microsoft Office Benchmark, DISA STIG, and the Exchange Server defaults.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A33205FCr01_fix">Execute the following cmdlet to enable the Filtering Agent:
+Enable-TransportAgent "Attachment Filtering Agent"
+Execute the bellow script to create the desired attachment filtering state:
+$attachmentExtensions = @(
+"*.ace", "*.ade", "*.adp", "*.ani", "*.app", "*.appx", "*.arj", "*.asx",
+"*.bas", "*.bat", "*.cab", "*.chm",
+"*.cmd", "*.com", "*.cpl", "*.crt", "*.csh", "*.dbf", "*.dcr", "*.deb",
+"*.dex", "*.dif", "*.dir", "*.dll",
+"*.doc", "*.dot", "*.docm", "*.elf", "*.exe", "*.fxp", "*.hlp", "*.hta",
+"*.htc", "*.htm", "*.html", "*.img",
+"*.inf", "*.ins", "*.iso", "*.isp", "*.jar", "*.jnlp", "*.js", "*.jse",
+"*.kext", "*.ksh", "*.lha", "*.lib",
+"*.lnk", "*.lzh", "*.macho", "*.mda", "*.mdb", "*.mde", "*.mdt", "*.mdw",
+"*.mdz", "*.mht", "*.mhtml", "*.msc",
+"*.msi", "*.msix", "*.msp", "*.mst", "*.ops", "*.pcd", "*.pif", "*.plg",
+"*.ppa", "*.ppt", "*.ppam", "*.prf",
+"*.prg", "*.ps1", "*.ps11", "*.ps11xml", "*.ps1xml", "*.ps2", "*.ps2xml",
+"*.psc1", "*.psc2", "*.reg", "*.rev",
+"*.scf", "*.scr", "*.sct", "*.shb", "*.shs", "*.shtm", "*.shtml",
+"*.slk", "*.spl", "*.stm", "*.swf", "*.sys",
+"*.uif", "*.url", "*.vb", "*.vbe", "*.vbs", "*.vxd", "*.wsc", "*.wsf",
+"*.wsh", "*.xlam", "*.xla", "*.xlc",
+"*.xll", "*.xls", "*.xlsm", "*.xlt", "*.xlw", "*.xml", "*.xnk", "*.xz",
+"*.z"
+)
+foreach ($extension in $attachmentExtensions) {
+$result = Add-AttachmentFilterEntry -Name $extension -Type FileName -
+ErrorAction SilentlyContinue
+if ($result) {
+Write-Host "Successfully added attachment $extension" -
+ForegroundColor Green
+} else {
+Write-Host "Attachment $extension already exists in the list." -
+ForegroundColor Red
+}
+}</fixtext>
+      <fix id="F-A33205FCr01_fix"/>
+      <check system="C-A33205FC_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>To ensure the Attachment Filtering Agent is enabled execute the below cmdlet:
+Get-TransportAgent "Attachment Filtering Agent"
+To ensure the list of blocked extensions matches the recommended state execute Get- AttachmentFilterEntry and compare it against the list below or run the following script:
+$attachmentExtensions = @(
+"*.ace", "*.ade", "*.adp", "*.ani", "*.app", "*.appx", "*.arj", "*.asx",
+"*.bas", "*.bat", "*.cab", "*.chm",
+"*.cmd", "*.com", "*.cpl", "*.crt", "*.csh", "*.dbf", "*.dcr", "*.deb",
+"*.dex", "*.dif", "*.dir", "*.dll",
+"*.doc", "*.dot", "*.docm", "*.elf", "*.exe", "*.fxp", "*.hlp", "*.hta",
+"*.htc", "*.htm", "*.html", "*.img",
+"*.inf", "*.ins", "*.iso", "*.isp", "*.jar", "*.jnlp", "*.js", "*.jse",
+"*.kext", "*.ksh", "*.lha", "*.lib",
+"*.lnk", "*.lzh", "*.macho", "*.mda", "*.mdb", "*.mde", "*.mdt", "*.mdw",
+"*.mdz", "*.mht", "*.mhtml", "*.msc",
+"*.msi", "*.msix", "*.msp", "*.mst", "*.ops", "*.pcd", "*.pif", "*.plg",
+"*.ppa", "*.ppt", "*.ppam", "*.prf",
+"*.prg", "*.ps1", "*.ps11", "*.ps11xml", "*.ps1xml", "*.ps2", "*.ps2xml",
+"*.psc1", "*.psc2", "*.reg", "*.rev",
+"*.scf", "*.scr", "*.sct", "*.shb", "*.shs", "*.shtm", "*.shtml",
+"*.slk", "*.spl", "*.stm", "*.swf", "*.sys",
+"*.uif", "*.url", "*.vb", "*.vbe", "*.vbs", "*.vxd", "*.wsc", "*.wsf",
+"*.wsh", "*.xlam", "*.xla", "*.xlc",
+"*.xll", "*.xls", "*.xlsm", "*.xlt", "*.xlw", "*.xml", "*.xnk", "*.xz",
+"*.z"
+)
+# Get the existing attachment filter entries
+$existingEntries = Get-AttachmentFilterEntry
+$missingCount = 0
+# Iterate over the master list and check if each extension is present in the
+attachment filter
+foreach ($extension in $attachmentExtensions) {
+$found = $existingEntries | Where-Object { $_.Name -eq $extension }
+if (!$found) {
+$missingCount++
+Write-Host "Extension $extension is missing from the attachment
+filter list." -ForegroundColor Yellow
+}
+}
+if ($missingCount -eq 0) {
+Write-Host "All extensions from the reference list are present." -
+ForegroundColor Green
+}
+NOTE: This list has been collected from various CIS Benchmarks and includes the Exchange Defaults. It is not exhaustive. This and the remediation script can be modified for the organization's needs or exceptions.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-18AE84FA">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-18AE84FAr01_rule" weight="10.0" severity="medium">
+      <version>1.9</version>
+      <title>(L1) Ensure 'Maximum receive size: Connector level' is set to '25'</title>
+      <description>&lt;VulnDiscussion&gt;This setting limits the size of a message a user can receive. Receive size includes the header This includes the message header, the message body, and any attachments.
+For internal message flow, Exchange Server uses the custom X-MS-Exchange- Organization-OriginalSize message header to record the original message size of the message as it enters the Exchange Server organization. Whenever the message is checked against the specified message size limits, the lower value of the current message size or the original message size header is used. The size of the message can change because of content conversion, encoding, and agent processing.
+
+Rationale:
+This setting somewhat limits the impact a malicious user or a computer with malware can have on the Exchange infrastructure by restricting the size of incoming messages.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-18AE84FAr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-ReceiveConnector "Connection from Contoso.com" -MaxMessageSize 25MB
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mail Flow" on the left and click on the "Receive Connectors" tab.
+3. Double-click on the receive connector to be modified.
+4. Change the Maximum receive message size (MB): to 25 and click Save.</fixtext>
+      <fix id="F-18AE84FAr01_fix"/>
+      <check system="C-18AE84FA_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure MaxMessageSize is set to 25:
+Get-ReceiveConnector "Connection from Contoso.com" | fl -property
+MaxMessageSize</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6C42A4DB">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6C42A4DBr01_rule" weight="10.0" severity="medium">
+      <version>1.10</version>
+      <title>(L1) Ensure 'Transport Pickup Directory Path' is not set</title>
+      <description>&lt;VulnDiscussion&gt;The Pickup directory is used by the Transport service on Mailbox servers and Edge Transport servers to insert message files directly into the transport pipeline. When properly formatted email message files are copied to the Pickup directory, they are submitted for delivery automatically. It is a legacy feature that can be used by administrators for mail flow testing, or by applications that must create and submit their own messages.
+Ensure PickupDirectoryPath is set to $null
+
+Rationale:
+Disabling the Pickup directory is recommended to prevent potential abuse by attackers or insiders seeking to exploit side channel attacks. Dropping a file in the Pickup folder bypasses the normal authentication process of Exchange, creating a risk of sensitive data leakage or malicious email distribution through this unauthenticated side channel.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6C42A4DBr01_fix">To implement the recommended state, execute the following PowerShell cmdlet to disable the Pickup Directory on the Edge Transport server:
+Get-TransportService | Set-TransportService -PickupDirectoryPath $null</fixtext>
+      <fix id="F-6C42A4DBr01_fix"/>
+      <check system="C-6C42A4DB_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure PickupDirectoryPath is set to $null or is blank:
+Get-TransportService | fl Identity,PickupDirectoryPath</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-663FA12D">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-663FA12Dr01_rule" weight="10.0" severity="medium">
+      <version>1.11</version>
+      <title>(L1) Ensure ‘Exchange recipient filter’ is set to ‘True’</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting specifies whether the Recipient Filter agent is enabled on the system.
+The recipient filter uses a recipient block list to identify messages that aren't allowed to enter the organization. The recipient filter also uses the local recipient directory to reject messages sent to invalid recipients.
+
+Rationale:
+Spam consumes a large amount of network bandwidth and server capacity. In addition, it is often the source of malicious software. Rejecting messages that have evidence of spoofing will reduce the possibility of users falling victim to phishing attacks.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.11</dc:identifier>
+      </reference>
+      <fixtext fixref="F-663FA12Dr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-RecipientFilterConfig -Enabled $true</fixtext>
+      <fix id="F-663FA12Dr01_fix"/>
+      <check system="C-663FA12D_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure Enabled is set to $true:
+Get-RecipientFilterConfig | Select Name, Enabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-7F527CC8">
+    <title>1 Edge Transport Server</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-7F527CC8r01_rule" weight="10.0" severity="medium">
+      <version>1.12</version>
+      <title>(L1) Ensure ‘Internet-facing receive connectors’ is set to ‘Tls, BasicAuth, BasicAuthRequireTLS’</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the advertised and accepted authentication mechanisms for the receive connector.
+The primary function of receive connectors in the transport service is to accept authenticated and encrypted Simple Mail Transfer Protocol (SMTP) connections from other transport services on the local Mailbox server or remote Mailbox servers in the organization.
+Note: Some available values have dependencies and exclusions:
+• None is not compatible with other values.
+• BasicAuthRequireTLS requires BasicAuth and Tls.
+• ExternalAuthoritative can only be combined with Tls.
+• Tls is required when RequireTLS parameter is $true.
+• ExternalAuthoritative, requires PermissionGroups parameter to be ExchangeServers.
+
+Rationale:
+Configuring this setting enables the encryption of email between servers. This reduces the risk of eavesdropping, interception, and alteration of the email.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>1.12</dc:identifier>
+      </reference>
+      <fixtext fixref="F-7F527CC8r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-ReceiveConnector -Identity &lt;'IdentityName'&gt; -AuthMechanism 'Tls,
+BasicAuth, BasicAuthRequireTLS'
+Note: If more than one receive connector exists on the Edge Transport server, run this command to update all receive connectors.
+Get-ReceiveConnector | Set-ReceiveConnector -AuthMechanism 'Tls, BasicAuth,
+BasicAuthRequireTLS'</fixtext>
+      <fix id="F-7F527CC8r01_fix"/>
+      <check system="C-7F527CC8_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure AuthMechanism is set to Tls, BasicAuth, BasicAuthRequireTLS:
+Get-ReceiveConnector | Select Name, Identity, AuthMechanism</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E06481F1">
+    <title>2.1 Database and Retention</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E06481F1r01_rule" weight="10.0" severity="medium">
+      <version>2.1.1</version>
+      <title>(L1) Ensure 'Mailbox quotas: Issue warning at' is set to ''</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting can automatically warn mailbox users that their mailbox is approaching its storage limit. It's suggested that this warning be set up when 90% of the mailbox size has been reached. For example, if the mailbox size is 100GB, set the warning to 90GB or 94,371,840 KB.
+A value between 0 and 2,147,483,647 KB (2.1 terabytes) can be set depending on the user's mailbox size.
+
+Rationale:
+Unlimited mailbox sizes can cause the Exchange database to grow uncontrollably and consume all available disk space, potentially preventing the database from mounting properly. This can disrupt not only email services, but also other security measures that depend on timely communication.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E06481F1r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MailboxDatabase "Mailbox Database" -IssueWarningQuota &lt;value&gt;KB
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Servers" on the left and click on the "Databases" tab.
+3. Double-click the database and go to the "Limits" settings.
+4. Change Issue a warning at (GB): to &lt;value&gt; and click Save.</fixtext>
+      <fix id="F-E06481F1r01_fix"/>
+      <check system="C-E06481F1_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure IssueWarningQuota is set to &lt;value&gt;KB:
+Get-MailboxDatabase "Mailbox Database" | fl -property IssueWarningQuota</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-23A516BA">
+    <title>2.1 Database and Retention</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-23A516BAr01_rule" weight="10.0" severity="medium">
+      <version>2.1.2</version>
+      <title>(L1) Ensure 'Retain deleted items for the specified number of days' is set to '14'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting specifies how long deleted messages are retained before they are permanently removed from the database.
+
+Rationale:
+Defining a reasonable retention period facilitates recovering accidentally deleted messages while controlling the volume of storage that retained messages require.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-23A516BAr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MailboxDatabase "Mailbox Database" -DeletedItemRetention 14
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Servers" on the left and click on the "Databases" tab.
+3. Double-click the database and go to the "Limits" settings.
+4. Change Keep deleted items for (days): to 14 and click Save.</fixtext>
+      <fix id="F-23A516BAr01_fix"/>
+      <check system="C-23A516BA_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following PowerShell cmdlet and ensure DeletedItemRetention is set to 14:
+Get-MailboxDatabase "Mailbox Database" | fl -property DeletedItemRetention</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-341DD673">
+    <title>2.1 Database and Retention</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-341DD673r01_rule" weight="10.0" severity="medium">
+      <version>2.1.3</version>
+      <title>(L1) Ensure 'Mailbox quotas: Prohibit send and receive at' is set to ''</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting can automatically prevent users from sending and receiving e-mail messages after their mailbox size reaches the specified limit. It's suggested that this warning be set up when 98% of the mailbox size has been reached. For example, if the mailbox size is 100 GB, set the warning to 98 GB or 102,760,448 KB.
+A value between 0 and 2,147,483,647 KB (2.1 terabytes) can be set depending on the user's mailbox size.
+
+Rationale:
+Unlimited mailbox sizes can cause the Exchange database to grow uncontrollably and consume all available disk space, potentially preventing the database from mounting properly. This can disrupt not only email services but also other security measures that depend on timely communication.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.1.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-341DD673r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MailboxDatabase "Mailbox Database" -ProhibitSendReceiveQuota &lt;value&gt;GB
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Servers" on the left and click on the "Databases" tab.
+3. Double-click the database and go to the "Limits" settings.
+4. Change Prohibit send and receive at (GB): to &lt;value&gt; and click Save.</fixtext>
+      <fix id="F-341DD673r01_fix"/>
+      <check system="C-341DD673_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure ProhibitSendReceiveQuota is set to &lt;value&gt;:
+Get-MailboxDatabase "Mailbox Database" | fl -property
+ProhibitSendReceiveQuota</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A9553243">
+    <title>2.1 Database and Retention</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A9553243r01_rule" weight="10.0" severity="medium">
+      <version>2.1.4</version>
+      <title>(L1) Ensure 'Mailbox quotas: Prohibit send at' is set to ''</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting can automatically prevent users from sending new e-mail messages after their mailboxes reach a specified limit. It's suggested that this warning be set up when 95% of the mailbox size has been reached. For example, if the mailbox size is 100 GB, set the warning to 95 GB or 99,614,720 KB.
+A value between 0 and 2,147,483,647 KB (2.1 terabytes) can be set depending on the user's mailbox size.
+
+Rationale:
+Unlimited mailbox sizes can cause the Exchange database to grow uncontrollably and consume all available disk space, potentially preventing the database from mounting properly. This can disrupt not only email services but also other security measures that depend on timely communication.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.1.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A9553243r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MailboxDatabase "Mailbox Database" -ProhibitSendQuota &lt;value&gt;
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Servers" on the left and click on the "Databases" tab.
+3. Double-click the database and go to the "Limits" settings.
+4. Change Prohibit send at (GB): to &lt;value&gt; and click Save.</fixtext>
+      <fix id="F-A9553243r01_fix"/>
+      <check system="C-A9553243_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure ProhibitSendQuota is set to &lt;value&gt;:
+Get-MailboxDatabase "Mailbox Database" | fl -property ProhibitSendQuota</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-2C59E70F">
+    <title>2.1 Database and Retention</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-2C59E70Fr01_rule" weight="10.0" severity="medium">
+      <version>2.1.5</version>
+      <title>(L1) Ensure 'Keep deleted mailboxes for the specified number of days' is set to '30'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting specifies how long deleted mailboxes are retained before they are permanently removed from the database.
+
+Rationale:
+Defining a reasonable retention period facilitates recovering accidentally or deliberately deleted mailboxes while controlling the volume of storage that retained mailboxes require.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.1.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-2C59E70Fr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-Mailboxdatabase "Mailbox Database" -MailboxRetention 30.00:00:00
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Servers" on the left and click on the "Databases" tab.
+3. Double-click the database and go to the "Limits" settings.
+4. Change Keep deleted mailboxes for (days): to 30 and click Save.</fixtext>
+      <fix id="F-2C59E70Fr01_fix"/>
+      <check system="C-2C59E70F_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure MailboxRetention is set to 30.00:00:00:
+Get-Mailboxdatabase "Mailbox Database" | fl -property MailboxRetention</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-076436AA">
+    <title>2.1 Database and Retention</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-076436AAr01_rule" weight="10.0" severity="medium">
+      <version>2.1.6</version>
+      <title>(L1) Ensure 'Do not permanently delete items until the database has been backed up' is set to 'True'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting can prohibit items from being permanently deleted until the database has been backed up.
+
+Rationale:
+To ensure that accidentally deleted items can be recovered, they should not be permanently deleted until the database is backed up.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.1.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-076436AAr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MailboxDatabase "Mailbox Database" -RetainDeletedItemsUntilBackup $true
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Servers" on the left and click on the "Databases" tab.
+3. Double-click the database and go to the "Limits" settings.
+4. Ensure the Don't permanently delete items until the database is backed up box is checked and click Save.</fixtext>
+      <fix id="F-076436AAr01_fix"/>
+      <check system="C-076436AA_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure RetainDeletedItemsUntilBackup is set to True:
+Get-MailboxDatabase "Mailbox Database" | fl -property
+RetainDeletedItemsUntilBackup</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-139200A5">
+    <title>2.2 Mail Flow</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-139200A5r01_rule" weight="10.0" severity="medium">
+      <version>2.2.1</version>
+      <title>(L1) Ensure 'Transport Pickup Directory Path' is not set</title>
+      <description>&lt;VulnDiscussion&gt;The Pickup directory is used by the Transport service on Mailbox servers and Edge Transport servers to insert message files directly into the transport pipeline. When properly formatted email message files are copied to the Pickup directory, they are submitted for delivery automatically. It is a legacy feature that can be used by administrators for mail flow testing, or by applications that must create and submit their own messages.
+Ensure PickupDirectoryPath is set to $null
+
+Rationale:
+Disabling the Pickup directory is recommended to prevent potential abuse by attackers or insiders seeking to exploit side channel attacks. Dropping a file in the Pickup folder bypasses the normal authentication process of Exchange, creating a risk of sensitive data leakage or malicious email distribution through this unauthenticated side channel.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.2.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-139200A5r01_fix">To implement the recommended state, execute the following PowerShell cmdlet to disable the Pickup Directory on all servers with the Mailbox role
+Get-TransportService | Set-TransportService -PickupDirectoryPath $null
+NOTE: Edge Transport Servers must be configured directly.</fixtext>
+      <fix id="F-139200A5r01_fix"/>
+      <check system="C-139200A5_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure PickupDirectoryPath is set to $null or is blank:
+Get-TransportService | fl Identity,PickupDirectoryPath</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-638CB6E8">
+    <title>2.2 Mail Flow</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-638CB6E8r01_rule" weight="10.0" severity="medium">
+      <version>2.2.2</version>
+      <title>(L1) Ensure 'Maximum send size: Organization level' is set to '25'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting limits the size of a message a user can send. Send size includes the header, the message body, and any attachments.
+For internal message flow, Exchange Server uses the custom X-MS-Exchange- Organization-OriginalSize message header to record the original message size of the message as it enters the Exchange Server organization. Whenever the message is checked against the specified message size limits, the lower value of the current message size or the original message size header is used. The size of the message can change because of content conversion, encoding, and agent processing.
+
+Rationale:
+This setting limits the impact that a malicious user or a system with malware can have on the Exchange infrastructure by restricting the size of outgoing messages.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.2.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-638CB6E8r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-TransportConfig -MaxSendSize 25MB
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mail Flow" on the left and click on the "Send Connectors" tab.
+3. Click on "... " and select "Organization Transport Settings".
+4. Change the Maximum send message size (MB): to 25 and click Save.</fixtext>
+      <fix id="F-638CB6E8r01_fix"/>
+      <check system="C-638CB6E8_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure MaxSendSize is set to 25:
+Get-TransportConfig | fl -property MaxSendSize</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-39889FC0">
+    <title>2.2 Mail Flow</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-39889FC0r01_rule" weight="10.0" severity="medium">
+      <version>2.2.3</version>
+      <title>(L1) Ensure 'Maximum receive size: Organization level' is set to '25'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting can limit the size of messages received by the user. The message size includes the header, body, and any attachments for the email.
+For internal message flow, Exchange Server uses the custom X-MS-Exchange- Organization-OriginalSize message header to record the original message size of the message as it enters the Exchange Server organization. Whenever the message is checked against the specified message size limits, either the lower value of the current message size or the original message size header is used. The size of the message can change because of content conversion, encoding, and agent processing.
+
+Rationale:
+This setting limits the impact that a malicious user or a computer with malware can have on the Exchange infrastructure by restricting the size of incoming messages.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.2.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-39889FC0r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-TransportConfig -MaxReceiveSize 25MB
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mail Flow" on the left and click on the "Receive Connectors" tab.
+3. Click on "... " and select "Organization Transport Settings" 4. Change the Maximum receive message size (MB): to 25 and click Save.</fixtext>
+      <fix id="F-39889FC0r01_fix"/>
+      <check system="C-39889FC0_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure MaxReceiveSize is set to 25:
+Get-TransportConfig | fl -property MaxReceiveSize</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FA9CE266">
+    <title>2.2 Mail Flow</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FA9CE266r01_rule" weight="10.0" severity="medium">
+      <version>2.2.4</version>
+      <title>(L1) Ensure 'Maximum send size: Connector level' is set to '25'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting can limit the size of messages that are be sent by the user at the connector level. The message size includes the header, body, and any attachments for the email.
+For internal message flow, Exchange Server uses the custom X-MS-Exchange- Organization-OriginalSize message header to record the original message size of the message as it enters the Exchange Server organization. Whenever the message is checked against the specified message size limits, the lower value of the current message size or the original message size header is used. The size of the message can change because of content conversion, encoding, and agent processing.
+
+Rationale:
+This setting somewhat limits the impact a malicious user or a computer with malware can have on the Exchange infrastructure by restricting the size of incoming messages.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.2.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FA9CE266r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-SendConnector "Connection to Contoso.com" -MaxMessageSize 25MB
+OR Perform the following actions via the GUI:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mail Flow" on the left and click on the "Send Connectors" tab.
+3. Double-click on the send connector to be modified.
+4. Change the Maximum send message size (MB): to 25 and click Save.</fixtext>
+      <fix id="F-FA9CE266r01_fix"/>
+      <check system="C-FA9CE266_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure MaxMessageSize is set to 25:
+Get-SendConnector "Connection to Contoso.com" | fl -property MaxMessageSize</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-92975B36">
+    <title>2.2 Mail Flow</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-92975B36r01_rule" weight="10.0" severity="medium">
+      <version>2.2.5</version>
+      <title>(L1) Ensure 'Maximum receive size: Connector level' is set to '25'</title>
+      <description>&lt;VulnDiscussion&gt;This setting limits the size of a message a user can receive. Receive size includes the header This includes the message header, the message body, and any attachments.
+For internal message flow, Exchange Server uses the custom X-MS-Exchange- Organization-OriginalSize message header to record the original message size of the message as it enters the Exchange Server organization. Whenever the message is checked against the specified message size limits, the lower value of the current message size or the original message size header is used. The size of the message can change because of content conversion, encoding, and agent processing.
+
+Rationale:
+This setting somewhat limits the impact a malicious user or a computer with malware can have on the Exchange infrastructure by restricting the size of incoming messages.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.2.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-92975B36r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-ReceiveConnector "Connection from Contoso.com" -MaxMessageSize 25MB
+To set MaxMessageSize on all receive connectors this command can be executed:
+Get-ReceiveConnector | Set-ReceiveConnector -MaxMessageSize 25MB
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mail Flow" on the left and click on the "Receive Connectors" tab.
+3. Double-click on the receive connector to be modified.
+4. Change the Maximum receive message size (MB): to 25 and click Save.</fixtext>
+      <fix id="F-92975B36r01_fix"/>
+      <check system="C-92975B36_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure MaxMessageSize is set to 25:
+Get-ReceiveConnector "Connection from Contoso.com" | fl -property
+MaxMessageSize</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-0441BC78">
+    <title>2.2 Mail Flow</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-0441BC78r01_rule" weight="10.0" severity="medium">
+      <version>2.2.6</version>
+      <title>(L1) Ensure ‘Send connector timeout’ is set to '10'</title>
+      <description>&lt;VulnDiscussion&gt;This parameter controls the number of idle minutes before the connection to the Send connector is dropped, even if data is being actively transmitted.
+Note: The ConnectionTimeout parameter must be higher than the ConnectionInactivityTimeout parameter.
+
+Rationale:
+Connections may suffer from delays in message transfer once established. In order to allow new connections to be established, the timeout period should be reduced so that connections are not maintained for unnecessary periods of time.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.2.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-0441BC78r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-SendConnector -Identity &lt;'IdentityName'&gt; -ConnectionInactivityTimeOut
+00:10:00</fixtext>
+      <fix id="F-0441BC78r01_fix"/>
+      <check system="C-0441BC78_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure ConnectionInactivityTimeOut is set to 00:10:00:
+Get-SendConnector | Select Name, Identity, ConnectionInactivityTimeOut</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E8B26F89">
+    <title>2.2 Mail Flow</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E8B26F89r01_rule" weight="10.0" severity="medium">
+      <version>2.2.7</version>
+      <title>(L1) Ensure ‘Receive connector timeout’ is set to '5'</title>
+      <description>&lt;VulnDiscussion&gt;This parameter controls the number of idle minutes before the connection to the Receive connector is dropped, even if data is being actively transmitted.
+Note: The ConnectionTimeout parameter must be higher than the ConnectionInactivityTimeout parameter.
+
+Rationale:
+Connections may suffer from delays in message transfer once established. In order to allow new connections to be established, the timeout period should be reduced so that connections are not maintained for unnecessary periods of time.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.2.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E8B26F89r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-ReceiveConnector -Identity &lt;IdentityName&gt; -ConnectionTimeout 00:05:00
+Repeat the procedures for each Receive connector.</fixtext>
+      <fix id="F-E8B26F89r01_fix"/>
+      <check system="C-E8B26F89_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure ConnectionTimeout is set to 00:05:00:
+Get-ReceiveConnector | Select Name, Identity, ConnectionTimeout</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F54715C7">
+    <title>2.2 Mail Flow</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F54715C7r01_rule" weight="10.0" severity="medium">
+      <version>2.2.8</version>
+      <title>(L1) Ensure 'External send connector authentication: DNS routing' is set to 'True'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting determines if DNS is used to route outbound mail via the send connector.
+
+Rationale:
+In order to enable mutual Transport Layer Security (TLS) authentication for the domains serviced by this send connector, multiple parameters must be configured. Configuring these parameters enables the use of TLS instead of basic authentication where credentials are sent across the network in plaintext.
+The following parameters are addressed in separate recommendations in this benchmark.
+• DomainSecureEnabled to $true
+• IgnoreStartTLS to $false&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.2.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F54715C7r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-SendConnector "Connection to Contoso.com" -DNSRoutingEnabled $true</fixtext>
+      <fix id="F-F54715C7r01_fix"/>
+      <check system="C-F54715C7_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure DNSRoutingEnabled is set to True:
+Get-SendConnector "Connection to Contoso.com" | fl -property
+DNSRoutingEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A21E54BF">
+    <title>2.2 Mail Flow</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A21E54BFr01_rule" weight="10.0" severity="medium">
+      <version>2.2.9</version>
+      <title>(L1) Ensure 'External send connector authentication: IgnoreStartTLS' is set to 'False'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting specifies whether to ignore the StartTLS option offered by a remote sending server. StartTLS is a protocol command used to inform the email server that the email client wants to upgrade from an insecure connection to a secure one using TLS or SSL.
+
+Rationale:
+In order to enable mutual Transport Layer Security (TLS) authentication for the domains serviced by this send connector, multiple parameters must be configured (see below).
+Configuring these parameters enables the use of TLS instead of basic authentication where credentials are sent across the network in plaintext.
+The following parameters are addressed in separate recommendations in this benchmark.
+• DomainSecureEnabled to $true
+• DNSRoutingEnabled to $true&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.2.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A21E54BFr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-SendConnector "Connector Name" -IgnoreSTARTTLS $false</fixtext>
+      <fix id="F-A21E54BFr01_fix"/>
+      <check system="C-A21E54BF_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure IgnoreSTARTTLS is set to False:
+Get-SendConnector "Connector Name" | fl -property IgnoreSTARTTLS</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-83A01389">
+    <title>2.2 Mail Flow</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-83A01389r01_rule" weight="10.0" severity="medium">
+      <version>2.2.10</version>
+      <title>(L1) Ensure 'External send connector authentication: Domain security' is set to 'True'</title>
+      <description>&lt;VulnDiscussion&gt;This setting is part of the process to enable mutual Transport Layer Security (TLS) authentication for the domains serviced by this send connector. If this parameter is enabled, the Send connector will attempt to establish a mutual Transport Layer Security (TLS) connection with remote servers when sending mail.
+
+Rationale:
+In order to enable mutual Transport Layer Security (TLS) authentication for the domains serviced by this send connector, multiple parameters must be configured (see below).
+Configuring these parameters enables the use of TLS instead of basic authentication where credentials are sent across the network in plaintext.
+The following parameters are addressed in separate recommendations in this benchmark.
+• DNSRoutingEnabled to $true
+• IgnoreStartTLS to $false&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.2.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-83A01389r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-SendConnector "Connector name" -DomainSecureEnabled $true</fixtext>
+      <fix id="F-83A01389r01_fix"/>
+      <check system="C-83A01389_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure DomainSecureEnabled is set to True:
+Get-SendConnector "Connector name" | fl DomainSecureEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6D3F030B">
+    <title>2.3 Recipient and Client</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6D3F030Br01_rule" weight="10.0" severity="high">
+      <version>2.3.1</version>
+      <title>(L2) Ensure 'Enable non-delivery reports to remote domains' is set to 'False'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting is used to determine if the server sends non-delivery reports (also known as NDRs or bounce messages) to remote domains.
+
+Rationale:
+Attackers can use automated messages to determine whether a user is active, in the office, traveling etc. and can use this information to conduct other types of attacks.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.3.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6D3F030Br01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-RemoteDomain "RemoteDomain" -NDREnabled $false</fixtext>
+      <fix id="F-6D3F030Br01_fix"/>
+      <check system="C-6D3F030B_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure NDREnabled is set to False:
+Get-RemoteDomain "RemoteDomain" | fl -property NDREnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-5CB505D4">
+    <title>2.3 Recipient and Client</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-5CB505D4r01_rule" weight="10.0" severity="high">
+      <version>2.3.2</version>
+      <title>(L2) Ensure 'Enable OOF messages to remote domains' is set to 'None'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting is used to determine if the server automatically forwards out-of-office messages to remote domains.
+
+Rationale:
+Attackers can use automated messages to determine whether a user is active, in the office, traveling, and so on. An attacker might use this information to conduct other types of attacks.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.3.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-5CB505D4r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-RemoteDomain "RemoteDomain" -AllowedOOFType None</fixtext>
+      <fix id="F-5CB505D4r01_fix"/>
+      <check system="C-5CB505D4_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure AllowedOOFType is set to None:
+Get-RemoteDomain "RemoteDomain" | fl -property AllowedOOFType</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-4218E458">
+    <title>2.3 Recipient and Client</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-4218E458r01_rule" weight="10.0" severity="medium">
+      <version>2.3.3</version>
+      <title>(L1) Ensure 'Enable automatic replies to remote domains' is set to 'False'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting is used to determine if the server automatically replies to remote domains. The AutoReplyEnabled parameter specifies whether to allow messages that are automatic replies from client email programs in an organization (for example, automatic reply messages that are generated by rules in Outlook).
+
+Rationale:
+Attackers can use automated messages to determine whether a user is active, in the office, traveling etc. and can use this information to conduct other types of attacks.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.3.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-4218E458r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-RemoteDomain "RemoteDomain" -AutoReplyEnabled $false</fixtext>
+      <fix id="F-4218E458r01_fix"/>
+      <check system="C-4218E458_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure AutoReplyEnabled is set to False:
+Get-RemoteDomain "RemoteDomain" | fl -property AutoReplyEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-64BF85C9">
+    <title>2.3 Recipient and Client</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-64BF85C9r01_rule" weight="10.0" severity="medium">
+      <version>2.3.4</version>
+      <title>(L1) Ensure 'Enable automatic forwards to remote domains' is set to 'False'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting is used to determine if the server can send automatic forwards to remote domains.
+
+Rationale:
+Data leakage can occur if an email with sensitive data is forwarded to an account that is not secure or sanctioned by the organization.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.3.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-64BF85C9r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-RemoteDomain "RemoteDomain" -AutoForwardEnabled $false</fixtext>
+      <fix id="F-64BF85C9r01_fix"/>
+      <check system="C-64BF85C9_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure AutoForwardEnabled is set to False:
+Get-RemoteDomain "RemoteDomain" | fl -property AutoForwardEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D6B76329">
+    <title>2.3 Recipient and Client</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D6B76329r01_rule" weight="10.0" severity="medium">
+      <version>2.3.5</version>
+      <title>(L1) Ensure 'Enable S/MIME for OWA' is set to 'True'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting is used to control whether users are allowed to download the Secure/Multipurpose Internet Mail Extensions (S/MIME) control to read and create signed and encrypted messages.
+
+Rationale:
+S/MIME uses digital signatures and encryption to protect against several classes of attacks including eavesdropping, impersonation, and tampering.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.3.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D6B76329r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-OWAVirtualDirectory "owa (Default Web Site)" -SMimeEnabled $true</fixtext>
+      <fix id="F-D6B76329r01_fix"/>
+      <check system="C-D6B76329_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure SMimeEnabled is set to True:
+Get-OWAVirtualDirectory "owa (Default Web Site)" | fl -property SMimeEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-2F2F44C7">
+    <title>2.3 Recipient and Client</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-2F2F44C7r01_rule" weight="10.0" severity="medium">
+      <version>2.3.6</version>
+      <title>(L1) Ensure 'Require client MAPI encryption' is set to 'True'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting specifies whether encryption is required for Remote Procedure call (RPC) client connections.
+Note: This recommendation only applies if RPC over HTTP is enabled in the organization. In Exchange 2019 MAPI over HTTP is enabled by default.
+
+Rationale:
+Communications between Outlook and Exchange that are sent unencrypted are vulnerable to being captured by a malicious actor.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.3.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-2F2F44C7r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-RpcClientAccess -Server "Server" -EncryptionRequired $true</fixtext>
+      <fix id="F-2F2F44C7r01_fix"/>
+      <check system="C-2F2F44C7_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following PowerShell cmdlet and ensure EncryptionRequired is set to True:
+Get-RpcClientAccess | fl -property EncryptionRequired</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D51FDEC6">
+    <title>2.4 Services and Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D51FDEC6r01_rule" weight="10.0" severity="medium">
+      <version>2.4.1</version>
+      <title>(L1) Ensure 'POP3' Windows services are 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Post Office Protocol 3 (POP3) is an email protocol for receiving email messages from a server and transferring to a client device. On Exchange Server 2019 with the Mailbox role installed, it is set to manual startup by default.
+
+Rationale:
+POP3 is an outdated protocol that has a number of weaknesses versus MAPI and Exchange ActiveSync. POP3 can send credentials in the clear if not configured properly, has limited authentication capabilities, and a lack of proper message handling can result in misplaced or lost e-mails and folders when moving between devices. This may result in data loss for the end user. ActiveSync and MAPI, in contrast, offer superior security by default, provide an enhanced user experience, and are Microsoft's primary focus for support and improvement.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.4.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D51FDEC6r01_fix">To implement the recommended state, execute the following PowerShell commands:
+Stop-Service MSExchangePop3,MSExchangePop3BE
+Get-Service MSExchangePOP3,MSExchangePOP3BE | Set-Service -StartupType
+Disabled</fixtext>
+      <fix id="F-D51FDEC6r01_fix"/>
+      <check system="C-D51FDEC6_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following PowerShell cmdlet and ensure the StartType of both MSExchangePop3 and MSExchangePOP3BE are set to Disabled
+Get-Service MSExchangePOP3* | ft Name,DisplayName,Status,StartType</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-9FA6EA7B">
+    <title>2.4 Services and Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-9FA6EA7Br01_rule" weight="10.0" severity="medium">
+      <version>2.4.2</version>
+      <title>(L1) Ensure 'IMAP4' Windows services are 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Internet Message Access Protocol version 4 (IMAP4) is an email protocol for sending and receiving email between a client and server. Unlike POP3 it can synchronize email and folders between the client and server. On Exchange Server 2019 with the Mailbox role installed, it is set to manual startup by default.
+
+Rationale:
+IMAP4 by default is configured to use basic authentication, which can potentially expose credentials in plain text. While it can be configured to use SSL/TLS for encryption, it is important to disable unnecessary services that duplicate the functionality of more widely used and supported protocols. ActiveSync and MAPI, in contrast, offer superior security by default, provide an enhanced user experience, and are Microsoft's primary focus for support and improvement. By disabling IMAP4, organizations can reduce their attack surface and prioritize the use of more secure and feature-rich protocols.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.4.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-9FA6EA7Br01_fix">To implement the recommended state, execute the following PowerShell commands:
+Stop-Service MSExchangeImap4,MSExchangeIMAP4BE
+Get-Service MSExchangeImap4,MSExchangeIMAP4BE | Set-Service -StartupType
+Disabled</fixtext>
+      <fix id="F-9FA6EA7Br01_fix"/>
+      <check system="C-9FA6EA7B_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following PowerShell cmdlet and ensure the StartType of both MSExchangeImap4 and MSExchangeIMAP4BE are set to Disabled
+Get-Service MSExchangeImap4* | ft Name,DisplayName,Status,Starttype</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-AE81F6BA">
+    <title>2.4 Services and Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-AE81F6BAr01_rule" weight="10.0" severity="medium">
+      <version>2.4.3</version>
+      <title>(L1) Ensure 'Receive connector’ is set to ‘TLS’</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the advertised and accepted authentication mechanisms for the receive connector.
+The primary function of receive connectors in the front-end transport service is to accept anonymous and authenticated Simple Mail Transfer Protocol (SMTP) connections in the Exchange environment.
+Note: Some available values have dependencies and exclusions:
+• None is not compatible with other values.
+• BasicAuthRequireTLS requires BasicAuth and Tls.
+• ExternalAuthoritative can only be combined with Tls.
+• Tls is required when RequireTLS parameter is $true.
+• ExternalAuthoritative, requires PermissionGroups parameter to be ExchangeServers.
+
+Rationale:
+Configuring this setting enables the encryption of email between client and servers. This reduces the risk of eavesdropping, interception, and alteration of the email and adds protection by encrypting the sender and recipient information that cannot be encrypted by the sender.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.4.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-AE81F6BAr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-ReceiveConnector -Identity &lt;'IdentityName'&gt; -AuthMechanism 'Tls'
+Note: If more than one receive connector exists on the mailbox server, run this command to update all receive connectors.
+Get-ReceiveConnector | Set-ReceiveConnector -AuthMechanism 'Tls'</fixtext>
+      <fix id="F-AE81F6BAr01_fix"/>
+      <check system="C-AE81F6BA_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure AuthMechanism is set to Tls:
+Get-ReceiveConnector | Select Name, Identity, AuthMechanism</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E2CFD2F8">
+    <title>2.4 Services and Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E2CFD2F8r01_rule" weight="10.0" severity="high">
+      <version>2.4.4</version>
+      <title>(L2) Ensure ‘Send Exchange Customer Experience reports’ is set to ‘False’</title>
+      <description>&lt;VulnDiscussion&gt;This parameter specifies whether the Exchange server is enrolled in the Windows Customer Experience Improvement Program (CEIP). This is a voluntary program that collects information on users and their computers in order to help Microsoft improve features and solve common issues.
+
+Rationale:
+The Windows Customer Experience Improvement Program (CEIP) collects information such as user's encounters with Exchange, hardware configurations and usage, and information about configuration settings in general. Although the program claims it does not collect personal information, there is no way to verify what information gets collected.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.4.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E2CFD2F8r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-OrganizationConfig -CustomerFeedbackEnabled $false</fixtext>
+      <fix id="F-E2CFD2F8r01_fix"/>
+      <check system="C-E2CFD2F8_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure CustomerFeedbackEnabled is set to false:
+Get-OrganizationConfig | Select Name, Identity, CustomerFeedbackEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-75318A60">
+    <title>2.4 Services and Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-75318A60r01_rule" weight="10.0" severity="medium">
+      <version>2.4.5</version>
+      <title>(L1) Ensure 'SMTP automated banner response’ is set to ‘220 SMTP Server Ready’</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting specifies a custom SMTP 220 banner which is displayed to remote messaging servers that connect to the receive connector.
+
+Rationale:
+The default value could disclose information that can be used by a third-party to determine operating system and product release levels on the target server. This information can then be used for an attack.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>2.4.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-75318A60r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-ReceiveConnector -Identity &lt;'IdentityName'&gt; -Banner '220 SMTP Server
+Ready'</fixtext>
+      <fix id="F-75318A60r01_fix"/>
+      <check system="C-75318A60_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure Banner is set to 220 SMTP Server Ready:
+Get-ReceiveConnector | Select Name, Identity, Banner</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E7CD2F44">
+    <title>3 Mobile Device Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E7CD2F44r01_rule" weight="10.0" severity="medium">
+      <version>3.1</version>
+      <title>(L1) Ensure 'Allow simple passwords' is set to 'False'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the use of strong passwords to unlock mobile devices before they can connect via ActiveSync to an Exchange server.
+
+Rationale:
+Allowing simple passwords can make it easier for an attacker to correctly guess them.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>3.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E7CD2F44r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MobileDeviceMailboxPolicy "Profile" -AllowSimplePassword $false
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mobile" on the left and click on the "Mobile device mailbox policies" tab.
+3. Double-click the policy you wish to modify and go to the "Security" settings.
+4. Ensure the Allow simple passwords box is not checked and click Save.</fixtext>
+      <fix id="F-E7CD2F44r01_fix"/>
+      <check system="C-E7CD2F44_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure AllowSimpleDevicePassword is set to False:
+Get-MobileDeviceMailboxPolicy | fl -property AllowSimplePassword</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-0FAC78DB">
+    <title>3 Mobile Device Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-0FAC78DBr01_rule" weight="10.0" severity="medium">
+      <version>3.2</version>
+      <title>(L1) Ensure 'Allow unmanaged devices' is set to 'False'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting determines whether Exchange will allow devices that do not accept security policy updates from the Exchange server to use ActiveSync.
+
+Rationale:
+Unmanaged devices are more likely to not comply with an organization's security policies and to be infected by malicious software.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>3.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-0FAC78DBr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MobileDeviceMailboxPolicy "Profile" -AllowNonProvisionableDevices $false
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mobile" on the left and click on the "Mobile device mailbox policies" tab.
+3. Double-click the policy you wish to modify and go to the "General" settings.
+4. Ensure the Allow mobile devices that don't fully support these policies to synchronize box is not checked and click Save.</fixtext>
+      <fix id="F-0FAC78DBr01_fix"/>
+      <check system="C-0FAC78DB_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following PowerShell cmdlet and ensure AllowNonProvisionableDevices is set to False:
+Get-MobileDeviceMailboxPolicy "Profile" | fl -property
+AllowNonProvisionableDevices</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-1CF95E65">
+    <title>3 Mobile Device Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-1CF95E65r01_rule" weight="10.0" severity="medium">
+      <version>3.3</version>
+      <title>(L1) Ensure 'Enforce password history' is set to '4' or greater</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the device password history.
+
+Rationale:
+The longer a user uses the same password, the greater the chance that an attacker can determine the password through a brute force attack. Also, any accounts that may have been compromised will remain exploitable for as long as the password is left unchanged. If password changes are required but password reuse is not prevented, or if users continually reuse a small number of passwords, the effectiveness of a good password policy is greatly reduced. If you specify a low number for this setting, users will be able to use the same small number of passwords repeatedly.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>3.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-1CF95E65r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MobileDeviceMailboxPolicy "Profile" -PasswordHistory 4
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mobile" on the left and click on the "Mobile device mailbox policies" tab.
+3. Double-click the policy you wish to modify and go to the "Security" settings.
+4. Change the Password recycle count to 4 and click Save.</fixtext>
+      <fix id="F-1CF95E65r01_fix"/>
+      <check system="C-1CF95E65_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure DevicePasswordHistory is set to 4 or greater:
+Get-MobileDeviceMailboxPolicy | fl -property PasswordHistory</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6F6003EB">
+    <title>3 Mobile Device Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6F6003EBr01_rule" weight="10.0" severity="medium">
+      <version>3.4</version>
+      <title>(L1) Ensure 'Minimum password length' is set to '4' or more</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting is used to specify a minimum password length for the device.
+
+Rationale:
+Types of password attacks include dictionary attacks that use common words and phrases, and brute force attacks that use character combinations. Attackers also sometimes try to obtain an account database so they can use tools to discover accounts and passwords.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>3.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6F6003EBr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MobileDeviceMailboxPolicy "Profile" -MinPasswordLength 4
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mobile" on the left and click on the "Mobile device mailbox policies" tab.
+3. Double-click the policy you wish to modify and go to the "Security" settings.
+4. Ensure the Minimum password length box is checked and change the value to 4 and click Save</fixtext>
+      <fix id="F-6F6003EBr01_fix"/>
+      <check system="C-6F6003EB_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure MinDevicePasswordLength is set to 4 or greater:
+Get-MobileDeviceMailboxPolicy | fl -property MinPasswordLength</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-7D2F607B">
+    <title>3 Mobile Device Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-7D2F607Br01_rule" weight="10.0" severity="medium">
+      <version>3.5</version>
+      <title>(L1) Ensure 'Number of attempts allowed' is set to '10'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting is used to restrict the number of failed logon attempts a user can make before an account is locked out.
+
+Rationale:
+This setting can reduce the likelihood that an unauthorized user can guess the password of a device to access data stored on it.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>3.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-7D2F607Br01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MobileDeviceMailboxPolicy "Profile" -MaxPasswordFailedAttempts 10</fixtext>
+      <fix id="F-7D2F607Br01_fix"/>
+      <check system="C-7D2F607B_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following PowerShell cmdlet and ensure MaxPasswordFailedAttempts is set to 10 or less:
+Get-MobileDeviceMailboxPolicy "Profile" | fl -property
+MaxPasswordFailedAttempts</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E91AC1FE">
+    <title>3 Mobile Device Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E91AC1FEr01_rule" weight="10.0" severity="medium">
+      <version>3.6</version>
+      <title>(L1) Ensure 'Password expiration' is set to '365' or less</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting is used to specify how long before a password expires.
+
+Rationale:
+The longer a password exists the higher the likelihood that it will be compromised by a brute force attack, by an attacker gaining general knowledge about the user, or by the user sharing the password. Configuring this setting to 0 so that users are never required to change their passwords is a major security risk because doing so allows a compromised password to be used by a malicious user for as long as the valid user has authorized access to the system.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>3.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E91AC1FEr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MobileDeviceMailboxPolicy "Profile" -PasswordExpiration 90
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mobile" on the left and click on the "Mobile device mailbox policies" tab.
+3. Double-click the policy you wish to modify and go to the "Security" settings.
+4. Ensure the Enforce password lifetime (days) box is checked change the value to 365 and click Save</fixtext>
+      <fix id="F-E91AC1FEr01_fix"/>
+      <check system="C-E91AC1FE_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure DevicePasswordExpiration is set to 365 or less:
+Get-MobileDeviceMailboxPolicy | fl -property PasswordExpiration</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-2005A4B8">
+    <title>3 Mobile Device Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-2005A4B8r01_rule" weight="10.0" severity="medium">
+      <version>3.7</version>
+      <title>(L1) Ensure 'Refresh interval' is set to '1'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting specifies how often in hours, that policy settings are refreshed.
+
+Rationale:
+Organizational requirements change, and new vulnerabilities may be discovered, so it is likely that ActiveSync policy settings will change. For these reasons, it is important to configure a refresh interval to ensure that the latest policy settings are applied to the devices in your organization.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>3.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-2005A4B8r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MobileDeviceMailboxPolicy "Profile" -DevicePolicyRefreshInterval
+'1:00:00'</fixtext>
+      <fix id="F-2005A4B8r01_fix"/>
+      <check system="C-2005A4B8_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following PowerShell script and ensure DevicePolicyRefreshInterval is set to 1:00:00.
+Get-MobileDeviceMailboxPolicy "Profile" | fl -property
+DevicePolicyRefreshInterval</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6F2E59DC">
+    <title>3 Mobile Device Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6F2E59DCr01_rule" weight="10.0" severity="medium">
+      <version>3.8</version>
+      <title>(L1) Ensure 'Require alphanumeric password' is set to 'True'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting ensures passwords meet the basic requirements for strong passwords.
+
+Rationale:
+Passwords that contain only alpha characters are extremely easy to discover with several publicly available tools.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>3.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6F2E59DCr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MobileDeviceMailboxPolicy "Profile" -AlphanumericPasswordRequired $true
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mobile" on the left and click on the "Mobile device mailbox policies" tab.
+3. Double-click the policy you wish to modify and go to the "Security" settings.
+4. Ensure the Require an alphanumeric password box is checked and click Save.</fixtext>
+      <fix id="F-6F2E59DCr01_fix"/>
+      <check system="C-6F2E59DC_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following PowerShell cmdlet and ensure AlphanumericPasswordRequired is set to False:
+Get-MobileDeviceMailboxPolicy "Profile" | fl -property
+AlphanumericPasswordRequired</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E8CCFD0A">
+    <title>3 Mobile Device Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E8CCFD0Ar01_rule" weight="10.0" severity="medium">
+      <version>3.9</version>
+      <title>(L1) Ensure 'Require encryption on device' is set to 'True'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting specifies whether encryption is required on the mobile device before it is allowed to connect to the Exchange environment.
+
+Rationale:
+Unencrypted data on mobile devices can be vulnerable to attacks. Requiring ActiveSync encryption helps to minimize the risk of information being compromised in case a mobile device is lost.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>3.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E8CCFD0Ar01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MobileDeviceMailboxPolicy "Profile" -RequireDeviceEncryption $true
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mobile" on the left and click on the "Mobile device mailbox policies" tab.
+3. Double-click the policy you wish to modify and go to the "Security" settings.
+4. Ensure the Require encryption on device box is checked and click Save</fixtext>
+      <fix id="F-E8CCFD0Ar01_fix"/>
+      <check system="C-E8CCFD0A_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following PowerShell cmdlet and ensure RequireDeviceEncryption is set to True:
+Get-MobileDeviceMailboxPolicy "Profile" | fl -property
+RequireDeviceEncryption</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-84EF72A5">
+    <title>3 Mobile Device Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-84EF72A5r01_rule" weight="10.0" severity="medium">
+      <version>3.10</version>
+      <title>(L1) Ensure 'Require password' is set to 'True'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting determines if a password is required for the device.
+
+Rationale:
+Allowing users to access a device without a password means that anyone with physical access to it can view data on the device.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>3.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-84EF72A5r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MobileDeviceMailboxPolicy "Profile" -PasswordEnabled $true
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mobile" on the left and click on the "Mobile device mailbox policies" tab.
+3. Double-click the policy you wish to modify and go to the "Security" settings.
+4. Ensure the Require a password box is checked and click Save.</fixtext>
+      <fix id="F-84EF72A5r01_fix"/>
+      <check system="C-84EF72A5_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following PowerShell cmdlet and ensure PasswordEnabled is set to True:
+Get-MobileDeviceMailboxPolicy "Profile" | fl -property PasswordEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-5916F3BD">
+    <title>3 Mobile Device Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-5916F3BDr01_rule" weight="10.0" severity="medium">
+      <version>3.11</version>
+      <title>(L1) Ensure 'Time without user input before password must be re-entered' is set to '15'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting prompts users for a password after the device has been inactive for a specified period of time.
+
+Rationale:
+Requiring devices to lock after 15 minutes minimizes the window of opportunity for an attacker to tamper with a lost or stolen device.
+This is the default behavior.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>3.11</dc:identifier>
+      </reference>
+      <fixtext fixref="F-5916F3BDr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-MobileDeviceMailboxPolicy "Profile" -MaxInactivityTimeLock 00:15:00
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mobile" on the left and click on the "Mobile device mailbox policies" tab.
+3. Double-click the policy you wish to modify and go to the "Security" settings.
+4. Ensure the Require sign-in after the device has been inactive for (minutes) box is checked and change the value to 15 and click Save.</fixtext>
+      <fix id="F-5916F3BDr01_fix"/>
+      <check system="C-5916F3BD_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following PowerShell cmdlet and ensure MaxInactivityTimeLock is set to 15:
+Get-MobileDeviceMailboxPolicy "Profile" | fl -property MaxInactivityTimeLock</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-76E4FCE0">
+    <title>4 Logging</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-76E4FCE0r01_rule" weight="10.0" severity="medium">
+      <version>4.1</version>
+      <title>(L1) Ensure 'Receive connector: Configure protocol logging' is set to 'Verbose'</title>
+      <description>&lt;VulnDiscussion&gt;A protocol log is a record of the SMTP activity between messaging servers as part of message delivery. This SMTP activity occurs on Send connectors and Receive connectors that are configured with the transport service on Mailbox servers and Edge Transport servers.
+
+Rationale:
+If events are not recorded, it may be difficult or impossible to determine the root cause of system problems or the unauthorized activities of malicious users.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>4.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-76E4FCE0r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-ReceiveConnector "IDENTITY" -ProtocolLoggingLevel Verbose
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mail Flow" on the left and click on the "Receive Connectors" tab.
+3. Double-click on the receive connector to be modified.
+4. Change the Protocol logging level to Verbose and click Save.</fixtext>
+      <fix id="F-76E4FCE0r01_fix"/>
+      <check system="C-76E4FCE0_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure ProtocolLoggingLevel is set to Verbose:
+Get-ReceiveConnector "IDENTITY" | fl -property ProtocolLoggingLevel</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-151AF223">
+    <title>4 Logging</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-151AF223r01_rule" weight="10.0" severity="medium">
+      <version>4.2</version>
+      <title>(L1) Ensure 'Turn on administrator audit logging' is set to ''</title>
+      <description>&lt;VulnDiscussion&gt;Administrator audit logging is used to provide a log of the settings that are changed by administrators anywhere in the system.
+This recommendation incorporates the following parameters into one setting:
+• AdminAuditLogEnabled
+• AdminAuditLogCmdlets
+• AdminAuditLogParameters
+• AdminAuditLogExcludedCmdlets
+• AdminAuditLogAgeLimit
+• LogLevel Note: Changes to the audit log configuration may take up to 60 minutes to be applied on computers that have the Exchange Management Shell open at the time a configuration change is made. For changes to apply immediately, close and reopen the Exchange Management Shell on each computer.
+
+Rationale:
+Administrators may be able to reconfigure the system to expose a vulnerability with no record of the changes made.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>4.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-151AF223r01_fix">To implement the recommended state, execute the following PowerShell script:
+$params = @{
+AdminAuditLogEnabled = $True
+AdminAuditLogCmdlets = '*'
+AdminAuditLogParameters = '*'
+AdminAuditLogExcludedCmdlets = $null
+AdminAuditLogAgeLimit = '90.00:00:00'
+LogLevel = 'Verbose'
+}
+Set-AdminAuditLogConfig @params</fixtext>
+      <fix id="F-151AF223r01_fix"/>
+      <check system="C-151AF223_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure AdminAuditLog parameters are set to the value specified in the Remediation Section:
+Get-AdminAuditLogConfig | fl AdminAuditLog*,LogLevel</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-3298B54F">
+    <title>4 Logging</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-3298B54Fr01_rule" weight="10.0" severity="medium">
+      <version>4.3</version>
+      <title>(L1) Ensure 'Turn on connectivity logging' is set to 'True'</title>
+      <description>&lt;VulnDiscussion&gt;A connectivity log is a record of the SMTP connection activity of the outbound message delivery queues to the destination Mailbox server, smart host, or domain. Connectivity logging can be configured with the transport service on Mailbox servers and Edge Transport servers.
+
+Rationale:
+If events are not recorded, it may be difficult or impossible to determine the root cause of system problems or the unauthorized activities of malicious users.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>4.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-3298B54Fr01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-TransportService "EXCHANGE1" -ConnectivityLogEnabled $true
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Servers" on the left and click on the "Servers" tab.
+3. Double-click the server and go to the "Transport logs" settings.
+4. Ensure the Enable connectivity log box is checked and click Save.</fixtext>
+      <fix id="F-3298B54Fr01_fix"/>
+      <check system="C-3298B54F_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure ConnectivityLogEnabled is set to True:
+Get-TransportService "EXCHANGE1" | fl -property ConnectivityLogEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-0EE76380">
+    <title>4 Logging</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-0EE76380r01_rule" weight="10.0" severity="medium">
+      <version>4.4</version>
+      <title>(L1) Ensure 'Send connector: Configure protocol logging' is set to 'Verbose'</title>
+      <description>&lt;VulnDiscussion&gt;A protocol log is a record of the SMTP activity between messaging servers as part of message delivery. This SMTP activity occurs on Send connectors and Receive connectors that are configured with the transport service on Mailbox servers and Edge Transport servers.
+
+Rationale:
+If events are not recorded, it may be difficult or impossible to determine the root cause of system problems or the unauthorized activities of malicious users.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>4.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-0EE76380r01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-SendConnector "IDENTITY" -ProtocolLoggingLevel Verbose
+OR Perform the following actions:
+1. Launch the EAC (Exchange Administrative Center).
+2. Go to "Mail Flow" on the left and click on the "Send Connectors" tab.
+3. Double-click on the send connector to be modified.
+4. Change the Protocol logging level to Verbose and click Save.</fixtext>
+      <fix id="F-0EE76380r01_fix"/>
+      <check system="C-0EE76380_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure ProtocolLogginglevel is set to Verbose:
+Get-SendConnector "IDENTITY" | fl -property ProtocolLoggingLevel</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-2F33F64A">
+    <title>4 Logging</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-2F33F64Ar01_rule" weight="10.0" severity="medium">
+      <version>4.5</version>
+      <title>(L1) Ensure 'Message tracking logging' is set to 'True'</title>
+      <description>&lt;VulnDiscussion&gt;A message tracking log provides a detailed log of all message activity as messages are transferred to and from a computer running Exchange. The message tracking log can be configured with the transport service on Mailbox servers and Edge Transport servers.
+
+Rationale:
+If events are not recorded it may be difficult or impossible to determine the root cause of system problems or the unauthorized activities of malicious users.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Microsoft Exchange Server 2019 Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Microsoft Exchange Server 2019 Benchmark</dc:subject>
+        <dc:identifier>4.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-2F33F64Ar01_fix">To implement the recommended state, execute the following PowerShell cmdlet:
+Set-TransportService "EXCHANGE1" -MessageTrackingLogEnabled $true</fixtext>
+      <fix id="F-2F33F64Ar01_fix"/>
+      <check system="C-2F33F64A_chk">
+        <check-content-ref href="CIS_Microsoft_Exchange_Server_2019_Benchmark.xml" name="M"/>
+        <check-content>Execute the following cmdlet and ensure MessageTrackingLogEnabled is set to True:
+Get-TransportService "EXCHANGE1" | fl -property MessageTrackingLogEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+</Benchmark>
+

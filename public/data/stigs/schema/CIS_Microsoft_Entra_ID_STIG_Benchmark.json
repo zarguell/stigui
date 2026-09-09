@@ -1,0 +1,535 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_Microsoft_Entra_ID_STIG_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2025-08-13"
+    },
+    "title": "CIS Microsoft Entra ID STIG Benchmark",
+    "description": "Target Technology Details Microsoft Entra ID Secure Technical Implementation Guide (STIG) Version: 1 Release: 1 Benchmark Date: 28 Feb 2025",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.0.0 Benchmark Date: 2025-08-13",
+      "+@id": "release-info"
+    },
+    "version": "1.0.0",
+    "Profile": [
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Public",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-270200",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270204",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270208",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270209",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270227",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270233",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270239",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270255",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270335",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270475",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Classified",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-270200",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270204",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270208",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270209",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270227",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270233",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270239",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270255",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270335",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270475",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Sensitive",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-270200",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270204",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270208",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270209",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270227",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270233",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270239",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270255",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270335",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-270475",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-270200",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-270200r1085610_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1",
+          "title": "ENTR-ID-000030",
+          "description": "<VulnDiscussion>Microsoft Entra ID must initiate a session lock after a 15-minute period of inactivity.\n\nRationale:\nSession locks are temporary actions taken to prevent logical access to organizational systems when users stop work and move away from the immediate vicinity of those systems but do not want to log out because of the temporary nature of their absences.\nSession locks can be implemented at the operating system level or at the application level. A proximity lock may be used to initiate the session lock (e.g., via a Bluetooth- enabled session or dongle). User-initiated session locking is behavior or policy-based and, as such, requires users to take physical action to initiate the session lock. Session locks are not an acceptable substitute for logging out of systems, such as when organizations require users to log out at the end of workdays.\nSatisfies: SRG-APP-000295</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:identifier": "1.1"
+          },
+          "fixtext": {
+            "+content": "1. Sign into entra.microsoft.us.\n2. Navigate to the Gear icon (right) and select Settings >> Signing out + notifications.\n3. Check the \"Enable directory level idle timeout\" box.\n4. Populate the \"Hours\" field to \"0\" and the \"Minutes\" field to \"15\".\n5. Click \"Apply\".",
+            "+@fixref": "F-SV-270200r1085610_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-270200r1085610_fix"
+          },
+          "check": {
+            "+@system": "C-SV-270200r1085610_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Entra_ID_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To verify the inactivity timeout is configured for 15 minutes or less, follow the steps outlined below:\n1. Sign in to entra.microsoft.us.\n2. Navigate to the Gear icon (right) and select Settings >> Signing out + notifications.\n3. Check that the \"Enable directory level idle timeout\" is selected.\n4. Verify the Signing out value is 15 minutes or less.\nIf the directory level idle timeout is not set to 15 minutes or less, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-270204",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-270204r1085660_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2",
+          "title": "ENTR-ID-000090",
+          "description": "<VulnDiscussion>Microsoft Entra ID must automatically disable accounts after a 35-day period of account inactivity.\n\nRationale:\nAttackers that are able to exploit an inactive account can potentially obtain and maintain undetected access to an application. Owners of inactive accounts will not notice if unauthorized access to their user account has been obtained. Applications need to track periods of user inactivity and disable accounts after 35 days of inactivity. Such a process greatly reduces the risk that accounts will be hijacked, leading to a data compromise.\nTo address access requirements, many application developers choose to integrate their applications with enterprise-level authentication/access mechanisms that meet or exceed access control policy requirements. Such integration allows the application developer to offload those access control functions and focus on core application features and functionality.\nThis policy does not apply to either emergency accounts or infrequently used accounts.\nInfrequently used accounts are local login administrator accounts used by system administrators when network or normal logon/access is not available. Emergency accounts are administrator accounts created in response to crisis situations.\nReferences:\n• https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/get- mguser?view=graph-powershell-1.0\n• https://learn.microsoft.com/en-us/graph/api/user-list?view=graph-rest- 1.0&tabs=http\n• https://learn.microsoft.com/en-us/graph/api/resources/user?view=graph-rest- 1.0#properties\n• https://learn.microsoft.com/en-us/graph/api/resources/signinactivity?view=graph- rest-1.0#properties For any PowerShell scripts that are Graph, note that Graph endpoints differ depending on where the tenant is located.\n• For commercial tenants, graph endpoints are graph.microsoft.com.\n• For GCC High tenants (IL4), graph endpoints are graph.microsoft.us.\n• For DOD tenants (IL5), graph endpoints are dod-graph.microsoft.us.\nSatisfies: SRG-APP-000025, SRG-APP-000163</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:identifier": "1.2"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to the Microsoft Entra admin center as at least a Reports Reader.\n2. Browse to Identity >> Users >> All users.\n3. Select a user from the list.\n4. Use the following procedure to disable inactive user accounts in Entra ID via the use of the Graph PowerShell SDK.\nInstallation instructions:\nhttps://learn.microsoft.com/en-us/powershell/microsoftgraph/installation?view=graph- powershell-1.0 Required roles:\nGlobal Administrator Install the Microsoft Graph PowerShell SDK.\nInstall-Module Microsoft.Graph -Scope CurrentUser\nConnect-MgGraph -Scopes \"User.ReadWrite.All\", \"Directory.ReadWrite.All\",\n\"SignInActivity.Read.All\"\nSet the inactivity threshold (in days)\n$inactivityThreshold = 35\nGet the current date\n$currentDate = Get-Date\nGet all users and their last sign-in activity\n$users = Get-MgUser -All -Property \"DisplayName\", \"SignInActivity\"\nFilter for inactive users\n$inactiveUsers = $users | Where-Object {\n$_.SignInActivity.LastSignInDateTime -lt ($currentDate.AddDays(-\n$inactivityThreshold))\n}\nDisable inactive users\nforeach ($user in $inactiveUsers) {\nSet-MgUser -UserId $user.Id -AccountEnabled $false\nWrite-Host \"Disabled user: $($user.DisplayName)\"\n}",
+            "+@fixref": "F-SV-270204r1085660_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-270204r1085660_fix"
+          },
+          "check": {
+            "+@system": "C-SV-270204r1085660_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Entra_ID_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Entra ID disables accounts after 35 days of inactivity.\nUse the following procedure to discover inactive user accounts in Entra ID (35+ days) via the use of the Graph PowerShell SDK.\nInstallation instructions:\nhttps://learn.microsoft.com/en-us/powershell/microsoftgraph/installation?view=graph- powershell-1.0 Required roles:\nAt least Global Reader Required tenant license:\nEntra ID Premium P1 Example PowerShell commands:\nConnect-MgGraph -Scopes AuditLog.Read.All,User.Read.All -Environment USGov\n$inactiveDate = (Get-Date).AddDays(-35)\n$users = Get-MgUser -All:$true -Property Id, DisplayName, UserPrincipalName,\nUserType, createdDateTime, SignInActivity, AccountEnabled | Where-Object {\n$_.AccountEnabled -eq $true }\n$inactiveUsers =\n$users | Where-Object {\n($_.SignInActivity.LastSignInDateTime -lt $inactiveDate) -or\n($_.SignInActivity.LastSignInDateTime -eq $null -and $_.CreatedDateTime -lt\n$inactiveDate)\n} | Select-Object DisplayName, UserPrincipalName, UserType, createdDateTime,\n@{Name = 'LastSignInDateTime'; Expression =\n{($_.SignInActivity).LastSignInDateTime}}, Id | Sort-Object\nLastSignInDateTime\n$inactiveUsers | Format-Table -AutoSize\nIf accounts are not disabled after a 35-day period of account inactivity, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-270208",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-270208r1085616_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3",
+          "title": "ENTR-ID-000140",
+          "description": "<VulnDiscussion>Microsoft Entra ID must enforce the limit of three consecutive invalid logon attempts by a user during a 15-minute time period.\n\nRationale:\nBy limiting the number of failed login attempts, the risk of unauthorized system access via user password guessing, otherwise known as brute forcing, is reduced. Limits are imposed by locking the account.\nSatisfies: SRG-APP-000345</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:identifier": "1.3"
+          },
+          "fixtext": {
+            "+content": "To configure account lockout settings, complete these steps:\n1. Sign in to the Microsoft Entra admin center as at least an Authentication Administrator.\n2. Browse to Identity >> Protection >> Authentication methods >> Password protection.\n3. Set the Lockout threshold to \"3\".\n4. Set the Lockout duration to \"900\" (15 minutes).",
+            "+@fixref": "F-SV-270208r1085616_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-270208r1085616_fix"
+          },
+          "check": {
+            "+@system": "C-SV-270208r1085616_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Entra_ID_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Entra ID is configured to enforce the limit of three consecutive invalid logon attempts by a user during a 15-minute time period.\n1. Sign in to the Microsoft Entra admin center as at least an Authentication Policy Administrator.\n2. Browse to Identity >> Protection >> Authentication methods >> Password protection.\n3. Verify the Lockout Threshold has been set to \"3\" and Lockout duration is set to \"900\" or more.\nIf Entra ID is not configured to enforce the limit of three consecutive invalid logon attempts with a lockout period of 15 minutes, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-270209",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-270209r1085618_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4",
+          "title": "ENTR-ID-000150",
+          "description": "<VulnDiscussion>Microsoft Entra ID must display the Standard Mandatory DOD Notice and Consent Banner before granting access to the application.\n\nRationale:\nDisplay of the DOD-approved use notification before granting access to the application ensures privacy and security notification verbiage used is consistent with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance.\nSystem use notifications are required only for access via logon interfaces with human users and are not required when such human interfaces do not exist.\nThe banner must be formatted in accordance with DTM-08-060. Use the following verbiage for applications that can accommodate banners of 1300 characters:\n\"You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.\nBy using this IS (which includes any device attached to this IS), you consent to the following conditions:\n-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.\n-At any time, the USG may inspect and seize data stored on this IS.\n-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG- authorized purpose.\n-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.\n-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.\" Use the following verbiage for operating systems that have severe limitations on the number of characters that can be displayed in the banner:\n\"I've read & consent to terms in IS user agreem't.\" Satisfies: SRG-APP-000068, SRG-APP-000069, SRG-APP-000070</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:identifier": "1.4"
+          },
+          "fixtext": {
+            "+content": "To create the standard DOD banner in Entra ID:\n1. Sign in to the Microsoft Entra admin center as a Global Administrator.\n2. Browse to or search \"Company Branding\".\n3. Select \"Customize\" under \"Default sign-in experience\".\n4. Browse to the \"Sign-in form\" tab and place the required DOD banner text in the \"Sign-in page text\". Note: This field is limited to 1024 characters.\n5. Populate all required fields.\n6. Click \"Review + Create\".",
+            "+@fixref": "F-SV-270209r1085618_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-270209r1085618_fix"
+          },
+          "check": {
+            "+@system": "C-SV-270209r1085618_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Entra_ID_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Entra ID has been configured to display the DOD logon banner when a user logs on.\n1. Sign in to the Microsoft Entra admin center as a Global Administrator.\n2. Browse to or search \"Company Branding\".\n3. Browse to the \"Sign-in form\" tab and review the required DOD banner text in the \"Sign-in page text\". Note: This field is limited to 1024 characters.\nIf the DOD logon banner text is not present in the \"Sign-in page text\" field, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-270227",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-270227r1085728_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5",
+          "title": "ENTR-ID-000370",
+          "description": "<VulnDiscussion>Microsoft Entra ID must be configured to transfer logs to another server for storage, analysis, and reporting.\n\nRationale:\nProtection of log data includes ensuring log data is not accidentally lost or deleted.\nBacking up audit records to a different system or onto separate media than the system being audited on an organizationally defined frequency helps to ensure the audit records will be retained in the event of a catastrophic system failure.\nThis also ensures a compromise of the information system being audited does not result in a compromise of the audit records.\nThis requirement only applies to applications that have a native backup capability for audit records. Operating system backup requirements cover applications that do not provide native backup functions.\nSatisfies: SRG-APP-000358</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:identifier": "1.5"
+          },
+          "fixtext": {
+            "+content": "Configure the Microsoft Entra to transfer Microsoft Entra server logs to another server for storage, analysis, and reporting at least every seven days.\n1. Sign in to the Microsoft Entra admin center as a Global Administrator.\n2. Browse to Identity >> Monitoring & health >> Diagnostic settings.\n3. Select \"+ Add diagnostic settings\".\n4. Select at least these required categories:\n• SigninLogs.\n• AuditLogs.\n• ServicePrincipalSignInLogs.\n• ManagedIdentitySignInLogs.\n• UserRiskEvents.\n• RiskyUsers.\n• RiskyServicePrincipals.\n• ServicePrincipalRiskEvents.\n5. Select \"Send to Log Analytics workspace\". For details on establishing a log analytics workspace, reference the DOD365 TCG.",
+            "+@fixref": "F-SV-270227r1085728_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-270227r1085728_fix"
+          },
+          "check": {
+            "+@system": "C-SV-270227r1085728_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Entra_ID_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify Microsoft Entra ID sign-in logs are updated in Microsoft Sentinel or equivalent SIEM. Verify the Connected Status is \"green\" with Last Log Received within the past hour.\n1. Sign in to the Microsoft Entra admin center as a Global Administrator.\n2. Browse to Identity >> Monitoring & health >> Diagnostic settings.\n3. Select \"Edit settings\" for the entry that has an established log analytics workspace.\n4. Review the selected log categories. The minimum required categories are:\n• SigninLogs.\n• AuditLogs.\n• ServicePrincipalSignInLogs.\n• ManagedIdentitySignInLogs.\n• UserRiskEvents.\n• RiskyUsers.\n• RiskyServicePrincipals.\n• ServicePrincipalRiskEvents.\nIf there is not an entry established to offload logs to a log analytic workspace and the minimum log categories are not selected, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-270233",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-270233r1085634_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.6",
+          "title": "ENTR-ID-000440",
+          "description": "<VulnDiscussion>Microsoft Entra ID must be configured to use multifactor authentication (MFA).\n\nRationale:\nWithout the use of MFA, the ease of access to privileged functions is greatly increased.\nMFA requires the use of two or more factors to achieve authentication.\nFactors include: (i) Something a user knows (e.g., password/PIN); (ii) Something a user has (e.g., cryptographic identification device, token); or (iii) Something a user is (e.g., biometric).\nA privileged account is defined as an information system account with authorizations of a privileged user.\nNetwork access is defined as access to an information system by a user (or a process acting on behalf of a user) communicating through a network (e.g., local area network, wide area network, or the internet).\nSatisfies: SRG-APP-000149, SRG-APP-000150, SRG-APP-000154, SRG-APP-000155</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:identifier": "1.6"
+          },
+          "fixtext": {
+            "+content": "Account authentication is managed by Entra ID. The following steps will create a Conditional Access policy to require all users to use MFA:\n1. Sign in to the Microsoft Entra admin center as at least a Conditional Access Administrator.\n2. In the search bar, search for \"Conditional Access\".\n3. Select \"Create new policy\".\n4. Give the policy a name. It is recommended that organizations create a meaningful standard for the names of policies.\n5. Under \"Assignments\", select \"Users\" or \"workload identities\".\n6. a. Under \"Include\", select \"All users\".\n7. b. Under \"Exclude\", select \"Users\" and \"groups\", and then choose the organization's emergency access or break-glass accounts.\n8. Navigate to Target resources >> Cloud apps >> Include. Select \"All cloud apps\".\n9. a. Under \"Exclude\", select any applications that do not require MFA.\n10.Navigate to Access controls >> Grant. Select \"Grant access, Require multifactor authentication\", and then click \"Select\".\n11.Confirm the settings and set \"Enable policy\" to \"Report-only\".\n12.Select \"Create\" to enable the policy.\n13.After confirming the policy, deploy the policy by either moving the \"Enable\" policy toggle from \"Report-only\" to \"On\" or alternately, deploying the policy using a Conditional Access template.",
+            "+@fixref": "F-SV-270233r1085634_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-270233r1085634_fix"
+          },
+          "check": {
+            "+@system": "C-SV-270233r1085634_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Entra_ID_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify user accounts require MFA.\n1. Sign in to the Microsoft Entra admin center as at least a Conditional Access Administrator.\n2. Browse to Identity >> Protection >> Conditional Access.\n3. Select \"Policies\" and find the MFA policy.\n4. Confirm the policy state is set to \"On\".\n5. Select the policy and confirm \"All users included\" is specified under the Users option of the policy.\n6. Confirm any exclusions listed under the \"Exclude\" section of the Users option are documented with the authorizing official (AO).\nIf the MFA policy is not set to \"On\" with \"All users included\" selected and any exclusions are not documented with the AO, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-270239",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-270239r1085663_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.7",
+          "title": "ENTR-ID-000610",
+          "description": "<VulnDiscussion>Microsoft Entra ID must enforce a 60-day maximum password lifetime restriction.\n\nRationale:\nAny password, no matter how complex, can eventually be cracked. Therefore, passwords need to be changed at specific intervals.\nOne method of minimizing this risk is to use complex passwords and periodically change them. If the application does not limit the lifetime of passwords and force users to change their passwords, there is the risk that the system and/or application passwords could be compromised.\nThis requirement does not include emergency administration accounts, which are meant for access to the application in case of failure. These accounts are not required to have maximum password lifetime restrictions.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:identifier": "1.7"
+          },
+          "fixtext": {
+            "+content": "Change the default Entra ID password expiration time period to 60 days by using the Graph script located here:\nhttps://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/update- mguser Use the \"Get-MgDomain\" command, and update it to 60 days using the \"Update- MgDomain -DomainId <DomainName> -PasswordValidityPeriodInDays 60\" command.\nNote: For any PowerShell scripts that are Graph, note that Graph endpoints differ depending on where the tenant is located.\n• For commercial tenants, graph endpoints are graph.microsoft.com.\n• For GCC High tenants (IL4), graph endpoints are graph.microsoft.us.\n• For DOD tenants (IL5), graph endpoints are dod-graph.microsoft.us.",
+            "+@fixref": "F-SV-270239r1085663_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-270239r1085663_fix"
+          },
+          "check": {
+            "+@system": "C-SV-270239r1085663_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Entra_ID_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the Entra ID password expiration time period has been changed to 60 days.\nInterview the site Entra ID system administrator and verify the script shown in the Fix has been run.\nIf the Entra ID password expiration time period is not 60 days or less, this is a finding.\nNote: It is not possible to view the current value for the password expiration time (the Entra ID default is 90). An administrator can check the maximum password age of their Entra ID tenant by using the Graph PowerShell SDK module and the \"Get-MgDomain\" command by using the script located here:\nhttps://learn.microsoft.com/en- us/powershell/module/microsoft.graph.identity.directorymanagement/get- mgdomain?view=graph-powershell-1.0 Note: For any PowerShell scripts that are Graph, note that Graph endpoints differ depending on where the tenant is located.\n• For commercial tenants, graph endpoints are graph.microsoft.com.\n• For GCC High tenants (IL4), graph endpoints are graph.microsoft.us.\n• For DOD tenants (IL5), graph endpoints are dod-graph.microsoft.us."
+          }
+        }
+      },
+      {
+        "+@id": "V-270255",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-270255r1085626_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.8",
+          "title": "ENTR-ID-000835",
+          "description": "<VulnDiscussion>Microsoft Entra ID must notify system administrators (SAs) and the information system security officer (ISSO) when privileges are being requested.\n\nRationale:\nWhen application accounts are modified, user accessibility is affected. Accounts are used for identifying individual users or for identifying the application processes themselves. Sending notification of account modification events to the system administrator and ISSO is one method for mitigating this risk. Such a capability greatly reduces the risk that application accessibility will be negatively affected for extended periods of time and also provides logging that can be used for forensic purposes.\nTo address access requirements, many operating systems can be integrated with enterprise-level authentication/access/auditing mechanisms that meet or exceed access control policy requirements.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:identifier": "1.8"
+          },
+          "fixtext": {
+            "+content": "Configure PIM to email notifications to the SA and ISSO when privileges are requested.\n1. Sign in to the Microsoft Entra admin center as at least an Authentication Policy Administrator.\n2. Search for \"Microsoft Entra Privileged Identity Management\".\n3. Navigate to \"Management\" and select \"Microsoft Entra roles\".\n4. Expand the \"Manage\" menu and select roles.\n5. For each role that is either active or eligible perform the following:\n6. a. Select the role.\n7. b. Navigate to role settings.\n8. c. Select \"Edit\".\n9. d. Navigate to the \"Notification\" tab.\n10.e. Under \"Send notifications when eligible members activate this role:\" add the SA and ISSO email addresses under \"Additional recipients\".\n11.f. Select \"Update\".",
+            "+@fixref": "F-SV-270255r1085626_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-270255r1085626_fix"
+          },
+          "check": {
+            "+@system": "C-SV-270255r1085626_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Entra_ID_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify PIM is in use with email notifications going to the SA and ISSO when privileges are requested.\n1. Sign in to the Microsoft Entra admin center as at least an Authentication Policy Administrator.\n2. Search for \"Microsoft Entra Privileged Identity Management\".\n3. Navigate to \"Management\" and select \"Microsoft Entra roles\".\n4. Expand the \"Manage\" menu and select roles.\n5. For each role that is either active or eligible perform the following:\n6. a. Select the role.\n7. b. Navigate to role settings.\n8. c. Under \"Send notifications when eligible members activate this role:\" Verify the SA and ISSO email addresses are listed under \"Additional recipients\" for the type \"Role activation alert\".\nIf the SA and ISSO are not set up to receive email notification when privileges are requested through PIM, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-270335",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-270335r1085641_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.9",
+          "title": "ENTR-ID-001900",
+          "description": "<VulnDiscussion>Microsoft Entra ID must use Privileged Identity Management (PIM).\n\nRationale:\nEmergency accounts are administrator accounts established in response to crisis situations where the need for rapid account activation is required. Therefore, emergency account activation may bypass normal account authorization processes. If these accounts are automatically disabled, system maintenance during emergencies may not be possible, thus adversely affecting system availability.\nEmergency accounts are different from infrequently used accounts (i.e., local logon accounts used by system administrators when network or normal logon/access is not available). Infrequently used accounts also remain available and are not subject to automatic termination dates. However, an emergency account is normally a different account created for use by vendors or system maintainers.\nTo address access requirements, many application developers choose to integrate their applications with enterprise-level authentication/access mechanisms that meet or exceed access control policy requirements. Such integration allows the application developer to offload those access control functions and focus on core application features and functionality.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:identifier": "1.9"
+          },
+          "fixtext": {
+            "+content": "Configure PIM to just-in-time (JIT) access and employ the principle of least privilege access.\nWhen assigning privileged roles to accounts, select the assignment type of \"Eligible\".",
+            "+@fixref": "F-SV-270335r1085641_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-270335r1085641_fix"
+          },
+          "check": {
+            "+@system": "C-SV-270335r1085641_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Entra_ID_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify PIM is in use with just-in-time (JIT) access and employing the principle of least privilege access.\n1. Sign in to the Microsoft Entra admin center as at least an Authentication Policy Administrator.\n2. Search for \"Microsoft Entra Privileged Identity Management\".\n3. Navigate to \"Management\" and select \"Microsoft Entra roles\".\n4. Expand the \"Manage\" menu and select \"Assignments\".\n5. Select the \"Active assignments\" tab and for each privileged role, verify there are no roles with an end time of \"Permanent\".\nIf any privileged roles are present with an end time of \"Permanent\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-270475",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-270475r1085680_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.10",
+          "title": "ENTR-ID-003350",
+          "description": "<VulnDiscussion>Microsoft Entra ID must, for password-based authentication, verify when users create or update passwords that the passwords are not found on the list of commonly used, expected, or compromised passwords.\n\nRationale:\nPassword-based authentication applies to passwords regardless of whether they are used in single-factor or multifactor authentication. Long passwords or passphrases are preferable over shorter passwords. Enforced composition rules provide marginal security benefits while decreasing usability. However, organizations may choose to establish certain rules for password generation (e.g., minimum character length for long passwords) under certain circumstances and can enforce this requirement in IA-5(1)(h).\nAccount recovery can occur, for example, in situations when a password is forgotten.\nCryptographically protected passwords include salted one-way cryptographic hashes of passwords. The list of commonly used, compromised, or expected passwords includes passwords obtained from previous breach corpuses, dictionary words, and repetitive or sequential characters. The list includes context-specific words, such as the name of the service, username, and derivatives thereof.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Microsoft Entra ID STIG Benchmark",
+            "dc:identifier": "1.10"
+          },
+          "fixtext": {
+            "+content": "As an authorized administrator, browse to https://portal.azure.us/#view/Microsoft_AAD_ConditionalAccess/PasswordProtectionBla de.\nEnable the Custom banned password list by selecting \"Yes\" next to the \"Enforce custom list\" option.\nPopulate the \"Custom banned password list\".\nThe list must be one word per line, with a maximum of 1000 words. The words are case insensitive, and common character substitutions (o for 0, etc) are automatically considered.",
+            "+@fixref": "F-SV-270475r1085680_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-270475r1085680_fix"
+          },
+          "check": {
+            "+@system": "C-SV-270475r1085680_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Microsoft_Entra_ID_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "As an authorized administrator, browse to https://portal.azure.us/#view/Microsoft_AAD_ConditionalAccess/PasswordProtectionBla de.\nCheck the \"Custom banned passwords\" section. If \"Enforce custom list\" has not be configured to \"Yes\" and a custom banned password list has not been populated, this is a finding."
+          }
+        }
+      }
+    ]
+  }
+}

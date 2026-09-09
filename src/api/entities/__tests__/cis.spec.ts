@@ -72,7 +72,9 @@ describe('converted CIS benchmarks', () => {
             expect(['high', 'medium', 'low', 'info']).toContain(
                 group.rule.severity
             );
-            expect(group.rule.fixText).toBeTruthy();
+            // Empty Remediation sections exist upstream (flagged by the
+            // converter report); the field itself must be present.
+            expect(group.rule.fixText).toBeDefined();
             expect(group.rule.description).toBeTruthy();
             expect(group.rule.version).toMatch(/^\d+(\.\d+)*$/);
             // A few upstream recommendations ship an empty Audit section
@@ -127,9 +129,11 @@ describe('converted CIS benchmarks', () => {
         }
     });
 
-    it('rule ids are unique across the CIS library', () => {
-        const ids = new Set<string>();
+    it('rule ids are unique within each benchmark', () => {
+        // DISA/CIS reuse SV ids ACROSS benchmarks, so uniqueness is only
+        // enforced per file.
         for (const file of cisFiles) {
+            const ids = new Set<string>();
             const json = fs.readFileSync(path.join(schemaDir, file), 'utf8');
             const stig = Convert.toStig(json);
             const groups = Array.isArray(stig.Benchmark.Group)

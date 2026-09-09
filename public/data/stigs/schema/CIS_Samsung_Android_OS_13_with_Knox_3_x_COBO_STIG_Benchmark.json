@@ -1,0 +1,1475 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2023-01-26"
+    },
+    "title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+    "description": "Target Technology Details Samsung Android OS 13 with Knox 3.x COBO Secure Technical Implementation Guide (STIG) Version: 1 Release: 2 Benchmark Date: 26 Jan 2023",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.0.0 Benchmark Date: 2023-01-26",
+      "+@id": "release-info"
+    },
+    "version": "1.0.0",
+    "Profile": [
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Public",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-255107",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255108",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255109",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255110",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255111",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255112",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255113",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255114",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255115",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255116",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255117",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255118",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255119",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255120",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255121",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255122",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255123",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255124",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255125",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255127",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255128",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255129",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255130",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255131",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255132",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255133",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255134",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255135",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255136",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Classified",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-255107",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255108",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255109",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255110",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255111",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255112",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255113",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255114",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255115",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255116",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255117",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255118",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255119",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255120",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255121",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255122",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255123",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255124",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255125",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255127",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255128",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255129",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255130",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255131",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255132",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255133",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255134",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255135",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255136",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Sensitive",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-255107",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255108",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255109",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255110",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255111",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255112",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255113",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255114",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255115",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255116",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255117",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255118",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255119",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255120",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255121",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255122",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255123",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255124",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255125",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255127",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255128",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255129",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255130",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255131",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255132",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255133",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255134",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255135",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-255136",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-255107",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255107r867258_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1",
+          "title": "KNOX-13-110010",
+          "description": "<VulnDiscussion>Samsung Android must be enrolled as a COBO device.\n\nRationale:\nThe device is the designated application group for the COBO use case.\nSFR ID: FMT_MOF_EXT.1.2 #47</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.1"
+          },
+          "fixtext": {
+            "+content": "Enroll the Samsung Android devices in a DOD-approved use case.\nOn the management tool, configure the default enrollment as \"Fully managed\".\nRefer to the management tool documentation to determine how to configure the device enrollment.",
+            "+@fixref": "F-SV-255107r867258_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255107r867258_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255107r867258_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are enrolled in a DOD-approved use case.\nThis validation procedure is performed on both the management tool Administration Console and the Samsung Android device.\nOn the management tool, verify that the default enrollment is set as \"Fully managed\".\nOn the Samsung Android device:\n1. Open Settings >> Security and privacy >> Other security settings >> Device admin apps.\n2. Verify that the management tool Agent is listed.\nIf on the management tool the default enrollment is not set as \"Fully managed\", or the management tool Agent is not listed, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255108",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255108r867261_rule",
+          "+@weight": "10.0",
+          "+@severity": "low",
+          "version": "1.2",
+          "title": "KNOX-13-110020",
+          "description": "<VulnDiscussion>Samsung Android must be configured to display the DOD advisory warning message at startup or each time the user unlocks the device.\n\nRationale:\nBefore granting access to the system, the mobile operating system is required to display the DOD-approved system use notification message or banner that provides privacy and security notices consistent with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance. Required banners help ensure DOD can audit and monitor the activities of mobile device users without legal restriction.\nSystem use notification messages can be displayed when individuals first access or unlock the mobile device. The banner must be implemented as a \"click-through\" banner at device unlock (to the extent permitted by the operating system). A \"click-through\" banner prevents further activity on the information system unless and until the user executes a positive action to manifest agreement by clicking on a box indicating \"OK.\" The approved DOD text must be used exactly as required in the Knowledge Service referenced in DODI 8500.01. For devices accommodating banners of 1300 characters, the banner text is:\nYou are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only. By using this IS (which includes any device attached to this IS), you consent to the following conditions: -The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations. -At any time, the USG may inspect and seize data stored on this IS. -Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose. -This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy. -Notwithstanding the above, using this IS does not constitute consent to PM, LE, or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.\nInternal Only - General For devices with severe character limitations, the banner text is:\nI've read & consent to terms in IS user agreem't.\nThe administrator must configure the banner text exactly as written without any changes.\nSFR ID: FMT_SMF_EXT.1.1 #36</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.2"
+          },
+          "fixtext": {
+            "+content": "Configure the DOD warning banner by either of the following methods (required text is found in the Vulnerability Description):\nMethod #1: Place the DOD warning banner in the user agreement signed by each Samsung Android device user (preferred method).\nMethod #2: Configure the warning banner text in the lock screen message on each managed mobile device.\nOn the management tool, in the device restrictions section, set \"Lock Screen Message\" to the DOD-mandated warning banner text.\nInternal Only - General",
+            "+@fixref": "F-SV-255108r867261_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255108r867261_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255108r867261_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Confirm if Method #1 or #2 is used at the Samsung device site and follow the appropriate procedure.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nValidation procedure for method #1: Place the DOD warning banner in the user agreement signed by each Samsung Android device user (preferred method).\nReview the signed user agreements for several Samsung Android device users and verify the agreement includes the required DOD warning banner text.\nValidation procedure for method #2: Configure the warning banner text in the Lock screen message on each managed mobile device.\nOn the management tool, in the device restrictions section, verify that \"Lock Screen Message\" is set to the DOD-mandated warning banner text.\nOn the Samsung Android device, verify the required DOD warning banner text is displayed on the Lock screen.\nIf the warning text has not been placed in the signed user agreement, or if on the management tool \"Lock Screen Message\" is not set to the DOD-mandated warning banner text, or on the Samsung Android device the required DOD warning banner text is not displayed on the Lock screen, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255109",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255109r867264_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3",
+          "title": "KNOX-13-110030",
+          "description": "<VulnDiscussion>Samsung Android must be configured to not allow passwords that include more than four repeating or sequential characters.\n\nRationale:\nPassword strength is a measure of the effectiveness of a password in resisting guessing and brute force attacks. Passwords that contain repeating or sequential characters are significantly easier to guess than those that do not contain repeating or sequential characters. Therefore, disallowing repeating or sequential characters increases password strength and decreases risk.\nSFR ID: FMT_SMF_EXT.1.1 #1b</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.3"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to disallow passwords containing more than four repeating or sequential characters.\nOn the management tool, in the device password policies, set \"minimum password quality\" to \"Numeric(Complex)\" or better.\nIf the management tool does not support \"Numeric(Complex)\" but does support \"Numeric\", KPE can be used to achieve STIG compliance. In this case, configure this policy with value \"Numeric\" and use an additional KPE policy (innately by the management tool or via KSP) \"Maximum Numeric Sequence Length\" with value \"4\".",
+            "+@fixref": "F-SV-255109r867264_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255109r867264_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255109r867264_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are disallowing passwords containing more than four repeating or sequential characters.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device password policies, verify \"minimum password quality\" is set to \"Numeric(Complex)\" or better.\nOn the Samsung Android device:\n1. Open Settings >> Lock screen >> Screen lock type.\n2. Authenticate using current method.\n3. Tap \"PIN\".\n4. Verify that PINs with more than four repeating or sequential numbers are not accepted.\nIf on the management tool \"minimum password quality\" is not set to \"Numeric(Complex)\" or better, or on the Samsung Android device a password with more than four repeating or sequential numbers is accepted, this is a finding.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-255110",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255110r867267_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4",
+          "title": "KNOX-13-110040",
+          "description": "<VulnDiscussion>Samsung Android must be configured to enable a screen-lock policy that will lock the display after a period of inactivity.\n\nRationale:\nThe screen-lock timeout helps protect the device from unauthorized access. Devices without a screen-lock timeout provide an opportunity for adversaries who gain physical access to the mobile device through loss, theft, etc. Such devices are much more likely to be in an unlocked state when acquired by an adversary, thus granting immediate access to the data on the mobile device and possibly access to DOD networks.\nSFR ID: FMT_SMF_EXT.1.1 #2a</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.4"
+          },
+          "fixtext": {
+            "+content": "Implement a \"minimum password quality\" (see requirement KNOX-13-110030).",
+            "+@fixref": "F-SV-255110r867267_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255110r867267_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255110r867267_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify requirement KNOX-13-110030 (minimum password quality) has been implemented.\nIf a \"minimum password quality\" has not been implemented, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255111",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255111r867270_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5",
+          "title": "KNOX-13-110050",
+          "description": "<VulnDiscussion>Samsung Android must be configured to enforce a minimum password length of six characters.\n\nRationale:\nPassword strength is a measure of the effectiveness of a password in resisting guessing and brute force attacks. The ability to crack a password is a function of how many attempts an adversary is permitted, how quickly an adversary can do each attempt, and the size of the password space. The longer the minimum length of the password is, the larger the password space. Having a too-short minimum password length significantly reduces password strength, increasing the chance of password compromise and resulting device and data compromise.\nSFR ID: FMT_SMF_EXT.1.1 #1a</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.5"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to enforce a minimum password length of six characters.\nOn the management tool, in the device password policies, set \"minimum password length\" to \"6\".",
+            "+@fixref": "F-SV-255111r867270_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255111r867270_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255111r867270_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are enforcing a minimum password length of six characters.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device password policies, verify \"minimum password length\" is set to \"6\".\nOn the Samsung Android device:\n1. Open Settings >> Lock screen >> Screen lock type.\n2. Enter current password.\n3. Tap \"PIN\".\n4. Verify the text \"PIN must contain at least\", followed by a value of at least \"6 digits\", appears above the PIN entry.\nIf on the management tool \"minimum password length\" is not set to \"6\", or on the Samsung Android device the text \"PIN must contain at least\" is followed by a value of less than \"6 digits\", this is a finding.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-255112",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255112r867273_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.6",
+          "title": "KNOX-13-110060",
+          "description": "<VulnDiscussion>Samsung Android must be configured to not allow more than 10 consecutive failed authentication attempts.\n\nRationale:\nThe more attempts an adversary has to guess a password, the more likely the adversary will enter the correct password and gain access to resources on the device.\nSetting a limit on the number of attempts mitigates this risk. Setting the limit at 10 or less gives authorized users the ability to make a few mistakes when entering the password but still provides adequate protection against dictionary or brute force attacks on the password.\nSFR ID: FMT_SMF_EXT.1.1 #2c, FIA_AFL_EXT.1.5</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.6"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to allow only 10 or fewer consecutive failed authentication attempts.\nOn the management tool, in the device password policies, set \"max password failures for local wipe\" to \"10\" attempts or less.\nA device password must be set for \"max password failures for local wipe\" to become active.",
+            "+@fixref": "F-SV-255112r867273_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255112r867273_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255112r867273_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are allowing only 10 or fewer consecutive failed authentication attempts.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device password policies, verify \"max password failures for local wipe\" is set to \"10\" attempts or less.\nOn the Samsung Android device:\n1. Open Settings >> Lock screen.\n2. Verify \"Secure lock settings\" is present and tap it.\n3. Enter current password.\n4. Verify that \"Auto factory reset\" is greyed out, and cannot be configured.\nNote: When \"Auto factory reset\" is greyed out, this indicates the Administrator (MDM) is in control of the setting to wipe the device after 10 or fewer consecutive failed authentication attempts.\nIf on the management tool \"max password failures for local wipe\" is not set to \"10\" attempts or less, or on the Samsung Android device the \"Auto factory reset\" menu can be configured, this is a finding.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-255113",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255113r867276_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.7",
+          "title": "KNOX-13-110070",
+          "description": "<VulnDiscussion>Samsung Android must be configured to lock the display after 15 minutes (or less) of inactivity.\n\nRationale:\nThe screen lock timeout must be set to a value that helps protect the device from unauthorized access. Having a too-long timeout would increase the window of opportunity for adversaries who gain physical access to the mobile device through loss, theft, etc. Such devices are much more likely to be in an unlocked state when acquired by an adversary, thus granting immediate access to the data on the mobile device. The maximum timeout period of 15 minutes has been selected to balance functionality and security; shorter timeout periods may be appropriate depending on the risks posed to the mobile device.\nSFR ID: FMT_SMF_EXT.1.1 #2b</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.7"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to lock the device display after 15 minutes (or less) of inactivity.\nOn the management tool, in the device password policies, set \"max time to screen lock\" to \"15 minutes\" or less.\nA device password must be set for \"max time to screen lock\" to become active.",
+            "+@fixref": "F-SV-255113r867276_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255113r867276_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255113r867276_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are locking the device display after 15 minutes (or less) of inactivity.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device password policies, verify \"max time to screen lock\" is set to \"15 minutes\" or less.\nOn the Samsung Android device:\n1. Open Settings >> Lock screen.\n2. Verify \"Secure lock settings\" is present and tap it.\n3. Enter current password.\n4. Tap \"Auto lock when screen turns off\".\n5. Verify the listed timeout values are 15 minutes or less.\nIf on the management tool \"max time to screen lock\" is not set to \"15 minutes\" or less, or on the Samsung Android device \"Secure lock settings\" is not present and the listed Screen timeout values include durations of more than 15 minutes, this is a finding.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-255114",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255114r867279_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.8",
+          "title": "KNOX-13-110080",
+          "description": "<VulnDiscussion>Samsung Android must be configured to disable authentication mechanisms providing user access to protected data other than a Password Authentication Factor, including face recognition.\n\nRationale:\nThe biometric factor can be used to authenticate the user to unlock the mobile device.\nUnapproved/evaluated biometric mechanisms could allow unauthorized users to have access to DOD sensitive data if compromised. By not permitting the use of unapproved/evaluated biometric authentication mechanisms, this risk is mitigated.\nSFR ID: FMT_SMF_EXT.1.1 #22, FIA_UAU.5.1</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.8"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to disable Face Recognition.\nThis policy is included to allow a Samsung Android device to be deployed without an activated KPE premium license. If a license is activated, Facial Recognition will be automatically disabled. In this case, this policy does not need to be configured for STIG compliance, as Face as a biometric will be disabled.\nOn the management tool, in the device restrictions, set \"Face recognition\" to \"Disable\".",
+            "+@fixref": "F-SV-255114r867279_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255114r867279_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255114r867279_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are disabling Face Recognition.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nIf a KPE premium license is activated, Facial Recognition will be automatically disabled.\nOtherwise, on the management tool in the device restrictions, verify \"Face recognition\" is set to \"Disable\".\nOn the Samsung Android device:\n1. Open Settings >> Lock screen >> Screen lock type.\n2. Enter current password.\n3. Verify \"Face\" is disabled and cannot be enabled.\nIf on the management tool a KPE premium license is not activated and \"Face recognition\" is not set to \"Disable\", or on the Samsung Android device \"Face\" can be enabled, this is a finding.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-255115",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255115r867282_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.9",
+          "title": "KNOX-13-110090",
+          "description": "<VulnDiscussion>Samsung Android must be configured to enable a screen-lock policy that will lock the display after a period of inactivity - Disable trust agents.\n\nRationale:\nThe screen lock timeout must be set to a value that helps protect the device from unauthorized access. Having a too-long timeout would increase the window of opportunity for adversaries who gain physical access to the mobile device through loss, theft, etc. Such devices are much more likely to be in an unlocked state when acquired by an adversary, thus granting immediate access to the data on the mobile device. The maximum timeout period of 15 minutes has been selected to balance functionality and security; shorter timeout periods may be appropriate depending on the risks posed to the mobile device.\nSFR ID: FMT_SMF_EXT.1.1 #2a Internal Only - General</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.9"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to disable Trust Agents.\nOn the management tool, in the device restrictions, set \"Trust Agents\" to \"Disable\".",
+            "+@fixref": "F-SV-255115r867282_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255115r867282_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255115r867282_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are disabling Trust Agents.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device restrictions, verify that \"Trust Agents\" are set to \"Disable\".\nOn the Samsung Android device:\n1. Open Settings >> Security and privacy >> Other security settings >> Trust agents.\n2. Verify all listed Trust Agents are disabled and cannot be enabled. If a Trust Agent is not disabled in the list, verify for that Trust Agent, all of its listed Trustlets are disabled and cannot be enabled.\nIf on the management tool \"Trust Agents\" are not set to \"Disable\", or on the Samsung Android device a \"Trust Agent\" or \"Trustlet\" can be enabled, this is a finding.\nNote: If the management tool has been correctly configured but a Trust Agent is still enabled, configure the \"List of approved apps listed in managed Google Play\" to disable it; refer to KNOX-13-110190.\nException: Trust Agents may be used if the AO allows a screen lock timeout after four hours (or more) of inactivity. This may be applicable to tactical use case."
+          }
+        }
+      },
+      {
+        "+@id": "V-255116",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255116r867285_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.10",
+          "title": "KNOX-13-110100",
+          "description": "<VulnDiscussion>Samsung Android must be configured to not allow backup of all applications and configuration data to remote systems.\n• Disable Backup Services.\n\nRationale:\nBackups to remote systems (including cloud backup) can leave data vulnerable to breach on the external systems, which often offer less protection than the MOS. Where the remote backup involves a cloud-based solution, the backup capability is often used to synchronize data across multiple devices. In this case, DOD devices may synchronize DOD sensitive information to a user's personal device or other unauthorized computers vulnerable to breach. Disallowing remote backup mitigates this risk.\nSFR ID: FMT_SMF_EXT.1.1 #40</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.10"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to disable backup to remote systems (including commercial clouds).\nOn the management tool, in the device restrictions, set \"Backup service\" to \"Disable\".",
+            "+@fixref": "F-SV-255116r867285_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255116r867285_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255116r867285_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are disabling backup to remote systems (including commercial clouds).\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device restrictions section, verify that \"Backup service\" is set to \"Disable\".\nOn the Samsung Android device:\n1. Open Settings >> Accounts and backup.\n2. Verify that any backup service listed cannot be configured to back up data.\nIf on the management tool \"Backup service\" is not set to \"Disable\", or on the Samsung Android device a listed backup service can be configured to back up data, this is a finding.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-255117",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255117r867288_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.11",
+          "title": "KNOX-13-110110",
+          "description": "<VulnDiscussion>Samsung Android must be configured to disable developer modes.\n\nRationale:\nDeveloper modes expose features of the MOS that are not available during standard operation. An adversary may leverage a vulnerability inherent in a developer mode to compromise the confidentiality, integrity, and availability of DOD sensitive information.\nDisabling developer modes mitigates this risk.\nSFR ID: FMT_SMF_EXT.1.1 #26</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.11"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to disable developer modes.\nOn the management tool, in the device restrictions, set \"Debugging Features\" to \"Disallow\".\nInternal Only - General",
+            "+@fixref": "F-SV-255117r867288_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255117r867288_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255117r867288_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configure to determine if the Samsung Android devices are disabling developer modes.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device restrictions, verify that \"Debugging Features\" is set to \"Disallow\".\nOn the Samsung Android device:\n1. Open Settings >> About phone >> Software information.\n2. Tap on the Build Number to try to enable Developer Options and validate that action is blocked.\nIf on the management tool \"Debugging Features\" is not set to \"Disallow\" or on the Samsung Android device \"Developer options\" action is not blocked, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255118",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255118r867291_rule",
+          "+@weight": "10.0",
+          "+@severity": "low",
+          "version": "1.12",
+          "title": "KNOX-13-110120",
+          "description": "<VulnDiscussion>Samsung Android must be configured to disable all Bluetooth profiles except for HSP (Headset Profile), HFP (Hands-Free Profile), SPP (Serial Port Profile), A2DP (Advanced Audio Distribution Profile), AVRCP (Audio/Video Remote Control Profile), and PBAP (Phone Book Access Profile).\n\nRationale:\nSome Bluetooth profiles provide the capability for remote transfer of sensitive DOD data without encryption or otherwise do not meet DOD IT security policies and therefore must be disabled.\nSFR ID: FMT_SMF_EXT.1.1/BLUETOOTH BT-8</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.12"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to disable Bluetooth, or if the AO has approved the use of Bluetooth (for example, for hands-free use), train users to only pair devices which support HSP, HFP, SPP, A2DP, AVRCP, PBAP profiles.\nOn the management tool, in the device restrictions section, set \"Bluetooth\" to the AO- approved selection; \"Allow\" - if the AO has approved the use of Bluetooth - or \"Disallow\", if not.\nThe user training requirement is satisfied in requirement KNOX-13-110300.",
+            "+@fixref": "F-SV-255118r867291_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255118r867291_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255118r867291_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the Samsung documentation and inspect the configuration to verify the Samsung Android devices are paired only with devices which support HSP, HFP, SPP, A2DP, AVRCP, and PBAP Bluetooth profiles.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device restrictions section, verify \"Bluetooth\" is set to the AO-approved selection; \"Allow\" - if the AO has approved the use of Bluetooth - or \"Disallow\", if not.\nOn the Samsung Android device:\n1. Open Settings >> Connections >> Bluetooth.\n2. Verify all listed paired Bluetooth devices use only authorized Bluetooth profiles.\nIf on the management tool \"Bluetooth\" is not set to the AO-approved value, or the Samsung Android device is paired with a device which uses unauthorized Bluetooth profiles, this is a finding.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-255119",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255119r873664_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.13",
+          "title": "KNOX-13-110130",
+          "description": "<VulnDiscussion>Samsung Android must be configured to enable encryption for data at rest on removable storage media or, alternately, the use of removable storage media must be disabled.\n\nRationale:\nThe MOS must ensure the data being written to the mobile device's removable media is protected from unauthorized access. If data at rest is unencrypted, it is vulnerable to disclosure. Even if the operating system enforces permissions on data access, an adversary can read removable media directly, thereby circumventing operating system controls. Encrypting the data ensures confidentiality is protected even when the operating system is not running.\nSFR ID: FMT_SMF_EXT.1.1 #20, #47d Internal Only - General</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.13"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to enable data at rest protection for removable media, or alternatively, disable their use.\nThis requirement is not applicable for devices that do not support removable storage media.\nOn the management tool, in the device restrictions, set \"Mount physical media\" to \"Disallow\".\nThis disables the use of all removable storage, e.g., micro SD cards, USB thumb drives, etc.\nIf the deployment requires the use of micro SD cards, KPE can be used to allow its usage in a STIG-approved configuration. In this case, do not configure the policy above, and instead:\nOn the management tool, in the device restrictions, set \"Enforce external storage encryption\" to \"enable\".\nInternal Only - General",
+            "+@fixref": "F-SV-255119r873664_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255119r873664_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255119r873664_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are either enabling data at rest protection for removable media, or are disabling their use.\nThis requirement is not applicable for devices that do not support removable storage media.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device restrictions, verify that \"Mount physical media\" is set to \"Disallow\".\nOn the Samsung Android device, verify that a microSD card cannot be mounted.\nThe device should ignore the inserted SD card and no notifications for the transfer of media files should appear, nor should any files be listed using a file browser, such as Samsung My Files.\nIf on the management tool \"Mount physical media\" is not set to \"Disallow\", or on the Samsung Android device a microSD card can be mounted, this is a finding.\nIf the deployment requires the use of micro SD cards, follow this alternative procedure:\nOn the management tool, in the device restrictions, verify \"Enforce external storage encryption\" is set to \"Enable\".\nOn the Samsung Android device, do the following:\n1. Insert a freshly formatted microSD card.\n2. Verify that a prompt appears to encrypt the microSD card.\n3. Perform the encryption.\n4. Remove and reinsert the microSD card and verify that a notification appears stating that the mounted microSD card is encrypted.\nIf on the management tool \"External storage encryption\" is not set to \"Enable\", or on the Samsung Android device a microSD card can be used without first being encrypted, this is a finding"
+          }
+        }
+      },
+      {
+        "+@id": "V-255120",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255120r867297_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.14",
+          "title": "KNOX-13-110140",
+          "description": "<VulnDiscussion>Samsung Android must be configured to disable USB mass storage mode.\n\nRationale:\nUSB mass storage mode enables the transfer of data and software from one device to another. This software can include malware. When USB mass storage is enabled on a mobile device, it becomes a potential vector for malware and unauthorized data exfiltration. Prohibiting USB mass storage mode mitigates this risk.\nSFR ID: FMT_SMF_EXT.1.1 #39</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.14"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to disable USB mass storage mode.\nOn the management tool, in the device restrictions, set \"USB file transfer\" to \"Disallow\".\nDeX drag and drop file transfer capabilities will be prohibited, but all other DeX capabilities remain useable.",
+            "+@fixref": "F-SV-255120r867297_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255120r867297_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255120r867297_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are disabling USB mass storage mode.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device restrictions, verify that \"USB file transfer\" has been set to \"Disallow\".\nOn the Samsung Android device, from the USB settings notification, verify that a \"File Transfer\" is not an option.\nIf on the management tool \"USB file transfer\" is not set to \"Disallow\", or on the Samsung Android device a \"File Transfer\" is an option, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255121",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255121r867300_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.15",
+          "title": "KNOX-13-110150",
+          "description": "<VulnDiscussion>Samsung Android must be configured to not allow backup of all applications and configuration data to locally connected systems.\n\nRationale:\nData on mobile devices is protected by numerous mechanisms, including user authentication, access control, and cryptography. When the data is backed up to an external system (either locally connected or cloud based), many if not all of these mechanisms are no longer present. This leaves the backed-up data vulnerable to attack. Disabling backup to external systems mitigates this risk.\nSFR ID: FMT_SMF_EXT.1.1 #40</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.15"
+          },
+          "fixtext": {
+            "+content": "Verify \"USB file transfer\" has been \"Disallowed\" (see requirement KNOX-13-110140).",
+            "+@fixref": "F-SV-255121r867300_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255121r867300_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255121r867300_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify requirement KNOX-13-110140 (Disallow USB file transfer) has been implemented.\nIf \"Disallow USB file transfer\" has not been implemented, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255122",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255122r873667_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.16",
+          "title": "KNOX-13-110160",
+          "description": "<VulnDiscussion>Samsung Android must be configured to enable authentication of personal hotspot connections to the device using a pre-shared key.\n\nRationale:\nIf no authentication is required to establish personal hotspot connections, an adversary may be able to use that device to perform attacks on other devices or networks without detection. A sophisticated adversary may also be able to exploit unknown system vulnerabilities to access information and computing resources on the device. Requiring authentication to establish personal hotspot connections mitigates this risk.\nApplication note: If hotspot functionality is permitted, it must be authenticated via a preshared key. There is no requirement to enable hotspot functionality, and it is recommended this functionality be disabled by default.\nSFR ID: FMT_SMF_EXT.1.1 #41 Internal Only - General</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.16"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to enable authentication of personal hotspot connections to the device using a pre-shared key.\nOn the management tool, in the device restrictions, set \"Configure tethering\" to \"Disallow\".\nIf the deployment requires the use of Mobile Hotspot and Tethering, KPE policy can be used to allow its usage in a STIG-approved configuration. In this case, do not configure the policy above, and instead:\nOn the management tool, in the device Wi-Fi section, set \"Unsecured hotspot\" to \"Disallow\" and add Training Topic \"Don't use Wi-Fi Sharing\" (see supplemental document for additional information).\nInternal Only - General",
+            "+@fixref": "F-SV-255122r873667_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255122r873667_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255122r873667_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are either enabling data at rest protection for removable media, or are disabling their use.\nThis requirement is not applicable for devices that do not support removable storage media.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device restrictions, verify that \"Mount physical media\" is set to \"Disallow\".\nOn the Samsung Android device, verify that a microSD card cannot be mounted.\nThe device should ignore the inserted SD card and no notifications for the transfer of media files should appear, nor should any files be listed using a file browser, such as Samsung My Files.\nIf on the management tool \"Mount physical media\" is not set to \"Disallow\", or on the Samsung Android device a microSD card can be mounted, this is a finding.\nIf the deployment requires the use of micro SD cards, follow this alternative procedure:\nOn the management tool, in the device restrictions, verify \"Enforce external storage encryption\" is set to \"Enable\".\nOn the Samsung Android device, do the following:\n1. Insert a freshly formatted microSD card.\n2. Verify that a prompt appears to encrypt the microSD card.\n3. Perform the encryption.\n4. Remove and reinsert the microSD card and verify that a notification appears stating that the mounted microSD card is encrypted.\nIf on the management tool \"External storage encryption\" is not set to \"Enable\", or on the Samsung Android device a microSD card can be used without first being encrypted, this is a finding"
+          }
+        }
+      },
+      {
+        "+@id": "V-255123",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255123r867306_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.17",
+          "title": "KNOX-13-110170",
+          "description": "<VulnDiscussion>Samsung Android must be configured to disallow configuration of the device's date and time.\n\nRationale:\nDetermining the correct time a particular application event occurred on a system is critical when conducting forensic analysis and investigating system events.\nPeriodically synchronizing internal clocks with an authoritative time source is needed to correctly correlate the timing of events that occur across the enterprise. The three authoritative time sources for Samsung Android are an authoritative time server that is synchronized with redundant United States Naval Observatory (USNO) time servers as designated for the appropriate DOD network (NIPRNet or SIPRNet), the Global Positioning System (GPS), or the wireless carrier.\nTime stamps generated by the audit system in Samsung Android must include both date and time. The time may be expressed in Coordinated Universal Time (UTC), a modern continuation of Greenwich Mean Time (GMT), or local time with an offset from UTC.\nSFR ID: FMT_MOF_EXT.1.2 #47</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.17"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to disallow users from changing the date and time.\nOn the management tool, in the device restrictions, set \"Configure Date/Time\" to \"Disallow\".",
+            "+@fixref": "F-SV-255123r867306_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255123r867306_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255123r867306_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are disallowing the users from changing the date and time.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device restrictions, verify that \"Configure Date/Time\" is set to \"Disallow\".\nOn the Samsung Android device:\n1. Open Settings >> General management >> Date and time.\n2. Verify that \"Automatic data and time\" is on and the user cannot disable it.\nIf on the management tool \"Configure Date/Time\" is not set to \"Disallow\", or on the Samsung Android device \"Automatic date and time\" is not set or the user can disable it, this is a finding.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-255124",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255124r867309_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.18",
+          "title": "KNOX-13-110180",
+          "description": "<VulnDiscussion>Samsung Android must have the DOD root and intermediate PKI certificates installed.\n\nRationale:\nDOD root and intermediate PKI certificates are used to verify the authenticity of PKI certificates of users and web services. If the root and intermediate certificates are not available, an adversary could falsely sign a certificate in such a way that it could not be detected. Providing access to the DOD root and intermediate PKI certificates greatly diminishes the risk of this attack.\nSFR ID: FMT_MOF_EXT.1.2 #47</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.18"
+          },
+          "fixtext": {
+            "+content": "Install the DOD root and intermediate PKI certificates into the Samsung Android devices.\nThe current DOD root and intermediate PKI certificates may be obtained in self- extracting zip files at https://cyber.mil/pki-pke (for NIPRNet).\nOn the management tool, in the device policy management, install the DOD root and intermediate PKI certificates.",
+            "+@fixref": "F-SV-255124r867309_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255124r867309_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255124r867309_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices have the DOD root and intermediate PKI certificates installed.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nThe current DOD root and intermediate PKI certificates may be obtained in self- extracting zip files at https://cyber.mil/pki-pke (for NIPRNet).\nOn the management tool, in the device policy management, verify that the DOD root and intermediate PKI certificates are installed.\nOn the Samsung Android device:\n1. Open Settings >> Security and privacy >> Other security settings >> View security certificates.\n2. In the User tab, verify that the DOD root and intermediate PKI certificates are listed in the Device.\nIf on the management tool the DOD root and intermediate PKI certificates are not listed in the device, or on the Samsung Android device the DOD root and intermediate PKI certificates are not listed in the device, this is a finding.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-255125",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255125r867312_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.19",
+          "title": "KNOX-13-110190",
+          "description": "<VulnDiscussion>Samsung Android must be configured to enforce an application installation policy by specifying an application allowlist that restricts applications by the following characteristics: Names.\n\nRationale:\nThe application allowlist, in addition to controlling the installation of applications on the MD, must control user access/execution of all core and preinstalled applications, or the MD must provide an alternate method of restricting user access/execution to core and preinstalled applications.\nCore application: Any application integrated into the OS by the OS or MD vendors.\nPreinstalled application: Additional noncore applications included in the OS build by the OS vendor, MD vendor, or wireless carrier.\nRequiring all authorized applications to be in an application allowlist prevents the execution of any applications (e.g., unauthorized, malicious) that are not part of the allowlist. Failure to configure an application allowlist properly could allow unauthorized and malicious applications to be downloaded, installed, and executed on the mobile device, causing a compromise of DOD data accessible by these applications.\nThe application allowlist, in addition to controlling the installation of applications on the MD, must control user access/execution of all core applications (included in the OS by the OS vendor) and preinstalled applications (provided by the MD vendor and wireless carrier), or the MD must provide an alternate method of restricting user access/execution to core and preinstalled applications.\nSFR ID: FMT_SMF_EXT.1.1 #8b</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.19"
+          },
+          "fixtext": {
+            "+content": "Configure Samsung Android devices to allow users to install only applications that have been approved by the AO.\nIn addition to any local policy, the AO must not approve applications that have certain prohibited characteristics, these are covered in KNOX-13-110200.\nOn the management tool, in the app catalog for managed Google Play, add each AO- approved app to be available.\nNote: Managed Google Play is an allowed App Store.",
+            "+@fixref": "F-SV-255125r867312_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255125r867312_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255125r867312_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are allowing users to install only applications that have been approved by the Authorizing Official (AO).\nThis validation procedure is performed only on the management tool.\nOn the management tool, in the app catalog for managed Google Play, verify that only AO-approved apps are available.\nIf on the management tool the app catalog for managed Google Play includes non-AO- approved apps, this is a finding.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-255126",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255126r867315_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.20",
+          "title": "KNOX-13-110200",
+          "description": "<VulnDiscussion>Samsung Android must be configured to not allow installation of applications with the following characteristics:\n• Back up MD data to non-DOD cloud servers (including user and application access to cloud backup services);\n• Transmit MD diagnostic data to non-DOD servers;\n• Voice assistant application if available when MD is locked;\n• Voice dialing application if available when MD is locked;\n• Allows synchronization of data or applications between devices associated with user; and\n• Allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs or printers.\n\nRationale:\nRequiring all authorized applications to be in an application allowlist prevents the execution of any applications (e.g., unauthorized, malicious) that are not part of the allowlist. Failure to configure an application allowlist properly could allow unauthorized and malicious applications to be downloaded, installed, and executed on the mobile device, causing a compromise of DOD data accessible by these applications.\nApplications with the listed characteristics have features that can cause the compromise of sensitive DOD data or have features with no known application in the DOD environment.\nApplication note: The application allowlist, in addition to controlling the installation of applications on the MD, must control user access/execution of all core and preinstalled applications, or the MD must provide an alternate method of restricting user access/execution to core and preinstalled applications.\nCore application: Any application integrated into the OS by the OS or MD vendors.\nPreinstalled application: Additional noncore applications included in the OS build by the OS vendor, MD vendor, or wireless carrier.\nSFR ID: FMT_SMF_EXT.1.1 #8b Internal Only - General</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.20"
+          },
+          "fixtext": {
+            "+content": "The Authorizing Official (AO) must not approve applications with the following characteristics for installation by users in the Device:\n• Back up MD data to non-DOD cloud servers (including user and application access to cloud backup services);\n• Transmit MD diagnostic data to non-DOD servers;\n• Voice assistant application if available when MD is locked;\n• Voice dialing application if available when MD is locked;\n• Allows synchronization of data or applications between devices associated with user;\n• Payment processing; and\n• Allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs, display screens (screen mirroring), or printers.\nImplement \"managed Google Play\" (see requirement KNOX-13-110190).",
+            "+@fixref": "F-SV-255126r867315_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255126r867315_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255126r867315_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify requirement KNOX-13-110190 (managed Google Play) has been implemented.\nIf \"managed Google Play\" has not been implemented, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255127",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255127r867318_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.21",
+          "title": "KNOX-13-110210",
+          "description": "<VulnDiscussion>Samsung Android must be configured to not display the following (Work Environment) notifications when the device is locked: All notifications.\n\nRationale:\nMany mobile devices display notifications on the lock screen so that users can obtain relevant information in a timely manner without having to frequently unlock the phone to determine if there are new notifications. However, in many cases, these notifications can contain sensitive information. When they are available on the lock screen, an adversary can see them merely by being in close physical proximity to the device.\nConfiguring the MOS to not send notifications to the lock screen mitigates this risk.\nSFR ID: FMT_SMF_EXT.1.1 #18</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.21"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to not display (Work Environment) notifications when the device is locked.\nOn the management tool, in the device restrictions section, set \"Unredacted Notifications\" to \"Disallow\".\nInternal Only - General",
+            "+@fixref": "F-SV-255127r867318_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255127r867318_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255127r867318_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are not displaying (Work Environment) notifications when the device is locked.\nNotifications of incoming phone calls are acceptable even when the device is locked.\nThis validation procedure is performed on both the management tool Administration Console and the Samsung Android device.\nOn the management tool, in the device restrictions section, verify that \"Unredacted Notifications\" is set to \"Disallow\".\nOn the Samsung Android device:\n1. Open Settings >> Lock screen.\n2. Verify that \"Notifications\" menu is disabled.\nIf on the management tool \"Unredacted Notifications\" is not set to \"Disallow\", or on the Samsung Android device \"Notifications\" menu is not disabled, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255128",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255128r867321_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.22",
+          "title": "KNOX-13-110220",
+          "description": "<VulnDiscussion>Samsung Android must be configured to enable audit logging.\n\nRationale:\nAudit logs enable monitoring of security-relevant events and subsequent forensics when breaches occur. They help identify attacks so that breaches can either be prevented or limited in their scope. They facilitate analysis to improve performance and security. The Requirement Statement lists key events for which the system must generate an audit record.\nSFR ID: FMT_MOF_EXT.1.2 #47</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.22"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to enable audit logging.\nOn the management tool, in the device restrictions section, set \"Security logging\" to \"Enable\".",
+            "+@fixref": "F-SV-255128r867321_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255128r867321_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255128r867321_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are enabling audit logging.\nThis validation procedure is performed on the management tool only.\nOn the management tool, in the device restrictions, verify that \"Security logging\" is set to \"Enable\".\nIf on the management tool \"Security logging\" is not set to \"Enable\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255129",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255129r867324_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.23",
+          "title": "KNOX-13-110230",
+          "description": "<VulnDiscussion>Samsung Android must be configured to prevent users from adding personal email accounts to the work email app.\n\nRationale:\nIf the user is able to add a personal email account (POP3, IMAP, EAS) to the work email app, it could be used to forward sensitive DOD data to unauthorized recipients.\nRestricting email account addition to the Administrator or to allowlisted accounts mitigates this vulnerability.\nSFR ID: FMT_MOF_EXT.1.2 #47</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.23"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to prevent users from adding personal email accounts to the work email app.\nOn the management tool, in the device restrictions, set \"Modify accounts\" to \"Disallow\".\nInternal Only - General",
+            "+@fixref": "F-SV-255129r867324_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255129r867324_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255129r867324_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are preventing users from adding personal email accounts to the work email app.\nOn the management tool, in the device restrictions section, verify \"Modify accounts\" is set to \"Disallow\".\nOn the Samsung Android device:\n1. Open Settings >> Accounts and backup >> Manage accounts.\n2. Verify that no account can be added.\nIf on the management tool \"Modify accounts\" is not set to \"Disallow\", or on the Samsung Android device an account can be added, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255130",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255130r867327_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.24",
+          "title": "KNOX-13-110240",
+          "description": "<VulnDiscussion>Samsung Android must be configured to not allow backup of all applications, configuration data to remote systems.\n• Disable Data Sync Framework.\n\nRationale:\nBackups to remote systems (including cloud backup) can leave data vulnerable to breach on the external systems, which often offer less protection than the MOS. Where the remote backup involves a cloud-based solution, the backup capability is often used to synchronize data across multiple devices. In this case, DOD devices may synchronize DOD sensitive information to a user's personal device or other unauthorized computers that are vulnerable to breach. The Data Sync Framework allows apps to synchronize data between the mobile device and other web based services. This uses accounts for those services that the user has added to the mobile device. Preventing the user from adding accounts to the device mitigates this risk.\nSFR ID: FMT_SMF_EXT.1.1 #40</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.24"
+          },
+          "fixtext": {
+            "+content": "Implement \"Disallow modify accounts\" (see requirement KNOX-13-110230).",
+            "+@fixref": "F-SV-255130r867327_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255130r867327_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255130r867327_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify requirement KNOX-13-110230 (Disallow modify accounts) has been implemented.\nIf \"Disallow modify accounts\" has not been implemented, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255131",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255131r867330_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.25",
+          "title": "KNOX-13-110260",
+          "description": "<VulnDiscussion>Samsung Android must allow only the Administrator (management tool) to perform the following management function: Install/remove DOD root and intermediate PKI certificates.\n\nRationale:\nDOD root and intermediate PKI certificates are used to verify the authenticity of PKI certificates of users and web services. If the user is allowed to remove root and intermediate certificates, the user could allow an adversary to falsely sign a certificate in such a way that it could not be detected. Restricting the ability to remove DOD root and intermediate PKI certificates to the Administrator mitigates this risk.\nSFR ID: FMT_MOF_EXT.1.2 #47</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.25"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to prevent users from removing DOD root and intermediate PKI certificates.\nOn the management tool, in the device restrictions, set \"Configure credentials\" to \"Disallow\".\nInternal Only - General",
+            "+@fixref": "F-SV-255131r867330_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255131r867330_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255131r867330_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are preventing users from removing DOD root and intermediate PKI certificates.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device restrictions, verify that \"Configure credentials\" is set to \"Disallow\".\nOn the Samsung Android device:\n1. Open Settings >> Security and privacy >> Other security settings >> View security certificates.\n2. In the System tab, verify that no listed certificate in the device can be untrusted.\n3. In the User tab, verify that no listed certificate in the device can be removed.\nIf on the management tool the device \"Configure credentials\" is not set to \"Disallow\", or on the Samsung Android device a certificate can be untrusted or removed, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255132",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255132r867333_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.26",
+          "title": "KNOX-13-110270",
+          "description": "<VulnDiscussion>Samsung Android must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including DOD-approved commercial app repository, management tool server, or mobile application store.\n\nRationale:\nForcing all applications to be installed from authorized application repositories can prevent unauthorized and malicious applications from being installed and executed on mobile devices. Allowing such installations and executions could cause a compromise of DOD data accessible by these unauthorized/malicious applications.\nSFR ID: FMT_SMF_EXT.1.1 #8a</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.26"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to disable unauthorized application repositories.\nOn the management tool, in the device restrictions, set \"installs from unknown sources globally\" to \"Disallow\".\nNote: Google Play must not be disabled. Disabling Google Play will cause system instability and critical updates will not be received.\nInternal Only - General",
+            "+@fixref": "F-SV-255132r867333_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255132r867333_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255132r867333_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are disabling unauthorized application repositories.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device restrictions, verify that \"installs from unknown sources globally\" is set to \"Disallow\".\nOn the Samsung Android device:\n1. Open Settings >> Security and privacy >> Install unknown apps.\n2. Ensure that each app listed has the status \"Disabled\" under the app name or that no apps are listed.\nIf on the management tool \"installs from unknown sources globally\" is not set to \"Disallow\", or on the Samsung Android device an app is listed with a status other than \"Disabled\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255133",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255133r867336_rule",
+          "+@weight": "10.0",
+          "+@severity": "low",
+          "version": "1.27",
+          "title": "KNOX-13-110280",
+          "description": "<VulnDiscussion>Samsung Android must be configured to enable Common Criteria (CC) mode.\n\nRationale:\nThe CC Mode feature is a superset of other features and behavioral changes that are mandatory MDFPP requirements. If CC mode is not implemented the device will not be operating in the NIAP-certified compliant CC Mode of operation.\nWhen enforcing AE CC mode on a Samsung Android device, additional Samsung- specific security features are also enabled.\nCC Mode implements the following behavioral/functional changes to meet MDFPP requirements:\n• How the Bluetooth and Wi-Fi keys are stored using different types of encryption.\n• Download Mode is disabled and all updates will occur via FOTA only.\nIn addition, CC Mode adds new restrictions, which are not to meet MDFPP requirements, but to offer better security above what is required:\n• Force password info following FOTA update for consistency.\n• Disable Remote unlock by FindMyMobile.\n• Restrict biometric attempts to 10 for better security.\nSFR ID: FMT_MOF_EXT.1.2 #47 Internal Only - General</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.27"
+          },
+          "fixtext": {
+            "+content": "Configure the Samsung Android devices to enable CC mode.\nOn the management tool, in the device restrictions, set \"Common Criteria mode\" to \"Enable\".",
+            "+@fixref": "F-SV-255133r867336_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255133r867336_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255133r867336_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to determine if the Samsung Android devices are enabling CC mode.\nThis validation procedure is performed on both the management tool and the Samsung Android device.\nOn the management tool, in the device restrictions, verify that \"Common Criteria mode\" is set to \"Enable\".\nOn the Samsung Android device, put the device into \"Download mode\" and verify that the text \"Blocked by CC Mode\" is displayed on the screen.\nIf on the management tool \"Common Criteria mode\" is not set to \"Enable\", or on the Samsung Android device the text \"Blocked by CC Mode\" is not displayed in \"Download mode\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255134",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255134r867339_rule",
+          "+@weight": "10.0",
+          "+@severity": "low",
+          "version": "1.28",
+          "title": "KNOX-13-110290",
+          "description": "<VulnDiscussion>Samsung Android must not accept the certificate when it cannot establish a connection to determine the validity of a certificate.\n\nRationale:\nCertificate-based security controls depend on the ability of the system to verify the validity of a certificate. If the MOS were to accept an invalid certificate, it could take unauthorized actions, resulting in unanticipated outcomes. At the same time, if the MOS were to disable functionality when it could not determine the validity of the certificate, this could result in a denial of service. Therefore, the ability to provide exceptions is appropriate to balance the tradeoff between security and functionality. Always accepting certificates when they cannot be determined to be valid is the most extreme exception policy and is not appropriate in the DOD context. Involving an Administrator or user in the exception decision mitigates this risk to some degree.\nSFR ID: FIA_X509_EXT_2.2</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.28"
+          },
+          "fixtext": {
+            "+content": "Implement \"Common Criteria mode\" (see requirement KNOX-13-110280).",
+            "+@fixref": "F-SV-255134r867339_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255134r867339_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255134r867339_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify requirement KNOX-13-110280 (Common Criteria mode) has been implemented.\nIf \"Common Criteria mode\" has not been implemented, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-255135",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255135r867342_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.29",
+          "title": "KNOX-13-110300",
+          "description": "<VulnDiscussion>Samsung Android device users must complete required training.\n\nRationale:\nThe security posture of Samsung devices requires the device user to configure several required policy rules on their device. User Based Enforcement (UBE) is required for these controls. In addition, if the Authorizing Official (AO) has approved the use of an unmanaged personal space, the user must receive training on risks. If a user is not aware of their responsibilities and does not comply with UBE requirements, the security posture of the Samsung mobile device may become compromised and DOD sensitive data may become compromised.\nSFR ID: FMT_MOF_EXT.1.2 #47</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.29"
+          },
+          "fixtext": {
+            "+content": "Have all Samsung device users’ complete training on the following topics. Users should acknowledge they have reviewed training via a signed User Agreement or similar written record.\nTraining topics:\n• Operational security concerns introduced by unmanaged applications/unmanaged personal space including applications using global positioning system (GPS) tracking.\n• Need to ensure no DOD data is saved to the personal space or transmitted from a personal app (for example, from personal email).\n• If the Purebred key management app is used, users are responsible for maintaining positive control of their credentialed device at all times. The DOD PKI certificate policy requires subscribers to maintain positive control of the devices that contain private keys and to report any loss of control so the credentials can be revoked. Upon device retirement, turn-in, or reassignment, ensure a factory data reset is performed prior to device hand-off. Follow Mobility service provider decommissioning procedures as applicable.\n• How to configure the following UBE controls (users must configure the control) on the Samsung device:\n1. Secure use of Calendar Alarm.\n2. Local screen mirroring and MirrorLink procedures (authorized/not authorized for use).\n3. Do not connect Samsung devices (via either DeX Station or dongle) to any DOD network via Ethernet connection.\n4. Do not upload DOD contacts via smart call and caller ID services.\n5. Disable Wi-Fi Sharing.\n6. Do not configure a DOD network (work) VPN profile on any third-party VPN client installed in the personal space.\n• AO guidance on acceptable use and restrictions, if any, on downloading and installing personal apps and data (music, photos, etc.) in the Samsung device personal space.",
+            "+@fixref": "F-SV-255135r867342_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255135r867342_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255135r867342_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review a sample of site User Agreements of Samsung device users or similar training records and training course content.\nVerify that Samsung device users have completed required training. The intent is that required training is renewed on a periodic basis in a time period determined by the AO.\nIf any Samsung device user has not completed required training, this is a finding.\nInternal Only - General"
+          }
+        }
+      },
+      {
+        "+@id": "V-255136",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-255136r867345_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.30",
+          "title": "KNOX-13-110310",
+          "description": "<VulnDiscussion>The Samsung Android device must have the latest available Samsung Android operating system (OS) installed.\n\nRationale:\nRequired security features are not available in earlier OS versions. In addition, earlier versions may have known vulnerabilities.\nSFR ID: FMT_MOF_EXT.1.2 #47</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Samsung Android OS 13 with Knox 3.x COBO STIG Benchmark",
+            "dc:identifier": "1.30"
+          },
+          "fixtext": {
+            "+content": "Install the latest released version of Samsung Android OS on all managed Samsung devices.\nNote: In most cases, OS updates are released by the wireless carrier (for example, Sprint, T-Mobile, Verizon Wireless, and ATT).",
+            "+@fixref": "F-SV-255136r867345_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-255136r867345_fix"
+          },
+          "check": {
+            "+@system": "C-SV-255136r867345_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Samsung_Android_OS_13_with_Knox_3_x_COBO_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the configuration to confirm if the Samsung Android devices have the most recently released version of Samsung Android installed.\nThis procedure is performed on both the management tool and the Samsung Android device.\nIn the management tool management console, review the version of Samsung Android installed on a sample of managed devices. This procedure will vary depending on the management tool product. See the notes below to determine the latest available OS version.\nOn the Samsung Android device, to see the installed OS version:\n1. Open Settings.\n2. Tap \"About phone\".\n3. Tap \"Software information\".\nIf the installed version of Android OS on any reviewed Samsung devices is not the latest released by the wireless carrier, this is a finding.\nNote: Some wireless carriers list the version of the latest Android OS release by mobile device model online:\nATT: https://www.att.com/devicehowto/dsm.html#!/popular/make/Samsung T-Mobile: https://support.t-mobile.com/docs/DOC-34510 Verizon Wireless: https://www.verizonwireless.com/support/software-updates/ Google Android OS patch website: https://source.android.com/security/bulletin/ Samsung Android OS patch website:\nhttps://security.samsungmobile.com/securityUpdate.smsb Internal Only - General"
+          }
+        }
+      }
+    ]
+  }
+}

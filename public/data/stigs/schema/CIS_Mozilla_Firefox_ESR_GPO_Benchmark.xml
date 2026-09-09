@@ -1,0 +1,1881 @@
+<?xml version="1.0" encoding="utf-8"?><Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd" id="CIS_Mozilla_Firefox_ESR_GPO_Benchmark" xml:lang="en" xmlns="http://checklists.nist.gov/xccdf/1.1">
+  <status date="2024-07-19">accepted</status>
+  <title>CIS Mozilla Firefox ESR GPO Benchmark</title>
+  <description>All CIS Benchmarks ™ focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system for vulnerabilities and quickly updating with the latest security patches. • Monitoring applications and libraries for vulnerabilities and quickly updating with the latest security patches. In the end, the CIS Benchmarks are designed as a key component of a comprehensive cybersecurity program. This document provides prescriptive guidance for establishing a secure configuration posture for the Mozilla Firefox ESR Browser. This guide was tested against Mozilla Firefox 115.10 ESR on a Windows 11 Release 23H2 operating system. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.</description>
+  <notice id="terms-of-use" xml:lang="en"/>
+  <front-matter xml:lang="en"/>
+  <rear-matter xml:lang="en"/>
+  <reference href="https://www.cisecurity.org/cis-benchmarks">
+    <dc:publisher>Center for Internet Security</dc:publisher>
+    <dc:source>CIS Benchmarks</dc:source>
+  </reference>
+  <plain-text id="release-info">Release: 1.0.0 Benchmark Date: 2024-07-19</plain-text>
+  <version>1.0.0</version>
+  <Profile id="L1_Public">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-3BD518F9" selected="true"/>
+    <select idref="V-538A31D3" selected="true"/>
+    <select idref="V-05156D90" selected="true"/>
+    <select idref="V-24DA0B4E" selected="true"/>
+    <select idref="V-5409DB8A" selected="true"/>
+    <select idref="V-E709D02D" selected="true"/>
+    <select idref="V-F6E0EDD6" selected="true"/>
+    <select idref="V-A95FEA96" selected="true"/>
+    <select idref="V-60F01948" selected="true"/>
+    <select idref="V-15F60734" selected="true"/>
+    <select idref="V-FDF1E7F8" selected="true"/>
+    <select idref="V-4BF3BF3B" selected="true"/>
+    <select idref="V-491CDA2E" selected="true"/>
+    <select idref="V-E000C9A5" selected="true"/>
+    <select idref="V-AF6E6A00" selected="true"/>
+    <select idref="V-1E9B5BE1" selected="true"/>
+    <select idref="V-BE99F2AD" selected="true"/>
+    <select idref="V-62D32C90" selected="true"/>
+    <select idref="V-E063BF18" selected="true"/>
+    <select idref="V-EE2EBDDB" selected="true"/>
+    <select idref="V-D91D5445" selected="true"/>
+    <select idref="V-CE53B198" selected="true"/>
+    <select idref="V-A8661818" selected="true"/>
+    <select idref="V-C4A5C74C" selected="true"/>
+    <select idref="V-6482F8F7" selected="true"/>
+    <select idref="V-5C53ABD3" selected="true"/>
+    <select idref="V-A5273167" selected="true"/>
+    <select idref="V-AED5D777" selected="true"/>
+    <select idref="V-BCECD0B4" selected="true"/>
+    <select idref="V-F42C6A16" selected="true"/>
+    <select idref="V-8F57E265" selected="true"/>
+    <select idref="V-7E05D49D" selected="true"/>
+    <select idref="V-81C747FC" selected="true"/>
+    <select idref="V-173C9ED4" selected="true"/>
+    <select idref="V-2E9ED9D8" selected="true"/>
+    <select idref="V-C9D44E1D" selected="true"/>
+    <select idref="V-9DBF91D0" selected="true"/>
+    <select idref="V-BEF464FD" selected="true"/>
+    <select idref="V-4ED511CF" selected="true"/>
+    <select idref="V-2FD7F4EE" selected="true"/>
+    <select idref="V-C64383CD" selected="true"/>
+    <select idref="V-A79F9749" selected="true"/>
+    <select idref="V-1FCA00E8" selected="true"/>
+    <select idref="V-28F09E10" selected="true"/>
+    <select idref="V-72CFAD5C" selected="true"/>
+    <select idref="V-C55F5D9A" selected="true"/>
+    <select idref="V-DDF4141C" selected="true"/>
+    <select idref="V-76093C0C" selected="true"/>
+    <select idref="V-45BDE6FE" selected="true"/>
+    <select idref="V-4DF52EE6" selected="true"/>
+    <select idref="V-2068D6FE" selected="true"/>
+  </Profile>
+  <Profile id="L1_Classified">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-3BD518F9" selected="true"/>
+    <select idref="V-538A31D3" selected="true"/>
+    <select idref="V-05156D90" selected="true"/>
+    <select idref="V-24DA0B4E" selected="true"/>
+    <select idref="V-5409DB8A" selected="true"/>
+    <select idref="V-E709D02D" selected="true"/>
+    <select idref="V-F6E0EDD6" selected="true"/>
+    <select idref="V-A95FEA96" selected="true"/>
+    <select idref="V-60F01948" selected="true"/>
+    <select idref="V-15F60734" selected="true"/>
+    <select idref="V-FDF1E7F8" selected="true"/>
+    <select idref="V-4BF3BF3B" selected="true"/>
+    <select idref="V-491CDA2E" selected="true"/>
+    <select idref="V-E000C9A5" selected="true"/>
+    <select idref="V-AF6E6A00" selected="true"/>
+    <select idref="V-1E9B5BE1" selected="true"/>
+    <select idref="V-BE99F2AD" selected="true"/>
+    <select idref="V-62D32C90" selected="true"/>
+    <select idref="V-E063BF18" selected="true"/>
+    <select idref="V-EE2EBDDB" selected="true"/>
+    <select idref="V-D91D5445" selected="true"/>
+    <select idref="V-CE53B198" selected="true"/>
+    <select idref="V-A8661818" selected="true"/>
+    <select idref="V-C4A5C74C" selected="true"/>
+    <select idref="V-6482F8F7" selected="true"/>
+    <select idref="V-5C53ABD3" selected="true"/>
+    <select idref="V-A5273167" selected="true"/>
+    <select idref="V-AED5D777" selected="true"/>
+    <select idref="V-BCECD0B4" selected="true"/>
+    <select idref="V-F42C6A16" selected="true"/>
+    <select idref="V-8F57E265" selected="true"/>
+    <select idref="V-7E05D49D" selected="true"/>
+    <select idref="V-81C747FC" selected="true"/>
+    <select idref="V-173C9ED4" selected="true"/>
+    <select idref="V-2E9ED9D8" selected="true"/>
+    <select idref="V-C9D44E1D" selected="true"/>
+    <select idref="V-9DBF91D0" selected="true"/>
+    <select idref="V-BEF464FD" selected="true"/>
+    <select idref="V-4ED511CF" selected="true"/>
+    <select idref="V-2FD7F4EE" selected="true"/>
+    <select idref="V-C64383CD" selected="true"/>
+    <select idref="V-A79F9749" selected="true"/>
+    <select idref="V-1FCA00E8" selected="true"/>
+    <select idref="V-28F09E10" selected="true"/>
+    <select idref="V-72CFAD5C" selected="true"/>
+    <select idref="V-C55F5D9A" selected="true"/>
+    <select idref="V-DDF4141C" selected="true"/>
+    <select idref="V-76093C0C" selected="true"/>
+    <select idref="V-45BDE6FE" selected="true"/>
+    <select idref="V-4DF52EE6" selected="true"/>
+    <select idref="V-2068D6FE" selected="true"/>
+  </Profile>
+  <Profile id="L1_Sensitive">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-3BD518F9" selected="true"/>
+    <select idref="V-538A31D3" selected="true"/>
+    <select idref="V-05156D90" selected="true"/>
+    <select idref="V-24DA0B4E" selected="true"/>
+    <select idref="V-5409DB8A" selected="true"/>
+    <select idref="V-E709D02D" selected="true"/>
+    <select idref="V-F6E0EDD6" selected="true"/>
+    <select idref="V-A95FEA96" selected="true"/>
+    <select idref="V-60F01948" selected="true"/>
+    <select idref="V-15F60734" selected="true"/>
+    <select idref="V-FDF1E7F8" selected="true"/>
+    <select idref="V-4BF3BF3B" selected="true"/>
+    <select idref="V-491CDA2E" selected="true"/>
+    <select idref="V-E000C9A5" selected="true"/>
+    <select idref="V-AF6E6A00" selected="true"/>
+    <select idref="V-1E9B5BE1" selected="true"/>
+    <select idref="V-BE99F2AD" selected="true"/>
+    <select idref="V-62D32C90" selected="true"/>
+    <select idref="V-E063BF18" selected="true"/>
+    <select idref="V-EE2EBDDB" selected="true"/>
+    <select idref="V-D91D5445" selected="true"/>
+    <select idref="V-CE53B198" selected="true"/>
+    <select idref="V-A8661818" selected="true"/>
+    <select idref="V-C4A5C74C" selected="true"/>
+    <select idref="V-6482F8F7" selected="true"/>
+    <select idref="V-5C53ABD3" selected="true"/>
+    <select idref="V-A5273167" selected="true"/>
+    <select idref="V-AED5D777" selected="true"/>
+    <select idref="V-BCECD0B4" selected="true"/>
+    <select idref="V-F42C6A16" selected="true"/>
+    <select idref="V-8F57E265" selected="true"/>
+    <select idref="V-7E05D49D" selected="true"/>
+    <select idref="V-81C747FC" selected="true"/>
+    <select idref="V-173C9ED4" selected="true"/>
+    <select idref="V-2E9ED9D8" selected="true"/>
+    <select idref="V-C9D44E1D" selected="true"/>
+    <select idref="V-9DBF91D0" selected="true"/>
+    <select idref="V-BEF464FD" selected="true"/>
+    <select idref="V-4ED511CF" selected="true"/>
+    <select idref="V-2FD7F4EE" selected="true"/>
+    <select idref="V-C64383CD" selected="true"/>
+    <select idref="V-A79F9749" selected="true"/>
+    <select idref="V-1FCA00E8" selected="true"/>
+    <select idref="V-28F09E10" selected="true"/>
+    <select idref="V-72CFAD5C" selected="true"/>
+    <select idref="V-C55F5D9A" selected="true"/>
+    <select idref="V-DDF4141C" selected="true"/>
+    <select idref="V-76093C0C" selected="true"/>
+    <select idref="V-45BDE6FE" selected="true"/>
+    <select idref="V-4DF52EE6" selected="true"/>
+    <select idref="V-2068D6FE" selected="true"/>
+  </Profile>
+  <Profile id="L2_Public">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-61E1BBA8" selected="true"/>
+    <select idref="V-F39AA9E0" selected="true"/>
+    <select idref="V-B93A2F3F" selected="true"/>
+    <select idref="V-8124B833" selected="true"/>
+  </Profile>
+  <Profile id="L2_Classified">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-61E1BBA8" selected="true"/>
+    <select idref="V-F39AA9E0" selected="true"/>
+    <select idref="V-B93A2F3F" selected="true"/>
+    <select idref="V-8124B833" selected="true"/>
+  </Profile>
+  <Profile id="L2_Sensitive">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-61E1BBA8" selected="true"/>
+    <select idref="V-F39AA9E0" selected="true"/>
+    <select idref="V-B93A2F3F" selected="true"/>
+    <select idref="V-8124B833" selected="true"/>
+  </Profile>
+  <Group id="V-3BD518F9">
+    <title>1.1.1 Addons</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-3BD518F9r01_rule" weight="10.0" severity="medium">
+      <version>1.1.1.1</version>
+      <title>(L1) Ensure 'Allow add-on installs from websites' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the ability for websites to automatically install add-ons without an allow list.
+The recommended state for this setting is: Disabled.
+Note: If this setting is enabled, an allow list will be needed for approved add-ons.
+
+Rationale:
+Add-ons are extensions of the browser that add new functionality to Firefox or change its appearance. These run in a user session allowing them to manipulate data and the behavior of the way Firefox interacts with other applications and user commands. If malicious add-ons are installed automatically, a user's security could be completely compromised.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-3BD518F9r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Addons\Allow add-on installs from websites
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-3BD518F9r01_fix"/>
+      <check system="C-3BD518F9_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\InstallAddonsPermission:Default</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-538A31D3">
+    <title>1.1.2 Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-538A31D3r01_rule" weight="10.0" severity="medium">
+      <version>1.1.2.1</version>
+      <title>(L1) Ensure 'NTLM' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting controls the use of NT Lan Manager (NTLM) v1 protocol. This protocol is used for authentication to resources.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+NTLM v1 contains cryptographic weaknesses that can be easily exploited to obtain user credentials.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.2.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-538A31D3r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Authentication\NTLM
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-538A31D3r01_fix"/>
+      <check system="C-538A31D3_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is in effect when the following registry value does not exist.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Authentication\NTLM:1</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-05156D90">
+    <title>1.1.5 Clear data when browser is closed</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-05156D90r01_rule" weight="10.0" severity="medium">
+      <version>1.1.5.1</version>
+      <title>(L1) Ensure 'Active Logins’ is set to ‘Disabled’</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting allows for the user session to be cleared upon closing the browser.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Deleting browser data will delete information that may be important for a computer investigation and investigators such as Computer Forensics Analysts may not be able to retrieve pertinent information to the investigation.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.5.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-05156D90r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Clear data when browser is closed\Active Logins
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-05156D90r01_fix"/>
+      <check system="C-05156D90_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\SanitizeOnShutdown:Sessions</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-24DA0B4E">
+    <title>1.1.5 Clear data when browser is closed</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-24DA0B4Er01_rule" weight="10.0" severity="medium">
+      <version>1.1.5.2</version>
+      <title>(L1) Ensure 'Browsing History' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting allows for the deletion of user data upon closing the browser.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Deleting browser data will delete information that may be important for a computer investigation and investigators such as Computer Forensics Analysts may not be able to retrieve pertinent information to the investigation.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.5.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-24DA0B4Er01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Clear data when browser is closed\Browsing History
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-24DA0B4Er01_fix"/>
+      <check system="C-24DA0B4E_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\SanitizeOnShutdown:History</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-5409DB8A">
+    <title>1.1.5 Clear data when browser is closed</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-5409DB8Ar01_rule" weight="10.0" severity="medium">
+      <version>1.1.5.3</version>
+      <title>(L1) Ensure 'Download History' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting allows for the deletion of user data upon closing the browser.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Deleting browser data will delete information that may be important for a computer investigation and investigators such as Computer Forensics Analysts may not be able to retrieve pertinent information to the investigation.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.5.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-5409DB8Ar01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Clear data when browser is closed\Download History
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-5409DB8Ar01_fix"/>
+      <check system="C-5409DB8A_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\SanitizeOnShutdown:Downloads</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E709D02D">
+    <title>1.1.5 Clear data when browser is closed</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E709D02Dr01_rule" weight="10.0" severity="medium">
+      <version>1.1.5.4</version>
+      <title>(L1) Ensure 'Form &amp; Search History' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting allows for the deletion of user data upon closing the browser.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Deleting browser data will delete information that may be important for a computer investigation and investigators such as Computer Forensics Analysts may not be able to retrieve pertinent information to the investigation.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.5.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E709D02Dr01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Clear data when browser is closed\Form &amp; Search
+History
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-E709D02Dr01_fix"/>
+      <check system="C-E709D02D_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\SanitizeOnShutdown:FormData</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F6E0EDD6">
+    <title>1.1.5 Clear data when browser is closed</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F6E0EDD6r01_rule" weight="10.0" severity="medium">
+      <version>1.1.5.5</version>
+      <title>(L1) Ensure 'Locked' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting allows for the deletion of user data upon closing the browser.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Deleting browser data will delete information that may be important for a computer investigation and investigators such as Computer Forensics Analysts may not be able to retrieve pertinent information to the investigation.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.5.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F6E0EDD6r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Clear data when browser is closed\Locked
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-F6E0EDD6r01_fix"/>
+      <check system="C-F6E0EDD6_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\SanitizeOnShutdown:Locked</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A95FEA96">
+    <title>1.1.6 Cookies</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A95FEA96r01_rule" weight="10.0" severity="medium">
+      <version>1.1.6.1</version>
+      <title>(L1) Ensure 'Cookie Behavior' is set to 'Enabled: Reject cookies for known trackers and partition third-party cookies'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the ability for third-party cookies to be downloaded to the system. Third party cookies are cookies sent by a domain that differs from the domain in the browser's address bar.
+The recommended state for this setting is: Enabled: Reject cookies for known trackers and partition third-party cookies.
+
+Rationale:
+Third party cookies are often used for tracking user browsing behaviors, which has privacy implications.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.6.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A95FEA96r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled: Reject cookies for known trackers and partition third-party cookies:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Cookies\Cookie Behavior
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-A95FEA96r01_fix"/>
+      <check system="C-A95FEA96_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_SZ value of reject-tracker-and-partition-foreign.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Cookies:Behavior</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-60F01948">
+    <title>1.1.6 Cookies</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-60F01948r01_rule" weight="10.0" severity="medium">
+      <version>1.1.6.2</version>
+      <title>(L1) Ensure 'Cookie Behavior in private browsing' is set to 'Enabled: Reject cookies for known trackers and partition third- party cookies'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the ability for third-party cookies to be downloaded to the system. Third party cookies are cookies sent by a domain that differs from the domain in the browser's address bar.
+The recommended state for this setting is: Enabled: Reject cookies for known trackers and partition third-party cookies.
+
+Rationale:
+Third party cookies are often used for tracking user browsing behaviors, which has privacy implications.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.6.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-60F01948r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled: Reject cookies for known trackers and partition third-party cookies:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Cookies\Cookie Behavior in private browsing
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-60F01948r01_fix"/>
+      <check system="C-60F01948_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_SZ value of reject-tracker-and-partition-foreign.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Cookies:BehaviorPrivateBrowsing</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-15F60734">
+    <title>1.1.7 Disabled Ciphers</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-15F60734r01_rule" weight="10.0" severity="medium">
+      <version>1.1.7.1</version>
+      <title>(L1) Ensure 'TLS_RSA_WITH_3DES_EDE_CBC_SHA ' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy settings controls the use of the TLS_RSA_WITH_3DES_EDE_CBC_SHA cipher suite. Cipher suites are a group of algorithms that help secure network connections.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+The Triple Data Encryption Algorithm (TDEA) also known as Triple DES (3DES) was deprecated in 2019 by NIST. 3DES is now considered an insecure cipher suite and should not be used.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.7.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-15F60734r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disabled Ciphers\TLS_RSA_WITH_3DES_EDE_CBC_SHA
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-15F60734r01_fix"/>
+      <check system="C-15F60734_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\DisabledCiphers:TLS_RSA_WITH_3DES_EDE_
+CBC_SHA</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FDF1E7F8">
+    <title>1.1.9 Encrypted Media Extensions</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FDF1E7F8r01_rule" weight="10.0" severity="medium">
+      <version>1.1.9.1</version>
+      <title>(L1) Ensure 'Lock Encrypted Media Extensions’ is set to</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures whether encrypted media extensions (EME) are downloaded automatically without user consent. EME is a JavaScript API for playing DRMed video content in HTML.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Downloading media from the internet without user consent could lead to malicious content being downloaded and deployed to the system.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.9.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FDF1E7F8r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Encrypted Media Extensions\Lock Encrypted Media
+Extensions
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-FDF1E7F8r01_fix"/>
+      <check system="C-FDF1E7F8_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\EncryptedMediaExtensions:Locked</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-4BF3BF3B">
+    <title>1.1.10 Extensions</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-4BF3BF3Br01_rule" weight="10.0" severity="medium">
+      <version>1.1.10.1</version>
+      <title>(L1) Ensure 'Extension Update' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures Firefox to automatically download and install extension updates as they are made available.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Security updates ensure that users are safe from known software bugs and vulnerabilities.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.10.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-4BF3BF3Br01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Extensions\Extension Update
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-4BF3BF3Br01_fix"/>
+      <check system="C-4BF3BF3B_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:ExtensionUpdate</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-491CDA2E">
+    <title>1.1.12 Flash</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-491CDA2Er01_rule" weight="10.0" severity="medium">
+      <version>1.1.12.1</version>
+      <title>(L1) Ensure 'Activate Flash on websites' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the use of Flash on websites.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Firefox ended support for Adobe Flash at the end of 2020. Unsupported software could lead to an attacker exploiting vulnerabilities that are not patched with updates.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.12.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-491CDA2Er01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Flash\Activate Flash on websites
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-491CDA2Er01_fix"/>
+      <check system="C-491CDA2E_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\FlashPlugin:Default</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E000C9A5">
+    <title>1.1.15.3 Location</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E000C9A5r01_rule" weight="10.0" severity="medium">
+      <version>1.1.15.3.1</version>
+      <title>(L1) Ensure 'Block new requests asking to access location' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting determines whether Firefox will provide geographic location information to websites.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Geo-location services can expose private information to remote websites.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.15.3.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E000C9A5r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Permissions\Location\Block new requests asking to
+access location
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-E000C9A5r01_fix"/>
+      <check system="C-E000C9A5_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Permissions\Location:BlockNewRequests</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-AF6E6A00">
+    <title>1.1.15.3 Location</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-AF6E6A00r01_rule" weight="10.0" severity="medium">
+      <version>1.1.15.3.2</version>
+      <title>(L1) Ensure 'Do not allow preferences to be changed' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting determines whether Firefox will provide geographic location information to websites.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Geo-location services can expose private information to remote websites.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.15.3.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-AF6E6A00r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Permissions\Location\Do not allow preferences to be
+changed
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-AF6E6A00r01_fix"/>
+      <check system="C-AF6E6A00_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Permissions\Location:Locked</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-1E9B5BE1">
+    <title>1.1.17 Popups</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-1E9B5BE1r01_rule" weight="10.0" severity="medium">
+      <version>1.1.17.1</version>
+      <title>(L1) Ensure 'Block pop-ups from websites' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the Firefox pop-up blocker.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+By enabling the pop-up blocker, all pop-ups will be blocked which will guard a user against malicious attacks launched using a pop-up window.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.17.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-1E9B5BE1r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Popups\Block pop-ups from websites
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-1E9B5BE1r01_fix"/>
+      <check system="C-1E9B5BE1_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\PopupBlocking:Default</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-BE99F2AD">
+    <title>1.1.17 Popups</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-BE99F2ADr01_rule" weight="10.0" severity="medium">
+      <version>1.1.17.2</version>
+      <title>(L1) Ensure 'Do not allow preferences to be changed' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures if the Firefox pop-up blocker settings can be changed by the user.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+By enabling the pop-up blocker, all pop-ups will be blocked which will guard a user against malicious attacks launched using a pop-up window.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.17.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-BE99F2ADr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Popups\Do not allow preferences to be changed
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-BE99F2ADr01_fix"/>
+      <check system="C-BE99F2AD_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\PopupBlocking:Locked</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-62D32C90">
+    <title>1.1.18 Preferences</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-62D32C90r01_rule" weight="10.0" severity="medium">
+      <version>1.1.18.1</version>
+      <title>(L1) Ensure 'browser.safebrowsing.malware.enabled' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the use of alerts to users if they are visiting a known malicious website.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Build-in anti-exploitation features can reduce the risk of a user falling victim to a known malicious web site.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.18.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-62D32C90r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Preferences
+(Deprecated)\browser.safebrowsing.malware.enabled
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-62D32C90r01_fix"/>
+      <check system="C-62D32C90_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Preferences:browser.safebrowsing.malwa
+re.enabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E063BF18">
+    <title>1.1.18 Preferences</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E063BF18r01_rule" weight="10.0" severity="medium">
+      <version>1.1.18.2</version>
+      <title>(L1) Ensure 'browser.safebrowsing.phishing.enabled' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the use of alerts to users if they are visiting a known malicious phishing website.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Build-in anti-exploitation features can reduce the risk of a user falling victim to a known malicious phishing web site.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.18.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E063BF18r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Preferences
+(Deprecated)\browser.safebrowsing.phishing
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-E063BF18r01_fix"/>
+      <check system="C-E063BF18_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Preferences:browser.safebrowsing.phish
+ing.enabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-EE2EBDDB">
+    <title>1.1.18 Preferences</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-EE2EBDDBr01_rule" weight="10.0" severity="medium">
+      <version>1.1.18.3</version>
+      <title>(L1) Ensure 'browser.search.update' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures whether Firefox will update installed search providers.
+Search providers allow the user to search directly from the "Search bar" which is adjacent to the URL bar.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Software updates help ensure that systems are safe from known software bugs and vulnerabilities.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.18.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-EE2EBDDBr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Preferences (Deprecated)\browser.search.update
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-EE2EBDDBr01_fix"/>
+      <check system="C-EE2EBDDB_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Preferences:browser.search.update</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D91D5445">
+    <title>1.1.18 Preferences</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D91D5445r01_rule" weight="10.0" severity="medium">
+      <version>1.1.18.4</version>
+      <title>(L1) Ensure 'dom.allow_scripts_to_close_windows' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting allows the configuration of how Firefox handles scripts from closing browser windows.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Preventing an arbitrary web site from closing the browser window will reduce the probability of a user losing work or state being performed in another tab within the same window.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.18.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D91D5445r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Preferences
+(Deprecated)\dom.allow_scripts_to_close_windows
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-D91D5445r01_fix"/>
+      <check system="C-D91D5445_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Preferences:dom.allow_scripts_to_close
+_windows</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-CE53B198">
+    <title>1.1.18 Preferences</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-CE53B198r01_rule" weight="10.0" severity="medium">
+      <version>1.1.18.5</version>
+      <title>(L1) Ensure 'dom.disable_window_flip' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This setting allows the configuration of how Firefox handles scripts from raising or lowering browser windows.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+An arbitrary web site raising or lowering the browser window can cause improper input or can help disguise an attack taking place in a lowered window.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.18.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-CE53B198r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Preferences (Deprecated)\dom.disable_window_flip
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-CE53B198r01_fix"/>
+      <check system="C-CE53B198_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Preferences:dom.disable_window_flip</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A8661818">
+    <title>1.1.18 Preferences</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A8661818r01_rule" weight="10.0" severity="medium">
+      <version>1.1.18.6</version>
+      <title>(L1) Ensure 'dom.disable_window_move_resize' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This setting allows the configuration of how Firefox handles scripts from moving or resizing browser windows.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Arbitrary web sites can disguise an attack taking place in a minimized background window by moving or resizing browser windows.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.18.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A8661818r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Preferences
+(Deprecated)\dom.disable_window_move_resize
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-A8661818r01_fix"/>
+      <check system="C-A8661818_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Preferences:dom.disable_window_move_re
+size</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-C4A5C74C">
+    <title>1.1.18 Preferences</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-C4A5C74Cr01_rule" weight="10.0" severity="medium">
+      <version>1.1.18.7</version>
+      <title>(L1) Ensure 'extensions.blocklist.enabled' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This feature enables Mozilla Firefox to retrieve a list of blocked applications from the server.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Enabling Mozilla to access the list of blocked applications mitigates the risk of installing a known malicious application.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.18.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-C4A5C74Cr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Preferences
+(Deprecated)\extensions.blocklist.enabled
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-C4A5C74Cr01_fix"/>
+      <check system="C-C4A5C74C_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Preferences:extensions.blocklist.enabl
+ed</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6482F8F7">
+    <title>1.1.18 Preferences</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6482F8F7r01_rule" weight="10.0" severity="medium">
+      <version>1.1.18.8</version>
+      <title>(L1) Ensure 'media.peerconnection.enabled' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting determines whether Web Real Time Communications (WebRTC) is allowed. WebRTC is used for peer-to-peer communication such as file sharing or video calls.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+WebRTC can expose private information such as internal IP addresses and computer settings.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.18.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6482F8F7r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Preferences
+(Deprecated)\media.peerconnection.enabled
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-6482F8F7r01_fix"/>
+      <check system="C-6482F8F7_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Preferences:media.peerconnection.enabl
+ed</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-61E1BBA8">
+    <title>1.1.18 Preferences</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-61E1BBA8r01_rule" weight="10.0" severity="high">
+      <version>1.1.18.9</version>
+      <title>(L2) Ensure 'network.IDN_show_punycode' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This setting determines whether Internationalized Domain Names (IDNs) displayed in the browser are displayed as Punycode or as Unicode.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+IDNs displayed in Punycode are easier to identify and therefore help mitigate the risk of accessing spoofed web pages.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.18.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-61E1BBA8r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Preferences (Deprecated)\network.IDN_show_punycode
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-61E1BBA8r01_fix"/>
+      <check system="C-61E1BBA8_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Preferences:network.IDN_show_punycode</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-5C53ABD3">
+    <title>1.1.18 Preferences</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-5C53ABD3r01_rule" weight="10.0" severity="medium">
+      <version>1.1.18.10</version>
+      <title>(L1) Ensure 'security.mixed_content.block_active_content' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the ability to view HTTP content such as JavaScript, CSS, objects, and xhr requests.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Blocking active mixed content minimizes the risk of man-in-the-middle attacks.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.18.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-5C53ABD3r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Preferences
+(Deprecated)\security.mixed_content.block_active_content
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-5C53ABD3r01_fix"/>
+      <check system="C-5C53ABD3_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Preferences:security.mixed_content.blo
+ck_active_content</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A5273167">
+    <title>1.1.19 Proxy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A5273167r01_rule" weight="10.0" severity="medium">
+      <version>1.1.19.1</version>
+      <title>(L1) Ensure 'Connection Type' is set to 'Enabled: No Proxy'</title>
+      <description>&lt;VulnDiscussion&gt;Firefox can be configured to use one or more proxy servers. When a proxy server is configured for a given protocol (HTTP, FTP, Gopher, etc), Firefox will send applicable requests to that proxy server for fulfillment.
+The recommended state for this setting is: Enabled: No Proxy.
+
+Rationale:
+Depending on the protocol used, the proxy server will have access to read and/or alter all information communicated between Firefox and the target server, such a web site.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.19.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A5273167r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled: No Proxy:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Proxy Settings\Connection Type
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-A5273167r01_fix"/>
+      <check system="C-A5273167_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_SZ value of none.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\Proxy:Mode</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-AED5D777">
+    <title>1.1.19 Proxy Settings</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-AED5D777r01_rule" weight="10.0" severity="medium">
+      <version>1.1.19.2</version>
+      <title>(L1) Ensure 'Do not allow proxy settings to be changed' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures whether users can change proxy settings.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Proxy settings should be controlled by Administrators and set at the Company level.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.19.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-AED5D777r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Proxy Settings\Do not allow proxy settings to be
+changed
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-AED5D777r01_fix"/>
+      <check system="C-AED5D777_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\EnableTrackingProtection:Locked</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F39AA9E0">
+    <title>1.1.20 Search</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F39AA9E0r01_rule" weight="10.0" severity="high">
+      <version>1.1.20.1</version>
+      <title>(L2) Ensure 'Search Suggestions' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting determines whether web search suggestions are used in Firefox.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Characters that are typed by the user are sent to a search engine before the Enter key is pressed therefore, it is possible for unintended data to be sent.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.20.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F39AA9E0r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Search\Search Suggestions
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-F39AA9E0r01_fix"/>
+      <check system="C-F39AA9E0_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:SearchSuggestEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-BCECD0B4">
+    <title>1.1.22 Tracking Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-BCECD0B4r01_rule" weight="10.0" severity="medium">
+      <version>1.1.22.1</version>
+      <title>(L1) Ensure 'Cryptomining' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures Firefox's Cryptomining Protection. Cryptomining Protection will automatically block known crypto mining domains that distribute crypto mining scripts.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Crypto mining scripts utilize a computer's central processing unit (CPU) to invisibly mine cryptocurrency. This feature allows Firefox to stop this potential malicious content from loading.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.22.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-BCECD0B4r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Tracking Protection\Cryptomining
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-BCECD0B4r01_fix"/>
+      <check system="C-BCECD0B4_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\EnableTrackingProtection:Cryptomining</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F42C6A16">
+    <title>1.1.22 Tracking Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F42C6A16r01_rule" weight="10.0" severity="medium">
+      <version>1.1.22.2</version>
+      <title>(L1) Ensure 'Do not allow tracking protection preferences to be changed' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting determines if tracking protection preferences can be changed by the user.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Allowing a user to change tracking preferences could lead to malicious activity on the system.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.22.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F42C6A16r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Tracking Protection\Do not allow tracking
+protection preferences to be changed
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-F42C6A16r01_fix"/>
+      <check system="C-F42C6A16_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\EnableTrackingProtection:Locked</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-8F57E265">
+    <title>1.1.22 Tracking Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-8F57E265r01_rule" weight="10.0" severity="medium">
+      <version>1.1.22.3</version>
+      <title>(L1) Ensure 'Email Tracking' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures Firefox's Enhanced Tracking Protection. Enhanced Tracking Protection will automatically block known third-party tracking cookies.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Allowing third-party cookies could potentially allow tracking of your web activities by third-party entities which may expose information that could be used for an attack on the end-user.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.22.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-8F57E265r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Tracking Protection\Email Tracking
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-8F57E265r01_fix"/>
+      <check system="C-8F57E265_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\EnableTrackingProtection:EmailTracking</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-7E05D49D">
+    <title>1.1.22 Tracking Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-7E05D49Dr01_rule" weight="10.0" severity="medium">
+      <version>1.1.22.4</version>
+      <title>(L1) Ensure 'Enabled' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures what is allowed to be tracked by websites from the browser.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Enabling do not track instructs the browser to send an optional header in HTTP requests made from the app that indicates a preference not to be tracked by websites.
+This optional header is voluntary in nature, having no method to enforce adherence and providing no guarantee that web sites will honor the preference. However, a large number of websites do honor it so there is privacy benefit in enabling it.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.22.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-7E05D49Dr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Tracking Protection\Enabled
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-7E05D49Dr01_fix"/>
+      <check system="C-7E05D49D_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\EnableTrackingProtection:Value</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-81C747FC">
+    <title>1.1.22 Tracking Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-81C747FCr01_rule" weight="10.0" severity="medium">
+      <version>1.1.22.5</version>
+      <title>(L1) Ensure 'Fingerprinting' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures Firefox's Enhanced Tracking Protection. Enhanced Tracking Protection will automatically block known third-party tracking cookies.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Allowing third-party cookies could potentially allow tracking of your web activities by third-party entities which may expose information that could be used for an attack on the end-user.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.22.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-81C747FCr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Tracking Protection\Fingerprinting
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-81C747FCr01_fix"/>
+      <check system="C-81C747FC_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\EnableTrackingProtection:Fingerprintin
+g</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-173C9ED4">
+    <title>1.1.23 User Messaging</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-173C9ED4r01_rule" weight="10.0" severity="medium">
+      <version>1.1.23.1</version>
+      <title>(L1) Ensure 'Extension Recommendations' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures if Firefox can send recommendations on extensions based on user data as they navigate the web.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Enabling recommended extensions could allow data to be transmitted to a third-party, which could lead to sensitive data being exposed.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.23.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-173C9ED4r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\UserMessaging\Extension Recommendations
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-173C9ED4r01_fix"/>
+      <check system="C-173C9ED4_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox\UserMessaging:ExtensionRecommendations</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-2E9ED9D8">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-2E9ED9D8r01_rule" weight="10.0" severity="medium">
+      <version>1.1.24</version>
+      <title>(L1) Ensure 'Application Autoupdate' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures whether Firefox automatically downloads and installs updates, as they are made available.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Security updates ensure that users are safe from known software bugs and vulnerabilities.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.24</dc:identifier>
+      </reference>
+      <fixtext fixref="F-2E9ED9D8r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Application Autoupdate
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-2E9ED9D8r01_fix"/>
+      <check system="C-2E9ED9D8_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:AppAutoUpdate</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-C9D44E1D">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-C9D44E1Dr01_rule" weight="10.0" severity="medium">
+      <version>1.1.25</version>
+      <title>(L1) Ensure 'Background updater' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures whether Firefox automatically downloads and installs the updates in the background, even when the application is not running.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Security updates ensure that users are safe from known software bugs and vulnerabilities.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.25</dc:identifier>
+      </reference>
+      <fixtext fixref="F-C9D44E1Dr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Background updater
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-C9D44E1Dr01_fix"/>
+      <check system="C-C9D44E1D_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:BackgroundAppUpdate</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-9DBF91D0">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-9DBF91D0r01_rule" weight="10.0" severity="medium">
+      <version>1.1.26</version>
+      <title>(L1) Ensure 'Disable Developer Tools' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This setting configures whether development tools are available to the user. Firefox Developer Tools is a set of web developer tools built into Firefox that can be used to examine, edit, and debug HTML, CSS, and JavaScript.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Information needed by an attacker to begin looking for possible vulnerabilities in a web browser includes information about the web browser and plug-ins or modules being used. When debugging or trace information is enabled in a production web browser, information about the web browser, such as web browser type, version, patches installed, plug-ins and modules installed, type of code being used by the hosted application, and any back ends being used for data storage may be displayed. Because this information may be placed in logs and general messages during normal operation of the web browser, an attacker does not have to cause an error condition to gain this information.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.26</dc:identifier>
+      </reference>
+      <fixtext fixref="F-9DBF91D0r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disable Developer Tools
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-9DBF91D0r01_fix"/>
+      <check system="C-9DBF91D0_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:DisableDeveloperTools</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-BEF464FD">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-BEF464FDr01_rule" weight="10.0" severity="medium">
+      <version>1.1.27</version>
+      <title>(L1) Ensure 'Disable Feedback Commands' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures accessibility to the Submit Feedback and Report Deceptive Site menu items in the help menu.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Users should not be sending feedback to third-party vendors in an enterprise managed environment.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.27</dc:identifier>
+      </reference>
+      <fixtext fixref="F-BEF464FDr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disable Feedback Commands
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-BEF464FDr01_fix"/>
+      <check system="C-BEF464FD_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:DisableFeedbackCommands</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-4ED511CF">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-4ED511CFr01_rule" weight="10.0" severity="medium">
+      <version>1.1.28</version>
+      <title>(L1) Ensure 'Disable Firefox Accounts' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting controls whether a user can sign into Firefox with an account to use services.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Syncing user data, especially from a personal account, can contain information that is not appropriate for an enterprise environment.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.28</dc:identifier>
+      </reference>
+      <fixtext fixref="F-4ED511CFr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disable Firefox Accounts
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-4ED511CFr01_fix"/>
+      <check system="C-4ED511CF_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:DisableFirefoxAccounts</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-2FD7F4EE">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-2FD7F4EEr01_rule" weight="10.0" severity="medium">
+      <version>1.1.29</version>
+      <title>(L1) Ensure 'Disable Firefox Studies' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;Shield Studies are controlled tests that allow proposed changes to be compared to the current default version of Firefox for representative populations before releasing and pushing those changes to everyone else.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+If it is decided to opt-in to Shield Studies, Firefox will collect data for their use. This data includes usage hours, what day Firefox was used on, study info (Study Name/ID, Experimental Branch), and study status transition events.
+Allowing this data to be shared with Firefox could inadvertently lead to sharing sensitive data.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.29</dc:identifier>
+      </reference>
+      <fixtext fixref="F-2FD7F4EEr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disable Firefox Studies
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-2FD7F4EEr01_fix"/>
+      <check system="C-2FD7F4EE_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:DisableFirefoxStudies</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-C64383CD">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-C64383CDr01_rule" weight="10.0" severity="medium">
+      <version>1.1.30</version>
+      <title>(L1) Ensure 'Disable Forget Button' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting determines whether the Forget button is available. This feature is also known as eCleaner and allows a user to quickly delete browser data from a selected time frame without affecting the rest of the data.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Deleting browser data will delete information that may be important for a computer investigation. Investigators such as Computer Forensics Analysts may not be able to retrieve pertinent information to the investigation.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.30</dc:identifier>
+      </reference>
+      <fixtext fixref="F-C64383CDr01_fix">To establish the recommended configuration via GP, set the following UI path to `Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disable Forget Button
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-C64383CDr01_fix"/>
+      <check system="C-C64383CD_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:DisableForgetButton</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-B93A2F3F">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-B93A2F3Fr01_rule" weight="10.0" severity="high">
+      <version>1.1.31</version>
+      <title>(L2) Ensure 'Disable Form History' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;Form Fill Assistance allows Firefox to save data that has been entered into forms by users so that future operations are performed faster.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+This mitigates the risk of websites extracting information from prefilled text fields.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.31</dc:identifier>
+      </reference>
+      <fixtext fixref="F-B93A2F3Fr01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disable Form History
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-B93A2F3Fr01_fix"/>
+      <check system="C-B93A2F3F_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:DisableFormHistory</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A79F9749">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A79F9749r01_rule" weight="10.0" severity="medium">
+      <version>1.1.32</version>
+      <title>(L1) Ensure 'Disable Pocket' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;Previously known as Read It Later, Pocket is a social bookmark service that allows users to save a variety of content to one place and access it later from any device. This content includes web pages, blogs, videos, and news sources.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+When using Pocket, users agree to let Firefox collect information including their browser and device type. In addition, this information along with other information (including some personal information) related to Pocket user accounts may be provided to third parties. Firefox also asks users to provide usernames and passwords for third-party sites to access articles and information published on them. Firefox states that cookies and other analytics tools are necessary for the Pocket website to function and cannot be switched off.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.32</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A79F9749r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disable Pocket
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-A79F9749r01_fix"/>
+      <check system="C-A79F9749_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:DisablePocket</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-1FCA00E8">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-1FCA00E8r01_rule" weight="10.0" severity="medium">
+      <version>1.1.33</version>
+      <title>(L1) Ensure 'Disable Private Browsing' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting determines whether private browsing is allowed.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Disabling Private Browsing for Firefox will ensure that browsing data is logged on the system, which may be important for forensics.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.33</dc:identifier>
+      </reference>
+      <fixtext fixref="F-1FCA00E8r01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disable Private Browsing
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-1FCA00E8r01_fix"/>
+      <check system="C-1FCA00E8_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:DisablePrivateBrowsing</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-28F09E10">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-28F09E10r01_rule" weight="10.0" severity="medium">
+      <version>1.1.34</version>
+      <title>(L1) Ensure 'Disable System Addon Updates' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures the ability for Firefox to automatically download and install updates for Addons.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Security updates ensure that users are safe from known software bugs and vulnerabilities.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.34</dc:identifier>
+      </reference>
+      <fixtext fixref="F-28F09E10r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disable System Addon Updates
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-28F09E10r01_fix"/>
+      <check system="C-28F09E10_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:DisableSystemAddonUpdate</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-72CFAD5C">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-72CFAD5Cr01_rule" weight="10.0" severity="medium">
+      <version>1.1.35</version>
+      <title>(L1) Ensure 'Disable Telemetry' is set to 'Enabled'</title>
+      <description>&lt;VulnDiscussion&gt;Firefox by default sends information about Firefox to Mozilla servers. This data can include, but is not limited to IP address, system specifications, browsing history, bookmarks, and open tabs.
+The recommended state for this setting is: Enabled.
+
+Rationale:
+Sending data to Firefox could lead to sensitive data being exposed.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.35</dc:identifier>
+      </reference>
+      <fixtext fixref="F-72CFAD5Cr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disable Telemetry
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-72CFAD5Cr01_fix"/>
+      <check system="C-72CFAD5C_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 1.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:DisableTelemetry</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-C55F5D9A">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-C55F5D9Ar01_rule" weight="10.0" severity="medium">
+      <version>1.1.36</version>
+      <title>(L1) Ensure 'Disable Update' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting configures if the Firefox browser can receive updates.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Security updates ensure that users are safe from known software bugs and vulnerabilities.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.36</dc:identifier>
+      </reference>
+      <fixtext fixref="F-C55F5D9Ar01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Disable Update
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-C55F5D9Ar01_fix"/>
+      <check system="C-C55F5D9A_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:DisableAppUpdate</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-DDF4141C">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-DDF4141Cr01_rule" weight="10.0" severity="medium">
+      <version>1.1.37</version>
+      <title>(L1) Ensure 'Maximum SSL version enabled' is set to 'Enabled: TLS 1.3'</title>
+      <description>&lt;VulnDiscussion&gt;This setting sets the maximum required protocol version for the Transport Layer Security (TLS).
+The recommended state for this setting is: Enabled:TLS 1.3.
+
+Rationale:
+Setting TLS 1.3 as the maximum authorized protocol version mitigates the risk of using an insecure connection.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.37</dc:identifier>
+      </reference>
+      <fixtext fixref="F-DDF4141Cr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:TLS 1.3:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Maximum SSL version enabled
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-DDF4141Cr01_fix"/>
+      <check system="C-DDF4141C_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_SZ value of tls1.3.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:SSLVersionMax</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-76093C0C">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-76093C0Cr01_rule" weight="10.0" severity="medium">
+      <version>1.1.38</version>
+      <title>(L1) Ensure 'Minimum SSL version enabled' is set to 'Enabled: TLS 1.2'</title>
+      <description>&lt;VulnDiscussion&gt;This setting sets the minimum protocol version that may be used when negotiating TLS/SSL sessions.
+The recommended state for this setting is: Enabled:TLS 1.2.
+
+Rationale:
+Setting TLS 1.2 as the minimum protocol version mitigates the risk of negotiating an insecure protocol, such as TSL 1.0 or SSL 2.0.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.38</dc:identifier>
+      </reference>
+      <fixtext fixref="F-76093C0Cr01_fix">To establish the recommended configuration via GP, set the following UI path to Enabled:TLS 1.2:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Minimum SSL version enabled
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-76093C0Cr01_fix"/>
+      <check system="C-76093C0C_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_SZ value of tls1.2.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:SSLVersionMin</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-45BDE6FE">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-45BDE6FEr01_rule" weight="10.0" severity="medium">
+      <version>1.1.39</version>
+      <title>(L1) Ensure 'Network Prediction' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This setting determines if Firefox is allowed to make URL requests without user consent.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Prefetching URLs could lead to misinformation on browser history such a a website that was not visited but the user hovered over the URL link. This can be misleading in a forensic investigation.
+In addition, there is a chance that information can be leaked about a local network if connected to a public network.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.39</dc:identifier>
+      </reference>
+      <fixtext fixref="F-45BDE6FEr01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Network Prediction
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-45BDE6FEr01_fix"/>
+      <check system="C-45BDE6FE_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:NetworkPrediction</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-8124B833">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-8124B833r01_rule" weight="10.0" severity="high">
+      <version>1.1.40</version>
+      <title>(L2) Ensure 'New Tab Page' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;The New Tab page shows a list of built-in top sites, as well as the top sites the user has visited by default.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Allowing the collection of browsing history by Firefox could inadvertently lead to sensitive data being exposed.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.40</dc:identifier>
+      </reference>
+      <fixtext fixref="F-8124B833r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative Templates\Mozilla\Firefox\New
+Tab Page
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-8124B833r01_fix"/>
+      <check system="C-8124B833_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:NewTabPage</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-4DF52EE6">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-4DF52EE6r01_rule" weight="10.0" severity="medium">
+      <version>1.1.41</version>
+      <title>(L1) Ensure 'Offer to save logins' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;Firefox allows for credentials to be stored in its credential store for certain websites.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Stored credentials may be harvested by an adversary that gains local privileges equal to or greater than the principal running Firefox, which may increase the scope and impact of a breach. However, preventing Firefox from storing credentials will not prevent such an adversary from harvesting credentials used while compromised.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.41</dc:identifier>
+      </reference>
+      <fixtext fixref="F-4DF52EE6r01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Offer to save logins
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-4DF52EE6r01_fix"/>
+      <check system="C-4DF52EE6_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:OfferToSaveLogins</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-2068D6FE">
+    <title>1.1 Firefox</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-2068D6FEr01_rule" weight="10.0" severity="medium">
+      <version>1.1.42</version>
+      <title>(L1) Ensure 'Password Manager' is set to 'Disabled'</title>
+      <description>&lt;VulnDiscussion&gt;This policy setting enables or disables the ability for users to save their passwords in Mozilla Firefox.
+The recommended state for this setting is: Disabled.
+
+Rationale:
+Saving passwords in Firefox could lead to a user’s web passwords being breached if an attacker were to gain access to their web browser, especially in the case of an unattended and unlocked workstation.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Mozilla Firefox ESR GPO Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Mozilla Firefox ESR GPO Benchmark</dc:subject>
+        <dc:identifier>1.1.42</dc:identifier>
+      </reference>
+      <fixtext fixref="F-2068D6FEr01_fix">To establish the recommended configuration via GP, set the following UI path to Disabled:
+Computer Configuration\Policies\Administrative
+Templates\Mozilla\Firefox\Password Manager
+Note: This Group Policy path does not exist by default. An additional Group Policy template ( firefox.admx/adml) is required - it is available to download at this link.</fixtext>
+      <fix id="F-2068D6FEr01_fix"/>
+      <check system="C-2068D6FE_chk">
+        <check-content-ref href="CIS_Mozilla_Firefox_ESR_GPO_Benchmark.xml" name="M"/>
+        <check-content>Navigate to the UI Path articulated in the Remediation section and confirm it is set as prescribed. This group policy setting is backed by the following registry location with a REG_DWORD value of 0.
+HKLM\SOFTWARE\Policies\Mozilla\Firefox:PasswordManagerEnabled</check-content>
+      </check>
+    </Rule>
+  </Group>
+</Benchmark>
+

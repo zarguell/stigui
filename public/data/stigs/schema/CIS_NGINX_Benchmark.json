@@ -1,0 +1,3150 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_NGINX_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2025-12-24"
+    },
+    "title": "CIS NGINX Benchmark",
+    "description": "All CIS Benchmarks ™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks ™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completes successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks ™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks ™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Target Technology Details This document, CIS NGINX Benchmark, provides prescriptive guidance for establishing a secure configuration posture for NGINX version 1.28.x running on a systemd based Linux system This guide was tested against NGINX version 1.28.0 with default installation location, using the packages installed using the Red Hat Enterprise Linux 9 package managers. This Benchmark was written using commands for and tested on, Red Hat Enterprise Linux release 9.0. For other versions of Linux, please substitute the distribution-specific commands for the equivalent commands on the Linux distribution you are using. To obtain the latest version of this guide, please visit https://benchmarks.cisecurity.org. If you have questions or comments or have identified ways to improve this guide, please write to us at feedback@cisecurity.org.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 3.0.0 Benchmark Date: 2025-12-24",
+      "+@id": "release-info"
+    },
+    "version": "3.0.0",
+    "Profile": [
+      {
+        "+@id": "L1-Loadbalancer_Public",
+        "title": "Level 1 - Loadbalancer",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-29DAE995",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E972599",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4EF599B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1BCBAB28",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B8802EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-73ADD294",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2FA8A4D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DC742955",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-632ACCC9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DBDE112C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF46C961",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4D08CE04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB8FFAB1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-794ED53C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-348D50C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3D2BC126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC3CF7F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-42CCE832",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97141B22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D07C4D03",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C891BFC3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F7F4BA8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-108EDF87",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EF26285",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3DED1740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-88BE2D9E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6A73953",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-58838C09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8B8D8FDA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A219E5B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-13B2C7C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-838A3780",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21240AA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2EED1A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05FA2E36",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-77E150A2",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Loadbalancer_Classified",
+        "title": "Level 1 - Loadbalancer",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-29DAE995",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E972599",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4EF599B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1BCBAB28",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B8802EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-73ADD294",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2FA8A4D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DC742955",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-632ACCC9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DBDE112C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF46C961",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4D08CE04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB8FFAB1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-794ED53C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-348D50C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3D2BC126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC3CF7F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-42CCE832",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97141B22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D07C4D03",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C891BFC3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F7F4BA8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-108EDF87",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EF26285",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3DED1740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-88BE2D9E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6A73953",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-58838C09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8B8D8FDA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A219E5B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-13B2C7C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-838A3780",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21240AA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2EED1A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05FA2E36",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-77E150A2",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Loadbalancer_Sensitive",
+        "title": "Level 1 - Loadbalancer",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-29DAE995",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E972599",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4EF599B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1BCBAB28",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B8802EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-73ADD294",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2FA8A4D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DC742955",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-632ACCC9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DBDE112C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF46C961",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4D08CE04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB8FFAB1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-794ED53C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-348D50C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3D2BC126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC3CF7F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-42CCE832",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97141B22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D07C4D03",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C891BFC3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F7F4BA8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-108EDF87",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EF26285",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3DED1740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-88BE2D9E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6A73953",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-58838C09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8B8D8FDA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A219E5B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-13B2C7C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-838A3780",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21240AA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2EED1A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05FA2E36",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-77E150A2",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Proxy_Public",
+        "title": "Level 1 - Proxy",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-29DAE995",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E972599",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4EF599B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1BCBAB28",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B8802EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-73ADD294",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2FA8A4D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DC742955",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-632ACCC9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DBDE112C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF46C961",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4D08CE04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB8FFAB1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-794ED53C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-348D50C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3D2BC126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC3CF7F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-42CCE832",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97141B22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D07C4D03",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C891BFC3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F7F4BA8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-108EDF87",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EF26285",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3DED1740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-88BE2D9E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6A73953",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-58838C09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8B8D8FDA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A219E5B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-13B2C7C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-838A3780",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21240AA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2EED1A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05FA2E36",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-77E150A2",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Proxy_Classified",
+        "title": "Level 1 - Proxy",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-29DAE995",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E972599",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4EF599B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1BCBAB28",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B8802EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-73ADD294",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2FA8A4D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DC742955",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-632ACCC9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DBDE112C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF46C961",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4D08CE04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB8FFAB1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-794ED53C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-348D50C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3D2BC126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC3CF7F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-42CCE832",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97141B22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D07C4D03",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C891BFC3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F7F4BA8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-108EDF87",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EF26285",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3DED1740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-88BE2D9E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6A73953",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-58838C09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8B8D8FDA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A219E5B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-13B2C7C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-838A3780",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21240AA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2EED1A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05FA2E36",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-77E150A2",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Proxy_Sensitive",
+        "title": "Level 1 - Proxy",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-29DAE995",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E972599",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4EF599B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1BCBAB28",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B8802EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-73ADD294",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2FA8A4D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DC742955",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-632ACCC9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DBDE112C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF46C961",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4D08CE04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB8FFAB1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-794ED53C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-348D50C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3D2BC126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC3CF7F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-42CCE832",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97141B22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D07C4D03",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C891BFC3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F7F4BA8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-108EDF87",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EF26285",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3DED1740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-88BE2D9E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6A73953",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-58838C09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8B8D8FDA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A219E5B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-13B2C7C6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-838A3780",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21240AA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2EED1A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05FA2E36",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-77E150A2",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Webserver_Public",
+        "title": "Level 1 - Webserver",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-29DAE995",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E972599",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4EF599B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1BCBAB28",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B8802EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-73ADD294",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2FA8A4D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DC742955",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-632ACCC9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DBDE112C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF46C961",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4D08CE04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB8FFAB1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-794ED53C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-348D50C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3D2BC126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC3CF7F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97141B22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D07C4D03",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C891BFC3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-108EDF87",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EF26285",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3DED1740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-88BE2D9E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6A73953",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-58838C09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8B8D8FDA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A219E5B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-838A3780",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21240AA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2EED1A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05FA2E36",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-77E150A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5D4C7847",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Webserver_Classified",
+        "title": "Level 1 - Webserver",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-29DAE995",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E972599",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4EF599B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1BCBAB28",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B8802EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-73ADD294",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2FA8A4D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DC742955",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-632ACCC9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DBDE112C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF46C961",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4D08CE04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB8FFAB1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-794ED53C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-348D50C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3D2BC126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC3CF7F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97141B22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D07C4D03",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C891BFC3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-108EDF87",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EF26285",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3DED1740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-88BE2D9E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6A73953",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-58838C09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8B8D8FDA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A219E5B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-838A3780",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21240AA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2EED1A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05FA2E36",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-77E150A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5D4C7847",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1-Webserver_Sensitive",
+        "title": "Level 1 - Webserver",
+        "description": "be practical and prudent; provide a clear security benefit; and not inhibit the utility of the technology beyond acceptable means.",
+        "select": [
+          {
+            "+@idref": "V-29DAE995",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E972599",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4EF599B5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1BCBAB28",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4B8802EF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-73ADD294",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2FA8A4D7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DC742955",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-632ACCC9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DBDE112C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AF46C961",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4D08CE04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AB8FFAB1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-794ED53C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-348D50C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3D2BC126",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CC3CF7F7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-97141B22",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D07C4D03",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C891BFC3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-108EDF87",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6EF26285",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-3DED1740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-88BE2D9E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D6A73953",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-58838C09",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8B8D8FDA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A219E5B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-838A3780",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-21240AA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2EED1A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-05FA2E36",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-77E150A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5D4C7847",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Loadbalancer_Public",
+        "title": "Level 2 - Loadbalancer",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology",
+        "select": [
+          {
+            "+@idref": "V-E9E03992",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF2BC4DD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F38A5EBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F8D5530",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Loadbalancer_Classified",
+        "title": "Level 2 - Loadbalancer",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology",
+        "select": [
+          {
+            "+@idref": "V-E9E03992",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF2BC4DD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F38A5EBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F8D5530",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Loadbalancer_Sensitive",
+        "title": "Level 2 - Loadbalancer",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology",
+        "select": [
+          {
+            "+@idref": "V-E9E03992",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF2BC4DD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F38A5EBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F8D5530",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Proxy_Public",
+        "title": "Level 2 - Proxy",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology",
+        "select": [
+          {
+            "+@idref": "V-E9E03992",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF2BC4DD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F38A5EBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F8D5530",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Proxy_Classified",
+        "title": "Level 2 - Proxy",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology",
+        "select": [
+          {
+            "+@idref": "V-E9E03992",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF2BC4DD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F38A5EBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F8D5530",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Proxy_Sensitive",
+        "title": "Level 2 - Proxy",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology",
+        "select": [
+          {
+            "+@idref": "V-E9E03992",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF2BC4DD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F38A5EBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F8D5530",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Webserver_Public",
+        "title": "Level 2 - Webserver",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology",
+        "select": [
+          {
+            "+@idref": "V-51ED513F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF2BC4DD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F38A5EBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F8D5530",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B23713B8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-93A1C04A",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Webserver_Classified",
+        "title": "Level 2 - Webserver",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology",
+        "select": [
+          {
+            "+@idref": "V-51ED513F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF2BC4DD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F38A5EBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F8D5530",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B23713B8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-93A1C04A",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2-Webserver_Sensitive",
+        "title": "Level 2 - Webserver",
+        "description": "are intended for environments or use cases where security is paramount acts as defense in depth measure may negatively inhibit the utility or performance of the technology",
+        "select": [
+          {
+            "+@idref": "V-51ED513F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-EF2BC4DD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F38A5EBF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2F8D5530",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B23713B8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-93A1C04A",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-29DAE995",
+        "title": "1.1 Installation",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-29DAE995r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.1.1",
+          "title": "Ensure NGINX is installed",
+          "description": "<VulnDiscussion>An NGINX installation must be present on the system. To ensure support for modern security standards (such as TLS 1.3 and HTTP/3) and to mitigate known vulnerabilities, the installed version must be 1.28.0 or later and compiled with the necessary modules.\n\nRationale:\nNGINX must be installed and operational to serve as the target for this benchmark's security controls. Enforcing a minimum version and feature set ensures the platform is capable of supporting the required security configurations.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "1.1.1"
+          },
+          "fixtext": {
+            "+content": "Install or upgrade NGINX to version 1.28.0 or later.\nNote: Official packages from nginx.org (see recommendation 1.2.1) typically include these modules by default. Custom builds must explicitly enable them.",
+            "+@fixref": "F-29DAE995r01_fix"
+          },
+          "fix": {
+            "+@id": "F-29DAE995r01_fix"
+          },
+          "check": {
+            "+@system": "C-29DAE995_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Verify Installation and Version: Run the following command to display the installed NGINX version:\n# Note: It's an uppercase V\nnginx -V\n2. Evaluation:\n• Verify Output: The command must return an installed version (e.g., nginx version: nginx/1.28.0). If the command is not found, NGINX is not installed.\n• Check Version: Ensure the version number is 1.28.0 or higher."
+          }
+        }
+      },
+      {
+        "+@id": "V-8E972599",
+        "title": "1.2 Configure Software Updates",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8E972599r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2.1",
+          "title": "Ensure package manager repositories are properly configured",
+          "description": "<VulnDiscussion>Package repositories must be trustworthy, properly configured, and maintained to ensure the system receives timely security patches, bug fixes, and support for modern protocols. While Operating System (OS) vendors provide NGINX packages, these versions are often frozen at older release points (\"stable\" but stale). Access to critical modern features like HTTP/3 (QUIC) and the latest TLS updates typically requires using the official repositories maintained by NGINX/F5.\n\nRationale:\nIf a system's package manager repositories are misconfigured or outdated, critical security patches may not be applied in a timely manner. Furthermore, relying solely on default OS repositories often restricts the web server to legacy versions that lack support for modern security standards (e.g., HTTP/3). Using the official nginx.org repositories ensures access to the latest stable and mainline versions directly from the source, reducing the risk of running obsolete software. Conversely, adding untrusted third-party repositories can introduce compromised software or dependency conflicts.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "1.2.1"
+          },
+          "fixtext": {
+            "+content": "Configure your package manager to use a trusted repository that meets your version requirements.\nTo enable the official NGINX repository (Recommended for HTTP/3 support): Follow the instructions at nginx.org/en/linux_packages.html for your specific distribution. This typically involves adding the NGINX signing key and creating a repository configuration file.",
+            "+@fixref": "F-8E972599r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8E972599r01_fix"
+          },
+          "check": {
+            "+@system": "C-8E972599_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To verify that package manager repositories are configured correctly and point to a trusted source (either the OS vendor or official NGINX), run the following commands:\nRed Hat / Rocky-Linux:\ndnf repolist -v | grep -i nginx\nDebian / Ubuntu:\napt-cache policy nginx\nEvaluation:\n• Verify that the repository URL points to a trusted domain (e.g., nginx.org, rhel..., ubuntu...).\n• Ensure that the repository is enabled.\n• Check that no unknown or untrusted third-party repositories are configured for NGINX."
+          }
+        }
+      },
+      {
+        "+@id": "V-4EF599B5",
+        "title": "1.2 Configure Software Updates",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4EF599B5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.2.2",
+          "title": "Ensure the latest software package is installed",
+          "description": "<VulnDiscussion>As new security vulnerabilities are discovered, the corresponding fixes are implemented by your NGINX software package provider. Installing the latest software version ensures these fixes are available on your system.\n\nRationale:\nUp-to-date software provides the best possible protection against exploitation of security vulnerabilities, such as the execution of malicious code.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "1.2.2"
+          },
+          "fixtext": {
+            "+content": "To install the latest NGINX package, run the following command (example):\nRedhat:\ndnf update nginx -y",
+            "+@fixref": "F-4EF599B5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4EF599B5r01_fix"
+          },
+          "check": {
+            "+@system": "C-4EF599B5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To verify your NGINX package is up to date, run the following command (example):\nRedhat:\ndnf info nginx"
+          }
+        }
+      },
+      {
+        "+@id": "V-1BCBAB28",
+        "title": "2.1 Minimize NGINX Modules",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1BCBAB28r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.1.1",
+          "title": "Ensure only required dynamic modules are loaded",
+          "description": "<VulnDiscussion>NGINX functionality is provided by modules. These modules are either compiled statically into the NGINX binary or loaded dynamically at runtime via the load_module directive.\n• Static Modules: These are fixed at compile time. When using official pre-built packages (e.g., from nginx.org or OS vendors), a standard set of modules is included and cannot be removed without recompiling NGINX.\n• Dynamic Modules: These are separate.so files that can be loaded on demand.\nTo reduce the attack surface and complexity, only strictly required dynamic modules should be loaded. Additionally, administrators should be aware of the active static modules to avoid configuring unused features unintentionally.\n\nRationale:\nMinimizing the loaded code reduces the potential attack surface. While static modules in pre-built packages cannot be removed, ensuring that no unnecessary dynamic modules are loaded prevents the execution of unneeded code. Furthermore, understanding which static modules are present helps administrators avoid enabling risky features (like autoindex or stub_status) in the configuration if they are not needed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.1.1"
+          },
+          "fixtext": {
+            "+content": "For Dynamic Modules:\nOpen the main configuration file ( /etc/nginx/nginx.conf) or the relevant include file (e.g., in /etc/nginx/modules-enabled/). Comment out or remove the load_module directive for any module that is not strictly necessary.\nFor Static Modules:\nSince static modules cannot be removed from pre-built packages, ensure their directives are not used in your configuration. If a specific static module poses a critical risk to your environment, you must switch to a custom build or a different package flavor that excludes it.",
+            "+@fixref": "F-1BCBAB28r01_fix"
+          },
+          "fix": {
+            "+@id": "F-1BCBAB28r01_fix"
+          },
+          "check": {
+            "+@system": "C-1BCBAB28_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Audit Dynamic Modules (Actionable):\nRun the following command to check for actively loaded dynamic modules:\nnginx -T 2>/dev/null | grep \"load_module\"\nEvaluation:\n• If the output is empty, no dynamic modules are loaded (PASS).\n• If output exists (e.g., load_module modules/ngx_http_geoip_module.so;), verify that each listed module is required for the application's business logic.\n2. Audit Static Modules (Informational):\nRun the following command to list all modules compiled into the binary:\nnginx -V 2>&1 | grep -oEi '\\-\\-(with|without)-[^ ]*'\nEvaluation:\nReview the --with-... flags to understand the server's capabilities. Ensure that risky modules present in the build (e.g., http_stub_status_module) are not enabled in any server or location block unless authorized."
+          }
+        }
+      },
+      {
+        "+@id": "V-4B8802EF",
+        "title": "2.2 Account Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4B8802EFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2.1",
+          "title": "Ensure that NGINX is run using a non-privileged, dedicated service account",
+          "description": "<VulnDiscussion>The NGINX master process typically runs as root to bind to privileged ports and manage resources, but it spawns worker processes to handle the actual client traffic.\nThe user directive in the main configuration designates the operating system account under which these worker processes run.\nRunning worker processes under a non-privileged, dedicated service account limits the damage an attacker can cause in the event the NGINX process is compromised. This account should be exclusively dedicated to NGINX, have no login capabilities, and possess no elevated system privileges.\n\nRationale:\nIf an attacker successfully exploits a vulnerability in a worker process (e.g., via a buffer overflow or Remote Code Execution), they inherit the permissions of the user account running that process. Using a privileged account like root significantly increases the risk of lateral movement. A dedicated, locked-down service account ensures that an attacker cannot access other services, modify sensitive system files, or easily escalate privileges, effectively reducing the impact of the compromise.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.2.1"
+          },
+          "fixtext": {
+            "+content": "1. Create/Harden User (if missing):\nIf no user exists, create a system user with a no login shell:\nuseradd -r -d /var/cache/nginx -s /sbin/nologin nginx\n2. Configure NGINX:\nSet the user directive in the main context of nginx.conf:\nuser nginx;\n3. Lock User Account:\nEnsure the account cannot be used for login:\nusermod -s /sbin/nologin nginx\nusermod -L nginx",
+            "+@fixref": "F-4B8802EFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-4B8802EFr01_fix"
+          },
+          "check": {
+            "+@system": "C-4B8802EF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Identify Configured User:\nInspect the running configuration to find the user directive:\nnginx -T 2>/dev/null | grep -i \"^user\"\nEvaluation: Verify that a specific user is defined (e.g., user nginx; or user www- data;). If missing, NGINX might run as nobody or the user used at compile time.\n2. Verify User Privileges:\nCheck the UID and group membership of the identified user (e.g., nginx):\nid nginx\nEvaluation:\n• Ensure uid is not 0 (root).\n• Ensure the user is not a member of privileged groups (like root, wheel, sudo).\n3. Check Sudo Access:\nEnsure the user cannot execute commands via sudo:\nsudo -l -U nginx\nEvaluation: Output should indicate \" User nginx is not allowed to run sudo \"."
+          }
+        }
+      },
+      {
+        "+@id": "V-73ADD294",
+        "title": "2.2 Account Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-73ADD294r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2.2",
+          "title": "Ensure the NGINX service account is locked",
+          "description": "<VulnDiscussion>The NGINX service account must not have a usable password and should be explicitly locked in the system's shadow file to prevent direct login or password-based privilege escalation.\n\nRationale:\nAs a defense-in-depth measure, the NGINX service account should be explicitly locked.\nThis prevents password-based logins and blocks adversaries from using the account for lateral movement, even if they manage to change the account's shell configuration.\nIn a properly hardened environment, there is no operational need for any user to log in as nginx. Administrative tasks requiring the NGINX identity should be performed using sudo (e.g., sudo -u nginx), which utilizes the administrator's credentials rather than the service account's password.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.2.2"
+          },
+          "fixtext": {
+            "+content": "Lock the account using the passwd command:\npasswd -l nginx\n(Replace nginx with the actual service user found in step 1)",
+            "+@fixref": "F-73ADD294r01_fix"
+          },
+          "fix": {
+            "+@id": "F-73ADD294r01_fix"
+          },
+          "check": {
+            "+@system": "C-73ADD294_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Identify the User:\nnginx -T 2>/dev/null | grep -i \"^user\"\n(Note the user, e.g., nginx) 2. Check Lock Status:\nRun the following command for the identified user:\npasswd -S nginx\nEvaluation:\nVerify that the output indicates a locked status:\n• RHEL: Shows LK or Password locked.\n• Debian/Ubuntu: Shows L."
+          }
+        }
+      },
+      {
+        "+@id": "V-2FA8A4D7",
+        "title": "2.2 Account Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2FA8A4D7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.2.3",
+          "title": "Ensure the NGINX service account has an invalid shell",
+          "description": "<VulnDiscussion>The NGINX service account must be configured with an invalid login shell to prevent interactive access.\n\nRationale:\nThe NGINX service account is strictly for running daemon processes. Assigning it a valid login shell (like /bin/bash) unnecessarily expands the attack surface. If an attacker compromises the account credentials (or adds an SSH key), a valid shell facilitates interactive system access. Setting the shell to /sbin/nologin or /bin/false ensures that even with valid credentials, the system immediately rejects a login attempt.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.2.3"
+          },
+          "fixtext": {
+            "+content": "Change the login shell for the identified user to /sbin/nologin:\nusermod -s /sbin/nologin nginx\n(Replace nginx with the actual user)",
+            "+@fixref": "F-2FA8A4D7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2FA8A4D7r01_fix"
+          },
+          "check": {
+            "+@system": "C-2FA8A4D7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Identify the User:\nnginx -T 2>/dev/null | grep -i \"^user\"\n(Note the user, e.g., nginx) 2. Verify Shell:\nRun the following command to inspect the configured shell for the identified user:\ngetent passwd nginx\n(Replace nginx with the actual user found in step 1) Evaluation:\nExamine the last field of the output (the shell).\n• PASS: The shell is set to /sbin/nologin, /bin/nologin, or /bin/false.\n• FAIL: The shell is set to /bin/bash, /bin/sh, or any other interactive shell listed in /etc/shells.\nExample Output (PASS):\nnginx:x:999:988:nginx user:/nonexistent:/usr/sbin/nologin"
+          }
+        }
+      },
+      {
+        "+@id": "V-DC742955",
+        "title": "2.3 Permissions and Ownership",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-DC742955r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.3.1",
+          "title": "Ensure NGINX directories and files are owned by root",
+          "description": "<VulnDiscussion>The NGINX configuration directory and all contained files must be owned by the root user and group to prevent unauthorized modification.\n\nRationale:\nThe NGINX configuration controls the security posture of the web server. If a non- privileged user (including the nginx worker user) can modify these files, they can trivially escalate privileges (e.g., by loading a malicious module or changing the user directive to root). Ensuring that only root owns these files guarantees that configuration changes require administrative privileges.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.3.1"
+          },
+          "fixtext": {
+            "+content": "Set the ownership of the NGINX configuration directory and files to root:\nchown -R root:root /etc/nginx\n(Replace /etc/nginx with the actual configuration path in case it is different) Note: Ensure that this does not break access to specific files if you have a custom setup where external processes need write access.",
+            "+@fixref": "F-DC742955r01_fix"
+          },
+          "fix": {
+            "+@id": "F-DC742955r01_fix"
+          },
+          "check": {
+            "+@system": "C-DC742955_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Identify Configuration Directory:\nRun nginx -V and look for --conf-path to find the main configuration file location (e.g., /etc/nginx/nginx.conf). The directory containing this file is the target.\n2. Verify Ownership:\nRun the following command to audit the ownership of the configuration directory and its contents:\nfind /etc/nginx -name \"*\" \\( -not -user root -o -not -group root \\) -exec ls\n-ld {} \\;\n(Replace /etc/nginx with the actual configuration path in case it is different) Evaluation:\n• PASS: The command produces no output. All files are owned by root:root.\n• FAIL: The command lists files owned by other users (e.g., nginx or a developer account)."
+          }
+        }
+      },
+      {
+        "+@id": "V-632ACCC9",
+        "title": "2.3 Permissions and Ownership",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-632ACCC9r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.3.2",
+          "title": "Ensure access to NGINX directories and files is restricted",
+          "description": "<VulnDiscussion>The NGINX configuration directory ( /etc/nginx or equivalent) and its contents should have restrictive permissions to enforce the principle of least privilege.\n• Directories should be accessible only by the root user and the root group (and potentially read/execute by the group), but not by others.\n• Files should be readable/writable by root and readable by the group, but inaccessible to others.\n\nRationale:\nRestrictive file permissions prevent unauthorized users on the system from viewing sensitive configuration details, such as backend IP addresses, routing logic, or loaded module paths. By removing \"world\" access (permissions for \"other\"), we ensure that only administrators (via sudo) can interact with the web server configuration. This is a fundamental defense against information disclosure.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.3.2"
+          },
+          "fixtext": {
+            "+content": "To restrict access to the NGINX configuration directory and files, execute the following commands:\n1. Restrict Directories ( 750):\nAllow owner ( root) full access, group read/execute, deny others.\nfind /etc/nginx -type d -exec chmod 750 {} +\n2. Restrict Files ( 640): Allow owner ( root) read/write, group read, deny others.\nfind /etc/nginx -type f -exec chmod 640 {} +\nNote: Private keys (e.g.,.key files) require even stricter permissions ( 400 or 600) and should be addressed separately or manually verified here.",
+            "+@fixref": "F-632ACCC9r01_fix"
+          },
+          "fix": {
+            "+@id": "F-632ACCC9r01_fix"
+          },
+          "check": {
+            "+@system": "C-632ACCC9_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Identify Configuration Directory:\nRun nginx -V and identify the --conf-path to determine the configuration root (e.g., /etc/nginx).\n2. Audit Directory Permissions:\nRun the following command to find directories with loose permissions:\nfind /etc/nginx -type d -exec stat -Lc \"%n %a\" {} +\nEvaluation:\nVerify that the output shows permissions of 750 ( drwxr-x---) or more restrictive (e.g., 700).\n• Standard: 755 ( drwxr-xr-x) allows world read/execute.\n• Hardened Target: 750 or 700.\n3. Audit File Permissions:\nRun the following command to find files with loose permissions:\nfind /etc/nginx -type f -exec stat -Lc \"%n %a\" {} +\nEvaluation:\nVerify that the output shows permissions of 640 ( -rw-r-----) or more restrictive (e.g., 600).\n• Standard: 644 ( -rw-r--r--) allows world read.\n• Hardened Target: 640 or 600."
+          }
+        }
+      },
+      {
+        "+@id": "V-DBDE112C",
+        "title": "2.3 Permissions and Ownership",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-DBDE112Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.3.3",
+          "title": "Ensure the NGINX process ID (PID) file is secured",
+          "description": "<VulnDiscussion>The PID file stores the main process ID of the nginx process. This file should be protected from unauthorized modification.\n\nRationale:\nThe PID file should be owned by root and the group root. It should also be readable to everyone, but only writable by root (permissions 644). This will prevent unauthorized modification of the PID file, which could cause a denial of service.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.3.3"
+          },
+          "fixtext": {
+            "+content": "Set the correct ownership and permissions for the PID file (replace path as needed):\nchown root:root /run/nginx.pid\nchmod 644 /run/nginx.pid",
+            "+@fixref": "F-DBDE112Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-DBDE112Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-DBDE112C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Identify PID File Location:\nRun nginx -V and look for the --pid-path argument to confirm the location (e.g., /run/nginx.pid or /var/run/nginx.pid).\n2. Verify Ownership and Permissions:\nRun the following command (substituting the identified path):\nstat -Lc \"%U:%G %a\" /run/nginx.pid\nEvaluation:\n• Ownership: Must be root:root.\n• Permissions: Must be 644 ( rw-r--r--) or more restrictive."
+          }
+        }
+      },
+      {
+        "+@id": "V-AF46C961",
+        "title": "2.4 Network Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AF46C961r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.1",
+          "title": "Ensure NGINX only listens for network connections on authorized ports",
+          "description": "<VulnDiscussion>NGINX should be configured to listen only on authorized ports and protocols. While traditional HTTP/1.1 and HTTP/2 use TCP ports 80 and 443, modern HTTP/3 (QUIC) utilizes UDP port 443. Ensuring that NGINX binds only to approved interfaces and ports minimizes the attack surface.\n\nRationale:\nLimiting listening ports to authorized values ensures that no hidden or unintended services are exposed via NGINX. It also enforces strict control over which protocols (TCP vs. UDP) are accessible, which is particularly important with the introduction of UDP-based HTTP/3 traffic alongside traditional TCP traffic.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.4.1"
+          },
+          "fixtext": {
+            "+content": "Remove or comment out any listen directives that bind to unauthorized ports.\nFor HTTP/3 (QUIC) Support: Ensure that you explicitly authorize and configure UDP port 443 in addition to TCP port 443.\nserver {\n# Standard HTTPS (TCP)\nlisten 443 ssl;\n# HTTP/3 (UDP)\nlisten 443 quic reuseport;\n# ... SSL/TLS configuration ...\n}",
+            "+@fixref": "F-AF46C961r01_fix"
+          },
+          "fix": {
+            "+@id": "F-AF46C961r01_fix"
+          },
+          "check": {
+            "+@system": "C-AF46C961_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Inspect Configuration:\nRun the following command to inspect all listen directives in the loaded configuration:\nnginx -T 2>/dev/null | grep -r \"listen\"\nEvaluation:\nReview the output for unauthorized ports. A modern secure configuration typically includes:\n• listen 80; (TCP) - Often used only for redirecting to HTTPS.\n• listen 443 ssl; (TCP) - For HTTP/1.1 and HTTP/2.\n• listen 443 quic; (UDP) - For HTTP/3 (QUIC).\nExample Output:\nserver {\nlisten 80;\nlisten 443 ssl;\nlisten 443 quic reuseport; # HTTP/3 (UDP)\n...\n}\nEnsure that no other ports (e.g., 8080, 8443) are open unless explicitly authorized for internal services or management interfaces.\n2. Verify System Listening Ports:\nOptionally, verify what the process is actually binding to on the OS level:\nnetstat -tulpen | grep -i nginx\n• Look for tcp lines for standard traffic.\n• Look for udp lines (e.g., *:443) if HTTP/3 is enabled."
+          }
+        }
+      },
+      {
+        "+@id": "V-4D08CE04",
+        "title": "2.4 Network Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4D08CE04r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.2",
+          "title": "Ensure requests for unknown host names are rejected",
+          "description": "<VulnDiscussion>NGINX routes incoming requests to the appropriate virtual host by matching the Host header (HTTP/1.1) or:authority pseudo-header (HTTP/2, HTTP/3) against the server_name directives in your configuration. If no explicit match is found, NGINX falls back to the first defined server block or the one marked as default_server. Without a properly configured catch-all block that rejects unknown hostnames, your server will respond to arbitrary domain names that happen to point to your IP address, potentially exposing internal applications or enabling Host Header attacks.\n\nRationale:\nWhen NGINX receives a request, it selects the virtual host based on the Host header (or:authority in HTTP/2/3). If requests for unknown host names are not explicitly rejected, your applications may be served for arbitrary domains that simply point to your IP. This behavior can be abused in Host Header attacks and makes it harder to distinguish legitimate traffic from automated scans or misrouted requests in your logs.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.4.2"
+          },
+          "fixtext": {
+            "+content": "Configure a \"Catch-All\" default server block as the first block in your configuration (or explicitly marked with default_server).\nConfiguration Example (Modern Standard with TLS/HTTP3):\nserver {\n# Listen on standard ports for IPv4 and IPv6\nlisten 80 default_server;\nlisten [::]:80 default_server;\n# Listen for HTTPS (TCP) and QUIC (UDP)\nlisten 443 ssl default_server;\nlisten [::]:443 ssl default_server;\nlisten 443 quic default_server;\nlisten [::]:443 quic default_server;\n# Reject SSL Handshake for unknown domains (Prevents cert leakage)\nssl_reject_handshake on;\n# Catch-all name\nserver_name _;\n# Close connection without response (Non-standard code 444)\nreturn 444;\n}\nAfter adding this block, ensure all your valid applications have their own server blocks with explicit server_name directives.",
+            "+@fixref": "F-4D08CE04r01_fix"
+          },
+          "fix": {
+            "+@id": "F-4D08CE04r01_fix"
+          },
+          "check": {
+            "+@system": "C-4D08CE04_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Review Configuration:\nCheck for the existence of a default server block that handles unknown hosts.\nnginx -T 2>/dev/null | grep -Ei \"listen.*default_server|ssl_reject_handshake\"\nEvaluation:\n• Ensure a server block exists with listen ... default_server.\n• Verify it contains return 444; (closes connection) or a 4xx error code.\n• For HTTPS/TLS: Verify ssl_reject_handshake on; is used to prevent certificate leakage.\n2. Functional Test:\nSend a request with an invalid Host header and verify the connection is rejected or returns an error.\n# Test HTTPS (expect connection reset or 4xx)\ncurl -k -v https://127.0.0.1 -H 'Host: invalid.example.com'"
+          }
+        }
+      },
+      {
+        "+@id": "V-AB8FFAB1",
+        "title": "2.4 Network Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AB8FFAB1r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.3",
+          "title": "Ensure keepalive_timeout is 10 seconds or less, but not 0",
+          "description": "<VulnDiscussion>Persistent connections are leveraged by all modern browsers to facilitate greater web performance. The keep-alive timeout limits the time a persistent connection may remain open. Setting the keep-alive timeout allows this timeout to be controlled on the server side.\n\nRationale:\nSetting a keep-alive timeout on the server side helps mitigate denial of service attacks that establish too many persistent connections, exhausting server resources.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.4.3"
+          },
+          "fixtext": {
+            "+content": "Find the HTTP or server block of your nginx configuration, and add the keepalive_timeout directive. Set it to 10 seconds or less, but not 0. This example command sets it to 10 seconds:\nkeepalive_timeout 10;",
+            "+@fixref": "F-AB8FFAB1r01_fix"
+          },
+          "fix": {
+            "+@id": "F-AB8FFAB1r01_fix"
+          },
+          "check": {
+            "+@system": "C-AB8FFAB1_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To check the current setting for the keepalive_timeout directive, issue the below command. You should also manually check your nginx configuration for include statements that may be located outside the /etc/nginx directory. If none of these are present, the value is set at the default.\ngrep -ir keepalive_timeout /etc/nginx\nThe output of the command should contain something similar to the following:\nkeepalive_timeout 10;"
+          }
+        }
+      },
+      {
+        "+@id": "V-794ED53C",
+        "title": "2.4 Network Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-794ED53Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.4.4",
+          "title": "Ensure send_timeout is set to 10 seconds or less, but not 0",
+          "description": "<VulnDiscussion>The send_timeout directive sets a timeout for transmitting a response to the client between two successive write operations.\n\nRationale:\nSetting the send_timeout directive on the server side helps mitigate slow HTTP denial of service attacks by ensuring write operations taking up large amounts of time are closed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.4.4"
+          },
+          "fixtext": {
+            "+content": "Find the HTTP or server block of your nginx configuration, and add the send_timeout directive. Set it to 10 seconds or less, but not 0.\nsend_timeout 10;",
+            "+@fixref": "F-794ED53Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-794ED53Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-794ED53C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To check the current setting for the send_timeout directive, issue the below command.\nYou should also manually check your nginx configuration for include statements that may be located outside the /etc/nginx directory. If none of these are present, the value is set at the default.\ngrep -ir send_timeout /etc/nginx\nThe output of the command should be similar to the following:\nsend_timeout 10;"
+          }
+        }
+      },
+      {
+        "+@id": "V-348D50C7",
+        "title": "2.5 Information Disclosure",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-348D50C7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5.1",
+          "title": "Ensure server_tokens directive is set to `off`",
+          "description": "<VulnDiscussion>The server_tokens directive is responsible for displaying the NGINX version number and operating system version on error pages and in the Server HTTP response header field. This information should not be displayed.\n\nRationale:\nAttackers can conduct reconnaissance on a website using these response headers, then target attacks for specific known vulnerabilities associated with the underlying technologies. Hiding the version will slow down and deter some potential attackers.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.5.1"
+          },
+          "fixtext": {
+            "+content": "Disable version disclosure globally by adding the directive to the http block in /etc/nginx/nginx.conf:\nhttp {\n...\nserver_tokens off;\n...\n}",
+            "+@fixref": "F-348D50C7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-348D50C7r01_fix"
+          },
+          "check": {
+            "+@system": "C-348D50C7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In the NGINX configuration file nginx.conf, verify the server_tokens directive is set to off. To do this, check the response headers for the server header by issuing this command:\ncurl -I 127.0.0.1 | grep -i server\nThe output should not contain the server header providing your server version, such as the below:\nServer: nginx/1.28.0"
+          }
+        }
+      },
+      {
+        "+@id": "V-3D2BC126",
+        "title": "2.5 Information Disclosure",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3D2BC126r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5.2",
+          "title": "Ensure default error and index.html pages do not reference NGINX",
+          "description": "<VulnDiscussion>Default error pages (e.g., 404, 500) and the default welcome page often contain NGINX branding or signatures. These pages should be removed or replaced with generic or custom-branded pages that do not disclose the underlying server technology.\n\nRationale:\nStandard NGINX error pages visually identify the server software, even if headers are suppressed. By gathering information about the underlying technology stack, attackers can tailor their exploits to known vulnerabilities of NGINX. Replacing default pages with generic or branded content removes this information leakage vector and increases the effort required for successful reconnaissance.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.5.2"
+          },
+          "fixtext": {
+            "+content": "Instead of editing the default files (which may be overwritten by package updates), configure NGINX to use custom error pages.\n1. Create Custom Error Pages:\nCreate a directory (e.g., /var/www/html/errors) and place generic HTML files there (e.g., 404.html, 50x.html) without NGINX branding.\n2. Configure NGINX:\nAdd the error_page directive to your http or server blocks:\nerror_page 404 /404.html;\nerror_page 500 502 503 504 /50x.html;\nlocation = /50x.html {\nroot /var/www/html/errors;\ninternal;\n}",
+            "+@fixref": "F-3D2BC126r01_fix"
+          },
+          "fix": {
+            "+@id": "F-3D2BC126r01_fix"
+          },
+          "check": {
+            "+@system": "C-3D2BC126_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Verify Config:\nCheck if error_page directives are active:\nnginx -T 2>/dev/null | grep -i \"error_page\"\n2. Verify Content (Functional Test):\nTrigger an error (e.g., request a non-existent page) and inspect the body:\ncurl -k https://127.0.0.1/non-existent-page | grep -i \"nginx\"\nEvaluation:\n• PASS: The output does not contain \"nginx\" (or grep returns nothing).\n• FAIL: The HTML body contains \"nginx\"."
+          }
+        }
+      },
+      {
+        "+@id": "V-CC3CF7F7",
+        "title": "2.5 Information Disclosure",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CC3CF7F7r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5.3",
+          "title": "Ensure hidden file serving is disabled",
+          "description": "<VulnDiscussion>Hidden files and directories (starting with a dot, e.g.,.git,.env) often contain sensitive metadata, version control history, or environment configurations. Serving these files should be globally disabled.\n\nRationale:\nVersion control systems (Git, SVN) and editors create hidden files that may unintentionally be deployed to the web root. If accessible, files like.git/config or .env can leak database credentials, source code, and infrastructure details, leading to full system compromise. Blocking requests to any path starting with a dot (.) neutralizes this risk.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.5.3"
+          },
+          "fixtext": {
+            "+content": "To restrict access to hidden files, add the configuration block below inside each server block.\nOption A: Direct Configuration Place this block directly into your server contexts:\n# Allow Let's Encrypt validation (must be before the deny rule)\nlocation ^~ /.well-known/acme-challenge/ {\nallow all;\ndefault_type \"text/plain\";\n}\n# Deny access to all other hidden files\nlocation ~ /\\. {\ndeny all;\nreturn 404;\n}\nOption B: Using a Shared Snippet (Recommended) Create a reusable snippet file (e.g., /etc/nginx/snippets/deny-hidden.conf) containing the rules above, and include it in your server blocks:\n1. Create /etc/nginx/snippets/deny-hidden.conf with the content from Option A.\n2. Security Check: Ensure the new file has restrictive permissions (Owner:\nroot:root, Mode: 640) as described in Recommendation 2.3.2.\n3. Add the include directive to your server blocks:\nserver {\n# Modern HTTP/3 (QUIC) and HTTP/2 Setup\nlisten 443 ssl; # TCP for HTTP/1.1 & HTTP/2\nlisten 443 quic reuseport; # UDP for HTTP/3\nhttp2 on; # Explicitly enable HTTP/2 (since NGINX\n1.25.1)\nserver_name example.com;\ninclude /etc/nginx/snippets/deny-hidden.conf;\n# ... rest of configuration\n}",
+            "+@fixref": "F-CC3CF7F7r01_fix"
+          },
+          "fix": {
+            "+@id": "F-CC3CF7F7r01_fix"
+          },
+          "check": {
+            "+@system": "C-CC3CF7F7_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Check Configuration:\nSearch the loaded configuration for hidden file protection rules:\nnginx -T 2>/dev/null | grep \"location.*\\\\\\.\"\nEvaluation:\n• Look for a block like location ~ /\\. { deny all; ... }.\n2. Functional Test (Recommended):\nTry to access a dummy hidden file:\ncurl -k -I https://127.0.0.1/.git/HEAD\nEvaluation:\n• PASS: Returns 403 Forbidden or 404 Not Found.\n• FAIL: Returns 200 OK (if file exists) or the content of the file."
+          }
+        }
+      },
+      {
+        "+@id": "V-42CCE832",
+        "title": "2.5 Information Disclosure",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-42CCE832r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5.4",
+          "title": "Ensure the NGINX reverse proxy does not enable information disclosure",
+          "description": "<VulnDiscussion>When NGINX acts as a reverse proxy, it forwards headers sent by the upstream application (e.g., \" X-Powered-By: Custom_APP \" or \" Server: Apache/2.4 \"). These headers should be stripped before the response reaches the client to prevent information disclosure about the backend infrastructure.\n\nRationale:\nAttackers conduct reconnaissance by inspecting response headers to identify the technologies used in the backend (e.g., specific versions of PHP, Java/Tomcat, or Python frameworks). Knowing the exact version allows attackers to target specific CVEs associated with that software stack. Removing these headers reduces the information available for targeted attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "2.5.4"
+          },
+          "fixtext": {
+            "+content": "Configure NGINX to strip the sensitive headers. The directive depends on the upstream protocol (HTTP Proxy vs. FastCGI).\nFor Standard Reverse Proxy ( proxy_pass):\nAdd the following directives to your http, server, or location block:\nproxy_hide_header X-Powered-By;\nproxy_hide_header Server;\nFor PHP/FastCGI ( fastcgi_pass):\nIf you are using FastCGI (e.g., for PHP-FPM), use the fastcgi_hide_header directive instead:\nfastcgi_hide_header X-Powered-By;",
+            "+@fixref": "F-42CCE832r01_fix"
+          },
+          "fix": {
+            "+@id": "F-42CCE832r01_fix"
+          },
+          "check": {
+            "+@system": "C-42CCE832_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Configuration Check:\nSearch the loaded configuration for header hiding directives:\nnginx -T 2>/dev/null | grep -Ei \"(proxy|fastcgi)_hide_header\"\nEvaluation:\n• Verify that directives exist to hide X-Powered-By and Server.\n2. Functional Check (Recommended):\nSend a request to a proxied endpoint and inspect the response headers:\ncurl -k -I https://127.0.0.1 | grep -Ei \"^(Server|X-Powered-By)\"\nEvaluation:\n• PASS: The output does not contain backend details (e.g., X-Powered-By:\nPHP/8.2). If Server is present, it should only be Server: nginx (controlled by Control 2.5.1).\n• FAIL: The output contains backend information or unmasked version numbers."
+          }
+        }
+      },
+      {
+        "+@id": "V-97141B22",
+        "title": "3 Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-97141B22r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1",
+          "title": "Ensure detailed logging is enabled",
+          "description": "<VulnDiscussion>System logging must be configured to meet organizational security and privacy policies.\nDetailed logs provide the necessary context (event source, timestamp, user, network data) for incident response and forensic analysis. Modern logging strategies favor structured formats (JSON) over unstructured text to facilitate parsing by SIEM solutions.\nNote: Sensitive information (e.g., session tokens, PII in query strings) should be excluded or masked in logs to prevent data leaks.\n\nRationale:\nDetailed logs are the foundation of effective incident response. CIS Control 8.5 (\"Collect Detailed Audit Logs\") recommends capturing event sources, dates, users, timestamps, and network addresses. Traditional text logs require complex, fragile Regex parsing that breaks easily when formats change. Structured logging (JSON) solves this by providing a self-describing format that is natively ingested by modern analysis tools (SIEM), ensuring that critical forensic data is always indexable and searchable.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "3.1"
+          },
+          "fixtext": {
+            "+content": "Define a detailed log format in the http block of /etc/nginx/nginx.conf. It is highly recommended to use JSON format for compatibility with modern SIEM tools.\nRecommended Configuration (JSON):\nhttp {\nlog_format main_access_json escape=json '{'\n'\"timestamp\": \"$time_iso8601\",'\n'\"remote_addr\": \"$remote_addr\",'\n'\"remote_user\": \"$remote_user\",'\n'\"server_name\": \"$server_name\",'\n'\"request_method\": \"$request_method\",'\n'\"request_uri\": \"$request_uri\",'\n'\"status\": $status,'\n'\"body_bytes_sent\": $body_bytes_sent,'\n'\"http_referer\": \"$http_referer\",'\n'\"http_user_agent\": \"$http_user_agent\",'\n'\"x_forwarded_for\": \"$http_x_forwarded_for\",'\n'\"request_id\": \"$request_id\"'\n'}';\n# Apply the format globally or per server\naccess_log /var/log/nginx/access.json main_access_json;\n}\nLegacy Configuration (Text-based):\nIf JSON is not feasible, ensure the text format captures all necessary fields:\nlog_format main_detailed '$remote_addr - $remote_user [$time_local] '\n'\"$request\" $status $body_bytes_sent '\n'\"$http_referer\" \"$http_user_agent\" '\n'\"$http_x_forwarded_for\"';",
+            "+@fixref": "F-97141B22r01_fix"
+          },
+          "fix": {
+            "+@id": "F-97141B22r01_fix"
+          },
+          "check": {
+            "+@system": "C-97141B22_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Verify Log Format Configuration:\nInspect the log_format directives in your configuration:\nnginx -T 2>/dev/null | grep -i \"log_format\"\nEvaluation:\n• Confirm that a detailed format (preferably JSON) is defined.\n• Verify that the format includes critical fields: $time_iso8601, $remote_addr, $remote_user, $request, $status, $http_user_agent.\n2. Verify Access Log Usage:\nCheck that the defined format is actually used by the access_log directive:\nnginx -T 2>/dev/null | grep \"access_log\"\nEvaluation:\n• The access_log directive should reference the detailed format name (e.g., access_log /var/log/nginx/access.json main_access_json;)."
+          }
+        }
+      },
+      {
+        "+@id": "V-D07C4D03",
+        "title": "3 Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D07C4D03r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.2",
+          "title": "Ensure access logging is enabled",
+          "description": "<VulnDiscussion>The access_log directive enables the logging of client requests. While NGINX enables this by default, it allows granular control per server or location context. Based on enterprise requirements, the log should be enriched with relevant variables or converted to structured JSON format for modern SIEM integration. Refer to Recommendation 3.1 for detailed configuration of log formats and variables. Ensure that access logging is active for all critical services.\n\nRationale:\nAccess logs are the primary record of system usage, detailing who accessed what resources and when and general troubleshooting. Without active access logs, incident responders are blind to web-based attacks (such as SQL injection, XSS probing, or Brute Force attempts) and auditors cannot verify compliance or user activity. Disabling logs globally ( access_log off;) effectively destroys the forensic chain of custody for security events.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "3.2"
+          },
+          "fixtext": {
+            "+content": "Enable access logging in the http block to set a secure global default, or configure it explicitly within specific server blocks. It is recommended to use the detailed log format defined in Recommendation 3.1.\nConfiguration Example:\nhttp {\n# Enable global logging using the detailed JSON format from Rec 3.1\naccess_log /var/log/nginx/access.json main_access_json;\nserver {\n# Inherits the global log setting, or can be overridden:\naccess_log /var/log/nginx/example.com.access.json main_access_json;\nlocation / {\n# ...\n}\n# Exception: Disable logging for favicon to reduce noise (Optional)\nlocation = /favicon.ico {\naccess_log off;\nlog_not_found off;\n}\n}\n}",
+            "+@fixref": "F-D07C4D03r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D07C4D03r01_fix"
+          },
+          "check": {
+            "+@system": "C-D07C4D03_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Verify Configuration:\nInspect the fully loaded configuration for log settings:\nnginx -T 2>/dev/null | grep -i \"access_log\"\nEvaluation:\n• Destination Check: Verify that access_log directives point to a valid local file path (e.g., /var/log/nginx/access.json) for ingestion by log shippers.\n• Status Check: Identify any instances of access_log off;.\n• Pass: If access_log off; is absent, or strictly limited to non-critical assets (e.g., location = /favicon.ico, static assets, or internal health checks).\n• Fail: If access_log off; is applied globally in the http block or to server blocks handling business logic."
+          }
+        }
+      },
+      {
+        "+@id": "V-C891BFC3",
+        "title": "3 Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C891BFC3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.3",
+          "title": "Ensure error logging is enabled and set to the info logging level",
+          "description": "<VulnDiscussion>The error_log directive configures logging for server errors and operational messages. Unlike access logs, error logs capture diagnostic information about failed requests, upstream connection issues, and configuration errors. The log level determines the verbosity of these messages and should be set to capture sufficient detail (typically notice or info) without overwhelming the storage system.\n\nRationale:\nWhile access logs capture incoming request patterns, error logs provide the internal system context required to diagnose why a request failed. They are essential for identifying:\n1. Upstream Failures: Connection timeouts or refused connections to backend servers (e.g., application server is down).\n2. Process Anomalies: Unexpected worker process terminations or restarts, which may indicate resource exhaustion or exploitation attempts.\n3. Configuration Errors: Invalid request handling that NGINX rejects before logging to access logs (e.g., header size limits exceeded).\nWithout error logs, an administrator sees a \" 500 Internal Server Error \" in the access log but has no way to determine the root cause.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "3.3"
+          },
+          "fixtext": {
+            "+content": "Configure the error_log directive in the main context (at the top of nginx.conf) to capture operational events.\nConfiguration Example:\n# Log errors to a specific file with the 'notice' level\nerror_log /var/log/nginx/error.log notice;\nhttp {\n# ...\n}\nNote: The specific logging level should be aligned with the organization's \"Monitoring and Logging\" Policy, balancing the need for forensic detail against storage and processing costs. Typically, info or notice is recommended.",
+            "+@fixref": "F-C891BFC3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C891BFC3r01_fix"
+          },
+          "check": {
+            "+@system": "C-C891BFC3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Verify Configuration:\nCheck the fully loaded configuration for error log settings:\nnginx -T 2>/dev/null | grep -i \"error_log\"\nEvaluation:\n• Presence: Verify that error_log is defined globally in the main context (or http block).\n• Destination: Ensure it points to a valid local file (e.g., /var/log/nginx/error.log) accessible for ingestion by log shippers.\n• Level: Confirm the level is set according to your internal \"Monitoring and Logging\" policy.\n• Fail: If error_log points to /dev/null or the level is set to crit, alert, or emerg (which suppresses too many relevant warnings)."
+          }
+        }
+      },
+      {
+        "+@id": "V-7F7F4BA8",
+        "title": "3 Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7F7F4BA8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.4",
+          "title": "Ensure proxies pass source IP information",
+          "description": "<VulnDiscussion>When NGINX acts as a reverse proxy or load balancer, it terminates the client connection and opens a new connection to the upstream application server. By default, the upstream server sees the NGINX server's internal IP address as the source, obscuring the original client IP. Standard HTTP headers like X-Forwarded-For and X- Real-IP must be explicitly configured to pass the original client's IP address and protocol information to the backend application.\n\nRationale:\nVisibility of the true client IP address is essential for security auditing, incident response, and access control within the backend application. Without forwarding this information:\n1. Forensics: Application logs will show all traffic coming from the NGINX proxy IP, making it impossible to trace malicious activity to a specific attacker.\n2. Access Control: Application-level IP allow/deny lists or rate limits will fail or mistakenly block the entire proxy.\n3. Compliance: Accurate logging of the user origin is often a regulatory requirement.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "3.4"
+          },
+          "fixtext": {
+            "+content": "Configure NGINX to forward client IP information in your server or location blocks where proxy_pass is used.\nConfiguration Example:\nlocation / {\n# Use 'https' for Zero Trust environments (requires proxy_ssl_verify\nconfiguration)\n# Use 'http' for standard TLS offloading (upstream traffic is\nunencrypted)\nproxy_pass <protocol>://example_backend_application;\n# Standard header: Appends the client IP to the list of proxies\nproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n# NGINX-specific header: Sets the direct client IP (useful for apps\nexpecting a single value)\nproxy_set_header X-Real-IP $remote_addr;\n# Recommended: Forward the protocol (http vs https)\nproxy_set_header X-Forwarded-Proto $scheme;\n}",
+            "+@fixref": "F-7F7F4BA8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-7F7F4BA8r01_fix"
+          },
+          "check": {
+            "+@system": "C-7F7F4BA8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Verify Configuration:\nCheck the active configuration for proxy header directives in proxied locations:\nnginx -T 2>/dev/null | grep -E \"proxy_set_header (X-Real-IP|X-Forwarded-For)\"\nEvaluation:\n• Presence: Verify that proxy_set_header X-Forwarded-For and proxy_set_header X-Real-IP are present in location blocks that use proxy_pass (or grpc_pass, fastcgi_pass).\n• Correctness:\no X-Forwarded-For should typically use $proxy_add_x_forwarded_for (to preserve the chain) or $remote_addr (if NGINX is the first trusted hop).\no X-Real-IP should use $remote_addr.\n• Scope: Check that this is applied to all relevant proxied locations."
+          }
+        }
+      },
+      {
+        "+@id": "V-108EDF87",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-108EDF87r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.1",
+          "title": "Ensure HTTP is redirected to HTTPS",
+          "description": "<VulnDiscussion>Browsers and clients establish encrypted connections with servers by leveraging HTTPS. Requests leveraging HTTP are unencrypted. Unencrypted requests should be redirected so they are encrypted. Any listening HTTP port on your web server should redirect to a server profile that uses encryption. The default HTTP (unencrypted) port is 80.\n\nRationale:\nRedirecting user agent traffic to HTTPS helps to ensure all user traffic is encrypted.\nModern browsers alert users that your website is insecure when HTTPS is not used.\nThis can decrease user trust in your website and ultimately result in decreased use of your web services. Redirection from HTTP to HTTPS couples security with usability;\nusers are able to access your website even if they lack the security awareness to use HTTPS over HTTP when requesting your website.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.1"
+          },
+          "fixtext": {
+            "+content": "Edit your web server or proxy configuration file to redirect all unencrypted listening ports, such as port 80, using a redirection through the return directive (cisecurity.org is used as an example server name).\nserver {\nlisten 80;\nserver_name cisecurity.org;\nreturn 301 https://$host$request_uri;\n}",
+            "+@fixref": "F-108EDF87r01_fix"
+          },
+          "fix": {
+            "+@id": "F-108EDF87r01_fix"
+          },
+          "check": {
+            "+@system": "C-108EDF87_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "To verify your server listening configuration, check your web server or proxy configuration file. The default web server configuration file is /etc/nginx/conf.d/default.conf, and the default proxy configuration file is /etc/nginx/nginx.conf. The configuration file should return a statement redirecting to HTTPS. This should be similar to the code below, where cisecurity.org is used as an example.\nserver {\nlisten 80;\nserver_name cisecurity.org;\nreturn 301 https://$host$request_uri;\n}"
+          }
+        }
+      },
+      {
+        "+@id": "V-6EF26285",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6EF26285r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.2",
+          "title": "Ensure a trusted certificate and trust chain is installed",
+          "description": "<VulnDiscussion>Certificates and their trust chains are needed to establish the identity of a web server as legitimate and trusted. Certificate authorities validate a web server's identity and that you are the owner of that web server domain name.\n\nRationale:\nWithout a certificate and full trust chain installed on your web server, modern browsers will flag your web server as untrusted.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.2"
+          },
+          "fixtext": {
+            "+content": "Use the following procedure to install a certificate and its signing certificate chain onto your web server, load balancer, or proxy.\nStep 1: Create the server's private key and a certificate signing request.\nThe following command will create your certificate's private key with 4096-bit key strength. It will also output your certificate signing request to the nginx.csr file in your present working directory.\nopenssl req -new -newkey rsa:4096 -keyout nginx.key -out nginx.csr\nEnter the below information about your private key:\nCountry Name (2 letter code) [XX]: Your Country\nState or Province Name (full name) []: Your State\nLocality Name (eg, city) [Default City]: Your City\nOrganization Name (eg, company) [Default Company Ltd]: Your City\nOrganizational Unit Name (eg, section) []: Your Organizational Unit\nCommon Name (eg, your name or your server's hostname) []: Your server's DNS\nname\nEmail Address []: Your email address\nStep 2: Obtain a signed certificate from your certificate authority.\nProvide your chosen certificate authority with your certificate signing request. Follow your certificate authority's signing procedures in order to obtain a certificate and the certificate's trust chain. A full trust chain is typically delivered in.pem format.\nStep 3: Install certificate and signing certificate chain on your web server.\nPlace the.pem file from your certificate authority into the directory of your choice.\nLocate your created key file from the command you used to generate your certificate signing request. Open your website configuration file and edit your encrypted listener to leverage the ssl_certificate and ssl_certificate_key directives for a web server as shown below. You should also inspect include files inside your nginx.conf. This should be part of the server block.\nserver {\nlisten 443 ssl http2;\nlisten [::]:443 ssl http2;\nssl_certificate /etc/nginx/cert.crt;\nssl_certificate_key /etc/nginx/nginx.key;\n...\n}\nAfter editing this file, you must restart the nginx systemd service for these changes to take effect. This can be done with the following command:\nsudo systemctl restart nginx",
+            "+@fixref": "F-6EF26285r01_fix"
+          },
+          "fix": {
+            "+@id": "F-6EF26285r01_fix"
+          },
+          "check": {
+            "+@system": "C-6EF26285_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run this command to find the file location of your certificate:\ngrep -ir ssl_certificate /etc/nginx/\nThe output of your command should look similar to the below output. If there is no output, you do not have a certificate installed.\nWeb Server:\n/etc/nginx/nginx.conf: ssl_certificate /etc/nginx/cert.pem;\n/etc/nginx/nginx.conf: ssl_certificate_key /etc/nginx/nginx.key;\nOpen the file to the right of the ssl_certificate directive using the following command:\ncat /etc/nginx/cert.pem\nThe output of your command should look similar to the below. It should include the full certificate chain.\n-----BEGIN CERTIFICATE-----\nInsert Your Web Server Certificate\n-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----\nInsert Your Certificate Authority Intermediate Certificate\n-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----\nInsert Your Certificate Authority Root Certificate\n-----END CERTIFICATE-----"
+          }
+        }
+      },
+      {
+        "+@id": "V-3DED1740",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-3DED1740r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.3",
+          "title": "Ensure private key permissions are restricted",
+          "description": "<VulnDiscussion>The server's and potentially its vhost's private keys should be protected from unauthorized access by limiting access based on the principle of least privilege.\n\nRationale:\nA server's private key file should be restricted to 400 permissions. This ensures only the owner of the private key file can access it. This is the minimum necessary permissions for the server to operate. If the private key file is not protected, an unauthorized user with access to the server may be able to find the private key file and use it to decrypt traffic sent to your server.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.3"
+          },
+          "fixtext": {
+            "+content": "Run the following command to remove excessive permissions on key files in the /etc/nginx/ directory.\nNote: The directory /etc/nginx/ should be replaced with the location of your key file.\nfind /etc/nginx/ -name '*.key' -exec chmod u-wx,go-rwx {} +",
+            "+@fixref": "F-3DED1740r01_fix"
+          },
+          "fix": {
+            "+@id": "F-3DED1740r01_fix"
+          },
+          "check": {
+            "+@system": "C-3DED1740_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify the permissions on the key file are 400. This can be found by running the following command. You should replace /etc/nginx/nginx.key with the location of your key file.\nfind /etc/nginx/ -name '*.key' -exec stat -Lc \"%n %a\" {} +\nThe output should show mode 400 or more restrictive Example:\n/etc/nginx/nginx.key 400"
+          }
+        }
+      },
+      {
+        "+@id": "V-88BE2D9E",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-88BE2D9Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.4",
+          "title": "Ensure only modern TLS protocols are used",
+          "description": "<VulnDiscussion>Only modern TLS protocols should be enabled in NGINX for all client connections and upstream connections. Removing legacy TLS and SSL protocols (SSL 3.0, TLS 1.0, 1.1 and 1.2), and enable stable TLS protocols (TLS 1.3), ensures users are able to take advantage of strong security capabilities and protects them from insecure legacy protocols.\n\nRationale:\nWhy disable SSL 3.0: The POODLE Vulnerability allowed attackers to exploit SSL 3.0 to obtain cleartext information by exploiting weaknesses in CBC in 2014. SSL 3.0 is also no longer FIPS 140-2 compliant.\nWhy disable TLS 1.0: TLS 1.0 was deprecated from use when PCI DSS Compliance mandated that it not be used for any applications processing credit card numbers in June 2018. TLS 1.0 does not make use of modern protections, and almost all user agents that do not support TLS 1.2 or higher are no longer supported by their vendor.\nWhy disable TLS 1.1: Because of the increased security associated with higher versions of TLS, TLS 1.0 should be disabled. Modern browsers will begin to flag TLS 1.1 as deprecated in early 2019.\nWhy disable TLS 1.2: While robust for its time, TLS 1.2's complexity allows for weak configurations, including cipher suites that lack Perfect Forward Secrecy. TLS 1.3 eliminates this risk by mandating PFS and removing outdated cryptographic primitives.\nAcknowledging this, NIST SP 800-52 Rev. 2 allows for TLS 1.2 to be disabled if it is not required for interoperability, positioning TLS 1.3 as the sole recommended protocol for modern, secure environments.\nWhy enable TLS 1.3: TLS 1.3 improves security by removing several insecure cipher suites by default and adding several more secure algorithms. All public-key exchange mechanisms support perfect forward secrecy in this version of TLS. Additionally, TLS 1.3 makes drastic performance improvements by removing a full round trip in the TLS handshake.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.4"
+          },
+          "fixtext": {
+            "+content": "Run the following commands to change your ssl_protocols if they are already configured. This remediation advice assumes your nginx configuration file does not include server configuration outside of /etc/nginx/nginx.conf. You may have to also inspect the include files in your nginx.conf to ensure this is properly implemented.\nWeb Server:\nsed -i \"s/ssl_protocols[^;]*;/ssl_protocols TLSv1.3;/\" /etc/nginx/nginx.conf\nProxy:\nsed -i \"s/proxy_ssl_protocols[^;]*;/proxy_ssl_protocols TLSv1.3;/\"\n/etc/nginx/nginx.conf\nIf your ssl_protocols are not already configured, this can be accomplished manually by opening your web server or proxy server configuration file and manually adding the directives.\nWeb Server:\nserver {\nssl_protocols TLSv1.3;\n}\nProxy:\nlocation / {\nproxy_pass cisecurity.org;\nproxy_ssl_protocols TLSv1.3;\n}",
+            "+@fixref": "F-88BE2D9Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-88BE2D9Er01_fix"
+          },
+          "check": {
+            "+@system": "C-88BE2D9E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "You can verify which SSL/TLS protocols your server uses by issuing the below command to see the configured cipher suites on the server. If anything older than TLS 1.3 is implemented or nothing appears, this recommendation is not implemented.\ngrep -ir ssl_protocol /etc/nginx\nNote: Depending on your configuration, you may see different results. The directive ssl_protocols should always be part of your server block. If your NGINX server is also a proxy or load balancer, you should also check for the presence of the proxy_ssl_protocols directive as part of the location block of your nginx configuration. This ensures your proxy follows a specific set of negotiation rules for encrypting traffic with your upstream server."
+          }
+        }
+      },
+      {
+        "+@id": "V-D6A73953",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D6A73953r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.5",
+          "title": "Disable weak ciphers",
+          "description": "<VulnDiscussion>The ssl_protocols directive must be used to disable weak protocols and exclusively enable TLS 1.3. In a TLS 1.3-only configuration, the ssl_ciphers directive is no longer necessary, as the protocol itself mandates a small, non-negotiable set of highly secure AEAD ciphers ( A uthenticated E ncryption with A ssociated D ata). This approach simplifies configuration and eliminates the risk of choosing weak or insecure cipher suites.\nThe ssl_prefer_server_ciphers directive should be set to off for TLS 1.3. Since all available ciphers are secure, allowing the client (user agent) to choose the most performant cipher for its hardware provides a performance benefit without compromising security.\nIn a reverse proxy setup, it is critical to ensure that any upstream services also support TLS 1.3. If an upstream server requires an older protocol, the proxy_ssl_protocols and proxy_ssl_ciphers directives must be configured to match the upstream's requirements, but this should be treated as a temporary exception to be remediated.\n\nRationale:\nWeak cryptographic ciphers can lead to the compromise of sensitive data. In modern TLS configurations, the most effective way to disable all weak ciphers is to exclusively enable the TLS 1.3 protocol. The TLS 1.3 specification removes all previously known weak and legacy cipher suites, mandating the use of a small set of highly secure Authenticated Encryption (AEAD) ciphers. This approach is simpler and less error-prone than maintaining a complex denylist or allowlist of ciphers for older protocols.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.5"
+          },
+          "fixtext": {
+            "+content": "Set ssl_protocols TLSv1.3;. The ssl_ciphers directive is not required for a TLS 1.3-only configuration, as the secure defaults of the underlying crypto library (e.g., OpenSSL) will be used.",
+            "+@fixref": "F-D6A73953r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D6A73953r01_fix"
+          },
+          "check": {
+            "+@system": "C-D6A73953_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Use the following procedure to verify that only ssl_protocols TLSv1.3; is used.\nnginx -T 2>/dev/null | grep -E '^\\s*ssl_protocols'\nThe output must show ssl_protocols TLSv1.3; exclusively for every relevant configuration block (e.g., at the http or server level).\nExample output:\nnginx: the configuration file /etc/nginx/nginx.conf syntax is ok\nnginx: configuration file /etc/nginx/nginx.conf test is successful\n# configuration file /etc/nginx/nginx.conf:\nssl_protocols TLSv1.3;\n# configuration file /etc/nginx/conf.d/default.conf:\nssl_protocols TLSv1.3;"
+          }
+        }
+      },
+      {
+        "+@id": "V-58838C09",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-58838C09r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.6",
+          "title": "Ensure awareness of TLS 1.3 new Diffie-Hellman parameters",
+          "description": "<VulnDiscussion>This control is not applicable to environments exclusively using TLS 1.3.\n\nRationale:\nThe TLS 1.3 protocol (RFC 8446) deprecates the use of custom finite-field Diffie- Hellman (DHE) groups, which were configured via the ssl_dhparam directive in NGINX.\nInstead, TLS 1.3 exclusively uses a set of pre-defined, standardized, and secure elliptic curve (ECDHE) and finite-field (FFDHE) groups for its key exchange mechanism. This design eliminates the risk associated with weak or misconfigured custom DH parameters. As such, the ssl_dhparam directive has no effect in a TLS 1.3-only configuration.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.6"
+          },
+          "fixtext": {
+            "+content": "No remediation is necessary. Ensure ssl_protocols TLSv1.3; is set. The ssl_dhparam directive should be removed as it is obsolete.",
+            "+@fixref": "F-58838C09r01_fix"
+          },
+          "fix": {
+            "+@id": "F-58838C09r01_fix"
+          },
+          "check": {
+            "+@system": "C-58838C09_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Verify that the configuration does not rely on TLS 1.2 or older protocols that would require this setting. This control is implicitly passed if control 4.1.4 (\"Ensure only modern TLS protocols are used\") is configured for TLS 1.3 exclusively."
+          }
+        }
+      },
+      {
+        "+@id": "V-8B8D8FDA",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8B8D8FDAr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.7",
+          "title": "Ensure Online Certificate Status Protocol (OCSP) stapling is enabled",
+          "description": "<VulnDiscussion>OCSP stapling allows a server to efficiently deliver certificate revocation information to the client, improving performance and privacy. The server caches the OCSP response from the Certificate Authority (CA), eliminating the need for the client to make a separate connection. For robust security, certificates should be issued with the OCSP Must-Staple extension, which transforms the traditional \"soft-fail\" behavior into a \"hard- fail,\" ensuring clients always receive and validate a current revocation status.\n\nRationale:\nOCSP stapling is a critical mechanism for distributing certificate revocation status.\nWithout it, clients might not be aware that a server's certificate has been compromised, allowing for potential man-in-the-middle attacks. The OCSP Must-Staple extension is essential as it mitigates the inherent weakness of optional OCSP (\"soft-fail\"), where a browser might proceed with a connection if it doesn't receive a staple. By enforcing a \"hard-fail\", Must-Staple ensures that a compromised certificate can be reliably blocked.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.7"
+          },
+          "fixtext": {
+            "+content": "Follow this procedure to enable a robust OCSP stapling configuration:\n1. When issuing a certificate, request that the OCSP Must-Staple extension be included.\n2. Edit your NGINX configuration to include all four necessary directives. The ssl_trusted_certificate must point to a file containing your root and intermediate certificates. The resolver must be set to one or more trusted DNS resolvers.\n# Example for a server block\nserver {\n# ... other directives ...\n# OCSP Stapling\nssl_stapling on;\nssl_stapling_verify on;\n# Path to the certificate chain (Root CA + Intermediates) for\nverification\nssl_trusted_certificate /etc/nginx/ssl/full_chain.pem;\n# DNS resolver for NGINX to query the CA's OCSP server\nresolver 8.8.8.8 1.1.1.1 valid=300s;\n}",
+            "+@fixref": "F-8B8D8FDAr01_fix"
+          },
+          "fix": {
+            "+@id": "F-8B8D8FDAr01_fix"
+          },
+          "check": {
+            "+@system": "C-8B8D8FDA_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to inspect the fully loaded NGINX configuration for the four required directives:\nnginx -T 2>/dev/null | grep -E\n'^\\s*(ssl_stapling|ssl_stapling_verify|ssl_trusted_certificate|resolver)'\nVerify that the output contains the following directives with appropriate values within the relevant http or server blocks:\n• ssl_stapling on;\n• ssl_stapling_verify on;\n• ssl_trusted_certificate /path/to/your/chain.pem;\n• resolver A.B.C.D;\nIf any of these four directives are missing, this recommendation is not fully implemented."
+          }
+        }
+      },
+      {
+        "+@id": "V-A219E5B9",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A219E5B9r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.8",
+          "title": "Ensure HTTP Strict Transport Security (HSTS) is enabled",
+          "description": "<VulnDiscussion>HTTP Strict Transport Security (HSTS) is a critical security header that instructs browsers to communicate with a domain exclusively over HTTPS. A comprehensive HSTS policy must include the includeSubDomains directive to apply the policy to all current and future subdomains. For maximum protection, the policy should also contain the preload directive, allowing the domain to be submitted to browser-pre-load lists.\nThis ensures that even the very first connection to the domain is made securely. The max-age should be set to a long duration, typically two years ( 63072000 seconds), to ensure browsers enforce this policy persistently.\n\nRationale:\nHSTS is the primary mechanism to mitigate protocol downgrade attacks and cookie hijacking. By enforcing HTTPS, it prevents attackers from intercepting requests and manipulating them. The includeSubDomains directive is vital as it closes a significant gap where an attacker could otherwise target a non-secure subdomain. The preload directive provides protection by removing the initial window of opportunity for an attack on a user's first visit, as the browser already knows to use HTTPS before making any connection.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.8"
+          },
+          "fixtext": {
+            "+content": "It is critical to deploy HSTS incrementally to avoid locking users out.\nStep 1: Initial Rollout (Low max-age) Add the HSTS header with a very short max-age to test for any issues. Verify that all parts of your site, including all subdomains, function correctly over HTTPS.\n# Test with 5 minutes\nadd_header Strict-Transport-Security \"max-age=300; includeSubDomains\" always;\nStep 2: Increase max-age Once confident, gradually increase the max-age.\n# Increase to 1 week\nadd_header Strict-Transport-Security \"max-age=604800; includeSubDomains\"\nalways;\nStep 3: Full Deployment (Long max-age and Preload) After thorough testing (e.g., one month), set the max-age to the recommended final value of two years. Add the preload directive if you intend to submit your site to the HSTS preload list.\n# Final configuration (2 years)\nadd_header Strict-Transport-Security \"max-age=63072000; includeSubDomains;\npreload\" always;\nIf preloading is desired, submit your domain at hstspreload.org.",
+            "+@fixref": "F-A219E5B9r01_fix"
+          },
+          "fix": {
+            "+@id": "F-A219E5B9r01_fix"
+          },
+          "check": {
+            "+@system": "C-A219E5B9_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to inspect the fully loaded NGINX configuration for the Strict-Transport-Security header:\nnginx -T 2>/dev/null | grep -i 'Strict-Transport-Security'\nVerify that the output includes a header with the following components:\n• A max-age directive of at least 31536000 (one year), with 63072000 (two years) being the recommended value.\n• The includeSubDomains directive.\n• The always parameter at the end of the add_header directive.\nExample output:\nadd_header Strict-Transport-Security \"max-age=63072000; includeSubDomains\"\nalways;"
+          }
+        }
+      },
+      {
+        "+@id": "V-13B2C7C6",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-13B2C7C6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.9",
+          "title": "Ensure upstream server traffic is authenticated with a client certificate",
+          "description": "<VulnDiscussion>In a reverse proxy configuration, NGINX acts as a client when communicating with an upstream server. To secure this server-to-server connection based on a Zero Trust principle, m utual TLS (mTLS) must be used. This is achieved by configuring NGINX to present its own client certificate to the upstream server. The upstream server then authenticates NGINX based on this certificate, ensuring that only trusted proxies can access backend services.\n\nRationale:\nAuthenticating the proxy's connection to the upstream server via a client certificate provides strong, cryptographic proof of identity. This is vastly superior to weaker authentication methods like IP whitelisting, which can be spoofed. In a modern microservices or cloud environment, mTLS is a cornerstone of network security, as it prevents unauthorized services from making requests to sensitive backends, thereby mitigating lateral movement attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.9"
+          },
+          "fixtext": {
+            "+content": "Implementing mTLS requires configuration on both the NGINX proxy (the client) and the upstream server (the server). This example assumes you have a simple internal CA.\nPrerequisite: Create a CA\n# Create CA Key\nopenssl genrsa -out my-ca.key 4096\n# Create CA Certificate\nopenssl req -x509 -new -nodes -key my-ca.key -sha256 -days 3650 -out my-\nca.crt\nStep 1: Configure the Upstream Server to Require Client Certificates The upstream server must be configured to request and verify client certificates against your CA. (If your upstream is also NGINX, the config would look like this):\n# On the Upstream Server's configuration\nserver {\nlisten 443 ssl;\n# ... other ssl directives ...\nssl_client_certificate /path/to/my-ca.crt; # The CA to verify against\nssl_verify_client on; # Require a valid client cert\n}\nStep 2: Create and Sign a Client Certificate for NGINX On your NGINX proxy, create a key and a certificate signing request (CSR).\n# Create a key for the NGINX proxy\nopenssl genrsa -out nginx-client.key 4096\n# Create CSR\nopenssl req -new -key nginx-client.key -out nginx-client.csr\nSign this CSR with your CA to create the client certificate:\nopenssl x509 -req -in nginx-client.csr -CA my-ca.crt -CAkey my-ca.key -\nCAcreateserial -out nginx-client.crt -days 365\nStep 3: Configure NGINX to Present its Client Certificate In your NGINX reverse proxy configuration, use the generated client certificate and key.\n# In your reverse proxy's location block\nlocation /api/ {\nproxy_pass https://your-upstream-server;\n# Present this client cert to the upstream\nproxy_ssl_certificate /etc/nginx/ssl/nginx-client.crt;\nproxy_ssl_certificate_key /etc/nginx/ssl/nginx-client.key;\n}",
+            "+@fixref": "F-13B2C7C6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-13B2C7C6r01_fix"
+          },
+          "check": {
+            "+@system": "C-13B2C7C6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to inspect the fully loaded NGINX configuration for the required directives:\nnginx -T 2>/dev/null | grep -E\n'^\\s*(proxy_ssl_certificate|proxy_ssl_certificate_key)'\nVerify that the output includes both proxy_ssl_certificate and proxy_ssl_certificate_key directives with the correct paths within the relevant location block.\nNote: A complete audit is two-sided. You must also verify that the upstream server is configured to require and validate client certificates against a trusted CA. This part of the audit is outside the scope of the NGINX configuration itself."
+          }
+        }
+      },
+      {
+        "+@id": "V-E9E03992",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E9E03992r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.1.10",
+          "title": "Ensure the upstream traffic server certificate is trusted",
+          "description": "<VulnDiscussion>When acting as a reverse proxy, NGINX must be configured to function as a secure TLS client. This requires validating the identity of the upstream server by verifying its certificate against a trusted Certificate Authority (CA). Furthermore, NGINX must ensure that the hostname of the upstream server matches the name (Subject Name / SAN) within the certificate itself.\n\nRationale:\nWithout proper validation, NGINX blindly trusts the identity of the upstream server, making it vulnerable to man-in-the-middle (MitM) attacks within the internal network. An attacker could impersonate a legitimate backend service and intercept sensitive traffic.\nBy enforcing certificate validation ( proxy_ssl_verify) and hostname verification ( proxy_ssl_name), NGINX guarantees that it is communicating with the intended, authentic upstream server.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.10"
+          },
+          "fixtext": {
+            "+content": "To securely configure upstream validation, you must obtain the CA certificate that signed your upstream server's certificate.\n1. Place the CA certificate (e.g., upstream_ca.crt) in a secure directory on the NGINX server (e.g., /etc/nginx/ssl/).\n2. In the location block that proxies traffic, add the following three directives. The proxy_ssl_name must match the hostname used in the proxy_pass directive.\nlocation /api/ {\nproxy_pass https://your-upstream-hostname.com;\n# 1. Enable verification\nproxy_ssl_verify on;\n# 2. Specify the CA to trust for verification\nproxy_ssl_trusted_certificate /etc/nginx/ssl/upstream_ca.crt;\n# 3. Verify the certificate's name matches the server's hostname\nproxy_ssl_name your-upstream-hostname.com;\n}",
+            "+@fixref": "F-E9E03992r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E9E03992r01_fix"
+          },
+          "check": {
+            "+@system": "C-E9E03992_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to inspect the fully loaded NGINX configuration for the three required directives within the relevant proxy location block:\nnginx -T 2>/dev/null | grep -E\n'^\\s*(proxy_ssl_verify|proxy_ssl_trusted_certificate|proxy_ssl_name)'\nVerify that the output contains the following directives:\n• proxy_ssl_verify on;\n• proxy_ssl_trusted_certificate /path/to/ca.crt;\n• proxy_ssl_name your-upstream-hostname.com;\nIf any of these three directives are missing, this recommendation is not fully implemented. Additionally, manually verify that the certificate referenced by proxy_ssl_trusted_certificate is the correct, valid CA certificate for your upstream services."
+          }
+        }
+      },
+      {
+        "+@id": "V-838A3780",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-838A3780r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1.11",
+          "title": "Ensure Secure Session Resumption is Enabled",
+          "description": "<VulnDiscussion>TLS 1.3 introduces a secure session resumption mechanism using P re- S hared K eys (PSKs) that significantly improves performance for returning clients by reducing the handshake latency. This modern mechanism should be enabled to enhance user experience without compromising security.\n\nRationale:\nUnlike older TLS versions, the TLS 1.3 resumption mechanism preserves P erfect F orward S ecrecy (PFS). It accomplishes this by combining the PSK with a fresh Ephemeral Diffie-Hellman key exchange (ECDHE) for every resumed session. This ensures that a compromise of the resumption key does not compromise any past or future session keys. Disabling this feature provides no security benefit and negatively impacts performance.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.11"
+          },
+          "fixtext": {
+            "+content": "Ensure that ssl_session_tickets is not set to off. The recommended approach is to remove the directive entirely, as the default value is on.\nIf the directive is present, either remove it or set it to on:\n# REMOVE this line from your configuration:\n# ssl_session_tickets off;\n# OR, if you want to be explicit, ensure it is set to ON (optional):\nssl_session_tickets on;",
+            "+@fixref": "F-838A3780r01_fix"
+          },
+          "fix": {
+            "+@id": "F-838A3780r01_fix"
+          },
+          "check": {
+            "+@system": "C-838A3780_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to verify that ssl_session_tickets is not explicitly turned off.\n# This command should produce NO output.\ngrep -ir \"ssl_session_tickets\" /etc/nginx/ | grep -i \"off\"\nIf the command produces any output containing ssl_session_tickets off;, this recommendation is not implemented."
+          }
+        }
+      },
+      {
+        "+@id": "V-51ED513F",
+        "title": "4.1 TLS / SSL Configuration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-51ED513Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "4.1.12",
+          "title": "Ensure HTTP/3.0 is used",
+          "description": "<VulnDiscussion>HTTP/2 is the established standard for web communication, offering significant performance benefits over HTTP/1.1 through multiplexing. For 2025 and beyond, HTTP/3 should also be enabled. HTTP/3 operates over the QUIC protocol, which is built on UDP, to solve head-of-line blocking, reduce connection setup time, and improve performance on unreliable networks. Both protocols require a secure TLS 1.3 environment to function.\n\nRationale:\nEnabling HTTP/2 provides a baseline of modern performance via stream multiplexing.\nEnabling HTTP/3 provides a further competitive advantage by mitigating TCP's head-of- line blocking and offering a faster, more reliable connection handshake, which is especially beneficial for mobile users. A server supporting both protocols can serve the vast majority of modern clients with the best possible performance and security. The strong encryption requirements of both protocols naturally align with a TLS 1.3-only policy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "4.1.12"
+          },
+          "fixtext": {
+            "+content": "Prerequisite: Ensure your NGINX version is compiled with the --with- http_v3_module flag.\n1. Open your NGINX server configuration file.\n2. In the main server block for your HTTPS site, add or modify the directives to enable HTTP/2, HTTP/3, and advertise its availability.\n3. Ensure your firewall allows UDP traffic on port 443.\nserver {\n# 1. Enable HTTP/2 on the standard TCP listener\nlisten 443 ssl http2;\nlisten [::]:443 ssl http2;\n# 2. Enable HTTP/3 on the UDP listener\nlisten 443 quic reuseport;\nlisten [::]:443 quic reuseport;\n# ... other ssl directives like ssl_certificate ...\n# 3. Advertise HTTP/3 availability to browsers\n# The max-age (ma) is in seconds (e.g., 2 years)\nadd_header Alt-Svc 'h3=\":443\"; ma=63072000';\n# Required for HTTP/3\nssl_early_data on;\n}",
+            "+@fixref": "F-51ED513Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-51ED513Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-51ED513F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to inspect the fully loaded NGINX configuration:\nnginx -T 2>/dev/null | grep -E '^\\s*(listen|add_header.*Alt-Svc)'\nVerify the following in the output for your primary server block:\n1. The TCP listen directive includes the http2 parameter: listen 443 ssl http2;\n2. A UDP listen directive with the quic parameter exists: listen 443 quic reuseport;\n3. An Alt-Svc header is being sent to advertise HTTP/3 availability: add_header Alt-Svc 'h3=\":443\"; ma=63072000';\nIf any of these are missing, this recommendation is not fully implemented."
+          }
+        }
+      },
+      {
+        "+@id": "V-EF2BC4DD",
+        "title": "5.1 Access Control",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-EF2BC4DDr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.1.1",
+          "title": "Ensure allow and deny filters limit access to specific IP addresses",
+          "description": "<VulnDiscussion>Access control based on IP addresses is a fundamental defense-in-depth mechanism.\nBy using NGINX's allow and deny directives, access to the entire server or specific location blocks can be restricted to trusted network sources, such as internal subnets, specific hosts, or VPN ranges. This is particularly effective for protecting non-public administrative interfaces or internal APIs from the public internet.\n\nRationale:\nApplying the principle of least privilege at the network layer is a highly effective security measure. By explicitly defining which IP addresses or CIDR ranges are permitted to access sensitive resources and implicitly denying all others with deny all;, the attack surface is significantly reduced. This prevents unauthorized network segments from even attempting to exploit potential application-layer vulnerabilities.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "5.1.1"
+          },
+          "fixtext": {
+            "+content": "Identify the specific location block you wish to protect (e.g., an admin login page or internal stats). Compile a list of trusted source IP addresses and network ranges. Add allow directives for each trusted source, followed by a final deny all; directive.\nNGINX processes rules in order, and stops at the first match.\nlocation /admin_login/ {\n# Allow a specific monitoring server\nallow 192.168.1.100;\n# Allow the internal office network range\nallow 10.20.30.0/24;\n# Deny all other access to this location\ndeny all;\n# ... other directives for the admin location, e.g., proxy_pass ...\n}",
+            "+@fixref": "F-EF2BC4DDr01_fix"
+          },
+          "fix": {
+            "+@id": "F-EF2BC4DDr01_fix"
+          },
+          "check": {
+            "+@system": "C-EF2BC4DD_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to inspect the fully loaded NGINX configuration for allow and deny rules:\nnginx -T 2>/dev/null | grep -E '^\\s*(allow|deny)'\nThen, manually review the active rules within the http, server, or location blocks.\nVerify that the configured IP addresses and CIDR ranges align with the documented list of trusted sources and that a deny all; rule is present to enforce a default-deny policy."
+          }
+        }
+      },
+      {
+        "+@id": "V-21240AA9",
+        "title": "5.1 Access Control",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-21240AA9r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.1.2",
+          "title": "Ensure only approved HTTP methods are allowed",
+          "description": "<VulnDiscussion>Following the principle of least functionality, an NGINX server should be configured to reject any HTTP methods that are not explicitly required by the application. While standard web browsing typically only needs GET, POST, and HEAD, modern RESTful APIs might require methods like PUT, PATCH, or DELETE. Any method not essential for the application's functionality should be blocked at the web server level.\n\nRationale:\nDisabling unused HTTP methods mitigates the risk of unintended server interaction and can prevent certain classes of web application attacks. For example, if an attacker finds a way to bypass application-layer authentication, an enabled but unused PUT or DELETE method on the web server could potentially lead to unauthorized file modification or deletion. By explicitly denying such methods, NGINX ensures that requests never even reach the backend application and therefore significantly reducing the attack surface.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "5.1.2"
+          },
+          "fixtext": {
+            "+content": "There are two recommended methods to restrict HTTP verbs.\nMethod 1 (Preferred): Using limit_except This directive is designed for this purpose and is considered the cleanest approach. It restricts all methods except for the ones listed.\nlocation /api_login/ {\n# Only allow GET, HEAD, and POST methods for this location.\nlimit_except GET HEAD POST {\ndeny all;\n}\n# ... other directives ...\n}\nMethod 2 (Alternative): Using an if condition This method offers more flexibility, such as returning a non-standard status code like 444, which simply closes the connection without sending a response header.\nlocation / {\n# If the request method is NOT one of GET, HEAD, or POST\nif ($request_method !~ ^(GET|HEAD|POST)$) {\n# --> close the connection immediately.\nreturn 444;\n}\n# ... other directives ...\n}",
+            "+@fixref": "F-21240AA9r01_fix"
+          },
+          "fix": {
+            "+@id": "F-21240AA9r01_fix"
+          },
+          "check": {
+            "+@system": "C-21240AA9_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Configuration Inspection:\nRun the following command to analyze the fully loaded NGINX configuration for any method-limiting directives:\nnginx -T 2>/dev/null | grep -E '(\\$request_method|limit_except)'\nReview the configuration to ensure that either a limit_except block or an if ($request_method) block is correctly implemented for the relevant location.\n2. Active Testing:\nSend a request with a non-approved method (e.g., OPTIONS or DELETE) using curl and verify that the server responds with the correct status code, not a 200 OK or 404 Not Found.\n# Send a disallowed OPTIONS request\ncurl -X OPTIONS -I https://example.loc/api.html\nExpected Output: The server should return either HTTP/1.1 405 Not Allowed or HTTP/1.1 444 Connection Closed Without Response. Any other 2xx or 4xx code indicates a potential misconfiguration."
+          }
+        }
+      },
+      {
+        "+@id": "V-2EED1A08",
+        "title": "5.2 Request Limits",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2EED1A08r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.1",
+          "title": "Ensure timeout values for reading the client header and body are set correctly",
+          "description": "<VulnDiscussion>To protect against slow clients holding connections open indefinitely, NGINX supports several timeout directives. The most important ones for client-facing connections are:\n• client_header_timeout: Sets the maximum time the server will wait for a client to send the request header.\n• client_body_timeout: Sets the maximum time allowed between sequential read operations when receiving the request body. This timer does not apply to the total time of the transfer.\n• send_timeout: Sets the maximum time allowed between sequential write operations when sending a response to the client.\nIf any of these timeouts are reached, the server closes the connection, freeing up resources.\n\nRationale:\nAggressively low timeout values are a primary defense against slow-read Denial of Service (DoS) attacks. These attacks attempt to exhaust server resources by opening many connections and keeping them alive for as long as possible by sending data extremely slowly. By setting low timeouts, NGINX efficiently closes these malicious connections, preserving resources for legitimate users.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "5.2.1"
+          },
+          "fixtext": {
+            "+content": "Set reasonably low timeout values globally in your http block. If specific locations require longer timeouts (e.g., for file uploads), override them within that location block.\nExample Configuration:\nhttp {\n# Set a global default of 15 seconds, which overrides the default of 60s.\nclient_header_timeout 15s;\nclient_body_timeout 15s;\nsend_timeout 15s;\nserver {\n# ... other settings ...\n# This location handles large file uploads and needs a longer\ntimeout.\nlocation /upload {\nclient_body_timeout 300s; # Allow 5 minutes between read\noperations for uploads\n# ...\n}\n}\n}",
+            "+@fixref": "F-2EED1A08r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2EED1A08r01_fix"
+          },
+          "check": {
+            "+@system": "C-2EED1A08_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to inspect the fully loaded NGINX configuration for the relevant directives:\nnginx -T 2>/dev/null | grep -E\n'^\\s*(client_header_timeout|client_body_timeout|send_timeout)'\nVerify that these values are explicitly set to a reasonably low, non-default value (e.g., 10 – 20 seconds) in the main http or server context. If the application requires long- running connections, verify that client_body_timeout is overridden to a higher value in the specific location block that handles uploads."
+          }
+        }
+      },
+      {
+        "+@id": "V-05FA2E36",
+        "title": "5.2 Request Limits",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-05FA2E36r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.2",
+          "title": "Ensure the maximum request body size is set correctly",
+          "description": "<VulnDiscussion>The client_max_body_size directive defines the maximum permissible size for a client request body, as indicated by the Content-Length header. If a request exceeds this size, NGINX will immediately reject it with a 413 Request Entity Too Large error, preventing the oversized request from being processed further or passed to a backend application.\n\nRationale:\nLimiting the request body size is a crucial defense against resource exhaustion DoS attacks and prevents oversized, potentially malicious payloads from reaching application backends. By setting a logical default limit and only increasing it for specific application endpoints that require it (e.g., file uploads), the principle of least functionality is enforced, significantly reducing the attack surface.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "5.2.2"
+          },
+          "fixtext": {
+            "+content": "Define a restrictive global limit in the http block. For specific application endpoints that need to accept larger request bodies, override this directive within the corresponding location block.\nExample Configuration:\nhttp {\n# Set a restrictive global default of 2 Megabytes. This prevents\nunexpected large requests on most endpoints.\nclient_max_body_size 2M;\nserver {\n# ...\n# This location handles API requests with potentially large JSON\npayloads.\nlocation /api/v1/data {\nclient_max_body_size 10M; # Allow up to 10MB\n# ...\n}\n# This location is for large file uploads.\nlocation /uploads {\nclient_max_body_size 50M; # Allow up to 50MB\n# ...\n}\n}\n}",
+            "+@fixref": "F-05FA2E36r01_fix"
+          },
+          "fix": {
+            "+@id": "F-05FA2E36r01_fix"
+          },
+          "check": {
+            "+@system": "C-05FA2E36_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to inspect the fully loaded NGINX configuration for the client_max_body_size directive:\nnginx -T 2>/dev/null | grep -E '^\\s*(client_max_body_size)'\nVerify that a global client_max_body_size is set in the http block. For any location blocks that override this value (e.g., for uploads), manually verify that the increased limit is documented and aligns with the application's functional requirements."
+          }
+        }
+      },
+      {
+        "+@id": "V-77E150A2",
+        "title": "5.2 Request Limits",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-77E150A2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.2.3",
+          "title": "Ensure the maximum buffer size for URIs is defined",
+          "description": "<VulnDiscussion>The large_client_header_buffers directive allocates the maximum number and size of buffers for reading the entire client request header, which includes both the request line (e.g., GET /path HTTP/1.1) and all subsequent header fields (e.g., Host:, Cookie:, Authorization:). If a client's request header exceeds the total allocated buffer space, NGINX immediately rejects the request with a 400 Bad Request error. Also, the client's request line cannot exceed the size of one buffer, otherwise the 414 Request-URI Too Large error will be returned to the client.\n\nRationale:\nWhile NGINX itself is not vulnerable to buffer overflows from large headers, this directive serves two critical purposes:\n1. Denial of Service (DoS) Mitigation: It prevents malicious clients from attempting to exhaust server memory by sending excessively large headers.\n2. Downstream Protection: It acts as a gatekeeper, ensuring that malformed or oversized headers do not reach backend applications that might be more fragile or could exhibit undefined behavior when processing them.\nThe default value is intentionally generous to handle legitimate modern web traffic, and lowering it without reason can be counterproductive.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "5.2.3"
+          },
+          "fixtext": {
+            "+content": "Unless you have a specific, documented requirement to restrict header sizes further, the recommended action is to rely on the secure default value. If your configuration has an overly restrictive value set without a clear reason, remove the large_client_header_buffers directive from your http or server blocks to allow NGINX to fall back to its default.\nRemediation Action:\nRemove any custom, overly restrictive large_client_header_buffers lines from your configuration files.\n# REMOVE THIS LINE if it exists without good reason:\nlarge_client_header_buffers 2 1k;",
+            "+@fixref": "F-77E150A2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-77E150A2r01_fix"
+          },
+          "check": {
+            "+@system": "C-77E150A2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "This is a manual check that requires context.\n1. Run the following command to see if the directive is explicitly set:\nnginx -T 2>/dev/null | grep 'large_client_header_buffers'\n2. Evaluate the result:\n• No output: The server is using the default value of 4 8k. This is considered compliant and secure for general use.\n• Output shows large_client_header_buffers 4 8k;: The default is explicitly set. This is compliant.\n• Output shows a different value (e.g., 2 1k;): This is a deviation from the default. Manually verify if this restrictive value is documented, intentional, and necessary for the specific application. If not, it represents a potential availability risk and should be flagged."
+          }
+        }
+      },
+      {
+        "+@id": "V-F38A5EBF",
+        "title": "5.2 Request Limits",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F38A5EBFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2.4",
+          "title": "Ensure the number of connections per IP address is limited",
+          "description": "<VulnDiscussion>NGINX's ngx_http_limit_conn_module provides a mechanism to limit the number of simultaneous connections from a single client IP address. This is achieved in two steps:\n• limit_conn_zone: This directive, typically defined in the http block, creates a shared memory zone to store the state for each client IP address.\n• limit_conn: This directive, applied in a server or location block, enforces a specific connection limit using the previously defined zone.\nWhen a client exceeds this limit, NGINX will reject new connections with a 503 Service Temporarily Unavailable error.\n\nRationale:\nThe primary purpose of connection limiting is to mitigate resource exhaustion and certain types of Denial of Service (DoS) attacks where an attacker opens many connections and holds them open for as long as possible. It is a different tool than rate limiting ( limit_req), which is designed to stop rapid-fire requests (like brute-force attacks). By enforcing a reasonable connection limit, the server can prevent a single malicious or misconfigured client from consuming an unfair share of worker connections.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "5.2.4"
+          },
+          "fixtext": {
+            "+content": "First, define a shared memory zone in the http block. Then, apply a carefully considered limit in the server or location context.\nUnderstanding the zone size: The memory usage for the $binary_remote_addr key is fixed ( 64 bytes on a 64-bit system). Therefore, 1 megabyte of zone memory can store approximately 16,384 states. A 10m zone can store over 160,000 states.\nExample Configuration:\nhttp {\n# Define a 10MB zone named 'per_ip' to track connections by IP.\n# $binary_remote_addr is more memory-efficient than $remote_addr.\nlimit_conn_zone $binary_remote_addr zone=per_ip:10m;\nserver {\n# Apply a general limit of 20 connections per IP for this server.\n# This might be a reasonable starting point for a public site.\nlimit_conn per_ip 20;\n# For a resource-intensive download area, apply a stricter limit.\nlocation /downloads/ {\nlimit_conn per_ip 5;\n}\n}\n}",
+            "+@fixref": "F-F38A5EBFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-F38A5EBFr01_fix"
+          },
+          "check": {
+            "+@system": "C-F38A5EBF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "This is a manual check requiring context.\n1. Run the following command to inspect the loaded NGINX configuration for connection limiting rules:\nnginx -T 2>/dev/null | grep -E '^\\s*(limit_conn_zone|limit_conn)'\n2. Manually evaluate the findings:\n• Is a limit_conn_zone defined in the http block?\n• Is a limit_conn directive applied in the appropriate server or location blocks?\nCritically, assess the configured limit. Is a limit of 10 appropriate for a public website accessed by customers or large companies? Or is it a sensible value for a specific /login location? The value must be justifiable for its context."
+          }
+        }
+      },
+      {
+        "+@id": "V-2F8D5530",
+        "title": "5.2 Request Limits",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2F8D5530r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2.5",
+          "title": "Ensure rate limits by IP address are set",
+          "description": "<VulnDiscussion>NGINX's ngx_http_limit_req_module provides a mechanism to limit the rate of incoming requests from a single client IP address, based on the \"leaky bucket\" algorithm. This is configured in two steps:\n1. limit_req_zone: This directive, defined in the http block, creates a shared memory zone that defines the bucket's parameters, such as the average request rate.\n2. limit_req: This directive, applied in a server or location block, enforces the rate limit using a specific zone and defines how \"bursts\" of traffic are handled.\nWhen a client exceeds the defined rate, NGINX will reject new requests with a 503 Service Temporarily Unavailable error.\n\nRationale:\nRate limiting is the primary defense against application-level, high-frequency attacks. Its main purpose is to prevent brute-force password guessing on login endpoints, API abuse by automated scripts, and aggressive content scraping. Unlike connection limiting ( limit_conn), which focuses on slow, simultaneous connections, rate limiting ( limit_req) targets clients making an excessive number of requests in a short period.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "5.2.5"
+          },
+          "fixtext": {
+            "+content": "First, define a shared memory zone in the http block. Then, apply a carefully tuned limit only to the specific location blocks that require protection.\nUnderstanding the \"Leaky Bucket\" Parameters:\n• rate: The average rate at which the bucket \"leaks\" (requests are processed).\n5r/s means 5 requests per second.\n• burst: The size of the bucket. It's the number of \"token\" requests a client can make in excess of the defined rate. A burst=10 allows a client to burst up to 10 requests instantly before the rate limit kicks in.\n• nodelay: Without nodelay, excess requests in a burst are queued and processed at the defined rate (slowing the client down). With nodelay, excess requests are processed immediately as long as they fit in the burst \"bucket\", and only requests beyond the burst limit are rejected. For APIs and login pages, nodelay is generally preferred for a better user experience.\nExample Configuration:\nhttp {\n# Define a 10MB zone for login attempts.\n# Rate: 1 request per second average.\nlimit_req_zone $binary_remote_addr zone=login_limit:10m rate=1r/s;\nserver {\n# NO global rate limit here!\nlocation / {\n# Normal traffic, no rate limit\n}\n# Apply a strict rate limit ONLY to the login endpoint\nlocation /login {\n# Use the 'login_limit' zone.\n# Allow a burst of 5 requests, then enforce the 1r/s limit.\n# 'nodelay' ensures a user can quickly resubmit a form without\nbeing artificially slowed down.\nlimit_req zone=login_limit burst=5 nodelay;\n# ... other settings ...\n}\n}\n}",
+            "+@fixref": "F-2F8D5530r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2F8D5530r01_fix"
+          },
+          "check": {
+            "+@system": "C-2F8D5530_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "This is a manual check requiring context.\n1. Run the following command to find rate-limiting rules:\nnginx -T 2>/dev/null | grep -E '^\\s*(limit_req_zone|limit_req)'\n2. Manually evaluate the findings:\n• Is a limit_req_zone defined in the http block?\n• Important, where is limit_req applied? Is it applied globally ( server Block or location /)? This is a high risk. Or is it applied to specific endpoints like /login? Which is best practice.\n• Are the rate and burst values reasonable for the protected endpoint?"
+          }
+        }
+      },
+      {
+        "+@id": "V-5D4C7847",
+        "title": "5.3 Browser Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5D4C7847r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "5.3.1",
+          "title": "Ensure X-Content-Type-Options header is configured and enabled",
+          "description": "<VulnDiscussion>The X-Content-Type-Options header instructs the browser to strictly follow the MIME types declared in the Content-Type headers and not to guess (\"sniff\") the content type based on the file's actual content.\n\nRationale:\nImplementing the X-Content-Type-Options header with the nosniff directive helps to prevent drive-by download attacks where a user agent is sniffing content types in responses.\nThis header prevents \"MIME type confusion\" attacks. Without this header, browsers might interpret a file declared as text (e.g., snippet.txt) as executable if it contains script code. Setting the nosniff directive forces the browser to reject the file if the declared type doesn't match the context in which it's loaded (e.g., loading a text file as a script).</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "5.3.1"
+          },
+          "fixtext": {
+            "+content": "Open the NGINX configuration file that contains your server blocks. Add the below line into your server block to add X-Content-Type-Options header and direct your user agent to not sniff content types.\nadd_header X-Content-Type-Options \"nosniff\" always;",
+            "+@fixref": "F-5D4C7847r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5D4C7847r01_fix"
+          },
+          "check": {
+            "+@system": "C-5D4C7847_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to inspect the fully loaded NGINX configuration:\nnginx -T 2>/dev/null | grep -i 'X-Content-Type-Options'\nVerify the output:\n• Verify that the configuration contains the line: add_header X-Content-Type- Options \"nosniff\" always;\n• Specifically check for the always parameter at the end of the directive. Without it, the header will be missing on error pages."
+          }
+        }
+      },
+      {
+        "+@id": "V-B23713B8",
+        "title": "5.3 Browser Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B23713B8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.3.2",
+          "title": "Ensure that Content Security Policy (CSP) is enabled and configured properly",
+          "description": "<VulnDiscussion>C ontent S ecurity P olicy (CSP) is an HTTP response header that allows site administrators to declare approved sources of content that browsers are allowed to load on that page. It is a mechanism to detect and mitigate certain types of attacks, including C ross- S ite S cripting (XSS) and data injection attacks. Furthermore, CSP's frame- ancestors directive is the modern replacement for the X-Frame-Options header to prevent Clickjacking.\n\nRationale:\nA robust CSP significantly reduces the attack surface of a web application. By restricting the domains from which scripts, styles, images, and other resources can be loaded, it effectively neutralizes many XSS vectors. Additionally, by using the frame-ancestors directive, it explicitly controls which parent pages are allowed to embed the application (e.g., via <iframe>), providing a more flexible protection against Clickjacking than the legacy X-Frame-Options header.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "5.3.2"
+          },
+          "fixtext": {
+            "+content": "CSP must be tailored to the specific application. There is no single \"correct\" policy.\nStep 1: The Baseline Policy (High Security) Start with a policy that denies everything by default and only allows resources from the same origin. It also prevents the site from being framed by anyone (Clickjacking protection).\nadd_header Content-Security-Policy \"default-src 'self'; frame-ancestors\n'self'; form-action 'self';\" always;\nStep 2: Adaptation (Example) If your application loads images from a CDN and needs to be embeddable by a specific partner site:\nadd_header Content-Security-Policy \"default-src 'self'; img-src 'self'\nhttps://cdn.example.com; frame-ancestors 'self' https://partner-site.com;\"\nalways;\nNote: Use Content-Security-Policy-Report-Only during the testing phase to debug your policy without breaking the site.",
+            "+@fixref": "F-B23713B8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B23713B8r01_fix"
+          },
+          "check": {
+            "+@system": "C-B23713B8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Run the following command to inspect the CSP configuration:\nnginx -T 2>/dev/null | grep -i 'Content-Security-Policy'\n2. Evaluate the policy:\n• Is the header present?\n• Does it include at least a restrictive default-src directive (e.g., ' self ' or ' none ')?\n• Does it include the frame-ancestors directive to mitigate Clickjacking?\n• Critically: Is unsafe-inline or unsafe-eval avoided in script-src? (Allowing these significantly weakens the protection)."
+          }
+        }
+      },
+      {
+        "+@id": "V-93A1C04A",
+        "title": "5.3 Browser Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-93A1C04Ar01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.3.3",
+          "title": "Ensure the Referrer Policy is enabled and configured properly",
+          "description": "<VulnDiscussion>The Referrer-Policy HTTP header controls how much referrer information (sent via the Referer header) should be included with requests. It allows site administrators to restrict the data sent to upstream servers when a user clicks a link or loads a resource.\nThis is a privacy control to prevent leaking sensitive URL parameters or internal path structures to third parties.\n\nRationale:\nURLs often contain sensitive information such as session tokens, search queries, or P ersonally I dentifiable I nformation (PII) in their query parameters. Without a strict Referrer Policy, this full URL is transmitted to any third-party site the user visits from your page, potentially logging sensitive data on external servers. Configuring this header ensures that only the necessary information (e.g., just the origin domain) is shared, protecting user privacy and preventing data leakage.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS NGINX Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS NGINX Benchmark",
+            "dc:identifier": "5.3.3"
+          },
+          "fixtext": {
+            "+content": "Add the following line to your server or http block. This example uses the robust default setting that protects privacy without breaking internal analytics.\nadd_header Referrer-Policy \"strict-origin-when-cross-origin\" always;\nIf maximum privacy is required and no referrer data is needed even for internal links:\nadd_header Referrer-Policy \"no-referrer\" always;",
+            "+@fixref": "F-93A1C04Ar01_fix"
+          },
+          "fix": {
+            "+@id": "F-93A1C04Ar01_fix"
+          },
+          "check": {
+            "+@system": "C-93A1C04A_chk",
+            "check-content-ref": {
+              "+@href": "CIS_NGINX_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run the following command to inspect the fully loaded NGINX configuration:\nnginx -T 2>/dev/null | grep -i 'Referrer-Policy'\nEvaluate the findings:\n• Verify that the directive add_header Referrer-Policy \"...\" always; is present.\n• Check the configured value. While no-referrer is the most secure, strict- origin-when-cross-origin is the widely accepted standard for balancing security and functionality.\n• Ensure the always parameter is present."
+          }
+        }
+      }
+    ]
+  }
+}

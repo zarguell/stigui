@@ -137,6 +137,9 @@ class Recommendation:
     markers: list[str]  # e.g. ["Automated", "Manual", "L1"]
     fields: dict[str, Field] = field(default_factory=dict)
     levels: list[tuple[int, str]] = field(default_factory=list)  # (level, profile name)
+    cat_severity: str = ""  # STIG-template "SEVERITY: CAT II" marker
+    vendor_group_id: str = ""  # e.g. "V-259425" (STIG template)
+    vendor_rule_id: str = ""  # e.g. "SV-259425r1038944" (STIG template)
     parent_number: str = ""
     page: int = 0
 

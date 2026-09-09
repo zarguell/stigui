@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="utf-8"?><Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd" id="CIS_MongoDB_3_4_Benchmark_ARCHIVE" xml:lang="en" xmlns="http://checklists.nist.gov/xccdf/1.1">
+  <status date="2017-06-28">accepted</status>
+  <title>CIS MongoDB 3.4 Benchmark - ARCHIVE</title>
+  <description>This is the archive of the CIS Benchmark for MongoDB. CIS encourages you to migrate to a more recent, supported version of this technology. This document, CIS MongoDB 3.4 Benchmark, provides prescriptive guidance for establishing a secure configuration posture for MongoDB version 3.4. This guide was tested against MongoDB 3.4 running on Ubuntu Linux 14.04, but applies to other Linux distributions as well, and Windows Server 2012. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org.</description>
+  <notice id="terms-of-use" xml:lang="en"/>
+  <front-matter xml:lang="en"/>
+  <rear-matter xml:lang="en"/>
+  <reference href="https://www.cisecurity.org/cis-benchmarks">
+    <dc:publisher>Center for Internet Security</dc:publisher>
+    <dc:source>CIS Benchmarks</dc:source>
+  </reference>
+  <plain-text id="release-info">Release: 1.0.0 Benchmark Date: 2017-06-28</plain-text>
+  <version>1.0.0</version>
+  <Profile id="L1_Public">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-6DBF78F6" selected="true"/>
+    <select idref="V-E128A6D5" selected="true"/>
+    <select idref="V-E8C4B72D" selected="true"/>
+    <select idref="V-1030802B" selected="true"/>
+    <select idref="V-889FF9C4" selected="true"/>
+    <select idref="V-7B9D52E7" selected="true"/>
+    <select idref="V-FB30D359" selected="true"/>
+    <select idref="V-25342033" selected="true"/>
+    <select idref="V-934F2274" selected="true"/>
+    <select idref="V-1915197F" selected="true"/>
+    <select idref="V-6A69C9AA" selected="true"/>
+    <select idref="V-6B64723E" selected="true"/>
+    <select idref="V-F9CA1F53" selected="true"/>
+    <select idref="V-2C0EA8DD" selected="true"/>
+    <select idref="V-4A9A0DBE" selected="true"/>
+  </Profile>
+  <Profile id="L1_Classified">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-6DBF78F6" selected="true"/>
+    <select idref="V-E128A6D5" selected="true"/>
+    <select idref="V-E8C4B72D" selected="true"/>
+    <select idref="V-1030802B" selected="true"/>
+    <select idref="V-889FF9C4" selected="true"/>
+    <select idref="V-7B9D52E7" selected="true"/>
+    <select idref="V-FB30D359" selected="true"/>
+    <select idref="V-25342033" selected="true"/>
+    <select idref="V-934F2274" selected="true"/>
+    <select idref="V-1915197F" selected="true"/>
+    <select idref="V-6A69C9AA" selected="true"/>
+    <select idref="V-6B64723E" selected="true"/>
+    <select idref="V-F9CA1F53" selected="true"/>
+    <select idref="V-2C0EA8DD" selected="true"/>
+    <select idref="V-4A9A0DBE" selected="true"/>
+  </Profile>
+  <Profile id="L1_Sensitive">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-6DBF78F6" selected="true"/>
+    <select idref="V-E128A6D5" selected="true"/>
+    <select idref="V-E8C4B72D" selected="true"/>
+    <select idref="V-1030802B" selected="true"/>
+    <select idref="V-889FF9C4" selected="true"/>
+    <select idref="V-7B9D52E7" selected="true"/>
+    <select idref="V-FB30D359" selected="true"/>
+    <select idref="V-25342033" selected="true"/>
+    <select idref="V-934F2274" selected="true"/>
+    <select idref="V-1915197F" selected="true"/>
+    <select idref="V-6A69C9AA" selected="true"/>
+    <select idref="V-6B64723E" selected="true"/>
+    <select idref="V-F9CA1F53" selected="true"/>
+    <select idref="V-2C0EA8DD" selected="true"/>
+    <select idref="V-4A9A0DBE" selected="true"/>
+  </Profile>
+  <Profile id="L2_Public">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-3B9D8126" selected="true"/>
+    <select idref="V-00D1EFA3" selected="true"/>
+    <select idref="V-FC644BD2" selected="true"/>
+    <select idref="V-9C7EA400" selected="true"/>
+    <select idref="V-759D9AAC" selected="true"/>
+    <select idref="V-9653B544" selected="true"/>
+    <select idref="V-0ED82D02" selected="true"/>
+    <select idref="V-B3B2237C" selected="true"/>
+  </Profile>
+  <Profile id="L2_Classified">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-3B9D8126" selected="true"/>
+    <select idref="V-00D1EFA3" selected="true"/>
+    <select idref="V-FC644BD2" selected="true"/>
+    <select idref="V-9C7EA400" selected="true"/>
+    <select idref="V-759D9AAC" selected="true"/>
+    <select idref="V-9653B544" selected="true"/>
+    <select idref="V-0ED82D02" selected="true"/>
+    <select idref="V-B3B2237C" selected="true"/>
+  </Profile>
+  <Profile id="L2_Sensitive">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-3B9D8126" selected="true"/>
+    <select idref="V-00D1EFA3" selected="true"/>
+    <select idref="V-FC644BD2" selected="true"/>
+    <select idref="V-9C7EA400" selected="true"/>
+    <select idref="V-759D9AAC" selected="true"/>
+    <select idref="V-9653B544" selected="true"/>
+    <select idref="V-0ED82D02" selected="true"/>
+    <select idref="V-B3B2237C" selected="true"/>
+  </Profile>
+  <Group id="V-6DBF78F6">
+    <title>1 Installation and Patching</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6DBF78F6r01_rule" weight="10.0" severity="medium">
+      <version>1.1</version>
+      <title>Ensure the appropriate MongoDB software version/patches are installed</title>
+      <description>&lt;VulnDiscussion&gt;The MongoDB installation version, along with the patch level, should be the most recent that is compatible with the organization's operational needs.
+
+Rationale:
+Using the most recent MongoDB software version along with all applicable patches helps limit the possibilities for vulnerabilities in the software. The installation version and/or patches applied should be selected according to the needs of the organization. At minimum, the software version should be supported.
+Note that as of June 2017, only MongoDB versions 3.0/3.2/3.4 are still supported.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6DBF78F6r01_fix">Upgrade to the latest version of the MongoDB software:
+1. Backup the data set.
+2. Download the binaries for the latest MongoDB revision from the MongoDB Download Page and store the binaries in a temporary location. The binaries download as compressed files that extract to the directory structure used by the MongoDB installation.
+3. Shutdown the MongoDB instance.
+4. Replace the existing MongoDB binaries with the downloaded binaries.
+5. Restart the MongoDB instance.</fixtext>
+      <fix id="F-6DBF78F6r01_fix"/>
+      <check system="C-6DBF78F6_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>On Ubuntu:
+Run the following command from within the MongoDB shell to determine if the MongoDB software version complies with your organization’s operational needs:
+&gt; db.version()
+On Windows:
+Navigate to Installation directory of Mongo DB on server and run below command
+mongod.exe --version
+8 | P a g e</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E128A6D5">
+    <title>2 Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E128A6D5r01_rule" weight="10.0" severity="medium">
+      <version>2.1</version>
+      <title>Ensure that authentication is enabled for MongoDB databases</title>
+      <description>&lt;VulnDiscussion&gt;This setting ensures that all clients, users, and/or servers are required to authenticate prior to being granted access to the MongoDB database.
+
+Rationale:
+Failure to authenticate clients, users, and/or servers can enable unauthorized access to the MongoDB database and can prevent tracing actions back to their sources.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>2.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E128A6D5r01_fix">The authentication mechanism should be implemented before anyone accesses the MongoDB Server.
+To enable the authentication mechanism:
+• Start the MongoDB instance without authentication.
+mongod --port 27017 --dbpath /data/db1
+10 | P a g e Or
+mongod.exe --port 27017 --dbpath db1
+• Create the system user administrator, ensuring that its password meets organizationally-defined password complexity requirements.
+use admin
+db.createUser(
+{
+user: "siteUserAdmin",
+pwd: "password",
+roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+}
+)
+• Restart the MongoDB instance with authentication enabled.
+mongod --auth --config /etc/mongod.conf
+Or
+mongod.exe --auth --config mongod.conf</fixtext>
+      <fix id="F-E128A6D5r01_fix"/>
+      <check system="C-E128A6D5_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>Run the following command to verify whether authentication is enabled ( Auth value set to True) on the MongoDB server.
+On Ubuntu:
+cat /etc/mongod.conf | grep “Auth=”
+On Windows:
+type mongod.conf | findstr “Auth=”</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E8C4B72D">
+    <title>2 Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E8C4B72Dr01_rule" weight="10.0" severity="medium">
+      <version>2.2</version>
+      <title>Ensure that MongoDB does not bypass authentication via the localhost exception</title>
+      <description>&lt;VulnDiscussion&gt;MongoDB should not be set to bypass authentication via the localhost exception. The localhost exception allows you to enable authorization before creating the first user in the system.
+Note: This recommendation only applies when there are no users created in the MongoDB instance.
+
+Rationale:
+Disabling this exception will prevent unauthorized local access to the MongoDB database. It will also ensure traceability of each database activity to a specific user.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>2.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E8C4B72Dr01_fix">Since enableLocalhostAuthBypass is not available using the setParameter database command, use the setParameter option in the configuration file to set it to false.
+setParameter:
+enableLocalhostAuthBypass: false</fixtext>
+      <fix id="F-E8C4B72Dr01_fix"/>
+      <check system="C-E8C4B72D_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>To verify the localhost exception is disabled, run the following command to ensure that enableLocalhostAuthBypass is set to false:
+On Ubuntu:
+cat /etc/mongod.conf |grep "enableLocalhostAuthBypass"
+On Windows:
+type mongod.conf | findstr "enableLocalhostAuthBypass"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-1030802B">
+    <title>2 Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-1030802Br01_rule" weight="10.0" severity="medium">
+      <version>2.3</version>
+      <title>Ensure authentication is enabled in the sharded cluster</title>
+      <description>&lt;VulnDiscussion&gt;Authentication is enabled in a sharded cluster when keyfiles are created and configured for all components. This ensures that every client that accesses the cluster must provide credentials, to include MongoDB instances that access each other within the cluster.
+
+Rationale:
+Enforcing a key on a sharded cluster prevents unauthorized access to the MongoDB database and provides traceability of database activities to a specific user or component.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>2.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-1030802Br01_fix">To enable authentication in the sharded cluster, perform the following steps:
+• Generate A Key File
+• On each component in the shared cluster, enable authentication by doing one of the foll owing:
+o In the configuration file /etc/mongod.conf, set the keyFile option to the key file’s path and then start t he component with this command:
+keyFile = /srv/mongodb/keyfile
+• When starting the component, set --keyFile option, which is an option for both mongos instances and mongod instances. Set the --keyFile to the key file’s path.</fixtext>
+      <fix id="F-1030802Br01_fix"/>
+      <check system="C-1030802B_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>Run the following command to verify that the keyfile parameter is configured:
+On Ubuntu:
+cat /etc/mongod.conf | grep “keyFile=”
+On Windows:
+type mongod.conf | findstr “keyFile”</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-3B9D8126">
+    <title>2 Authentication</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-3B9D8126r01_rule" weight="10.0" severity="high">
+      <version>2.4</version>
+      <title>Ensure an industry standard authentication mechanism is used</title>
+      <description>&lt;VulnDiscussion&gt;Using one or more industry standard authentication mechanisms helps organizations enforce their account and password policies for their MongoDB users.
+
+Rationale:
+Without an industry standard authentication mechanism in place, account and password management is more tedious, and authentication may not align with the organization's policies.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>2.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-3B9D8126r01_fix">In order to implement an industry standard authentication mechanism, use the corresponding sample from the list below as a model for specifying the authentication mechanisms in the MongoDB configuration file.
+x.509 Certificates for Client Authentication:
+security:
+clusterAuthMode: x509
+net:
+ssl:
+mode: requireSSL
+PEMKeyFile: &lt;path to TLS/SSL certificate and key PEM file&gt;
+CAFile: &lt;path to root CA PEM file&gt;
+See the reference section for a link to a detailed procedure for generating the PEMKeyFile and CAFile.
+MongoDB with Kerberos Authentication on Linux:
+security:
+authorization: enabled
+setParameter:
+authenticationMechanisms: GSSAPI
+storage:
+dbPath: /opt/mongodb/data
+See the reference section for a link to a detailed procedure for establishing the Kerberos service principal and keytab file.</fixtext>
+      <fix id="F-3B9D8126r01_fix"/>
+      <check system="C-3B9D8126_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>To verify the authentication mechanism in use for MongoDB, run the following commands:
+On Ubuntu:
+cat /etc/mongod.conf | grep “clusterAuthMode:”
+cat /etc/mongod.conf | grep “mode:”
+cat /etc/mongod.conf | grep “authorization:"
+cat /etc/mongod.conf | grep “authenticationMechanisms:”
+On Windows:
+type mongod.conf | findstr “clusterAuthMode:”
+type mongod.conf | findstr “mode:”
+type mongod.conf | findstr “authorization:"
+type mongod.conf | findstr “authenticationMechanisms:”
+16 | P a g e</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-889FF9C4">
+    <title>3 Access Control</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-889FF9C4r01_rule" weight="10.0" severity="medium">
+      <version>3.1</version>
+      <title>Ensure that role-based access control is enabled and configured appropriately</title>
+      <description>&lt;VulnDiscussion&gt;Role-based access control (RBAC) is a method of regulating access to resources based on the roles of individual users within an enterprise. A user is granted one or more roles that determine the user’s access to database resources and operations. Outside of role assignments, the user has no access to the system. MongoDB can use RBAC to govern access to MongoDB systems. MongoDB does not enable authorization by default.
+
+Rationale:
+When properly implemented, RBAC enables users to carry out a wide range of authorized tasks by dynamically regulating their actions according to flexible functions. This allows an organization to control employees’ access to all database tables through RBAC.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>3.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-889FF9C4r01_fix">1. Establish roles for MongoDB.
+2. Assign the appropriate privileges to each role.
+3. Assign the appropriate users to each role.
+4. Remove any individual privileges assigned to users that are now addressed by the roles.
+5. See the reference below for more Information.</fixtext>
+      <fix id="F-889FF9C4r01_fix"/>
+      <check system="C-889FF9C4_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>Connect to MongoDB with the appropriate privileges and run the following command:
+mongo --port 27017 -u &lt;siteUserAdmin&gt; -p &lt;password&gt; --authenticationDatabase
+&lt;database name&gt;
+Identify users' roles and privileges:
+&gt; db.getUser()
+&gt; db.getRole()
+Verify that the appropriate role or roles have been configured for each user.
+18 | P a g e</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-7B9D52E7">
+    <title>3 Access Control</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-7B9D52E7r01_rule" weight="10.0" severity="medium">
+      <version>3.2</version>
+      <title>Ensure that MongoDB only listens for network connections on authorized interfaces</title>
+      <description>&lt;VulnDiscussion&gt;Ensuring that MongoDB runs in a trusted network environment involves limiting the network interfaces on which MongoDB instances listen for incoming connections. Any untrusted network connections should be dropped by MongoDB.
+
+Rationale:
+This configuration blocks connections from untrusted networks, leaving only systems on authorized and trusted networks able to attempt to connect to the MongoDB. If not configured, this may lead to unauthorized connections from untrusted networks to MongoDB.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>3.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-7B9D52E7r01_fix">Configure the MongoDB configuration file to limit its exposure to only the network interfaces on which MongoDB instances should listen for incoming connections.</fixtext>
+      <fix id="F-7B9D52E7r01_fix"/>
+      <check system="C-7B9D52E7_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>On Ubuntu:
+1. Verify that network exposure is limited, review the settings in the MongoDB configuration file:
+cat /etc/mongod.conf |grep –A12 “net” | grep “bindIp"
+2. Verify the relevant network settings on the Linux system itself:
+iptables – L
+On Windows:
+type mongod.conf | findstr “bindIp"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FB30D359">
+    <title>3 Access Control</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FB30D359r01_rule" weight="10.0" severity="medium">
+      <version>3.3</version>
+      <title>Ensure that MongoDB is run using a non-privileged, dedicated service account</title>
+      <description>&lt;VulnDiscussion&gt;The MongoDB service should not be run using a privileged account such as 'root' because this unnecessarily exposes the operating system to high risk.
+
+Rationale:
+Using a non-privileged, dedicated service account restricts the database from accessing the critical areas of the operating system which are not required by the MongoDB. This will also mitigate the potential for unauthorized access via a compromised, privileged account on the operating system.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>3.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FB30D359r01_fix">1. Create a dedicated user for performing MongoDB database activity.
+2. Set the Database data files, the keyfile, and the SSL private key files to only be readable by the mongod/mongos user.
+3. Set the log files to only be writable by the mongod/mongos user and readable only by root.
+22 | P a g e</fixtext>
+      <fix id="F-FB30D359r01_fix"/>
+      <check system="C-FB30D359_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>Run the following command to get listing of all mongo instances, the PID number, and the PID owner.
+ps -ef | grep -E "mongos|mongod"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-00D1EFA3">
+    <title>3 Access Control</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-00D1EFA3r01_rule" weight="10.0" severity="high">
+      <version>3.4</version>
+      <title>Ensure that each role for each MongoDB database is needed and grants only the necessary privileges</title>
+      <description>&lt;VulnDiscussion&gt;Reviewing all roles periodically and eliminating unneeded roles as well as unneeded privileges from necessary roles helps minimize the privileges that each user has.
+
+Rationale:
+Although role-based access control (RBAC) has many advantages for regulating access to resources, over time some roles may no longer be needed, and some roles may grant privileges that are no longer needed.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>3.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-00D1EFA3r01_fix">To revoke specified privileges from the user-defined role on the database where the command is run. The revokePrivilegesFromRole command has the following syntax:
+{
+revokePrivilegesFromRole: "&lt;role&gt;",
+privileges:
+[
+{ resource: { &lt;resource&gt; }, actions: [ "&lt;action&gt;", ... ]},
+...
+],
+}
+24 | P a g e</fixtext>
+      <fix id="F-00D1EFA3r01_fix"/>
+      <check system="C-00D1EFA3_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>Perform the following command to view all roles on the database on which the command runs, including both built-in and user-defined roles, as well as the privileges granted by each role. Ensure that only necessary roles are listed and only the necessary privileges are listed for each role.
+db.runCommand(
+{
+rolesInfo: 1,
+showPrivileges: true,
+showBuiltinRoles: true
+}
+)</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FC644BD2">
+    <title>3 Access Control</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FC644BD2r01_rule" weight="10.0" severity="high">
+      <version>3.5</version>
+      <title>Review User-Defined Roles</title>
+      <description>&lt;VulnDiscussion&gt;Reviewing all roles periodically and removing all users from those roles who do not need to belong to them helps minimize the privileges that each user has.
+
+Rationale:
+Although role-based access control (RBAC) has many advantages for regulating access to resources, over time some users may be assigned to roles that are no longer necessary, such as a user changing jobs within the organization. Users who have excessive privileges pose unnecessary risk to the organization.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>3.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FC644BD2r01_fix">To remove a user from one or more roles on the current database, use the following command:
+use &lt;dbName&gt;
+db.revokeRolesFromUser( " &lt;username&gt; ", [ &lt;roles&gt; ])
+26 | P a g e</fixtext>
+      <fix id="F-FC644BD2r01_fix"/>
+      <check system="C-FC644BD2_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>Check each role for each database using one of the following commands.
+To specify a role from the current database, specify the role by its name:
+db.runCommand( { rolesInfo: " &lt;rolename&gt; " } )
+To specify a role from another database, specify the role by a document that specifies the role and database:
+db.runCommand( { rolesInfo: { role: " &lt;rolename&gt; ", db: " &lt;database&gt; " } } )</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-9C7EA400">
+    <title>3 Access Control</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-9C7EA400r01_rule" weight="10.0" severity="high">
+      <version>3.6</version>
+      <title>Review Superuser/Admin Roles</title>
+      <description>&lt;VulnDiscussion&gt;Roles provide several advantages that make it easier to manage privileges in a database system. Security administrators can control access to their databases in a way that mirrors the structure of their organizations (they can create roles in the database that map directly to the job functions in their organizations). The assignment of privileges is simplified.
+Instead of granting the same set of privileges to each individual user in a particular job function, the administrator can grant this set of privileges to a role representing that job function and then grant that role to each user in that job function.
+
+Rationale:
+Reviewing the Superuser/Admin roles within a database helps minimize the possibility of privileged unwanted access.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>3.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-9C7EA400r01_fix">To remove a user from one or more roles on the current database.
+use &lt;dbName&gt;
+db.revokeRolesFromUser( " &lt;username&gt; ", [ &lt;roles&gt; ])</fixtext>
+      <fix id="F-9C7EA400r01_fix"/>
+      <check system="C-9C7EA400_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>Superuser roles provide the ability to assign any user any privilege on any database, which means that users with one of these roles can assign themselves any privilege on any database:
+db.runCommand( { rolesInfo: "dbOwner" } )
+db.runCommand( { rolesInfo: "userAdmin" } )
+db.runCommand( { rolesInfo: "userAdminAnyDatabase" } )
+Root role provides access to the operations and all the resources of the readWriteAnyDatabase, dbAdminAnyDatabase, userAdminAnyDatabase, clusterAdmin roles, restore combined.
+db.runCommand( { rolesInfo: "readWriteAnyDatabase" } )
+db.runCommand( { rolesInfo: "dbAdminAnyDatabase" } )
+db.runCommand( { rolesInfo: "userAdminAnyDatabase" } )
+db.runCommand( { rolesInfo: "clusterAdmin" } )
+Cluster Administration Roles are used for administering the whole system rather than just a single database.
+db.runCommand( { rolesInfo: "hostManager" } )
+28 | P a g e</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-25342033">
+    <title>4 Data Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-25342033r01_rule" weight="10.0" severity="medium">
+      <version>4.1</version>
+      <title>Ensure TLS or SSL protects all network communications</title>
+      <description>&lt;VulnDiscussion&gt;Use TLS or SSL to protect all incoming and outgoing connections. This should include using TLS or SSL to encrypt communication between mongod and mongos components of a MongoDB client as well as between all applications and MongoDB.
+Most MongoDB distributions include support for SSL or TLS.
+
+Rationale:
+This prevents sniffing of cleartext traffic between MongoDB components or performing a man-in-the-middle attack for MongoDB.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>4.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-25342033r01_fix">Configure MongoDB servers to require the use of SSL or TLS to encrypt all MongoDB network communications.
+To implement SSL or TLS to encrypt all MongoDB network communication, perform the following steps:
+For mongod (“Primary daemon process for the MongoDB system”) 30 | P a g e In the configuration file /etc/mongod.conf, set the PEMKeyFile option to the certificate file’s path and then start the component with this command:
+ssl:
+mode: requireSSL
+PEMKeyFile: /etc/ssl/mongodb.pem
+CAFile: /etc/ssl/ca.pem
+And restart monogdb instance with
+mongod --config /etc/mongod.conf
+Or
+mongod --sslMode requireSSL --sslPEMKeyFile /etc/ssl/mongodb.pem --sslCAFile
+/etc/ssl/ca.pem</fixtext>
+      <fix id="F-25342033r01_fix"/>
+      <check system="C-25342033_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>To verify that the server requires SSL or TLS use ( net.ssl.mode value set to requireSSL), run one of the following commands:
+On Ubuntu:
+cat /etc/mongos.conf | grep –A20 ‘net’ | grep –A10 ‘ssl’ | grep ‘mode’
+On Windows:
+type mongos.conf | findstr –A20 ‘net’ | findstr –A10 ‘ssl’ | findstr ‘mode’</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-934F2274">
+    <title>4 Data Encryption</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-934F2274r01_rule" weight="10.0" severity="medium">
+      <version>4.2</version>
+      <title>Ensure Federal Information Processing Standard (FIPS) is enabled</title>
+      <description>&lt;VulnDiscussion&gt;The Federal Information Processing Standard (FIPS) is a computer security standard used to certify software modules and libraries that encrypt and decrypt data securely. You can configure MongoDB to run with a FIPS 140-2 certified library for OpenSSL.
+
+Rationale:
+FIPS is industry standard that dictates how data should be encrypted in rest and during transmission.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>4.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-934F2274r01_fix">Configuring FIPS mode, ensure that your certificate is FIPS compliant. Run mongod or mongos instance in FIPS mode.
+Make changes to configuration file, to configure your mongod or mongos instance to use FIPS mode, shut down the instance and update the configuration file with the following setting:
+net:
+ssl:
+FIPSMode: true
+Start mongod or mongos instance with a configuration file.
+mongod --config /etc/mongod.conf</fixtext>
+      <fix id="F-934F2274r01_fix"/>
+      <check system="C-934F2274_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>On Ubuntu:
+To verify that the server uses FIPS Mode ( net.ssl.FIPSMode value set to true), run following commands:
+mongos --config /etc/mongos.conf
+net:
+ssl:
+FIPSMode: true
+or To verify FIPS mode is running, check the server log file for a message that FIPS is active:
+FIPS 140-2 mode activated
+On Windows:
+Check FIPSMode is true
+type mongod.conf | findstr “FIPSMode"
+32 | P a g e</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-1915197F">
+    <title>5 Auditing</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-1915197Fr01_rule" weight="10.0" severity="medium">
+      <version>5.1</version>
+      <title>Ensure that system activity is audited</title>
+      <description>&lt;VulnDiscussion&gt;Track access and changes to database configurations and data. MongoDB Enterprise includes a system auditing facility that can record system events (e.g. user operations, connection events) on a MongoDB instance. These audit records permit forensic analysis and allow administrators to verify proper controls.
+
+Rationale:
+System level logs can be handy while troubleshooting an operational problem or handling a security incident.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>5.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-1915197Fr01_fix">Set the value of auditLog.destination to the appropriate value from the following options:
+syslog To enable auditing and print audit events to syslog
+mongod --dbpath data/db --auditDestination syslog
+console 34 | P a g e To enable auditing and print audit events to standard output (i.e., stdout)
+mongod --dbpath data/db --auditDestination console
+Json File To enable auditing and print audit events to a file in JSON format. Printing audit events to file in JSON format degrades server performance more than printing to a file in BSON format.
+mongod --dbpath data/db --auditDestination file --auditFormat JSON --
+auditPath data/db/auditLog.json
+Bson File To enable auditing and print audit events to a file in BSON binary format
+mongod --dbpath data/db --auditDestination file --auditFormat BSON --
+auditPath data/db/auditLog.bson</fixtext>
+      <fix id="F-1915197Fr01_fix"/>
+      <check system="C-1915197F_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>To verify that system activity is being audited for MongoDB, run the following command to confirm the auditLog.destination value is set correctly:
+On Ubuntu:
+cat /etc/mongod.conf |grep – A4 "auditLog" | grep "destination"
+On Windows:
+type mongod.conf | findstr – A4 "auditLog" | findstr "destination"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6A69C9AA">
+    <title>5 Auditing</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6A69C9AAr01_rule" weight="10.0" severity="medium">
+      <version>5.2</version>
+      <title>Ensure that audit filters are configured properly</title>
+      <description>&lt;VulnDiscussion&gt;MongoDB Enterprise supports auditing of various operations. When enabled, the audit facility, by default, records all auditable operations as detailed in Audit Event Actions, Details, and Results. To specify which events to record, the audit feature includes the -- auditFilter option. This check is only for Enterprise editions.
+
+Rationale:
+All operations carried out on the database are logged. This helps in backtracking and tracing any incident that occurs.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>5.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6A69C9AAr01_fix">Set the audit filters based on the organization’s requirements.</fixtext>
+      <fix id="F-6A69C9AAr01_fix"/>
+      <check system="C-6A69C9AA_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>To verify that audit filters are configured on MongoDB as per the organization’s requirements, run the following command:
+On Ubuntu:
+cat /etc/mongod.conf |grep – A10 "auditLog" | grep "filter"
+On Windows:
+type mongod.conf | findstr – A10 "auditLog" | findstr "filter"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-759D9AAC">
+    <title>5 Auditing</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-759D9AACr01_rule" weight="10.0" severity="high">
+      <version>5.3</version>
+      <title>Ensure that logging captures as much information as possible</title>
+      <description>&lt;VulnDiscussion&gt;The SystemLog.quiet option stops logging of information such as:
+• connection events
+• authentication events
+• replication sync activities
+• evidence of some potentially impactful commands being run (eg: drop, dropIndexes, validate) This information should be logged whenever possible. This check is only for Enterprise editions.
+
+Rationale:
+The use of SystemLog.quiet makes troubleshooting problems and investigating possible security incidents much more difficult.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>5.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-759D9AACr01_fix">Set SystemLog.quiet to false in the /etc/mongod.conf file to disable it.
+38 | P a g e</fixtext>
+      <fix id="F-759D9AACr01_fix"/>
+      <check system="C-759D9AAC_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>To verify that the SystemLog.quiet option is disabled (value of false), run the following command:
+On Ubuntu:
+cat /etc/mongod.conf |grep "SystemLog.quiet"
+On Windows:
+type mongod.conf | findstr "SystemLog.quiet"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-9653B544">
+    <title>5 Auditing</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-9653B544r01_rule" weight="10.0" severity="high">
+      <version>5.4</version>
+      <title>Ensure that new entries are appended to the end of the log file</title>
+      <description>&lt;VulnDiscussion&gt;By default, new log entries will overwrite old entries after a restart of the mongod or Mongols service. Enabling the systemLog.logAppend setting causes new entries to be appended to the end of the log file rather than overwriting the existing content of the log when the mongos or mongod instance restarts.
+
+Rationale:
+Allowing old entries to be overwritten by new entries instead of appending new entries to the end of the log may destroy old log data that is needed for a variety of purposes.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>5.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-9653B544r01_fix">Set systemLog.logAppend to true in the /etc/mongod.conf file.
+40 | P a g e</fixtext>
+      <fix id="F-9653B544r01_fix"/>
+      <check system="C-9653B544_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>To verify that new log entries will be appended to the end of the log file after a restart ( systemLog.logAppend value set to true), run the following command:
+On Ubuntu:
+cat /etc/mongod.conf | grep "systemLog.logAppend"
+On Windows:
+type mongod.conf | findstr "systemLog.logAppend"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6B64723E">
+    <title>6 Operating System Hardening</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6B64723Er01_rule" weight="10.0" severity="medium">
+      <version>6.1</version>
+      <title>Mongodb Database Running with Least Privileges</title>
+      <description>&lt;VulnDiscussion&gt;This setting ensures that monogd service run as least privilege user.
+
+Rationale:
+Anyone who has been a victim of viruses, worms, and other malicious software (malware) will appreciate the security principle of “least privilege.” If all processes ran with the smallest set of privileges needed to perform the user's tasks, it would be more difficult for malicious and annoying software to infect a machine and propagate to other machines.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>6.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6B64723Er01_fix">Create a user which is only used for running Mongodb and directly related processes. This user must not have administrative rights to the system. Steps to create user
+useradd -m -d /home/mongodb -s /bin/bash -g mongodb -u 1234 mongodb
+And then set ownership to mongodb user only
+sudo chown -R mongodb:mongodb /data/db</fixtext>
+      <fix id="F-6B64723Er01_fix"/>
+      <check system="C-6B64723E_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>Connect MongoDB Service
+mongod --port 27017 --dbpath /data/db1
+It will highlight if the service is running as root privilege or not.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F9CA1F53">
+    <title>6 Operating System Hardening</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F9CA1F53r01_rule" weight="10.0" severity="medium">
+      <version>6.2</version>
+      <title>Ensure that MongoDB uses a non-default port</title>
+      <description>&lt;VulnDiscussion&gt;Changing the port used by MongoDB makes it harder for attackers to find the database and target it.
+
+Rationale:
+Standard ports are used in automated attacks and by attackers to verify which applications are running on a server.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>6.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F9CA1F53r01_fix">Change the port for MongoDB server to a number other than 27017.</fixtext>
+      <fix id="F-F9CA1F53r01_fix"/>
+      <check system="C-F9CA1F53_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>To verify the port number used by MongoDB, execute the following command and ensure that the port number is not 27017:
+On Ubuntu:
+cat /etc/mongod.conf |grep “port”
+On Windows:
+type mongod.conf | findstr “port”</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-0ED82D02">
+    <title>6 Operating System Hardening</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-0ED82D02r01_rule" weight="10.0" severity="high">
+      <version>6.3</version>
+      <title>Ensure that operating system resource limits are set for MongoDB</title>
+      <description>&lt;VulnDiscussion&gt;Operating systems provide ways to limit and control the usage of system resources such as threads, files, and network connections on a per-process and per-user basis
+
+Rationale:
+These ulimits prevent a single user from consuming too many system resources.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>6.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-0ED82D02r01_fix">Every deployment may have unique requirements and settings. Recommended thresholds and settings are particularly important for MongoDB deployments:
+• f (file size): unlimited
+• t (cpu time): unlimited
+• v (virtual memory): unlimited [1]
+• n (open files): 64000
+• m (memory size): unlimited [1] [2]
+• u (processes/threads): 64000 Restart the mongod and mongos instances after changing the ulimit settings to ensure that the changes take effect.
+44 | P a g e</fixtext>
+      <fix id="F-0ED82D02r01_fix"/>
+      <check system="C-0ED82D02_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>To verify the resource limits set for MongoDB, run the following commands.
+Extract the process ID for MongoDB:
+ps -ef|grep mongod
+View the limits associated with that process number:
+cat /proc/1322/limits</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-B3B2237C">
+    <title>6 Operating System Hardening</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-B3B2237Cr01_rule" weight="10.0" severity="high">
+      <version>6.4</version>
+      <title>Ensure that server-side scripting is disabled if not needed</title>
+      <description>&lt;VulnDiscussion&gt;MongoDB supports the execution of JavaScript code for certain server-side operations:
+mapReduce, group, and $where. If you do not use these operations, server-side scripting should be disabled.
+
+Rationale:
+If server-side scripting is not needed and is not disabled, this introduces unnecessary risk that an attacker may take advantage of insecure coding.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>6.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-B3B2237Cr01_fix">If server-side scripting is not required, disable it by using the --noscripting option on the command line.</fixtext>
+      <fix id="F-B3B2237Cr01_fix"/>
+      <check system="C-B3B2237C_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>If server-side scripting is not required, verify that it is disabled ( javascriptEnabled value of false) using the following command:
+On Ubuntu:
+cat /etc/mongod.conf | grep – A10 "security" | grep "javascriptEnabled"
+On Windows:
+type mongod.conf | findstr – A10 "security" | findstr "javascriptEnabled"</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-2C0EA8DD">
+    <title>7 File Permissions</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-2C0EA8DDr01_rule" weight="10.0" severity="medium">
+      <version>7.1</version>
+      <title>Ensure that key file permissions are set correctly</title>
+      <description>&lt;VulnDiscussion&gt;The key file is used for authentication in the sharded cluster. Implementing proper file permissions on the key file will prevent unauthorized access to it.
+
+Rationale:
+Protecting the key file strengthens authentication in the sharded cluster and prevents unauthorized access to the MongoDB database.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>7.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-2C0EA8DDr01_fix">Set the keyFile ownership to mongodb user and remove other permissions by executing these commands:
+chmod 600 /keyfile
+sudo chown mongodb:mongodb /keyfile
+47 | P a g e</fixtext>
+      <fix id="F-2C0EA8DDr01_fix"/>
+      <check system="C-2C0EA8DD_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>To verify the permissions for the MongoDB key file, run the following command:
+cat /etc/mongod.conf | grep “keyFile:”
+OnWindows :
+type mongod.conf | findstr “keyFile:”</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-4A9A0DBE">
+    <title>7 File Permissions</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-4A9A0DBEr01_rule" weight="10.0" severity="medium">
+      <version>7.2</version>
+      <title>Ensure that database file permissions are set correctly</title>
+      <description>&lt;VulnDiscussion&gt;MongoDB database files need to be protected using file permissions.
+
+Rationale:
+This will restrict unauthorized users from accessing the database.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS MongoDB 3.4 Benchmark - ARCHIVE</dc:subject>
+        <dc:identifier>7.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-4A9A0DBEr01_fix">Set ownership of the database file to mongodb user and remove other permissions using the following commands:
+chmod 660 /var/lib/mongodb
+sudo chown mongodb:mongodb /var/lib/mongodb
+49 | P a g e</fixtext>
+      <fix id="F-4A9A0DBEr01_fix"/>
+      <check system="C-4A9A0DBE_chk">
+        <check-content-ref href="CIS_MongoDB_3_4_Benchmark_ARCHIVE.xml" name="M"/>
+        <check-content>To verify that the permissions for the MongoDB database file are configured securely, run the following commands.
+Find out the database location using the following command:
+On Ubuntu:
+cat /etc/mongod.conf |grep "dbpath"
+On Windows:
+type mongod.conf | findstr "dbpath"
+Use the database location as part of the following command to view and verify the permissions set for the database file:
+ls – l /var/lib/mongodb</check-content>
+      </check>
+    </Rule>
+  </Group>
+</Benchmark>
+

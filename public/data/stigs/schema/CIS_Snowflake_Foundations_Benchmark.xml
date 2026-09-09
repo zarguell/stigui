@@ -1,0 +1,2114 @@
+<?xml version="1.0" encoding="utf-8"?><Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd" id="CIS_Snowflake_Foundations_Benchmark" xml:lang="en" xmlns="http://checklists.nist.gov/xccdf/1.1">
+  <status date="2026-06-24">accepted</status>
+  <title>CIS Snowflake Foundations Benchmark</title>
+  <description>All CIS Benchmarks ™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks ™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completed successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks ™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks ™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Target Technology Details This security configuration benchmark provides prescriptive guidance for configuring security options for Snowflake. The recommendations detailed here are important security considerations when designing your workloads and applications on Snowflake. Most of the recommendations provided with this release of the benchmark cover security considerations only at individual account level and not at the organization level.</description>
+  <notice id="terms-of-use" xml:lang="en"/>
+  <front-matter xml:lang="en"/>
+  <rear-matter xml:lang="en"/>
+  <reference href="https://www.cisecurity.org/cis-benchmarks">
+    <dc:publisher>Center for Internet Security</dc:publisher>
+    <dc:source>CIS Benchmarks</dc:source>
+  </reference>
+  <plain-text id="release-info">Release: 2.0.0 Benchmark Date: 2026-06-24</plain-text>
+  <version>2.0.0</version>
+  <Profile id="L1_Public">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-E4042EDC" selected="true"/>
+    <select idref="V-FA245142" selected="true"/>
+    <select idref="V-21515DB0" selected="true"/>
+    <select idref="V-C9428C49" selected="true"/>
+    <select idref="V-95EA1C56" selected="true"/>
+    <select idref="V-E597D439" selected="true"/>
+    <select idref="V-F849FBD2" selected="true"/>
+    <select idref="V-260F4028" selected="true"/>
+    <select idref="V-AA631E2E" selected="true"/>
+    <select idref="V-7D827707" selected="true"/>
+    <select idref="V-94E4C9F8" selected="true"/>
+    <select idref="V-68930E44" selected="true"/>
+    <select idref="V-5745C292" selected="true"/>
+    <select idref="V-887DEAB9" selected="true"/>
+    <select idref="V-C81E50BE" selected="true"/>
+    <select idref="V-B4D00289" selected="true"/>
+    <select idref="V-2882594B" selected="true"/>
+    <select idref="V-4955FE96" selected="true"/>
+    <select idref="V-75316C25" selected="true"/>
+    <select idref="V-F9C13965" selected="true"/>
+    <select idref="V-59F70864" selected="true"/>
+    <select idref="V-71965DE8" selected="true"/>
+    <select idref="V-79CE7857" selected="true"/>
+    <select idref="V-F3EAB0E4" selected="true"/>
+    <select idref="V-FF981D15" selected="true"/>
+    <select idref="V-E0FB039D" selected="true"/>
+    <select idref="V-86782279" selected="true"/>
+    <select idref="V-327A766E" selected="true"/>
+    <select idref="V-D9DC718A" selected="true"/>
+    <select idref="V-81A56182" selected="true"/>
+    <select idref="V-420D89FA" selected="true"/>
+  </Profile>
+  <Profile id="L1_Classified">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-E4042EDC" selected="true"/>
+    <select idref="V-FA245142" selected="true"/>
+    <select idref="V-21515DB0" selected="true"/>
+    <select idref="V-C9428C49" selected="true"/>
+    <select idref="V-95EA1C56" selected="true"/>
+    <select idref="V-E597D439" selected="true"/>
+    <select idref="V-F849FBD2" selected="true"/>
+    <select idref="V-260F4028" selected="true"/>
+    <select idref="V-AA631E2E" selected="true"/>
+    <select idref="V-7D827707" selected="true"/>
+    <select idref="V-94E4C9F8" selected="true"/>
+    <select idref="V-68930E44" selected="true"/>
+    <select idref="V-5745C292" selected="true"/>
+    <select idref="V-887DEAB9" selected="true"/>
+    <select idref="V-C81E50BE" selected="true"/>
+    <select idref="V-B4D00289" selected="true"/>
+    <select idref="V-2882594B" selected="true"/>
+    <select idref="V-4955FE96" selected="true"/>
+    <select idref="V-75316C25" selected="true"/>
+    <select idref="V-F9C13965" selected="true"/>
+    <select idref="V-59F70864" selected="true"/>
+    <select idref="V-71965DE8" selected="true"/>
+    <select idref="V-79CE7857" selected="true"/>
+    <select idref="V-F3EAB0E4" selected="true"/>
+    <select idref="V-FF981D15" selected="true"/>
+    <select idref="V-E0FB039D" selected="true"/>
+    <select idref="V-86782279" selected="true"/>
+    <select idref="V-327A766E" selected="true"/>
+    <select idref="V-D9DC718A" selected="true"/>
+    <select idref="V-81A56182" selected="true"/>
+    <select idref="V-420D89FA" selected="true"/>
+  </Profile>
+  <Profile id="L1_Sensitive">
+    <title>Level 1</title>
+    <description>CIS profile: Level 1</description>
+    <select idref="V-E4042EDC" selected="true"/>
+    <select idref="V-FA245142" selected="true"/>
+    <select idref="V-21515DB0" selected="true"/>
+    <select idref="V-C9428C49" selected="true"/>
+    <select idref="V-95EA1C56" selected="true"/>
+    <select idref="V-E597D439" selected="true"/>
+    <select idref="V-F849FBD2" selected="true"/>
+    <select idref="V-260F4028" selected="true"/>
+    <select idref="V-AA631E2E" selected="true"/>
+    <select idref="V-7D827707" selected="true"/>
+    <select idref="V-94E4C9F8" selected="true"/>
+    <select idref="V-68930E44" selected="true"/>
+    <select idref="V-5745C292" selected="true"/>
+    <select idref="V-887DEAB9" selected="true"/>
+    <select idref="V-C81E50BE" selected="true"/>
+    <select idref="V-B4D00289" selected="true"/>
+    <select idref="V-2882594B" selected="true"/>
+    <select idref="V-4955FE96" selected="true"/>
+    <select idref="V-75316C25" selected="true"/>
+    <select idref="V-F9C13965" selected="true"/>
+    <select idref="V-59F70864" selected="true"/>
+    <select idref="V-71965DE8" selected="true"/>
+    <select idref="V-79CE7857" selected="true"/>
+    <select idref="V-F3EAB0E4" selected="true"/>
+    <select idref="V-FF981D15" selected="true"/>
+    <select idref="V-E0FB039D" selected="true"/>
+    <select idref="V-86782279" selected="true"/>
+    <select idref="V-327A766E" selected="true"/>
+    <select idref="V-D9DC718A" selected="true"/>
+    <select idref="V-81A56182" selected="true"/>
+    <select idref="V-420D89FA" selected="true"/>
+  </Profile>
+  <Profile id="L2_Public">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-6BB5E363" selected="true"/>
+    <select idref="V-2B908CDE" selected="true"/>
+    <select idref="V-A2F0B870" selected="true"/>
+    <select idref="V-4F4C85B8" selected="true"/>
+    <select idref="V-3709DB4E" selected="true"/>
+    <select idref="V-B927DABD" selected="true"/>
+    <select idref="V-66276F46" selected="true"/>
+    <select idref="V-1EFB2D4D" selected="true"/>
+    <select idref="V-71CBEEB5" selected="true"/>
+    <select idref="V-91E81AA7" selected="true"/>
+  </Profile>
+  <Profile id="L2_Classified">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-6BB5E363" selected="true"/>
+    <select idref="V-2B908CDE" selected="true"/>
+    <select idref="V-A2F0B870" selected="true"/>
+    <select idref="V-4F4C85B8" selected="true"/>
+    <select idref="V-3709DB4E" selected="true"/>
+    <select idref="V-B927DABD" selected="true"/>
+    <select idref="V-66276F46" selected="true"/>
+    <select idref="V-1EFB2D4D" selected="true"/>
+    <select idref="V-71CBEEB5" selected="true"/>
+    <select idref="V-91E81AA7" selected="true"/>
+  </Profile>
+  <Profile id="L2_Sensitive">
+    <title>Level 2</title>
+    <description>CIS profile: Level 2</description>
+    <select idref="V-6BB5E363" selected="true"/>
+    <select idref="V-2B908CDE" selected="true"/>
+    <select idref="V-A2F0B870" selected="true"/>
+    <select idref="V-4F4C85B8" selected="true"/>
+    <select idref="V-3709DB4E" selected="true"/>
+    <select idref="V-B927DABD" selected="true"/>
+    <select idref="V-66276F46" selected="true"/>
+    <select idref="V-1EFB2D4D" selected="true"/>
+    <select idref="V-71CBEEB5" selected="true"/>
+    <select idref="V-91E81AA7" selected="true"/>
+  </Profile>
+  <Group id="V-E4042EDC">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E4042EDCr01_rule" weight="10.0" severity="medium">
+      <version>1.1</version>
+      <title>Ensure single sign-on (SSO) is configured for your account / organization</title>
+      <description>&lt;VulnDiscussion&gt;Federated authentication enables users to connect to Snowflake using secure SSO (single sign-on). With SSO enabled, users authenticate through an external (SAML 2.0- compliant or OAuth 2.0) identity provider (IdP). Once authenticated by an IdP, users can access their Snowflake account for the duration of their IdP session without having to authenticate to Snowflake again. Users can choose to initiate their sessions from within the interface provided by the IdP or directly in Snowflake.
+Snowflake offers native support for federated authentication and SSO through Okta and Microsoft ADFS.
+Snowflake also supports most SAML 2.0-compliant vendors as an IdP, including Google G Suite, Microsoft Azure Active Directory, OneLogin, and Ping Identity PingOne. To use an IdP other than Okta or ADFS, you must define a custom application for Snowflake in the IdP.
+There are two ways to configure SAML:
+• By creating the security integration (recommended)
+• By setting the SAML_IDENTITY_PROVIDER account parameter (deprecated)
+
+Rationale:
+Configuring your Snowflake authentication so that users can log in using SSO reduces the attack surface for your organization because users only log in once across multiple applications and do not have to manage a separate set of credentials for their Snowflake account.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E4042EDCr01_fix">The steps for configuring an IdP differ depending on whether you choose SAML2 or OAuth. They further differ depending on what identity provider you choose: Okta, AD FS, Ping Identity, Azure AD, or custom. For specific instructions, see Snowflake documentation on SAML and External OAuth.
+Note: If your SAML integration is configured using the deprecated account parameter SAML_IDENTITY_PROVIDER, you should migrate to creating a security integration using the system$migrate_saml_idp_registration function. For more information, see the Migrating to a SAML2 Security Integration documentation.</fixtext>
+      <fix id="F-E4042EDCr01_fix"/>
+      <check system="C-E4042EDC_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List all the security integrations in your account.
+SHOW SECURITY INTEGRATIONS;
+2. Ensure that there are security integrations of type SAML2 and EXTERNAL_OAUTH configured for an account.
+SELECT *
+FROM TABLE(RESULT_SCAN(LAST_QUERY_ID()))
+WHERE ("type" LIKE 'EXTERNAL_OAUTH%' OR "type" LIKE 'SAML2')
+AND "enabled" = TRUE;
+3. Ensure that there is an SSO integration configured for the account.
+Note: The presence of a configured security integration does not mean that it is configured correctly and working. Configuration correctness should be explicitly tested Required privileges:
+To be able to execute the above audit query above, the caller needs the USAGE privilege on every security integration in your Snowflake account.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-6BB5E363">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-6BB5E363r01_rule" weight="10.0" severity="high">
+      <version>1.2</version>
+      <title>Ensure Snowflake SCIM integration is configured to automatically provision and deprovision users and groups</title>
+      <description>&lt;VulnDiscussion&gt;The System for Cross-domain Identity Management (SCIM) is an open specification designed to help facilitate the automated management of user identities and groups (i.e.
+roles) in cloud applications using RESTful APIs.
+Snowflake supports SCIM 2.0 integration with Okta, Microsoft Azure AD and custom identity providers. Users and groups from the identity provider can be provisioned into Snowflake, which functions as the service provider.
+
+Rationale:
+While SSO enables seamless authentication with a federated identity to the Snowflake application, user accounts still need to be created, managed, and deprovisioned.
+Operations like adding and deleting users, changing permissions, and adding new types of accounts usually take up valuable admin time and when done manually may be error- prone.
+With SCIM, user identities can be created either directly in your identity provider, or imported from external systems like HR software or Active Directory. SCIM enables IT departments to automate the user provisioning and deprovisioning process while also having a single system to manage permissions and groups. Since data is transferred automatically, risk of error is reduced.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-6BB5E363r01_fix">Follow the instructions in the Snowflake documentation to set up SCIM configuration for Okta, Azure AD, or configure a custom SCIM integration.
+NOTE: If password sign-in is not necessary and configuring SCIM via Okta, under “Sync Password”, uncheck the setting “Generate a new random password whenever the user’s Okta password changes”. When creating the security integration, specify sync_password=false.</fixtext>
+      <fix id="F-6BB5E363r01_fix"/>
+      <check system="C-6BB5E363_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List the security integrations in your account:
+SHOW SECURITY INTEGRATIONS;
+2. Ensure that a SCIM integration is configured. The output of the following command shows all SCIM security integrations configured for an account. No output means no SCIM integration has been configured for the account.
+3. Ensure that there are security integrations of type SCIM% with enabled set to true.
+SELECT *
+FROM TABLE(result_scan(last_query_id()))
+WHERE ("type" like 'SCIM%') AND "enabled" = true;
+4. For the security integration returned from the previous query, ensure that password sync is disabled. This is disabled by default, but older integrations may have it enabled by default. Snowflake discourages password-only sign-in and will soon block it:
+DESCRIBE INTEGRATION &lt;integration_name&gt;;
+5. Ensure the value of sync_password is set to false.
+Note: The presence of a SCIM security integration does not mean that it is configured correctly and working.
+Required privileges:
+To be able to execute the above audit query above, the caller needs the USAGE privilege on every security integration in an account.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FA245142">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FA245142r01_rule" weight="10.0" severity="medium">
+      <version>1.3</version>
+      <title>Ensure that Snowflake password is unset for SCIM-managed users</title>
+      <description>&lt;VulnDiscussion&gt;Ensure that Snowflake password is unset for SCIM-managed users.
+
+Rationale:
+Allowing users to sign in with Snowflake passwords in the presence of a configured third-party identity provider SSO may undermine mandatory security controls configured on the SSO and degrade the security posture of the account. For example, the SSO sign-in flow may be configured to require multi-factor authentication (MFA), whereas the Snowflake password sign-in flow may not.
+Note:
+• This benchmark does not preclude configuration of key pair authentication for SSO users. Key pair authentication may be necessary for users to interact with Snowflake programmatically or through third party tools.
+• To mitigate the risk of users not being able to sign-in due to SSO provider outage, ensure that at least one SSO break-glass user exists with Snowflake password reset privileges for account users. This break-glass user should be able to sign in using a Snowflake native password (coupled with MFA) or a key pair.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FA245142r01_fix">Programmatically:
+For each SSO user &lt;username&gt; with a password, run the following command to set password to null:
+ALTER USER &lt;username&gt;
+SET PASSWORD = NULL;
+If your IdP configuration automatically generates passwords for SCIM-managed users, consider disabling this functionality such that new SCIM-managed users will not have passwords generated by default.</fixtext>
+      <fix id="F-FA245142r01_fix"/>
+      <check system="C-FA245142_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Identify the SCIM security integration in your account:
+SHOW SECURITY INTEGRATIONS -&gt;&gt; SELECT "name" FROM $1 WHERE "type" ILIKE
+'SCIM%';
+2. Ensure that the query above returns a result.
+3. Show all users managed through the SCIM integration identified in the previous query that have a password set:
+DESCRIBE SECURITY INTEGRATION &lt;security_integration&gt;
+-&gt;&gt; SELECT "property_value" AS SCIM_ROLE FROM $1 WHERE "property" =
+'RUN_AS_ROLE'
+-&gt;&gt;
+SELECT NAME
+FROM SNOWFLAKE.ACCOUNT_USAGE.USERS
+WHERE
+HAS_PASSWORD
+AND OWNER IN (SELECT SCIM_ROLE FROM $1)
+AND DELETED_ON IS NULL
+AND NOT DISABLED;
+4. Ensure that the query above does not return any results. An exception should be allowed for a the break-glass SSO user which needs to be able to log-in with a Snowflake password and MFA (or with a key pair).
+Required privileges:
+Running the query requires the SECURITY_VIEWER role on the Snowflake database.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-21515DB0">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-21515DB0r01_rule" weight="10.0" severity="medium">
+      <version>1.4</version>
+      <title>Ensure that person users do not use password-only authentication</title>
+      <description>&lt;VulnDiscussion&gt;Multi-factor authentication (MFA) is a security control used to add an additional layer of login security. It works by requiring the user to present two or more proofs (factors) of user identity. An MFA example would be requiring a password and a verification code delivered to the user's phone during user sign-in.
+Snowflake supports multiple forms of MFA, with passkeys and authenticator apps being preferred, in addition to Duo.
+NOTE: Person users are those with their TYPE set to PERSON or null.
+
+Rationale:
+MFA mitigates security threats of users creating weak passwords and user passwords being stolen or accidentally leaked.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-21515DB0r01_fix">Programmatically:
+For active users, create or update an authentication policy at the account level to enforce MFA for all password-based logins across all Snowflake interfaces.
+CREATE AUTHENTICATION POLICY enforce_password_mfa
+-- Require MFA enrollment when logging in with username and password
+MFA_ENROLLMENT = REQUIRED;
+ALTER ACCOUNT SET AUTHENTICATION POLICY enforce_password_mfa;
+For inactive users, consider disabling or dropping the user if they are no longer in use. If the user is being used for break-glass scenarios, enable OTP as a second factor.
+If the user is using their password to connect to Snowflake via an application, upgrade the user's connection with the app to use a strong, preferred authentication method.
+Consult the Overview of Snowflake Authentication guidance for details on recommended authentication methods.
+From the UI:
+1. Go to https://app.snowflake.com/ and sign into your Snowflake account.
+2. On the left side navigation bar, hover over Governance &amp; security, then click on Trust Center.
+3. On the Strong authentication progress tile, click on View hub.
+4. Under Prioritize your remediation efforts, select By user. Under the User type filter, select Person.
+5. For each user listed, click on the user name and follow the recommended remediation instructions.</fixtext>
+      <fix id="F-21515DB0r01_fix"/>
+      <check system="C-21515DB0_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>From the UI:
+1. Go to https://app.snowflake.com/ and sign into your Snowflake account.
+2. On the left side navigation bar, hover over Governance &amp; security, then click on Trust Center.
+3. On the Strong authentication progress tile, click on View hub.
+4. Under Prioritize your remediation efforts, select By user. Under the User type filter, select Person.
+5. Ensure that no users are listed.
+Required privileges:
+Running the above requires the SNOWFLAKE.TRUST_CENTER_VIEWER application role on the Snowflake database</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-C9428C49">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-C9428C49r01_rule" weight="10.0" severity="medium">
+      <version>1.5</version>
+      <title>Ensure minimum password length is set to 14 characters or more</title>
+      <description>&lt;VulnDiscussion&gt;To mitigate the risk of unauthorized access to a Snowflake account through easily guessable password, Snowflake enforces the following password policy as a minimum requirement while using the ALTER USER command and the web interface:
+• Must be at least 14 characters long.
+• Must contain at least 1 digit.
+• Must contain at least 1 uppercase letter and 1 lowercase letter.
+Snowflake password policies can be used to specify and enforce further constraints on password length and complexity.
+Snowflake supports setting a password policy for your Snowflake account and for individual users. Only one password policy can be set at any given time for your Snowflake account or a user. If a password policy exists for the Snowflake account and another password policy is set for a user in the same Snowflake account, the user-level password policy takes precedence over the account-level password policy.
+The password policy applies to new passwords that are set in your Snowflake account.
+To ensure that users with existing passwords meet the password policy requirements, require users to change their password during their next login to Snowflake as shown in Step 6: Require a Password Change.
+
+Rationale:
+While Snowflake recommends configuring SSO authentication for users and ensuring that SSO users do not have a password set, there may be exceptions when users still need to log in with a password (e.g., setting up a break-glass user with password login to recover from SSO outages). For those few users that still need to have a password, setting a password policy can help ensure that, throughout subsequent password changes, the passwords used remain complex and therefore harder to guess or brute- force.
+While the minimum password length is already set to 14 by default, password policies can override this behavior to as low as 8 characters, which would result in weaker passwords.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-C9428C49r01_fix">Follow the following steps to set and enforce a password policy:
+1. Create the password policy if it does not exist:
+CREATE PASSWORD POLICY &lt;password_policy&gt;
+PASSWORD_MIN_LENGTH = 14
+PASSWORD_MAX_AGE_DAYS = 0;
+2. Set password policy on the account level:
+ALTER ACCOUNT
+SET PASSWORD POLICY &lt;password_policy&gt;;
+Note: It may take up to 2 hours for the password policies created to show up in the account usage view. For more information on latency, see the Data latency for Account Usage documentation.</fixtext>
+      <fix id="F-C9428C49r01_fix"/>
+      <check system="C-C9428C49_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List all users in the account alongside their effective password policy. Users need to be checked individually as any password policy set at the user-level overrides a password policy set on the account.
+WITH
+POLICY_REFERENCES AS (
+SELECT
+POLICY_DB AS POLICY_DATABASE,
+POLICY_SCHEMA AS POLICY_SCHEMA,
+POLICY_ID AS POLICY_ID,
+POLICY_NAME AS POLICY_NAME,
+REF_ENTITY_NAME AS REF_ENTITY_NAME,
+REF_ENTITY_DOMAIN AS REF_ENTITY_DOMAIN
+FROM SNOWFLAKE.ACCOUNT_USAGE.POLICY_REFERENCES
+WHERE POLICY_KIND = 'PASSWORD_POLICY'
+AND REF_ENTITY_DOMAIN IN ('USER', 'ACCOUNT')
+),
+PASSWORD_POLICIES AS (
+SELECT
+POLICIES.NAME AS NAME,
+POLICIES.PASSWORD_MIN_LENGTH AS PASSWORD_MIN_LENGTH,
+REFS.REF_ENTITY_NAME AS REF_ENTITY_NAME,
+REFS.REF_ENTITY_DOMAIN AS REF_ENTITY_DOMAIN
+FROM SNOWFLAKE.ACCOUNT_USAGE.PASSWORD_POLICIES POLICIES
+LEFT OUTER JOIN POLICY_REFERENCES REFS
+ON REFS.POLICY_DATABASE = POLICIES.DATABASE
+AND REFS.POLICY_SCHEMA = POLICIES.SCHEMA
+AND REFS.POLICY_NAME = POLICIES.NAME
+WHERE POLICIES.DELETED IS NULL
+)
+SELECT
+U.NAME,
+ACCOUNT_POLICIES.NAME AS ACCOUNT_POLICY_NAME,
+ACCOUNT_POLICIES.PASSWORD_MIN_LENGTH AS ACCOUNT_POLICY_MIN_LENGTH,
+USER_POLICIES.NAME AS USER_POLICY_NAME,
+USER_POLICIES.PASSWORD_MIN_LENGTH AS USER_POLICY_MIN_LENGTH
+FROM SNOWFLAKE.ACCOUNT_USAGE.USERS U
+LEFT OUTER JOIN PASSWORD_POLICIES USER_POLICIES
+ON U.NAME = USER_POLICIES.REF_ENTITY_NAME AND
+USER_POLICIES.REF_ENTITY_DOMAIN = 'USER'
+LEFT OUTER JOIN PASSWORD_POLICIES ACCOUNT_POLICIES
+ON ACCOUNT_POLICIES.REF_ENTITY_DOMAIN = 'ACCOUNT'
+WHERE
+IFNULL(USER_POLICIES.PASSWORD_MIN_LENGTH,
+IFNULL(ACCOUNT_POLICIES.PASSWORD_MIN_LENGTH, 14)) &lt; 14
+AND U.DELETED_ON IS NULL
+AND U.HAS_PASSWORD
+AND NOT U.DISABLED;
+2. Ensure that the query above does not return any results.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-95EA1C56">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-95EA1C56r01_rule" weight="10.0" severity="medium">
+      <version>1.6</version>
+      <title>Ensure that legacy service users are migrated to service users</title>
+      <description>&lt;VulnDiscussion&gt;Service users are used by scripts, jobs, applications, pipelines, etc. to talk to Snowflake.
+Snowflake distinguishes between person and service users through the ‘type’ property.
+Service users can have their type set to ‘SERVICE’ or ‘LEGACY_SERVICE.’ Legacy service users, unlike service users, are allowed to use password-based authentication.
+Snowflake is deprecating the LEGACY_SERVICE user type, and all users should move away from password-based authentication.
+
+Rationale:
+Password-based authentication has a set of disadvantages that increase probability of a security incident, especially when used without MFA:
+• Passwords created by humans are generally more predictable and less random than keys generated by a computer. Consequently, passwords are easier to brute force both online (against a live service) or offline (against a hashed password database).
+• Passwords are usually transmitted over the network and can be leaked when the transmission channel is insecure or when an application is accidentally misconfigured to log passwords.
+• Passwords are easier to leak by writing them down on a sticky note attached to the back of a keyboard.
+• It is easier to trick (phish) a user into revealing their password to an unauthorized party.
+Using more secure authentication options, such as Workload Identity Federation, and OAuth helps with mitigating the aforementioned issues.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-95EA1C56r01_fix">Programmatically:
+For users connecting through cloud workloads running in GCP, Azure, or AWS, we strongly recommend using secretless authentication through Workload Identity Federation.
+For users connecting through other applications, upgrade the user's connection in these applications to use a strong, preferred authentication method. Consult the application authentication support guidance and learn about preferred authentication methods to connect to Snowflake.
+For inactive users, consider disabling or dropping the user if they are no longer in use. If the user is being used for break-glass scenarios, enable OTP as a second factor.
+From the UI:
+1. Go to https://app.snowflake.com/ and sign into your Snowflake account.
+2. On the left side navigation bar, hover over Governance &amp; security, then click on Trust Center.
+3. On the Strong authentication progress tile, click on View hub.
+4. Under Prioritize your remediation efforts, select By user. Under the User type filter, select Legacy Service.
+5. For each user listed, click on the user name and follow the recommended remediation instructions.</fixtext>
+      <fix id="F-95EA1C56r01_fix"/>
+      <check system="C-95EA1C56_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>From the UI:
+1. Go to https://app.snowflake.com/ and sign into your Snowflake account.
+2. On the left side navigation bar, hover over Governance &amp; security, then click on Trust Center.
+3. On the Strong authentication progress tile, click on View hub.
+4. Under Prioritize your remediation efforts, select By user. Under the User type filter, select Legacy Service.
+5. Ensure that no users are listed.
+Required privileges:
+Running the above requires the SNOWFLAKE.TRUST_CENTER_VIEWER application role on the Snowflake database.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E597D439">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E597D439r01_rule" weight="10.0" severity="medium">
+      <version>1.7</version>
+      <title>Ensure authentication key pairs are rotated at least every 90 days</title>
+      <description>&lt;VulnDiscussion&gt;Snowflake supports using RSA key pair authentication as an alternative to password authentication and as a primary way to authenticate service accounts.
+Authentication key pair rotation is a process of replacing an existing authentication key pair with a freshly generated key pair.
+Snowflake supports two active authentication key pairs to allow for uninterrupted key rotation. Rotate and replace your authentication key pairs based on the expiration schedule at least once every 180 days.
+
+Rationale:
+Periodic authentication key pair rotation mitigates the threat of compromised or leaked keys. It reduces the window of opportunity during which a given key is valid and can be used by a threat actor.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E597D439r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. For every Snowflake service account whose authentication key pair age is &gt;= 180 days, generate a new RSA authentication keypair.
+2. Update either RSA_PUBLIC_KEY and RSA_PUBLIC_KEY_2 properties of a user, whichever is currently unset.
+ALTER USER &lt;username&gt; SET RSA_PUBLIC_KEY_2='JERUEHtcve...';
+3. Identify all services and automation that authenticate using existing keypair and update them to authenticate using freshly generated keypair.
+4. Unset either RSA_PUBLIC_KEY or RSA_PUBLIC_KEY_2 properties of a user, whichever is assigned the old public key.
+ALTER USER &lt;username&gt; UNSET RSA_PUBLIC_KEY;
+For more information, see Configuring Key Pair Rotation.</fixtext>
+      <fix id="F-E597D439r01_fix"/>
+      <check system="C-E597D439_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Parse the account query history and output all users and key pair names for key pairs that were set more than 180 days ago.
+WITH FILTERED_QUERY_HISTORY AS (
+-- Extract necessary fields and apply initial filters
+SELECT END_TIME AS SET_TIME,
+UPPER(REGEXP_SUBSTR(REGEXP_REPLACE((QUERY_TEXT,
+'IF\\s+(NOT)?\\s*EXISTS', ''), 'USER\\s+"?([\\w]+)"?', 1, 1, 'i', 1))
+AS PROCESSED_USERNAME,
+QUERY_TEXT
+FROM SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY
+WHERE EXECUTION_STATUS = 'SUCCESS'
+AND QUERY_TYPE IN ('ALTER_USER', 'CREATE_USER')
+AND TO_DATE(SET_TIME) &lt; DATEADD(day, -90, CURRENT_DATE())
+AND (QUERY_TEXT ILIKE '%rsa_public_key%' OR QUERY_TEXT ILIKE
+'%rsa_public_key_2%')
+),
+EXTRACTED_KEYS AS (
+SELECT SET_TIME,
+PROCESSED_USERNAME,
+CASE
+WHEN POSITION('rsa_public_key' IN LOWER(QUERY_TEXT)) &gt; 0
+THEN 'rsa_public_key'
+WHEN POSITION('rsa_public_key_2' IN LOWER(QUERY_TEXT)) &gt; 0
+THEN 'rsa_public_key_2'
+ELSE NULL
+END AS RSA_KEY_NAME
+FROM FILTERED_QUERY_HISTORY
+WHERE POSITION('rsa_public_key' IN LOWER(QUERY_TEXT)) &gt; 0 OR
+POSITION('rsa_public_key_2' IN LOWER(QUERY_TEXT)) &gt; 0
+),
+RECENT_KEYS AS (
+SELECT EK.SET_TIME,
+EK.PROCESSED_USERNAME AS USERNAME,
+EK.RSA_KEY_NAME AS RSA_PUBLIC_KEY,
+ROW_NUMBER() OVER (PARTITION BY ek.processed_username,
+ek.rsa_key_name ORDER BY ek.set_time DESC) AS rnum
+FROM EXTRACTED_KEYS EK
+INNER JOIN SNOWFLAKE.ACCOUNT_USAGE.USERS AU ON
+EK.PROCESSED_USERNAME = AU.NAME
+WHERE AU.DELETED_ON IS NULL
+AND AU.HAS_RSA_PUBLIC_KEY = true
+AND AU.DISABLED = FALSE
+AND EK.RSA_KEY_NAME IS NOT NULL
+)
+-- Select the most recent RSA key name for each user
+SELECT SET_TIME,
+USERNAME,
+RSA_PUBLIC_KEY
+FROM RECENT_KEYS
+WHERE RNUM = 1;
+2. Ensure that the query above does not return any results.
+Note: This query above is limited by the query history length that goes back to 360 days only. Key pairs set more than 360 days ago will not be surfaced by this query.
+Required privileges:
+To run the query above, the caller needs the:
+• The SECURITY_VIEWER role on the Snowflake database.
+• The GOVERNANCE_VIEWER role on the Snowflake database.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F849FBD2">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F849FBD2r01_rule" weight="10.0" severity="medium">
+      <version>1.8</version>
+      <title>Ensure that users who did not log in for 90 days are disabled</title>
+      <description>&lt;VulnDiscussion&gt;Access grants tend to accumulate over time unless explicitly set to expire. Regularly revoking unused access grants and disabling inactive user accounts is a good countermeasure to this dynamic.
+If credentials of an inactive user account are leaked or stolen, it may take longer to discover the compromise.
+In Snowflake an user account can be disabled by users with the ACCOUNTADMIN role.
+
+Rationale:
+Disabling inactive user accounts supports the principle of least privilege and generally reduces attack surface.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F849FBD2r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+For each user &lt;user_name&gt; that has not logged in in the last 90 days, run the following query to disable their account:
+ALTER USER &lt;user_name&gt; SET DISABLED = true;
+If there is a need for re-enabling an account, a user must contact one of the Snowflake account administrative users.</fixtext>
+      <fix id="F-F849FBD2r01_fix"/>
+      <check system="C-F849FBD2_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>From the UI:
+1. Go to https://app.snowflake.com/ and sign into your Snowflake account.
+2. On the left side navigation bar, hover over Governance &amp; security, then click on Users &amp; roles.
+3. Under the Users tab, sort by LAST LOGIN.
+4. Ensure that all users whose last login is older than 90 days have STATUS set to Disabled.
+Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List all users in the account who have not logged in in the past 90 days
+SELECT NAME, CREATED_ON, LAST_SUCCESS_LOGIN
+FROM SNOWFLAKE.ACCOUNT_USAGE.USERS
+WHERE DELETED_ON IS NULL
+AND NOT DISABLED
+AND CREATED_ON &lt; CURRENT_DATE() - INTERVAL '90 day'
+AND (LAST_SUCCESS_LOGIN IS NULL OR LAST_SUCCESS_LOGIN &lt;
+CURRENT_DATE() - INTERVAL '90 day')
+AND NAME != 'SNOWFLAKE';
+2. Ensure the query above does not return any results.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-260F4028">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-260F4028r01_rule" weight="10.0" severity="medium">
+      <version>1.9</version>
+      <title>Ensure that the idle session timeout is set to 15 minutes or less for users with the ACCOUNTADMIN and SECURITYADMIN roles</title>
+      <description>&lt;VulnDiscussion&gt;A session begins when a user connects to Snowflake and authenticates successfully using a Snowflake programmatic client, Snowsight, or the classic web interface.
+A session is maintained indefinitely with continued user activity. After a period of inactivity in the session, known as the idle session timeout, the user must authenticate to Snowflake again. Session policies can be used to modify the idle session timeout period. The idle session timeout has a maximum value of four hours.
+
+Rationale:
+Tightening up the idle session timeout reduces sensitive data exposure risk when users forget to sign out of Snowflake and an unauthorized person gains access to their device.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-260F4028r01_fix">Programmatically:
+In the Snowsight UI or from the SnowSQL CLI:
+1. Create the session policy if it does not exist yet. Execute the following commands to create and set the idle session timeout for highly privileged users in your Snowflake account:
+CREATE SESSION POLICY &lt;session_policy&gt;
+SESSION_IDLE_TIMEOUT_MINS = 15,
+SESSION_UI_IDLE_TIMEOUT_MINS = 15;
+2. Set session policy for every highly privileged user, or for the entire Snowflake account.
+ALTER USER &lt;username&gt; SET SESSION POLICY &lt;session_policy&gt;;
+ALTER ACCOUNT SET SESSION POLICY &lt;session_policy&gt;;</fixtext>
+      <fix id="F-260F4028r01_fix"/>
+      <check system="C-260F4028_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In the Snowsight UI or from the SnowSQL CLI:
+1. Identify all users with the ACCOUNTADMIN and SECURITYADMIN roles with session timeout greater than 15 minutes or not explicitly set, thus defaulting to 240 minutes. Users need to be checked individually as any session policy set at the user-level overrides a session policy set on the account.
+WITH SESSION_POLICIES AS (
+SELECT *
+FROM SNOWFLAKE.ACCOUNT_USAGE.POLICY_REFERENCES A
+JOIN SNOWFLAKE.ACCOUNT_USAGE.SESSION_POLICIES B
+ON A.POLICY_ID = B.ID
+WHERE B.DELETED IS NULL
+),
+USER_SESSION_POLICIES AS (
+SELECT *
+FROM SESSION_POLICIES
+WHERE REF_ENTITY_DOMAIN = 'USER'
+),
+ACCOUNT_SESSION_POLICIES as (
+SELECT *
+FROM SESSION_POLICIES
+WHERE REF_ENTITY_DOMAIN = 'ACCOUNT'
+),
+ADMIN_USERS as (
+SELECT
+DISTINCT
+GRANTEE_NAME
+FROM
+SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_USERS
+WHERE
+DELETED_ON IS NULL
+AND NOT DISABLED
+AND ROLE IN ('ACCOUNTADMIN','SECURITYADMIN')
+)
+SELECT
+U.GRANTEE_NAME AS USER_NAME,
+P_ACC.NAME AS ACCOUNT_POLICY,
+P_ACC.SESSION_IDLE_TIMEOUT_MINS AS ACCOUNT_TIMEOUT_MINS,
+P_ACC.SESSION_UI_IDLE_TIMEOUT_MINS AS ACCOUNT_UI_TIMEOUT_MINS,
+P_USER.NAME AS USER_POLICY,
+P_USER.SESSION_IDLE_TIMEOUT_MINS AS USER_TIMEOUT_MINS,
+P_USER.SESSION_UI_IDLE_TIMEOUT_MINS AS USER_UI_TIMEOUT_MINS
+FROM ACCOUNT_SESSION_POLICIES P_ACC
+FULL OUTER JOIN ADMIN_USERS U ON (1=1)
+LEFT JOIN USER_SESSION_POLICIES P_USER ON (U.GRANTEE_NAME =
+P_USER.REF_ENTITY_NAME)
+WHERE
+CASE
+WHEN USER_POLICY IS NULL THEN (ACCOUNT_POLICY IS NULL OR
+ACCOUNT_TIMEOUT_MINS &gt; 15 OR ACCOUNT_UI_TIMEOUT_MINS &gt; 15)
+ELSE (USER_TIMEOUT_MINS &gt; 15 OR USER_UI_TIMEOUT_MINS)
+END;
+1. Ensure that the query above does not return any users.
+Note: Latency for the session policy view can be up to 2 hours.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-AA631E2E">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-AA631E2Er01_rule" weight="10.0" severity="medium">
+      <version>1.10</version>
+      <title>Limit the number of users with ACCOUNTADMIN and SECURITYADMIN</title>
+      <description>&lt;VulnDiscussion&gt;By default, ACCOUNTADMIN is the most powerful role in a Snowflake account. Users with the SECURITYADMIN role grant can trivially escalate their privileges to that of ACCOUNTADMIN.
+Following the principle of least privilege that prescribes limiting user's privileges to those that are strictly required to do their jobs, the ACCOUNTADMIN and SECURITYADMIN roles should be assigned to a limited number of designated users (e.g., less than 10, but at least 2 to ensure that access can be recovered if one ACCOUNTAMIN user is having login difficulties).
+
+Rationale:
+While it is important to apply the principle of least privilege to all access grants, it is especially important to apply it to highly privileged roles. Examples of such roles are ACCOUNTADMIN, SECURITYADMIN and their equivalents. The fewer users with full administrator privileges, the smaller the attack surface and the probability of a full account compromise.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-AA631E2Er01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. For each user &lt;username&gt; that does not need all the privileges a role provides to fulfill their job responsibilities, revoke the ACCOUNTADMIN or all equivalently privileged roles.
+REVOKE ROLE ACCOUNTADMIN FROM USER &lt;username&gt;
+2. For each user &lt;username&gt; that does not need all the privileges a role provides to fulfill their job responsibilities, revoke the SECURITYADMIN or all equivalently privileged roles.
+REVOKE ROLE SECURITYADMIN FROM USER &lt;username&gt;</fixtext>
+      <fix id="F-AA631E2Er01_fix"/>
+      <check system="C-AA631E2E_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>From the UI:
+1. Go to https://app.snowflake.com/ and sign into your Snowflake account.
+2. On the left side navigation bar, hover over Governance &amp; security, then click on Users &amp; roles.
+3. Ensure that a limited number of users have the ACCOUNTADMIN or SECURITYADMIN roles.
+Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List all the users granted the ACCOUNTADMIN or SECURITYADMIN roles:
+SELECT DISTINCT A.GRANTEE_NAME AS NAME,
+A.ROLE
+FROM SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_USERS AS A
+LEFT JOIN SNOWFLAKE.ACCOUNT_USAGE.USERS AS B ON A.GRANTEE_NAME =
+B.NAME
+WHERE A.ROLE IN ('ACCOUNTADMIN', 'SECURITYADMIN')
+AND A.DELETED_ON IS NULL
+AND B.DELETED_ON IS NULL
+AND NOT B.DISABLED
+ORDER BY A.ROLE;
+2. Ensure that the query above returns a small number of users (e.g., less than 10).
+To ensure that access is not being lost, the number of account users should be at least 2.
+Privileges required:
+To be able to execute the query above, the caller must have the role SECURITY_VIEWER on the Snowflake databases.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-7D827707">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-7D827707r01_rule" weight="10.0" severity="medium">
+      <version>1.11</version>
+      <title>Ensure that all users granted the ACCOUNTADMIN role have a verified email address assigned</title>
+      <description>&lt;VulnDiscussion&gt;Every Snowflake user can be assigned an email address. The email addresses are then used by Snowflake features like notification integration, resource monitor and support cases to deliver email notifications to Snowflake users. In trial Snowflake accounts these email addresses are used for password reset functionality.
+The email addresses assigned to ACCOUNTADMIN users are used by Snowflake to notify administrators about important events related to their accounts. For example, ACCOUNTADMIN users are notified about impending expiration of SAML2 certificates or SCIM access tokens.
+Email addresses must be verified before Snowflake will send notifications to the email address.
+
+Rationale:
+If users with the ACCOUNTADMIN role are not assigned working email addresses that are being monitored and if SAML2 certificate used in SSO integration is not proactively renewed, expiration of SAML2 certificate may break the SSO authentication flow.
+Similarly, uncaught expiration of SCIM access token may break the SCIM integration.
+Additionally, emails assigned to ACCOUNTADMIN users can be used by Snowflake Support to contact account administrators in urgent situations.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.11</dc:identifier>
+      </reference>
+      <fixtext fixref="F-7D827707r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. For every ACCOUNTADMIN user &lt;username&gt; that does not have email assigned run the following command to assign it:
+ALTER USER &lt;username&gt;
+SET EMAIL = &lt;email_address&gt;;
+2. Start email verification for each ACCOUNTADMIN user &lt;username&gt;. Each user will then receive an email to validate their email address:
+SELECT SYSTEM$START_USER_EMAIL_VERIFICATION( '&lt;username&gt;' );</fixtext>
+      <fix id="F-7D827707r01_fix"/>
+      <check system="C-7D827707_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List users with no email address set:
+SELECT DISTINCT a.grantee_name as name, b.email is not null as
+has_email
+FROM snowflake.account_usage.grants_to_users AS a
+LEFT JOIN snowflake.account_usage.users AS b
+ON a.grantee_name = b.name
+WHERE a.role = 'ACCOUNTADMIN'
+AND a.deleted_on IS NULL
+AND b.deleted_on IS NULL
+AND NOT b.disabled;
+2. Ensure that the query above does not return any results where has_email is false.
+3. For each user with has_email set to true, describe the user:
+DESCRIBE USER &lt;user_name&gt;;
+4. Ensure that the value of IS_EMAIL_VERIFIED is true.
+Required privileges:
+To be able to execute the above audit query, the caller must have the SECURITY_VIEWER role on the SNOWFLAKE database.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-94E4C9F8">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-94E4C9F8r01_rule" weight="10.0" severity="medium">
+      <version>1.12</version>
+      <title>Ensure that no users have ACCOUNTADMIN or SECURITYADMIN as the default role</title>
+      <description>&lt;VulnDiscussion&gt;The ACCOUNTADMIN system role is the most powerful role in a Snowflake account and is intended for performing initial setup and managing account-level objects.
+SECURITYADMIN role can trivially escalate their privileges to that of ACCOUNTADMIN.
+Neither of these roles should be used for performing daily non-administrative tasks in a Snowflake account.
+Instead, users should be assigned custom roles containing only those privileges that are necessary for successfully completing their job responsibilities.
+
+Rationale:
+When ACCOUNTADMIN is not set as a default user role, it forces account administrators to explicitly change their role to ACCOUNTADMIN each time they log in.
+This can help make account administrators aware of the purpose of roles in the system, prevent them from inadvertently using the ACCOUNTADMIN role for non-administrative tasks, and encourage them to change to the appropriate role for a given task. Same logic applies to the SECURITYADMIN role.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.12</dc:identifier>
+      </reference>
+      <fixtext fixref="F-94E4C9F8r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. For each user &lt;user_name&gt; who has ACCOUNTADMIN or SECURITYADMIN as their default role, choose a less privileged role &lt;job_appropriate_role&gt; appropriate for their daily job responsibilities and run the following query:
+ALTER USER &lt;user_name&gt;
+SET DEFAULT_ROLE = &lt;job_appropriate_role&gt;;
+Note: You could also unset the default role, thus forcing users to explicitly assume a role every time they log in.</fixtext>
+      <fix id="F-94E4C9F8r01_fix"/>
+      <check system="C-94E4C9F8_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List users with ACCOUNTADMIN or SECURITYADMIN as the default role:
+SELECT NAME, DEFAULT_ROLE
+FROM SNOWFLAKE.ACCOUNT_USAGE.USERS
+WHERE DEFAULT_ROLE IN ('ACCOUNTADMIN', 'SECURITYADMIN')
+AND DELETED_ON IS NULL
+AND NOT DISABLED;
+2. Ensure that the query above does not return any users.
+Required privileges:
+Running the query above requires the security_viewer role on the Snowflake database</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-68930E44">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-68930E44r01_rule" weight="10.0" severity="medium">
+      <version>1.13</version>
+      <title>Ensure that the ACCOUNTADMIN or SECURITYADMIN role is not granted to any custom role</title>
+      <description>&lt;VulnDiscussion&gt;The principle of least privilege requires that every identity is only given privileges that are necessary to complete its tasks.
+The ACCOUNTADMIN system role is the most powerful role in a Snowflake account and is intended for performing initial setup and managing account-level objects.
+SECURITYADMIN role can trivially escalate their privileges to that of ACCOUNTADMIN.
+Neither of these roles should be used for performing daily non-administrative tasks in a Snowflake account.
+
+Rationale:
+Granting ACCOUNTADMIN role to any custom role effectively elevates privileges of that role to the ACCOUNTADMIN role privileges. Roles that include the ACCOUNTADMIN role can then be mistakenly used in access grants that do not require ACCOUNTADMIN privileges thus violating the principle of least privilege and increasing the attack surface. The same logic applies to the SECURITYADMIN role.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.13</dc:identifier>
+      </reference>
+      <fixtext fixref="F-68930E44r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI, find all custom roles that are granted ACCOUNTADMIN role and revoke that grant.
+REVOKE SECURITYADMIN ON ACCOUNT FROM ROLE &lt;custom_role&gt;;
+REVOKE ACCOUNTADMIN ON ACCOUNT FROM ROLE &lt;custom_role&gt;;</fixtext>
+      <fix id="F-68930E44r01_fix"/>
+      <check system="C-68930E44_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List all custom roles granted ACCOUNTADMIN or SECURITYADMIN (excluding the SECURITYADMIN grant to ACCOUNTADMIN):
+SELECT GRANTEE_NAME AS CUSTOM_ROLE,
+PRIVILEGE AS GRANTED_PRIVILEGE,
+NAME AS GRANTED_ROLE
+FROM SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_ROLES
+WHERE GRANTED_ON = 'ROLE'
+AND NAME IN ('ACCOUNTADMIN','SECURITYADMIN')
+AND DELETED_ON IS NULL
+-- ACCOUNTADMIN is always granted SECURITYADMIN
+AND NOT (GRANTEE_NAME='ACCOUNTADMIN' AND NAME='SECURITYADMIN');
+2. Ensure that the query above returns no results.
+Required privileges:
+The query requires the SECURITY_VIEWER role on the Snowflake database.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-5745C292">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-5745C292r01_rule" weight="10.0" severity="medium">
+      <version>1.14</version>
+      <title>Ensure that Snowflake tasks are not owned by the ACCOUNTADMIN or SECURITYADMIN roles</title>
+      <description>&lt;VulnDiscussion&gt;The ACCOUNTADMIN system role is the most powerful role in a Snowflake account and is intended for performing initial setup and managing account-level objects.
+SECURITYADMIN role can trivially escalate their privileges to that of ACCOUNTADMIN.
+Neither of these roles should be used for running Snowflake tasks. A task should be running using a custom role containing only those privileges that are necessary for successful execution of the task.
+Snowflake executes tasks with the privileges of the task owner. The role that has OWNERSHIP privilege on the task owns the task.
+To avoid granting a task inappropriate privileges, the OWNERSHIP privilege on the task run as owner should be assigned to a custom role containing only those privileges that are necessary for successful execution of the task.
+
+Rationale:
+The principle of least privilege requires that every identity, including service identities, is only given privileges that are necessary to complete its job.
+If a threat actor finds a way to influence or hijack the task execution flow, they may be able to exploit privileges given to the task. In the case of an ACCOUNTADMIN or SECURITYADMIN roles, that may lead to a full account takeover. Additionally, a mistake in the task implementation coupled with excessive privileges may lead to a reliability incident, e.g. accidentally dropping database objects.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.14</dc:identifier>
+      </reference>
+      <fixtext fixref="F-5745C292r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. For each task &lt;task_name&gt; that runs with ACCOUNTADMIN or SECURITYADMIN privileges, create a new role &lt;task_specific_role&gt; and assign it to the tasks:
+CREATE ROLE &lt;task_specific_role&gt;;
+GRANT OWNERSHIP ON TASK &lt;task_name&gt; TO ROLE &lt;task_specific_role&gt;;
+2. After creating a new role and granting ownership of each task to it, for each task &lt;task_name&gt; that is owned by ACCOUNTADMIN or SECURITYADMIN roles, ensure all privileges on the tasks are revoked from the roles:
+REVOKE ALL PRIVILEGES ON TASK &lt;task_name&gt; FROM ROLE ACCOUNTADMIN;
+REVOKE ALL PRIVILEGES ON TASK &lt;task_name&gt; FROM ROLE SECURITYADMIN;</fixtext>
+      <fix id="F-5745C292r01_fix"/>
+      <check system="C-5745C292_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List all tasks owned by the ACCOUNTADMIN or SECURITYADMIN roles:
+SELECT NAME AS STORED_PROCEDURE_NAME,
+GRANTED_TO,
+GRANTEE_NAME AS ROLE_NAME,
+PRIVILEGE
+FROM SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_ROLES
+WHERE GRANTED_ON = 'TASK'
+AND DELETED_ON IS NULL
+AND GRANTED_TO = 'ROLE'
+AND PRIVILEGE = 'OWNERSHIP'
+AND GRANTEE_NAME IN ('ACCOUNTADMIN' , 'SECURITYADMIN');
+2. Ensure that the query above does not return any results.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-887DEAB9">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-887DEAB9r01_rule" weight="10.0" severity="medium">
+      <version>1.15</version>
+      <title>Ensure that Snowflake tasks do not run with the ACCOUNTADMIN or SECURITYADMIN role privileges</title>
+      <description>&lt;VulnDiscussion&gt;The ACCOUNTADMIN system role is the most powerful role in a Snowflake account and is intended for performing initial setup and managing account-level objects.
+SECURITYADMIN role can trivially escalate their privileges to that of ACCOUNTADMIN.
+Neither of these roles should be used for running Snowflake tasks. A task should be running using a custom role containing only those privileges that are necessary for successful execution of the task.
+
+Rationale:
+The principle of least privilege requires that every identity, including service identities, is only given privileges that are necessary to complete its job.
+If a threat actor finds a way to influence or hijack the task execution flow, they may be able to exploit privileges given to the task. In the case of an ACCOUNTADMIN or SECURITYADMIN roles, that may lead to a full account takeover. Additionally, a mistake in the task implementation coupled with excessive privileges may lead to a reliability incident, e.g. accidentally dropping database objects.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.15</dc:identifier>
+      </reference>
+      <fixtext fixref="F-887DEAB9r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. For each task &lt;task_name&gt; that runs with ACCOUNTADMIN or SECURITYADMIN privileges, create a new role &lt;task_specific_role&gt; and assign it to the tasks:
+CREATE ROLE &lt;task_specific_role&gt;;
+GRANT OWNERSHIP ON TASK &lt;task_name&gt; TO ROLE &lt;task_specific_role&gt;;
+2. After creating a new role and granting privileges to each task, ensure all privileges on the tasks are revoked from the ACCOUNTADMIN and SECURITYADMIN roles:
+REVOKE ALL PRIVILEGES ON TASK &lt;task_name&gt; FROM ROLE ACCOUNTADMIN;
+REVOKE ALL PRIVILEGES ON TASK &lt;task_name&gt; FROM ROLE SECURITYADMIN;</fixtext>
+      <fix id="F-887DEAB9r01_fix"/>
+      <check system="C-887DEAB9_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List all tasks that have privileges granted to ACCOUNTADMIN or SECURITYADMIN roles:
+SELECT NAME AS STORED_PROCEDURE_NAME,
+GRANTED_TO,
+GRANTEE_NAME AS ROLE_NAME,
+PRIVILEGE
+FROM SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_ROLES
+WHERE GRANTED_ON = 'TASK'
+AND DELETED_ON IS NULL
+AND GRANTED_TO = 'ROLE'
+AND GRANTEE_NAME IN ('ACCOUNTADMIN' , 'SECURITYADMIN');
+2. Ensure that the query above does not return any results.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-C81E50BE">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-C81E50BEr01_rule" weight="10.0" severity="medium">
+      <version>1.16</version>
+      <title>Ensure that Snowflake stored procedures are not owned by the ACCOUNTADMIN or SECURITYADMIN roles</title>
+      <description>&lt;VulnDiscussion&gt;The ACCOUNTADMIN system role is the most powerful role in a Snowflake account and is intended for performing initial setup and managing account-level objects.
+SECURITYADMIN role can trivially escalate their privileges to that of ACCOUNTADMIN.
+Neither of these roles should be used for running Snowflake stored procedures. A stored procedure should be running using a custom role containing only those privileges that are necessary for successful execution of the stored procedure.
+Snowflake executes stored procedures with the privileges of the stored procedure owner or the caller. Role that has OWNERSHIP privilege on the stored procedure owns it.
+To avoid granting a stored procedure inappropriate privileges, the OWNERSHIP privilege on the stored procedure run as owner should be assigned to a custom role containing only those privileges that are necessary for successful execution of the stored procedure.
+
+Rationale:
+The principle of least privilege requires that every identity, including service identities, is only given privileges that are necessary to complete its job.
+If a threat actor finds a way to influence or hijack the stored procedure execution flow, they may be able to exploit privileges given to the stored procedure. In the case of an ACCOUNTADMIN or SECURITYADMIN roles, that may lead to a full account takeover.
+Additionally, a mistake in the stored procedure implementation coupled with excessive privileges may lead to a reliability incident, e.g. accidentally dropping database objects.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.16</dc:identifier>
+      </reference>
+      <fixtext fixref="F-C81E50BEr01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. For each stored procedure &lt;procedure_name&gt; that runs with ACCOUNTADMIN or SECURITYADMIN privileges, create a new role &lt;procedure_specific_role&gt; and assign it to the stored procedure:
+CREATE ROLE &lt;procedure_specific_role&gt;;
+GRANT OWNERSHIP ON PROCEDURE &lt;procedure_name&gt; TO ROLE
+&lt;procedure_specific_role&gt;;
+2. After creating a new role and granting ownership of each stored procedure to it, for each stored procedure that is owned by ACCOUNTADMIN or SECURITYADMIN roles, ensure all privileges on the stored procedure are revoked from the roles:
+REVOKE ALL PRIVILEGES ON PROCEDURE &lt;procedure_name&gt; FROM ROLE
+ACCOUNTADMIN;
+REVOKE ALL PRIVILEGES ON PROCEDURE &lt;procedure_name&gt; FROM ROLE
+SECURITYADMIN;</fixtext>
+      <fix id="F-C81E50BEr01_fix"/>
+      <check system="C-C81E50BE_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Find all stored procedures that are owned by the ACCOUNTADMIN or SECURITYADMIN roles.
+SELECT *
+FROM SNOWFLAKE.ACCOUNT_USAGE.PROCEDURES
+WHERE DELETED IS NULL
+AND PROCEDURE_OWNER IN ('ACCOUNTADMIN','SECURITYADMIN');
+2. Ensure that the query above does not return any results.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-B4D00289">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-B4D00289r01_rule" weight="10.0" severity="medium">
+      <version>1.17</version>
+      <title>Ensure Snowflake stored procedures do not run with ACCOUNTADMIN or SECURITYADMIN role privileges</title>
+      <description>&lt;VulnDiscussion&gt;The ACCOUNTADMIN system role is the most powerful role in a Snowflake account; it is intended for performing initial setup and managing account-level objects. Users and stored procedures with the SECURITYADMIN role can escalate their privileges to ACCOUNTADMIN.
+Snowflake stored procedures should not run with the ACCOUNTADMIN or SECURITYADMIN roles. Instead, stored procedures should be run using a custom role containing only those privileges that are necessary for successful execution of the stored procedure.
+
+Rationale:
+The principle of least privilege requires that every identity, including service identities, is only given privileges that are necessary to complete its job.
+If a threat actor finds a way to influence or hijack the stored procedure execution flow, they may be able to exploit privileges given to the stored procedure. In the case of an ACCOUNTADMIN or SECURITYADMIN roles, that may lead to a full account takeover.
+Additionally, a mistake in the stored procedure implementation coupled with excessive privileges may lead to a reliability incident, e.g. accidentally dropping database objects.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.17</dc:identifier>
+      </reference>
+      <fixtext fixref="F-B4D00289r01_fix">Programmatically:
+In a Snowsight worksheet or using the SnowSQL CLI:
+1. For each stored procedure &lt;procedure_name&gt; that runs with ACCOUNTADMIN or SECURITYADMIN privileges, create a new role &lt;procedure_specific_role&gt; and assign it to the stored procedure:
+CREATE ROLE &lt;procedure_specific_role&gt;;
+GRANT OWNERSHIP ON PROCEDURE &lt;procedure_name&gt; TO ROLE
+&lt;procedure_specific_role&gt;;
+2. After creating a new role and granting privileges to each stored procedure, ensure all privileges on the stored procedure &lt;procedure_name&gt; are revoked from the ACCOUNTADMIN and SECURITYADMIN roles:
+REVOKE ALL PRIVILEGES ON PROCEDURE &lt;procedure_name&gt; FROM ROLE
+ACCOUNTADMIN;
+REVOKE ALL PRIVILEGES ON PROCEDURE &lt;procedure_name&gt; FROM ROLE
+SECURITYADMIN;</fixtext>
+      <fix id="F-B4D00289r01_fix"/>
+      <check system="C-B4D00289_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or using the SnowSQL CLI:
+1. Find the list of stored procedures that run with ACCOUNTADMIN or SECURITYADMIN role privileges:
+SELECT NAME AS STORED_PROCEDURE_NAME,
+GRANTED_TO,
+GRANTEE_NAME AS ROLE_NAME
+FROM SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_ROLES
+WHERE GRANTED_ON = 'PROCEDURE'
+AND DELETED_ON IS NULL
+AND GRANTED_TO = 'ROLE'
+AND GRANTEE_NAME IN ('ACCOUNTADMIN' , 'SECURITYADMIN');
+2. Ensure that the query above does not return any results.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-2882594B">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-2882594Br01_rule" weight="10.0" severity="medium">
+      <version>1.18</version>
+      <title>Ensure that an account-level authentication policy has been configured to require network policies when using Programmatic Access Tokens</title>
+      <description>&lt;VulnDiscussion&gt;Snowflake supports Programmatic Access Tokens (PATs) as a time-limited alternative to passwords, with additional security mitigations such as requiring a network policy. A network policy is required by default to use PATs to log in, but this behavior is configurable through authentication policies.
+
+Rationale:
+While PATs are more secure than passwords due to their ephemeral nature, PATs are at risk of being accidentally leaked and used by a threat actor to log in. A network policy provides a second line of defense to ensure that logins to the user only come from known, trusted IP addresses.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.18</dc:identifier>
+      </reference>
+      <fixtext fixref="F-2882594Br01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Create an authentication policy that sets the NETWORK_POLICY_EVALUATION to ENFORCED_REQUIRED in the PAT_POLICY. NOTE: If you already have an account-level authentication policy, you can alter the existing policy to set NETWORK_POLICY_EVALUATION:
+CREATE AUTHENTICATION POLICY &lt;policy_name&gt;
+PAT_POLICY=(NETWORK_POLICY_EVALUATION=ENFORCED_REQUIRED);
+2. Set the authentication policy at the account level:
+ALTER ACCOUNT SET AUTHENTICATION POLICY &lt;policy_name&gt;;</fixtext>
+      <fix id="F-2882594Br01_fix"/>
+      <check system="C-2882594B_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Lookup the authentication policy assigned to the account:
+SHOW AUTHENTICATION POLICIES ON ACCOUNT;
+2. Ensure the above query returns 1 result.
+3. Describe the authentication policy returned above.
+DESCRIBE AUTHENTICATION POLICY &lt;policy_name&gt;;
+4. Ensure the value of NETWORK_POLICY_EVALUATION in the PAT_POLICY property is set to ENFORCED_REQUIRED.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-4955FE96">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-4955FE96r01_rule" weight="10.0" severity="medium">
+      <version>1.19</version>
+      <title>Ensure that an account-level authentication policy has been configured to require Programmatic Access Tokens be rotated at least every 90 days</title>
+      <description>&lt;VulnDiscussion&gt;Snowflake supports Programmatic Access Tokens (PATs) as a time-limited alternative to passwords.
+PATs expire after 15 days by default, but can be configured to remain active for up to the account’s maximum expiration time, which defaults to 365 days. The MAX_EXPIRY_IN_DAYS property can be specified in an authentication policy to reduce the maximum allowed expiration time to less than 365 days.
+PATs can be rotated to extend the expiration time. Snowflake also allows a single user to have multiple active PATs to avoid service disruption.
+
+Rationale:
+More frequent rotation of credentials mitigates the risk of a compromised or leaked PAT.
+It reduces the window of opportunity during which a given PAT is valid and can be used by a threat actor.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.19</dc:identifier>
+      </reference>
+      <fixtext fixref="F-4955FE96r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Create an authentication policy that sets the MAX_EXPIRY_IN_DAYS in the PAT_POLICY. NOTE: If you already have an account-level authentication policy, you can alter the existing policy to set MAX_EXPIRY_IN_DAYS:
+CREATE AUTHENTICATION POLICY &lt;policy_name&gt;
+PAT_POLICY=(MAX_EXPIRY_IN_DAYS=90);
+2. Set the authentication policy at the account level:
+ALTER ACCOUNT SET AUTHENTICATION POLICY &lt;policy_name&gt;;</fixtext>
+      <fix id="F-4955FE96r01_fix"/>
+      <check system="C-4955FE96_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Lookup the authentication policy assigned to the account:
+SHOW AUTHENTICATION POLICIES ON ACCOUNT;
+2. Ensure the above query returns 1 result.
+3. Describe the authentication policy returned above.
+DESCRIBE AUTHENTICATION POLICY &lt;policy_name&gt;;
+4. Ensure the value of MAX_EXPIRY_IN_DAYS in the PAT_POLICY property is set to 90 or less.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-2B908CDE">
+    <title>1 Identity and Access Management</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-2B908CDEr01_rule" weight="10.0" severity="high">
+      <version>1.20</version>
+      <title>Ensure an account-level authentication policy has been configured to restrict allowed provider accounts for Workload Identify Federation</title>
+      <description>&lt;VulnDiscussion&gt;Workload identity federation is a service-to-service authentication method that lets workloads, such as applications, services, or containers, authenticate with Snowflake using their cloud provider’s native identity system, such as AWS Identity and Access Management (AWS IAM) roles, Microsoft Entra ID, and Google Cloud service accounts to get an attestation that Snowflake can use and validate.
+WIF is a more secure alternative to passwords, as end users do not have to manage and store their own credentials to Snowflake.
+You can use an authentication policy to control which Snowflake service users can authenticate with workload identity federation. You can also create and set the authentication policy so that a workload can authenticate only if it uses a specified identity provider, or an account within that provider.
+
+Rationale:
+Restricting access to a specific cloud provider or a specific list of issuer accounts within that cloud provider can help mitigate risk of misconfiguration or insider access attacks.
+For example, restricting WIF usage to a specific AWS account would prevent a different Azure account from accessing the Snowflake account.
+Additionally, restricting WIF providers can help ensure compliance with regulations that dictate where data can be accessed from, particularly concerning specific cloud providers or geographical regions.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>1.20</dc:identifier>
+      </reference>
+      <fixtext fixref="F-2B908CDEr01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Create an authentication policy that sets the ALLOWED_PROVIDERS, as well as ALLOWED_AWS_ACCOUNTS, ALLOWED_AWS_PARTITIONS, ALLOWED_AZURE_ISSUERS, ALLOWED_OIDC_ISSUERS (if applicable) in the WORKLOAD_IDENTITY_POLICY. NOTE: If you already have an account- level authentication policy, you can alter the existing policy to set WORKLOAD_IDENTITY_POLICY:
+CREATE AUTHENTICATION POLICY &lt;policy_name&gt; WORKLOAD_IDENTITY_POLICY=(
+ALLOWED_PROVIDERS=(&lt;provider&gt;, ...)
+[ALLOWED_AWS_ACCOUNTS=('&lt;account&gt;', ...)
+ALLOWED_AWS_PARTITIONS=('&lt;partition&gt;', ...)
+ALLOWED_AZURE_ISSUERS=('&lt;issuer&gt;', ...)
+ALLOWED_OIDC_ISSUERS=('&lt;issuer&gt;', ...]
+);
+2. Set the authentication policy at the account level:
+ALTER ACCOUNT SET AUTHENTICATION POLICY &lt;policy_name&gt;;</fixtext>
+      <fix id="F-2B908CDEr01_fix"/>
+      <check system="C-2B908CDE_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Lookup the authentication policy assigned to the account:
+SHOW AUTHENTICATION POLICIES ON ACCOUNT;
+2. Ensure the above query returns 1 result.
+3. Describe the authentication policy returned above.
+DESCRIBE AUTHENTICATION POLICY &lt;policy_name&gt;;
+4. In the WORKLOAD_IDENTITY_POLICY property, ensure the value of ALLOWED_PROVIDERS, as well as ALLOWED_AWS_ACCOUNTS, ALLOWED_AWS_PARTITIONS, ALLOWED_AZURE_ISSUERS, ALLOWED_OIDC_ISSUERS (if applicable) are set to a value other than ALL.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-75316C25">
+    <title>2 Monitoring and Alerting</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-75316C25r01_rule" weight="10.0" severity="medium">
+      <version>2.1</version>
+      <title>Ensure monitoring and alerting exist for ACCOUNTADMIN and SECURITYADMIN role grants</title>
+      <description>&lt;VulnDiscussion&gt;By default, ACCOUNTADMIN is the most powerful role in a Snowflake account and users with SECURITYADMIN role grant can trivially escalate their privileges to that of ACCOUNTADMIN.
+Following the principle of least privilege that prescribes limiting user's privileges to those that are strictly required to do their jobs, the ACCOUNTADMIN and SECURITYADMIN roles should be assigned to a limited number of designated users. Any new ACCOUNTADMIN and SECURITYADMIN role grants should be scrutinized.
+
+Rationale:
+Every new ACCOUNTADMIN and SECURITYADMIN role assignment increases the attack surface of a Snowflake environment. It may also indicate unauthorized privilege escalation performed by a threat actor.
+If monitoring for ACCOUNTADMIN role assignments is not configured, inappropriate or unauthorized ACCOUNTADMIN role access grants may be missed. The latter can lead to eventual security posture degradation or late detection of an ongoing security incident.
+The same logic applies to the SECURITYADMIN role.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>2.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-75316C25r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Configure your monitoring task to alert on ACCOUNTADMIN and SECURITYADMIN role grants. You can find those grants with the following query:
+SELECT *
+FROM SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_ROLES
+WHERE NAME IN ('ACCOUNTADMIN', 'SECURITYADMIN');</fixtext>
+      <fix id="F-75316C25r01_fix"/>
+      <check system="C-75316C25_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Confirm that Trust Center, or your security monitoring and alerting solution is configured to generate alerts on new ACCOUNTADMIN and SECURITYADMIN role assignments.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F9C13965">
+    <title>2 Monitoring and Alerting</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F9C13965r01_rule" weight="10.0" severity="medium">
+      <version>2.2</version>
+      <title>Ensure monitoring and alerting exist for MANAGE GRANTS privilege grants</title>
+      <description>&lt;VulnDiscussion&gt;The MANAGE GRANTS privilege is one of the most powerful privileges in the Snowflake environment. This privilege gives the ability to grant or revoke privileges on any object as if the invoking role were the owner of the object.
+A custom role with the MANAGE GRANTS privilege on account level will not be able to grant privileges on the account level as that privilege is implicitly reserved for the ACCOUNTADMIN and SECURITYADMIN roles. However, such custom roles will be able to grant any privileges on any objects below the account level.
+Following the principle of least privilege and given how powerful the MANAGE GRANTS privilege is, any new MANAGE GRANTS privilege grants should be scrutinized.
+
+Rationale:
+Every new role granted the MANAGE GRANTS privilege increases the attack surface of a Snowflake environment. It may also indicate unauthorized privilege escalation performed by a threat actor.
+If monitoring for MANAGE GRANTS privilege grants is not configured, inappropriate or unauthorized MANAGE GRANTS privilege grants may be missed. The latter can lead to eventual security posture degradation or late detection of an ongoing security incident.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>2.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F9C13965r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Configure your monitoring task to alert on manage grants privilege grants. Note that this query will return grants even if they have since been revoked, as these may still be worth investigating.
+set last_scan_time = '&lt;last scan time&gt;';
+select
+grantee_name as role_name,
+granted_by,
+created_on,
+deleted_on
+from snowflake.account_usage.grants_to_roles
+where privilege = 'MANAGE GRANTS'
+and created_on &gt; $last_scan_time
+order by created_on desc;</fixtext>
+      <fix id="F-F9C13965r01_fix"/>
+      <check system="C-F9C13965_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Confirm that Trust Center, or your security monitoring and alerting solution is configured to generate alerts on new MANAGE GRANTS privilege grants.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-59F70864">
+    <title>2 Monitoring and Alerting</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-59F70864r01_rule" weight="10.0" severity="medium">
+      <version>2.3</version>
+      <title>Ensure monitoring and alerting exist for password sign-in without MFA</title>
+      <description>&lt;VulnDiscussion&gt;Multi-factor authentication (MFA) is a security control used to add an additional layer of login security. It works by requiring the user to present two or more proofs (factors) of user identity. An MFA example would be requiring a password and a verification code delivered to the user's phone during user sign-in.
+Snowflake offers several forms of MFA, including passkeys, authenticator apps, and Duo.
+
+Rationale:
+MFA mitigates security threats of users creating weak passwords and user passwords being stolen or accidentally leaked.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>2.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-59F70864r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Configure your security monitoring solution to alert on password sign-ins without MFA. The following query can be run periodically.
+select event_timestamp,
+user_name,
+client_ip,
+reported_client_type,
+reported_client_version,
+first_authentication_factor,
+second_authentication_factor
+from snowflake.account_usage.login_history
+where first_authentication_factor = 'PASSWORD'
+and second_authentication_factor is null
+order by event_timestamp desc;</fixtext>
+      <fix id="F-59F70864r01_fix"/>
+      <check system="C-59F70864_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Confirm that Trust Center, or your security monitoring and alerting solution is configured to generate alerts on new password sign-in without MFA events.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-71965DE8">
+    <title>2 Monitoring and Alerting</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-71965DE8r01_rule" weight="10.0" severity="medium">
+      <version>2.4</version>
+      <title>Ensure monitoring and alerting exist for creation, update and deletion of security integrations</title>
+      <description>&lt;VulnDiscussion&gt;Security integration object is used to configure SSO and SCIM integrations.
+
+Rationale:
+Creation of an unauthorized security integration, in case of SCIM, can lead to creation of rogue Snowflake users. Incase of SSO, it can lead to hijacking of existing Snowflake users through rogue authentication flow.
+Update or deletion of an existing security integration can lead to weakening security posture of that integration or denial of service, e.g. when users cannot sign into Snowflake accounts due to broken SSO authentication flow.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>2.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-71965DE8r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Configure your security monitoring solution to alert on creation, update and deletion of security integrations.
+select end_time,
+query_type,
+query_text,
+user_name,
+role_name
+from snowflake.account_usage.query_history
+where execution_status = 'SUCCESS'
+and query_type in ('CREATE', 'ALTER', 'DROP')
+and query_text ilike '%security integration%'
+order by end_time desc;</fixtext>
+      <fix id="F-71965DE8r01_fix"/>
+      <check system="C-71965DE8_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Confirm that Trust Center, or your security monitoring and alerting solution is configured to generate alerts on new security integration creation, update and deletion events.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-79CE7857">
+    <title>2 Monitoring and Alerting</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-79CE7857r01_rule" weight="10.0" severity="medium">
+      <version>2.5</version>
+      <title>Ensure monitoring and alerting exist for changes to network policies and associated objects</title>
+      <description>&lt;VulnDiscussion&gt;Network policies allow restricting access to a Snowflake account based on source IP addresses. A network policy can be configured either on the account level, for all users of the account, or on the user level, for a specific user. In the presence of both account- level and user-level policies the latter takes precedence.
+A network policy can also be configured on the SCIM and Snowflake OAuth security integrations to restrict the list of source IP addresses allowed when exchanging an authorization code for an access or refresh token and when using a refresh token to obtain a new access token. If network policy is not set on the security integration of the aforementioned types, the account-level network policy, if any, is used.
+
+Rationale:
+Creation and application of unauthorized network policies can weaken access control through expansion of the allowed source IP addresses, or lead to a denial of service through blocklisting legitimate source IP addresses. Unauthorized changes and deletions of existing network policies can lead to the same undesirable results.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>2.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-79CE7857r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Configure your security monitoring solution to alert on changes to network policies.
+select end_time,
+query_type,
+query_text,
+user_name,
+role_name
+from snowflake.account_usage.query_history
+where execution_status = 'SUCCESS'
+and (
+query_type in ('CREATE_NETWORK_POLICY', 'ALTER_NETWORK_POLICY',
+'DROP_NETWORK_POLICY')
+or (query_text ilike '%set%network_policy%'
+or query_text ilike '%unset%network_policy%')
+)
+order by end_time desc;</fixtext>
+      <fix id="F-79CE7857r01_fix"/>
+      <check system="C-79CE7857_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Confirm that Trust Center, or your security monitoring and alerting solution is configured to generate alerts on new network policy creation, update and deletion events.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-F3EAB0E4">
+    <title>2 Monitoring and Alerting</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-F3EAB0E4r01_rule" weight="10.0" severity="medium">
+      <version>2.6</version>
+      <title>Ensure monitoring and alerting exist for SCIM token creation</title>
+      <description>&lt;VulnDiscussion&gt;The System for Cross-domain Identity Management (SCIM) is an open specification designed to help facilitate the automated management of user identities and groups (i.e.
+roles) in cloud applications using RESTful APIs.
+Snowflake supports SCIM 2.0 integration with Okta, Microsoft Azure AD and custom identity providers. Users and groups from the identity provider can be provisioned into Snowflake, which functions as the service provider.
+SCIM access token is a bearer token used by SCIM clients to authenticate to Snowflake SCIM server.
+
+Rationale:
+SCIM access tokens generated without proper authorization may be used for configuring rogue SCIM integrations. Such SCIM integrations can then be used for provisioning rogue users that through existing roles are granted unauthorized access to Snowflake data and other objects.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>2.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-F3EAB0E4r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Configure your security monitoring solution to alert on SCIM token creation. The following query can be run periodically.
+select end_time,
+query_type,
+query_text,
+user_name,
+role_name
+from snowflake.account_usage.query_history
+where execution_status = 'SUCCESS'
+and query_type = 'SELECT'
+and regexp_instr(query_text,
+'system\\$generate_scim_access_token\\s*\\(', 1, 1, 0, 'i') &gt; 0
+order by end_time desc;</fixtext>
+      <fix id="F-F3EAB0E4r01_fix"/>
+      <check system="C-F3EAB0E4_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Confirm that Trust Center, or your security monitoring and alerting solution is configured to generate alerts on new security SCIM access token events.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-FF981D15">
+    <title>2 Monitoring and Alerting</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-FF981D15r01_rule" weight="10.0" severity="medium">
+      <version>2.7</version>
+      <title>Ensure monitoring and alerting exists for new share exposures</title>
+      <description>&lt;VulnDiscussion&gt;Snowflake tables, views and UDFs can be shared across Snowflake accounts using share objects created by data providers and imported by data consumers.
+To expose a share to another account, the share provider account needs to add or set consumer accounts on a share using the ALTER SHARE command. The consumer account can then import the share using the CREATE DATABASE FROM SHARE command.
+
+Rationale:
+A share exposed to another Snowflake account can be used for data exfiltration.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>2.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-FF981D15r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Configure your security monitoring solution to alert on new share exposures. The following query can be run periodically.
+select end_time,
+query_type,
+query_text,
+user_name,
+role_name
+from snowflake.account_usage.query_history
+where execution_status = 'SUCCESS'
+and query_type = 'ALTER'
+and regexp_instr(query_text,
+'^alter\\s*share.*(add|set)\\s*accounts\\s*=', 1, 1, 0, 'is') &gt; 0
+order by end_time desc;</fixtext>
+      <fix id="F-FF981D15r01_fix"/>
+      <check system="C-FF981D15_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Confirm that Trust Center, or your security monitoring and alerting solution is configured to generate alerts on new share exposures.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-A2F0B870">
+    <title>2 Monitoring and Alerting</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-A2F0B870r01_rule" weight="10.0" severity="high">
+      <version>2.8</version>
+      <title>Ensure monitoring and alerting exists for sessions from unsupported and vulnerable driver versions</title>
+      <description>&lt;VulnDiscussion&gt;Snowflake provides client software (drivers, connectors, etc.) for connecting to Snowflake and using certain Snowflake features (e.g. Apache Kafka for loading data, Apache Hive metadata for external tables). The clients must be installed on each local workstation or system from which you wish to connect. The Snowflake Connector for Python, JDBC and ODBC drivers are some of the most used Snowflake clients.
+Old versions of drivers and connectors may contain security vulnerabilities that have been fixed in the latest version. To ensure that only up-to-date software is used, you should actively monitor session logins coming from unsupported clients and upgrade those to the latest available versions.
+
+Rationale:
+Using out-of-date Snowflake clients can expose your account to security risks. You should monitor for connections from unsupported Snowflake Connector drivers and upgrade to the latest versions available.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>2.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-A2F0B870r01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Create a UDF to help you compare version numbers:
+CREATE OR REPLACE FUNCTION COMPARE_VERSIONS(v1 VARCHAR, v2 VARCHAR)
+RETURNS NUMERIC
+AS
+$$
+SELECT
+CASE
+WHEN TRY_CAST(split(v1, '.')[0]::string AS NUMBER) &lt;
+TRY_CAST(split(v2, '.')[0]::string as number) then -1
+WHEN TRY_CAST(split(v1, '.')[0]::string AS NUMBER) &gt;
+TRY_CAST(split(v2, '.')[0]::string as number) then 1
+WHEN TRY_CAST(split(v1, '.')[1]::string AS NUMBER) &lt;
+TRY_CAST(split(v2, '.')[1]::string as number) then -1
+WHEN TRY_CAST(split(v1, '.')[1]::string AS NUMBER) &gt;
+TRY_CAST(split(v2, '.')[1]::string as number) then 1
+WHEN TRY_CAST(split(v1, '.')[2]::string AS NUMBER) &lt;
+TRY_CAST(split(v2, '.')[2]::string as number) then -1
+WHEN TRY_CAST(split(v1, '.')[2]::string AS NUMBER) &gt;
+TRY_CAST(split(v2, '.')[2]::string AS NUMBER) then 1
+ELSE 0
+END
+$$;
+2. Configure your security monitoring solution to alert on sessions from unsupported or vulnerable driver versions. The following query can be run periodically.
+SELECT
+ARRAY_AGG(
+OBJECT_CONSTRUCT(
+'cve', CVE,
+'severity', SEVERITY,
+'min_affected', MIN_AFFECTED,
+'max_affected', MAX_AFFECTED)
+) AS CVE_INFO,
+USER_NAME,
+CREATED_ON,
+CLIENT_APP,
+CLIENT_APPLICATION_VERSION,
+MINIMUM_SUPPORTED_VERSION,
+RECOMMENDED_VERSION,
+IS_UNSUPPORTED_VERSION,
+BOOLOR_AGG(VULNERABLE_VERSION) AS IS_VULNERABLE_VERSION
+FROM
+(
+WITH CVE AS (
+SELECT
+DRIVER_DATA.value:clientId::varchar AS CLIENT_ID,
+VULNERABILITY.value:cve::varchar AS CVE,
+VULNERABILITY.value:severity::varchar AS SEVERITY,
+VULNERABILITY.value:minAffected::varchar AS MIN_AFFECTED,
+VULNERABILITY.value:maxAffected::varchar AS MAX_AFFECTED
+from (
+SELECT PARSE_JSON(SYSTEM$CLIENT_VULNERABILITY_INFO()) AS
+JSON_COLUMN
+) AS JSON_TABLE,
+LATERAL FLATTEN(input =&gt; json_table.json_column) AS
+DRIVER_DATA,
+LATERAL FLATTEN(input =&gt; driver_data.value:vulnerabilities) AS
+VULNERABILITY
+)
+SELECT
+MAX(S.CREATED_ON) AS CREATED_ON,
+S.USER_NAME,
+SPLIT(S.CLIENT_APPLICATION_ID, ' ')[0]::VARCHAR AS
+CLIENT_APP,
+S.CLIENT_APPLICATION_VERSION,
+V.value:"minimumSupportedVersion"::string AS
+MINIMUM_SUPPORTED_VERSION,
+V.value:"recommendedVersion"::string AS RECOMMENDED_VERSION,
+FALSE AS STATUS,
+CVE.*,
+COMPARE_VERSIONS(S.CLIENT_APPLICATION_VERSION,
+V.value:"minimumSupportedVersion") &lt; 0 AS UNSUPPORTED_VERSION,
+COMPARE_VERSIONS(S.CLIENT_APPLICATION_VERSION, CVE.MIN_AFFECTED)
+&gt;= 0
+AND COMPARE_VERSIONS(S.CLIENT_APPLICATION_VERSION,
+CVE.MAX_AFFECTED) &lt;= 0 AS VULNERABLE_VERSION,
+COUNT(*) AS NUM_SESSIONS
+FROM SNOWFLAKE.ACCOUNT_USAGE.SESSIONS S
+LEFT JOIN TABLE(FLATTEN(INPUT =&gt;
+PARSE_JSON(SYSTEM$CLIENT_VERSION_INFO()))) V
+ON CLIENT_APP = V.value:"clientId"
+LEFT JOIN CVE
+ON CLIENT_APP = CVE.CLIENT_ID
+WHERE MINIMUM_SUPPORTED_VERSION IS NOT NULL
+AND S.CLIENT_APPLICATION_VERSION IS NOT NULL
+AND LEN(S.CLIENT_APPLICATION_VERSION) &gt; 0
+AND (IS_UNSUPPORTED_VERSION OR IS_VULNERABLE_VERSION)
+GROUP BY ALL
+)
+GROUP BY ALL;
+3. If you identify sessions from an outdated driver version, you can configure your authentication policy to require a minimum version for that driver using the query:
+ALTER AUTHENTICATION POLICY &lt;policy_name&gt; SET CLIENT_POLICY =
+&lt;client_type&gt; = (MINIMUM_VERSION = '&lt;version&gt;');
+4. When detecting the use of unsupported clients, upgrade to the latest, recommended version.</fixtext>
+      <fix id="F-A2F0B870r01_fix"/>
+      <check system="C-A2F0B870_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Confirm that your security monitoring and alerting solution is configured to generate alerts on sessions coming from unsupported Snowflake connectors and drivers.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-E0FB039D">
+    <title>2 Monitoring and Alerting</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-E0FB039Dr01_rule" weight="10.0" severity="medium">
+      <version>2.9</version>
+      <title>Ensure monitoring and alerting exists for changes to authentication policies and associated objects</title>
+      <description>&lt;VulnDiscussion&gt;Authentication policies allow restricting authentication constraints such as: Whether person users must enroll in MFA Which authentication methods require MFA The allowed authentication methods, such as SAML, passwords, OAuth, key pair authentication, and programmatic access tokens. The allowed SAML2 security integrations The types of clients allowed to connect to Snowflake Whether network policies are required when using programmatic access tokens Snowflake supports setting an authentication policy for your Snowflake account and for individual users. If an authentication policy exists for the account and a user in the same account, the user-level authentication policy takes precedence over the account-level authentication policy.
+
+Rationale:
+Changes to authentication policies could weaken the account’s authentication requirements, such as relaxing restrictions on allowed driver versions and client applications and requirements when authenticating with Programmatic Access Tokens or Workload Identity Federation.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>2.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-E0FB039Dr01_fix">Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Configure your security monitoring solution to alert on changes to authentication policies.
+SELECT END_TIME,
+QUERY_TYPE,
+QUERY_TEXT,
+USER_NAME,
+ROLE_NAME
+FROM SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY
+WHERE EXECUTION_STATUS = \'SUCCESS\'
+AND (QUERY_TYPE IN (\'CREATE_AUTHENTICATION_POLICY\',
+\'ALTER_AUTHENTICATION_POLICY\',
+\'DROP_AUTHENTICATION_POLICY\')
+OR (QUERY_TEXT ILIKE \'%SET%AUTHENTICATION_POLICY%\'
+OR QUERY_TEXT ILIKE \'%UNSET%AUTHENTICATION_POLICY%\')
+)
+ORDER BY END_TIME DESC;</fixtext>
+      <fix id="F-E0FB039Dr01_fix"/>
+      <check system="C-E0FB039D_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Confirm that Trust Center, or your own security monitoring and alerting solution, is configured to generate alerts on authentication policy changes.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-4F4C85B8">
+    <title>3 Networking</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-4F4C85B8r01_rule" weight="10.0" severity="high">
+      <version>3.1</version>
+      <title>Ensure that all users are covered by a network policy to only allow access from trusted IP addresses</title>
+      <description>&lt;VulnDiscussion&gt;Network policies allow restricting access to a Snowflake account based on source IP addresses. A network policy can be configured either on the account level, for all users of the account, or on the user level, for a specific user. In the presence of both account- level and user-level policies, the user-level policies take precedence.
+A network policy can also be configured on the SCIM and Snowflake OAuth security integrations to restrict the list of source IP addresses allowed when exchanging an authorization code for an access or refresh token and when using a refresh token to obtain a new access token. If network policy is not set on the security integration of the aforementioned types, the account-level network policy is set, if used.
+Network rules provide a mechanism to build reusable lists of IPs and CIDR ranges across multiple policies. Snowflake manages default rules for certain SaaS providers, which can also be used for supported services. These network rules will automatically upd ate when the corresponding service’s IPs change.
+
+Rationale:
+Network policies help mitigate the threat of leaked user credentials. If an account network policy is not configured limiting source IP addresses, leaked Snowflake credentials can be used from anywhere in the world.
+Network policies are especially useful when there is a heightened risk of leaking credentials. For example, if instead of using SSO, users authenticate to Snowflake using Snowflake passwords.
+Network policy set on the account level can serve as a coarse-grained baseline for the majority of the Snowflake users and can be further tightened on the specific highly privileged user, service account, and security integration level.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>3.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-4F4C85B8r01_fix">From the UI:
+1. Go to https://app.snowflake.com/ and sign into your Snowflake account.
+2. On the left side navigation bar, select Governance &amp; security, then Network policies.
+3. Click the + Network Policy button on the top right side.
+4. Enter a Policy Name and list of Allowed IP Addresses.
+5. Click Create network policy.
+6. Find your policy in the list of network policies and click Activate On Account.
+This will set the network policy at the account level.
+Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. Create one or more network rules to define a list of allowed or blocked IP addresses. At least one network rule listing allowed IP addresses should be used, and should not include 0.0.0.0/0 (allow-all):
+CREATE NETWORK RULE &lt;rule_name&gt;
+TYPE = IPV4
+VALUE_LIST = ('&lt;ip_to_allow&gt;'[, ...]);
+2. Create a network policy. Replace with the name you want to give the policy, and customize the list of allowed and blocked network rules:
+CREATE NETWORK POLICY &lt;policy_name&gt;
+ALLOWED_NETWORK_RULE_LIST= (&lt;rule_name&gt;);
+3. Set the network policy at the account level:
+ALTER ACCOUNT SET NETWORK_POLICY = &lt;policy_name&gt;;
+For more information, see the documentation on creating network policies.
+Note:
+• When a network policy includes values for both ALLOWED_IP_LIST and BLOCKED_IP_LIST, Snowflake applies the blocked list first.
+• Do not add 0.0.0.0/0 to BLOCKED_IP_LIST. Because Snowflake applies the blocked list first, this would block your own access. Additionally, in order to block all IP addresses except a select list, you only need to add IP addresses to ALLOWED_IP_LIST. Snowflake automatically blocks all IP addresses not included in the allowed list.
+• You can create and set a network policy on a security integration to configure allowed IP addresses from your IdP used to exchange an authorization code for an access or refresh token and when using a refresh token to obtain a new access token.</fixtext>
+      <fix id="F-4F4C85B8r01_fix"/>
+      <check system="C-4F4C85B8_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>From the UI:
+1. Go to https://app.snowflake.com/ and sign into your Snowflake account.
+2. On the left side navigation bar, select Governance &amp; security, then Network policies.
+3. Ensure that a network policy is configured properly with a status of Active on account, or the number of policies active on users equals the total number of users in the account.
+Programmatically:
+Note: if you specify user-level rather than account-level network policies, the same audit procedure can be followed, but must be done for each user returned from show users In a Snowsight worksheet or through the SnowSQL CLI:
+1. List the network policies active at the account level.
+SHOW PARAMETERS LIKE 'NETWORK_POLICY' IN ACCOUNT;
+2. Ensure that the query returns a result.
+3. Note the name of the network policy and replace &lt;policy_name&gt; in the query below with your network policy name:
+DESCRIBE NETWORK POLICY &lt;policy_name&gt;;
+4. Ensure that ALLOWED_NETWORK_RULES_LIST or ALLOWED_IP_LIST is set for the network policy.
+5. If ALLOWED_IP_LIST is set, ensure that it contains only trusted IP address ranges. If ALLOWED_NETWORK_RULES_LIST is set, ensure that each network rule only contains trusted IP addresses by checking each fullyQualifiedRuleName:
+DESCRIBE NETWORK RULE &lt;fullyQualifiedRuleName&gt;;</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-3709DB4E">
+    <title>4 Data Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-3709DB4Er01_rule" weight="10.0" severity="high">
+      <version>4.1</version>
+      <title>Ensure yearly rekeying is enabled for a Snowflake account</title>
+      <description>&lt;VulnDiscussion&gt;All Snowflake customer data is encrypted by default using the latest security standards and best practices. Snowflake uses strong AES 256-bit encryption with a hierarchical key model rooted in a hardware security module.
+All Snowflake-managed keys are automatically rotated when they are more than 30 days old. Furthermore, data can be automatically re-encrypted ("rekeyed") on a yearly basis. Data encryption and key rotation is entirely transparent and requires no configuration or management.
+Key rotation transitions an active encryption key to a retired state. Practically this means transitioning of the active encryption key from being used for encrypting new data and decrypting data encrypted with that key to only decrypting data encrypted with that key.
+Rekeying transitions a retired encryption key to being destroyed. Practically this means re-encryption of the data encrypted by a retired key with a new key and destroying the disposing of the retired key.
+
+Rationale:
+Rekeying constrains the total duration in which a key is used for recipient usage, following NIST recommendations. Furthermore, when rekeying data, Snowflake can increase encryption key sizes and utilize better encryption algorithms that may be standardized since the previous key generation was created.
+Rekeying, therefore, ensures that all customer data, new and old, is encrypted with the latest security technology.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>4.1</dc:identifier>
+      </reference>
+      <fixtext fixref="F-3709DB4Er01_fix">Programmatically:
+Set parameter value to true:
+ALTER ACCOUNT
+SET PERIODIC_DATA_REKEYING=true;</fixtext>
+      <fix id="F-3709DB4Er01_fix"/>
+      <check system="C-3709DB4E_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or from the SnowSQL CLI:
+1. List the value of the PERIODIC_DATA_REKEYING parameter:
+SHOW PARAMETERS LIKE 'PERIODIC_DATA_REKEYING' IN ACCOUNT;
+2. Ensure that the parameter is set to true.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-86782279">
+    <title>4 Data Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-86782279r01_rule" weight="10.0" severity="medium">
+      <version>4.2</version>
+      <title>Ensure AES encryption key size used to encrypt files stored in internal stages is set to 256 bits</title>
+      <description>&lt;VulnDiscussion&gt;All ingested data stored in Snowflake tables is encrypted using 256-bit long AES encryption keys. However, data uploaded to internal stages is by default encrypted with 128-bit long AES encryption keys.
+
+Rationale:
+The field of cryptanalysis is continuously advancing and new vulnerabilities and attacks are discovered that obsolete cryptographic primitives that once were considered secure.
+The 128-bit long AES encryption keys are still considered secure today and there are no strong reasons to believe this will change soon. Usage of the 256-bit long AES encryption keys today is generally recommended out of an abundance of caution.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>4.2</dc:identifier>
+      </reference>
+      <fixtext fixref="F-86782279r01_fix">Programmatically:
+To set the length of the AES encryption keys used to encrypt data uploaded to internal stages, run the following command:
+ALTER ACCOUNT
+SET CLIENT_ENCRYPTION_KEY_SIZE=256;</fixtext>
+      <fix id="F-86782279r01_fix"/>
+      <check system="C-86782279_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or using the SnowSQL CLI:
+1. Check length of the AES encryption keys used to encrypt data uploaded to internal stages:
+SHOW PARAMETERS LIKE 'CLIENT_ENCRYPTION_KEY_SIZE' IN ACCOUNT;
+2. Ensure that value is set to 256.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-B927DABD">
+    <title>4 Data Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-B927DABDr01_rule" weight="10.0" severity="high">
+      <version>4.3</version>
+      <title>Ensure that the DATA_RETENTION_TIME_IN_DAYS parameter is set to 90 for critical data</title>
+      <description>&lt;VulnDiscussion&gt;Snowflake Time Travel enables accessing historical data (i.e., data that has been changed or deleted) at any point within a defined period. It relies on configuring a data retention period for your critical data assets.
+The DATA_RETENTION_TIME_IN_DAYS object parameter is used to set data retention period on the account, database, schema, or table level. When the MIN_DATA_RETENTION_TIME_IN_DAYS parameter is set at the account level, the effective minimum data retention period for an object is determined by MAX(DATA_RETENTION_TIME_IN_DAYS, MIN_DATA_RETENTION_TIME_IN_DAYS).
+
+Rationale:
+Time Travel can be used to recover critical data that was maliciously destroyed or encrypted by ransomware.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>4.3</dc:identifier>
+      </reference>
+      <fixtext fixref="F-B927DABDr01_fix">An organization's compliance, legal and privacy groups may have important inputs on how long certain data should and can be retained for. For example, in the context of GDPR. It is important to take those inputs into account when data retention periods are determined for critical data.
+Programmatically:
+For every non-compliant table with critical data set the retention period to 90 days:
+ALTER TABLE &lt;table_name&gt;
+SET DATA_RETENTION_TIME_IN_DAYS=90;
+If all tables within a given schema or database contain critical data, the data retention period can be set on the schema or database level correspondingly.</fixtext>
+      <fix id="F-B927DABDr01_fix"/>
+      <check system="C-B927DABD_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+From a Snowsight worksheet or from the SnowSQL CLI:
+1. List the retention time in days for each table:
+SELECT
+TABLE_CATALOG DATABASE,
+TABLE_SCHEMA SCHEMA,
+TABLE_NAME NAME,
+RETENTION_TIME RETENTION_DAYS
+FROM SNOWFLAKE.ACCOUNT_USAGE.TABLES
+WHERE DELETED IS NULL;
+2. Ensure that all tables holding critical data have a RETENTION_DAYS value set to at least 90.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-66276F46">
+    <title>4 Data Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-66276F46r01_rule" weight="10.0" severity="high">
+      <version>4.4</version>
+      <title>Ensure that the MIN_DATA_RETENTION_TIME_IN_DAYS account parameter is set to 7 or higher</title>
+      <description>&lt;VulnDiscussion&gt;The MIN_DATA_RETENTION_TIME_IN_DAYS account parameter can be set by users with the ACCOUNTADMIN role to set a minimum retention period for the account. This parameter does not alter or replace the DATA_RETENTION_TIME_IN_DAYS parameter value. However it may change the effective data retention time. When this parameter is set at the account level, the effective minimum data retention period for an object is determined by MAX(DATA_RETENTION_TIME_IN_DAYS, MIN_DATA_RETENTION_TIME_IN_DAYS).
+
+Rationale:
+Setting the MIN_DATA_RETENTION_TIME_IN_DAYS to 7 helps restore data-related objects (tables, schemas, and databases) that might have been accidentally or intentionally deleted.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>4.4</dc:identifier>
+      </reference>
+      <fixtext fixref="F-66276F46r01_fix">Programmatically:
+Set the MIN_DATA_RETENTION_TIME_IN_DAYS on the account level to 7 or higher:
+ALTER ACCOUNT
+SET MIN_DATA_RETENTION_TIME_IN_DAYS=7;</fixtext>
+      <fix id="F-66276F46r01_fix"/>
+      <check system="C-66276F46_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or from the SnowSQL CLI:
+1. List the value of the parameter:
+SHOW PARAMETERS LIKE 'MIN_DATA_RETENTION_TIME_IN_DAYS' IN ACCOUNT;
+2. Ensure that the parameter is set to 7 or higher.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-327A766E">
+    <title>4 Data Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-327A766Er01_rule" weight="10.0" severity="medium">
+      <version>4.5</version>
+      <title>Ensure that the REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_CREATIO N account parameter is set to true</title>
+      <description>&lt;VulnDiscussion&gt;Ensure that creating an external stage to access a private cloud storage location requires referencing a storage integration object as cloud credentials.
+
+Rationale:
+Using storage integration removes the need to supply credentials when creating external stages or when loading or unloading data. This reduces the risk of those credentials being leaked and data compromised.
+Requiring a storage integration when creating a new stage reduces the risk or data exfiltration by accidentally exporting sensitive data to an external stage that does not have the appropriate network security, access control, or encryption security and is not approved by the organization’s security team.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>4.5</dc:identifier>
+      </reference>
+      <fixtext fixref="F-327A766Er01_fix">Programmatically:
+In a Snowsight worksheet or from the SNOWSQL cli, run the following command to set the parameter value to true:
+ALTER ACCOUNT
+SET REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_CREATION=true;
+Note: To avoid disruption of existing workflow relying on creation of external stages not referencing a storage integration, all such workflows should be identified and migrated to creation of external stages referencing storage integrations.</fixtext>
+      <fix id="F-327A766Er01_fix"/>
+      <check system="C-327A766E_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In the Snowsight UI or from the SnowSQL CLI:
+1. List the value of the REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_CREATION parameter:
+SHOW PARAMETERS LIKE 'REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_CREATION'
+IN ACCOUNT;
+2. Ensure that the parameter is set to true;</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-D9DC718A">
+    <title>4 Data Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-D9DC718Ar01_rule" weight="10.0" severity="medium">
+      <version>4.6</version>
+      <title>Ensure that the REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_OPERATI ON account parameter is set to true</title>
+      <description>&lt;VulnDiscussion&gt;Ensure that loading data from or unloading data to a private cloud storage location requires using a named external stage that references a storage integration object.
+If this parameter is not set, then users can specify the explicit cloud provider credentials directly in the COPY statement.
+
+Rationale:
+Using storage integration removes the need to supply credentials when loading and unloading data from external stages or when loading or unloading data to a private cloud storage location. This reduces the risk of data exfiltration by accidentally exporting sensitive data to an external stage that does not have the appropriate network security, access control, or encryption security and is not approved by the organization’s security team.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>4.6</dc:identifier>
+      </reference>
+      <fixtext fixref="F-D9DC718Ar01_fix">Programmatically:
+Set the REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_OPERATION on the account level to true:
+ALTER ACCOUNT
+SET REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_OPERATION=true;
+NOTE:
+To avoid disruption of existing workflow relying on external stages not referencing a storage integration, all such workflows should be identified and migrated to external stages referencing storage integrations.</fixtext>
+      <fix id="F-D9DC718Ar01_fix"/>
+      <check system="C-D9DC718A_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or from the SnowSQL CLI:
+1. List the value of the REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_OPERATION parameter:
+SHOW PARAMETERS LIKE 'REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_OPERATION'
+IN ACCOUNT;
+2. Ensure that the parameter is set to true.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-81A56182">
+    <title>4 Data Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-81A56182r01_rule" weight="10.0" severity="medium">
+      <version>4.7</version>
+      <title>Ensure that all external stages have storage integrations</title>
+      <description>&lt;VulnDiscussion&gt;External stage is a Snowflake object used for loading data from external storage locations into Snowflake tables and unloading data from Snowflake tables into external storage locations. Currently supported external storage locations are Amazon S3 buckets, Google Cloud Storage buckets and Microsoft Azure containers.
+Storage integration is a Snowflake object that encapsulates external storage authentication configuration as well as an optional set of allowed or blocked storage locations. When configuring an external stage, a storage integration can be referenced in lieu of storage service credentials.
+
+Rationale:
+Using storage integration removes the need to supply credentials when creating external stages or when loading or unloading data. This reduces the risk of those credentials being leaked and data compromised.
+Additionally, security administrators creating storage integration can constrain CSP storage locations allowed to be used as destinations in external stages. This further reduces the risk of data being leaked or compromised.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>4.7</dc:identifier>
+      </reference>
+      <fixtext fixref="F-81A56182r01_fix">Programmatically:
+1. For each external stage, create a storage integration &lt;my_storage_integration&gt;:
+CREATE STORAGE INTEGRATION &lt;my_storage_integration&gt;
+TYPE = EXTERNAL_STAGE
+STORAGE_PROVIDER = 'S3'
+ENABLED = TRUE
+STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::001234567890:role/myrole';
+2. Update the external stage &lt;my_external_stage&gt; to use the new storage integration:
+ALTER STAGE &lt;my_external_stage&gt; SET STORAGE_INTEGRATION =
+&lt;my_storage_integration&gt;;</fixtext>
+      <fix id="F-81A56182r01_fix"/>
+      <check system="C-81A56182_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List all external stages that do not have a storage integration:
+SELECT
+STAGE_NAME,
+STAGE_SCHEMA AS SCHEMA_NAME,
+STAGE_CATALOG AS DATABASE_NAME
+FROM SNOWFLAKE.ACCOUNT_USAGE.STAGES
+WHERE STAGE_TYPE ILIKE 'External Named'
+AND STORAGE_INTEGRATION IS NULL
+AND DELETED IS NULL
+ORDER BY STAGE_NAME;
+2. Ensure that the query above returns no results.
+Required privileges:
+To run the query above, the caller needs the:
+• USAGE privilege on every external stage in an account.
+• USAGE privilege on the parenting schema of every external stage in an account.
+• USAGE privilege on the parenting database of every external stage in an account</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-420D89FA">
+    <title>4 Data Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-420D89FAr01_rule" weight="10.0" severity="medium">
+      <version>4.8</version>
+      <title>Ensure that the PREVENT_UNLOAD_TO_INLINE_URL account parameter is set to true</title>
+      <description>&lt;VulnDiscussion&gt;Prevent ad hoc data unload operations to external cloud storage by enabling the PREVENT_UNLOAD_TO_INLINE_URL account parameter.
+
+Rationale:
+Direct data unloading can be employed by threat actors to exfiltrate sensitive data from Snowflake to a supported external storage location of their choice. A well-intended employee with a legitimate business task can unknowingly unload data to publicly available storage locations and unintentionally leak it. Prevention of the direct data unloading reduces risk of data exfiltration and leakage.
+Setting the PREVENT_UNLOAD_TO_INLINE_URL account parameter to true will prevent ad hoc data unload operations to external cloud storage locations (i.e. through COPY INTO &lt;location&gt; statements that specify the cloud storage URL and access settings directly in the statement).&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>4.8</dc:identifier>
+      </reference>
+      <fixtext fixref="F-420D89FAr01_fix">Programmatically:
+Set the PREVENT_UNLOAD_TO_INLINE_URL on the account level to true:
+ALTER ACCOUNT
+SET PREVENT_UNLOAD_TO_INLINE_URL=true;
+NOTE: To avoid disruption of existing workflow relying on direct unloading data to external storage locations, all such workflows should be identified and migrated to unloading data to external stages referencing storage integrations.</fixtext>
+      <fix id="F-420D89FAr01_fix"/>
+      <check system="C-420D89FA_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Programmatically:
+From a Snowsight worksheet or from the SnowSQL CLI:
+1. List the value of the PREVENT_UNLOAD_TO_INLINE_URL account level parameter:
+SHOW PARAMETERS LIKE 'PREVENT_UNLOAD_TO_INLINE_URL' IN ACCOUNT;
+2. Ensure that PREVENT_UNLOAD_TO_INLINE_URL is set to true;</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-1EFB2D4D">
+    <title>4 Data Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-1EFB2D4Dr01_rule" weight="10.0" severity="high">
+      <version>4.9</version>
+      <title>Ensure that Tri-Secret Secure is enabled for the Snowflake account</title>
+      <description>&lt;VulnDiscussion&gt;Tri-Secret Secure is the combination of a Snowflake-maintained key and a customer- managed key in the cloud provider platform that hosts your Snowflake account to create a composite master key to protect your Snowflake data. The composite master key acts as an account master key and wraps all of the keys in the hierarchy; however, the composite master key never encrypts raw data.
+
+Rationale:
+If the customer-managed key in the composite master key hierarchy is revoked, your data can no longer be decrypted by Snowflake, providing a level of security and control above Snowflake’s standard encryption.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>4.9</dc:identifier>
+      </reference>
+      <fixtext fixref="F-1EFB2D4Dr01_fix">To enable Snowflake Tri-Secret Secure for your Business Critical (or higher) account, follow the Self-service instructions to enable Tri-Secret Secure.</fixtext>
+      <fix id="F-1EFB2D4Dr01_fix"/>
+      <check system="C-1EFB2D4D_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Follow the instructions in the How To: Validate Tri-Secret Secure is configured for your Snowflake account successfully documentation.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-71CBEEB5">
+    <title>4 Data Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-71CBEEB5r01_rule" weight="10.0" severity="high">
+      <version>4.10</version>
+      <title>Ensure that data masking is enabled for sensitive data</title>
+      <description>&lt;VulnDiscussion&gt;Data masking policy is a fine-grained access control used to protect sensitive data from unauthorized access by selectively masking plain-text data in table and view columns at query time.
+
+Rationale:
+Masking policy allows for a wide range of use cases where data can be queried, aggregated and analyzed in a privacy preserving manner.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>4.10</dc:identifier>
+      </reference>
+      <fixtext fixref="F-71CBEEB5r01_fix">Identify columns with sensitive data across all account tables and views and apply appropriate masking policies following steps described in the documentation.
+If columns with sensitive data are tagged appropriately, tag-based masking can be used.
+Sensitive data columns can be identified and tagged with assistance of the EXTRACT_SEMANTIC_CATEGORIES and ASSOCIATE_SEMANTIC_CATEGORY_TAGS system functions. See the Data Classification documentation for details.
+To create a data masking policy, follow the steps in this documentation.</fixtext>
+      <fix id="F-71CBEEB5r01_fix"/>
+      <check system="C-71CBEEB5_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Ensure appropriate masking policies are applied to columns with sensitive data across all tables and views in a Snowflake account.
+Ensure appropriate row access policies are applied to rows with special access requirements across all tables and views in a Snowflake account.
+From the UI:
+1. Go to https://app.snowflake.com/ and sign into your Snowflake account.
+2. On the left side navigation bar, hover over Governance and Security, then click on Tags &amp; Policies.
+3. Ensure that Columns with a masking policy shows a value greater than 0.
+Programmatically:
+In a Snowsight worksheet or through the SnowSQL CLI:
+1. List all the configured row access policies:
+SHOW MASKING POLICIES IN ACCOUNT;
+2. Ensure that the query returns at least one result.</check-content>
+      </check>
+    </Rule>
+  </Group>
+  <Group id="V-91E81AA7">
+    <title>4 Data Protection</title>
+    <description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description>
+    <Rule id="SV-91E81AA7r01_rule" weight="10.0" severity="high">
+      <version>4.11</version>
+      <title>Ensure that row-access policies are configured for sensitive data</title>
+      <description>&lt;VulnDiscussion&gt;Row access policies are used to determine which rows to return in the query result.
+Row access policies can include conditions and functions in the policy expression to transform the data at query runtime when those conditions are met.
+
+Rationale:
+Row-access policy is a fine-grained access control used to protect table and view rows with special access requirements from unauthorized access at query time. It can be used to control access to certain data rows even if a user has access to query a table or view.&lt;/VulnDiscussion&gt;</description>
+      <reference>
+        <dc:title>CIS Snowflake Foundations Benchmark</dc:title>
+        <dc:publisher>CIS</dc:publisher>
+        <dc:type>Benchmark</dc:type>
+        <dc:subject>CIS Snowflake Foundations Benchmark</dc:subject>
+        <dc:identifier>4.11</dc:identifier>
+      </reference>
+      <fixtext fixref="F-91E81AA7r01_fix">Identify rows with special access requirements across all account tables and views and apply appropriate row access policies following steps described in the Using Row Access Policies documentation.</fixtext>
+      <fix id="F-91E81AA7r01_fix"/>
+      <check system="C-91E81AA7_chk">
+        <check-content-ref href="CIS_Snowflake_Foundations_Benchmark.xml" name="M"/>
+        <check-content>Ensure appropriate row access policies are applied to rows with special access requirements across all tables and views in a Snowflake account.
+From the UI:
+1. Go to https://app.snowflake.com/ and sign into your Snowflake account.
+2. On the left side navigation bar, hover over Governance and Security, then click on Tags &amp; Policies.
+3. Ensure that Tables with a row access policy shows a value greater than 0.
+Programmatically:
+In a Snowsight worksheet or from the SnowSQL CLI:
+1. List all the configured row access policies:
+SHOW ROW ACCESS POLICIES IN ACCOUNT;
+2. Ensure that the query returns at least one result.</check-content>
+      </check>
+    </Rule>
+  </Group>
+</Benchmark>
+

@@ -79,12 +79,38 @@ def map_benchmark(doc: BenchmarkDoc, severity_map=None, benchmark_id_override=No
     profile_members: dict[str, list[str]] = {}
     warnings: list[str] = []
 
+    used_group_ids: dict[str, int] = {}
+    used_rule_ids: dict[str, int] = {}
+
     for rec in doc.recommendations:
         group, rule_warnings = _map_group(doc, bid, rec, severity_map)
+        # Some upstream documents repeat one rule id for several
+        # recommendations; keep every id unique per benchmark.
+        for kind, value in (("+@id", group["+@id"]), ("rule", group["Rule"]["+@id"])):
+            used = used_group_ids if kind == "+@id" else used_rule_ids
+            if value in used:
+                used[value] += 1
+                suffix = f"-{used[value]}"
+                if kind == "+@id":
+                    group["+@id"] = f"{value}{suffix}"
+                else:
+                    group["Rule"]["+@id"] = f"{value}{suffix}"
+                    group["Rule"]["fix"]["+@id"] += suffix
+                    group["Rule"]["fixtext"]["+@fixref"] += suffix
+                    group["Rule"]["check"]["+@system"] += suffix
+            else:
+                used[value] = 1
         groups.append(group)
         warnings.extend(rule_warnings)
         for _, profile_name in rec.levels:
             profile_members.setdefault(profile_name, []).append(group["+@id"])
+
+    if not profile_members and groups:
+        # STIG-template benchmarks define no levels; synthesize one
+        # profile selecting everything so the classification tabs work.
+        profile_members["CIS Benchmark - All Recommendations"] = [
+            group["+@id"] for group in groups
+        ]
 
     section = {
         "status": {"+content": "accepted", "+@date": doc.date},
@@ -150,8 +176,16 @@ def _map_group(doc: BenchmarkDoc, bid: str, rec: Recommendation, severity_map) -
     warnings: list[str] = []
     digest = stable_hash(bid, rec.number, rec.title)
     group_id = f"V-{digest}"
+    rule_id = f"SV-{digest}r01"
     fix_id = f"F-{digest}r01_fix"
     check_id = f"C-{digest}_chk"
+    # STIG-template recommendations carry vendor-supplied ids.
+    if rec.vendor_group_id:
+        group_id = rec.vendor_group_id
+    if rec.vendor_rule_id:
+        rule_id = rec.vendor_rule_id
+        fix_id = f"F-{rule_id}_fix"
+        check_id = f"C-{rule_id}_chk"
 
     description = rec.fields.get("Description", Field(label="Description")).prose.strip()
     rationale = rec.fields.get("Rationale", Field(label="Rationale")).prose.strip()
@@ -169,8 +203,12 @@ def _map_group(doc: BenchmarkDoc, bid: str, rec: Recommendation, severity_map) -
         warnings.append(f"{rec.number}: empty Remediation")
 
     level = rec.max_level
-    severity = severity_map.get(level, "medium")
-    if level == 0:
+    cat_map = {"I": "high", "II": "medium", "III": "low"}
+    if rec.cat_severity:
+        severity = cat_map.get(rec.cat_severity, "medium")
+    else:
+        severity = severity_map.get(level, "medium")
+    if level == 0 and not rec.cat_severity:
         warnings.append(f"{rec.number}: no profile level parsed; defaulting severity to medium")
 
     parent = doc.sections.get(rec.parent_number)
@@ -181,7 +219,7 @@ def _map_group(doc: BenchmarkDoc, bid: str, rec: Recommendation, severity_map) -
         "title": group_title,
         "description": "<GroupDescription></GroupDescription>",
         "Rule": {
-            "+@id": f"SV-{digest}r01_rule",
+            "+@id": f"{rule_id}_rule",
             "+@weight": "10.0",
             "+@severity": severity,
             "version": rec.number,

@@ -1,0 +1,1663 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_Mozilla_Firefox_STIG_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2026-04-28"
+    },
+    "title": "CIS Mozilla Firefox STIG Benchmark",
+    "description": "All CIS Benchmarks ™ (Benchmarks) focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the Benchmarks are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All Benchmarks are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks ™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the Benchmark Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed since all are important for properly securing systems and are typically in scope for audits. Key Stakeholders Cybersecurity is a collaborative effort, and cross functional cooperation is imperative within an organization to discuss, test, and deploy Benchmarks in an effective and efficient way. The Benchmarks are developed to be best practice configuration guidelines applicable to a wide range of use cases. In some organizations, exceptions to specific Recommendations will be needed, and this team should work to prioritize the problematic Recommendations based on several factors like risk, time, cost, and labor. These exceptions should be properly categorized and documented for auditing purposes. Apply the Correct Version of a Benchmark Benchmarks are developed and tested for a specific set of products and versions and applying an incorrect Benchmark to a system can cause the resulting pass/fail score to be incorrect. This is due to the assessment of settings that do not apply to the target systems. To assure the correct Benchmark is being assessed: • Deploy the Benchmark applicable to the way settings are managed in the environment: An example of this is the Microsoft Windows family of Benchmarks, which have separate Benchmarks for Group Policy, Intune, and Stand-alone systems based upon how system management is deployed. Applying the wrong Benchmark in this case will give invalid results. • Use the most recent version of a Benchmark: This is true for all Benchmarks, but especially true for cloud technologies. Cloud technologies change frequently and using an older version of a Benchmark may have invalid methods for auditing and remediation. Exceptions The guidance items in the Benchmarks are called recommendations and not requirements, and exceptions to some of them are expected and acceptable. The Benchmarks strive to be a secure baseline, or starting point, for a specific technology, with known issues identified during Benchmark development are documented in the Impact section of each Recommendation. In addition, organizational, system specific requirements, or local site policy may require changes as well, or an exception to a Recommendation or group of Recommendations (e.g. A Benchmark could Recommend that a Web server not be installed on the system, but if a system's primary purpose is to function as a Webserver, there should be a documented exception to this Recommendation for that specific server). In the end, exceptions to some Benchmark Recommendations are common and acceptable, and should be handled as follows: • The reasons for the exception should be reviewed cross-functionally and be well documented for audit purposes. • A plan should be developed for mitigating, or eliminating, the exception in the future, if applicable. • If the organization decides to accept the risk of this exception (not work toward mitigation or elimination), this should be documented for audit purposes. It is the responsibility of the organization to determine their overall security policy, and which settings are applicable to their unique needs based on the overall risk profile for the organization. Remediation CIS has developed Build Kits for many technologies to assist in the automation of hardening systems. Build Kits are designed to correspond to Benchmark's “Remediation” section, which provides the manual remediation steps necessary to make that Recommendation compliant to the Benchmark. When remediating systems (changing configuration settings on deployed systems as per the Benchmark's Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: • CIS Build Kits, or internally developed remediation methods should never be applied to production systems without proper testing. • Proper testing consists of the following: o Understand the configuration (including installed applications) of the targeted systems. Various parts of the organization may need different configurations (e.g., software developers vs standard office workers). o Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. o Test the configuration changes with representative lab system(s). If issues arise during testing, they can be resolved prior to deploying to any production systems. o When testing is complete, initially deploy to a small sub-set of production systems and monitor closely for issues. If there are issues, they can be resolved prior to deploying more broadly. o When the initial deployment above is completed successfully, iteratively deploy to additional systems and monitor closely for issues. Repeat this process until the full deployment is complete. Summary Using the Benchmarks Certified tools, working as a team with key stakeholders, being selective with exceptions, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks ™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks ™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Target Technology Details Mozilla Firefox Secure Technical Implementation Guide (STIG) Version: 6 Release: 6 Benchmark Date: 02 Apr 2025",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.1.0 Benchmark Date: 2026-04-28",
+      "+@id": "release-info"
+    },
+    "version": "1.1.0",
+    "Profile": [
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Public",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-251545",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251546",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251547",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251548",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251549",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251550",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251551",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251552",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251553",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251554",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251555",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251557",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251558",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251559",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251560",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-252881",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251562",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251563",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251564",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251565",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251566",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251567",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251568",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251569",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251570",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251571",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251572",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251573",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251577",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251578",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251580",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251581",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-252908",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-252909",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Classified",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-251545",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251546",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251547",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251548",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251549",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251550",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251551",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251552",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251553",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251554",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251555",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251557",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251558",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251559",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251560",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-252881",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251562",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251563",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251564",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251565",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251566",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251567",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251568",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251569",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251570",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251571",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251572",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251573",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251577",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251578",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251580",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251581",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-252908",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-252909",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "CIS-Benchmark-All-Recommendations_Sensitive",
+        "title": "CIS Benchmark - All Recommendations",
+        "description": "CIS profile: CIS Benchmark - All Recommendations",
+        "select": [
+          {
+            "+@idref": "V-251545",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251546",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251547",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251548",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251549",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251550",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251551",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251552",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251553",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251554",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251555",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251557",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251558",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251559",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251560",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-252881",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251562",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251563",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251564",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251565",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251566",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251567",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251568",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251569",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251570",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251571",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251572",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251573",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251577",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251578",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251580",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-251581",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-252908",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-252909",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-251545",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251545r961869_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.1",
+          "title": "FFOX-00-000001",
+          "description": "<VulnDiscussion>The installed version of Firefox must be supported.\n\nRationale:\nUsing versions of an application that are not supported by the vendor is not permitted.\nVendors respond to security flaws with updates and patches. These updates are not available for unsupported versions, which can leave the application vulnerable to attack.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.1"
+          },
+          "fixtext": {
+            "+content": "Upgrade the version of the browser to an approved version by obtaining software from the vendor or other trusted source.",
+            "+@fixref": "F-SV-251545r961869_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251545r961869_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251545r961869_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Run Firefox. Click the ellipsis button >> Help >> About Firefox, and view the version number.\nIf the Firefox version is not a supported version, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251546",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251546r961869_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.2",
+          "title": "FFOX-00-000002",
+          "description": "<VulnDiscussion>Firefox must be configured to allow only TLS 1.2 or above.\n\nRationale:\nUse of versions prior to TLS 1.2 are not permitted. SSL 2.0 and SSL 3.0 contain a number of security flaws. These versions must be disabled in compliance with the Network Infrastructure and Secure Remote Computing STIGs.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.2"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Minimum SSL version enabled Policy State: Enabled Policy Value:\nTLS 1.2 (or TLS 1.3) macOS \"plist\" file: Add the following:\n<key>SSLVersionMin</key>\n<string>tls1.2</string> (or <string>tls1.3</string>)\nLinux \"policies.json\" file: Add the following in the policies section:\n\"SSLVersionMin\": \"tls1.2\" or (\"SSLVersionMin\": \"tls1.3\")",
+            "+@fixref": "F-SV-251546r961869_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251546r961869_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251546r961869_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser window.\nIf \"SSLVersionMin\" is not displayed under Policy Name or the Policy Value is not \"tls1.2\" or \"tls1.3\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251547",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251547r1067550_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.3",
+          "title": "FFOX-00-000003",
+          "description": "<VulnDiscussion>Firefox must be configured to ask which certificate to present to a website when a certificate is required.\n\nRationale:\nWhen a website asks for a certificate for user authentication, Firefox must be configured to have the user choose which certificate to present. Websites within DOD require user authentication for access, which increases security for DOD information. Access will be denied to the user if certificate management is not configured.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.3"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Preferences Policy State: Enabled Policy Value:\n{\n\"security.default_personal_cert\": {\n\"Value\": \"Ask Every Time\",\n\"Status\": \"locked\"\n}\n}\nmacOS \"plist\" file: Add the following:\n<key>Preferences</key>\n<dict>\n<key>security.default_personal_cert</key>\n<dict>\n<key>Value</key>\n<string>Ask Every Time</string>\n<key>Status</key>\n<string>locked</string>\n</dict>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"Preferences\": {\n\"security.default_personal_cert\": {\n\"Value\": \"Ask Every Time\",\n\"Status\": \"locked\"\n}\n}",
+            "+@fixref": "F-SV-251547r1067550_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251547r1067550_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251547r1067550_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"Preferences\" is not displayed under Policy Name and the Policy Value does not include \"security.default_personal_cert\" with a value of \"Ask Every Time\" and status of \"locked\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251548",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251548r1067552_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.4",
+          "title": "FFOX-00-000004",
+          "description": "<VulnDiscussion>Firefox must be configured to not automatically check for updated versions of installed search plugins.\n\nRationale:\nUpdates must be controlled and installed from authorized and trusted servers. This setting overrides a number of other settings that may direct the application to access external URLs.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.4"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Preferences Policy State: Enabled Policy Value:\n{\n\"browser.search.update\": {\n\"Value\": false,\n\"Status\": \"locked\"\n}\n}\nmacOS \"plist\" file: Add the following:\n<key>Preferences</key>\n<dict>\n<key>browser.search.update</key>\n<dict>\n<key>Value</key>\n<false/>\n<key>Status</key>\n<string>locked</string>\n</dict>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"Preferences\": {\n\"browser.search.update\": {\n\"Value\": false,\n\"Status\": \"locked\"\n}\n}",
+            "+@fixref": "F-SV-251548r1067552_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251548r1067552_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251548r1067552_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"Preferences\" is not displayed under Policy Name or the Policy Value does not include \"browser.search.update\" with a value of \"false\" and status of \"locked\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251549",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251549r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.5",
+          "title": "FFOX-00-000005",
+          "description": "<VulnDiscussion>Firefox must be configured to not automatically update installed add-ons and plugins.\n\nRationale:\nSet this to false to disable checking for updated versions of the Extensions/Themes.\nAutomatic updates from untrusted sites puts the enclave at risk of attack and may override security settings.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.5"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\Extensions Policy Name: Extension Update Policy State: Disabled macOS \"plist\" file: Add the following:\n<key>ExtensionUpdate</key>\n<false/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"ExtensionUpdate\": false",
+            "+@fixref": "F-SV-251549r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251549r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251549r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser window.\nIf \"ExtensionUpdate\" is not displayed under Policy Name or the Policy Value is not \"false\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251550",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251550r961194_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.6",
+          "title": "FFOX-00-000006",
+          "description": "<VulnDiscussion>Firefox must be configured to not automatically execute or download MIME types that are not authorized for auto-download.\n\nRationale:\nSome files can be downloaded or execute without user interaction. This setting ensures these files are not downloaded and executed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.6"
+          },
+          "fixtext": {
+            "+content": "Remove any unauthorized extensions from the auto-download list.",
+            "+@fixref": "F-SV-251550r961194_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251550r961194_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251550r961194_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:preferences\" in the browser address bar.\nType \"Applications\" in the Find bar in the upper-right corner.\nDetermine if any of the following file extensions are listed: HTA, JSE, JS, MOCHA, SHS, VBE, VBS, SCT, WSC, FDF, XFDF, LSL, LSO, LSS, IQY, RQY, DOS, BAT, PS, EPS, WCH, WCM, WB1, WB3, WCH, WCM, AD.\nIf the entry exists and the \"Action\" is \"Save File\" or \"Always Ask\", this is not a finding.\nIf an extension exists and the entry in the Action column is associated with an application that does/can execute the code, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251551",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251551r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.7",
+          "title": "FFOX-00-000007",
+          "description": "<VulnDiscussion>Firefox must be configured to disable form fill assistance.\n\nRationale:\nTo protect privacy and sensitive data, Firefox provides the ability to configure the program so that data entered into forms is not saved. This mitigates the risk of a website gleaning private information from prefilled information.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.7"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Disable Form History Policy State: Enabled macOS \"plist\" file: Add the following:\n<key>DisableFormHistory</key>\n<true/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"DisableFormHistory\": true",
+            "+@fixref": "F-SV-251551r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251551r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251551r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser window.\nIf \"DisableFormHistory\" is not displayed under Policy Name or the Policy Value is not \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251552",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251552r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.8",
+          "title": "FFOX-00-000008",
+          "description": "<VulnDiscussion>Firefox must be configured to not use a password store with or without a master password.\n\nRationale:\nFirefox can be set to store passwords for sites visited by the user. These individual passwords are stored in a file and can be protected by a master password. Autofill of the password can then be enabled when the site is visited. This feature could also be used to autofill the certificate PIN, which could lead to compromise of DoD information.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.8"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: PasswordManager Policy State: Disabled macOS \"plist\" file: Add the following:\n<key>PasswordManagerEnabled</key>\n<false/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"PasswordManagerEnabled\": false",
+            "+@fixref": "F-SV-251552r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251552r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251552r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser window.\nIf \"PasswordManagerEnabled\" is not displayed under Policy Name or the Policy Value is not \"false\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251553",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251553r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.9",
+          "title": "FFOX-00-000009",
+          "description": "<VulnDiscussion>Firefox must be configured to block pop-up windows.\n\nRationale:\nPop-up windows may be used to launch an attack within a new browser window with altered settings. This setting blocks pop-up windows created while the page is loading.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.9"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\Popups Policy Name: Block pop-ups from websites Policy State: Enabled Policy Name: Do not allow preferences to be changed Policy State: Enabled Optional: Policy Name: Allowed Sites Policy State: Enabled Click \"Show...\" and enter a list of websites to be allowlisted.\nmacOS \"plist\" file: Add the following:\n<key>PopupBlocking</key>\n<dict>\n<key>Allow</key>\n<array>\n<string>http://example.mil</string>\n<string>http://example.gov</string>\n</array>\n<key>Default</key>\n<true/>\n<key>Locked</key>\n<true/>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"PopupBlocking\": {\n\"Allow\": [\"http://example.mil/\",\n\"http://example.gov/\"],\n\"Default\": true,\n\"Locked\": true}",
+            "+@fixref": "F-SV-251553r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251553r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251553r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"PopupBlocking\" is not displayed under Policy Name or the Policy Value is not \"Default\" \"true\", this is a finding. If \"PopupBlocking\" is not displayed under Policy Name or the Policy Value is not \"Locked\" \"true\", this is a finding.\n\"PopupBlocking\" \"Enabled\" may be used to specify an allowlist of sites where pop-ups are desired, this is optional."
+          }
+        }
+      },
+      {
+        "+@id": "V-251554",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251554r1067554_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.10",
+          "title": "FFOX-00-000010",
+          "description": "<VulnDiscussion>Firefox must be configured to prevent JavaScript from moving or resizing windows.\n\nRationale:\nJavaScript can make changes to the browser's appearance. This activity can help disguise an attack taking place in a minimized background window. Configure the browser setting to prevent scripts on visited websites from moving and resizing browser windows.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.10"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Preferences Policy State: Enabled Policy Value:\n{\n\"dom.disable_window_move_resize\": {\n\"Value\": true,\n\"Status\": \"locked\"\n}\n}\nmacOS \"plist\" file: Add the following:\n<key>Preferences</key>\n<dict>\n<key>dom.disable_window_move_resize</key>\n<dict>\n<key>Value</key>\n<true/>\n<key>Status</key>\n<string>locked</string>\n</dict>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"Preferences\": {\n\"dom.disable_window_move_resize\": {\n\"Value\": true,\n\"Status\": \"locked\"\n}\n}",
+            "+@fixref": "F-SV-251554r1067554_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251554r1067554_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251554r1067554_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"Preferences\" is not displayed under Policy Name or the Policy Value does not include \"dom.disable_window_move_resize\" with a value of \"true\" and status of \"locked\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251555",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251555r1067556_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.11",
+          "title": "FFOX-00-000011",
+          "description": "<VulnDiscussion>Firefox must be configured to prevent JavaScript from raising or lowering windows.\n\nRationale:\nJavaScript can raise and lower browser windows to cause improper input. Configure the browser setting to prevent scripts on visited websites from raising and lowering browser windows.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.11"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Preferences Policy State: Enabled Policy Value:\n{\n\"dom.disable_window_flip\": {\n\"Value\": true,\n\"Status\": \"locked\"\n}\n}\nmacOS \"plist\" file: Add the following:\n<key>Preferences</key>\n<dict>\n<key>dom.disable_window_flip</key>\n<dict>\n<key>Value</key>\n<true/>\n<key>Status</key>\n<string>locked</string>\n</dict>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"Preferences\": {\n\"dom.disable_window_flip\": {\n\"Value\": true,\n\"Status\": \"locked\"\n}\n}",
+            "+@fixref": "F-SV-251555r1067556_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251555r1067556_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251555r1067556_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"Preferences\" is not displayed under Policy Name or the Policy Value does not include \"dom.disable_window_flip\" with a value of \"true\" and status of \"locked\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251557",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251557r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.12",
+          "title": "FFOX-00-000013",
+          "description": "<VulnDiscussion>Firefox must be configured to disable the installation of extensions.\n\nRationale:\nA browser extension is a program that has been installed into the browser to add functionality. Where a plug-in interacts only with a web page and usually a third-party external application (e.g., Flash, Adobe Reader), an extension interacts with the browser program itself. Extensions are not embedded in web pages and must be downloaded and installed in order to work. Extensions allow browsers to avoid restrictions that apply to web pages.\nFor example, an extension can be written to combine data from multiple domains and present it when a certain page is accessed, which can be considered cross-site scripting. If a browser is configured to allow unrestricted use of extensions, plug-ins can be loaded and installed from malicious sources and used on the browser.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.12"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\Addons Policy Name: Allow add-on installs from websites Policy State: Disabled macOS \"plist\" file: Add the following:\n<key>InstallAddonsPermission</key>\n<false/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"InstallAddonsPermission\": {\n\"Default\": false\n}",
+            "+@fixref": "F-SV-251557r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251557r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251557r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"InstallAddonsPermission\" is not displayed under Policy Name or the Policy Value is not \"Default\" \"false\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251558",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251558r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.13",
+          "title": "FFOX-00-000014",
+          "description": "<VulnDiscussion>Background submission of information to Mozilla must be disabled.\n\nRationale:\nFirefox by default sends information about Firefox to Mozilla servers. There should be no background submission of technical and other information from DoD computers to Mozilla with portions posted publicly.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.13"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Disable Telemetry Policy State: Enabled macOS \"plist\" file: Add the following:\n<key>DisableTelemetry</key>\n<true/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"DisableTelemetry\": true",
+            "+@fixref": "F-SV-251558r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251558r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251558r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser window.\nIf \"DisableTelemetry\" is not displayed under Policy Name or the Policy Value is not \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251559",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251559r961167_rule",
+          "+@weight": "10.0",
+          "+@severity": "low",
+          "version": "1.14",
+          "title": "FFOX-00-000015",
+          "description": "<VulnDiscussion>Firefox development tools must be disabled.\n\nRationale:\nInformation needed by an attacker to begin looking for possible vulnerabilities in a web browser includes any information about the web browser and plug-ins or modules being used. When debugging or trace information is enabled in a production web browser, information about the web browser, such as web browser type, version, patches installed, plug-ins and modules installed, type of code being used by the hosted application, and any back ends being used for data storage may be displayed. Because this information may be placed in logs and general messages during normal operation of the web browser, an attacker does not have to cause an error condition to gain this information.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.14"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Disable Developer Tools Policy State: Enabled macOS \"plist\" file: Add the following:\n<key>DisableDeveloperTools</key>\n<true/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"DisableDeveloperTools\": true",
+            "+@fixref": "F-SV-251559r961167_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251559r961167_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251559r961167_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser window.\nIf \"DisableDeveloperTools\" is not displayed under Policy Name or the Policy Value is not \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251560",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251560r1067559_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.15",
+          "title": "FFOX-00-000016",
+          "description": "<VulnDiscussion>Firefox must have the DOD root certificates installed.\n\nRationale:\nThe DOD root certificates will ensure that the trust chain is established for server certificates issued from the DOD Certificate Authority (CA).</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.15"
+          },
+          "fixtext": {
+            "+content": "Install the DOD root certificates. Other AO-approved certificates may also be used.\nCertificates designed for SIPRNet may be used as appropriate.\nOn Windows, import certificates from the operating system by using Certificates >> Import Enterprise Roots (Certificates) via policy or Group Policy Object (GPO).",
+            "+@fixref": "F-SV-251560r1067559_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251560r1067559_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251560r1067559_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:preferences#privacy\" in the browser window.\nScroll down to the bottom and select \"View Certificates...\".\nIn the Certificate Manager window, select the \"Authorities\" tab.\nScroll through the Certificate Name list to the U.S. Government heading. Look for the entries for DOD Root CA 3, DOD Root CA 4, and DOD Root CA 5.\nIf there are entries for DOD Root CA 3, DOD Root CA 4, and DOD Root CA 5, select them individually.\nClick \"View\".\nVerify the issuer name is \"US Government\".\nIf there are no entries for the appropriate DOD root certificates, this is a finding. If other AO-approved certificates are used, this is not a finding. If SIPRNet-specific certificates are used, this is not a finding.\nNote: In a Windows environment, use of policy setting \"security.enterprise_roots.enabled=true\" will point Firefox to the Windows Trusted Root Certification Authority Store. This is not a finding. It can also be set via the policy Certificates >> ImportEnterpriseRoots, which can be verified via \"about:policies\"."
+          }
+        }
+      },
+      {
+        "+@id": "V-252881",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-252881r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.16",
+          "title": "FFOX-00-000017",
+          "description": "<VulnDiscussion>Firefox must be configured to not delete data upon shutdown.\n\nRationale:\nFor diagnostic purposes, data must remain behind when the browser is closed. This is required to meet non-repudiation controls.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.16"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\Clear data when browser is closed Policy Name: Cache, Cookies, Download History, Form & Search History, Browsing History, Active Logins, Site Preferences, Offline Website Data Policy State: Disabled Policy Name: Locked Policy State: Enabled macOS \"plist\" file: Add the following:\n<key>SanitizeOnShutdown</key>\n<dict>\n<key>Cache</key>\n<false/>\n<key>Cookies</key>\n<false/>\n<key>Downloads</key>\n<false/>\n<key>FormData</key>\n<false/>\n<key>History</key>\n<false/>\n<key>Sessions</key>\n<false/>\n<key>SiteSettings</key>\n<false/>\n<key>OfflineApps</key>\n<false/>\n<key>Locked</key>\n<true/>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"SanitizeOnShutdown\": {\n\"Cache\": false,\n\"Cookies\": false,\n\"Downloads\": false,\n\"FormData\": false,\n\"History\": false,\n\"Sessions\": false,\n\"SiteSettings\": false,\n\"OfflineApps\": false,\n\"Locked\": true\n}",
+            "+@fixref": "F-SV-252881r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-252881r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-252881r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"SanitizeOnShutdown\" is not displayed under Policy Name or the Policy Value does not have {\"Cache\":false,\"Cookies\":false,\"Downloads\":false,\"FormData\":false,\"Sessions\":false,\"His tory\":false,\"OfflineApps\":false,\"SiteSettings\":false,\"Locked\":true}, this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251562",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251562r987660_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.17",
+          "title": "FFOX-00-000018",
+          "description": "<VulnDiscussion>Firefox must prevent the user from quickly deleting data.\n\nRationale:\nThere should not be an option for a user to \"forget\" work they have done. This is required to meet non-repudiation controls.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.17"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Disable Forget Button Policy State: Enabled macOS \"plist\" file: Add the following:\n<key>DisableForgetButton</key>\n<true/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"DisableForgetButton\": true",
+            "+@fixref": "F-SV-251562r987660_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251562r987660_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251562r987660_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"DisableForgetButton\" is not displayed under Policy Name or the Policy Value is not \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251563",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251563r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.18",
+          "title": "FFOX-00-000019",
+          "description": "<VulnDiscussion>Firefox private browsing must be disabled.\n\nRationale:\nPrivate browsing allows the user to browse the internet without recording their browsing history/activity. From a forensics perspective, this is unacceptable. Best practice requires that browser history is retained.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.18"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Disable Private Browsing Policy State: Enabled macOS \"plist\" file: Add the following:\n<key>DisablePrivateBrowsing</key>\n<true/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"DisablePrivateBrowsing\": true",
+            "+@fixref": "F-SV-251563r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251563r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251563r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser window.\nIf \"DisablePrivateBrowsing\" is not displayed under Policy Name or the Policy Value is not \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251564",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251564r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.19",
+          "title": "FFOX-00-000020",
+          "description": "<VulnDiscussion>Firefox search suggestions must be disabled.\n\nRationale:\nSearch suggestions must be disabled as this could lead to searches being conducted that were never intended to be made.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.19"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\Search Policy Name: Search Suggestions Policy State: Disabled macOS \"plist\" file: Add the following:\n<key>SearchSuggestEnabled</key>\n<false/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"SearchSuggestEnabled\": false",
+            "+@fixref": "F-SV-251564r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251564r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251564r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser window.\nIf \"SearchSuggestEnabled\" is not displayed under Policy Name or the Policy Value is not \"false\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251565",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251565r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "low",
+          "version": "1.20",
+          "title": "FFOX-00-000021",
+          "description": "<VulnDiscussion>Firefox autoplay must be disabled.\n\nRationale:\nAutoplay allows the user to control whether videos can play automatically (without user consent) with audio content. The user must be able to select content that is run within the browser window.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.20"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\Permissions\\Autoplay Policy Name: Default autoplay level Policy State: Enabled Policy Value: Block Audio and Video macOS \"plist\" file: Add the following:\n<key>Permissions</key>\n<dict>\n<key>Autoplay</key>\n<dict>\n<string>block-audio-video</string>\n</dict>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"Permissions\": {\n\"Autoplay\": {\n\"Default\": \"block-audio-video\"\n}\n}",
+            "+@fixref": "F-SV-251565r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251565r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251565r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"Permissions\" is not displayed under Policy Name or the Policy Value is not \"Autoplay\" with a value of \"Default\" and \"Block-audio-video\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251566",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251566r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.21",
+          "title": "FFOX-00-000022",
+          "description": "<VulnDiscussion>Firefox network prediction must be disabled.\n\nRationale:\nIf network prediction is enabled, requests to URLs are made without user consent. The browser should always make a direct DNS request without prefetching occurring.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.21"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Network Prediction Policy State: Disabled macOS \"plist\" file: Add the following:\n<key>NetworkPrediction</key>\n<false/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"NetworkPrediction\": false",
+            "+@fixref": "F-SV-251566r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251566r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251566r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser window.\nIf \"NetworkPrediction\" is not displayed under Policy Name or the Policy Value is not \"false\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251567",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251567r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.22",
+          "title": "FFOX-00-000023",
+          "description": "<VulnDiscussion>Firefox fingerprinting protection must be enabled.\n\nRationale:\nThe Content Blocking/Tracking Protection feature stops Firefox from loading content from malicious sites. The content might be a script or an image, for example. If a site is on one of the tracker lists that Firefox is set to use, the fingerprinting script (or other tracking script/image) will not be loaded from that site.\nFingerprinting scripts collect information about browser and device configuration, such as operating system, screen resolution, and other settings. By compiling these pieces of data, fingerprinters create a unique profile that can be used to track the user around the web.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.22"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\Tracking Protection Policy Name: Fingerprinting Policy State: Enabled macOS \"plist\" file: Add the following:\n<key>EnableTrackingProtection</key>\n<dict>\n<key>Fingerprinting</key>\n<true/>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"EnableTrackingProtection\": {\n\"Fingerprinting\": true\n}",
+            "+@fixref": "F-SV-251567r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251567r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251567r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"EnableTrackingProtection\" is not displayed under Policy Name or the Policy Value is not \"Fingerprinting\" with a value of \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251568",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251568r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.23",
+          "title": "FFOX-00-000024",
+          "description": "<VulnDiscussion>Firefox cryptomining protection must be enabled.\n\nRationale:\nThe Content Blocking/Tracking Protection feature stops Firefox from loading content from malicious sites. The content might be a script or an image, for example. If a site is on one of the tracker lists that Firefox is set to use, the fingerprinting script (or other tracking script/image) will not be loaded from that site.\nCryptomining scripts use a computer's central processing unit to invisibly mine cryptocurrency.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.23"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\Tracking Protection Policy Name: Cryptomining Policy State: Enabled macOS \"plist\" file: Add the following:\n<key>EnableTrackingProtection</key>\n<dict>\n<key>Cryptomining</key>\n<true/>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"EnableTrackingProtection\": {\n\"Cryptomining\": true\n}",
+            "+@fixref": "F-SV-251568r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251568r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251568r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"EnableTrackingProtection\" is not displayed under Policy Name or the Policy Value is not \"Cryptomining\" with a value of \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251569",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251569r1067561_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.24",
+          "title": "FFOX-00-000025",
+          "description": "<VulnDiscussion>Firefox Enhanced Tracking Protection must be enabled.\n\nRationale:\nTracking generally refers to content, cookies, or scripts that can collect browsing data across multiple sites.\nIt is detrimental for applications to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.\nApplications are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).\nExamples of nonessential capabilities include but are not limited to advertising software or browser plug-ins that are not related to requirements or provide a wide array of functionality not required for every mission but that cannot be disabled.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.24"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Preferences Policy State: Enabled Policy Value:\n{\n\"browser.contentblocking.category\": {\n\"Value\": \"strict\",\n\"Status\": \"locked\"\n}\n}\nmacOS \"plist\" file: Add the following:\n<key>Preferences</key>\n<dict>\n<key>browser.contentblocking.category</key>\n<dict>\n<key>Value</key>\n<string>strict</string>\n<key>Status</key>\n<string>locked</string>\n</dict>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"Preferences\": {\n\"browser.contentblocking.category\": {\n\"Value\": \"strict\",\n\"Status\": \"locked\"\n}\n}",
+            "+@fixref": "F-SV-251569r1067561_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251569r1067561_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251569r1067561_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"Preferences\" is not displayed under Policy Name or the Policy Value does not include \"browser.contentblocking.category\" with a value of \"strict\" and status of \"locked\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251570",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251570r1067563_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.25",
+          "title": "FFOX-00-000026",
+          "description": "<VulnDiscussion>Firefox extension recommendations must be disabled.\n\nRationale:\nThe Recommended Extensions program makes it easier for users to discover extensions that have been reviewed for security, functionality, and user experience.\nAllowed extensions are to be centrally managed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.25"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Preferences Policy State: Enabled Policy Value:\n{\n\"extensions.htmlaboutaddons.recommendations.enabled\": {\n\"Value\": false,\n\"Status\": \"locked\"\n}\n}\nmacOS \"plist\" file: Add the following:\n<key>Preferences</key>\n<dict>\n<key>extensions.htmlaboutaddons.recommendations.enabled</key>\n<dict>\n<key>Value</key>\n<false/>\n<key>Status</key>\n<string>locked</string>\n</dict>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"Preferences\": {\n\"extensions.htmlaboutaddons.recommendations.enabled\": {\n\"Value\": false,\n\"Status\": \"locked\"\n},",
+            "+@fixref": "F-SV-251570r1067563_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251570r1067563_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251570r1067563_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"Preferences\" is not displayed under Policy Name and the Policy Value does not include \"extensions.htmlaboutaddons.recommendations.enabled\" with a value of \"false\" and status of \"locked\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251571",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251571r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.26",
+          "title": "FFOX-00-000027",
+          "description": "<VulnDiscussion>Firefox deprecated ciphers must be disabled.\n\nRationale:\nA weak cipher is defined as an encryption/decryption algorithm that uses a key of insufficient length. Using an insufficient length for a key in an encryption/decryption algorithm opens up the possibility (or probability) that the encryption scheme could be broken.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.26"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\Disabled Ciphers Policy Name: TLS_RSA_WITH_3DES_EDE_CBC_SHA Policy State: Enabled macOS \"plist\" file: Add the following:\n<key>DisabledCiphers</key>\n<dict>\n<key>TLS_RSA_WITH_3DES_EDE_CBC_SHA</key>\n<true/>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"DisabledCiphers\": {\n\"TLS_RSA_WITH_3DES_EDE_CBC_SHA\": true\n}",
+            "+@fixref": "F-SV-251571r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251571r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251571r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"DisabledCiphers\" is not displayed under Policy Name or the Policy Value is not \"TLS_RSA_WITH_3DES_EDE_CBC_SHA\" with a value of \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251572",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251572r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.27",
+          "title": "FFOX-00-000028",
+          "description": "<VulnDiscussion>Firefox must not recommend extensions as the user is using the browser.\n\nRationale:\nThe Recommended Extensions program recommends extensions to users as they surf the web.\nThe user must not be encouraged to install extensions from the websites they visit.\nAllowed extensions are to be centrally managed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.27"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\User Messaging Policy Name: Extension Recommendations Policy State: Disabled macOS \"plist\" file: Add the following:\n<key>UserMessaging</key>\n<dict>\n<key>ExtensionRecommendations</key>\n<false/>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"UserMessaging\": {\n\"ExtensionRecommendations\": false\n}",
+            "+@fixref": "F-SV-251572r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251572r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251572r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"UserMessaging\" is not displayed under Policy Name or the Policy Value is not \"ExtensionRecommendations\" with a value of \"false\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251573",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251573r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.28",
+          "title": "FFOX-00-000029",
+          "description": "<VulnDiscussion>The Firefox New Tab page must not show Top Sites, Sponsored Top Sites, Pocket Recommendations, Sponsored Pocket Stories, Searches, Highlights, or Snippets.\n\nRationale:\nThe New Tab page by default shows a list of built-in top sites, as well as the top sites the user has visited.\nIt is detrimental for applications to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.\nApplications are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).\nExamples of non-essential capabilities include but are not limited to advertising software or browser plug-ins that are not related to requirements or provide a wide array of functionality not required for every mission but that cannot be disabled.\nThe new tab page must not actively show user activity.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.28"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\n• Policy Name: Customize Firefox Home\n• Policy State: Enabled\n• Policy Value: Uncheck \"Search\"\n• Policy Value: Uncheck \"Top Sites\"\n• Policy Value: Uncheck \"Sponsored Top Sites\"\n• Policy Value: Uncheck \"Recommended by Pocket\"\n• Policy Value: Uncheck \"Sponsored Pocket Stories\"\n• Policy Value: Uncheck \"Download History\"\n• Policy Value: Uncheck \"Snippets\"\n• Policy Value: Check \"Do not allow settings to be changed\" macOS \"plist\" file: Add the following:\n<key>FirefoxHome</key>\n<dict>\n<key>Search</key>\n<false/>\n<key>TopSites</key>\n<false/>\n<key>SponsoredTopSites</key>\n<false/>\n<key>Pocket</key>\n<false/>\n<key>SponsoredPocket</key>\n<false/>\n<key>Highlights</key>\n<false/>\n<key>Snippets</key>\n<false/>\n<key>Locked</key>\n<true/>\n</dict>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"FirefoxHome\": {\n\"Search\": false,\n\"TopSites\": false,\n\"SponsoredTopSites\": false,\n\"Pocket\": false,\n\"SponsoredPocket\": false,\n\"Highlights\": false,\n\"Snippets\": false,\n\"locked\": true\n}",
+            "+@fixref": "F-SV-251573r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251573r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251573r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\n• If \"FirefoxHome\" is not displayed under Policy Name or the Policy Value does not have \"Search\" with a value of \"false\", this is a finding.\n• If \"FirefoxHome\" is not displayed under Policy Name or the Policy Value does not have \"TopSites\" with a value of \"false\", this is a finding.\n• If \"FirefoxHome\" is not displayed under Policy Name or the Policy Value does not have \"SponsoredTopSites\" with a value of \"false\", this is a finding.\n• If \"FirefoxHome\" is not displayed under Policy Name or the Policy Value does not have \"Pocket\" with a value of \"false\", this is a finding.\n• If \"FirefoxHome\" is not displayed under Policy Name or the Policy Value does not have \"SponsoredPocket\" with a value of \"false\", this is a finding.\n• If \"FirefoxHome\" is not displayed under Policy Name or the Policy Value does not have \"Highlights\" with a value of \"false\", this is a finding.\n• If \"FirefoxHome\" is not displayed under Policy Name or the Policy Value does not have \"Snippets\" with a value of \"false\", this is a finding.\n• If \"FirefoxHome\" is not displayed under Policy Name or the Policy Value does not have \"Locked\" with a value of \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251577",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251577r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.29",
+          "title": "FFOX-00-000033",
+          "description": "<VulnDiscussion>Firefox must be configured so that DNS over HTTPS is disabled.\n\nRationale:\nDNS over HTTPS has generally not been adopted in the DoD. DNS is tightly controlled.\nIt is detrimental for applications to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.\nApplications are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).\nExamples of non-essential capabilities include, but are not limited to, advertising software or browser plug-ins not related to requirements or providing a wide array of functionality not required for every mission, but cannot be disabled.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.29"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\DNS Over HTTPS Policy Name: Enabled Policy State: Disabled macOS \"plist\" file:\n<key>DNSOverHTTPS</key>\n<dict>\n<key>Enabled</key>\n<false/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"DNSOverHTTPS\": {\"Enabled\": false}",
+            "+@fixref": "F-SV-251577r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251577r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251577r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"DNSOverHTTPS\" is not displayed under Policy Name or the Policy Value does not have \"Enabled\" with a value of \"false\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251578",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251578r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.30",
+          "title": "FFOX-00-000034",
+          "description": "<VulnDiscussion>Firefox accounts must be disabled.\n\nRationale:\nDisable Firefox Accounts integration (Sync).\nIt is detrimental for applications to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.\nApplications are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).\nExamples of non-essential capabilities include but are not limited to advertising software or browser plug-ins that are not related to requirements or provide a wide array of functionality not required for every mission but that cannot be disabled.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.30"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Disable Firefox Accounts Policy State: Enabled macOS \"plist\" file:\n<key>DisableFirefoxAccounts</key>\n<true/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"DisableFirefoxAccounts\": true",
+            "+@fixref": "F-SV-251578r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251578r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251578r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"DisableFirefoxAccounts\" is not displayed under Policy Name or the Policy Value is not \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251580",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251580r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.31",
+          "title": "FFOX-00-000036",
+          "description": "<VulnDiscussion>Firefox feedback reporting must be disabled.\n\nRationale:\nDisable the menus for reporting sites (Submit Feedback, Report Deceptive Site).\nIt is detrimental for applications to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.\nApplications are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).\nExamples of non-essential capabilities include but are not limited to advertising software or browser plug-ins that are not related to requirements or provide a wide array of functionality not required for every mission but that cannot be disabled.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.31"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Disable Feedback Commands Policy State: Enabled macOS \"plist\" file:\n<key>DisableFeedbackCommands</key>\n<true/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"DisableFeedbackCommands\": true",
+            "+@fixref": "F-SV-251580r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251580r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251580r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"DisableFeedbackCommands\" is not displayed under Policy Name or the Policy Value is not \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-251581",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-251581r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.32",
+          "title": "FFOX-00-000037",
+          "description": "<VulnDiscussion>Firefox encrypted media extensions must be disabled.\n\nRationale:\nEnable or disable Encrypted Media Extensions and optionally lock it.\nIf \"Enabled\" is set to \"false\", Firefox does not download encrypted media extensions (such as Widevine) unless the user consents to installing them.\nIf \"Locked\" is set to \"true\" and \"Enabled\" is set to \"false\", Firefox will not download encrypted media extensions (such as Widevine) or ask the user to install them.\nIt is detrimental for applications to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.\nApplications are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).\nExamples of non-essential capabilities include but are not limited to advertising software or browser plug-ins that are not related to requirements or provide a wide array of functionality not required for every mission but that cannot be disabled.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.32"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox\\Encrypted Media Extensions Policy Name: Enable Encrypted Media Extensions Policy State: Disabled Policy Name: Lock Encrypted Media Extensions Policy State: Enabled macOS \"plist\" file:\n<key>EncryptedMediaExtensions</key>\n<dict>\n<key>Enabled</key>\n<false/>\n<key>Locked</key>\n<true/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"EncryptedMediaExtensions\": {\n\"Enabled\": false,\n\"Locked\": true\n}",
+            "+@fixref": "F-SV-251581r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-251581r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-251581r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"EncryptedMediaExtensions\" is not displayed under Policy Name or the Policy Value does not have \"Enabled\" set to \"false\" or the Policy Value does not have \"Locked\" set to \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-252908",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-252908r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.33",
+          "title": "FFOX-00-000038",
+          "description": "<VulnDiscussion>Pocket must be disabled.\n\nRationale:\nPocket, previously known as Read It Later, is a social bookmarking service for storing, sharing, and discovering web bookmarks. Data gathering cloud services such as this are generally disabled in the DoD.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.33"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Disable Pocket Policy State: Enabled macOS \"plist\" file:\n<key>DisablePocket</key>\n<true/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"DisablePocket\": true",
+            "+@fixref": "F-SV-252908r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-252908r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-252908r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"DisablePocket\" is not displayed under Policy Name or the Policy Value does not have a value of \"true\", this is a finding."
+          }
+        }
+      },
+      {
+        "+@id": "V-252909",
+        "title": "1 STIG RULES",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-252909r960963_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "1.34",
+          "title": "FFOX-00-000039",
+          "description": "<VulnDiscussion>Firefox Studies must be disabled.\n\nRationale:\nStudies try out different features and ideas before they are released to all Firefox users.\nTesting beta software is not in the DoD user's mission.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Mozilla Firefox STIG Benchmark",
+            "dc:identifier": "1.34"
+          },
+          "fixtext": {
+            "+content": "Windows group policy:\n1. Open the group policy editor tool with \"gpedit.msc\".\n2. Navigate to Policy Path: Computer Configuration\\Administrative Templates\\Mozilla\\Firefox Policy Name: Disable Firefox Studies Policy State: Enabled macOS \"plist\" file:\n<key>DisableFirefoxStudies</key>\n<true/>\nLinux \"policies.json\" file: Add the following in the policies section:\n\"DisableFirefoxStudies\": true",
+            "+@fixref": "F-SV-252909r960963_fix"
+          },
+          "fix": {
+            "+@id": "F-SV-252909r960963_fix"
+          },
+          "check": {
+            "+@system": "C-SV-252909r960963_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Mozilla_Firefox_STIG_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Type \"about:policies\" in the browser address bar.\nIf \"DisableFirefoxStudies\" is not displayed under Policy Name or the Policy Value does not have a value of \"true\", this is a finding."
+          }
+        }
+      }
+    ]
+  }
+}

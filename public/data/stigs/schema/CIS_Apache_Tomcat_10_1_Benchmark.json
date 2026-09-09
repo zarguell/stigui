@@ -1,0 +1,2953 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CIS_Apache_Tomcat_10_1_Benchmark",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2024-08-20"
+    },
+    "title": "CIS Apache Tomcat 10.1 Benchmark",
+    "description": "All CIS Benchmarks™ focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like: • Monitoring the base operating system and applications for vulnerabilities and quickly updating with the latest security patches. • End-point protection (Antivirus software, Endpoint Detection and Response (EDR), etc.). • Logging and monitoring user and system activity. In the end, the CIS Benchmarks™ are designed to be a key component of a comprehensive cybersecurity program. Important Usage Information All CIS Benchmarks™ are available free for non-commercial use from the CIS Website. They can be used to manually assess and remediate systems and applications. In lieu of manual assessment and remediation, there are several tools available to assist with assessment: • CIS Configuration Assessment Tool (CIS-CAT ® Pro Assessor) • CIS Benchmarks™ Certified 3rd Party Tooling These tools make the hardening process much more scalable for large numbers of systems and applications. NOTE: Some tooling focuses only on the CIS Benchmarks™ Recommendations that can be fully automated (skipping ones marked Manual). It is important that ALL Recommendations ( Automated and Manual) be addressed, since all are important for properly securing systems and are typically in scope for audits. In addition, CIS has developed CIS Build Kits for some common technologies to assist in applying CIS Benchmarks™ Recommendations. When remediating systems (changing configuration settings on deployed systems as per the CIS Benchmarks ™ Recommendations), please approach this with caution and test thoroughly. The following is a reasonable remediation approach to follow: 1. NEVER deploy a CIS Build Kit, or any internally developed remediation method, to production systems without proper testing. 2. Proper testing consists of the following: Internal Only - General a. Understand the configuration (including installed applications) of the targeted systems. b. Read the Impact section of the given Recommendation to help determine if there might be an issue with the targeted systems. c. Test the configuration changes on representative lab system(s). This way if there is some issue it can be resolved prior to deploying to any production systems. d. When confident, initially deploy to a small sub-set of users and monitor closely for issues. This way if there is some issue it can be resolved prior to deploying more broadly. e. When confident, iteratively deploy to additional groups and monitor closely for issues until deployment is complete. This way if there is some issue it can be resolved prior to continuing deployment. NOTE: CIS and the CIS Benchmarks™ development communities in CIS WorkBench do their best to test and have high confidence in the Recommendations, but they cannot test potential conflicts with all possible system deployments. Known potential issues identified during CIS Benchmarks™ development are documented in the Impact section of each Recommendation. By using CIS and/or CIS Benchmarks™ Certified tools, and being careful with remediation deployment, it is possible to harden large numbers of deployed systems in a cost effective, efficient, and safe manner. NOTE: As previously stated, the PDF versions of the CIS Benchmarks™ are available for free, non-commercial use on the CIS Website. All other formats of the CIS Benchmarks™ (MS Word, Excel, and Build Kits) are available for CIS SecureSuite ® members. CIS-CAT ® Pro is also available to CIS SecureSuite ® members. Target Technology Details This document, Security Configuration Benchmark for Apache Tomcat 10.1, provides prescriptive guidance for establishing a secure configuration posture for Apache Tomcat versions 10.1 running on Linux. This guide was tested against Apache Tomcat 10 as installed by tar packages provided by Apache. To obtain the latest version of this guide, please visit http://benchmarks.cisecurity.org. If you have questions, comments, or have identified ways to improve this guide, please write us at feedback@cisecurity.org. Internal Only - General",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://www.cisecurity.org/cis-benchmarks",
+      "dc:publisher": "Center for Internet Security",
+      "dc:source": "CIS Benchmarks"
+    },
+    "plain-text": {
+      "+content": "Release: 1.0.0 Benchmark Date: 2024-08-20",
+      "+@id": "release-info"
+    },
+    "version": "1.0.0",
+    "Profile": [
+      {
+        "+@id": "L1_Public",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-2C82A9F2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5B98B8D6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8516D50",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0671A173",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A5597F7F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7155B25D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E3B619A8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-44D2FC05",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DB767471",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-516B2A96",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A6292EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CF1934C8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-13292693",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-55A894EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B4DF63B4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-803A6606",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-102BB4CD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E987BD3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E407084E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C1E14D46",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9A6F64B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C6D52C17",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-27A63D70",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D4111A5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AAD526AC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-501C76EA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1391BE31",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9395355E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E2F33FF5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-819B239B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD182DA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A503C11",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6F6F8CCD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-45EB87AA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-80F8891D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DE4436AE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-40B90A13",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-198A7B8F",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Classified",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-2C82A9F2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5B98B8D6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8516D50",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0671A173",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A5597F7F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7155B25D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E3B619A8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-44D2FC05",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DB767471",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-516B2A96",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A6292EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CF1934C8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-13292693",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-55A894EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B4DF63B4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-803A6606",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-102BB4CD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E987BD3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E407084E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C1E14D46",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9A6F64B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C6D52C17",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-27A63D70",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D4111A5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AAD526AC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-501C76EA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1391BE31",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9395355E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E2F33FF5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-819B239B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD182DA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A503C11",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6F6F8CCD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-45EB87AA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-80F8891D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DE4436AE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-40B90A13",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-198A7B8F",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L1_Sensitive",
+        "title": "Level 1",
+        "description": "CIS profile: Level 1",
+        "select": [
+          {
+            "+@idref": "V-2C82A9F2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5B98B8D6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B8516D50",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0671A173",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A5597F7F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7155B25D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E3B619A8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-44D2FC05",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DB767471",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-516B2A96",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A6292EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CF1934C8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-13292693",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-55A894EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B4DF63B4",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-803A6606",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-102BB4CD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8E987BD3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E407084E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C1E14D46",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9A6F64B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C6D52C17",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-27A63D70",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D4111A5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AAD526AC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-501C76EA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1391BE31",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9395355E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E2F33FF5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-819B239B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BD182DA9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0A503C11",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6F6F8CCD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-45EB87AA",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-80F8891D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DE4436AE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-40B90A13",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-198A7B8F",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Public",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-12A85CEC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F360346B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-772AAFCB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B05B56A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D87E07B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A08AEF40",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-ACBD58D9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6C8E6494",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0EC688DB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B14DBE61",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D00F42AD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C77635D5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D2A0353",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A273C740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-25BD6E72",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D2F6C50F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D9E05CF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BC79634D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8EB9250E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CB3978E0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DF3EE64",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6D4B87B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F1C5E65C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Classified",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-12A85CEC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F360346B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-772AAFCB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B05B56A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D87E07B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A08AEF40",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-ACBD58D9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6C8E6494",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0EC688DB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B14DBE61",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D00F42AD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C77635D5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D2A0353",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A273C740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-25BD6E72",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D2F6C50F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D9E05CF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BC79634D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8EB9250E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CB3978E0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DF3EE64",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6D4B87B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F1C5E65C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "L2_Sensitive",
+        "title": "Level 2",
+        "description": "CIS profile: Level 2",
+        "select": [
+          {
+            "+@idref": "V-12A85CEC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F360346B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-772AAFCB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B05B56A2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D87E07B9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A08AEF40",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-ACBD58D9",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6C8E6494",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0EC688DB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B14DBE61",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D00F42AD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C77635D5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D2A0353",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A273C740",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-25BD6E72",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D2F6C50F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1D9E05CF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BC79634D",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8EB9250E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-CB3978E0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DF3EE64",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6D4B87B3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F1C5E65C",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-12A85CEC",
+        "title": "1 Remove Extraneous Resources",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-12A85CECr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.1",
+          "title": "Remove extraneous files and directories",
+          "description": "<VulnDiscussion>The installation may provide example applications, documentation, and other directories which may not serve a production use.\n\nRationale:\nRemoving sample resources is a defense in depth measure that reduces potential exposures introduced by these resources.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "1.1"
+          },
+          "fixtext": {
+            "+content": "Perform the following to remove extraneous resources:\n$ rm -rf $CATALINA_HOME/webapps/docs \\\n$CATALINA_HOME/webapps/examples \\\n$CATALINA_HOME/webapps/ROOT\nIf the Manager and HOST-Manager application are not utilized, also remove the following resources:\n$ rm – rf $CATALINA_HOME/webapps/host-manager \\\n$CATALINA_HOME/webapps/manager",
+            "+@fixref": "F-12A85CECr01_fix"
+          },
+          "fix": {
+            "+@id": "F-12A85CECr01_fix"
+          },
+          "check": {
+            "+@system": "C-12A85CEC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine the existence of extraneous resources:\n$ ls -l $CATALINA_HOME/webapps/examples \\\n$CATALINA_HOME/webapps/docs \\\n$CATALINA_HOME/webapps/ROOT \\\n$CATALINA_HOME/webapps/host-manager \\\n$CATALINA_HOME/webapps/manager\nNo output implies no sample resources are present."
+          }
+        }
+      },
+      {
+        "+@id": "V-F360346B",
+        "title": "1 Remove Extraneous Resources",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F360346Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "1.2",
+          "title": "Disable Unused Connectors",
+          "description": "<VulnDiscussion>The default installation of Tomcat includes connectors with default settings. These are traditionally set up for convenience. It is best to remove these connectors and enable only what is needed.\n\nRationale:\nImproperly configured or unnecessarily installed Connectors may lead to a security exposure.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "1.2"
+          },
+          "fixtext": {
+            "+content": "Within the $CATALINA_HOME/conf/server.xml, remove, or comment out, each unused Connector. For example, to disable an instance of the HTTPConnector, remove the following:\n<Connector className=\"org.apache.catalina.connector.http.HttpConnector\"\n...\nconnectionTimeout=\"60000\"/>",
+            "+@fixref": "F-F360346Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-F360346Br01_fix"
+          },
+          "check": {
+            "+@system": "C-F360346B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following command to find configured Connectors. Ensure only those required are present and not commented out:\n$ grep “Connector” $CATALINA_HOME/conf/server.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-772AAFCB",
+        "title": "2 Limit Server Platform Information Leaks",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-772AAFCBr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.1",
+          "title": "Alter the Advertised server.info String",
+          "description": "<VulnDiscussion>The server.info attribute contains the name of the application service. This value is presented to Tomcat clients when clients connect to the tomcat server.\n\nRationale:\nAltering the server.info attribute may increase the complexity for attackers to determine which vulnerabilities affect the server platform.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "2.1"
+          },
+          "fixtext": {
+            "+content": "Perform the following to alter the server platform string that gets displayed when clients connect to the tomcat server.\n1. Extract the ServerInfo.properties file from the catalina.jar file:\n$ cd $CATALINA_HOME/lib\n$ jar xf catalina.jar org/apache/catalina/util/ServerInfo.properties\n2. Navigate to the util directory that was created\ncd org/apache/catalina/util\n3. Open ServerInfo.properties in an editor 4. Update the server.info attribute in the ServerInfo.properties file.\nserver.info=<SomeWebServer>\n5. Update the catalina.jar with the modified ServerInfo.properties file.\nInternal Only - General\n$ jar uf catalina.jar org/apache/catalina/util/ServerInfo.properties",
+            "+@fixref": "F-772AAFCBr01_fix"
+          },
+          "fix": {
+            "+@id": "F-772AAFCBr01_fix"
+          },
+          "check": {
+            "+@system": "C-772AAFCB_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the server.info value has been changed:\nExtract the ServerInfo.properties file and examine the server.info attribute.\n$ cd $CATALINA_HOME/lib\n$ jar xf catalina.jar org/apache/catalina/util/ServerInfo.properties\n$ grep server.info org/apache/catalina/util/ServerInfo.properties"
+          }
+        }
+      },
+      {
+        "+@id": "V-B05B56A2",
+        "title": "2 Limit Server Platform Information Leaks",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B05B56A2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.2",
+          "title": "Alter the Advertised server.number String",
+          "description": "<VulnDiscussion>The server.number attribute represents the specific version of Tomcat that is executing. This value is presented to Tomcat clients when connect.\n\nRationale:\nAdvertising a valid server version may provide attackers with information useful for locating vulnerabilities that affect the server platform. Altering the server version string may increase the complexity for attackers to determine which vulnerabilities affect the server platform.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "2.2"
+          },
+          "fixtext": {
+            "+content": "Perform the following to alter the server version string that gets displayed when clients connect to the server.\n1. Extract the ServerInfo.properties file from the catalina.jar file:\n$ cd $CATALINA_HOME/lib\n$ jar xf catalina.jar org/apache/catalina/util/ServerInfo.properties\n2. Navigate to the util directory that was created\n$ cd org/apache/Catalina/util\n3. Open ServerInfo.properties in an editor 4. Update the server.number attribute\nserver.number=<someversion>\n5. Update the catalina.jar with the modified ServerInfo.properties file.\nInternal Only - General\n$ jar uf catalina.jar org/apache/catalina/util/ServerInfo.properties",
+            "+@fixref": "F-B05B56A2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B05B56A2r01_fix"
+          },
+          "check": {
+            "+@system": "C-B05B56A2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the server.number value has been changed:\nExtract the ServerInfo.properties file and examine the server.number attribute.\n$ cd $CATALINA_HOME/lib\n$ jar xf catalina.jar org/apache/catalina/util/ServerInfo.properties\n$ grep server.number org/apache/catalina/util/ServerInfo.properties"
+          }
+        }
+      },
+      {
+        "+@id": "V-D87E07B9",
+        "title": "2 Limit Server Platform Information Leaks",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D87E07B9r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.3",
+          "title": "Alter the Advertised server.built Date",
+          "description": "<VulnDiscussion>The server.built date represents the date which Tomcat was compiled and packaged. This value is presented to Tomcat clients when clients connect to the server.\n\nRationale:\nAltering the server.built string may make it harder for attackers to fingerprint which vulnerabilities affect the server platform.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "2.3"
+          },
+          "fixtext": {
+            "+content": "Perform the following to alter the server version string that gets displayed when clients connect to the server.\n1. Extract the ServerInfo.properties file from the catalina.jar file:\n$ cd $CATALINA_HOME/lib\n$ jar xf catalina.jar org/apache/catalina/util/ServerInfo.properties\n2. Navigate to the util directory that was created\n$ cd org/apache/Catalina/util\n3. Open ServerInfo.properties in an editor 4. Update the server.built attribute in the ServerInfo.properties file.\nserver.built=\n5. Update the catalina.jar with the modified ServerInfo.properties file.\nInternal Only - General\n$ jar uf catalina.jar org/apache/catalina/util/ServerInfo.properties",
+            "+@fixref": "F-D87E07B9r01_fix"
+          },
+          "fix": {
+            "+@id": "F-D87E07B9r01_fix"
+          },
+          "check": {
+            "+@system": "C-D87E07B9_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the server.built value has been changed:\nExtract the ServerInfo.properties file and examine the server.built attribute.\n$ cd $CATALINA_HOME/lib\n$ jar xf catalina.jar org/apache/catalina/util/ServerInfo.properties\n$ grep server.built org/apache/catalina/util/ServerInfo.properties"
+          }
+        }
+      },
+      {
+        "+@id": "V-A08AEF40",
+        "title": "2 Limit Server Platform Information Leaks",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A08AEF40r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.4",
+          "title": "Disable X-Powered-By HTTP Header and Rename the Server Value for all Connectors",
+          "description": "<VulnDiscussion>The xpoweredBy setting determines if Apache Tomcat will advertise its presence via the X-Powered-By HTTP header. It is recommended that this value be set to false. The server attribute overrides the default value that is sent down in the HTTP header further masking Apache Tomcat.\n\nRationale:\nPreventing Tomcat from advertising its presence in this manner may increase the complexity for attackers to determine which vulnerabilities affect the server platform.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "2.4"
+          },
+          "fixtext": {
+            "+content": "Perform the following to prevent Tomcat from advertising its presence via the X- PoweredBy HTTP header.\n1. Add the xpoweredBy attribute to each Connector specified in $CATALINA_HOME/conf/server.xml. Set the xpoweredBy attributes value to false.\n<Connector\n...\nxpoweredBy=\"false\" />\nAlternatively, ensure the xpoweredBy attribute for each Connector specified in $CATALINA_HOME/conf/server.xml is absent.\n2. Add the server attribute to each Connector specified in $CATALINA_HOME/conf/server.xml. Set the server attribute value to anything except a blank string.\nInternal Only - General",
+            "+@fixref": "F-A08AEF40r01_fix"
+          },
+          "fix": {
+            "+@id": "F-A08AEF40r01_fix"
+          },
+          "check": {
+            "+@system": "C-A08AEF40_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the server platform, as advertised in the HTTP Server header, has been changed:\n1. Locate all Connector elements in $CATALINA_HOME/conf/server.xml.\n2. Ensure each Connector that has the xpoweredBy attribute does NOT have it set to true."
+          }
+        }
+      },
+      {
+        "+@id": "V-2C82A9F2",
+        "title": "2 Limit Server Platform Information Leaks",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2C82A9F2r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.5",
+          "title": "Disable client facing Stack Traces",
+          "description": "<VulnDiscussion>When a runtime error occurs during request processing, Apache Tomcat will display debugging information to the requestor. It is recommended that such debug information be withheld from the requestor.\n\nRationale:\nDebugging information, such as that found in call stacks, often contains sensitive information which may be useful to an attacker. By preventing Tomcat from providing this information, the risk of leaking sensitive information to a potential attacker is reduced.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "2.5"
+          },
+          "fixtext": {
+            "+content": "Perform the following to prevent Tomcat from providing debug information to the requestor during runtime errors:\n1. Create a web page that contains the logic or message you wish to invoke when encountering a runtime error. For example purposes, assume this page is located at /error.jsp.\n2. Add a child element, <error-page>, to the <web-app> element, in the $CATALINA_HOME/conf/web.xml file.\n3. Add a child element, <exception-type>, to the <error-page> element. Set the value of the <exception-type> element to java.lang.Throwable.\n4. Add a child element <location> to the <error-page> element. Set the value of the <location> element to the location of page created in step 1.\nInternal Only - General The resulting entry will look as follows:\n<error-page>\n<exception-type>java.lang.Throwable</exception-type>\n<location>/error.jsp</location>\n</error-page>",
+            "+@fixref": "F-2C82A9F2r01_fix"
+          },
+          "fix": {
+            "+@id": "F-2C82A9F2r01_fix"
+          },
+          "check": {
+            "+@system": "C-2C82A9F2_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if Tomcat is configured to prevent sending debug information to the requestor 1. Ensure an <error-page> element is defined in $CATALINA_HOME/conf/web.xml.\n2. Ensure the <error-page> element has an <exception-type> child element with a value of java.lang.Throwable.\n3. Ensure the <error-page> element has a <location> child element.\nNote: Perform the above for each application hosted within Tomcat. Per application instances of web.xml can be found at $CATALINA_HOME/webapps/ <app_name> /WEB- INF/web.xml."
+          }
+        }
+      },
+      {
+        "+@id": "V-5B98B8D6",
+        "title": "2 Limit Server Platform Information Leaks",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5B98B8D6r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "2.6",
+          "title": "Turn off TRACE",
+          "description": "<VulnDiscussion>The HTTP TRACE verb provides debugging and diagnostics information for a given request.\n\nRationale:\nDiagnostic information, such as that found in the response to a TRACE request, often contains sensitive information which may useful to an attacker. By preventing Tomcat from providing this information, the risk of leaking sensitive information to a potential attacker is reduced.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "2.6"
+          },
+          "fixtext": {
+            "+content": "Perform the following to prevent Tomcat from accepting a TRACE request:\n1. Set the allowTrace attribute for each Connector specified in $CATALINA_HOME/conf/server.xml to false.\nInternal Only - General\n<Connector ... allowTrace=\"false\" />\nAlternatively, ensure the allowTrace attribute is absent from each Connector specified in $CATALINA_HOME/conf/server.xml.\n2. Add the following as a child of the web-app root element, if present, in each web applications web.xml:\n<security-constraint>\n<web-resource-collection>\n<web-resource-name>restricted methods</web-resource-name>\n...\n<http-method>TRACE</http-method>\n...\n</web-resource-collection>\n...\n</security-constraint>",
+            "+@fixref": "F-5B98B8D6r01_fix"
+          },
+          "fix": {
+            "+@id": "F-5B98B8D6r01_fix"
+          },
+          "check": {
+            "+@system": "C-5B98B8D6_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the server platform, as advertised in the HTTP Server header, has been changed:\n1. Locate all Connector elements in $CATALINA_HOME/conf/server.xml.\n2. Ensure each Connector does not have an allowTrace attribute or, if present, the allowTrace attribute is NOT set true.\nPerform the following for each application hosted within Tomcat with a web-app root element in the web.xml:\n1. Locate each application instance of web.xml in $CATALINA_HOME/webapps/ <app_name> /WEB-INF/web.xml.\n2. Ensure a security-constraint/web-resource-collection exists the child value pairings:\n1.\nweb-resource-name with a value of restricted methods.\n2.\nurl-pattern with a value of /*.\n3.\nhttp-method with a value of TRACE."
+          }
+        }
+      },
+      {
+        "+@id": "V-ACBD58D9",
+        "title": "2 Limit Server Platform Information Leaks",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-ACBD58D9r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "2.7",
+          "title": "Ensure Sever Header is Modified To Prevent Information Disclosure",
+          "description": "<VulnDiscussion>The server header is a vanity header developed to help identify the underlying technology in a server for troubleshooting and identification. This header is unnecessary and could be used to target your website for exploitation. Tomcat does not provide the ability to remove the server header, however, it does provide the ability to modify the header.\n\nRationale:\nThe server header may specify the underlying technology used by an application.\nAttackers are able to conduct reconnaissance on a website using these response headers. This header could be used to target attacks for specific known vulnerabilities associated with the underlying technology. Removing this header will prevent targeting of your application for specific exploits by non-determined attackers.\nWhile this is not the only way to fingerprint a site through the response headers, it makes it harder and prevents some potential attackers from targeting your website.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "2.7"
+          },
+          "fixtext": {
+            "+content": "In $CATALINA_HOME/conf/server.xml, add the server directive to the connector as shown below replacing apache with the text of your choosing. This text should not help in identifying the server.\n<Connector port=\"8443\" server=”I am a teapot\" redirectPort=\"8080\" />\nScripted:\n• If you do not have the header defined:\nsed - ir 's/Connector/Connector server=”I am a teapot\"/g'\n$CATALINA_HOME/conf/server.xml\n• If you already have a header but it is still revealing Internal Only - General\nsed -ir 's/server=\"[^\"]*\"/server=\"I Am A Teapot\"/g'\n$CATALINA_HOME/conf/server.xml",
+            "+@fixref": "F-ACBD58D9r01_fix"
+          },
+          "fix": {
+            "+@id": "F-ACBD58D9r01_fix"
+          },
+          "check": {
+            "+@system": "C-ACBD58D9_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "In $CATALINA_HOME/conf/server.xml, check for the server directive as shown below.\nIf the directive is not present or the directive specifies something revealing on the underlying infrastructure then the server header should be changed.\n<Connector port=\"8443\" server=”Apache\" redirectPort=\"8080\" />"
+          }
+        }
+      },
+      {
+        "+@id": "V-B8516D50",
+        "title": "3 Protect the Shutdown Port",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B8516D50r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "3.1",
+          "title": "Set a nondeterministic Shutdown command value",
+          "description": "<VulnDiscussion>Tomcat listens on TCP port 8005 to accept shutdown requests. By connecting to this port and sending the SHUTDOWN command, all applications within Tomcat are halted.\nThe shutdown port is not exposed to the network as it is bound to the loopback interface. It is recommended that a nondeterministic value be set for the shutdown attribute in $CATALINA_HOME/conf/server.xml.\n\nRationale:\nSetting the shutdown attribute to a nondeterministic value will prevent malicious local users from shutting down Tomcat.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "3.1"
+          },
+          "fixtext": {
+            "+content": "Perform the following to set a nondeterministic value for the shutdown attribute.\nUpdate the shutdown attribute in $CATALINA_HOME/conf/server.xml as follows:\n<Server port=\"8005\" shutdown=\"NONDETERMINISTICVALUE\">\nNote: NONDETERMINISTICVALUE should be replaced with a sequence of random characters.",
+            "+@fixref": "F-B8516D50r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B8516D50r01_fix"
+          },
+          "check": {
+            "+@system": "C-B8516D50_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the shutdown port is configured to use the default shutdown command:\nEnsure the shutdown attribute in $CATALINA_HOME/conf/server.xml is not set to SHUTDOWN.\n$ cd $CATALINA_HOME/conf\n$ grep 'shutdown[[:space:]]*=[[:space:]]*\"SHUTDOWN\"' server.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-6C8E6494",
+        "title": "3 Protect the Shutdown Port",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6C8E6494r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "3.2",
+          "title": "Disable the Shutdown port",
+          "description": "<VulnDiscussion>Tomcat listens on TCP port 8005 to accept shutdown requests. By connecting to this port and sending the SHUTDOWN command, all applications within Tomcat are halted.\nThe shutdown port is not exposed to the network as it is bound to the loopback interface. If this functionality is not used, it is recommended that the shutdown port be disabled.\n\nRationale:\nDisabling the Shutdown port will eliminate the risk of malicious local entities using the shutdown command to disable the Tomcat server.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "3.2"
+          },
+          "fixtext": {
+            "+content": "Set the port to -1 in the $CATALINA_HOME/conf/server.xml to disable the shutdown port:\n<Server port=\"-1\" shutdown=\"SHUTDOWN\">",
+            "+@fixref": "F-6C8E6494r01_fix"
+          },
+          "fix": {
+            "+@id": "F-6C8E6494r01_fix"
+          },
+          "check": {
+            "+@system": "C-6C8E6494_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the shutdown port has been disabled:\nEnsure the port attribute in $CATALINA_HOME/conf/server.xml is set to -1.\n$ cd $CATALINA_HOME/conf/\n$ grep '<Server[[:space:]]\\+[^>]*port[[:space:]]*=[[:space:]]*\"-1\"'\nserver.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-0671A173",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0671A173r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.1",
+          "title": "Restrict access to $CATALINA_HOME",
+          "description": "<VulnDiscussion>$CATALINA_HOME is the environment variable which holds the path to the root Tomcat directory. It is important to protect access to this in order to protect the Tomcat binaries and libraries from unauthorized modification. It is recommended that the ownership of $CATALINA_HOME be tomcat_admin:tomcat. It is also recommended that the permission on $CATALINA_HOME block read, write, and execute for the world ( o-rwx) and block write access to the group ( g-w).\n\nRationale:\nThe security of processes and data which traverse or depend on Tomcat may become compromised if the $CATALINA_HOME is not secured.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.1"
+          },
+          "fixtext": {
+            "+content": "Perform the following to establish the recommended state:\n1. Set the ownership of the $CATALINA_HOME to tomcat_admin:tomcat.\n# chown tomcat_admin.tomcat $CATALINA_HOME\n2. Remove write permissions for the group and read, write, and execute permissions for the world Internal Only - General\n# chmod g-w,o-rwx $CATALINA_HOME",
+            "+@fixref": "F-0671A173r01_fix"
+          },
+          "fix": {
+            "+@id": "F-0671A173r01_fix"
+          },
+          "check": {
+            "+@system": "C-0671A173_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to ensure the permission on the $CATALINA_HOME directory prevent unauthorized modification.\n$ cd $CATALINA_HOME\n$ find . -follow -maxdepth 0 \\( -perm /o+rwx,g=w -o ! -user tomcat_admin -o !\n-group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-A5597F7F",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A5597F7Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.2",
+          "title": "Restrict access to $CATALINA_BASE",
+          "description": "<VulnDiscussion>$CATALINA_BASE is the environment variable that specifies the base directory which most relative paths are resolved. $CATALINA_BASE is usually used when there are multiple instances of Tomcat running. It is important to protect access to this in order to protect the Tomcat-related binaries and libraries from unauthorized modification. It is recommended that the ownership of $CATALINA_BASE be tomcat_admin:tomcat. It is also recommended that the permission on $CATALINA_BASE block read, write, and execute for the world ( o-rwx) and block write access to the group ( g-w).\n\nRationale:\nThe security of processes and data which traverse or depend on Tomcat may become compromised if the $CATALINA_BASE is not secured.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.2"
+          },
+          "fixtext": {
+            "+content": "Perform the following to establish the recommended state:\n1. Set the ownership of the $CATALINA_BASE to tomcat_admin:tomcat.\n# chown tomcat_admin.tomcat $CATALINA_BASE\n2. Remove write permissions for the group and read, write, and execute permissions for the world Internal Only - General\n# chmod g-w,o-rwx $CATALINA_BASE",
+            "+@fixref": "F-A5597F7Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-A5597F7Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-A5597F7F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to ensure the permission on the $CATALINA_BASE directory prevent unauthorized modification.\n$ cd $CATALINA_BASE\n$ find . -follow -maxdepth 0 \\( -perm /o+rwx,g=w -o ! -user tomcat_admin -o !\n-group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-7155B25D",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7155B25Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.3",
+          "title": "Restrict access to Tomcat configuration directory",
+          "description": "<VulnDiscussion>The Tomcat $CATALINA_HOME/conf directory contains Tomcat configuration files. It is recommended that the ownership of this directory be tomcat_admin:tomcat. It is also recommended that the permissions on this directory deny read, write, and execute for the world ( o-rwx) and deny write access to the group ( g-w).\n\nRationale:\nRestricting access to these directories will prevent local users from maliciously or inadvertently altering Tomcat’s configuration.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.3"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to Tomcat configuration files:\n1. Set the ownership of the $CATALINA_HOME/conf to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/conf\n2. Remove write permissions for the group and read, write, and execute permissions for the world.\n# chmod g-w,o-rwx $CATALINA_HOME/conf",
+            "+@fixref": "F-7155B25Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-7155B25Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-7155B25D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/conf are securely configured.\n# cd $CATALINA_HOME/conf\n# find . -maxdepth 0 \\( -perm /o+rwx,g=w -o ! -user tomcat_admin -o ! -group\ntomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-E3B619A8",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E3B619A8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.4",
+          "title": "Restrict access to Tomcat logs directory",
+          "description": "<VulnDiscussion>The Tomcat $CATALINA_HOME/logs directory contains Tomcat logs. It is recommended that the ownership of this directory be tomcat_admin:tomcat. It is also recommended that the permissions on this directory deny read, write, and execute for the world ( o- rwx).\n\nRationale:\nRestricting access to these directories will prevent local users from maliciously or inadvertently altering Tomcat’s logs.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.4"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to Tomcat log files:\n1. Set the ownership of the $CATALINA_HOME/logs to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/logs\n2. Remove read, write, and execute permissions for the world\n# chmod o-rwx $CATALINA_HOME/logs",
+            "+@fixref": "F-E3B619A8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E3B619A8r01_fix"
+          },
+          "check": {
+            "+@system": "C-E3B619A8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/logs are securely configured.\n# cd $CATALINA_HOME\n# find logs -follow -maxdepth 0 \\( -perm /o+rwx -o ! -user tomcat_admin -o !\n-group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-44D2FC05",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-44D2FC05r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.5",
+          "title": "Restrict access to Tomcat temp directory",
+          "description": "<VulnDiscussion>The Tomcat $CATALINA_HOME/temp directory is used by Tomcat to persist temporary information to disk. It is recommended that the ownership of this directory be tomcat_admin:tomcat. It is also recommended that the permissions on this directory deny read, write, and execute for the world ( o-rwx).\n\nRationale:\nRestricting access to these directories will prevent local users from maliciously or inadvertently affecting the integrity of Tomcat processes.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.5"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to Tomcat temp directory:\n1. Set the ownership of the $CATALINA_HOME/temp to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/temp\n2. Remove read, write, and execute permissions for the world\n# chmod o-rwx $CATALINA_HOME/temp",
+            "+@fixref": "F-44D2FC05r01_fix"
+          },
+          "fix": {
+            "+@id": "F-44D2FC05r01_fix"
+          },
+          "check": {
+            "+@system": "C-44D2FC05_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/temp are securely configured.\n# cd $CATALINA_HOME\n# find temp -follow -maxdepth 0 \\( -perm /o+rwx -o ! -user tomcat_admin -o !\n-group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-DB767471",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-DB767471r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.6",
+          "title": "Restrict access to Tomcat binaries directory",
+          "description": "<VulnDiscussion>The Tomcat $CATALINA_HOME/bin directory contains executes that are part of the Tomcat run-time. It is recommended that the ownership of this directory be tomcat_admin:tomcat. It is also recommended that the permission on this directory deny read, write, and execute for the world ( o-rwx) and deny write access to the group ( g-w).\n\nRationale:\nRestricting access to these directories will prevent local users from maliciously or inadvertently affecting the integrity of Tomcat processes.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.6"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to Tomcat bin directory:\n1. Set the ownership of the $CATALINA_HOME/bin to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/bin\n2. Remove read, write, and execute permissions for the world\n# chmod g-w,o-rwx $CATALINA_HOME/bin",
+            "+@fixref": "F-DB767471r01_fix"
+          },
+          "fix": {
+            "+@id": "F-DB767471r01_fix"
+          },
+          "check": {
+            "+@system": "C-DB767471_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/bin are securely configured.\n# cd $CATALINA_HOME\n# find bin -follow -maxdepth 0 \\( -perm /o+rwx,g=w -o ! -user tomcat_admin -o\n! -group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-516B2A96",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-516B2A96r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.7",
+          "title": "Restrict access to Tomcat web application directory",
+          "description": "<VulnDiscussion>The Tomcat $CATALINA_HOME/webapps directory contains web applications that are deployed through Tomcat. It is recommended that the ownership of this directory be tomcat_admin:tomcat. It is also recommended that the permission on this directory eny read, write, and execute for the world ( o-rwx) and deny write access to the group ( g-w).\n\nRationale:\nRestricting access to these directories will prevent local users from maliciously or inadvertently affecting the integrity of web applications.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.7"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to Tomcat webapps directory:\n1. Set the ownership of the $CATALINA_HOME/webapps to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/webapps\n2. Remove read, write, and execute permissions for the world.\n# chmod g-w,o-rwx $CATALINA_HOME/webapps",
+            "+@fixref": "F-516B2A96r01_fix"
+          },
+          "fix": {
+            "+@id": "F-516B2A96r01_fix"
+          },
+          "check": {
+            "+@system": "C-516B2A96_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/webapps are securely configured.\n# cd $CATALINA_HOME\n# find webapps -follow -maxdepth 0 \\( -perm /o+rwx,g=w -o ! -user\ntomcat_admin -o ! -group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-0A6292EC",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0A6292ECr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.8",
+          "title": "Restrict access to Tomcat catalina.properties",
+          "description": "<VulnDiscussion>catalina.properties is a Java properties file which contains settings for Tomcat including class loader information, security package lists, and performance properties. It is recommended that access to this file properly protect from unauthorized changes.\n\nRationale:\nRestricting access to this file will prevent local users from maliciously or inadvertently altering Tomcat’s security policy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.8"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to catalina.properties:\n1. Set the ownership of the $CATALINA_HOME/conf/catalina.properties to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/conf/catalina.properties\n2. Set the permissions of the $CATALINA_HOME/conf/catalina.properties to 600\n# chmod 600 $CATALINA_HOME/conf/catalina.properties",
+            "+@fixref": "F-0A6292ECr01_fix"
+          },
+          "fix": {
+            "+@id": "F-0A6292ECr01_fix"
+          },
+          "check": {
+            "+@system": "C-0A6292EC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/conf/catalina.properties are securely configured.\n# cd $CATALINA_HOME/conf/\n# find catalina.properties -follow -maxdepth 0 \\( -perm /o+rwx,g+rwx,u+x -o !\n-user tomcat_admin -o ! -group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-CF1934C8",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CF1934C8r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.9",
+          "title": "Restrict access to Tomcat catalina.policy",
+          "description": "<VulnDiscussion>The catalina.policy file is used to configure security policies for Tomcat. It is recommended that access to this file has the proper permissions to properly protect from unauthorized changes.\n\nRationale:\nRestricting access to this file will prevent local users from maliciously or inadvertently altering Tomcat’s security policy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.9"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to $CATALINA_HOME/conf/catalina.policy.\n1. Set the owner and group owner of the contents of $CATALINA_HOME/conf/catalina.policy to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/conf/catalina.policy\n2. Set the permissions of the $CATALINA_HOME/conf/catalina.policy file to 600.\n# chmod 600 $CATALINA_HOME/conf/catalina.policy",
+            "+@fixref": "F-CF1934C8r01_fix"
+          },
+          "fix": {
+            "+@id": "F-CF1934C8r01_fix"
+          },
+          "check": {
+            "+@system": "C-CF1934C8_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/conf/catalina.policy are securely configured.\n# cd $CATALINA_HOME/conf/\n# find catalina.policy -follow -maxdepth 0 \\( -perm /o+rwx,g+rwx,u+x -o ! -\nuser tomcat_admin -o ! -group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-13292693",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-13292693r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.10",
+          "title": "Restrict access to Tomcat context.xml",
+          "description": "<VulnDiscussion>The context.xml file is loaded by all web applications and sets certain configuration options. It is recommended that access to this file properly protect from unauthorized changes.\n\nRationale:\nRestricting access to this file will prevent local users from maliciously or inadvertently altering Tomcat’s security policy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.10"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to context.xml:\n1. Set the ownership of the $CATALINA_HOME/conf/context.xml to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/conf/context.xml\n2. Set the permissions for the $CATALINA_HOME/conf/context.xml to 600.\n# chmod 600 $CATALINA_HOME/conf/context.xml",
+            "+@fixref": "F-13292693r01_fix"
+          },
+          "fix": {
+            "+@id": "F-13292693r01_fix"
+          },
+          "check": {
+            "+@system": "C-13292693_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/conf/context.xml care securely configured.\n# cd $CATALINA_HOME/conf\n# find context.xml -follow -maxdepth 0 \\( -perm /o+rwx,g+rwx,u+x -o ! -user\ntomcat_admin -o ! -group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-55A894EC",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-55A894ECr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.11",
+          "title": "Restrict access to Tomcat logging.properties",
+          "description": "<VulnDiscussion>logging.properties is a Tomcat files which specifies the logging configuration. It is recommended that access to this file properly protect from unauthorized changes.\n\nRationale:\nRestricting access to this file will prevent local users from maliciously or inadvertently altering Tomcat’s security policy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.11"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to logging.properties:\n1. Set the ownership of the $CATALINA_BASE/conf/logging.properties to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_BASE/conf/logging.properties\n2. Set the permissions for the $CATALINA_BASE/conf/logging.properties file to 600.\n# chmod 600 $CATALINA_BASE/conf/logging.properties",
+            "+@fixref": "F-55A894ECr01_fix"
+          },
+          "fix": {
+            "+@id": "F-55A894ECr01_fix"
+          },
+          "check": {
+            "+@system": "C-55A894EC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_BASE/conf/logging.properties care securely configured.\n# cd $CATALINA_BASE/conf/\n# find logging.properties -follow -maxdepth 0 \\( -perm /o+rwx,g+rwx,u+x -o !\n-user tomcat_admin -o ! -group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-B4DF63B4",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B4DF63B4r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.12",
+          "title": "Restrict access to Tomcat server.xml",
+          "description": "<VulnDiscussion>server.xml contains Tomcat servlet definitions and configurations. It is recommended that access to this file properly protect from unauthorized changes.\n\nRationale:\nRestricting access to this file will prevent local users from maliciously or inadvertently altering Tomcat’s security policy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.12"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to server.xml:\n1. Set the ownership of the $CATALINA_HOME/conf/server.xml to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/conf/server.xml\n2. Set the permissions of the $CATALINA_HOME/conf/server.xml to 600\n# chmod 600 $CATALINA_HOME/conf/server.xml",
+            "+@fixref": "F-B4DF63B4r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B4DF63B4r01_fix"
+          },
+          "check": {
+            "+@system": "C-B4DF63B4_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/conf/server.xml care securely configured.\n# cd $CATALINA_HOME/conf/\n# find server.xml -follow -maxdepth 0 \\( -perm /o+rwx,g+rwx,u+x -o ! -user\ntomcat_admin -o ! -group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-803A6606",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-803A6606r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.13",
+          "title": "Restrict access to Tomcat tomcat-users.xml",
+          "description": "<VulnDiscussion>tomcat-users.xml contains authentication information for Tomcat applications. It is recommended that access to this file properly protect from unauthorized changes.\n\nRationale:\nRestricting access to this file will prevent local users from maliciously or inadvertently altering Tomcat’s security policy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.13"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to tomcat-users.xml:\n1. Set the ownership of the $CATALINA_HOME/conf/tomcat-users.xml to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/conf/tomcat-users.xml\n2. Set the permissions of the $CATALINA_HOME/conf/tomcat-users.xml to 600\n# chmod 600 $CATALINA_HOME/conf/tomcat-users.xml",
+            "+@fixref": "F-803A6606r01_fix"
+          },
+          "fix": {
+            "+@id": "F-803A6606r01_fix"
+          },
+          "check": {
+            "+@system": "C-803A6606_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/conf/tomcat-users.xml care securely configured.\n# cd $CATALINA_HOME/conf/\n# find tomcat-users.xml -follow -maxdepth 0 \\( -perm /o+rwx,g+rwx,u+x -o ! -\nuser tomcat_admin -o ! -group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-102BB4CD",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-102BB4CDr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.14",
+          "title": "Restrict access to Tomcat web.xml",
+          "description": "<VulnDiscussion>The Tomcat configuration file web.xml stores application configuration settings. It is recommended that access to this file properly protect from unauthorized changes.\n\nRationale:\nRestricting access to this file will prevent local users from maliciously or inadvertently altering Tomcat’s security policy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.14"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to web.xml:\n1. Set the ownership of the $CATALINA_HOME/conf/web.xml to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/conf/web.xml\n2. Set the permissions for the $CATALINA_HOME/conf/web.xml file to 400.\n# chmod 400 $CATALINA_HOME/conf/web.xml",
+            "+@fixref": "F-102BB4CDr01_fix"
+          },
+          "fix": {
+            "+@id": "F-102BB4CDr01_fix"
+          },
+          "check": {
+            "+@system": "C-102BB4CD_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/conf/web.xml care securely configured.\n# cd $CATALINA_HOME/conf/\n# find web.xml -follow -maxdepth 0 \\( -perm /o+rwx,g+rwx,u+wx -o ! -user\ntomcat_admin -o ! -group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-8E987BD3",
+        "title": "4 Protect Tomcat Configurations",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8E987BD3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "4.15",
+          "title": "Restrict access to jaspic-providers.xml",
+          "description": "<VulnDiscussion>Tomcat implements JASPIC 1.1 Maintenance Release B (JSR 196). The implementation is primarily intended to enable the integration of 3rd party JASPIC authentication implementations with Tomcat.\nJASPIC may be configured dynamically by an application or statically via the $CATALINA_BASE/conf/jaspic-providers.xml configuration file. It is recommended that access to this file properly protect from unauthorized changes.\n\nRationale:\nRestricting access to this file will prevent local users from maliciously or inadvertently altering Tomcat’s security policy.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "4.15"
+          },
+          "fixtext": {
+            "+content": "Perform the following to restrict access to $CATALINA_HOME/conf/jaspic- providers.xml.\n1. Set the ownership of the $CATALINA_HOME/conf/jaspic-providers.xml file to tomcat_admin:tomcat.\n# chown tomcat_admin:tomcat $CATALINA_HOME/conf/jaspic-providers.xml\n2. Set the permissions for the $CATALINA_HOME/conf/jaspic-providers.xml file to 600.\n# chmod 600 $CATALINA_HOME/conf/jaspic-providers.xml",
+            "+@fixref": "F-8E987BD3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-8E987BD3r01_fix"
+          },
+          "check": {
+            "+@system": "C-8E987BD3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if the ownership and permissions on $CATALINA_HOME/conf/jaspic-providers.xml are securely configured.\n# cd $CATALINA_HOME/conf/\n# find jaspic-providers.xml -follow -maxdepth 0 \\( -perm /o+rwx,g+rwx,u+x -o\n! -user tomcat_admin -o ! -group tomcat \\) -ls\nThe above command should not produce any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-0EC688DB",
+        "title": "5 Configure Realms",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0EC688DBr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.1",
+          "title": "Use secure Realms",
+          "description": "<VulnDiscussion>A realm is a database of usernames and passwords used to identify valid users of web applications. Review the Realms configuration to ensure Tomcat is not configured to use MemoryRealm, JDBCRealm, UserDatabaseRealm, or JAASRealm.\n\nRationale:\nAccording to the Tomcat documentation: MemoryRealm and JDBCRealm are not designed for production usage and could result in reduced availability; the UserDatabaseRealm is not intended for large-scale installations; and the JAASRealm is not widely used and therefore the code is not as mature as the other realms.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "5.1"
+          },
+          "fixtext": {
+            "+content": "Set the Realm className setting in $CATALINA_HOME/conf/server.xml to one of the appropriate realms.",
+            "+@fixref": "F-0EC688DBr01_fix"
+          },
+          "fix": {
+            "+@id": "F-0EC688DBr01_fix"
+          },
+          "check": {
+            "+@system": "C-0EC688DB_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to ensure an improper realm is not in use:\n# grep \"Realm className\" $CATALINA_HOME/conf/server.xml | grep MemoryRealm\n# grep \"Realm className\" $CATALINA_HOME/conf/server.xml | grep JDBCRealm\n# grep \"Realm className\" $CATALINA_HOME/conf/server.xml | grep\nUserDatabaseRealm\n# grep \"Realm className\" $CATALINA_HOME/conf/server.xml | grep JAASRealm\nThe above commands should not emit any output."
+          }
+        }
+      },
+      {
+        "+@id": "V-B14DBE61",
+        "title": "5 Configure Realms",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B14DBE61r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "5.2",
+          "title": "Use LockOut Realms",
+          "description": "<VulnDiscussion>A LockOut realm wraps around standard realms adding the ability to lock a user out after multiple failed logins.\n\nRationale:\nLocking out a user after multiple failed logins slows down attackers from brute forcing logins.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "5.2"
+          },
+          "fixtext": {
+            "+content": "Create a lockout realm wrapping the main realm similar to the example below:\n<Realm className=\"org.apache.catalina.realm.LockOutRealm\"\nfailureCount=\"3\" lockOutTime=\"600\" cacheSize=\"1000\"\ncacheRemovalWarningTime=\"3600\">\n<Realm\nclassName=\"org.apache.catalina.realm.DataSourceRealm\"\ndataSourceName=... />\n</Realm>",
+            "+@fixref": "F-B14DBE61r01_fix"
+          },
+          "fix": {
+            "+@id": "F-B14DBE61r01_fix"
+          },
+          "check": {
+            "+@system": "C-B14DBE61_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to check to see if a LockOut realm is being used:\n# grep \"LockOutRealm\" $CATALINA_HOME/conf/server.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-D00F42AD",
+        "title": "6 Connector Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D00F42ADr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "6.1",
+          "title": "Setup Client-cert Authentication",
+          "description": "<VulnDiscussion>Client-cert authentication requires that each client connecting to the server have a certificate to authenticate. This is generally regarded as stronger authentication than a password as it requires the client to have the certificate and not just know a password.\n\nRationale:\nCertificate based authentication is more secure than password based authentication.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "6.1"
+          },
+          "fixtext": {
+            "+content": "In the Connector element, set the clientAuth parameter to true and the certificateVerification to required\n<-- Define a SSL Coyote HTTP/1.1 Connector on port 8443 -->\n<Connector\nport=\"8443\" minProcessors=\"5\" maxProcessors=\"75\"\nenableLookups=\"true\" disableUploadTimeout=\"true\"\nacceptCount=\"100\" debug=\"0\" scheme=\"https\" secure=\"true\";\nclientAuth=\"true\" sslProtocol=\"TLS\"/>\n...\n<Connector ...>\n<SSLHostConfig\ncertificateVerification=\"required\"\n/>",
+            "+@fixref": "F-D00F42ADr01_fix"
+          },
+          "fix": {
+            "+@id": "F-D00F42ADr01_fix"
+          },
+          "check": {
+            "+@system": "C-D00F42AD_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the Connector configuration in server.xml and ensure the clientAuth is set to true and certificateVerification is set to required."
+          }
+        }
+      },
+      {
+        "+@id": "V-E407084E",
+        "title": "6 Connector Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E407084Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.2",
+          "title": "Ensure SSLEnabled is set to True for Sensitive Connectors",
+          "description": "<VulnDiscussion>The SSLEnabled setting determines if SSL is enabled for a specific Connector. It is recommended that SSL be utilized for any Connector that sends or receives sensitive information, such as authentication credentials or personal information.\n\nRationale:\nThe SSLEnabled setting ensures SSL is active, which will in-turn ensure the confidentiality and integrity of sensitive information while in transit.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "6.2"
+          },
+          "fixtext": {
+            "+content": "In server.xml, set the SSLEnabled attribute to true for each Connector that sends or receives sensitive information\n<Connector\n…\nSSLEnabled=\"true\"\n…\n/>",
+            "+@fixref": "F-E407084Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-E407084Er01_fix"
+          },
+          "check": {
+            "+@system": "C-E407084E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the server.xml and ensure all Connectors sending or receiving sensitive information have the SSLEnabled attribute set to true."
+          }
+        }
+      },
+      {
+        "+@id": "V-C1E14D46",
+        "title": "6 Connector Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C1E14D46r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.3",
+          "title": "Ensure scheme is set accurately",
+          "description": "<VulnDiscussion>The scheme attribute is used to indicate to callers of request.getScheme() which scheme is in use by the Connector. Ensure the scheme attribute is set to http for Connectors operating over HTTP. Ensure the scheme attribute is set to https for Connectors operating over HTTPS.\n\nRationale:\nMaintaining parity between the scheme in use by the Connector and advertised by request.getScheme() will ensure applications built on Tomcat have an accurate depiction of the context and security guarantees provided to them.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "6.3"
+          },
+          "fixtext": {
+            "+content": "In server.xml, set the Connector’s scheme attribute to http for Connectors operating over HTTP. Set the Connector’s scheme attribute to https for Connectors operating over HTTPS.\n<Connector\n…\nscheme=\"https\"\n…\n/>",
+            "+@fixref": "F-C1E14D46r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C1E14D46r01_fix"
+          },
+          "check": {
+            "+@system": "C-C1E14D46_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the server.xml to ensure the Connector’s scheme attribute is set to http for Connectors operating over HTTP. Also ensure the Connector’s scheme attribute is set to https for Connectors operating over HTTPS."
+          }
+        }
+      },
+      {
+        "+@id": "V-9A6F64B3",
+        "title": "6 Connector Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9A6F64B3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.4",
+          "title": "Ensure secure is set to true only for SSL-enabled Connectors",
+          "description": "<VulnDiscussion>The secure attribute is used to convey Connector security status to applications operating over the Connector. This is typically achieved by calling request.isSecure(). Ensure the secure attribute is only set to true for Connectors operating with the SSLEnabled attribute set to true.\n\nRationale:\nAccurately reporting the security state of the Connector will help ensure that applications built on Tomcat are not unknowingly relying on security controls that are not in place.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "6.4"
+          },
+          "fixtext": {
+            "+content": "For each Connector defined in server.xml, set the secure attribute to true for those Connectors having SSLEnabled set to true. Set the secure attribute to false for those Connectors having SSLEnabled set to false.\n<Connector SSLEnabled=\"true\"\n…\nsecure=\"true\"\n…\n/>\n…\n<Connector SSLEnabled=\"false\"\n…\nsecure=\"false\"\n…\n/>",
+            "+@fixref": "F-9A6F64B3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-9A6F64B3r01_fix"
+          },
+          "check": {
+            "+@system": "C-9A6F64B3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the server.xml and ensure the secure attribute is set to true for those Connectors having SSLEnabled set to true. Also, ensure the secure attribute is set to false for those Connectors having SSLEnabled set to false."
+          }
+        }
+      },
+      {
+        "+@id": "V-C6D52C17",
+        "title": "6 Connector Security",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C6D52C17r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "6.5",
+          "title": "Ensure 'sslProtocol' is Configured Correctly for Secure Connectors",
+          "description": "<VulnDiscussion>The TLSv1.0 and TLSv1.1 protocols should be disabled via the sslProtocol directive.\nThe TLSv1.0 protocol is vulnerable to information disclosure and both protocols lack support for modern cryptographic algorithms including authenticated encryption. The only SSL/TLS protocols which should be allowed are TLSv1.2 and the newer TLSv1.3 protocol.\n\nRationale:\nThe TLSv1.0 protocol is vulnerable to the BEAST attack when used in CBC mode (October 2011). Unfortunately, the TLSv1.0 uses CBC modes for all of the block mode ciphers, which only leaves the RC4 streaming cipher which is also weak and is not recommended. Therefore, it is recommended that the TLSv1.0 protocol be disabled.\nThe TLSv1.1 protocol does not support Authenticated Encryption with Associated Data (AEAD) which is designed to simultaneously provide confidentiality, integrity, and authenticity. All major up-to-date browsers support TLSv1.2, and most recent versions of FireFox and Chrome support the newer TLSv1.3 protocol, since 2017.\nThe NIST SP 800-52r2 guidelines for TLS configuration require that TLS 1.2 is configured with FIPS-based cipher suites be supported by all government TLS servers and clients and requires support of TLS 1.3 by January 1, 2024. A September 2018 IETF draft also depreciates the usage of TLSv1.0 and TLSv1.1 as shown in the references.\nAs of March 2020 all major browsers will no longer support TLS 1.0 or TLS 1.1.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "6.5"
+          },
+          "fixtext": {
+            "+content": "In server.xml, set the sslProtocol attribute to TLSv1.2+TLSv1.3 for Connectors having SSLEnabled set to true.\nInternal Only - General\n<Connector\n…\nsslProtocol=\"TLSv1.2+TLSv1.3\"\n…\n/>",
+            "+@fixref": "F-C6D52C17r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C6D52C17r01_fix"
+          },
+          "check": {
+            "+@system": "C-C6D52C17_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review server.xml to ensure the sslProtocol attribute is set to TLSv1.2, TLSv1.3, or TLSv1.2+TLSv1.3 for all Connectors having SSLEnabled set to true."
+          }
+        }
+      },
+      {
+        "+@id": "V-C77635D5",
+        "title": "7 Establish and Protect Logging Facilities",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C77635D5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "7.1",
+          "title": "Application specific logging",
+          "description": "<VulnDiscussion>By default, java.util.logging does not provide the capabilities to configure per-web application settings, only per VM. In order to overcome this limitation Tomcat implements JULI as a wrapper for java.util.logging. JULI provides additional configuration functionality so you can set each web application with different logging specifications.\n\nRationale:\nEstablishing per application logging profiles will help ensure that each application’s logging verbosity is set to an appropriate level in order to provide appropriate information when needed for security review.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "7.1"
+          },
+          "fixtext": {
+            "+content": "Create a logging.properties file and place that into your application WEB- INF/classes directory.\nNote: By default, installing Tomcat places a logging.properties file in $CATALINA_HOME/conf. This file can be used as base for an application specific logging properties file",
+            "+@fixref": "F-C77635D5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-C77635D5r01_fix"
+          },
+          "check": {
+            "+@system": "C-C77635D5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure a logging.properties file is located at $CATALINA_BASE/webapps/ <app_name> /WEB-INF/classes."
+          }
+        }
+      },
+      {
+        "+@id": "V-27A63D70",
+        "title": "7 Establish and Protect Logging Facilities",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-27A63D70r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "7.2",
+          "title": "Specify file handler in logging.properties files",
+          "description": "<VulnDiscussion>Handlers specify where log messages are sent. Console handlers send log messages to the Java console and File handlers specify logging to a file.\n\nRationale:\nUtilizing file handlers will ensure that security event information is persisted to disk.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "7.2"
+          },
+          "fixtext": {
+            "+content": "Add the following entries, replacing <file_handler> with either FileHandler or AsyncFileHandler, to your logging.properties file if they do not exist.\nhandlers=1catalina.org.apache.juli.<file_handler>,\n2localhost.org.apache.juli.<file_handler>,\n3manager.org.apache.juli.<file_handler>, 4host-\nmanager.org.apache.juli.<file_handler>, java.util.logging.ConsoleHandler\nEnsure logging is not off and set the <logging_level> to the desired level ( SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST or ALL), for example:\norg.apache.juli.FileHandler.level=<logging_level>",
+            "+@fixref": "F-27A63D70r01_fix"
+          },
+          "fix": {
+            "+@id": "F-27A63D70r01_fix"
+          },
+          "check": {
+            "+@system": "C-27A63D70_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review each application’s logging.properties file located in the applications $CATALINA_BASE/webapps/ <app_name> /WEB-INF/classes directory and determine if the file handler properties are set.\n$ grep handlers \\\n$ CATALINA_BASE/webapps/<app_name>/WEB-INF/classes/logging.properties\nIn the instance where an application specific logging has not been created, the logging.properties file will be located in $CATALINA_BASE/conf\n$ grep handlers $CATALINA_BASE/conf/logging.properties"
+          }
+        }
+      },
+      {
+        "+@id": "V-1D2A0353",
+        "title": "7 Establish and Protect Logging Facilities",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1D2A0353r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "7.3",
+          "title": "Ensure className is set correctly in context.xml",
+          "description": "<VulnDiscussion>Ensure the className attribute is set to AccessLogValve. The className attribute determines the access log valve to be used for logging.\n\nRationale:\nSome log valves are not suited for production and should not be used. Apache recommends org.apache.catalina.valves.AccessLogValve</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "7.3"
+          },
+          "fixtext": {
+            "+content": "Add the following statement into the $CATALINA_BASE/webapps/ <app_name> /META- INF/context.xml file if it does not already exist.\n<Valve\nclassName=\"org.apache.catalina.valves.AccessLogValve\"\ndirectory=\"$CATALINA_HOME/logs/\"\nprefix=\"access_log\"\nfileDateFormat=\"yyyy-MM-dd.HH\"\nsuffix=\".log\"\npattern=\"%h %t %H cookie:%{SESSIONID}c request:%{SESSIONID}r %m %U %s %q %r\"\n/>",
+            "+@fixref": "F-1D2A0353r01_fix"
+          },
+          "fix": {
+            "+@id": "F-1D2A0353r01_fix"
+          },
+          "check": {
+            "+@system": "C-1D2A0353_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Execute the following to ensure className is set properly:\n# grep org.apache.catalina.valves.AccessLogValve\n$CATALINA_BASE/webapps/<app_name>/META-INF/context.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-1D4111A5",
+        "title": "7 Establish and Protect Logging Facilities",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1D4111A5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "7.4",
+          "title": "Ensure directory in context.xml is a secure location",
+          "description": "<VulnDiscussion>The directory attribute tells Tomcat where to store logs. It is recommended that the location referenced by the directory attribute be secured.\n\nRationale:\nSecuring the log location will help ensure the integrity and confidentiality of web application activity.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "7.4"
+          },
+          "fixtext": {
+            "+content": "Perform the following:\n1. Add the following statement into the $CATALINA_BASE/webapps/ <app_name> /META-INF/context.xml file if it does not already exist.\n<Valve className=\"org.apache.catalina.valves.AccessLogValve\"\ndirectory=\"$CATALINA_HOME/logs/\"\nprefix=\"access_log\" fileDateFormat=\"yyyy-MM-dd.HH\" suffix=\".log\"\npattern=\"%h %t %H cookie:%{SESSIONID}c request:%{SESSIONID}r %m %U %s\n%q %r\"\n/>\n2. Set the location pointed to by the directory attribute to be owned by tomcat_admin:tomcat with permissions of o-rwx.\n# chown tomcat_admin:tomcat $CATALINA_HOME/logs\n# chmod o-rwx $CATALINA_HOME/logs",
+            "+@fixref": "F-1D4111A5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-1D4111A5r01_fix"
+          },
+          "check": {
+            "+@system": "C-1D4111A5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the permissions of the directory specified by the directory attribute to ensure the permissions are o-rwx and owned by tomcat_admin:tomcat:\n# grep directory context.xml\n# ls – ld <log_location>"
+          }
+        }
+      },
+      {
+        "+@id": "V-AAD526AC",
+        "title": "7 Establish and Protect Logging Facilities",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AAD526ACr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "7.5",
+          "title": "Ensure pattern in context.xml is correct",
+          "description": "<VulnDiscussion>The pattern setting informs Tomcat what information should be logged per application.\nAt a minimum, enough information to uniquely identify a request, what was requested, where the requested originated from, and when the request occurred should be logged.\nThe following will log the request date and time ( %t), the requested URL ( %U), the remote IP address ( %a), the local IP address ( %A), the request method ( %m), the local port ( %p), query string, if present, ( %q), and the HTTP status code of the response ( %s).\n\nRationale:\nThe level of logging detail prescribed will assist in identifying correlating security events or incidents.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "7.5"
+          },
+          "fixtext": {
+            "+content": "Add the following statement into the $CATALINA_BASE/webapps/ <app_name> /META- INF/context.xml file if it does not already exist.\n<Valve\nclassName=\"org.apache.catalina.valves.AccessLogValve\"\ndirectory=\"$CATALINA_HOME/logs/\" prefix=\"access_log\" fileDateFormat=\"yyyy-MM-\ndd.HH\" suffix=\".log\"\npattern=\"%h %t %H cookie:%{SESSIONID}c request:%{SESSIONID}r %m %U %s %q %r\"\n/>",
+            "+@fixref": "F-AAD526ACr01_fix"
+          },
+          "fix": {
+            "+@id": "F-AAD526ACr01_fix"
+          },
+          "check": {
+            "+@system": "C-AAD526AC_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the pattern settings to ensure it contains all of the variables required by the installation.\n# grep pattern $CATALINA_BASE/webapps/<app_name>/META-INF/context.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-501C76EA",
+        "title": "7 Establish and Protect Logging Facilities",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-501C76EAr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "7.6",
+          "title": "Ensure directory in logging.properties is a secure location",
+          "description": "<VulnDiscussion>The directory attribute tells Tomcat where to store logs. The directory value should be a secure location with restricted access.\n\nRationale:\nSecuring the log location will help ensure the integrity and confidentiality of web application activity records.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "7.6"
+          },
+          "fixtext": {
+            "+content": "Perform the following:\n1. Add the following properties into your logging.properties file if they do not exist\n<application_name>.org.apache.juli.AsyncFileHandler.directory=<log_loca\ntion>\n<application_name>.org.apache.juli.AsyncFileHandler.prefix=<application\n_name>\n2. Set the location pointed to by the directory attribute to be owned by tomcat_admin:tomcat with permissions of o-rwx.\nInternal Only - General\n# chown tomcat_admin:tomcat <log_location>\n# chmod o-rwx <log_location>",
+            "+@fixref": "F-501C76EAr01_fix"
+          },
+          "fix": {
+            "+@id": "F-501C76EAr01_fix"
+          },
+          "check": {
+            "+@system": "C-501C76EA_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review the permissions of the directory specified by the directory setting to ensure the permissions are o-rwx and owned by tomcat_admin:tomcat:\nDefault:\n# grep directory $CATALINA_BASE/conf/logging.properties\n# ls – ld <log_location>\nApplication specific:\n# grep directory $CATALINA_BASE/webapps/<app_name>/WEB-\nINF/classes/logging.properties\n# ls – ld <log_location>"
+          }
+        }
+      },
+      {
+        "+@id": "V-1391BE31",
+        "title": "8 Configure Catalina Policy",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1391BE31r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "8.1",
+          "title": "Restrict runtime access to sensitive packages",
+          "description": "<VulnDiscussion>package.access grants or revokes access to listed packages during runtime. It is recommended that application access to certain packages be restricted.\n\nRationale:\nPrevent web applications from accessing restricted or unknown packages which may be malicious or dangerous to the application.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "8.1"
+          },
+          "fixtext": {
+            "+content": "Edit $CATALINA_BASE/conf/catalina.properties by adding allowed packages to the package.access list:\npackage.access =\nsun.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.to\nmcat.",
+            "+@fixref": "F-1391BE31r01_fix"
+          },
+          "fix": {
+            "+@id": "F-1391BE31r01_fix"
+          },
+          "check": {
+            "+@system": "C-1391BE31_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review package.access list in $CATALINA_BASE/conf/catalina.properties to ensure only allowed packages are defined."
+          }
+        }
+      },
+      {
+        "+@id": "V-A273C740",
+        "title": "9 Application Deployment",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A273C740r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "9.1",
+          "title": "Disabling auto deployment of applications",
+          "description": "<VulnDiscussion>Tomcat allows auto deployment of applications while Tomcat is running. It is recommended that this capability be disabled.\n\nRationale:\nThis could allow malicious or untested applications to be deployed and should be disabled.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "9.1"
+          },
+          "fixtext": {
+            "+content": "In the $CATALINA_HOME/conf/server.xml file, change autoDeploy to false.\nautoDeploy=\"false\"",
+            "+@fixref": "F-A273C740r01_fix"
+          },
+          "fix": {
+            "+@id": "F-A273C740r01_fix"
+          },
+          "check": {
+            "+@system": "C-A273C740_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to ensure autoDeploy is set to false.\n# grep \"autoDeploy\" $CATALINA_HOME/conf/server.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-25BD6E72",
+        "title": "9 Application Deployment",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-25BD6E72r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "9.2",
+          "title": "Disable deploy on startup of applications",
+          "description": "<VulnDiscussion>Tomcat allows auto deployment of applications on startup. It is recommended that this capability be disabled.\n\nRationale:\nThis could allow malicious or untested applications to be deployed and should be disabled.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "9.2"
+          },
+          "fixtext": {
+            "+content": "In the $CATALINA_HOME/conf/server.xml file, change deployOnStartup to false.\ndeployOnStartup=\"false\"",
+            "+@fixref": "F-25BD6E72r01_fix"
+          },
+          "fix": {
+            "+@id": "F-25BD6E72r01_fix"
+          },
+          "check": {
+            "+@system": "C-25BD6E72_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to ensure deployOnStartup is set to false.\n# grep \"deployOnStartup\" $CATALINA_HOME/conf/server.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-9395355E",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9395355Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "10.1",
+          "title": "Ensure Web content directory is on a separate partition from the Tomcat system files",
+          "description": "<VulnDiscussion>Store web content on a separate partition from Tomcat system files.\n\nRationale:\nThe web document directory is where the files which are served to the end user reside.\nIn the past, directory traversal exploits have allowed malicious users to wreak havoc on a web server including executing code, uploading files, and reading sensitive data. Even if you do not have any directory traversal exploits in your server or code at this time, that doesn’t mean they won’t be introduced in the future. Moving your web document directory onto a different partition will prevent these kinds of attacks from doing more damage to other parts of the file system.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.1"
+          },
+          "fixtext": {
+            "+content": "Move the web content files to a separate partition from the tomcat system files and update your configuration.",
+            "+@fixref": "F-9395355Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-9395355Er01_fix"
+          },
+          "check": {
+            "+@system": "C-9395355E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Locate the Tomcat system files and web content directory. Review the system partitions and ensure the system files and web content directory are on separate partitions.\n# df $CATALINA_HOME/webapps\n# df $CATALINA_HOME\nNote: Use the default value webapps which is defined by appBase attribute here."
+          }
+        }
+      },
+      {
+        "+@id": "V-E2F33FF5",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E2F33FF5r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "10.2",
+          "title": "Restrict access to the web administration application",
+          "description": "<VulnDiscussion>Limit access to the web administration application to only those with a justified need.\n\nRationale:\nLimiting access to the least privilege will ensure only those people with justified need will have access to a resource. The web administration application should be limited to only administrators.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.2"
+          },
+          "fixtext": {
+            "+content": "For the administration application, edit $CATALINA_HOME/conf/server.xml and uncomment the following:\n<Valve className=\"org.apache.catalina.valves.RemoteAddrValve\"\nallow=\"127\\.0\\.0\\.1\"/>\nNote: The RemoteAddrValve property expects a regular expression, therefore periods and other regular expression meta-characters must be escaped.",
+            "+@fixref": "F-E2F33FF5r01_fix"
+          },
+          "fix": {
+            "+@id": "F-E2F33FF5r01_fix"
+          },
+          "check": {
+            "+@system": "C-E2F33FF5_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review $CATALINA_HOME/conf/server.xml to determine whether the RemoteAddrValve option is uncommented and configured to only allow access to systems required to connect."
+          }
+        }
+      },
+      {
+        "+@id": "V-D2F6C50F",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D2F6C50Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "10.3",
+          "title": "Restrict manager application",
+          "description": "<VulnDiscussion>Limit access to the manager application to only those with a justified need.\n\nRationale:\nLimiting access to the least privilege will ensure only those people with a justified need will have access to a resource. The manager application should be limited to only administrators.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.3"
+          },
+          "fixtext": {
+            "+content": "For the manager application, edit $CATALINA_BASE/conf/ <enginename> / <hostname> /manager.xml, and add the bolded line:\n<Context path=\"/manager\" docBase=\"${catalina.home}/webapps/manager\" debug=\"0\"\nprivileged=\"true\"><Valve\nclassName=\"org.apache.catalina.valves.RemoteAddrValve\"\nallow=\"127.0.0.1\"/></Context>\nAdd hosts, comma separated, which are allowed to access the admin application.\nNote: The RemoteAddrValve property expects a regular expression, therefore periods and other regular expression meta-characters must be escaped.",
+            "+@fixref": "F-D2F6C50Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-D2F6C50Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-D2F6C50F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review $CATALINA_BASE/conf/ <enginename> / <hostname> /manager.xml to determine if the RemoteAddrValve option is uncommented and configured to only allow access to systems required to connect."
+          }
+        }
+      },
+      {
+        "+@id": "V-819B239B",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-819B239Br01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "10.4",
+          "title": "Force SSL when accessing the manager application via HTTP",
+          "description": "<VulnDiscussion>Use the transport-guarantee attribute to ensure SSL protection when accessing the manager application.\n\nRationale:\nBy default when accessing the manager application via HTTP, login information is sent over the wire in plain text. By setting the transport-guarantee within web.xml, SSL is enforced.\nNote: This requires SSL to be configured.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.4"
+          },
+          "fixtext": {
+            "+content": "Set <transport-guarantee> to CONFIDENTIAL in $CATALINA_HOME/webapps/manager/WEB-INF/web.xml:\n<security-constraint>\n<user-data-constraint>\n<transport-guarantee>CONFIDENTIAL</transport-guarantee>\n</user-data-constraint>\n</security-constraint>",
+            "+@fixref": "F-819B239Br01_fix"
+          },
+          "fix": {
+            "+@id": "F-819B239Br01_fix"
+          },
+          "check": {
+            "+@system": "C-819B239B_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure $CATALINA_HOME/webapps/manager/WEB-INF/web.xml has the <transport- guarantee> set to CONFIDENTIAL.\n# grep transport-guarantee $CATALINA_HOME/webapps/manager/WEB-INF/web.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-1D9E05CF",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1D9E05CFr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "10.5",
+          "title": "Rename the manager application",
+          "description": "<VulnDiscussion>The manager application allows administrators to manage Tomcat remotely via a web interface. The manager application should be renamed to make it harder for attackers or automated scripts to locate.\n\nRationale:\nBy relocating the manager applications, an attacker will need to guess its location rather than simply navigate to the standard location in order to carry out an attack.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.5"
+          },
+          "fixtext": {
+            "+content": "Perform the following to rename the manager application:\n1. Rename the manager application XML file:\n# mv $CATALINA_HOME/webapps/host-manager/manager.xml \\\n$CATALINA_HOME/webapps/host-manager/<new-name>.xml\n2. Update the docBase attribute within $CATALINA_HOME/webapps/host- manager/ <new-name>.xml to $CATALINA_HOME/webapps/ <new-name> 3. Move $CATALINA_HOME/webapps/manager to $CATALINA_HOME/webapps/ <new-name>\n# mv $CATALINA_HOME/webapps/manager $CATALINA_HOME/webapps/<new-name>",
+            "+@fixref": "F-1D9E05CFr01_fix"
+          },
+          "fix": {
+            "+@id": "F-1D9E05CFr01_fix"
+          },
+          "check": {
+            "+@system": "C-1D9E05CF_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure $CATALINA_HOME/conf/Catalina/localhost/manager.xml, $CATALINA_HOME/webapps/host-manager/manager.xml, $CATALINA_HOME/webapps/manager and $CATALINA_HOME/webapps/manager do not exist."
+          }
+        }
+      },
+      {
+        "+@id": "V-BC79634D",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BC79634Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "10.6",
+          "title": "Enable strict servlet Compliance",
+          "description": "<VulnDiscussion>The STRICT_SERVLET_COMPLIANCE influences Tomcat’s behavior in several subtle ways. See the References below for the complete list. It is recommended that STRICT_SERVLET_COMPLIANCE be set to true.\n\nRationale:\nWhen STRICT_SERVLET_COMPLIANCE is set to true, Tomcat will always send an HTTP Content-type header when responding to requests. This is significant as the behavior of web browsers is inconsistent in the absence of the Content-type header. Some browsers will attempt to determine the appropriate content-type by sniffing</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.6"
+          },
+          "fixtext": {
+            "+content": "Start Tomcat with strict compliance enabled, add - Dorg.apache.catalina.STRICT_SERVLET_COMPLIANCE=true to your startup script.",
+            "+@fixref": "F-BC79634Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-BC79634Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-BC79634D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure the -Dorg.apache.catalina.STRICT_SERVLET_COMPLIANCE=true parameter is added to the startup script which by default is located at $CATALINA_HOME/bin/catalina.sh."
+          }
+        }
+      },
+      {
+        "+@id": "V-BD182DA9",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BD182DA9r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "10.7",
+          "title": "Turn off session facade recycling",
+          "description": "<VulnDiscussion>The RECYCLE_FACADES can specify if a new facade will be created for each request. If a new facade is not created there is a potential for information leakage from other sessions.\n\nRationale:\nWhen RECYCLE_FACADES is set to false, Tomcat will recycle the session facade between requests which may result in information leakage.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.7"
+          },
+          "fixtext": {
+            "+content": "Start Tomcat with RECYCLE_FACADES set to true. Add - Dorg.apache.catalina.connector.RECYCLE_FACADES=true to your startup script.",
+            "+@fixref": "F-BD182DA9r01_fix"
+          },
+          "fix": {
+            "+@id": "F-BD182DA9r01_fix"
+          },
+          "check": {
+            "+@system": "C-BD182DA9_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure -Dorg.apache.catalina.connector.RECYCLE_FACADES=true is added to the startup script which, by default, is located at $CATALINA_HOME/bin/catalina.sh."
+          }
+        }
+      },
+      {
+        "+@id": "V-8EB9250E",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8EB9250Er01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "10.8",
+          "title": "Do not allow additional path delimiters",
+          "description": "<VulnDiscussion>Being able to specify different path-delimiters on Tomcat creates the possibility that an attacker can access applications that were previously blocked by a proxy like mod_proxy.\n\nRationale:\nAllowing additional path-delimiters allows for an attacker to get to an application or area which was not previously visible.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.8"
+          },
+          "fixtext": {
+            "+content": "To start Tomcat with ALLOW_BACKSLASH and ALLOW_ENCODED_SLASH set to false, add -Dorg.apache.catalina.connector.CoyoteAdapter.ALLOW_BACKSLASH=false and -Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=false to your startup script in setenv.sh in CATALINA_BASE/bin.",
+            "+@fixref": "F-8EB9250Er01_fix"
+          },
+          "fix": {
+            "+@id": "F-8EB9250Er01_fix"
+          },
+          "check": {
+            "+@system": "C-8EB9250E_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure the - Dorg.apache.catalina.connector.CoyoteAdapter.ALLOW_BACKSLASH=false and -Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=false parameters are added to the startup script which, by default, is located at $CATALINA_HOME/bin/catalina.sh."
+          }
+        }
+      },
+      {
+        "+@id": "V-CB3978E0",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CB3978E0r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "10.9",
+          "title": "Configure connectionTimeout",
+          "description": "<VulnDiscussion>The connectionTimeout setting allows Tomcat to close idle sockets after a specific amount of time to save system resources.\n\nRationale:\nClosing idle sockets reduces system resource usage which can provide better performance and help protect against Denial of Service attacks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.9"
+          },
+          "fixtext": {
+            "+content": "Set the connectionTimeout for each connector in $CATALINA_HOME/conf/server.xml ensure to the optimal number of milliseconds based on hardware resources, load, and number of concurrent connections.\nconnectionTimeout=\"60000\"",
+            "+@fixref": "F-CB3978E0r01_fix"
+          },
+          "fix": {
+            "+@id": "F-CB3978E0r01_fix"
+          },
+          "check": {
+            "+@system": "C-CB3978E0_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Locate each connectionTimeout setting in $CATALINA_HOME/conf/server.xml and verify the setting is correct.\n# grep connectionTimeout $CATALINA_HOME/conf/server.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-6DF3EE64",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6DF3EE64r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "10.10",
+          "title": "Configure maxHttpHeaderSize",
+          "description": "<VulnDiscussion>The maxHttpHeaderSize limits the size of the request and response headers defined in bytes.\n\nRationale:\nLimiting the size of the header request can help protect against Denial of Service (DoS) requests.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.10"
+          },
+          "fixtext": {
+            "+content": "Set maxHttpHeaderSize for each connector in $CATALINA_HOME/conf/server.xml to the appropriate setting.\nmaxHttpHeaderSize=”8192”",
+            "+@fixref": "F-6DF3EE64r01_fix"
+          },
+          "fix": {
+            "+@id": "F-6DF3EE64r01_fix"
+          },
+          "check": {
+            "+@system": "C-6DF3EE64_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Locate each maxHttpHeaderSize setting in $CATALINA_HOME/conf/server.xml and verify that they are set to 8192.\n# grep maxHttpHeaderSize $CATALINA_HOME/conf/server.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-6D4B87B3",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6D4B87B3r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "10.11",
+          "title": "Force SSL for all applications",
+          "description": "<VulnDiscussion>Use the transport-guarantee attribute to ensure SSL protection when accessing all applications. This can be overridden on a per application basis in the application configuration.\n\nRationale:\nBy default, when accessing applications SSL will be enforced to protect information sent over the network. By using the transport-guarantee attribute within web.xml, SSL is enforced.\nNote: This requires SSL to be configured.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.11"
+          },
+          "fixtext": {
+            "+content": "Set transport-guarantee to CONFIDENTIAL in $CATALINA_HOME/conf/web.xml:\n<user-data-constraint>\n<transport-guarantee>CONFIDENTIAL</transport-guarantee>\n</user-data-constraint>",
+            "+@fixref": "F-6D4B87B3r01_fix"
+          },
+          "fix": {
+            "+@id": "F-6D4B87B3r01_fix"
+          },
+          "check": {
+            "+@system": "C-6D4B87B3_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure $CATALINA_HOME/conf/web.xml has the transport-guarantee attribute set to CONFIDENTIAL.\n# grep transport-guarantee $CATALINA_HOME/conf/web.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-0A503C11",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0A503C11r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "10.12",
+          "title": "Do not allow symbolic linking",
+          "description": "<VulnDiscussion>Symbolic links permit one application to include the libraries from another. This allows for re-use of code but also allows for potential security issues when applications include libraries from other applications to which they should not have access.\n\nRationale:\nAllowing symbolic links makes Tomcat susceptible to directory traversal vulnerability.\nAlso, there is a potential that an application could link to another application to which it should not be linking. On case-insensitive operating systems there is also the threat of source code disclosure.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.12"
+          },
+          "fixtext": {
+            "+content": "In all context.xml, set the allowLinking attribute to false:\n<Context\n...\n<Resources ... allowLinking=”false” />\n...\n</Context>",
+            "+@fixref": "F-0A503C11r01_fix"
+          },
+          "fix": {
+            "+@id": "F-0A503C11r01_fix"
+          },
+          "check": {
+            "+@system": "C-0A503C11_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure the allowLinking attribute in all context.xml does not exist or is set to false.\n# find . -name context.xml | xargs grep \"allowLinking\""
+          }
+        }
+      },
+      {
+        "+@id": "V-6F6F8CCD",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6F6F8CCDr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "10.13",
+          "title": "Do not run applications as privileged",
+          "description": "<VulnDiscussion>Setting the privileged attribute for an application changes the class loader to the Server class loader instead of the Shared class loader.\n\nRationale:\nRunning an application in privileged mode allows an application to load the manager libraries.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.13"
+          },
+          "fixtext": {
+            "+content": "Set the privileged attribute in all context.xml files to false unless it is required as for the manager application:\n<Context ... privileged=”false” />",
+            "+@fixref": "F-6F6F8CCDr01_fix"
+          },
+          "fix": {
+            "+@id": "F-6F6F8CCDr01_fix"
+          },
+          "check": {
+            "+@system": "C-6F6F8CCD_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure the privileged attribute in each context.xml file does not exist or is set to false.\n# find . -name context.xml | xargs grep \"privileged\""
+          }
+        }
+      },
+      {
+        "+@id": "V-45EB87AA",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-45EB87AAr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "10.14",
+          "title": "Do not allow cross context requests",
+          "description": "<VulnDiscussion>Setting crossContext to true allows for an application to call ServletConext.getContext to return a dispatcher for another application.\n\nRationale:\nAllowing crossContext creates the possibility for a malicious application to make requests to a restricted application.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.14"
+          },
+          "fixtext": {
+            "+content": "Set the crossContext attribute in all context.xml files to false:\n<Context ... crossContext=”false” />",
+            "+@fixref": "F-45EB87AAr01_fix"
+          },
+          "fix": {
+            "+@id": "F-45EB87AAr01_fix"
+          },
+          "check": {
+            "+@system": "C-45EB87AA_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure the crossContext attribute in all context.xml does not exist or is set to false.\n# find . -name context.xml | xargs grep \"crossContext\""
+          }
+        }
+      },
+      {
+        "+@id": "V-F1C5E65C",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F1C5E65Cr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "10.15",
+          "title": "Do not resolve hosts on logging valves",
+          "description": "<VulnDiscussion>Setting enableLookups to true on Connector will result in a DNS look-ups to obtain the host name of the remote client before logging any information. This uses additional resources when logging.\n\nRationale:\nAllowing enableLookups adds additional overhead to resolve the host name of a remote client which is rarely needed.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.15"
+          },
+          "fixtext": {
+            "+content": "In Connector elements, set the enableLookups attribute to false or remove it.\n<Connector ... enableLookups=\"false\" />",
+            "+@fixref": "F-F1C5E65Cr01_fix"
+          },
+          "fix": {
+            "+@id": "F-F1C5E65Cr01_fix"
+          },
+          "check": {
+            "+@system": "C-F1C5E65C_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure Connector elements have the enableLookups attribute does not exist or is set to false.\n# grep enableLookups $CATALINA_HOME/conf/server.xml"
+          }
+        }
+      },
+      {
+        "+@id": "V-80F8891D",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-80F8891Dr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "10.16",
+          "title": "Enable memory leak listener",
+          "description": "<VulnDiscussion>The JRE Memory Leak Prevention Listener provides work-arounds for known places where the Java Runtime environment uses the context class loader to load a singleton as this will cause a memory leak if a web application class loader happens to be the context class loader at the time. The work-around is to initialize these singletons when this listener starts as Tomcat's common class loader is the context class loader at that time. It also provides work-arounds for known issues that can result in locked JAR files.\n\nRationale:\nEnabling the JRE Memory Leak Prevention Listener provides work-arounds for preventing memory leaks.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.16"
+          },
+          "fixtext": {
+            "+content": "Uncomment the JRE Memory Leak Prevention Listener in $CATALINA_HOME/conf/server.xml\n<Listener\nclassName=\"org.apache.catalina.core.JreMemoryLeakPreventionListener\" />",
+            "+@fixref": "F-80F8891Dr01_fix"
+          },
+          "fix": {
+            "+@id": "F-80F8891Dr01_fix"
+          },
+          "check": {
+            "+@system": "C-80F8891D_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Ensure this line is present and not commented out in the $CATALINA_HOME/conf/server.xml:\n<Listener\nclassName=\"org.apache.catalina.core.JreMemoryLeakPreventionListener\" />"
+          }
+        }
+      },
+      {
+        "+@id": "V-DE4436AE",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-DE4436AEr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "10.17",
+          "title": "Setting Security Lifecycle Listener",
+          "description": "<VulnDiscussion>The Security Lifecycle Listener performs a number of security checks when Tomcat starts and prevents Tomcat from starting if they fail.\n\nRationale:\nWhen enabled, the Security Lifecycle Listener can\n• Enforce a blacklist of OS users that must not be used to start Tomcat.\n• Set the least restrictive umask before Tomcat start</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.17"
+          },
+          "fixtext": {
+            "+content": "Uncomment the listener in $CATALINA_BASE/conf/server.xml. If the operating system supports umask then the line in $CATALINA_HOME/bin/catalina.sh that obtains the umask also needs to be uncommented.\nWithin Server elements add:\n• checkedOsUsers: A comma separated list of OS users that must not be used to start Tomcat. If not specified, the default value of root is used.\n• minimumUmask: The least restrictive umask that must be configured before Tomcat will start. If not specified, the default value of 0007 is used.\n<Listener className=\"org.apache.catalina.security.SecurityListener\"\ncheckedOsUsers=\"alex,bob\" minimumUmask=\"0007\" />",
+            "+@fixref": "F-DE4436AEr01_fix"
+          },
+          "fix": {
+            "+@id": "F-DE4436AEr01_fix"
+          },
+          "check": {
+            "+@system": "C-DE4436AE_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Review server.xml to ensure the Security Lifecycle Listener element is uncommented with the checkedOsUsers and minimumUmask attributes set with expected values."
+          }
+        }
+      },
+      {
+        "+@id": "V-40B90A13",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-40B90A13r01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "10.18",
+          "title": "Use the logEffectiveWebXml and metadata-complete settings for deploying applications in production",
+          "description": "<VulnDiscussion>Both fragments and annotations give rise to security concerns. web.xml contains a metadata-complete attribute on the web-app element whose binary value defines whether other sources of metadata should be considered when deploying this web application, this includes annotations on class files ( @WebServlet, but also @WebListener, @WebFilter, …), web-fragment.xml as well as classes located in WEB-INF/classes. In addition, Tomcat could allow you to log the effective web.xml, when an application starts, and the effective web.xml is the result of taking the main web.xml for your application merging in all the fragments applying all the annotations.\nBy logging that, you are able to review it, and see if that is in fact what you actually want.\n\nRationale:\nEnable logEffectiveWebXml will allow you to log the effective web.xml and you are able to see if that is in fact what you actually want. Enable metadata-complete so that the web.xml is the only metadata considered.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.18"
+          },
+          "fixtext": {
+            "+content": "• Set the metadata-complete value in the web.xml in each of the applications to true.\nNote: The metadata-complete option is not enough to disable all of annotation scanning. If there is a ServletContainerInitializer with a @HandlesTypes annotation, Tomcat has to scan your application for classes that use annotations or interfaces specified in that annotation.\n• Set the logEffectiveWebXml value in the context.xml in each of the application to true.",
+            "+@fixref": "F-40B90A13r01_fix"
+          },
+          "fix": {
+            "+@id": "F-40B90A13r01_fix"
+          },
+          "check": {
+            "+@system": "C-40B90A13_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "1. Review each application’s web.xml file located in the applications $CATALINA_HOME/webapps/ <app_name> /WEB-INF/web.xml and determine if the logEffectiveWebXml is property is set.\n<web-app\n...\nmetadata-complete=\"true\"\n...\n>\n2. Review each application’s context.xml file located in the applications $CATALINA_HOME/webapps/ <app_name> /META-INF/context.xml and determine if the metadata-complete property is set.\nInternal Only - General\n<Context\n...\nlogEffectiveWebXml=\"true\"\n...\n>"
+          }
+        }
+      },
+      {
+        "+@id": "V-198A7B8F",
+        "title": "10 Miscellaneous Configuration Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-198A7B8Fr01_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "10.19",
+          "title": "Ensure Manager Application Passwords are Encrypted",
+          "description": "<VulnDiscussion>Apache Tomcat ships with a Manager Application which requires users with a role of manager-gui, manager-status, manager-script, and/or manager-jmx to authenticate. The usernames and passwords to log onto the Manager Application are stored in the tomcat-users.xml in plain text by default.\n\nRationale:\nStoring passwords in plain text may allow users with access to read the tomcat- users.xml file to obtain the credentials of user who have been assigned roles for the Manager Application. This may allow for accounts to be compromised on Tomcat and elsewhere.</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:publisher": "CIS",
+            "dc:type": "Benchmark",
+            "dc:subject": "CIS Apache Tomcat 10.1 Benchmark",
+            "dc:identifier": "10.19"
+          },
+          "fixtext": {
+            "+content": "1. Generate the encrypted password:\ncd $CATALINA_HOME/bin\ndigest.bat -a sha-256 YOURPASSWORD\nThis will return the original password followed by encrypted password:\nYOURPASSWORD:240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74\nc720a9\n2. Replace the plain text password with the above encrypted password generated above in CATALINA_HOME/conf/tomcat-user.xml file as follows.\nInternal Only - General\n<user username=\"admin\"\npassword=\"240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c72\n0a9\"\nroles=\"manager-gui\"/>\n3. Add the digest element as a child to the login-config element where the realm-name element has a value of UserDatabase. For example:\n<login-config>\n<auth-method>DIGEST</auth-method>\n<realm-name>UserDatabase</realm-name>\n</login-config>",
+            "+@fixref": "F-198A7B8Fr01_fix"
+          },
+          "fix": {
+            "+@id": "F-198A7B8Fr01_fix"
+          },
+          "check": {
+            "+@system": "C-198A7B8F_chk",
+            "check-content-ref": {
+              "+@href": "CIS_Apache_Tomcat_10_1_Benchmark.xml",
+              "+@name": "M"
+            },
+            "check-content": "Perform the following to determine if password digests are in use:\n$ grep -i <login-config>[.\\n]*<auth-method>DIGEST</auth-method>[.\\n]*<realm-\nname>UserDatabase</realm-name>[.\\n]*</login-config>\n$CATALINA_HOME/webapps/manager/WEB-INF/web.xml\nIf a Realm exists without a digest attribute or without a value for the digest attribute, this is a fail."
+          }
+        }
+      }
+    ]
+  }
+}
