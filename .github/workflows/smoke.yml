@@ -38,6 +38,7 @@ jobs:
                       sleep 1
                   done
 
+                  python3 scripts/cis/generate_llms.py --base-url https://zarguell.github.io/stigui
                   NEXT_PUBLIC_BASE_PATH=/stigui npm run build
 
                   kill $PID

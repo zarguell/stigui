@@ -27,3 +27,7 @@ out
 
 # playwright
 test-results/
+
+# Generated at deploy time for LLM agents (not committed)
+public/llms.txt
+public/markdown/

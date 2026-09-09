@@ -34,6 +34,15 @@ jobs:
               run: |
                   echo NEXT_PUBLIC_MANIFEST_VERSION=$(sha1sum public/data/stigs/manifest.json | awk '{print $1}') >> .env
 
+            - name: Setup Python for markdown generation
+              uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+              with:
+                  python-version: '3.12'
+
+            - name: Generate llms.txt and markdown for LLM agents
+              run: |
+                  python3 scripts/cis/generate_llms.py --base-url https://zarguell.github.io/stigui
+
             - name: Build App
               env:
                   # Build-time (SSG) fetches need a server serving public/;

@@ -121,6 +121,33 @@ test("library and rule browsing render", async ({ page }) => {
     );
 });
 
+test("llms.txt and markdown versions are agent-discoverable", async ({ page }) => {
+    // The index links every benchmark as markdown.
+    const llms = await page.request.get(`${BASE}/llms.txt`);
+    expect(llms.status()).toBe(200);
+    const body = await llms.text();
+    expect(body).toContain("# STIG UI");
+    expect(body).toContain("/markdown/stigs/CIS_Docker_Benchmark.md");
+
+    // A benchmark markdown page links its recommendations...
+    const benchmark = await page.request.get(
+        `${BASE}/markdown/stigs/CIS_Docker_Benchmark.md`
+    );
+    expect(benchmark.status()).toBe(200);
+    const benchmarkBody = await benchmark.text();
+    expect(benchmarkBody).toContain("## Recommendations");
+    expect(benchmarkBody).toContain("V-A374C415.md");
+
+    // ...and a recommendation markdown page carries check and fix text.
+    const rule = await page.request.get(
+        `${BASE}/markdown/stigs/CIS_Docker_Benchmark/V-A374C415.md`
+    );
+    expect(rule.status()).toBe(200);
+    const ruleBody = await rule.text();
+    expect(ruleBody).toContain("## Check");
+    expect(ruleBody).toContain("## Fix");
+});
+
 test("converted CIS benchmarks render like library STIGs", async ({ page }) => {
     // The library lists the shipped CIS conversions...
     await page.goto(`${BASE}/stigs.html`);
