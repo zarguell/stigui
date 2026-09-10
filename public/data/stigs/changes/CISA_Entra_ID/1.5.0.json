@@ -1,0 +1,363 @@
+{
+  "id": "CISA_Entra_ID",
+  "from_version": "1.5.0",
+  "to_version": "1.6.0",
+  "date": "2025-07-09",
+  "counts": {
+    "unchanged": 21,
+    "updated": 8,
+    "added": 1,
+    "removed": 1
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-4ADCBC01",
+      "rule_id": "SV-4ADCBC01r071DF0",
+      "rule_title": "The authentication methods SMS, Voice Call, and Email One-Time Passcode (OTP) SHALL be disabled.",
+      "fieldDiffs": [
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 330,
+              "added": false,
+              "removed": false,
+              "value": "The authentication methods SMS, Voice Call, and Email One-Time Passcode (OTP) SHALL be disabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- How to use additional context in Microsoft Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n"
+            },
+            {
+              "count": 120,
+              "added": true,
+              "removed": false,
+              "value": "- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-604D3F0E",
+      "rule_id": "SV-604D3F0ErAEC789",
+      "rule_title": "Managed devices SHOULD be required for authentication.",
+      "fieldDiffs": [
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 317,
+              "added": false,
+              "removed": false,
+              "value": "Managed devices SHOULD be required for authentication.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- How to use additional context in Microsoft Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n"
+            },
+            {
+              "count": 120,
+              "added": true,
+              "removed": false,
+              "value": "- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-60F601F6",
+      "rule_id": "SV-60F601F6r4412FB",
+      "rule_title": "Phishing-resistant MFA SHALL be enforced for all users.",
+      "fieldDiffs": [
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 320,
+              "added": false,
+              "removed": false,
+              "value": "Phishing-resistant MFA SHALL be enforced for all users.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- How to use additional context in Microsoft Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n"
+            },
+            {
+              "count": 120,
+              "added": true,
+              "removed": false,
+              "value": "- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-A61D2A98",
+      "rule_id": "SV-A61D2A98r3E5C69",
+      "rule_title": "Managed Devices SHOULD be required to register MFA.",
+      "fieldDiffs": [
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 318,
+              "added": false,
+              "removed": false,
+              "value": "Managed Devices SHOULD be required to register MFA.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- How to use additional context in Microsoft Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n"
+            },
+            {
+              "count": 120,
+              "added": true,
+              "removed": false,
+              "value": "- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-ADF78205",
+      "rule_id": "SV-ADF78205rDFB9A7",
+      "rule_title": "Phishing-resistant MFA SHALL be required for highly privileged roles.",
+      "fieldDiffs": [
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 321,
+              "added": false,
+              "removed": false,
+              "value": "Phishing-resistant MFA SHALL be required for highly privileged roles.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- How to use additional context in Microsoft Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n"
+            },
+            {
+              "count": 120,
+              "added": true,
+              "removed": false,
+              "value": "- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-B5A44595",
+      "rule_id": "SV-B5A44595r9D211A",
+      "rule_title": "If phishing-resistant MFA has not been enforced, an alternative MFA method SHALL be enforced for all users.",
+      "fieldDiffs": [
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 330,
+              "added": false,
+              "removed": false,
+              "value": "If phishing-resistant MFA has not been enforced, an alternative MFA method SHALL be enforced for all users.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- How to use additional context in Microsoft Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n"
+            },
+            {
+              "count": 120,
+              "added": true,
+              "removed": false,
+              "value": "- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-C368F11F",
+      "rule_id": "SV-C368F11Fr7934D2",
+      "rule_title": "The Authentication Methods Manage Migration feature SHALL be set to Migration Complete.",
+      "fieldDiffs": [
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 322,
+              "added": false,
+              "removed": false,
+              "value": "The Authentication Methods Manage Migration feature SHALL be set to Migration Complete.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- How to use additional context in Microsoft Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n"
+            },
+            {
+              "count": 120,
+              "added": true,
+              "removed": false,
+              "value": "- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-FD76ED89",
+      "rule_id": "SV-FD76ED89r881E4A",
+      "rule_title": "If Microsoft Authenticator is enabled, it SHALL be configured to show login context information.",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "If "
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": true,
+              "value": "phishing-resistant MFA has not been enforced and "
+            },
+            {
+              "count": 15,
+              "added": false,
+              "removed": false,
+              "value": "Microsoft Authenticator is enabled, it SHALL be configured to show login context information."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "If "
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": true,
+              "value": "phishing-resistant MFA has not been enforced and "
+            },
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": "Microsoft Authenticator is enabled, it SHALL be configured to show login context information.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "June 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "March 2025"
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: This "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "stopgap security "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": "policy helps protect the tenant when "
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": true,
+              "value": "phishing-resistant MFA has not been enforced and "
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": "Microsoft Authenticator is used"
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": true,
+              "value": ". This policy helps improve the security of Microsoft Authenticator"
+            },
+            {
+              "count": 43,
+              "added": false,
+              "removed": false,
+              "value": " by showing user context information, which helps reduce MFA phishing compromises.\n\nMITRE ATT&CK: T1110: Brute Force; T1110.001: Password Guessing; T1110.002: Password Cracking; T1110.003: Password Spraying"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "If "
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": true,
+              "value": "phishing-resistant MFA has not been enforced and "
+            },
+            {
+              "count": 324,
+              "added": false,
+              "removed": false,
+              "value": "Microsoft Authenticator is enabled, it SHALL be configured to show login context information.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- How to use additional context in Microsoft Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n"
+            },
+            {
+              "count": 120,
+              "added": true,
+              "removed": false,
+              "value": "- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "If "
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": true,
+              "value": "phishing-resistant MFA has not been deployed yet and "
+            },
+            {
+              "count": 107,
+              "added": false,
+              "removed": false,
+              "value": "Microsoft Authenticator is in use, configure Authenticator to display context information to users when they log in.\n1. In Microsoft Entra admin center, click Security > Authentication methods > Microsoft Authenticator.\n2. Click the Configure tab.\n3. For Allow use of Microsoft Authenticator OTP select *No*.\n4. Under Show application name in push and passwordless notifications select Status > Enabled and Target > Include > All users.\n5. Under Show geographic location in push and passwordless notifications select Status > Enabled and Target > Include > All users.\n6. Select Save"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "added",
+      "group_id": "V-A564E063",
+      "rule_id": "SV-A564E063rAB1108",
+      "rule_title": "Device code authentication SHOULD be blocked.",
+      "fieldDiffs": []
+    },
+    {
+      "outcome": "removed",
+      "group_id": "V-3FCCC325",
+      "rule_id": "SV-3FCCC325rA87119",
+      "rule_title": "Group owners SHALL NOT be allowed to consent to applications.",
+      "fieldDiffs": []
+    }
+  ]
+}

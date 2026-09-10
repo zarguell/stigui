@@ -1,0 +1,89 @@
+{
+  "id": "CISA_Power_Platform",
+  "from_version": "1.7.0",
+  "to_version": "1.8.0",
+  "date": "2026-05-07",
+  "counts": {
+    "unchanged": 6,
+    "updated": 2,
+    "added": 1,
+    "removed": 0
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-3C59FDB9",
+      "rule_id": "SV-3C59FDB9r006C5F",
+      "rule_title": "The ability to create Power Pages sites SHOULD be restricted to admins.",
+      "fieldDiffs": [
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 66,
+              "added": false,
+              "removed": false,
+              "value": "1.  This setting currently can only be enabled through the Power Apps PowerShell modules (https://learn.microsoft.com/en-us/power-platform/admin/powerapps-powershell#installation).\n2. After installing the Power Apps PowerShell modules, run Add-PowerAppsAccount -Endpoint $YourTenantsEndpoint. To authenticate to your "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "tenants"
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "tenant's"
+            },
+            {
+              "count": 105,
+              "added": false,
+              "removed": false,
+              "value": " Power Platform.\nDiscover the valid endpoint parameter here (https://learn.microsoft.com/en-us/powershell/module/microsoft.powerapps.administration.powershell/add-powerappsaccount?view=pa-ps-latest#-endpoint). Commercial tenants use -Endpoint prod, GCC tenants use -Endpoint usgov and so on.\n3. Then run the following PowerShell command to disable the creation of Power Pages sites by non-administrative users.\n    Set-TenantSettings -RequestBody @{ “disablePortalsCreationByNonAdminUsers” = $true }"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-C1EE9538",
+      "rule_id": "SV-C1EE9538r2CB4E8",
+      "rule_title": "A DLP policy SHALL be created to restrict connector access in the default Power Platform environment.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 131,
+              "added": false,
+              "removed": false,
+              "value": "A DLP policy SHALL be created to restrict connector access in the default Power Platform environment.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: All users in the tenant have access to the default Power Platform environment. Those users may inadvertently use connectors that share sensitive information with others who should not have access to it. Users requiring Power Apps should be directed to conduct development in other Power Platform environments with DLP connector policies customized to suit the user's needs while also maintaining the agency's security posture.\n\nNote: The following connectors drive core Power Platform functionality and enable core Office customization scenarios: Approvals, Dynamics 365 Customer Voice, Excel Online (Business), Microsoft "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "DataverseMicrosoft "
+            },
+            {
+              "count": 108,
+              "added": false,
+              "removed": false,
+              "value": "Dataverse (legacy), Microsoft Teams, Microsoft To-Do (Business), Office 365 Groups, Office 365 Outlook, Office 365 Users, OneDrive for Business, OneNote (Business), Planner, Power Apps Notification, Power BI, SharePoint, Shifts for Microsoft Teams, and Yammer. As such these connectors remain non-blockable to maintain core user scenario functions.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\nMITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "added",
+      "group_id": "V-24FAFE24",
+      "rule_id": "SV-24FAFE24r000D98",
+      "rule_title": "The Share with Everyone feature SHOULD be disabled.",
+      "fieldDiffs": []
+    }
+  ]
+}

@@ -1,0 +1,1057 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CISA_Defender",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2026-02-11"
+    },
+    "title": "CISA M365 Secure Configuration Baseline for Defender",
+    "description": "Microsoft 365 (M365) Defender is a cloud-based enterprise defense suite that coordinates prevention, detection, investigation, and response. This set of tools and features are used to detect many types of attacks.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://github.com/cisagov/ScubaGear/tree/v1.7.0/PowerShell/ScubaGear/baselines/defender.md",
+      "dc:publisher": "CISA",
+      "dc:source": "CISA ScuBA M365 Secure Configuration Baselines"
+    },
+    "plain-text": {
+      "+content": "Release: 1.7.0 Baseline Date: 2026-02-11",
+      "+@id": "release-info"
+    },
+    "version": "1.7.0",
+    "Profile": [
+      {
+        "+@id": "1-Preset-Security-Profiles_Public",
+        "title": "1. Preset Security Profiles",
+        "description": "Microsoft Defender defines three [preset security profiles](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide): built-in protection, standard, and strict. These preset policies are informed by Microsoft's observations, and are designed to strike the balance between usability and security. They allow administrators to enable the full feature set of Defender by simply adding users to the policies rather than manually configuring each setting. Within the standard and strict preset policies, users can be enrolled in [Exchange Online Protection](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/eop-about?view=o365-worldwide) (EOP) and [Defender for Office 365 protection](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/microsoft-defender-for-office-365-product-overview?view=o365-worldwide). Additionally, preset policies support configuration of [impersonation protection](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#impersonation-settings-in-anti-phishing-policies-in-microsoft-defender-for-office-365).",
+        "select": [
+          {
+            "+@idref": "V-8BFFFD3A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F428DDD8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FDC9A1A5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A737EE41",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-435F7B90",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "1-Preset-Security-Profiles_Classified",
+        "title": "1. Preset Security Profiles",
+        "description": "Microsoft Defender defines three [preset security profiles](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide): built-in protection, standard, and strict. These preset policies are informed by Microsoft's observations, and are designed to strike the balance between usability and security. They allow administrators to enable the full feature set of Defender by simply adding users to the policies rather than manually configuring each setting. Within the standard and strict preset policies, users can be enrolled in [Exchange Online Protection](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/eop-about?view=o365-worldwide) (EOP) and [Defender for Office 365 protection](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/microsoft-defender-for-office-365-product-overview?view=o365-worldwide). Additionally, preset policies support configuration of [impersonation protection](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#impersonation-settings-in-anti-phishing-policies-in-microsoft-defender-for-office-365).",
+        "select": [
+          {
+            "+@idref": "V-8BFFFD3A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F428DDD8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FDC9A1A5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A737EE41",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-435F7B90",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "1-Preset-Security-Profiles_Sensitive",
+        "title": "1. Preset Security Profiles",
+        "description": "Microsoft Defender defines three [preset security profiles](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide): built-in protection, standard, and strict. These preset policies are informed by Microsoft's observations, and are designed to strike the balance between usability and security. They allow administrators to enable the full feature set of Defender by simply adding users to the policies rather than manually configuring each setting. Within the standard and strict preset policies, users can be enrolled in [Exchange Online Protection](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/eop-about?view=o365-worldwide) (EOP) and [Defender for Office 365 protection](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/microsoft-defender-for-office-365-product-overview?view=o365-worldwide). Additionally, preset policies support configuration of [impersonation protection](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#impersonation-settings-in-anti-phishing-policies-in-microsoft-defender-for-office-365).",
+        "select": [
+          {
+            "+@idref": "V-8BFFFD3A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F428DDD8",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FDC9A1A5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A737EE41",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-435F7B90",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "2-Impersonation-Protection_Public",
+        "title": "2. Impersonation Protection",
+        "description": "Impersonation protection checks incoming emails to see if the sender address is similar to the users or domains on an agency-defined list. If the sender address is significantly similar, as to indicate an impersonation attempt, the email is quarantined.",
+        "select": [
+          {
+            "+@idref": "V-D3710F89",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FD14AB47",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-078AD674",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "2-Impersonation-Protection_Classified",
+        "title": "2. Impersonation Protection",
+        "description": "Impersonation protection checks incoming emails to see if the sender address is similar to the users or domains on an agency-defined list. If the sender address is significantly similar, as to indicate an impersonation attempt, the email is quarantined.",
+        "select": [
+          {
+            "+@idref": "V-D3710F89",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FD14AB47",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-078AD674",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "2-Impersonation-Protection_Sensitive",
+        "title": "2. Impersonation Protection",
+        "description": "Impersonation protection checks incoming emails to see if the sender address is similar to the users or domains on an agency-defined list. If the sender address is significantly similar, as to indicate an impersonation attempt, the email is quarantined.",
+        "select": [
+          {
+            "+@idref": "V-D3710F89",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FD14AB47",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-078AD674",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "3-Safe-Attachments_Public",
+        "title": "3. Safe Attachments",
+        "description": "The Safe Attachments feature will scan messages for attachments with malicious content. All messages with attachments not already flagged by anti-malware protections in EOP are downloaded to a Microsoft virtual environment for further analysis. Safe Attachments then uses machine learning and other analysis techniques to detect malicious intent. While Safe Attachments for Exchange Online is automatically configured in the preset policies, separate action is needed to enable it for other products.",
+        "select": {
+          "+@idref": "V-2CC3AFCD",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "3-Safe-Attachments_Classified",
+        "title": "3. Safe Attachments",
+        "description": "The Safe Attachments feature will scan messages for attachments with malicious content. All messages with attachments not already flagged by anti-malware protections in EOP are downloaded to a Microsoft virtual environment for further analysis. Safe Attachments then uses machine learning and other analysis techniques to detect malicious intent. While Safe Attachments for Exchange Online is automatically configured in the preset policies, separate action is needed to enable it for other products.",
+        "select": {
+          "+@idref": "V-2CC3AFCD",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "3-Safe-Attachments_Sensitive",
+        "title": "3. Safe Attachments",
+        "description": "The Safe Attachments feature will scan messages for attachments with malicious content. All messages with attachments not already flagged by anti-malware protections in EOP are downloaded to a Microsoft virtual environment for further analysis. Safe Attachments then uses machine learning and other analysis techniques to detect malicious intent. While Safe Attachments for Exchange Online is automatically configured in the preset policies, separate action is needed to enable it for other products.",
+        "select": {
+          "+@idref": "V-2CC3AFCD",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "4-Data-Loss-Prevention_Public",
+        "title": "4. Data Loss Prevention",
+        "description": "There are several approaches to securing sensitive information, such as warning users, encryption, or blocking attempts to share. Agency policies for sensitive information, such as personally identifiable information (PII), should dictate how that information is handled and inform associated data loss prevention (DLP) policies. Defender can detect sensitive information and associates a default confidence level with this detection based on the sensitive information type matched. Confidence levels are used to reduce false positives in detecting access to sensitive information. Agencies may choose to use the default confidence levels or adjust the levels in custom DLP policies to fit their environment and needs.",
+        "select": [
+          {
+            "+@idref": "V-96C14E14",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-24F81F2B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7EC5CA9A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5525386A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-81D17A79",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8FEA102C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "4-Data-Loss-Prevention_Classified",
+        "title": "4. Data Loss Prevention",
+        "description": "There are several approaches to securing sensitive information, such as warning users, encryption, or blocking attempts to share. Agency policies for sensitive information, such as personally identifiable information (PII), should dictate how that information is handled and inform associated data loss prevention (DLP) policies. Defender can detect sensitive information and associates a default confidence level with this detection based on the sensitive information type matched. Confidence levels are used to reduce false positives in detecting access to sensitive information. Agencies may choose to use the default confidence levels or adjust the levels in custom DLP policies to fit their environment and needs.",
+        "select": [
+          {
+            "+@idref": "V-96C14E14",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-24F81F2B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7EC5CA9A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5525386A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-81D17A79",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8FEA102C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "4-Data-Loss-Prevention_Sensitive",
+        "title": "4. Data Loss Prevention",
+        "description": "There are several approaches to securing sensitive information, such as warning users, encryption, or blocking attempts to share. Agency policies for sensitive information, such as personally identifiable information (PII), should dictate how that information is handled and inform associated data loss prevention (DLP) policies. Defender can detect sensitive information and associates a default confidence level with this detection based on the sensitive information type matched. Confidence levels are used to reduce false positives in detecting access to sensitive information. Agencies may choose to use the default confidence levels or adjust the levels in custom DLP policies to fit their environment and needs.",
+        "select": [
+          {
+            "+@idref": "V-96C14E14",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-24F81F2B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7EC5CA9A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5525386A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-81D17A79",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-8FEA102C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "5-Alerts_Public",
+        "title": "5. Alerts",
+        "description": "There are several pre-built alert policies available pertaining to various apps in the M365 suite. These alerts give administrators better real-time insight into possible security incidents. Guidance on specific alerts to configure can be found in the linked section of the CISA M365 Secure Configuration Baseline for Exchange Online. - [MS.EXO.16.1v1 \\| CISA M365 Secure Configuration Baseline for Exchange Online](./exo.md#msexo161v1)",
+        "select": [
+          {
+            "+@idref": "V-CC4D128F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC753CE6",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "5-Alerts_Classified",
+        "title": "5. Alerts",
+        "description": "There are several pre-built alert policies available pertaining to various apps in the M365 suite. These alerts give administrators better real-time insight into possible security incidents. Guidance on specific alerts to configure can be found in the linked section of the CISA M365 Secure Configuration Baseline for Exchange Online. - [MS.EXO.16.1v1 \\| CISA M365 Secure Configuration Baseline for Exchange Online](./exo.md#msexo161v1)",
+        "select": [
+          {
+            "+@idref": "V-CC4D128F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC753CE6",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "5-Alerts_Sensitive",
+        "title": "5. Alerts",
+        "description": "There are several pre-built alert policies available pertaining to various apps in the M365 suite. These alerts give administrators better real-time insight into possible security incidents. Guidance on specific alerts to configure can be found in the linked section of the CISA M365 Secure Configuration Baseline for Exchange Online. - [MS.EXO.16.1v1 \\| CISA M365 Secure Configuration Baseline for Exchange Online](./exo.md#msexo161v1)",
+        "select": [
+          {
+            "+@idref": "V-CC4D128F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC753CE6",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "6-Audit-Logging_Public",
+        "title": "6. Audit Logging",
+        "description": "User activity from M365 services is captured in the organization's unified audit log. These logs are essential for conducting incident response and threat detection activity. By default, Microsoft retains the audit logs for 180 days. Activity by users with E5 licenses is logged for one year. However, in accordance with Office of Management and Budget (OMB) Memorandum 21-31, _Improving the Federal Government's Investigative and Remediation Capabilities Related to Cybersecurity Incidents_, M365 audit logs are to be retained for at least 12 months in active storage and an additional 18 months in cold storage. This can be accomplished either by offloading the logs out of the cloud environment or natively through Microsoft by creating an [audit log retention policy](https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?view=o365-worldwide#create-an-audit-log-retention-policy). OMB M-21-13 requires Advanced Audit Features be configured in M365. Advanced Audit, now Microsoft Purview Audit (Premium), adds additional event types to the Unified Audit Log.",
+        "select": [
+          {
+            "+@idref": "V-1DB9F99E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC9C3C00",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "6-Audit-Logging_Classified",
+        "title": "6. Audit Logging",
+        "description": "User activity from M365 services is captured in the organization's unified audit log. These logs are essential for conducting incident response and threat detection activity. By default, Microsoft retains the audit logs for 180 days. Activity by users with E5 licenses is logged for one year. However, in accordance with Office of Management and Budget (OMB) Memorandum 21-31, _Improving the Federal Government's Investigative and Remediation Capabilities Related to Cybersecurity Incidents_, M365 audit logs are to be retained for at least 12 months in active storage and an additional 18 months in cold storage. This can be accomplished either by offloading the logs out of the cloud environment or natively through Microsoft by creating an [audit log retention policy](https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?view=o365-worldwide#create-an-audit-log-retention-policy). OMB M-21-13 requires Advanced Audit Features be configured in M365. Advanced Audit, now Microsoft Purview Audit (Premium), adds additional event types to the Unified Audit Log.",
+        "select": [
+          {
+            "+@idref": "V-1DB9F99E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC9C3C00",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "6-Audit-Logging_Sensitive",
+        "title": "6. Audit Logging",
+        "description": "User activity from M365 services is captured in the organization's unified audit log. These logs are essential for conducting incident response and threat detection activity. By default, Microsoft retains the audit logs for 180 days. Activity by users with E5 licenses is logged for one year. However, in accordance with Office of Management and Budget (OMB) Memorandum 21-31, _Improving the Federal Government's Investigative and Remediation Capabilities Related to Cybersecurity Incidents_, M365 audit logs are to be retained for at least 12 months in active storage and an additional 18 months in cold storage. This can be accomplished either by offloading the logs out of the cloud environment or natively through Microsoft by creating an [audit log retention policy](https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?view=o365-worldwide#create-an-audit-log-retention-policy). OMB M-21-13 requires Advanced Audit Features be configured in M365. Advanced Audit, now Microsoft Purview Audit (Premium), adds additional event types to the Unified Audit Log.",
+        "select": [
+          {
+            "+@idref": "V-1DB9F99E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC9C3C00",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-8BFFFD3A",
+        "title": "1. Preset Security Profiles",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8BFFFD3Ar0F3BFA_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.DEFENDER.1.1v1",
+          "title": "The standard and strict preset security policies SHALL be enabled.",
+          "description": "<VulnDiscussion>The standard and strict preset security policies SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Defender includes a large number of features and settings to protect users against threats. Using the preset security policies, administrators can help ensure all new and existing users automatically have secure defaults applied.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-6a, SI-3a, SI-8\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1566.003: Spearphishing via Service</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.1.1v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to Microsoft 365 Defender.\n2. In the left-hand menu, go to Email & Collaboration > Policies & Rules.\n3. Select Threat Policies.\n4. From the Templated policies section, select Preset Security Policies.\n5. Under Standard protection, slide the toggle switch to the right so the text next to the toggle reads Standard protection is on.\n6. Under Strict protection, slide the toggle switch to the right so the text next to the toggle reads Strict protection is on.\nNote: If the toggle slider in step 5 is grayed out, click on Manage protection settings\ninstead and configure the policy settings according to Use the Microsoft 365 Defender portal to assign Standard and Strict preset security policies to users | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-assign-standard-and-strict-preset-security-policies-to-users).",
+            "+@fixref": "F-8BFFFD3Ar0F3BFA_fix"
+          },
+          "fix": {
+            "+@id": "F-8BFFFD3Ar0F3BFA_fix"
+          },
+          "check": {
+            "+@system": "C-8BFFFD3Ar0F3BFA_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "The standard and strict preset security policies SHALL be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Use the Microsoft 365 Defender portal to assign Standard and Strict preset security policies to users | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-assign-standard-and-strict-preset-security-policies-to-users)\n- Recommended settings for EOP and Microsoft Defender for Office 365 security | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/recommended-settings-for-eop-and-office365)\n- Configure anti-phishing policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-eop-configure?view=o365-worldwide)\n- Configure anti-malware policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-malware-policies-configure?view=o365-worldwide)\n- Configure anti-spam policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-policies-configure?view=o365-worldwide)\n- Configure anti-phishing policies in Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-mdo-configure?view=o365-worldwide)\n- Set up Safe Attachments policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-policies-configure?view=o365-worldwide)\n- Set up Safe Links policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-F428DDD8",
+        "title": "1. Preset Security Profiles",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F428DDD8r7DD0EB_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.DEFENDER.1.2v1",
+          "title": "All users SHALL be added to Exchange Online Protection (EOP) in either the standard or strict preset security policy.",
+          "description": "<VulnDiscussion>All users SHALL be added to Exchange Online Protection (EOP) in either the standard or strict preset security policy.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Important user protections are provided by EOP, including anti-spam, anti-malware, and anti-phishing protections. By using the preset policies, administrators can help ensure all new and existing users have secure defaults applied automatically.\n\nNote: The standard and strict preset security policies must be enabled as directed by [MS.DEFENDER.1.1v1](#msdefender11v1) for protections to be applied.\n\nNote: Specific user accounts, except for sensitive accounts, MAY be exempt from the preset policies, provided they are added to one or more custom policies offering comparable protection. These users might need flexibility not offered by the preset policies. Their accounts should be added to a custom policy conforming, as closely as possible to the settings used by the preset policies. See the **Resources** section for more details on configuring policies.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-6a, SI-3a, SI-8\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1566.003: Spearphishing via Service</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.1.2v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to Microsoft 365 Defender.\n2. In the left-hand menu, go to Email & Collaboration > Policies & Rules.\n3. Select Threat Policies.\n4. From the Templated policies section, select Preset Security Policies.\n5. Select Manage protection settings under either Standard protection\nor Strict protection.\n6. On the Apply Exchange Online Protection page, select All recipients.\n7. (Optional) Under Exclude these recipients, add Users and Groups\nto be exempted from the preset policies.\n8. Select Next on each page until the Review and confirm your changes page.\n9. On the Review and confirm your changes page, select Confirm.",
+            "+@fixref": "F-F428DDD8r7DD0EB_fix"
+          },
+          "fix": {
+            "+@id": "F-F428DDD8r7DD0EB_fix"
+          },
+          "check": {
+            "+@system": "C-F428DDD8r7DD0EB_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "All users SHALL be added to Exchange Online Protection (EOP) in either the standard or strict preset security policy.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Use the Microsoft 365 Defender portal to assign Standard and Strict preset security policies to users | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-assign-standard-and-strict-preset-security-policies-to-users)\n- Recommended settings for EOP and Microsoft Defender for Office 365 security | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/recommended-settings-for-eop-and-office365)\n- Configure anti-phishing policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-eop-configure?view=o365-worldwide)\n- Configure anti-malware policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-malware-policies-configure?view=o365-worldwide)\n- Configure anti-spam policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-policies-configure?view=o365-worldwide)\n- Configure anti-phishing policies in Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-mdo-configure?view=o365-worldwide)\n- Set up Safe Attachments policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-policies-configure?view=o365-worldwide)\n- Set up Safe Links policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-FDC9A1A5",
+        "title": "1. Preset Security Profiles",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FDC9A1A5r31E6C3_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.DEFENDER.1.3v1",
+          "title": "All users SHALL be added to Defender for Office 365 protection in either the standard or strict preset security policy.",
+          "description": "<VulnDiscussion>All users SHALL be added to Defender for Office 365 protection in either the standard or strict preset security policy.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Important user protections are provided by Defender for Office 365 protection, including safe attachments and safe links. By using the preset policies, administrators can help ensure all new and existing users have secure defaults applied automatically.\n\nNote: The standard and strict preset security policies must be enabled as directed by [MS.DEFENDER.1.1v1](#msdefender11v1) for protections to be applied.\n\nNote: Specific user accounts, except for sensitive accounts, MAY be exempt from the preset policies, provided they are added to one or more custom policies offering comparable protection. These users might need flexibility not offered by the preset policies. Their accounts should be added to a custom policy conforming as closely as possible to the settings used by the preset policies. See the **Resources** section for more details on configuring policies.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-6a, SI-3a, SI-8\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1566.003: Spearphishing via Service</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.1.3v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to Microsoft 365 Defender.\n2. In the left-hand menu, go to Email & Collaboration > Policies & Rules.\n3. Select Threat Policies.\n4. From the Templated policies section, select Preset Security Policies.\n5. Under either Standard protection or Strict protection, select **Manage\nprotection settings**.\n6. Select Next until you reach the Apply Defender for Office 365 protection page.\n7. On the Apply Defender for Office 365 protection page, select All recipients.\n8. (Optional) Under Exclude these recipients, add Users and Groups\nto be exempted from the preset policies.\n9. Select Next on each page until the Review and confirm your changes page.\n10. On the Review and confirm your changes page, select Confirm.",
+            "+@fixref": "F-FDC9A1A5r31E6C3_fix"
+          },
+          "fix": {
+            "+@id": "F-FDC9A1A5r31E6C3_fix"
+          },
+          "check": {
+            "+@system": "C-FDC9A1A5r31E6C3_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "All users SHALL be added to Defender for Office 365 protection in either the standard or strict preset security policy.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Use the Microsoft 365 Defender portal to assign Standard and Strict preset security policies to users | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-assign-standard-and-strict-preset-security-policies-to-users)\n- Recommended settings for EOP and Microsoft Defender for Office 365 security | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/recommended-settings-for-eop-and-office365)\n- Configure anti-phishing policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-eop-configure?view=o365-worldwide)\n- Configure anti-malware policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-malware-policies-configure?view=o365-worldwide)\n- Configure anti-spam policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-policies-configure?view=o365-worldwide)\n- Configure anti-phishing policies in Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-mdo-configure?view=o365-worldwide)\n- Set up Safe Attachments policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-policies-configure?view=o365-worldwide)\n- Set up Safe Links policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-A737EE41",
+        "title": "1. Preset Security Profiles",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A737EE41rFC4C85_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.DEFENDER.1.4v1",
+          "title": "Sensitive accounts SHALL be added to Exchange Online Protection in the strict preset security policy.",
+          "description": "<VulnDiscussion>Sensitive accounts SHALL be added to Exchange Online Protection in the strict preset security policy.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Unauthorized access to a sensitive account may result in greater harm than a standard user account. Adding sensitive accounts to the strict preset security policy, with its increased protections, better mitigates their elevated risk to email threats.\n\nNote: The strict preset security policy must be enabled to protect sensitive accounts.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-6a, SI-3a, SI-8\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.1.4v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to Microsoft 365 Defender.\n2. In the left-hand menu, go to Email & Collaboration > Policies & Rules.\n3. Select Threat Policies.\n4. From the Templated policies section, select Preset Security Policies.\n5. Under Strict protection, select Manage protection settings.\n6. On the Apply Exchange Online Protection page, select Specific recipients.\n7. Add all sensitive accounts via the User and Group boxes using the\nnames of mailboxes, users, contacts, M365 groups, and distribution groups.\n8. Select Next on each page until the Review and confirm your changes page.\n9. On the Review and confirm your changes page, select Confirm.",
+            "+@fixref": "F-A737EE41rFC4C85_fix"
+          },
+          "fix": {
+            "+@id": "F-A737EE41rFC4C85_fix"
+          },
+          "check": {
+            "+@system": "C-A737EE41rFC4C85_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "Sensitive accounts SHALL be added to Exchange Online Protection in the strict preset security policy.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Use the Microsoft 365 Defender portal to assign Standard and Strict preset security policies to users | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-assign-standard-and-strict-preset-security-policies-to-users)\n- Recommended settings for EOP and Microsoft Defender for Office 365 security | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/recommended-settings-for-eop-and-office365)\n- Configure anti-phishing policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-eop-configure?view=o365-worldwide)\n- Configure anti-malware policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-malware-policies-configure?view=o365-worldwide)\n- Configure anti-spam policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-policies-configure?view=o365-worldwide)\n- Configure anti-phishing policies in Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-mdo-configure?view=o365-worldwide)\n- Set up Safe Attachments policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-policies-configure?view=o365-worldwide)\n- Set up Safe Links policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-435F7B90",
+        "title": "1. Preset Security Profiles",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-435F7B90r46AA16_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.DEFENDER.1.5v1",
+          "title": "Sensitive accounts SHALL be added to Defender for Office 365 protection in the strict preset security policy.",
+          "description": "<VulnDiscussion>Sensitive accounts SHALL be added to Defender for Office 365 protection in the strict preset security policy.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Unauthorized access to a sensitive account may result in greater harm than to a standard user account. Adding sensitive accounts to the strict preset security policy, with its increased protections, better mitigates their elevated risk.\n\nNote: The strict preset security policy must be enabled to protect sensitive accounts.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-6a, SI-3a, SI-8\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.1.5v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to Microsoft 365 Defender.\n2. In the left-hand menu, go to Email & Collaboration > Policies & Rules.\n3. Select Threat Policies.\n4. From the Templated policies section, select Preset Security Policies.\n5. Under Strict protection, select Manage protection settings.\n6. Select Next until you reach the Apply Defender for Office 365 protection page.\n7. On the Apply Defender for Office 365 protection page, select\nSpecific recipients or Previously selected recipients if sensitive\naccounts were already set on the EOP page.\n8. If adding sensitive accounts separately via Specific recipients, add all\nsensitive accounts via the User and Group boxes using the names of\nmailboxes, users, contacts, M365 groups, and distribution groups.\n9. (Optional) Under Exclude these recipients, add Users and Groups\nto be exempted from the preset policies.\n10. Select Next on each page until the Review and confirm your changes page.\n11. On the Review and confirm your changes page, select Confirm.",
+            "+@fixref": "F-435F7B90r46AA16_fix"
+          },
+          "fix": {
+            "+@id": "F-435F7B90r46AA16_fix"
+          },
+          "check": {
+            "+@system": "C-435F7B90r46AA16_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "Sensitive accounts SHALL be added to Defender for Office 365 protection in the strict preset security policy.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Use the Microsoft 365 Defender portal to assign Standard and Strict preset security policies to users | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-assign-standard-and-strict-preset-security-policies-to-users)\n- Recommended settings for EOP and Microsoft Defender for Office 365 security | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/recommended-settings-for-eop-and-office365)\n- Configure anti-phishing policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-eop-configure?view=o365-worldwide)\n- Configure anti-malware policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-malware-policies-configure?view=o365-worldwide)\n- Configure anti-spam policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-policies-configure?view=o365-worldwide)\n- Configure anti-phishing policies in Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-mdo-configure?view=o365-worldwide)\n- Set up Safe Attachments policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-policies-configure?view=o365-worldwide)\n- Set up Safe Links policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-D3710F89",
+        "title": "2. Impersonation Protection",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D3710F89r6F9434_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.DEFENDER.2.1v1",
+          "title": "User impersonation protection SHOULD be enabled for sensitive accounts in both the standard and strict preset policies.",
+          "description": "<VulnDiscussion>User impersonation protection SHOULD be enabled for sensitive accounts in both the standard and strict preset policies.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: User impersonation, especially of users with access to sensitive or high-value information and resources, has the potential to result in serious harm. Impersonation protection mitigates this risk. By configuring impersonation protection in both preset policies, administrators can help protect email recipients from impersonated emails, regardless of whether they are added to the standard or strict policy.\n\nNote: The standard and strict preset security policies must be enabled to protect accounts.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1656: Impersonation</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.2.1v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to Microsoft 365 Defender.\n2. In the left-hand menu, go to Email & Collaboration > Policies & Rules.\n3. Select Threat Policies.\n4. From the Templated policies section, select Preset Security Policies.\n5. Under either Standard protection or Strict protection, select **Manage\nprotection settings**.\n6. Select Next until you reach the Impersonation Protection page, then\nselect Next once more.\n7. On the Protected custom users page, add a name and valid email address for each\nsensitive account and click Add after each.\n8. Select Next until you reach the Trusted senders and domains page.\n9. (Optional) Add specific email addresses here to not flag as impersonation\nwhen sending messages and prevent false positives. Click Add after each.\n10. Select Next on each page until the Review and confirm your changes page.\n11. On the Review and confirm your changes page, select Confirm.",
+            "+@fixref": "F-D3710F89r6F9434_fix"
+          },
+          "fix": {
+            "+@id": "F-D3710F89r6F9434_fix"
+          },
+          "check": {
+            "+@system": "C-D3710F89r6F9434_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "User impersonation protection SHOULD be enabled for sensitive accounts in both the standard and strict preset policies.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Impersonation settings in anti-phishing policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#impersonation-settings-in-anti-phishing-policies-in-microsoft-defender-for-office-365)\n- Use the Microsoft 365 Defender portal to assign Standard and Strict preset security policies to users | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-assign-standard-and-strict-preset-security-policies-to-users)"
+          }
+        }
+      },
+      {
+        "+@id": "V-FD14AB47",
+        "title": "2. Impersonation Protection",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FD14AB47rFAFDB1_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.DEFENDER.2.2v1",
+          "title": "Domain impersonation protection SHOULD be enabled for domains owned by the agency in both the standard and strict preset policies.",
+          "description": "<VulnDiscussion>Domain impersonation protection SHOULD be enabled for domains owned by the agency in both the standard and strict preset policies.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Configuring domain impersonation protection for all agency domains reduces the risk of a user being deceived by a look-alike domain. By configuring impersonation protection in both preset policies, administrators can help protect email recipients from impersonated emails, regardless of whether they are added to the standard or strict policy.\n\nNote: The standard and strict preset security policies must be enabled to protect agency domains.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1656: Impersonation</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.2.2v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to Microsoft 365 Defender.\n2. In the left-hand menu, go to Email & Collaboration > Policies & Rules.\n3. Select Threat Policies.\n4. From the Templated policies section, select Preset Security Policies.\n5. Under either Standard protection or Strict protection, select **Manage\nprotection settings**.\n6. Select Next until you reach the Impersonation Protection page, then\nselect Next once more.\n7. On the Protected custom domains page, add each agency domain\nand click Add after each.\n8. Select Next until you reach the Trusted senders and domains page.\n9. (Optional) Add specific domains here to not flag as impersonation when\nsending messages and prevent false positives. Click Add after each.\n10. Select Next on each page until the Review and confirm your changes page.\n11. On the Review and confirm your changes page, select Confirm.",
+            "+@fixref": "F-FD14AB47rFAFDB1_fix"
+          },
+          "fix": {
+            "+@id": "F-FD14AB47rFAFDB1_fix"
+          },
+          "check": {
+            "+@system": "C-FD14AB47rFAFDB1_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "Domain impersonation protection SHOULD be enabled for domains owned by the agency in both the standard and strict preset policies.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Impersonation settings in anti-phishing policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#impersonation-settings-in-anti-phishing-policies-in-microsoft-defender-for-office-365)\n- Use the Microsoft 365 Defender portal to assign Standard and Strict preset security policies to users | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-assign-standard-and-strict-preset-security-policies-to-users)"
+          }
+        }
+      },
+      {
+        "+@id": "V-078AD674",
+        "title": "2. Impersonation Protection",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-078AD674r321BBB_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.DEFENDER.2.3v1",
+          "title": "Domain impersonation protection SHOULD be added for important partners in both the standard and strict preset policies.",
+          "description": "<VulnDiscussion>Domain impersonation protection SHOULD be added for important partners in both the standard and strict preset policies.\n\nCriticality: SHOULD.\nLast modified: November 2025.\n\nRationale: Configuring domain impersonation protection for domains owned by important partners reduces the risk of a user being deceived by a look-alike domain. By configuring impersonation protection in both preset policies, administrators can help protect email recipients from impersonated emails, regardless of whether they are added to the standard or strict policy.\n\nNote: The standard and strict preset security policies must be enabled to protect partner domains.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1656: Impersonation</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.2.3v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to Microsoft 365 Defender.\n2. In the left-hand menu, go to Email & Collaboration > Policies & Rules.\n3. Select Threat Policies.\n4. From the Templated policies section, select Preset Security Policies.\n5. Under either Standard protection or Strict protection, select **Manage\nprotection settings**.\n6. Select Next until you reach the Impersonation Protection page, then\nselect Next once more.\n7. On the Protected custom domains page, add each partner domain\nand click Add after each.\n8. Select Next on each page until the Review and confirm your changes page.\n9. On the Review and confirm your changes page, select Confirm.",
+            "+@fixref": "F-078AD674r321BBB_fix"
+          },
+          "fix": {
+            "+@id": "F-078AD674r321BBB_fix"
+          },
+          "check": {
+            "+@system": "C-078AD674r321BBB_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "Domain impersonation protection SHOULD be added for important partners in both the standard and strict preset policies.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Impersonation settings in anti-phishing policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#impersonation-settings-in-anti-phishing-policies-in-microsoft-defender-for-office-365)\n- Use the Microsoft 365 Defender portal to assign Standard and Strict preset security policies to users | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-assign-standard-and-strict-preset-security-policies-to-users)"
+          }
+        }
+      },
+      {
+        "+@id": "V-2CC3AFCD",
+        "title": "3. Safe Attachments",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2CC3AFCDrC05337_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.DEFENDER.3.1v1",
+          "title": "Safe attachments SHOULD be enabled for SharePoint, OneDrive, and Microsoft Teams.",
+          "description": "<VulnDiscussion>Safe attachments SHOULD be enabled for SharePoint, OneDrive, and Microsoft Teams.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Clicking malicious links makes users vulnerable to attacks, and this danger is not limited to links in emails. Other Microsoft products, such as Microsoft Teams, can be used to present users with malicious links. As such, it is important to protect users on these other Microsoft products as well.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3a\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1204.001: User Execution; T1204.001: Malicious Link; T1204.002: Malicious File</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.3.1v1"
+          },
+          "fixtext": {
+            "+content": "To enable Safe Attachments for SharePoint, OneDrive, and Microsoft\nTeams, follow the instructions listed at Turn on Safe Attachments for SharePoint, OneDrive, and Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide).\n1.  Sign in to Microsoft 365 Defender.\n2.  Under Email & collaboration, select Policies & rules.\n3.  Select Threat policies.\n4.  Under Policies, select Safe Attachments.\n5.  Select Global settings.\n6.  Toggle the **Turn on Defender for Office 365 for SharePoint, OneDrive, and\nMicrosoft Teams slider to On**.",
+            "+@fixref": "F-2CC3AFCDrC05337_fix"
+          },
+          "fix": {
+            "+@id": "F-2CC3AFCDrC05337_fix"
+          },
+          "check": {
+            "+@system": "C-2CC3AFCDrC05337_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "Safe attachments SHOULD be enabled for SharePoint, OneDrive, and Microsoft Teams.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Safe Attachments in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-about?view=o365-worldwide#safe-attachments-policy-settings)\n- Turn on Safe Attachments for SharePoint, OneDrive, and Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-96C14E14",
+        "title": "4. Data Loss Prevention",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-96C14E14r41B8B5_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.DEFENDER.4.1v2",
+          "title": "A custom policy SHALL be configured to protect PII and sensitive information, as defined by the agency, blocking at a minimum: credit card numbers, U.S. Individual Taxpayer Identification Numbers (ITIN), and U.S. Social Security numbers (SSN).",
+          "description": "<VulnDiscussion>A custom policy SHALL be configured to protect PII and sensitive information, as defined by the agency, blocking at a minimum: credit card numbers, U.S. Individual Taxpayer Identification Numbers (ITIN), and U.S. Social Security numbers (SSN).\n\nCriticality: SHALL.\nLast modified: November 2024.\n\nRationale: Users may inadvertently share sensitive information with others who should not have access to it. DLP policies provide a way for agencies to detect and prevent unauthorized disclosures.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\nMITRE ATT&CK: T1567: Exfiltration Over Web Service; T1530: Data from Cloud Storage; T1213: Data from Information Repositories</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.4.1v2"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to the Microsoft Purview portal.\n2. Under the Solutions section on the left-hand menu, select **Data loss\nprevention**.\n3. Select Policies from the top of the page.\n4. Select Create policy.\n5. From the Categories list, select Custom.\n6. From the Regulations list, select Custom policy and then click\nNext.\n7. Edit the name and description of the policy if desired, then click\nNext.\n8. Under Assign admin units,  ensure Admin units is set to Full directory by default, then click Next.\n9. Under Choose where to apply the policy, set Status to On\nfor at least the Exchange email, OneDrive accounts, SharePoint\nsites, Teams chat and channel messages, and Devices locations, then\nclick Next.\n10. Under Define policy settings, select **Create or customize advanced\nDLP rules, and then click Next**.\n11. Click Create rule. Assign the rule an appropriate name and\ndescription.\n12. Click Add condition, then Content contains.\n13. Click Add, then Sensitive info types.\n14. Add information types that protect information sensitive to the agency.\nAt a minimum, the agency should protect:\n- Credit card numbers\n- U.S. Individual Taxpayer Identification Numbers (ITIN)\n- U.S. Social Security Numbers (SSN)\n- All agency-defined PII and sensitive information\n15. Click Add.\n16. Under Actions, click Add an action.\n17. Check **Restrict Access or encrypt the content in Microsoft 365\nlocations**.\n18. Under this action, select Block Everyone.\n19. Under User notifications, turn on Use notifications to inform your users and help educate them on the proper use of sensitive info.\n20. Under Microsoft 365 services if using a GCC environment or under Microsoft 365 files and Microsoft Fabric items if using a Commercial environment, a section that appears after user notifications are turned on, check the box next to Notify users in Office 365 service with a policy tip or email notifications.\n21. Click Save, then Next.\n22. Select Turn the policy on immediately, then click Next.\n23. Click Submit.",
+            "+@fixref": "F-96C14E14r41B8B5_fix"
+          },
+          "fix": {
+            "+@id": "F-96C14E14r41B8B5_fix"
+          },
+          "check": {
+            "+@system": "C-96C14E14r41B8B5_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "A custom policy SHALL be configured to protect PII and sensitive information, as defined by the agency, blocking at a minimum: credit card numbers, U.S. Individual Taxpayer Identification Numbers (ITIN), and U.S. Social Security numbers (SSN).\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Plan for data loss prevention (DLP) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/dlp-overview-plan-for-dlp?view=o365-worldwide)\n- Data loss prevention in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention)\n- Personally identifiable information (PII) | NIST (https://csrc.nist.gov/glossary/term/personally_identifiable_information#:~:text=NISTIR%208259,2%20under%20PII%20from%20EGovAct)\n- Sensitive information | NIST (https://csrc.nist.gov/glossary/term/sensitive_information)\n- Get started with Endpoint data loss prevention - Microsoft Purview (compliance) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/endpoint-dlp-getting-started?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-24F81F2B",
+        "title": "4. Data Loss Prevention",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-24F81F2Br22CF1A_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.DEFENDER.4.2v1",
+          "title": "The custom policy SHOULD be applied to Exchange, OneDrive, SharePoint, Teams chat, and Devices.",
+          "description": "<VulnDiscussion>The custom policy SHOULD be applied to Exchange, OneDrive, SharePoint, Teams chat, and Devices.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Unauthorized disclosures may happen through M365 services or endpoint devices. DLP policies should cover all affected locations to be effective.\n\nNote: The custom policy referenced here is the same policy configured in [MS.DEFENDER.4.1v2](#msdefender41v2).\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\nMITRE ATT&CK: T1567: Exfiltration Over Web Service; T1530: Data from Cloud Storage; T1213: Data from Information Repositories; T1213.002: Sharepoint</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.4.2v1"
+          },
+          "fixtext": {
+            "+content": "See MS.DEFENDER.4.1v2 Instructions (#msdefender41v2-instructions) step 8\nfor details on enforcing DLP policy in specific M365 service locations.",
+            "+@fixref": "F-24F81F2Br22CF1A_fix"
+          },
+          "fix": {
+            "+@id": "F-24F81F2Br22CF1A_fix"
+          },
+          "check": {
+            "+@system": "C-24F81F2Br22CF1A_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "The custom policy SHOULD be applied to Exchange, OneDrive, SharePoint, Teams chat, and Devices.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Plan for data loss prevention (DLP) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/dlp-overview-plan-for-dlp?view=o365-worldwide)\n- Data loss prevention in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention)\n- Personally identifiable information (PII) | NIST (https://csrc.nist.gov/glossary/term/personally_identifiable_information#:~:text=NISTIR%208259,2%20under%20PII%20from%20EGovAct)\n- Sensitive information | NIST (https://csrc.nist.gov/glossary/term/sensitive_information)\n- Get started with Endpoint data loss prevention - Microsoft Purview (compliance) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/endpoint-dlp-getting-started?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-7EC5CA9A",
+        "title": "4. Data Loss Prevention",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7EC5CA9Ar1C5C33_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.DEFENDER.4.3v1",
+          "title": "The action for the custom policy SHOULD be set to block sharing sensitive information with everyone.",
+          "description": "<VulnDiscussion>The action for the custom policy SHOULD be set to block sharing sensitive information with everyone.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Access to sensitive information should be prohibited unless explicitly allowed. Specific exemptions can be made based on agency policies and valid business justifications.\n\nNote: The custom policy referenced here is the same policy configured in [MS.DEFENDER.4.1v2](#msdefender41v2).\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, SC-7(10)\n\nMITRE ATT&CK: T1567: Exfiltration Over Web Service; T1530: Data from Cloud Storage; T1213: Data from Information Repositories</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.4.3v1"
+          },
+          "fixtext": {
+            "+content": "See MS.DEFENDER.4.1v2 Instructions (#msdefender41v2-instructions) steps\n15-17 for details on configuring DLP policy to block sharing sensitive\ninformation with everyone.",
+            "+@fixref": "F-7EC5CA9Ar1C5C33_fix"
+          },
+          "fix": {
+            "+@id": "F-7EC5CA9Ar1C5C33_fix"
+          },
+          "check": {
+            "+@system": "C-7EC5CA9Ar1C5C33_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "The action for the custom policy SHOULD be set to block sharing sensitive information with everyone.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Plan for data loss prevention (DLP) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/dlp-overview-plan-for-dlp?view=o365-worldwide)\n- Data loss prevention in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention)\n- Personally identifiable information (PII) | NIST (https://csrc.nist.gov/glossary/term/personally_identifiable_information#:~:text=NISTIR%208259,2%20under%20PII%20from%20EGovAct)\n- Sensitive information | NIST (https://csrc.nist.gov/glossary/term/sensitive_information)\n- Get started with Endpoint data loss prevention - Microsoft Purview (compliance) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/endpoint-dlp-getting-started?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-5525386A",
+        "title": "4. Data Loss Prevention",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5525386ArD75E85_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.DEFENDER.4.4v1",
+          "title": "Notifications to inform users and help educate them on the proper use of sensitive information SHOULD be enabled in the custom policy.",
+          "description": "<VulnDiscussion>Notifications to inform users and help educate them on the proper use of sensitive information SHOULD be enabled in the custom policy.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Some users may not be aware of agency policies on proper use of sensitive information. Enabling notifications provides positive feedback to users when accessing sensitive information.\n\nNote: The custom policy referenced here is the same policy configured in [MS.DEFENDER.4.1v2](#msdefender41v2).\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AT-2b</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.4.4v1"
+          },
+          "fixtext": {
+            "+content": "See MS.DEFENDER.4.1v2 Instructions (#msdefender41v2-instructions) steps\n18-19 for details on configuring DLP policy to notify users when accessing\nsensitive information.",
+            "+@fixref": "F-5525386ArD75E85_fix"
+          },
+          "fix": {
+            "+@id": "F-5525386ArD75E85_fix"
+          },
+          "check": {
+            "+@system": "C-5525386ArD75E85_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "Notifications to inform users and help educate them on the proper use of sensitive information SHOULD be enabled in the custom policy.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Plan for data loss prevention (DLP) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/dlp-overview-plan-for-dlp?view=o365-worldwide)\n- Data loss prevention in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention)\n- Personally identifiable information (PII) | NIST (https://csrc.nist.gov/glossary/term/personally_identifiable_information#:~:text=NISTIR%208259,2%20under%20PII%20from%20EGovAct)\n- Sensitive information | NIST (https://csrc.nist.gov/glossary/term/sensitive_information)\n- Get started with Endpoint data loss prevention - Microsoft Purview (compliance) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/endpoint-dlp-getting-started?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-81D17A79",
+        "title": "4. Data Loss Prevention",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-81D17A79rAABC7F_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.DEFENDER.4.5v1",
+          "title": "A list of apps that are restricted from accessing files protected by DLP policy SHOULD be defined.",
+          "description": "<VulnDiscussion>A list of apps that are restricted from accessing files protected by DLP policy SHOULD be defined.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Some apps may inappropriately share accessed files or not conform to agency policies for access to sensitive information. Defining a list of those apps makes it possible to use DLP policies to restrict those apps' access to sensitive information on endpoints using Defender.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\nMITRE ATT&CK: T1565: Data Manipulation; T1485: Data Destruction; T1530: Data from Cloud Storage</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.4.5v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to the Microsoft Purview portal.\n2. Go to Settings, under Solution Settings select Data loss prevention.\n3. Go to Endpoint DLP Settings.\n4. Go to Restricted apps and app groups.\n5. Click Add or edit Restricted Apps.\n6. Enter an app and executable name to disallow said app from\naccessing protected files, and log the incident.\n7. Return and click Unallowed Bluetooth apps.\n8. Click Add or edit unallowed Bluetooth apps.\n9. Enter an app and executable name to disallow said app from\naccessing protected files, and log the incident.",
+            "+@fixref": "F-81D17A79rAABC7F_fix"
+          },
+          "fix": {
+            "+@id": "F-81D17A79rAABC7F_fix"
+          },
+          "check": {
+            "+@system": "C-81D17A79rAABC7F_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "A list of apps that are restricted from accessing files protected by DLP policy SHOULD be defined.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Plan for data loss prevention (DLP) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/dlp-overview-plan-for-dlp?view=o365-worldwide)\n- Data loss prevention in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention)\n- Personally identifiable information (PII) | NIST (https://csrc.nist.gov/glossary/term/personally_identifiable_information#:~:text=NISTIR%208259,2%20under%20PII%20from%20EGovAct)\n- Sensitive information | NIST (https://csrc.nist.gov/glossary/term/sensitive_information)\n- Get started with Endpoint data loss prevention - Microsoft Purview (compliance) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/endpoint-dlp-getting-started?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-8FEA102C",
+        "title": "4. Data Loss Prevention",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8FEA102Cr14DD0E_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.DEFENDER.4.6v1",
+          "title": "The custom policy SHOULD include an action to block access to sensitive information by restricted apps and unwanted Bluetooth applications.",
+          "description": "<VulnDiscussion>The custom policy SHOULD include an action to block access to sensitive information by restricted apps and unwanted Bluetooth applications.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Some apps may inappropriately share accessed files or not conform to agency policies for access to sensitive information. Defining a DLP policy with an action to block access from restricted apps and unwanted Bluetooth applications prevents unauthorized disclosure by those programs.\n\nNote: The custom policy referenced here is the same policy configured in [MS.DEFENDER.4.1v2](#msdefender41v2).\n\nNote: This action can only be included if at least one device is onboarded to the agency tenant. Otherwise, the option to block restricted apps will not be available.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-19a\n\nMITRE ATT&CK: T1565: Data Manipulation; T1485: Data Destruction; T1530: Data from Cloud Storage; T1486: Data Encrypted for Impact</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.4.6v1"
+          },
+          "fixtext": {
+            "+content": "If restricted app and unwanted Bluetooth app restrictions are desired,\nassociated devices must be onboarded with Defender for Endpoint\nbefore the instructions below can be completed.\n1. Sign in to the Microsoft Purview portal.\n2. Under Solutions, select Data loss prevention.\n3. Select Policies from the top of the page.\n4. Find the custom DLP policy configured under\nMS.DEFENDER.4.1v2 Instructions (#msdefender41v2-instructions) in the list\nand click the Policy name to select.\n5. Select Edit Policy.\n6. Click Next on each page in the policy wizard until you reach the\nAdvanced DLP rules page.\n7. Select the relevant rule and click the pencil icon to edit it.\n8. Under Actions, click Add an action.\n9. Choose Audit or restrict activities on device\n10. Under File activities for all apps, select\nApply restrictions to specific activity.\n11. Check the box next to Copy or move using unallowed Bluetooth app\nand set its action to Block.\n12. Under Restricted app activities, check the Access by restricted apps box\nand set the action drop-down to Block.\n13. Click Save to save the changes.\n14. Click Next on each page until reaching the\nReview your policy and create it page.\n15. Review the policy and click Submit to complete the policy changes.",
+            "+@fixref": "F-8FEA102Cr14DD0E_fix"
+          },
+          "fix": {
+            "+@id": "F-8FEA102Cr14DD0E_fix"
+          },
+          "check": {
+            "+@system": "C-8FEA102Cr14DD0E_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "The custom policy SHOULD include an action to block access to sensitive information by restricted apps and unwanted Bluetooth applications.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Plan for data loss prevention (DLP) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/dlp-overview-plan-for-dlp?view=o365-worldwide)\n- Data loss prevention in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention)\n- Personally identifiable information (PII) | NIST (https://csrc.nist.gov/glossary/term/personally_identifiable_information#:~:text=NISTIR%208259,2%20under%20PII%20from%20EGovAct)\n- Sensitive information | NIST (https://csrc.nist.gov/glossary/term/sensitive_information)\n- Get started with Endpoint data loss prevention - Microsoft Purview (compliance) | Microsoft Learn (https://learn.microsoft.com/en-us/purview/endpoint-dlp-getting-started?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-CC4D128F",
+        "title": "5. Alerts",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CC4D128Fr14D41A_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.DEFENDER.5.1v1",
+          "title": "At a minimum, the alerts required by the CISA M365 Secure Configuration Baseline for Exchange Online SHALL be enabled.",
+          "description": "<VulnDiscussion>At a minimum, the alerts required by the CISA M365 Secure Configuration Baseline for Exchange Online SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Potentially malicious or service-impacting events may go undetected without a means of detecting these events. Administrators are alerted to these events when they occur, minimizing potential user or agency impact.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(5)\n\nMITRE ATT&CK: T1562: Impair Defenses; T1562.006: Indicator Blocking</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.5.1v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to Microsoft 365 Defender.\n2. Under Email & collaboration, select Policies & rules.\n3. Select Alert Policy.\n4. Select the checkbox next to each alert to enable as determined by the\nagency and at a minimum those referenced in the\n_CISA M365 Secure Configuration Baseline for Exchange Online_ (./exo.md#msexo161v1) which are:\na. Suspicious email sending patterns detected.\nb. Suspicious connector activity.\nc. Suspicious Email Forwarding Activity.\nd. Messages have been delayed.\ne. Tenant restricted from sending unprovisioned email.\nf. Tenant restricted from sending email.\ng. A potentially malicious URL click was detected.\n5. Click the pencil icon from the top menu.\n6. Select the Enable selected policies action from the Bulk actions\nmenu.",
+            "+@fixref": "F-CC4D128Fr14D41A_fix"
+          },
+          "fix": {
+            "+@id": "F-CC4D128Fr14D41A_fix"
+          },
+          "check": {
+            "+@system": "C-CC4D128Fr14D41A_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "At a minimum, the alerts required by the CISA M365 Secure Configuration Baseline for Exchange Online SHALL be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Alert policies in Microsoft 365 | Microsoft Learn (https://learn.microsoft.com/en-us/purview/alert-policies?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-FC753CE6",
+        "title": "5. Alerts",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FC753CE6r67E0A4_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.DEFENDER.5.2v1",
+          "title": "The alerts SHOULD be sent to a monitored address or incorporated into a Security Information and Event Management (SIEM).",
+          "description": "<VulnDiscussion>The alerts SHOULD be sent to a monitored address or incorporated into a Security Information and Event Management (SIEM).\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Suspicious or malicious events, if not resolved promptly, may have a greater impact to users and the agency. Sending alerts to a monitored email address or SIEM system helps ensure events are acted upon in a timely manner to limit overall impact.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(5)\n\nMITRE ATT&CK: T1562: Impair Defenses; T1562.006: Indicator Blocking</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.5.2v1"
+          },
+          "fixtext": {
+            "+content": "For each enabled alert, to add one or more email recipients:\n1. Sign in to Microsoft 365 Defender.\n2. Under Email & collaboration, select Policies & rules.\n3. Select Alert Policy.\n4. Click the alert policy to modify.\n5. Click the pencil icon next to Set your recipients.\n6. Check the Opt-In for email notifications box.\n7. Add one or more email addresses to the Email recipients text box.\n8. Click Next.\n9. On the Review page, click Submit to save the notification settings.",
+            "+@fixref": "F-FC753CE6r67E0A4_fix"
+          },
+          "fix": {
+            "+@id": "F-FC753CE6r67E0A4_fix"
+          },
+          "check": {
+            "+@system": "C-FC753CE6r67E0A4_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "The alerts SHOULD be sent to a monitored address or incorporated into a Security Information and Event Management (SIEM).\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Alert policies in Microsoft 365 | Microsoft Learn (https://learn.microsoft.com/en-us/purview/alert-policies?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-1DB9F99E",
+        "title": "6. Audit Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1DB9F99ErD2A233_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.DEFENDER.6.1v1",
+          "title": "Unified Audit logging SHALL be enabled.",
+          "description": "<VulnDiscussion>Unified Audit logging SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: Responding to incidents without detailed information about activities that took place slows response actions. Enabling Unified Audit logging helps ensure agencies have visibility into user actions. Furthermore, enabling the Unified Audit log is required for government agencies by OMB M-21-31.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-12\n\nMITRE ATT&CK: T1562: Impair Defenses; T1562.008: Disable or Modify Cloud Logs</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.6.1v1"
+          },
+          "fixtext": {
+            "+content": "To enable auditing via the Microsoft Purview portal:\n1. Sign in to the Microsoft Purview portal.\n2. Under Solutions, select Audit.\n3. If auditing is not enabled, a banner is displayed to notify the\nadministrator to start recording user and admin activity.\n4. Click the Start recording user and admin activity.",
+            "+@fixref": "F-1DB9F99ErD2A233_fix"
+          },
+          "fix": {
+            "+@id": "F-1DB9F99ErD2A233_fix"
+          },
+          "check": {
+            "+@system": "C-1DB9F99ErD2A233_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "Unified Audit logging SHALL be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- OMB M-21-31, Improving the Federal Government's Investigative and Remediation Capabilities Related to Cybersecurity Incidents | Office of Management and Budget (https://www.whitehouse.gov/wp-content/uploads/2021/08/M-21-31-Improving-the-Federal-Governments-Investigative-and-Remediation-Capabilities-Related-to-Cybersecurity-Incidents.pdf)\n- Turn auditing on or off | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-enable-disable?view=o365-worldwide)\n- Create an audit log retention policy | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?view=o365-worldwide#create-an-audit-log-retention-policy)\n- Search the audit log in the compliance center | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-search?view=o365-worldwide)\n- Audit log activities | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-activities)\n- Expanding cloud logging to give customers deeper security visibility | Microsoft Security Blog (https://www.microsoft.com/en-us/security/blog/2023/07/19/expanding-cloud-logging-to-give-customers-deeper-security-visibility/)\n- Export, configure, and view audit log records | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-export-records)\n- Untitled Goose Tool Fact Sheet | CISA. (https://www.cisa.gov/resources-tools/resources/untitled-goose-tool-fact-sheet)\n- Manage audit log retention policies | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?tabs=microsoft-purview-portal#before-you-create-an-audit-log-retention-policy)"
+          }
+        }
+      },
+      {
+        "+@id": "V-FC9C3C00",
+        "title": "6. Audit Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FC9C3C00r5BC1EF_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.DEFENDER.6.3v1",
+          "title": "Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31.",
+          "description": "<VulnDiscussion>Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Audit logs may no longer be available when needed if they are not retained for a sufficient time. Increased log retention time gives an agency the necessary visibility to investigate incidents that occurred some time ago.\n\nNote: Purview Audit (Premium) provides a default audit log retention policy, retaining Exchange Online, SharePoint Online, OneDrive for Business, and Microsoft Entra ID audit records for one year. Additional record types require custom audit retention policies. Agencies may also consider alternate storage locations and services to meet audit log retention needs.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-11\n\nMITRE ATT&CK: T1070: Indicator Removal</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Defender",
+            "dc:identifier": "MS.DEFENDER.6.3v1"
+          },
+          "fixtext": {
+            "+content": "To create one or more custom audit retention policies, if the default retention policy is not sufficient for agency needs, follow Create an audit log retention policy (https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?view=o365-worldwide#create-an-audit-log-retention-policy) instructions.\nEnsure the duration selected in the retention policies is at least one year, in accordance with OMB M-21-31.\nAs noted in the License Requirements (https://github.com/cisagov/ScubaGear/baselines/defender.md#license-requirements-1) section above, the creation of a custom audit log retention policy and its retention in the M365 environment requires E5/G5 licenses or E3/G3 licenses with add-on compliance licenses. No additional license is required to view and export logs. To view and export audit logs follow Export, configure, and view audit log records | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-export-records) and/or Untitled Goose Tool Fact Sheet | CISA. (https://www.cisa.gov/resources-tools/resources/untitled-goose-tool-fact-sheet)",
+            "+@fixref": "F-FC9C3C00r5BC1EF_fix"
+          },
+          "fix": {
+            "+@id": "F-FC9C3C00r5BC1EF_fix"
+          },
+          "check": {
+            "+@system": "C-FC9C3C00r5BC1EF_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Defender.xml",
+              "+@name": "M"
+            },
+            "check-content": "Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- OMB M-21-31, Improving the Federal Government's Investigative and Remediation Capabilities Related to Cybersecurity Incidents | Office of Management and Budget (https://www.whitehouse.gov/wp-content/uploads/2021/08/M-21-31-Improving-the-Federal-Governments-Investigative-and-Remediation-Capabilities-Related-to-Cybersecurity-Incidents.pdf)\n- Turn auditing on or off | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-enable-disable?view=o365-worldwide)\n- Create an audit log retention policy | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?view=o365-worldwide#create-an-audit-log-retention-policy)\n- Search the audit log in the compliance center | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-search?view=o365-worldwide)\n- Audit log activities | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-activities)\n- Expanding cloud logging to give customers deeper security visibility | Microsoft Security Blog (https://www.microsoft.com/en-us/security/blog/2023/07/19/expanding-cloud-logging-to-give-customers-deeper-security-visibility/)\n- Export, configure, and view audit log records | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-export-records)\n- Untitled Goose Tool Fact Sheet | CISA. (https://www.cisa.gov/resources-tools/resources/untitled-goose-tool-fact-sheet)\n- Manage audit log retention policies | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?tabs=microsoft-purview-portal#before-you-create-an-audit-log-retention-policy)"
+          }
+        }
+      }
+    ]
+  }
+}

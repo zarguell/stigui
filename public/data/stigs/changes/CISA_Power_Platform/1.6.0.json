@@ -1,0 +1,250 @@
+{
+  "id": "CISA_Power_Platform",
+  "from_version": "1.6.0",
+  "to_version": "1.7.0",
+  "date": "2026-02-11",
+  "counts": {
+    "unchanged": 0,
+    "updated": 8,
+    "added": 0,
+    "removed": 0
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-1FB5F564",
+      "rule_id": "SV-1FB5F564rA02729",
+      "rule_title": "Content Security Policy (CSP) SHALL be enforced for model-driven and canvas Power Apps.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 56,
+              "added": false,
+              "removed": false,
+              "value": "Content Security Policy (CSP) SHALL be enforced for model-driven and canvas Power Apps.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: Adds CSP as a defense mechanism for Power Apps against common website attacks.\n\nNote: This policy is only applicable to environments using Dataverse.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-10\n\n"
+            },
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1190: Exploit Public-Facing Application"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-386FFDE5",
+      "rule_id": "SV-386FFDE5r054FF6",
+      "rule_title": "An inbound/outbound connection allowlist SHOULD be configured.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 57,
+              "added": false,
+              "removed": false,
+              "value": "An inbound/outbound connection allowlist SHOULD be configured.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Depending on agency needs an allowlist can be configured to allow cross tenant collaboration via connectors.\n\nNote: The allowlist may be empty if the agency has no need for cross tenant collaboration.\n\n"
+            },
+            {
+              "count": 23,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, SC-7(5)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-3C59FDB9",
+      "rule_id": "SV-3C59FDB9rC0FEB0",
+      "rule_title": "The ability to create Power Pages sites SHOULD be restricted to admins.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 45,
+              "added": false,
+              "removed": false,
+              "value": "The ability to create Power Pages sites SHOULD be restricted to admins.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Users may unintentionally misconfigure their Power Pages to expose sensitive information or leave the website in a vulnerable state.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(10)\n\n"
+            },
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1190: Exploit Public-Facing Application"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-50DD0F08",
+      "rule_id": "SV-50DD0F08r704B74",
+      "rule_title": "Power Platform tenant isolation SHALL be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 49,
+              "added": false,
+              "removed": false,
+              "value": "Power Platform tenant isolation SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Provides an additional tenant isolation control on top of Microsoft Entra ID tenant isolation specifically for Power Platform applications to prevent accidental or malicious cross tenant information sharing.\n\n"
+            },
+            {
+              "count": 23,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, SC-7(5)\n\n"
+            },
+            {
+              "count": 24,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts; T1190: Exploit Public-Facing Application"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-6991A787",
+      "rule_id": "SV-6991A787r8822E0",
+      "rule_title": "The ability to create trial environments SHALL be restricted to admins.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 73,
+              "added": false,
+              "removed": false,
+              "value": "The ability to create trial environments SHALL be restricted to admins.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Users creating new Power Platform environments may inadvertently bypass DLP policy settings or misconfigure the security settings of their environment.\n\nNote: This control restricts creating environments to users with Global admin, Dynamics 365 service admin, Power Platform service admins, or Delegated admin roles.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(10)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-80BBA6A2",
+      "rule_id": "SV-80BBA6A2rC235AB",
+      "rule_title": "The ability to create production and sandbox environments SHALL be restricted to admins.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 80,
+              "added": false,
+              "removed": false,
+              "value": "The ability to create production and sandbox environments SHALL be restricted to admins.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Users creating new Power Platform environments may inadvertently bypass data loss prevention (DLP) policy settings or misconfigure the security settings of their environment.\n\nNote: This control restricts creating environments to users with Global admin, Dynamics 365 service admin, Power Platform service admins, or Delegated admin roles.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(10)\n\n"
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-C1EE9538",
+      "rule_id": "SV-C1EE9538r2F6E67",
+      "rule_title": "A DLP policy SHALL be created to restrict connector access in the default Power Platform environment.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 203,
+              "added": false,
+              "removed": false,
+              "value": "A DLP policy SHALL be created to restrict connector access in the default Power Platform environment.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: All users in the tenant have access to the default Power Platform environment. Those users may inadvertently use connectors that share sensitive information with others who should not have access to it. Users requiring Power Apps should be directed to conduct development in other Power Platform environments with DLP connector policies customized to suit the user's needs while also maintaining the agency's security posture.\n\nNote: The following connectors drive core Power Platform functionality and enable core Office customization scenarios: Approvals, Dynamics 365 Customer Voice, Excel Online (Business), Microsoft DataverseMicrosoft Dataverse (legacy), Microsoft Teams, Microsoft To-Do (Business), Office 365 Groups, Office 365 Outlook, Office 365 Users, OneDrive for Business, OneNote (Business), Planner, Power Apps Notification, Power BI, SharePoint, Shifts for Microsoft Teams, and Yammer. As such these connectors remain non-blockable to maintain core user scenario functions.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\n"
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-E49C2162",
+      "rule_id": "SV-E49C2162rC0F823",
+      "rule_title": "Non-default environments SHOULD have at least one DLP policy affecting them.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 59,
+              "added": false,
+              "removed": false,
+              "value": "Non-default environments SHOULD have at least one DLP policy affecting them.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Users may inadvertently use connectors that share sensitive information with others who should not have access to it. DLP policies provide a way for agencies to detect and prevent unauthorized disclosures.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\n"
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

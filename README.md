@@ -45,12 +45,20 @@ the public CIS PDFs by the grammar-driven parser in `scripts/cis/` — see that
 directory's README for the pipeline, its accuracy checks, and how to convert
 more benchmarks.
 
+The **CISA ScubaGear M365 Secure Configuration Baselines** (Entra ID,
+Defender, Exchange Online, Power BI, Power Platform, SharePoint/OneDrive,
+Teams) ship as well, converted from the baseline Markdown in
+[cisagov/ScubaGear](https://github.com/cisagov/ScubaGear) by `scripts/scuba/`.
+A daily GitHub Action converts each new ScubaGear release; a product is only
+re-recorded when its baseline content actually changed, so What's new stays
+quiet on no-op releases.
+
 The library is searchable and **filterable by source, category, and
 vendor/technology tags** (derived from each benchmark's title at manifest-build
 time), with the filter/sort state mirrored into the URL so any filtered view is
 shareable. A **dashboard** (`/dashboard`) summarizes what the catalog covers —
-counts by source, document type (STIG / SRG / CIS Benchmark), category, and
-vendor — and how fresh it is.
+counts by source, document type (STIG / SRG / CIS Benchmark / CISA Baseline),
+category, and vendor — and how fresh it is.
 
 ### What's new and release diffs
 
@@ -144,11 +152,15 @@ Benchmark PDFs into the library: `scripts/cis/` (see its README).
 
 ### Library refresh pipeline
 
-Both ingest paths flow through the same manifest/history tooling:
+Three ingest paths flow through the same manifest/history tooling:
 
 1. **DISA**: `scripts/create-json-stigs.sh` converts the quarterly SRG/STIG
    library zip (via `scripts/fetch-stigs.sh`) into a staging dir.
    **CIS**: `scripts/cis/run.py convert` stages each converted benchmark.
+   **CISA**: `scripts/scuba/run.py convert --tag <release>` stages each
+   baseline product whose converted content changed at that ScubaGear
+   release (see `scripts/scuba/README.md`); `backfill` runs ascending
+   tags in order.
 2. `scripts/track_history.py --staged <dir|file>` diffs staged releases against
    the current schema: new benchmarks and version bumps are recorded into
    `public/data/stigs/history.json`, and version bumps produce a precomputed
@@ -156,14 +168,16 @@ Both ingest paths flow through the same manifest/history tooling:
    `scripts/compute_deltas.ts`, which reuses the app's migration diff logic).
 3. `scripts/rebuild_manifest.py` regenerates `manifest.json` — the single
    source of truth for each entry's `source`, `category` (title keyword
-   classifier), `type` (STIG/SRG/Benchmark), `tags`, and `rules_count`.
-   `scripts/manifest_overrides.json` optionally corrects individual entries
-   (`id -> {category?, tags?, type?}`).
+   classifier), `type` (STIG/SRG/Benchmark/Baseline), `tags`, and
+   `rules_count`. `scripts/manifest_overrides.json` optionally corrects
+   individual entries (`id -> {category?, tags?, type?}`).
 
 ### CI
 
-Every push runs the unit/corpus suite, the CIS converter's pytest suite, a
-browser smoke test of the built site, and the Pages deployment.
+Every push runs the unit/corpus suite, the CIS and ScubaGear converters'
+pytest suites, a browser smoke test of the built site, and the Pages
+deployment. A scheduled workflow (`.github/workflows/scubagear-update.yml`)
+refreshes the CISA baselines daily when ScubaGear publishes a release.
 
 ## Acknowledgments
 

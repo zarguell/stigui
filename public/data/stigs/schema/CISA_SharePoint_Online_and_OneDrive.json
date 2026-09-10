@@ -1,0 +1,483 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CISA_SharePoint_Online_and_OneDrive",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2026-02-11"
+    },
+    "title": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+    "description": "Microsoft 365 (M365) SharePoint Online is a web-based collaboration and document management platform. It is primarily used to collaborate on documents and communicate information in projects. M365 OneDrive is a cloud-based file storage system primarily used to store a user's personal files, but it can also be used to share documents with others. This secure configuration baseline (SCB) provides specific policies to strengthen the security of both services.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://github.com/cisagov/ScubaGear/tree/v1.7.0/PowerShell/ScubaGear/baselines/sharepoint.md",
+      "dc:publisher": "CISA",
+      "dc:source": "CISA ScuBA M365 Secure Configuration Baselines"
+    },
+    "plain-text": {
+      "+content": "Release: 1.7.0 Baseline Date: 2026-02-11",
+      "+@id": "release-info"
+    },
+    "version": "1.7.0",
+    "Profile": [
+      {
+        "+@id": "1-External-Sharing_Public",
+        "title": "1. External Sharing",
+        "description": "This section helps reduce security risks related to sharing files with users external to the agency. This includes guest users, users who use a verification code, and users who access an Anyone link.",
+        "select": [
+          {
+            "+@idref": "V-D97F9F35",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0AE8B2FF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1C2F5EF0",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "1-External-Sharing_Classified",
+        "title": "1. External Sharing",
+        "description": "This section helps reduce security risks related to sharing files with users external to the agency. This includes guest users, users who use a verification code, and users who access an Anyone link.",
+        "select": [
+          {
+            "+@idref": "V-D97F9F35",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0AE8B2FF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1C2F5EF0",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "1-External-Sharing_Sensitive",
+        "title": "1. External Sharing",
+        "description": "This section helps reduce security risks related to sharing files with users external to the agency. This includes guest users, users who use a verification code, and users who access an Anyone link.",
+        "select": [
+          {
+            "+@idref": "V-D97F9F35",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0AE8B2FF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1C2F5EF0",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "2-File-and-Folder-Default-Sharing-Settings_Public",
+        "title": "2. File and Folder Default Sharing Settings",
+        "description": "This section provides policies to set the scope and permissions for sharing links to secure default values.",
+        "select": [
+          {
+            "+@idref": "V-655E6952",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DEFA7D0",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "2-File-and-Folder-Default-Sharing-Settings_Classified",
+        "title": "2. File and Folder Default Sharing Settings",
+        "description": "This section provides policies to set the scope and permissions for sharing links to secure default values.",
+        "select": [
+          {
+            "+@idref": "V-655E6952",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DEFA7D0",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "2-File-and-Folder-Default-Sharing-Settings_Sensitive",
+        "title": "2. File and Folder Default Sharing Settings",
+        "description": "This section provides policies to set the scope and permissions for sharing links to secure default values.",
+        "select": [
+          {
+            "+@idref": "V-655E6952",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DEFA7D0",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "3-Securing-Anyone-Links-and-Verification-Code-Users_Public",
+        "title": "3. Securing Anyone Links and Verification Code Users",
+        "description": "Sharing files with external users via the usage of **Anyone links** or **Verification codes** is strongly discouraged because it provides access to data within a tenant with weak or no authentication. If these features are used, this section details some access restrictions that could provide limited security risk mitigations. **Note**: The settings in this section are only applicable if an agency is using **Anyone links** or **Verification code** sharing. See each policy below for details.",
+        "select": [
+          {
+            "+@idref": "V-EDB2DB45",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-95B14660",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-35F1C330",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "3-Securing-Anyone-Links-and-Verification-Code-Users_Classified",
+        "title": "3. Securing Anyone Links and Verification Code Users",
+        "description": "Sharing files with external users via the usage of **Anyone links** or **Verification codes** is strongly discouraged because it provides access to data within a tenant with weak or no authentication. If these features are used, this section details some access restrictions that could provide limited security risk mitigations. **Note**: The settings in this section are only applicable if an agency is using **Anyone links** or **Verification code** sharing. See each policy below for details.",
+        "select": [
+          {
+            "+@idref": "V-EDB2DB45",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-95B14660",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-35F1C330",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "3-Securing-Anyone-Links-and-Verification-Code-Users_Sensitive",
+        "title": "3. Securing Anyone Links and Verification Code Users",
+        "description": "Sharing files with external users via the usage of **Anyone links** or **Verification codes** is strongly discouraged because it provides access to data within a tenant with weak or no authentication. If these features are used, this section details some access restrictions that could provide limited security risk mitigations. **Note**: The settings in this section are only applicable if an agency is using **Anyone links** or **Verification code** sharing. See each policy below for details.",
+        "select": [
+          {
+            "+@idref": "V-EDB2DB45",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-95B14660",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-35F1C330",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-D97F9F35",
+        "title": "1. External Sharing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D97F9F35r5F5097_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.SHAREPOINT.1.1v1",
+          "title": "External sharing for SharePoint SHALL be limited to \"Existing guests\" or \"Only people in your organization\".",
+          "description": "<VulnDiscussion>External sharing for SharePoint SHALL be limited to \"Existing guests\" or \"Only people in your organization\".\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Sharing information outside the organization via SharePoint increases the risk of unauthorized access. By limiting external sharing, administrators decrease the risk of access to information.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2, AC-3, IA-8\n\nMITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:identifier": "MS.SHAREPOINT.1.1v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to the SharePoint admin center.\n2.  Select Policies > Sharing.\n3.  Adjust external sharing slider for SharePoint to Existing guests or Only people in your organization.\n4. Select Save.",
+            "+@fixref": "F-D97F9F35r5F5097_fix"
+          },
+          "fix": {
+            "+@id": "F-D97F9F35r5F5097_fix"
+          },
+          "check": {
+            "+@system": "C-D97F9F35r5F5097_chk",
+            "check-content-ref": {
+              "+@href": "CISA_SharePoint_Online_and_OneDrive.xml",
+              "+@name": "M"
+            },
+            "check-content": "External sharing for SharePoint SHALL be limited to \"Existing guests\" or \"Only people in your organization\".\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Overview of external sharing in SharePoint and OneDrive in Microsoft 365 | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/external-sharing-overview)\n- Manage sharing settings for SharePoint and OneDrive in Microsoft 365 | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off)"
+          }
+        }
+      },
+      {
+        "+@id": "V-0AE8B2FF",
+        "title": "1. External Sharing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0AE8B2FFr4A8E10_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.SHAREPOINT.1.2v1",
+          "title": "External sharing for OneDrive SHALL be limited to \"Existing guests\" or \"Only people in your organization\".",
+          "description": "<VulnDiscussion>External sharing for OneDrive SHALL be limited to \"Existing guests\" or \"Only people in your organization\".\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Sharing files outside the organization via OneDrive increases the risk of unauthorized access. By limiting external sharing, administrators decrease the risk of unauthorized access to information.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2, AC-3, IA-8\n\nMITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:identifier": "MS.SHAREPOINT.1.2v1"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the SharePoint admin center.\n2.  Select Policies > Sharing.\n3.  Adjust external sharing slider for OneDrive to Existing Guests or Only people in your organization.\n4. Select Save.",
+            "+@fixref": "F-0AE8B2FFr4A8E10_fix"
+          },
+          "fix": {
+            "+@id": "F-0AE8B2FFr4A8E10_fix"
+          },
+          "check": {
+            "+@system": "C-0AE8B2FFr4A8E10_chk",
+            "check-content-ref": {
+              "+@href": "CISA_SharePoint_Online_and_OneDrive.xml",
+              "+@name": "M"
+            },
+            "check-content": "External sharing for OneDrive SHALL be limited to \"Existing guests\" or \"Only people in your organization\".\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Overview of external sharing in SharePoint and OneDrive in Microsoft 365 | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/external-sharing-overview)\n- Manage sharing settings for SharePoint and OneDrive in Microsoft 365 | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off)"
+          }
+        }
+      },
+      {
+        "+@id": "V-1C2F5EF0",
+        "title": "1. External Sharing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1C2F5EF0r9B0402_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.SHAREPOINT.1.3v1",
+          "title": "External sharing SHALL be restricted to approved external domains and/or users in approved security groups per interagency collaboration needs.",
+          "description": "<VulnDiscussion>External sharing SHALL be restricted to approved external domains and/or users in approved security groups per interagency collaboration needs.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: By limiting sharing to domains or approved security groups used for interagency collaboration purposes, administrators can help prevent sharing with unknown organizations and individuals.\n\nNote: This policy is only applicable if the external sharing slider in the SharePoint admin center is not set to **Only people in your organization**.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, AC-6(10)\n\nMITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:identifier": "MS.SHAREPOINT.1.3v1"
+          },
+          "fixtext": {
+            "+content": "Note: If SharePoint external sharing is set to its most restrictive setting of \"Only people in your organization\", then no external sharing is allowed and no implementation changes are required for this policy item.\n1.  Sign in to the SharePoint admin center.\n2.  Select Policies > Sharing.\n3.  Expand More external sharing settings.\n4.  Select Limit external sharing by domain.\n5.  Select Add domains.\n6.  Add each approved external domain users are allowed to share files with.\n7.  Select Manage security groups\n8. Add each approved security group. Members of these groups will be allowed to share files externally.\n9.  Select Save.",
+            "+@fixref": "F-1C2F5EF0r9B0402_fix"
+          },
+          "fix": {
+            "+@id": "F-1C2F5EF0r9B0402_fix"
+          },
+          "check": {
+            "+@system": "C-1C2F5EF0r9B0402_chk",
+            "check-content-ref": {
+              "+@href": "CISA_SharePoint_Online_and_OneDrive.xml",
+              "+@name": "M"
+            },
+            "check-content": "External sharing SHALL be restricted to approved external domains and/or users in approved security groups per interagency collaboration needs.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Overview of external sharing in SharePoint and OneDrive in Microsoft 365 | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/external-sharing-overview)\n- Manage sharing settings for SharePoint and OneDrive in Microsoft 365 | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off)"
+          }
+        }
+      },
+      {
+        "+@id": "V-655E6952",
+        "title": "2. File and Folder Default Sharing Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-655E6952rCF795B_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.SHAREPOINT.2.1v1",
+          "title": "File and folder default sharing scope SHALL be set to \"Specific people (only the people the user specifies)\".",
+          "description": "<VulnDiscussion>File and folder default sharing scope SHALL be set to \"Specific people (only the people the user specifies)\".\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: By making the default sharing the most restrictive, administrators prevent accidentally sharing information too broadly.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6\n\nMITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1565: Data Manipulation; T1565.001: Stored Data Manipulation</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:identifier": "MS.SHAREPOINT.2.1v1"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the SharePoint admin center.\n2.  Select Policies > Sharing\n3.  Under File and folder links, set the default link type to Specific people (only the people the user specifies)\n4.  Select Save",
+            "+@fixref": "F-655E6952rCF795B_fix"
+          },
+          "fix": {
+            "+@id": "F-655E6952rCF795B_fix"
+          },
+          "check": {
+            "+@system": "C-655E6952rCF795B_chk",
+            "check-content-ref": {
+              "+@href": "CISA_SharePoint_Online_and_OneDrive.xml",
+              "+@name": "M"
+            },
+            "check-content": "File and folder default sharing scope SHALL be set to \"Specific people (only the people the user specifies)\".\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- File and folder links | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off#file-and-folder-links)"
+          }
+        }
+      },
+      {
+        "+@id": "V-6DEFA7D0",
+        "title": "2. File and Folder Default Sharing Settings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6DEFA7D0r83A01B_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.SHAREPOINT.2.2v1",
+          "title": "File and folder default sharing permissions SHALL be set to view only.",
+          "description": "<VulnDiscussion>File and folder default sharing permissions SHALL be set to view only.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Edit access to files and folders could allow a user to make unauthorized changes.  By restricting default permissions to **View** only, administrators prevent unintended or malicious modification.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6\n\nMITRE ATT&CK: T1080: Taint Shared Content; T1565: Data Manipulation; T1565.001: Stored Data Manipulation</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:identifier": "MS.SHAREPOINT.2.2v1"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the SharePoint admin center.\n2. Select Policies > Sharing.\n3. Under File and folder links, set the permission that is selected by default for sharing links to View.\n4. Select Save.",
+            "+@fixref": "F-6DEFA7D0r83A01B_fix"
+          },
+          "fix": {
+            "+@id": "F-6DEFA7D0r83A01B_fix"
+          },
+          "check": {
+            "+@system": "C-6DEFA7D0r83A01B_chk",
+            "check-content-ref": {
+              "+@href": "CISA_SharePoint_Online_and_OneDrive.xml",
+              "+@name": "M"
+            },
+            "check-content": "File and folder default sharing permissions SHALL be set to view only.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- File and folder links | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off#file-and-folder-links)"
+          }
+        }
+      },
+      {
+        "+@id": "V-EDB2DB45",
+        "title": "3. Securing Anyone Links and Verification Code Users",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-EDB2DB45r717FC7_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.SHAREPOINT.3.1v1",
+          "title": "Expiration days for Anyone links SHALL be set to 30 days or less.",
+          "description": "<VulnDiscussion>Expiration days for Anyone links SHALL be set to 30 days or less.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: Links may be used to provide access to information for a short period of time. Without expiration, however, access is indefinite. By setting expiration timers for links, administrators can prevent unintended sustained access to the link.\n\nNote: This policy is only applicable if the external sharing slider in the SharePoint admin center is set to **Anyone**.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, AC-21b\n\nMITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:identifier": "MS.SHAREPOINT.3.1v1"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the SharePoint admin center.\n2.  Select Policies > Sharing.\n3.  Scroll to the section Choose expiration and permissions options for Anyone links.\n4.  Select the checkbox These links must expire within this many days.\n5.  Enter 30 days or less.\n6.  Select Save.",
+            "+@fixref": "F-EDB2DB45r717FC7_fix"
+          },
+          "fix": {
+            "+@id": "F-EDB2DB45r717FC7_fix"
+          },
+          "check": {
+            "+@system": "C-EDB2DB45r717FC7_chk",
+            "check-content-ref": {
+              "+@href": "CISA_SharePoint_Online_and_OneDrive.xml",
+              "+@name": "M"
+            },
+            "check-content": "Expiration days for Anyone links SHALL be set to 30 days or less.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Secure external sharing recipient experience | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/what-s-new-in-sharing-in-targeted-release)"
+          }
+        }
+      },
+      {
+        "+@id": "V-95B14660",
+        "title": "3. Securing Anyone Links and Verification Code Users",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-95B14660rC0D8F0_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.SHAREPOINT.3.2v1",
+          "title": "The allowable file and folder permissions for links SHALL be set to view only.",
+          "description": "<VulnDiscussion>The allowable file and folder permissions for links SHALL be set to view only.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: Unauthorized changes to files can be made if permissions allow editing by anyone.  By restricting permissions on links to **View** only, administrators prevent anonymous file changes.\n\nNote: This policy is only applicable if the external sharing slider in the SharePoint admin center is set to **Anyone**.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6\n\nMITRE ATT&CK: T1080: Taint Shared Content; T1565: Data Manipulation; T1565.001: Stored Data Manipulation</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:identifier": "MS.SHAREPOINT.3.2v1"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the SharePoint admin center.\n2.  Select Policies > Sharing.\n3.  Scroll to the section Choose expiration and permissions options for Anyone links.\n4.  Set the configuration items in the section These links can give these permissions.\n5.  Set the Files option to View.\n6.  Set the Folders option to View.\n7.  Select Save.",
+            "+@fixref": "F-95B14660rC0D8F0_fix"
+          },
+          "fix": {
+            "+@id": "F-95B14660rC0D8F0_fix"
+          },
+          "check": {
+            "+@system": "C-95B14660rC0D8F0_chk",
+            "check-content-ref": {
+              "+@href": "CISA_SharePoint_Online_and_OneDrive.xml",
+              "+@name": "M"
+            },
+            "check-content": "The allowable file and folder permissions for links SHALL be set to view only.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Secure external sharing recipient experience | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/what-s-new-in-sharing-in-targeted-release)"
+          }
+        }
+      },
+      {
+        "+@id": "V-35F1C330",
+        "title": "3. Securing Anyone Links and Verification Code Users",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-35F1C330rB3B4BF_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.SHAREPOINT.3.3v1",
+          "title": "Reauthentication days for people who use a verification code SHALL be set to 30 days or less.",
+          "description": "<VulnDiscussion>Reauthentication days for people who use a verification code SHALL be set to 30 days or less.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: By setting expiration timers for verification code access, administrators can prevent unintended sustained access to documents.\n\nNote: This policy is only applicable if the external sharing slider in the SharePoint admin center is set to **Anyone** or **New and existing guests**.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-11\n\nMITRE ATT&CK: T1080: Taint Shared Content; T1565: Data Manipulation; T1565.001: Stored Data Manipulation</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for SharePoint Online and OneDrive",
+            "dc:identifier": "MS.SHAREPOINT.3.3v1"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the SharePoint admin center.\n2.  Select Policies > Sharing.\n3.  Expand More external sharing settings.\n4. Select People who use a verification code must reauthenticate after this many days.\n5.  Enter 30 days or less.\n6. Select Save.",
+            "+@fixref": "F-35F1C330rB3B4BF_fix"
+          },
+          "fix": {
+            "+@id": "F-35F1C330rB3B4BF_fix"
+          },
+          "check": {
+            "+@system": "C-35F1C330rB3B4BF_chk",
+            "check-content-ref": {
+              "+@href": "CISA_SharePoint_Online_and_OneDrive.xml",
+              "+@name": "M"
+            },
+            "check-content": "Reauthentication days for people who use a verification code SHALL be set to 30 days or less.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Secure external sharing recipient experience | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/what-s-new-in-sharing-in-targeted-release)"
+          }
+        }
+      }
+    ]
+  }
+}

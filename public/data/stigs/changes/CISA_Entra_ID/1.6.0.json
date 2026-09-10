@@ -1,0 +1,2900 @@
+{
+  "id": "CISA_Entra_ID",
+  "from_version": "1.6.0",
+  "to_version": "1.7.0",
+  "date": "2026-02-11",
+  "counts": {
+    "unchanged": 0,
+    "updated": 30,
+    "added": 0,
+    "removed": 0
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-0318C860",
+      "rule_id": "SV-0318C860rB7363A",
+      "rule_title": "Sign-ins detected as high risk SHALL be blocked.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 32,
+              "added": false,
+              "removed": false,
+              "value": "Sign-ins detected as high risk SHALL be blocked.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: This prevents compromised accounts from accessing the tenant.\n\n"
+            },
+            {
+              "count": 26,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2(12), AC-2(13)\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 113,
+              "added": false,
+              "removed": false,
+              "value": "Sign-ins detected as high risk SHALL be blocked.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What are risk detections? (https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks)\n- Simulating risk detections in Identity Protection (https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-simulate-risk)\n- "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "User experiences"
+            },
+            {
+              "count": 4,
+              "added": true,
+              "removed": false,
+              "value": "Self-remediation experience"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " with Microsoft Entra "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Identity"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "ID"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Protection "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "and Conditional Access "
+            },
+            {
+              "count": 31,
+              "added": false,
+              "removed": false,
+              "value": "(https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-user-experience)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 53,
+              "added": false,
+              "removed": false,
+              "value": "1.  Create a Conditional Access policy blocking sign-ins determined high risk by the Identity Protection service. Configure the following policy settings in the new Conditional Access policy as per the values below:\nUsers > Include > <b>All users</b>\nTarget resources > "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Cloud apps"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Include"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": " > <b>All "
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "resources (formerly 'All "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "cloud apps"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "') "
+            },
+            {
+              "count": 33,
+              "added": false,
+              "removed": false,
+              "value": "</b>\nConditions > Sign-in risk > <b>High</b>\nAccess controls > Grant > <b>Block Access</b>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-1AFCDF56",
+      "rule_id": "SV-1AFCDF56rF1DA36",
+      "rule_title": "Guest invites SHOULD only be allowed to specific external domains that have been authorized by the agency for legitimate business purposes.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 60,
+              "added": false,
+              "removed": false,
+              "value": "Guest invites SHOULD only be allowed to specific external domains that have been authorized by the agency for legitimate business purposes.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Limiting which domains can be invited to create guest accounts in the tenant helps reduce the risk of users from unauthorized external organizations getting access.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1078: Valid Accounts; T1078.001: Default Accounts"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 55,
+              "added": false,
+              "removed": false,
+              "value": "Guest invites SHOULD only be allowed to specific external domains that have been authorized by the agency for legitimate business purposes.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Configure external collaboration settings "
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "for B2B in Microsoft Entra External ID "
+            },
+            {
+              "count": 73,
+              "added": false,
+              "removed": false,
+              "value": "(https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure)\n- Compare member and guest default permissions (https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions#compare-member-and-guest-default-permissions)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-352F9EB3",
+      "rule_id": "SV-352F9EB3r1B70FC",
+      "rule_title": "User activation of the Global Administrator role SHALL trigger an alert.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 76,
+              "added": false,
+              "removed": false,
+              "value": "User activation of the Global Administrator role SHALL trigger an alert.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Closely monitor activation of the Global Administrator role for signs of compromise. Send activation alerts to enable the security monitoring team to detect compromise attempts.\n\nNote: It is recommended to prioritize user activation of Global Administrator as one of the most important events to monitor and respond to.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(9)\n\n"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": "1. In "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "the "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Microsoft Entra "
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "Portal, under Identity Governance, select "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": "Privileged Identity Management (PIM)"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": ", under"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": ". Under"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": " Manage, select Microsoft Entra roles.\n2. "
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": true,
+              "value": "Under Manage, select Roles.\n3. "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": "Click the Global Administrator role.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "4"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "3"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": ". Click Settings "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "and "
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": "then click Edit.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "5"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "4"
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": ". Click the Notification tab.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "6"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "5"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": ". Under Send notifications when eligible members activate this role, in the Role activation alert "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": ">"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "select the "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " Additional recipients textbox"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": ","
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": " and"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": " enter the email address of the security monitoring mailbox configured to receive Global Administrator activation alerts.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "7"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "6"
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": ". Click Update.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "8"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "7"
+            },
+            {
+              "count": 34,
+              "added": false,
+              "removed": false,
+              "value": ". If the Global Administrator role has any PIM groups actively assigned to it, then also apply the same configurations per the steps above to each PIM group's Member settings."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-39C7EF76",
+      "rule_id": "SV-39C7EF76rF5DD4F",
+      "rule_title": "Only users with the Guest Inviter role SHOULD be able to invite guest users.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 65,
+              "added": false,
+              "removed": false,
+              "value": "Only users with the Guest Inviter role SHOULD be able to invite guest users.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: By only allowing an authorized group of individuals to invite external users to create accounts in the tenant, an agency can enforce a guest user account approval process, reducing the risk of unauthorized account creation.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(10)\n\n"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 48,
+              "added": false,
+              "removed": false,
+              "value": "Only users with the Guest Inviter role SHOULD be able to invite guest users.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Configure external collaboration settings "
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "for B2B in Microsoft Entra External ID "
+            },
+            {
+              "count": 73,
+              "added": false,
+              "removed": false,
+              "value": "(https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure)\n- Compare member and guest default permissions (https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions#compare-member-and-guest-default-permissions)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-42B22E5E",
+      "rule_id": "SV-42B22E5ErBC85B9",
+      "rule_title": "A minimum of two users and a maximum of eight users SHALL be provisioned with the Global Administrator role.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 93,
+              "added": false,
+              "removed": false,
+              "value": "A minimum of two users and a maximum of eight users SHALL be provisioned with the Global Administrator role.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: The Global Administrator role provides unfettered access to the tenant. Limiting the number of users with this level of access makes tenant compromise more challenging. Microsoft recommends fewer than five users in the Global Administrator role. However, additional user accounts, up to eight, may be necessary to support emergency access and some operational scenarios.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(5)\n\n"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-4ADCBC01",
+      "rule_id": "SV-4ADCBC01rA84982",
+      "rule_title": "The authentication methods SMS, Voice Call, and Email One-Time Passcode (OTP) SHALL be disabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 76,
+              "added": false,
+              "removed": false,
+              "value": "The authentication methods SMS, Voice Call, and Email One-Time Passcode (OTP) SHALL be disabled.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: SMS, voice call, and email OTP are the weakest authenticators. This policy forces users to use stronger MFA methods.\n\nNote: This policy is only applicable if the tenant has their Manage Migration feature set to Migration Complete.\n\n"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7b, IA-5c\n\n"
+            },
+            {
+              "count": 24,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1621: Multi-Factor Authentication Request Generation; T1566: Phishing; T1566.002: Spearphishing Link"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 90,
+              "added": false,
+              "removed": false,
+              "value": "The authentication methods SMS, Voice Call, and Email One-Time Passcode (OTP) SHALL be disabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "How to use"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Use"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " additional context in "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft "
+            },
+            {
+              "count": 353,
+              "added": false,
+              "removed": false,
+              "value": "Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": "1. In Microsoft Entra admin center , click "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Security"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Protection"
+            },
+            {
+              "count": 39,
+              "added": false,
+              "removed": false,
+              "value": " > Authentication methods\n2. Click on the SMS, Voice Call, and Email OTP authentication methods and disable each of them. Their statuses should be Enabled > No on the Authentication methods > Policies page."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-563B8177",
+      "rule_id": "SV-563B8177rC57387",
+      "rule_title": "Privileged users SHALL be provisioned cloud-only accounts separate from an on-premises directory or other federated identity providers.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 83,
+              "added": false,
+              "removed": false,
+              "value": "Privileged users SHALL be provisioned cloud-only accounts separate from an on-premises directory or other federated identity providers.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: By provisioning cloud-only Microsoft Entra ID user accounts to privileged users, the risks associated with a compromise of on-premises federation infrastructure are reduced. It is more challenging for the adversary to pivot from the compromised environment to the cloud with privileged access.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(5)\n\n"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1556: Modify Authentication Process; T1556.007: Hybrid Identity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-604D3F0E",
+      "rule_id": "SV-604D3F0Er00D2D2",
+      "rule_title": "Managed devices SHOULD be required for authentication.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 121,
+              "added": false,
+              "removed": false,
+              "value": "Managed devices SHOULD be required for authentication.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: The security risk of an adversary authenticating to the tenant from their own device is reduced by requiring a managed device to authenticate. Managed devices are under the provisioning and control of the agency. [OMB-22-09](https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf) states, \"When authorizing users to access resources, agencies must consider at least one device-level signal alongside identity information about the authenticated user.\"\n\n"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-20b, IA-3\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 77,
+              "added": false,
+              "removed": false,
+              "value": "Managed devices SHOULD be required for authentication.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "How to use"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Use"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " additional context in "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft "
+            },
+            {
+              "count": 353,
+              "added": false,
+              "removed": false,
+              "value": "Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 59,
+              "added": false,
+              "removed": false,
+              "value": "1. Create a conditional access policy requiring a user's device to be either Microsoft Entra ID hybrid joined or compliant during authentication. Configure the following policy settings in the new conditional access policy, per the values below:\nUsers > Include > <b>All users</b>\nTarget resources > "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Cloud apps"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Include"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": " > <b>All "
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "resources (formerly 'All "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "cloud apps"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "') "
+            },
+            {
+              "count": 59,
+              "added": false,
+              "removed": false,
+              "value": "</b>\nAccess controls > Grant > Grant Access > <b>Require device to be marked as compliant</b> and <b>Require Microsoft Entra ID hybrid joined device</b> > For multiple controls > <b>Require one of the selected controls</b>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-60F601F6",
+      "rule_id": "SV-60F601F6r95A5CD",
+      "rule_title": "Phishing-resistant MFA SHALL be enforced for all users.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 181,
+              "added": false,
+              "removed": false,
+              "value": "Phishing-resistant MFA SHALL be enforced for all users.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Weaker forms of MFA do not protect against sophisticated phishing attacks. By enforcing methods resistant to phishing, those risks are minimized.\n\nThe phishing-resistant methods **Microsoft Entra ID certificate-based authentication (CBA)**, **FIDO2 Security Key**, **Windows Hello for Business**, and **device-bound passkeys** (in the authenticator app of choice) are the recommended authentication options since they offer forms of MFA with the least weaknesses. For federal agencies, Microsoft Entra ID CBA supports federal PIV card authentication directly to Microsoft Entra ID.\n\nIf on-premises PIV authentication and federation to Microsoft Entra ID is used, [enforce PIV logon via Microsoft Active Directory group policy](https://www.idmanagement.gov/implement/scl-windows/).\n\n"
+            },
+            {
+              "count": 41,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-2(1), IA-2(2), IA-5c, IA-5g, IA-2(8)\n\n"
+            },
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 80,
+              "added": false,
+              "removed": false,
+              "value": "Phishing-resistant MFA SHALL be enforced for all users.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "How to use"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Use"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " additional context in "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft "
+            },
+            {
+              "count": 353,
+              "added": false,
+              "removed": false,
+              "value": "Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 49,
+              "added": false,
+              "removed": false,
+              "value": "1. Create a conditional access policy enforcing phishing-resistant MFA for all users. Configure the following policy settings in the new conditional access policy, per the values below:\nUsers > Include > <b>All users</b>\nTarget resources > "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Cloud apps"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Include"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": " > <b>All "
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "resources (formerly 'All "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "cloud apps"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "') "
+            },
+            {
+              "count": 27,
+              "added": false,
+              "removed": false,
+              "value": "</b>\nAccess controls > Grant > Grant Access > Require authentication strength > <b>Phishing-resistant MFA</b>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-63E35030",
+      "rule_id": "SV-63E35030r42F52E",
+      "rule_title": "A notification SHOULD be sent to the administrator when high-risk users are detected.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 54,
+              "added": false,
+              "removed": false,
+              "value": "A notification SHOULD be sent to the administrator when high-risk users are detected.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Notification enables the admin to monitor the event and remediate the risk. This helps the organization proactively respond to cyber intrusions as they occur.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2(12)\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 118,
+              "added": false,
+              "removed": false,
+              "value": "A notification SHOULD be sent to the administrator when high-risk users are detected.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What are risk detections? (https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks)\n- Simulating risk detections in Identity Protection (https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-simulate-risk)\n- "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "User experiences"
+            },
+            {
+              "count": 4,
+              "added": true,
+              "removed": false,
+              "value": "Self-remediation experience"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " with Microsoft Entra "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Identity"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "ID"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Protection "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "and Conditional Access "
+            },
+            {
+              "count": 31,
+              "added": false,
+              "removed": false,
+              "value": "(https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-user-experience)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-6DB049EA",
+      "rule_id": "SV-6DB049EAr542F18",
+      "rule_title": "An admin consent workflow SHALL be configured for applications.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 75,
+              "added": false,
+              "removed": false,
+              "value": "An admin consent workflow SHALL be configured for applications.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Configuring an admin consent workflow reduces the risk of the previous policy by setting up a process for users to securely request access to applications necessary for business purposes. Administrators have the opportunity to review the permissions requested by new applications and approve or deny access based on a risk assessment.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-4\n\n"
+            },
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.001: Additional Cloud Credentials; T1098.003: Additional Cloud Roles"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 77,
+              "added": false,
+              "removed": false,
+              "value": "1.  In Microsoft Entra admin center  create a new Microsoft Entra ID Group that contains admin users responsible for reviewing and adjudicating application consent requests. Group members will be notified when users request consent for new applications.\n2. Then in Microsoft Entra admin center  under Applications, select Enterprise Applications.\n3. Under Security, select Consent and permissions. Then select Admin consent settings.\n4. Under Admin consent requests "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": ">"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "navigate to"
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": " Users can request admin consent to apps they are unable to consent to "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "and "
+            },
+            {
+              "count": 41,
+              "added": false,
+              "removed": false,
+              "value": "select Yes.\n5. Under Who can review admin consent requests, select + Add groups and select the group responsible for reviewing and adjudicating app requests (created in step one above).\n6. Click Save."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-7E1F2810",
+      "rule_id": "SV-7E1F2810rAC850C",
+      "rule_title": "Legacy authentication SHALL be blocked.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 44,
+              "added": false,
+              "removed": false,
+              "value": "Legacy authentication SHALL be blocked.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: The security risk of allowing legacy authentication protocols is they do not support MFA. Blocking legacy protocols reduces the impact of user credential theft.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7\n\n"
+            },
+            {
+              "count": 42,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1110: Brute Force; T1110.001: Password Guessing; T1110.002: Password Cracking; T1110.003: Password Spraying; T1078: Valid Accounts; T1078.004: Cloud Accounts"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 35,
+              "added": false,
+              "removed": false,
+              "value": "Legacy authentication SHALL be blocked.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- "
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": true,
+              "value": "Common Conditional Access policy: "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": "Block legacy authentication "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "with Conditional Access "
+            },
+            {
+              "count": 70,
+              "added": false,
+              "removed": false,
+              "value": "(https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-block-legacy)\n- Five steps to securing your identity infrastructure (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 87,
+              "added": false,
+              "removed": false,
+              "value": "1. Determine if an agency’s existing applications use legacy authentication (https://learn.microsoft.com/en-us/entra/identity/conditional-access/block-legacy-authentication#identify-legacy-authentication-use) before blocking legacy authentication across the entire application base.\n2. Create a Conditional Access policy to block legacy authentication\nUsers > Include > <b>All users</b>\nTarget resources > "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "Cloud apps >  "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": "Include > <b>All "
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "resources (formerly 'All "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "cloud apps"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "') "
+            },
+            {
+              "count": 60,
+              "added": false,
+              "removed": false,
+              "value": "</b>\nConditions > Client apps > Configure > <b>Yes</b> > Legacy authentication clients > Select only <b>Exchange ActiveSync clients</b> and <b>Other clients</b>\nAccess controls > Grant > <b>Block Access</b>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-8CC65392",
+      "rule_id": "SV-8CC65392r1CC8AC",
+      "rule_title": "Security logs SHALL be sent to the agency's security operations center for monitoring.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 211,
+              "added": false,
+              "removed": false,
+              "value": "Security logs SHALL be sent to the agency's security operations center for monitoring.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: The security risk of not having visibility into cyber attacks is reduced by collecting logs in the agency’s centralized security detection infrastructure. This makes security events available for auditing, query, and incident response.\n\nNote: The following Microsoft Entra ID logs (configured in diagnostic settings), are required: `AuditLogs, SignInLogs, RiskyUsers, UserRiskEvents, NonInteractiveUserSignInLogs, ServicePrincipalSignInLogs, ADFSSignInLogs, RiskyServicePrincipals, ServicePrincipalRiskEvents, EnrichedOffice365AuditLogs, MicrosoftGraphActivityLogs`. If managed identities are used for Azure resources, also send the `ManagedIdentitySignInLogs` log type. If the Microsoft Entra ID Provisioning Service is used to provision users to software-as-a-service (SaaS) apps or other systems, also send the `ProvisioningLogs` log type.\n\nNote: Agencies can benefit from security detection capabilities offered by the CISA Cloud Log Aggregation Warehouse (CLAW) system. Agencies are urged to send the logs to CLAW. Contact CISA at cyberliason@cisa.dhs.gov to request integration instructions.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-4\n\n"
+            },
+            {
+              "count": 19,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1562: Impair Defenses; T1562.008: Disable or Modify Cloud Logs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-9D7D8065",
+      "rule_id": "SV-9D7D8065rAE0AEF",
+      "rule_title": "Permanent active role assignments SHALL NOT be allowed for highly privileged roles.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 140,
+              "added": false,
+              "removed": false,
+              "value": "Permanent active role assignments SHALL NOT be allowed for highly privileged roles.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Instead of giving users permanent assignments to privileged roles, provisioning access just in time lessens exposure if those accounts become compromised. In Microsoft Entra ID PIM or an alternative PAM system, just in time access can be provisioned by assigning users to roles as eligible instead of perpetually active.\n\nNote: Exceptions to this policy are:\n\nNote: Emergency access accounts that need perpetual access to the tenant in the rare event of system degradation or other scenarios.\n\nNote: Some types of service accounts that require a user account with privileged roles; since these accounts are used by software programs, they cannot perform role activation.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2\n\n"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "1. In Microsoft Entra admin center  select Roles and "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "administrators"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "admins"
+            },
+            {
+              "count": 26,
+              "added": false,
+              "removed": false,
+              "value": ". Perform the steps below for each highly privileged role. We reference the Global Administrator role as an example.\n2. Select the Global "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "administrator"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Administrator"
+            },
+            {
+              "count": 138,
+              "added": false,
+              "removed": false,
+              "value": " role.\n3. Under Manage, select Assignments and click the Active assignments tab.\n4. Verify there are no users or groups with a value of Permanent in the End time column. If there are any, recreate those assignments to have an expiration date using Microsoft Entra ID PIM or an alternative PAM system. If a group is identified and it is enrolled in PIM for Groups, see the exception cases below for details.\nException cases:\n- Emergency access accounts that require perpetual active assignment.\n- Service accounts that require perpetual active assignment.\n- If using PIM for Groups, a group that is enrolled in PIM is allowed to have a perpetual active assignment to a role because activation is handled by PIM for Groups."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-A564E063",
+      "rule_id": "SV-A564E063rDE3C71",
+      "rule_title": "Device code authentication SHOULD be blocked.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 53,
+              "added": false,
+              "removed": false,
+              "value": "Device code authentication SHOULD be blocked.\n\nCriticality: SHOULD.\nLast modified: February 2025.\n\nRationale: The device code authentication flow has been abused to compromise user accounts via phishing. Since most organizations using M365 don't need device code authentication, blocking it mitigates the risk.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7\n\n"
+            },
+            {
+              "count": 23,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1528: Steal Application Access Token; T1078: Valid Accounts; T1078.004: Cloud Accounts"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 76,
+              "added": false,
+              "removed": false,
+              "value": "Device code authentication SHOULD be blocked.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "How to use"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Use"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " additional context in "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft "
+            },
+            {
+              "count": 353,
+              "added": false,
+              "removed": false,
+              "value": "Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 28,
+              "added": false,
+              "removed": false,
+              "value": "1. Create a Conditional Access policy to block device code flow\nUsers > Include > <b>All users</b>\nTarget resources > "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "Cloud apps >  "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": "Include > <b>All "
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "resources (formerly 'All "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "cloud apps"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "') "
+            },
+            {
+              "count": 45,
+              "added": false,
+              "removed": false,
+              "value": "</b>\nConditions > Authentication Flows > Configure > <b>Yes</b> > Select <b>Device code flow</b>\nAccess controls > Grant > <b>Block Access</b>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-A61D2A98",
+      "rule_id": "SV-A61D2A98r066DD2",
+      "rule_title": "Managed Devices SHOULD be required to register MFA.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 72,
+              "added": false,
+              "removed": false,
+              "value": "Managed Devices SHOULD be required to register MFA.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Reduce risk of an adversary using stolen user credentials and then registering their own MFA device to access the tenant by requiring a managed device provisioned and controlled by the agency to perform registration actions. This prevents the adversary from using their own unmanaged device to perform the registration.\n\n"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-20b, IA-3\n\n"
+            },
+            {
+              "count": 28,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts; T1098: Account Manipulation; T1098.005: Device Registration"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 78,
+              "added": false,
+              "removed": false,
+              "value": "Managed Devices SHOULD be required to register MFA.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "How to use"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Use"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " additional context in "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft "
+            },
+            {
+              "count": 353,
+              "added": false,
+              "removed": false,
+              "value": "Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-ADF78205",
+      "rule_id": "SV-ADF78205rE6DB43",
+      "rule_title": "Phishing-resistant MFA SHALL be required for highly privileged roles.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 81,
+              "added": false,
+              "removed": false,
+              "value": "Phishing-resistant MFA SHALL be required for highly privileged roles.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: This is a backup security policy to help protect privileged access to the tenant if the conditional access policy, which requires MFA for all users, is disabled or misconfigured.\n\nNote: Refer to the Highly Privileged Roles section at the top of this document for a reference list of roles considered highly privileged.\n\n"
+            },
+            {
+              "count": 34,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-2(1), IA-5c, IA-5g, IA-2(8)\n\n"
+            },
+            {
+              "count": 34,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1078: Valid Accounts; T1078.004: Cloud Accounts"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 81,
+              "added": false,
+              "removed": false,
+              "value": "Phishing-resistant MFA SHALL be required for highly privileged roles.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "How to use"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Use"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " additional context in "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft "
+            },
+            {
+              "count": 353,
+              "added": false,
+              "removed": false,
+              "value": "Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 74,
+              "added": false,
+              "removed": false,
+              "value": "1. Create a conditional access policy enforcing phishing-resistant MFA for highly privileged roles.  Configure the following policy settings in the new conditional access policy, per the values below:\nUsers > Include > Select users and groups > Directory roles > <b>select each of the roles listed in the Highly Privileged Roles section at the top of this document</b>\nTarget resources > "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Cloud apps"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Include"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": " > <b>All "
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "resources (formerly 'All "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "cloud apps"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "') "
+            },
+            {
+              "count": 27,
+              "added": false,
+              "removed": false,
+              "value": "</b>\nAccess controls > Grant > Grant Access > Require authentication strength > <b>Phishing-resistant MFA</b>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-B0B21F20",
+      "rule_id": "SV-B0B21F20rF04870",
+      "rule_title": "Users detected as high risk SHALL be blocked.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 79,
+              "added": false,
+              "removed": false,
+              "value": "Users detected as high risk SHALL be blocked.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Blocking high-risk users may prevent compromised accounts from accessing the tenant.\n\nNote: Users identified as high risk by Microsoft Entra ID Identity Protection can be blocked from accessing the system via a Microsoft Entra ID Conditional Access policy. A high-risk user will be blocked until an administrator remediates their account.\n\n"
+            },
+            {
+              "count": 26,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2(12), AC-2(13)\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 111,
+              "added": false,
+              "removed": false,
+              "value": "Users detected as high risk SHALL be blocked.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What are risk detections? (https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks)\n- Simulating risk detections in Identity Protection (https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-simulate-risk)\n- "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "User experiences"
+            },
+            {
+              "count": 4,
+              "added": true,
+              "removed": false,
+              "value": "Self-remediation experience"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " with Microsoft Entra "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Identity"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "ID"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Protection "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "and Conditional Access "
+            },
+            {
+              "count": 31,
+              "added": false,
+              "removed": false,
+              "value": "(https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-user-experience)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 52,
+              "added": false,
+              "removed": false,
+              "value": "1.  Create a conditional access policy blocking users categorized as high risk by the Identity Protection service. Configure the following policy settings in the new conditional access policy as per the values below:\nUsers > Include > <b>All users</b>\nTarget resources > "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Cloud apps"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Include"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": " > <b>All "
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "resources (formerly 'All "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "cloud apps"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "') "
+            },
+            {
+              "count": 31,
+              "added": false,
+              "removed": false,
+              "value": "</b>\nConditions > User risk > <b>High</b>\nAccess controls > Grant > <b>Block Access</b>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-B5A44595",
+      "rule_id": "SV-B5A44595r3C4E98",
+      "rule_title": "If phishing-resistant MFA has not been enforced, an alternative MFA method SHALL be enforced for all users.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 75,
+              "added": false,
+              "removed": false,
+              "value": "If phishing-resistant MFA has not been enforced, an alternative MFA method SHALL be enforced for all users.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: This is a stopgap security policy to help protect the tenant if phishing-resistant MFA has not been enforced. This policy requires MFA enforcement, thus reducing single-form authentication risk.\n\nNote: If a conditional access policy "
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": true,
+              "value": "has been created enforcing"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "enforces"
+            },
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": " phishing-resistant MFA, then this policy is not necessary. This policy does not dictate the specific MFA method.\n\n"
+            },
+            {
+              "count": 26,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-2(1), IA-2(2)\n\n"
+            },
+            {
+              "count": 30,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1110: Brute Force; T1110.001: Password Guessing; T1110.002: Password Cracking; T1110.003: Password Spraying"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 90,
+              "added": false,
+              "removed": false,
+              "value": "If phishing-resistant MFA has not been enforced, an alternative MFA method SHALL be enforced for all users.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "How to use"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Use"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " additional context in "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft "
+            },
+            {
+              "count": 353,
+              "added": false,
+              "removed": false,
+              "value": "Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 64,
+              "added": false,
+              "removed": false,
+              "value": "1. If phishing-resistant MFA has not been enforced for all users yet, create a conditional access policy that enforces MFA but does not dictate MFA method. Configure the following policy settings in the new conditional access policy, per the values below:\nUsers > Include > <b>All users</b>\nTarget resources > "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Cloud apps"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Include"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": " > <b>All "
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "resources (formerly 'All "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "cloud apps"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "') "
+            },
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": "</b>\nAccess controls > Grant > Grant Access > <b>Require multifactor authentication</b>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-BA54ECCE",
+      "rule_id": "SV-BA54ECCEr86214F",
+      "rule_title": "User passwords SHALL NOT expire.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 72,
+              "added": false,
+              "removed": false,
+              "value": "User passwords SHALL NOT expire.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: The National Institute of Standards and Technology (NIST), OMB, and Microsoft have published guidance indicating mandated periodic password changes make user accounts less secure. For example, OMB-22-09 states, \"Password policies must not require use of special characters or regular rotation.\"\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-5(1)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-C368F11F",
+      "rule_id": "SV-C368F11Fr9B3739",
+      "rule_title": "The Authentication Methods Manage Migration feature SHALL be set to Migration Complete.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 76,
+              "added": false,
+              "removed": false,
+              "value": "The Authentication Methods Manage Migration feature SHALL be set to Migration Complete.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: To disable the legacy authentication methods screen for the tenant, configure the Manage Migration feature to Migration Complete. The MFA and Self-Service Password Reset (SSPR) authentication methods are both managed from a central admin page, thereby reducing administrative complexity and potential security misconfigurations.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 82,
+              "added": false,
+              "removed": false,
+              "value": "The Authentication Methods Manage Migration feature SHALL be set to Migration Complete.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "How to use"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Use"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " additional context in "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft "
+            },
+            {
+              "count": 353,
+              "added": false,
+              "removed": false,
+              "value": "Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-CF1807C7",
+      "rule_id": "SV-CF1807C7r9554B8",
+      "rule_title": "Guest users SHOULD have limited or restricted access to Microsoft Entra ID directory objects.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 45,
+              "added": false,
+              "removed": false,
+              "value": "Guest users SHOULD have limited or restricted access to Microsoft Entra ID directory objects.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Limiting the amount of object information available to guest users in the tenant, reduces malicious reconnaissance exposure"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": ", should"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": " if"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " a guest account "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "become"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "is"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": " compromised or "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "be "
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "created by an adversary.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6\n\n"
+            },
+            {
+              "count": 29,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1087: Account Discovery; T1087.003: Email Account; T1087.004: Cloud Account; T1526: Cloud Service Discovery"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 48,
+              "added": false,
+              "removed": false,
+              "value": "Guest users SHOULD have limited or restricted access to Microsoft Entra ID directory objects.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Configure external collaboration settings "
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "for B2B in Microsoft Entra External ID "
+            },
+            {
+              "count": 73,
+              "added": false,
+              "removed": false,
+              "value": "(https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure)\n- Compare member and guest default permissions (https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions#compare-member-and-guest-default-permissions)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-E109F725",
+      "rule_id": "SV-E109F725r4C58E7",
+      "rule_title": "Only administrators SHALL be allowed to consent to applications.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 93,
+              "added": false,
+              "removed": false,
+              "value": "Only administrators SHALL be allowed to consent to applications.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Limiting applications consent to only specific privileged users reduces risk of users giving insecure applications access to their data via [consent grant attacks](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide).\n\n"
+            },
+            {
+              "count": 23,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(10), CM-5\n\n"
+            },
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.001: Additional Cloud Credentials; T1098.003: Additional Cloud Roles"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 7,
+              "added": false,
+              "removed": false,
+              "value": "1.  In Microsoft Entra admin center "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": " under Manage, "
+            },
+            {
+              "count": 40,
+              "added": false,
+              "removed": false,
+              "value": "select Enterprise Applications.\n2. Under Security, select Consent and permissions. Then select User Consent Settings.\n3. Under User consent for applications, select Do not allow user consent.\n4. Click Save."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-E205D5B4",
+      "rule_id": "SV-E205D5B4r6C4632",
+      "rule_title": "User activation of other highly privileged roles SHOULD trigger an alert.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 66,
+              "added": false,
+              "removed": false,
+              "value": "User activation of other highly privileged roles SHOULD trigger an alert.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Closely monitor activation of high-risk roles for signs of compromise. Send activation alerts to enable the security monitoring team to detect compromise attempts. In some environments, activating privileged roles can generate a significant number of alerts.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(9)\n\n"
+            },
+            {
+              "count": 29,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles; T1136: Create Account; T1136.003: Cloud Account"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-E8642D34",
+      "rule_id": "SV-E8642D34r16AADD",
+      "rule_title": "Activation of the Global Administrator role SHALL require approval.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 51,
+              "added": false,
+              "removed": false,
+              "value": "Activation of the Global Administrator role SHALL require approval.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Requiring approval for a user to activate Global Administrator, which provides unfettered access, makes it more challenging for an attacker to compromise the tenant with stolen credentials"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": ", "
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": "and it provides visibility of activities indicating a compromise is taking place.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(1)\n\n"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": "1. In "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "the "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Microsoft Entra "
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "Portal, under Identity Governance, select "
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": false,
+              "value": "Privileged Identity Management (PIM), "
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "and then "
+            },
+            {
+              "count": 81,
+              "added": false,
+              "removed": false,
+              "value": "under Manage, select Microsoft Entra roles.\n2. Under Manage, select Roles.\n1.  Select the Global Administrator role in the list.\n2.  Click Settings.\n3.  Click Edit.\n4.  Select the Require approval to activate option.\n5.  Click Update.\n3. Review the list of groups that are actively assigned to the Global Administrator role. If any of the groups are enrolled in PIM for Groups, "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "then "
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "also apply the same configurations "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "under step"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "as steps"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " 2"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "-7 "
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "above to each PIM group's Member settings."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-ED925A18",
+      "rule_id": "SV-ED925A18r2FBBF6",
+      "rule_title": "Only administrators SHALL be allowed to register applications.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 74,
+              "added": false,
+              "removed": false,
+              "value": "Only administrators SHALL be allowed to register applications.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Application access for the tenant presents a heightened security risk compared to interactive user access because applications are typically not subject to critical security protections, such as MFA policies. Reduce risk of unauthorized users installing malicious applications into the tenant by ensuring that only specific privileged users can register applications.\n\n"
+            },
+            {
+              "count": 23,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(10), CM-5\n\n"
+            },
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.001: Additional Cloud Credentials; T1098.003: Additional Cloud Roles"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "1.  In Microsoft Entra admin center, "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "under Manage, "
+            },
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": "select Users.\n2. Select User settings.\n3. For Users can register applications, select No.\n4. Click Save."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-F9341752",
+      "rule_id": "SV-F9341752r028B5A",
+      "rule_title": "Eligible and active highly privileged role assignments SHALL trigger an alert.",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Eligible and "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Active"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "active"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": " highly privileged role assignments SHALL trigger an alert."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Eligible and "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Active"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "active"
+            },
+            {
+              "count": 48,
+              "added": false,
+              "removed": false,
+              "value": " highly privileged role assignments SHALL trigger an alert.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Closely monitor assignment of the highest privileged roles for signs of compromise. Send assignment alerts to enable the security monitoring team to detect compromise attempts.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2(1)\n\n"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Eligible and "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Active"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "active"
+            },
+            {
+              "count": 331,
+              "added": false,
+              "removed": false,
+              "value": " highly privileged role assignments SHALL trigger an alert.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Limit number of Global Administrators to less than 5 (https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)\n- Implement Privilege Access Management (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management)\n- Assign Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user)\n- Privileged Identity Management (PIM) for Groups (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups)\n- Approve or deny requests for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow)\n- Configure security alerts for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": "1.  In "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "the "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Microsoft Entra "
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "Portal, under Identity Governance, select "
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": false,
+              "value": "Privileged Identity Management (PIM), "
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "and then "
+            },
+            {
+              "count": 35,
+              "added": false,
+              "removed": false,
+              "value": "under Manage, select Microsoft Entra roles.\n2. Under Manage, select Roles. Perform the steps below for each highly privileged role. We reference the Global Administrator role as an example"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": ":\n1"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "\n3."
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": " Click the Global Administrator role.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "4"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "2"
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": ". Click Settings and then click Edit.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "5"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "3"
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": ". Click the Notification tab.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "6"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "4"
+            },
+            {
+              "count": 41,
+              "added": false,
+              "removed": false,
+              "value": ". Under Send notifications when members are assigned as eligible to this role, in the Role assignment alert > Additional recipients textbox, enter the email address of the security monitoring mailbox configured to receive privileged role assignment alerts.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "7"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "5"
+            },
+            {
+              "count": 41,
+              "added": false,
+              "removed": false,
+              "value": ". Under Send notifications when members are assigned as active to this role, in the Role assignment alert > Additional recipients textbox, enter the email address of the security monitoring mailbox configured to receive privileged role assignment alerts.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "8"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "6"
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": ". Click Update.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "9"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "3"
+            },
+            {
+              "count": 20,
+              "added": false,
+              "removed": false,
+              "value": ". For each of the highly privileged roles, if they have any PIM groups actively assigned to them, "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "then also "
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": "apply the same configurations "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "per the"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "as"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " steps "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "2-8 "
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "above to each PIM group's Member settings."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-FC49039F",
+      "rule_id": "SV-FC49039FrA72C75",
+      "rule_title": "Privileged users SHALL be provisioned with finer-grained roles instead of Global Administrator.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 65,
+              "added": false,
+              "removed": false,
+              "value": "Privileged users SHALL be provisioned with finer-grained roles instead of Global Administrator.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Many privileged administrative users do not need unfettered access to the tenant to perform their duties. By assigning them to roles based on least privilege, the risks associated with having their accounts compromised are reduced.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-5\n\n"
+            },
+            {
+              "count": 35,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles; T1651: Cloud Administration Command; T1136: Create Account; T1136.003: Cloud Account"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-FCA5774B",
+      "rule_id": "SV-FCA5774Br421C65",
+      "rule_title": "Provisioning users to highly privileged roles SHALL NOT occur outside of a PAM system.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 81,
+              "added": false,
+              "removed": false,
+              "value": "Provisioning users to highly privileged roles SHALL NOT occur outside of a PAM system.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Provisioning users to privileged roles within a PAM system enables enforcement of numerous privileged access policies and monitoring. If privileged users are assigned directly to roles in the M365 admin center or via PowerShell outside of the context of a PAM system, a significant set of critical security capabilities are bypassed.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2\n\n"
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1651: Cloud Administration Command"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 32,
+              "added": false,
+              "removed": false,
+              "value": "1. Perform the steps below for each highly privileged role. We reference the Global Administrator role as an example.\n2. In Microsoft Entra admin center  select Roles and "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "administrators"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Admins"
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": ".\n3. Select the Global "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "administrator"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Administrator"
+            },
+            {
+              "count": 85,
+              "added": false,
+              "removed": false,
+              "value": " role.\n4. Under Manage, select Assignments and click the Active assignments tab.\n5. For each user or group listed, examine the value in the Start time column. If it contains a value of -, this indicates the respective user/group was assigned to that role outside of Microsoft Entra ID PIM. If the role was assigned outside of Microsoft Entra ID PIM, delete the assignment and recreate it using Microsoft Entra ID PIM."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-FD76ED89",
+      "rule_id": "SV-FD76ED89r9BB931",
+      "rule_title": "If Microsoft Authenticator is enabled, it SHALL be configured to show login context information.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 52,
+              "added": false,
+              "removed": false,
+              "value": "If Microsoft Authenticator is enabled, it SHALL be configured to show login context information.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: This policy helps protect the tenant when Microsoft Authenticator is used by showing user context information, which helps reduce MFA phishing compromises.\n\n"
+            },
+            {
+              "count": 48,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-2(1), IA-2(2), IA-5c, IA-5g, IA-2(8), IA-2(13)\n\n"
+            },
+            {
+              "count": 30,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1110: Brute Force; T1110.001: Password Guessing; T1110.002: Password Cracking; T1110.003: Password Spraying"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 85,
+              "added": false,
+              "removed": false,
+              "value": "If Microsoft Authenticator is enabled, it SHALL be configured to show login context information.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "How to use"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Use"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " additional context in "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft "
+            },
+            {
+              "count": 353,
+              "added": false,
+              "removed": false,
+              "value": "Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 29,
+              "added": false,
+              "removed": false,
+              "value": "If Microsoft Authenticator is in use, configure Authenticator to display context information to users when they log in.\n1. In Microsoft Entra admin center, click "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Security"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Protection"
+            },
+            {
+              "count": 78,
+              "added": false,
+              "removed": false,
+              "value": " > Authentication methods > Microsoft Authenticator.\n2. Click the Configure tab.\n3. For Allow use of Microsoft Authenticator OTP select *No*.\n4. Under Show application name in push and passwordless notifications select Status > Enabled and Target > Include > All users.\n5. Under Show geographic location in push and passwordless notifications select Status > Enabled and Target > Include > All users.\n6. Select Save"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

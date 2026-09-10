@@ -14,11 +14,11 @@ interface IManifest {
     description: string;
     version: string;
     date: string;
-    /** Publishing source: "DISA", "CIS", or "Imported". */
+    /** Publishing source: "DISA", "CIS", "CISA", or "Imported". */
     source: string;
     /** Technology class, e.g. "Operating Systems", "Cloud Providers". */
     category: string;
-    /** Document kind: DISA "STIG"/"SRG", CIS "Benchmark". */
+    /** Document kind: DISA "STIG"/"SRG", CIS "Benchmark", CISA "Baseline". */
     type?: string;
     /** Vendor/technology labels, e.g. ["Microsoft", "Windows"]. */
     tags?: string[];

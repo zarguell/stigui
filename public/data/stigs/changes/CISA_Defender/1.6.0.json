@@ -1,0 +1,1175 @@
+{
+  "id": "CISA_Defender",
+  "from_version": "1.6.0",
+  "to_version": "1.7.0",
+  "date": "2026-02-11",
+  "counts": {
+    "unchanged": 0,
+    "updated": 19,
+    "added": 0,
+    "removed": 0
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-078AD674",
+      "rule_id": "SV-078AD674r321BBB",
+      "rule_title": "Domain impersonation protection SHOULD be added for important partners in both the standard and strict preset policies.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": "Domain impersonation protection SHOULD be added for important partners in both the standard and strict preset policies.\n\nCriticality: SHOULD.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "June 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "November 2025"
+            },
+            {
+              "count": 77,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Configuring domain impersonation protection for domains owned by important partners reduces the risk of a user being deceived by a look-alike domain. By configuring impersonation protection in both preset policies, administrators can help protect email recipients from impersonated emails, regardless of whether they are added to the standard or strict policy.\n\nNote: The standard and strict preset security policies must be enabled to protect partner domains.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 26,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1656: Impersonation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-1DB9F99E",
+      "rule_id": "SV-1DB9F99ErD2A233",
+      "rule_title": "Unified Audit logging SHALL be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 67,
+              "added": false,
+              "removed": false,
+              "value": "Unified Audit logging SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: Responding to incidents without detailed information about activities that took place slows response actions. Enabling Unified Audit logging helps ensure agencies have visibility into user actions. Furthermore, enabling the Unified Audit log is required for government agencies by OMB M-21-31.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-12\n\n"
+            },
+            {
+              "count": 19,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1562: Impair Defenses; T1562.008: Disable or Modify Cloud Logs"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 7,
+              "added": false,
+              "removed": false,
+              "value": "To enable auditing via the Microsoft Purview "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "compliance "
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "portal:\n1. Sign in to the Microsoft Purview "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "compliance "
+            },
+            {
+              "count": 45,
+              "added": false,
+              "removed": false,
+              "value": "portal.\n2. Under Solutions, select Audit.\n3. If auditing is not enabled, a banner is displayed to notify the\nadministrator to start recording user and admin activity.\n4. Click the Start recording user and admin activity."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-24F81F2B",
+      "rule_id": "SV-24F81F2Br22CF1A",
+      "rule_title": "The custom policy SHOULD be applied to Exchange, OneDrive, SharePoint, Teams chat, and Devices.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 80,
+              "added": false,
+              "removed": false,
+              "value": "The custom policy SHOULD be applied to Exchange, OneDrive, SharePoint, Teams chat, and Devices.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Unauthorized disclosures may happen through M365 services or endpoint devices. DLP policies should cover all affected locations to be effective.\n\nNote: The custom policy referenced here is the same policy configured in [MS.DEFENDER.4.1v2](#msdefender41v2).\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\n"
+            },
+            {
+              "count": 31,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1530: Data from Cloud Storage; T1213: Data from Information Repositories; T1213.002: Sharepoint"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-2CC3AFCD",
+      "rule_id": "SV-2CC3AFCDrC05337",
+      "rule_title": "Safe attachments SHOULD be enabled for SharePoint, OneDrive, and Microsoft Teams.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 82,
+              "added": false,
+              "removed": false,
+              "value": "Safe attachments SHOULD be enabled for SharePoint, OneDrive, and Microsoft Teams.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Clicking malicious links makes users vulnerable to attacks, and this danger is not limited to links in emails. Other Microsoft products, such as Microsoft Teams, can be used to present users with malicious links. As such, it is important to protect users on these other Microsoft products as well.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3a\n\n"
+            },
+            {
+              "count": 36,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1204.001: User Execution; T1204.001: Malicious Link; T1204.002: Malicious File"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-435F7B90",
+      "rule_id": "SV-435F7B90r46AA16",
+      "rule_title": "Sensitive accounts SHALL be added to Defender for Office 365 protection in the strict preset security policy.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 84,
+              "added": false,
+              "removed": false,
+              "value": "Sensitive accounts SHALL be added to Defender for Office 365 protection in the strict preset security policy.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Unauthorized access to a sensitive account may result in greater harm than to a standard user account. Adding sensitive accounts to the strict preset security policy, with its increased protections, better mitigates their elevated risk.\n\nNote: The strict preset security policy must be enabled to protect sensitive accounts.\n\n"
+            },
+            {
+              "count": 24,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-6a, SI-3a, SI-8\n\n"
+            },
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-5525386A",
+      "rule_id": "SV-5525386ArD75E85",
+      "rule_title": "Notifications to inform users and help educate them on the proper use of sensitive information SHOULD be enabled in the custom policy.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 90,
+              "added": false,
+              "removed": false,
+              "value": "Notifications to inform users and help educate them on the proper use of sensitive information SHOULD be enabled in the custom policy.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Some users may not be aware of agency policies on proper use of sensitive information. Enabling notifications provides positive feedback to users when accessing sensitive information.\n\nNote: The custom policy referenced here is the same policy configured in [MS.DEFENDER.4.1v2](#msdefender41v2).\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AT-2b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-7EC5CA9A",
+      "rule_id": "SV-7EC5CA9Ar1C5C33",
+      "rule_title": "The action for the custom policy SHOULD be set to block sharing sensitive information with everyone.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 81,
+              "added": false,
+              "removed": false,
+              "value": "The action for the custom policy SHOULD be set to block sharing sensitive information with everyone.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Access to sensitive information should be prohibited unless explicitly allowed. Specific exemptions can be made based on agency policies and valid business justifications.\n\nNote: The custom policy referenced here is the same policy configured in [MS.DEFENDER.4.1v2](#msdefender41v2).\n\n"
+            },
+            {
+              "count": 23,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, SC-7(10)\n\n"
+            },
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1530: Data from Cloud Storage; T1213: Data from Information Repositories"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-81D17A79",
+      "rule_id": "SV-81D17A79rAABC7F",
+      "rule_title": "A list of apps that are restricted from accessing files protected by DLP policy SHOULD be defined.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 76,
+              "added": false,
+              "removed": false,
+              "value": "A list of apps that are restricted from accessing files protected by DLP policy SHOULD be defined.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Some apps may inappropriately share accessed files or not conform to agency policies for access to sensitive information. Defining a list of those apps makes it possible to use DLP policies to restrict those apps' access to sensitive information on endpoints using Defender.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\n"
+            },
+            {
+              "count": 21,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1565: Data Manipulation; T1485: Data Destruction; T1530: Data from Cloud Storage"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "1. Sign in to the Microsoft Purview "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "compliance "
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": "portal.\n2. "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Under Solutions"
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "Go to Settings"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ", "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "under Solution Settings "
+            },
+            {
+              "count": 95,
+              "added": false,
+              "removed": false,
+              "value": "select Data loss prevention.\n3. Go to Endpoint DLP Settings.\n4. Go to Restricted apps and app groups.\n5. Click Add or edit Restricted Apps.\n6. Enter an app and executable name to disallow said app from\naccessing protected files, and log the incident.\n7. Return and click Unallowed Bluetooth apps.\n8. Click Add or edit unallowed Bluetooth apps.\n9. Enter an app and executable name to disallow said app from\naccessing protected files, and log the incident."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-8BFFFD3A",
+      "rule_id": "SV-8BFFFD3Ar0F3BFA",
+      "rule_title": "The standard and strict preset security policies SHALL be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 59,
+              "added": false,
+              "removed": false,
+              "value": "The standard and strict preset security policies SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Defender includes a large number of features and settings to protect users against threats. Using the preset security policies, administrators can help ensure all new and existing users automatically have secure defaults applied.\n\n"
+            },
+            {
+              "count": 24,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-6a, SI-3a, SI-8\n\n"
+            },
+            {
+              "count": 30,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1566.003: Spearphishing via Service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-8FEA102C",
+      "rule_id": "SV-8FEA102Cr14DD0E",
+      "rule_title": "The custom policy SHOULD include an action to block access to sensitive information by restricted apps and unwanted Bluetooth applications.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 136,
+              "added": false,
+              "removed": false,
+              "value": "The custom policy SHOULD include an action to block access to sensitive information by restricted apps and unwanted Bluetooth applications.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Some apps may inappropriately share accessed files or not conform to agency policies for access to sensitive information. Defining a DLP policy with an action to block access from restricted apps and unwanted Bluetooth applications prevents unauthorized disclosure by those programs.\n\nNote: The custom policy referenced here is the same policy configured in [MS.DEFENDER.4.1v2](#msdefender41v2).\n\nNote: This action can only be included if at least one device is onboarded to the agency tenant. Otherwise, the option to block restricted apps will not be available.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-19a\n\n"
+            },
+            {
+              "count": 28,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1565: Data Manipulation; T1485: Data Destruction; T1530: Data from Cloud Storage; T1486: Data Encrypted for Impact"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 36,
+              "added": false,
+              "removed": false,
+              "value": "If restricted app and unwanted Bluetooth app restrictions are desired,\nassociated devices must be onboarded with Defender for Endpoint\nbefore the instructions below can be completed.\n1. Sign in to the Microsoft Purview "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "compliance "
+            },
+            {
+              "count": 219,
+              "added": false,
+              "removed": false,
+              "value": "portal.\n2. Under Solutions, select Data loss prevention.\n3. Select Policies from the top of the page.\n4. Find the custom DLP policy configured under\nMS.DEFENDER.4.1v2 Instructions (#msdefender41v2-instructions) in the list\nand click the Policy name to select.\n5. Select Edit Policy.\n6. Click Next on each page in the policy wizard until you reach the\nAdvanced DLP rules page.\n7. Select the relevant rule and click the pencil icon to edit it.\n8. Under Actions, click Add an action.\n9. Choose Audit or restrict activities on device\n10. Under File activities for all apps, select\nApply restrictions to specific activity.\n11. Check the box next to Copy or move using unallowed Bluetooth app\nand set its action to Block.\n12. Under Restricted app activities, check the Access by restricted apps box\nand set the action drop-down to Block.\n13. Click Save to save the changes.\n14. Click Next on each page until reaching the\nReview your policy and create it page.\n15. Review the policy and click Submit to complete the policy changes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-96C14E14",
+      "rule_id": "SV-96C14E14r41B8B5",
+      "rule_title": "A custom policy SHALL be configured to protect PII and sensitive information, as defined by the agency, blocking at a minimum: credit card numbers, U.S. Individual Taxpayer Identification Numbers (ITIN), and U.S. Social Security numbers (SSN).",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 94,
+              "added": false,
+              "removed": false,
+              "value": "A custom policy SHALL be configured to protect PII and sensitive information, as defined by the agency, blocking at a minimum: credit card numbers, U.S. Individual Taxpayer Identification Numbers (ITIN), and U.S. Social Security numbers (SSN).\n\nCriticality: SHALL.\nLast modified: November 2024.\n\nRationale: Users may inadvertently share sensitive information with others who should not have access to it. DLP policies provide a way for agencies to detect and prevent unauthorized disclosures.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\n"
+            },
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1530: Data from Cloud Storage; T1213: Data from Information Repositories"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "1. Sign in to the Microsoft Purview "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "compliance "
+            },
+            {
+              "count": 55,
+              "added": false,
+              "removed": false,
+              "value": "portal.\n2. Under the Solutions section on the left-hand menu, select **Data loss\nprevention**.\n3. Select Policies from the top of the page.\n4. Select Create policy.\n5. From the Categories list, select Custom.\n6. From the "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Templates"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Regulations"
+            },
+            {
+              "count": 30,
+              "added": false,
+              "removed": false,
+              "value": " list, select Custom policy and then click\nNext.\n7. Edit the name and description of the policy if desired, then click\nNext.\n8. Under "
+            },
+            {
+              "count": 22,
+              "added": true,
+              "removed": false,
+              "value": "Assign admin units,  ensure Admin units is set to Full directory by default, then click Next.\n9. Under "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "Choose "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "locations"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "where"
+            },
+            {
+              "count": 36,
+              "added": false,
+              "removed": false,
+              "value": " to apply the policy, set Status to On\nfor at least the Exchange email, OneDrive accounts, SharePoint\nsites, Teams chat and channel messages, and Devices locations, then\nclick Next.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "9"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "10"
+            },
+            {
+              "count": 23,
+              "added": false,
+              "removed": false,
+              "value": ". Under Define policy settings, select **Create or customize advanced\nDLP rules, and then click Next**.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "10"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "11"
+            },
+            {
+              "count": 14,
+              "added": false,
+              "removed": false,
+              "value": ". Click Create rule. Assign the rule an appropriate name and\ndescription.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "11"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "12"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": ". Click Add condition, then Content contains.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "12"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "13"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": ". Click Add, then Sensitive info types.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "13"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "14"
+            },
+            {
+              "count": 57,
+              "added": false,
+              "removed": false,
+              "value": ". Add information types that protect information sensitive to the agency.\nAt a minimum, the agency should protect:\n- Credit card numbers\n- U.S. Individual Taxpayer Identification Numbers (ITIN)\n- U.S. Social Security Numbers (SSN)\n- All agency-defined PII and sensitive information\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "14"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "15"
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": ". Click Add.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "15"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "16"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": ". Under Actions, click Add an action.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "16"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "17"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": ". Check **Restrict Access or encrypt the content in Microsoft 365\nlocations**.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "17"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "18"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": ". Under this action, select Block Everyone.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "18"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "19"
+            },
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": ". Under User notifications, turn on Use notifications to inform your users and help educate them on the proper use of sensitive info.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "19"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "20"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": ". Under Microsoft 365 services "
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "if using a GCC environment or under Microsoft 365 files and Microsoft Fabric items if using a Commercial environment"
+            },
+            {
+              "count": 27,
+              "added": false,
+              "removed": false,
+              "value": ", a section that appears after user notifications are turned on, check the box next to Notify users in Office 365 service with a policy tip "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "or email notifications"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "20"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "21"
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": false,
+              "value": ". Click Save, then Next.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "21"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "22"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": ". Select Turn "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "it"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "the policy"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " on "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "right away"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "immediately"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": ", then click Next.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "22"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "23"
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": ". Click Submit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-A737EE41",
+      "rule_id": "SV-A737EE41rFC4C85",
+      "rule_title": "Sensitive accounts SHALL be added to Exchange Online Protection in the strict preset security policy.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 84,
+              "added": false,
+              "removed": false,
+              "value": "Sensitive accounts SHALL be added to Exchange Online Protection in the strict preset security policy.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Unauthorized access to a sensitive account may result in greater harm than a standard user account. Adding sensitive accounts to the strict preset security policy, with its increased protections, better mitigates their elevated risk to email threats.\n\nNote: The strict preset security policy must be enabled to protect sensitive accounts.\n\n"
+            },
+            {
+              "count": 24,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-6a, SI-3a, SI-8\n\n"
+            },
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-CC4D128F",
+      "rule_id": "SV-CC4D128Fr14D41A",
+      "rule_title": "At a minimum, the alerts required by the CISA M365 Secure Configuration Baseline for Exchange Online SHALL be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 51,
+              "added": false,
+              "removed": false,
+              "value": "At a minimum, the alerts required by the CISA M365 Secure Configuration Baseline for Exchange Online SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Potentially malicious or service-impacting events may go undetected without a means of detecting these events. "
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": true,
+              "value": "Setting up a mechanism"
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "Administrators are alerted"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " to "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": true,
+              "value": "alert administrators to the list of"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "these"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " events "
+            },
+            {
+              "count": 14,
+              "added": false,
+              "removed": true,
+              "value": "linked above draws attention to them to minimize any impact to users and the"
+            },
+            {
+              "count": 8,
+              "added": true,
+              "removed": false,
+              "value": "when they occur, minimizing potential user or"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " agency "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "impact"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(5)\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1562: Impair Defenses; T1562.006: Indicator Blocking"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-D3710F89",
+      "rule_id": "SV-D3710F89r6F9434",
+      "rule_title": "User impersonation protection SHOULD be enabled for sensitive accounts in both the standard and strict preset policies.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 111,
+              "added": false,
+              "removed": false,
+              "value": "User impersonation protection SHOULD be enabled for sensitive accounts in both the standard and strict preset policies.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: User impersonation, especially of users with access to sensitive or high-value information and resources, has the potential to result in serious harm. Impersonation protection mitigates this risk. By configuring impersonation protection in both preset policies, administrators can help protect email recipients from impersonated emails, regardless of whether they are added to the standard or strict policy.\n\nNote: The standard and strict preset security policies must be enabled to protect accounts.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 26,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1656: Impersonation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-F428DDD8",
+      "rule_id": "SV-F428DDD8r7DD0EB",
+      "rule_title": "All users SHALL be added to Exchange Online Protection (EOP) in either the standard or strict preset security policy.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 196,
+              "added": false,
+              "removed": false,
+              "value": "All users SHALL be added to Exchange Online Protection (EOP) in either the standard or strict preset security policy.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Important user protections are provided by EOP, including anti-spam, anti-malware, and anti-phishing protections. By using the preset policies, administrators can help ensure all new and existing users have secure defaults applied automatically.\n\nNote: The standard and strict preset security policies must be enabled as directed by [MS.DEFENDER.1.1v1](#msdefender11v1) for protections to be applied.\n\nNote: Specific user accounts, except for sensitive accounts, MAY be exempt from the preset policies, provided they are added to one or more custom policies offering comparable protection. These users might need flexibility not offered by the preset policies. Their accounts should be added to a custom policy conforming, as closely as possible to the settings used by the preset policies. See the **Resources** section for more details on configuring policies.\n\n"
+            },
+            {
+              "count": 24,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-6a, SI-3a, SI-8\n\n"
+            },
+            {
+              "count": 30,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1566.003: Spearphishing via Service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-FC753CE6",
+      "rule_id": "SV-FC753CE6r67E0A4",
+      "rule_title": "The alerts SHOULD be sent to a monitored address or incorporated into a Security Information and Event Management (SIEM).",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 80,
+              "added": false,
+              "removed": false,
+              "value": "The alerts SHOULD be sent to a monitored address or incorporated into a Security Information and Event Management (SIEM).\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Suspicious or malicious events, if not resolved promptly, may have a greater impact to users and the agency. Sending alerts to a monitored email address or SIEM system helps ensure events are acted upon in a timely manner to limit overall impact.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(5)\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1562: Impair Defenses; T1562.006: Indicator Blocking"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-FC9C3C00",
+      "rule_id": "SV-FC9C3C00r5BC1EF",
+      "rule_title": "Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 131,
+              "added": false,
+              "removed": false,
+              "value": "Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Audit logs may no longer be available when needed if they are not retained for a sufficient time. Increased log retention time gives an agency the necessary visibility to investigate incidents that occurred some time ago.\n\nNote: Purview Audit (Premium) provides a default audit log retention policy, retaining Exchange Online, SharePoint Online, OneDrive for Business, and Microsoft Entra ID audit records for one year. Additional record types require custom audit retention policies. Agencies may also consider alternate storage locations and services to meet audit log retention needs.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-11\n\n"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1070: Indicator Removal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-FD14AB47",
+      "rule_id": "SV-FD14AB47rFAFDB1",
+      "rule_title": "Domain impersonation protection SHOULD be enabled for domains owned by the agency in both the standard and strict preset policies.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 105,
+              "added": false,
+              "removed": false,
+              "value": "Domain impersonation protection SHOULD be enabled for domains owned by the agency in both the standard and strict preset policies.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Configuring domain impersonation protection for all agency domains reduces the risk of a user being deceived by a look-alike domain. By configuring impersonation protection in both preset policies, administrators can help protect email recipients from impersonated emails, regardless of whether they are added to the standard or strict policy.\n\nNote: The standard and strict preset security policies must be enabled to protect agency domains.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 26,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1656: Impersonation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-FDC9A1A5",
+      "rule_id": "SV-FDC9A1A5r31E6C3",
+      "rule_title": "All users SHALL be added to Defender for Office 365 protection in either the standard or strict preset security policy.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 190,
+              "added": false,
+              "removed": false,
+              "value": "All users SHALL be added to Defender for Office 365 protection in either the standard or strict preset security policy.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Important user protections are provided by Defender for Office 365 protection, including safe attachments and safe links. By using the preset policies, administrators can help ensure all new and existing users have secure defaults applied automatically.\n\nNote: The standard and strict preset security policies must be enabled as directed by [MS.DEFENDER.1.1v1](#msdefender11v1) for protections to be applied.\n\nNote: Specific user accounts, except for sensitive accounts, MAY be exempt from the preset policies, provided they are added to one or more custom policies offering comparable protection. These users might need flexibility not offered by the preset policies. Their accounts should be added to a custom policy conforming as closely as possible to the settings used by the preset policies. See the **Resources** section for more details on configuring policies.\n\n"
+            },
+            {
+              "count": 24,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-6a, SI-3a, SI-8\n\n"
+            },
+            {
+              "count": 30,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1566.003: Spearphishing via Service"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

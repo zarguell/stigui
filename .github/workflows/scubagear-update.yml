@@ -1,0 +1,44 @@
+name: ScubaGear baselines update
+
+# CISA publishes ScubaGear releases on its own timetable; this checks
+# daily and refreshes the committed baselines when a release actually
+# changed baseline content. No-op runs commit nothing.
+on:
+    schedule:
+        - cron: '37 6 * * *'
+    workflow_dispatch:
+
+jobs:
+    refresh:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Latest ScubaGear release
+              id: release
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  TAG=$(gh api repos/cisagov/ScubaGear/releases/latest --jq .tag_name)
+                  echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+                  echo "Latest ScubaGear release: $TAG"
+
+            - name: Convert baselines at that release
+              run: |
+                  python3 scripts/scuba/run.py convert --tag "${{ steps.release.outputs.tag }}"
+
+            - name: Commit updated baselines
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                  commit_message: Refresh CISA ScubaGear baselines (${{ steps.release.outputs.tag }})

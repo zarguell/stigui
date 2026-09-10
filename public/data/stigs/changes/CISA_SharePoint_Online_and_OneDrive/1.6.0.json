@@ -1,0 +1,864 @@
+{
+  "id": "CISA_SharePoint_Online_and_OneDrive",
+  "from_version": "1.6.0",
+  "to_version": "1.7.0",
+  "date": "2026-02-11",
+  "counts": {
+    "unchanged": 0,
+    "updated": 8,
+    "added": 0,
+    "removed": 0
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-0AE8B2FF",
+      "rule_id": "SV-0AE8B2FFr4A8E10",
+      "rule_title": "External sharing for OneDrive SHALL be limited to \"Existing guests\" or \"Only people in your organization\".",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "External sharing for OneDrive SHALL be limited to "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Existing guests"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\" "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "or "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "Only people in your organization"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "External sharing for OneDrive SHALL be limited to "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Existing guests"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\" "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "or "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "Only people in your organization"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 42,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Sharing files outside the organization via OneDrive increases the risk of unauthorized access. By limiting external sharing, administrators decrease the risk of unauthorized access to information.\n\n"
+            },
+            {
+              "count": 24,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2, AC-3, IA-8\n\n"
+            },
+            {
+              "count": 31,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "External sharing for OneDrive SHALL be limited to "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Existing guests"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\" "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "or "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "Only people in your organization"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 110,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Overview of external sharing in SharePoint and OneDrive in Microsoft 365 | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/external-sharing-overview)\n- Manage sharing settings for SharePoint and OneDrive in Microsoft 365 | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-1C2F5EF0",
+      "rule_id": "SV-1C2F5EF0r9B0402",
+      "rule_title": "External sharing SHALL be restricted to approved external domains and/or users in approved security groups per interagency collaboration needs.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 91,
+              "added": false,
+              "removed": false,
+              "value": "External sharing SHALL be restricted to approved external domains and/or users in approved security groups per interagency collaboration needs.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: By limiting sharing to domains or approved security groups used for interagency collaboration purposes, administrators can help prevent sharing with unknown organizations and individuals.\n\nNote: This policy is only applicable if the external sharing slider in the SharePoint admin center is not set to **Only people in your organization**.\n\n"
+            },
+            {
+              "count": 23,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, AC-6(10)\n\n"
+            },
+            {
+              "count": 31,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-35F1C330",
+      "rule_id": "SV-35F1C330rB3B4BF",
+      "rule_title": "Reauthentication days for people who use a verification code SHALL be set to 30 days or less.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 30,
+              "added": false,
+              "removed": false,
+              "value": "Reauthentication days for people who use a verification code SHALL be set to 30 days or less.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: "
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": true,
+              "value": "A verification code may be issued to provide access to information for a short period. "
+            },
+            {
+              "count": 53,
+              "added": false,
+              "removed": false,
+              "value": "By setting expiration timers for verification code access, administrators can prevent unintended sustained access to documents.\n\nNote: This policy is only applicable if the external sharing slider in the SharePoint admin center is set to **Anyone** or **New and existing guests**.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-11\n\n"
+            },
+            {
+              "count": 23,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1080: Taint Shared Content; T1565: Data Manipulation; T1565.001: Stored Data Manipulation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-655E6952",
+      "rule_id": "SV-655E6952rCF795B",
+      "rule_title": "File and folder default sharing scope SHALL be set to \"Specific people (only the people the user specifies)\".",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "File and folder default sharing scope SHALL be set to "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "Specific people (only the people the user specifies)"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "File and folder default sharing scope SHALL be set to "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "Specific people (only the people the user specifies)"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 30,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: By making the default sharing the most restrictive, administrators prevent accidentally sharing information too broadly.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6\n\n"
+            },
+            {
+              "count": 37,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1565: Data Manipulation; T1565.001: Stored Data Manipulation"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "File and folder default sharing scope SHALL be set to "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "Specific people (only the people the user specifies)"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 74,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- File and folder links | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off#file-and-folder-links)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-6DEFA7D0",
+      "rule_id": "SV-6DEFA7D0r83A01B",
+      "rule_title": "File and folder default sharing permissions SHALL be set to view only.",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "File and folder default sharing permissions SHALL be set to "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "View"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "view only"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "File and folder default sharing permissions SHALL be set to "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "View"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "view only"
+            },
+            {
+              "count": 38,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Edit access to files and folders could allow a user to make unauthorized changes.  By restricting default permissions to **View** "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "only"
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": ", administrators prevent unintended or malicious modification.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6\n\n"
+            },
+            {
+              "count": 23,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1080: Taint Shared Content; T1565: Data Manipulation; T1565.001: Stored Data Manipulation"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "File and folder default sharing permissions SHALL be set to "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "View"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "view only"
+            },
+            {
+              "count": 74,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- File and folder links | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off#file-and-folder-links)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-95B14660",
+      "rule_id": "SV-95B14660rC0D8F0",
+      "rule_title": "The allowable file and folder permissions for links SHALL be set to view only.",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "The allowable file and folder permissions for links SHALL be set to "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "View"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "view"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": " only."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "The allowable file and folder permissions for links SHALL be set to "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "View"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "view"
+            },
+            {
+              "count": 73,
+              "added": false,
+              "removed": false,
+              "value": " only.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: Unauthorized changes to files can be made if permissions allow editing by anyone.  By restricting permissions on links to **View** only, administrators prevent anonymous file changes.\n\nNote: This policy is only applicable if the external sharing slider in the SharePoint admin center is set to **Anyone**.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6\n\n"
+            },
+            {
+              "count": 23,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1080: Taint Shared Content; T1565: Data Manipulation; T1565.001: Stored Data Manipulation"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "The allowable file and folder permissions for links SHALL be set to "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "View"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "view"
+            },
+            {
+              "count": 72,
+              "added": false,
+              "removed": false,
+              "value": " only.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Secure external sharing recipient experience | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/what-s-new-in-sharing-in-targeted-release)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-D97F9F35",
+      "rule_id": "SV-D97F9F35r5F5097",
+      "rule_title": "External sharing for SharePoint SHALL be limited to \"Existing guests\" or \"Only people in your organization\".",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "External sharing for SharePoint SHALL be limited to "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Existing guests"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\" "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "or "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "Only people in your organization"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "External sharing for SharePoint SHALL be limited to "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Existing guests"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\" "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "or "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "Only people in your organization"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 41,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Sharing information outside the organization via SharePoint increases the risk of unauthorized access. By limiting external sharing, administrators decrease the risk of access to information.\n\n"
+            },
+            {
+              "count": 24,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2, AC-3, IA-8\n\n"
+            },
+            {
+              "count": 24,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "External sharing for SharePoint SHALL be limited to "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "Existing guests"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\" "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "or "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "Only people in your organization"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "\""
+            },
+            {
+              "count": 110,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Overview of external sharing in SharePoint and OneDrive in Microsoft 365 | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/external-sharing-overview)\n- Manage sharing settings for SharePoint and OneDrive in Microsoft 365 | Microsoft Documents (https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-EDB2DB45",
+      "rule_id": "SV-EDB2DB45r717FC7",
+      "rule_title": "Expiration days for Anyone links SHALL be set to 30 days or less.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 94,
+              "added": false,
+              "removed": false,
+              "value": "Expiration days for Anyone links SHALL be set to 30 days or less.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: Links may be used to provide access to information for a short period of time. Without expiration, however, access is indefinite. By setting expiration timers for links, administrators can prevent unintended sustained access to the link.\n\nNote: This policy is only applicable if the external sharing slider in the SharePoint admin center is set to **Anyone**.\n\n"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, AC-21b\n\n"
+            },
+            {
+              "count": 31,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

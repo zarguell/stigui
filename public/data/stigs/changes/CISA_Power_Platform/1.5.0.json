@@ -1,0 +1,63 @@
+{
+  "id": "CISA_Power_Platform",
+  "from_version": "1.5.0",
+  "to_version": "1.6.0",
+  "date": "2025-07-09",
+  "counts": {
+    "unchanged": 7,
+    "updated": 1,
+    "added": 0,
+    "removed": 0
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-1FB5F564",
+      "rule_id": "SV-1FB5F564r7A76C2",
+      "rule_title": "Content Security Policy (CSP) SHALL be enforced for model-driven and canvas Power Apps.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": "Content Security Policy (CSP) SHALL be enforced for model-driven and canvas Power Apps.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "June 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "March 2025"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Adds CSP as a defense mechanism for Power Apps against common website attacks.\n\n"
+            },
+            {
+              "count": 12,
+              "added": true,
+              "removed": false,
+              "value": "Note: This policy is only applicable to environments using Dataverse.\n\n"
+            },
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1190: Exploit Public-Facing Application"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

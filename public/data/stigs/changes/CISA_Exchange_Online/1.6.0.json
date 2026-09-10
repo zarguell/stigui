@@ -1,0 +1,1582 @@
+{
+  "id": "CISA_Exchange_Online",
+  "from_version": "1.6.0",
+  "to_version": "1.7.0",
+  "date": "2026-02-11",
+  "counts": {
+    "unchanged": 0,
+    "updated": 40,
+    "added": 0,
+    "removed": 0
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-0355FB7C",
+      "rule_id": "SV-0355FB7CrF2A336",
+      "rule_title": "Email scanning SHALL be capable of reviewing emails after delivery.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 46,
+              "added": false,
+              "removed": false,
+              "value": "Email scanning SHALL be capable of reviewing emails after delivery.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: As known malware signatures are updated, it is possible for an email to be retroactively identified as containing malware after delivery. "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "By scanning"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Scanning"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " emails"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": ","
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": " can reduce"
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": " the number of malware-infected "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "emails "
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": "in users' mailboxes"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": " can be reduced"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\n"
+            },
+            {
+              "count": 15,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-050CCD2C",
+      "rule_id": "SV-050CCD2Cr4C2AD5",
+      "rule_title": "User click tracking SHOULD be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 64,
+              "added": false,
+              "removed": false,
+              "value": "User click tracking SHOULD be enabled.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Users may click on malicious links in emails, leading to compromise or unauthorized data disclosure. Enabling user click tracking lets agencies know if a malicious link may have been visited after the fact to help tailor a response to a potential incident.\n\n"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3, AU-12c\n\n"
+            },
+            {
+              "count": 15,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.002: Spearphishing Link"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-050DDDC1",
+      "rule_id": "SV-050DDDC1rCB6EA7",
+      "rule_title": "DKIM SHOULD be enabled for all domains.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 69,
+              "added": false,
+              "removed": false,
+              "value": "DKIM SHOULD be enabled for all domains.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: An adversary may modify the `FROM` field of an email such that it appears to be a legitimate email sent by an agency, facilitating phishing attacks. Enabling DKIM is another means for recipients to detect spoofed emails and verify the integrity of email content.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-8\n\n"
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1598: Phishing for Information; T1656: Impersonation; T1566: Phishing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-08FC3478",
+      "rule_id": "SV-08FC3478rDA49CB",
+      "rule_title": "SMTP AUTH SHALL be disabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 46,
+              "added": false,
+              "removed": false,
+              "value": "SMTP AUTH SHALL be disabled.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: SMTP AUTH is not used or needed by modern email clients. Therefore, disabling it as the global default conforms to the principle of least functionality.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-093337DB",
+      "rule_id": "SV-093337DBr49B22B",
+      "rule_title": "Impersonation protection checks SHOULD be used.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 70,
+              "added": false,
+              "removed": false,
+              "value": "Impersonation protection checks SHOULD be used.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Users might not be able to reliably identify phishing emails, especially if the `FROM` address is nearly indistinguishable from that of a known entity. By automatically identifying senders who appear to be impersonating known senders, the risk of a successful phishing attempt can be reduced.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1656: Impersonation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-1A24B887",
+      "rule_id": "SV-1A24B887rDF724B",
+      "rule_title": "Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31 (Appendix C).",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 36,
+              "added": false,
+              "removed": false,
+              "value": "Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31 (Appendix C).\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: "
+            },
+            {
+              "count": 19,
+              "added": false,
+              "removed": true,
+              "value": "Audit logs may no longer be available when needed if they are not retained for a sufficient time.  "
+            },
+            {
+              "count": 106,
+              "added": false,
+              "removed": false,
+              "value": "Increased log retention time gives an agency the necessary visibility to investigate incidents that occurred some time ago. OMB M-21-13, Appendix C, Table 5 specifically calls out Unified Audit Logs in the Cloud Azure log category.\n\nNote: Microsoft 365 Purview (Premium) provides a default audit log retention policy, retaining Exchange Online, SharePoint Online, OneDrive for Business, and Microsoft Entra ID audit records for one year. Additional record types require custom audit retention policies. Agencies may also consider alternate storage locations and services to meet audit log retention needs.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-11\n\n"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1070: Indicator Removal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-2654122A",
+      "rule_id": "SV-2654122Ar37AB45",
+      "rule_title": "If a third-party filtering solution is used, it SHOULD offer services comparable to Microsoft Defender's Common Attachment Filter.",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Alternatively chosen"
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "If a third-party"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " filtering "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "solutions"
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "solution is used, it"
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": " SHOULD offer services comparable to Microsoft Defender's Common Attachment Filter."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Alternatively chosen"
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "If a third-party"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " filtering "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "solutions"
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "solution is used, it"
+            },
+            {
+              "count": 95,
+              "added": false,
+              "removed": false,
+              "value": " SHOULD offer services comparable to Microsoft Defender's Common Attachment Filter.\n\nCriticality: SHOULD.\nLast modified: May 2024.\n\nRationale: Malicious attachments often take the form of click-to-run files. Sharing high risk file types, when necessary, is better left to a means other than email; the dangers of allowing them to be sent over email outweigh any potential benefits. Filtering email attachments based on file types can prevent spread of malware distributed via click-to-run email attachments.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\n"
+            },
+            {
+              "count": 15,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Alternatively chosen"
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "If a third-party"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " filtering "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "solutions"
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "solution is used, it"
+            },
+            {
+              "count": 96,
+              "added": false,
+              "removed": false,
+              "value": " SHOULD offer services comparable to Microsoft Defender's Common Attachment Filter.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Common attachments filter in anti-malware policies | Microsoft Learn (https://learn.microsoft.com/en-us/defender-office-365/anti-malware-protection-about#common-attachments-filter-in-anti-malware-policies)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-289EFD1B",
+      "rule_id": "SV-289EFD1Br40C331",
+      "rule_title": "The attachment filter SHOULD attempt to determine the true file type and assess the file extension.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 87,
+              "added": false,
+              "removed": false,
+              "value": "The attachment filter SHOULD attempt to determine the true file type and assess the file extension.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Users can change a file extension at the end of a file name (e.g., notepad.exe to notepad.txt) to obscure the actual file type. Verifying the file type and checking that this matches the designated file extension can help detect instances where the file extension was changed.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\n"
+            },
+            {
+              "count": 32,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1036: Masquerading; T1036.006: Space after Filename; T1036.007: Double File Extension; T1036.008: Masquerade File Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-36068C30",
+      "rule_id": "SV-36068C30r6774AD",
+      "rule_title": "The DMARC point of contact for aggregate reports SHALL include `reports@dmarc.cyber.dhs.gov`.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 117,
+              "added": false,
+              "removed": false,
+              "value": "The DMARC point of contact for aggregate reports SHALL include `reports@dmarc.cyber.dhs.gov`.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Email spoofing attempts are not inherently visible to domain owners. DMARC provides a mechanism to receive reports of spoofing attempts. Including <reports@dmarc.cyber.dhs.gov> as a point of contact for these reports gives CISA insight into spoofing attempts and is required by BOD 18-01 for FCEB departments and agencies.\n\nNote: Only federal, executive branch, departments and agencies should include this email address in their DMARC record.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(5)\n\n"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1562: Impair Defenses"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-5510B27B",
+      "rule_id": "SV-5510B27BrE68073",
+      "rule_title": "At a minimum, the following alerts SHALL be enabled:",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 148,
+              "added": false,
+              "removed": false,
+              "value": "At a minimum, the following alerts SHALL be enabled:\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Potentially malicious or service impacting events may go undetected without a means of detecting these events. Setting up a mechanism to alert administrators to events listed above draws attention to them to help minimize impact to users and the agency.\n\na. **Suspicious email sending patterns detected.**\n\nb. **Suspicious Connector Activity.**\n\nc. **Suspicious Email Forwarding Activity.**\n\nd. **Messages have been delayed.**\n\ne. **Tenant restricted from sending unprovisioned email.**\n\nf. **Tenant restricted from sending email.**\n\ng. **A potentially malicious URL click was detected.**\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(5)\n\n"
+            },
+            {
+              "count": 44,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts; T1562: Impair Defenses; T1566: Phishing; T1566.002: Spearphishing Link; T1562: Impair Defenses; T1562.006: Indicator Blocking"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-5A186269",
+      "rule_id": "SV-5A186269r698336",
+      "rule_title": "The phishing protection solution SHOULD include an AI-based phishing detection tool comparable to EOP Mailbox Intelligence.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 67,
+              "added": false,
+              "removed": false,
+              "value": "The phishing protection solution SHOULD include an AI-based phishing detection tool comparable to EOP Mailbox Intelligence.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Phishing attacks can result in unauthorized data disclosure and unauthorized access. Using AI-based phishing detection tools to improve the detection rate of phishing attempts helps reduce the risk of successful phishing attacks.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1656: Impersonation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-5FF30762",
+      "rule_id": "SV-5FF30762r8E9219",
+      "rule_title": "Spam and high confidence spam SHALL be moved to either the junk email folder or the quarantine folder.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 31,
+              "added": false,
+              "removed": false,
+              "value": "Spam and high confidence spam SHALL be moved to either the junk email folder or the quarantine folder.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: "
+            },
+            {
+              "count": 28,
+              "added": false,
+              "removed": true,
+              "value": "Spam is a constant threat as junk mail can reduce user productivity, fill up mailboxes unnecessarily, and in some cases include malicious links or attachments. "
+            },
+            {
+              "count": 36,
+              "added": false,
+              "removed": false,
+              "value": "Moving spam messages to a separate junk or quarantine folder helps users filter out spam while still giving them the ability to review messages, as needed, in case a message is filtered incorrectly.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-60998EC1",
+      "rule_id": "SV-60998EC1r709A55",
+      "rule_title": "Calendar details SHALL NOT be shared with all domains.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 69,
+              "added": false,
+              "removed": false,
+              "value": "Calendar details SHALL NOT be shared with all domains.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Calendar details may contain information that should not be shared by default with all domains. Disabling sharing with all domains closes an avenue for data exfiltration while still allowing for legitimate use as needed.\n\nNote: Calendar details MAY be shared with specific domains.\n\n"
+            },
+            {
+              "count": 26,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, SC-7(10)(a)\n\n"
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-6B3888F3",
+      "rule_id": "SV-6B3888F3r112EC5",
+      "rule_title": "Emails SHALL be filtered by attachment file types.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 91,
+              "added": false,
+              "removed": false,
+              "value": "Emails SHALL be filtered by attachment file types.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: Malicious attachments often take the form of click-to-run files. Sharing high risk file types, when necessary, is better left to a means other than email; the dangers of allowing them to be sent over email outweigh any potential benefits. Filtering email attachments based on file types can prevent spread of malware distributed via click-to-run email attachments.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\n"
+            },
+            {
+              "count": 15,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-6D5832C5",
+      "rule_id": "SV-6D5832C5r12E516",
+      "rule_title": "At a minimum, the DLP solution SHALL restrict sharing credit card numbers, U.S. Individual Taxpayer Identification Numbers (ITIN), and U.S. Social Security numbers (SSN) via email.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 71,
+              "added": false,
+              "removed": false,
+              "value": "At a minimum, the DLP solution SHALL restrict sharing credit card numbers, U.S. Individual Taxpayer Identification Numbers (ITIN), and U.S. Social Security numbers (SSN) via email.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: Users may inadvertently share sensitive information with others who should not have access to it. Data loss prevention "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "(DLP) "
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": "policies provide a way for agencies to detect and prevent unauthorized disclosures.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\n"
+            },
+            {
+              "count": 38,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-723BDBB0",
+      "rule_id": "SV-723BDBB0r734F23",
+      "rule_title": "The alerts SHOULD be sent to a monitored address or incorporated into a security information and event management (SIEM) system.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 85,
+              "added": false,
+              "removed": false,
+              "value": "The alerts SHOULD be sent to a monitored address or incorporated into a security information and event management (SIEM) system.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Suspicious or malicious events, if not resolved promptly, may have a greater impact to users and the agency. Sending alerts to a monitored email address or SIEM system helps ensure these suspicious or malicious events are acted upon in a timely manner to limit overall impact.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(12)\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1562: Impair Defenses; T1562.006: Indicator Blocking"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-7A445C1C",
+      "rule_id": "SV-7A445C1CrB1A331",
+      "rule_title": "A DMARC policy SHALL be published for every second-level domain.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 73,
+              "added": false,
+              "removed": false,
+              "value": "A DMARC policy SHALL be published for every second-level domain.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Without a DMARC policy available for each domain, recipients may improperly handle SPF and DKIM failures, possibly enabling spoofed emails to reach end users' mailboxes. Publishing DMARC records at the second-level domain protects the second-level domains and all subdomains.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1598: Phishing for Information; T1656: Impersonation; T1566: Phishing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-7B9001BD",
+      "rule_id": "SV-7B9001BDrB56D63",
+      "rule_title": "The DMARC message rejection option SHALL be p=reject.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 66,
+              "added": false,
+              "removed": false,
+              "value": "The DMARC message rejection option SHALL be p=reject.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Of the three policy options (i.e., none, quarantine, and reject), reject provides the strongest protection. Reject is the level of protection required by BOD 18-01 for FCEB departments and agencies.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1598: Phishing for Information; T1656: Impersonation; T1566: Phishing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-7F06A2EC",
+      "rule_id": "SV-7F06A2ECrD6A813",
+      "rule_title": "The selected DLP solution SHOULD offer services comparable to the native DLP solution offered by Microsoft.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 50,
+              "added": false,
+              "removed": false,
+              "value": "The selected DLP solution SHOULD offer services comparable to the native DLP solution offered by Microsoft.\n\nCriticality: SHOULD.\nLast modified: May 2024.\n\nRationale: Any alternative DLP solution should be able to detect sensitive information in Exchange Online and block access to unauthorized entities.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\n"
+            },
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol; T1530: Data from Cloud Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-89CB770C",
+      "rule_id": "SV-89CB770Cr704D79",
+      "rule_title": "A DLP solution SHALL be used.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 49,
+              "added": false,
+              "removed": false,
+              "value": "A DLP solution SHALL be used.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: Users may inadvertently disclose sensitive information to unauthorized individuals. A DLP solution may detect the presence of sensitive information in Exchange Online and block access to unauthorized entities.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\n"
+            },
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol; T1530: Data from Cloud Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-91B66353",
+      "rule_id": "SV-91B66353rB92D3B",
+      "rule_title": "Contact folders SHALL NOT be shared with all domains.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 70,
+              "added": false,
+              "removed": false,
+              "value": "Contact folders SHALL NOT be shared with all domains.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Contact folders may contain information that should not be shared by default with all domains. Disabling sharing with all domains closes an avenue for data exfiltration while still allowing for specific legitimate use as needed.\n\nNote: Contact folders MAY be shared with specific domains.\n\n"
+            },
+            {
+              "count": 26,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, SC-7(10)(a)\n\n"
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-9CAD38CE",
+      "rule_id": "SV-9CAD38CEr1D1C3F",
+      "rule_title": "Unified Audit logging SHALL be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 67,
+              "added": false,
+              "removed": false,
+              "value": "Unified Audit logging SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: Responding to incidents without detailed information about activities that took place slows response actions. Enabling Unified Audit logging helps ensure agencies have visibility into user actions. Furthermore, enabling the Unified Audit log is required for government agencies by OMB M-21-31.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-12\n\n"
+            },
+            {
+              "count": 19,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1562: Impair Defenses; T1562.008: Disable or Modify Cloud Logs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-A88E58F2",
+      "rule_id": "SV-A88E58F2r76A9F6",
+      "rule_title": "The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 52,
+              "added": false,
+              "removed": false,
+              "value": "The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: Users may inadvertently share sensitive information with others who should not have access to it. Data loss prevention "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "(DLP) "
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": "policies provide a way for agencies to detect and prevent unauthorized disclosures.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\n"
+            },
+            {
+              "count": 38,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-A98F599F",
+      "rule_id": "SV-A98F599FrB201D7",
+      "rule_title": "Automatic forwarding to external domains SHALL be disabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 120,
+              "added": false,
+              "removed": false,
+              "value": "Automatic forwarding to external domains SHALL be disabled.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: Adversaries can use automatic forwarding to gain persistent access to a victim's email. Disabling forwarding to external domains prevents this technique when the adversary is external to the organization but does not impede legitimate internal forwarding.\n\nNote: Automatic forwarding MAY be enabled with specific, agency-approved domains. There may be cases where an external domain is operationally needed and has an acceptable degree of risk, e.g., a domain controlled by the same agency that hasn't been added as an accepted domain in M365.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-4\n\n"
+            },
+            {
+              "count": 29,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol; T1566: Phishing; T1566.001: Spearphishing Attachment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-B07B2BC5",
+      "rule_id": "SV-B07B2BC5r0D1BD4",
+      "rule_title": "URL comparison with a block-list SHOULD be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 51,
+              "added": false,
+              "removed": false,
+              "value": "URL comparison with a block-list SHOULD be enabled.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Users may be directed to malicious websites via links in email. Blocking access to known, malicious URLs can prevent users from accessing known malicious websites.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\n"
+            },
+            {
+              "count": 15,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.002: Spearphishing Link"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-B3A7909B",
+      "rule_id": "SV-B3A7909Br6F6044",
+      "rule_title": "User warnings, comparable to the user safety tips included with EOP, SHOULD be displayed.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 78,
+              "added": false,
+              "removed": false,
+              "value": "User warnings, comparable to the user safety tips included with EOP, SHOULD be displayed.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Many tasks are better suited for automated processes, such as identifying unusual characters in the `FROM` address or identifying a first-time sender. User warnings can handle these tasks, reducing the burden on end users and the risk of successful phishing attempts.\n\n"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AT-2b, SI-8\n\n"
+            },
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1656: Impersonation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-BEBEE401",
+      "rule_id": "SV-BEBEE401rCA02CE",
+      "rule_title": "At a minimum, click-to-run files SHOULD be blocked (e.g., .exe, .cmd, and .vbe).",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 71,
+              "added": false,
+              "removed": false,
+              "value": "At a minimum, click-to-run files SHOULD be blocked (e.g., .exe, .cmd, and .vbe).\n\nCriticality: SHOULD.\nLast modified: May 2024.\n\nRationale: Malicious attachments often take the form of click-to-run files. Blocking a list of common executable files helps mitigate the risk of adversarial exploitation.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\n"
+            },
+            {
+              "count": 15,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-C1DE9912",
+      "rule_id": "SV-C1DE9912rC331AC",
+      "rule_title": "IP allow lists SHOULD NOT be created.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 56,
+              "added": false,
+              "removed": false,
+              "value": "IP allow lists SHOULD NOT be created.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Messages sent from IP addresses on an allow list bypass important security mechanisms, including spam filtering and sender authentication checks.  Avoiding use of IP allow lists prevents potential threats from circumventing security mechanisms.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-C26EAFD9",
+      "rule_id": "SV-C26EAFD9r48FDE7",
+      "rule_title": "An SPF policy SHALL be published for each domain that fails all non-approved senders.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 172,
+              "added": false,
+              "removed": false,
+              "value": "An SPF policy SHALL be published for each domain that fails all non-approved senders.\n\nCriticality: SHALL.\nLast modified: March 2024.\n\nRationale: An adversary may modify the `FROM` field of an email such that it appears to be a legitimate email sent by an agency, facilitating phishing attacks. Publishing an SPF policy for each agency domain mitigates forged `FROM` fields by providing a means for recipients to detect emails spoofed in this way.  SPF is required for FCEB departments and agencies by Binding Operational Directive (BOD) 18-01, \"Enhance Email and Web Security\".\n\nNote: SPF defines two different \"fail\" mechanisms: fail (indicated by `-`, sometimes referred to as hardfail) and softfail (indicated by `~`). Fail, as used in this baseline policy, refers to hardfail (i.e., `-`).\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2d\n\n"
+            },
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1656: Impersonation; T1566: Phishing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-C359185D",
+      "rule_id": "SV-C359185Dr33F69C",
+      "rule_title": "External sender warnings SHALL be implemented.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 19,
+              "added": false,
+              "removed": false,
+              "value": "External sender warnings SHALL be implemented.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: "
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": true,
+              "value": "Phishing is an ever-present threat. "
+            },
+            {
+              "count": 30,
+              "added": false,
+              "removed": false,
+              "value": "Alerting users when email originates from outside their organization can encourage them to exercise increased caution, especially if an email is one they expected from an internal sender.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-C6AC6688",
+      "rule_id": "SV-C6AC6688rD03446",
+      "rule_title": "Direct download links SHOULD be scanned for malware.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 55,
+              "added": false,
+              "removed": false,
+              "value": "Direct download links SHOULD be scanned for malware.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: URLs in emails may direct users to download and run malware. Scanning direct download links in real-time for known malware and blocking access can prevent users from infecting their devices.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\n"
+            },
+            {
+              "count": 15,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.002: Spearphishing Link"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-C83C8A83",
+      "rule_id": "SV-C83C8A83rD45703",
+      "rule_title": "Safe lists SHOULD NOT be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 91,
+              "added": false,
+              "removed": false,
+              "value": "Safe lists SHOULD NOT be enabled.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Messages sent from allowed safe list addresses bypass important security mechanisms, including spam filtering and sender authentication checks. Avoiding use of safe lists prevents potential threats from circumventing security mechanisms. While blocking all malicious senders is not feasible, blocking specific known, malicious IP addresses may reduce the threat from specific senders.\n\nNote: A connection filter MAY be implemented to create an IP block list.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-D1DE2A08",
+      "rule_id": "SV-D1DE2A08rBDC3C3",
+      "rule_title": "Disallowed file types SHALL be determined and enforced.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 74,
+              "added": false,
+              "removed": false,
+              "value": "Disallowed file types SHALL be determined and enforced.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: Malicious attachments often take the form of click-to-run files, though other file types can contain malicious content as well. As such, determining the full list of file types to block is left to each organization, to be made in accordance with their risk tolerance.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\n"
+            },
+            {
+              "count": 15,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-D779FF04",
+      "rule_id": "SV-D779FF04r3F3591",
+      "rule_title": "Emails identified as containing malware SHALL be quarantined or dropped.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 52,
+              "added": false,
+              "removed": false,
+              "value": "Emails identified as containing malware SHALL be quarantined or dropped.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Email can be used as a mechanism for delivering malware. Preventing emails with known malware from reaching user mailboxes helps ensure users cannot interact with those emails.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\n"
+            },
+            {
+              "count": 26,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566: Phishing; T1566.001: Spearphishing Attachment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-DB980A01",
+      "rule_id": "SV-DB980A01r2097CC",
+      "rule_title": "An agency point of contact SHOULD be included for aggregate and failure reports.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 65,
+              "added": false,
+              "removed": false,
+              "value": "An agency point of contact SHOULD be included for aggregate and failure reports.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Email spoofing attempts are not inherently visible to domain owners. DMARC provides a mechanism to receive reports of spoofing attempts. Including an agency point of contact gives the agency insight into attempts to spoof their domains.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(5)\n\n"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1562: Impair Defenses"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-DE9A0701",
+      "rule_id": "SV-DE9A0701rBCAF7C",
+      "rule_title": "If a third-party party filtering solution is used, the solution SHOULD offer services comparable to the native spam filtering offered by Microsoft.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 38,
+              "added": false,
+              "removed": false,
+              "value": "If a third-party party filtering solution is used, the solution SHOULD offer services comparable to the native spam filtering offered by Microsoft.\n\nCriticality: SHOULD.\nLast modified: May 2024.\n\nRationale: "
+            },
+            {
+              "count": 28,
+              "added": false,
+              "removed": true,
+              "value": "Spam is a constant threat as junk mail can reduce user productivity, fill up mailboxes unnecessarily, and in some cases include malicious links or attachments. "
+            },
+            {
+              "count": 20,
+              "added": false,
+              "removed": false,
+              "value": "Filtering out spam reduces user workload burden, prevents junk mail congestion, and reduces potentially malicious content exposure.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-E613B6D1",
+      "rule_id": "SV-E613B6D1rDE889B",
+      "rule_title": "A spam filter SHALL be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 19,
+              "added": false,
+              "removed": false,
+              "value": "A spam filter SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: "
+            },
+            {
+              "count": 28,
+              "added": false,
+              "removed": true,
+              "value": "Spam is a constant threat as junk mail can reduce user productivity, fill up mailboxes unnecessarily, and in some cases include malicious links or attachments. "
+            },
+            {
+              "count": 20,
+              "added": false,
+              "removed": false,
+              "value": "Filtering out spam reduces user workload burden, prevents junk mail congestion, and reduces potentially malicious content exposure.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-EE2B6B65",
+      "rule_id": "SV-EE2B6B65rD0F71D",
+      "rule_title": "Emails SHALL be scanned for malware.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 19,
+              "added": false,
+              "removed": false,
+              "value": "Emails SHALL be scanned for malware.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Email"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "Threat actors"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " can "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "be used"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "use email"
+            },
+            {
+              "count": 11,
+              "added": false,
+              "removed": false,
+              "value": " as a mechanism for delivering malware. In many cases, "
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": true,
+              "value": "malware can be detected through "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "scanning "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "can detect malware"
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": ", reducing the risk for end users.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\n"
+            },
+            {
+              "count": 15,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-F1877F8D",
+      "rule_id": "SV-F1877F8Dr67E511",
+      "rule_title": "Mailbox auditing SHALL be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 45,
+              "added": false,
+              "removed": false,
+              "value": "Mailbox auditing SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Exchange Online user accounts can be compromised or misused. Enabling mailbox auditing provides a valuable source of information to detect and respond to mailbox misuse.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-12c\n\n"
+            },
+            {
+              "count": 71,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1070: Indicator Removal; T1070.008: Clear Mailbox Data; T1098: Account Manipulation; T1098.002: Additional Email Delegate Permissions; T1562: Impair Defenses; T1562.008: Disable or Modify Cloud Logs; T1586: Compromise Accounts; T1586.002: Email Accounts; T1564: Hide Artifacts; T1564.008: Email Hiding Rules"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-F9D9C974",
+      "rule_id": "SV-F9D9C974r16E899",
+      "rule_title": "Allowed domains SHALL NOT be added to inbound anti-spam protection policies.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 49,
+              "added": false,
+              "removed": false,
+              "value": "Allowed domains SHALL NOT be added to inbound anti-spam protection policies.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Legitimate emails may be incorrectly filtered by spam protections. Adding allowed senders is an acceptable method of combating these false positives. "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Allowing"
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "However, allowing"
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": " an entire domain, especially a common domain like office.com, "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "however, "
+            },
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": "provides for a large number of potentially unknown users to bypass spam protections.\n\nNote: Allowed senders MAY be added.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\n"
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

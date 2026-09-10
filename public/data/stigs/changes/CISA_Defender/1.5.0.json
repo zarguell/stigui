@@ -1,0 +1,218 @@
+{
+  "id": "CISA_Defender",
+  "from_version": "1.5.0",
+  "to_version": "1.6.0",
+  "date": "2025-07-09",
+  "counts": {
+    "unchanged": 18,
+    "updated": 1,
+    "added": 0,
+    "removed": 1
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-1DB9F99E",
+      "rule_id": "SV-1DB9F99Er391C4A",
+      "rule_title": "Unified Audit logging SHALL be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft Purview"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Unified"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Audit "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "(Standard) "
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "logging SHALL be enabled."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft Purview"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Unified"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Audit "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "(Standard) "
+            },
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "logging SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "June 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "March 2025"
+            },
+            {
+              "count": 19,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Responding to incidents without detailed information about activities that took place slows response actions. Enabling "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft Purview"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Unified"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Audit "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "(Standard)"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "logging"
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": " helps ensure agencies have visibility into user actions. Furthermore, enabling the "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "unified audit"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "Unified Audit"
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": " log is required for government agencies by OMB M-21-31"
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": true,
+              "value": " (referred to therein by its former name, Unified Audit Logs)"
+            },
+            {
+              "count": 20,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nMITRE ATT&CK: T1562: Impair Defenses; T1562.008: Disable or Modify Cloud Logs"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft Purview"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Unified"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Audit "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "(Standard) "
+            },
+            {
+              "count": 468,
+              "added": false,
+              "removed": false,
+              "value": "logging SHALL be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- OMB M-21-31, Improving the Federal Government's Investigative and Remediation Capabilities Related to Cybersecurity Incidents | Office of Management and Budget (https://www.whitehouse.gov/wp-content/uploads/2021/08/M-21-31-Improving-the-Federal-Governments-Investigative-and-Remediation-Capabilities-Related-to-Cybersecurity-Incidents.pdf)\n- Turn auditing on or off | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-enable-disable?view=o365-worldwide)\n- Create an audit log retention policy | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?view=o365-worldwide#create-an-audit-log-retention-policy)\n- Search the audit log in the compliance center | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-search?view=o365-worldwide)\n- Audit log activities | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-activities)\n- Expanding cloud logging to give customers deeper security visibility | Microsoft Security Blog (https://www.microsoft.com/en-us/security/blog/2023/07/19/expanding-cloud-logging-to-give-customers-deeper-security-visibility/)\n- Export, configure, and view audit log records | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-export-records)\n- Untitled Goose Tool Fact Sheet | CISA. (https://www.cisa.gov/resources-tools/resources/untitled-goose-tool-fact-sheet)\n- Manage audit log retention policies | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?tabs=microsoft-purview-portal#before-you-create-an-audit-log-retention-policy)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "removed",
+      "group_id": "V-5CF859EA",
+      "rule_id": "SV-5CF859EArC7B6E1",
+      "rule_title": "Microsoft Purview Audit (Premium) logging SHALL be enabled for ALL users.",
+      "fieldDiffs": []
+    }
+  ]
+}
