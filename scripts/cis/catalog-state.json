@@ -1,0 +1,4577 @@
+{
+  "version": 1,
+  "documents": {
+    "CIS_CIS_Alibaba_Cloud_Foundation_Benchmark_v2.0.0.pdf": {
+      "docId": 69713,
+      "technology": "Alibaba Cloud",
+      "technologyVersion": "Foundations",
+      "benchmark": 73286,
+      "version": "2.0.0",
+      "updatedAt": "2025-07-02T08:40:00.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Web_Services_Foundations_Benchmark_v7.0.0.pdf": {
+      "docId": 69986,
+      "technology": "Amazon Web Services",
+      "technologyVersion": "1Foundations",
+      "benchmark": 109147,
+      "version": "7.0.0",
+      "updatedAt": "2026-03-26T11:50:14.000000Z",
+      "status": "shipped"
+    },
+    "CIS AWS Compute Services Benchmark v2.0.0 - PDF.pdf": {
+      "docId": 70096,
+      "technology": "Amazon Web Services",
+      "technologyVersion": "Computeservice",
+      "benchmark": 125346,
+      "version": "2.0.0",
+      "updatedAt": "2026-06-25T17:31:31.000000Z",
+      "status": "shipped"
+    },
+    "CIS AWS Database Services Benchmark v2.0.0 - PDF.pdf": {
+      "docId": 69964,
+      "technology": "Amazon Web Services",
+      "technologyVersion": "DatabaseService",
+      "benchmark": 94640,
+      "version": "2.0.0",
+      "updatedAt": "2025-12-16T16:42:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_AWS_End_User_Compute_Services_Benchmark_v1.2.0.pdf": {
+      "docId": 69711,
+      "technology": "Amazon Web Services",
+      "technologyVersion": "EUCService",
+      "benchmark": 73138,
+      "version": "1.2.0",
+      "updatedAt": "2025-07-01T11:41:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_AWS_Storage_Services_Benchmark_v1.0.0.pdf": {
+      "docId": 68994,
+      "technology": "Amazon Web Services",
+      "technologyVersion": "StorageService",
+      "benchmark": 58263,
+      "version": "1.0.0",
+      "updatedAt": "2024-07-03T12:36:18.000000Z",
+      "status": "shipped"
+    },
+    "CIS_DigitalOcean_Foundations_Benchmark_v1.0.0.pdf": {
+      "docId": 69723,
+      "technology": "DigitalOcean",
+      "technologyVersion": "1Foundations",
+      "benchmark": 75584,
+      "version": "1.0.0",
+      "updatedAt": "2025-07-29T12:27:42.000000Z",
+      "status": "shipped"
+    },
+    "CIS_DigitalOcean_Services_Benchmark_v1.0.0.pdf": {
+      "docId": 69722,
+      "technology": "DigitalOcean",
+      "technologyVersion": "DOServices",
+      "benchmark": 75583,
+      "version": "1.0.0",
+      "updatedAt": "2025-07-29T11:48:55.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Cloud_Platform_Foundation_Benchmark_v5.0.0.pdf": {
+      "docId": 70039,
+      "technology": "Google Cloud Computing Platform",
+      "technologyVersion": "Foundations",
+      "benchmark": 117087,
+      "version": "5.0.0",
+      "updatedAt": "2026-05-09T13:28:12.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Container-Optimized_OS_Benchmark_v1.2.0.pdf": {
+      "docId": 69332,
+      "technology": "Google Cloud Computing Platform",
+      "technologyVersion": "COS",
+      "benchmark": 58617,
+      "version": "1.2.0",
+      "updatedAt": "2024-05-31T12:47:16.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Workspace_Foundations_Benchmark_v1.3.0.pdf": {
+      "docId": 69710,
+      "technology": "Google Workspace",
+      "technologyVersion": "GWS",
+      "benchmark": 73112,
+      "version": "1.3.0",
+      "updatedAt": "2025-07-01T12:08:49.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Workspace_Foundations_Benchmark_v1.4.pdf": {
+      "docId": 70150,
+      "technology": "Google Workspace",
+      "technologyVersion": "Workspace",
+      "benchmark": 132021,
+      "version": "1.4.0",
+      "updatedAt": "2026-08-04T14:19:03.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_Cloud_Foundations_Benchmark_v2.0.0.pdf": {
+      "docId": 69939,
+      "technology": "IBM Cloud Foundations",
+      "technologyVersion": "Foundations",
+      "benchmark": 89189,
+      "version": "2.0.0",
+      "updatedAt": "2025-11-21T15:09:13.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_365_Foundations_Benchmark_v7.0.0.pdf": {
+      "docId": 70050,
+      "technology": "Microsoft 365",
+      "technologyVersion": "MS365",
+      "benchmark": 119136,
+      "version": "7.0.0",
+      "updatedAt": "2026-05-20T07:58:50.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Azure_Compute_Services_Benchmark_v2.0.0.pdf": {
+      "docId": 69712,
+      "technology": "Microsoft Azure",
+      "technologyVersion": "AzureComputeServices",
+      "benchmark": 73279,
+      "version": "2.0.0",
+      "updatedAt": "2025-06-27T16:07:17.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Azure_Database_Services_Benchmark_v2.0.0.pdf": {
+      "docId": 69956,
+      "technology": "Microsoft Azure",
+      "technologyVersion": "AzureDatabaseServices",
+      "benchmark": 94095,
+      "version": "2.0.0",
+      "updatedAt": "2025-12-31T07:18:00.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Azure_Foundations_Benchmark_v6.0.0.pdf": {
+      "docId": 70009,
+      "technology": "Microsoft Azure",
+      "technologyVersion": "1Foundations",
+      "benchmark": 112522,
+      "version": "6.0.0",
+      "updatedAt": "2026-04-23T11:58:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Azure_Storage_Services_Benchmark_v2.0.0.pdf": {
+      "docId": 70101,
+      "technology": "Microsoft Azure",
+      "technologyVersion": "AzureStorageServices",
+      "benchmark": 125526,
+      "version": "2.0.0",
+      "updatedAt": "2026-07-01T01:13:20.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Dynamics_365_Power_Platform_v1.0.0.pdf": {
+      "docId": 69457,
+      "technology": "Microsoft Dynamics 365 Power Platform",
+      "technologyVersion": "Power_Platform_1.0.0",
+      "benchmark": 58745,
+      "version": "1.0.0",
+      "updatedAt": "2025-04-18T14:21:26.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Cloud_Infrastructure_Foundations_Benchmark_v3.1.1.pdf": {
+      "docId": 70111,
+      "technology": "Oracle Cloud Infrastructure",
+      "technologyVersion": "1Foundations",
+      "benchmark": 126308,
+      "version": "3.1.1",
+      "updatedAt": "2026-07-09T09:57:32.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_SaaS_Cloud_Applications_Benchmark_v1.0.0.pdf": {
+      "docId": 69937,
+      "technology": "Oracle Cloud Infrastructure",
+      "technologyVersion": "SAAS",
+      "benchmark": 88495,
+      "version": "1.0.0",
+      "updatedAt": "2025-11-14T16:18:58.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Snowflake_Foundations_Benchmark_v2.0.0.pdf": {
+      "docId": 70092,
+      "technology": "Snowflake",
+      "technologyVersion": "Snowflake",
+      "benchmark": 125015,
+      "version": "2.0.0",
+      "updatedAt": "2026-06-25T14:42:21.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Tencent_Cloud_Enterprise_Foundation_Benchmark_v1.0.0.pdf": {
+      "docId": 69978,
+      "technology": "Tencent Cloud",
+      "technologyVersion": "Tencent Cloud Ent Found",
+      "benchmark": 107383,
+      "version": "1.0.0",
+      "updatedAt": "2026-03-12T14:50:20.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Tencent_Cloud_Foundation_Benchmark_v1.0.1.pdf": {
+      "docId": 70120,
+      "technology": "Tencent Cloud",
+      "technologyVersion": "Tencent Cloud Found",
+      "benchmark": 128131,
+      "version": "1.0.1",
+      "updatedAt": "2026-09-01T10:04:58.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Alibaba_Cloud_Linux_3_Benchmark_v2.0.0.pdf": {
+      "docId": 69736,
+      "technology": "Alibaba Cloud Linux",
+      "technologyVersion": "3",
+      "benchmark": 78331,
+      "version": "2.0.0",
+      "updatedAt": "2025-08-27T16:52:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Aliyun_Linux_2_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69397,
+      "technology": "Alibaba Cloud Linux",
+      "technologyVersion": "2.0",
+      "benchmark": 58684,
+      "version": "1.0.0",
+      "updatedAt": "2024-10-29T13:05:30.000000Z",
+      "status": "shipped"
+    },
+    "CIS_AlmaLinux_OS_10_Benchmark_v1.0.0.pdf": {
+      "docId": 69904,
+      "technology": "AlmaLinux OS",
+      "technologyVersion": "10",
+      "benchmark": 83475,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-30T09:31:37.000000Z",
+      "status": "shipped"
+    },
+    "CIS_AlmaLinux_OS_8_Benchmark_v4.0.0.pdf": {
+      "docId": 69738,
+      "technology": "AlmaLinux OS",
+      "technologyVersion": "8",
+      "benchmark": 78489,
+      "version": "4.0.0",
+      "updatedAt": "2025-08-28T15:19:42.000000Z",
+      "status": "shipped"
+    },
+    "CIS_AlmaLinux_OS_9_Benchmark_v3.0.0.pdf": {
+      "docId": 70188,
+      "technology": "AlmaLinux OS",
+      "technologyVersion": "9",
+      "benchmark": 135583,
+      "version": "3.0.0",
+      "updatedAt": "2026-08-28T10:53:53.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Linux_2_Benchmark_v4.0.0.pdf": {
+      "docId": 69985,
+      "technology": "Amazon Linux",
+      "technologyVersion": "2",
+      "benchmark": 109118,
+      "version": "4.0.0",
+      "updatedAt": "2026-03-26T16:29:13.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Linux_2_STIG_Benchmark_v2.0.0.pdf": {
+      "docId": 68897,
+      "technology": "Amazon Linux",
+      "technologyVersion": "2STIG",
+      "benchmark": 58161,
+      "version": "2.0.0",
+      "updatedAt": "2021-11-30T13:21:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Linux_2_STIG_Benchmark_v2.0.1.pdf": {
+      "docId": 70027,
+      "technology": "Amazon Linux",
+      "technologyVersion": "2Stig",
+      "benchmark": 115099,
+      "version": "2.0.1",
+      "updatedAt": "2026-04-30T17:58:38.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Linux_2014.09_Benchmark_v1.0.0.pdf": {
+      "docId": 68902,
+      "technology": "Amazon Linux",
+      "technologyVersion": "V1.0.0",
+      "benchmark": 58166,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-16T10:24:25.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Linux_2014.09-2015.03_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 68898,
+      "technology": "Amazon Linux",
+      "technologyVersion": "Linux 2014",
+      "benchmark": 58162,
+      "version": "1.1.0",
+      "updatedAt": "2024-08-20T13:31:54.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Linux_2023_Benchmark_v1.0.0.pdf": {
+      "docId": 68901,
+      "technology": "Amazon Linux",
+      "technologyVersion": "2023",
+      "benchmark": 58165,
+      "version": "1.0.0",
+      "updatedAt": "2023-06-27T15:25:12.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Linux_Benchmark_v2.0.0_ARCHIVE.pdf": {
+      "docId": 68896,
+      "technology": "Amazon Linux",
+      "technologyVersion": "2.0.0",
+      "benchmark": 58160,
+      "version": "2.0.0",
+      "updatedAt": "2024-08-23T10:00:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Linux_Benchmark_v2.1.0_ARCHIVE.pdf": {
+      "docId": 69539,
+      "technology": "Amazon Linux",
+      "technologyVersion": "2.1.0",
+      "benchmark": 59123,
+      "version": "2.1.0",
+      "updatedAt": "2024-10-29T14:20:47.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_macOS_12.0_Monterey_Benchmark_v4.0.0.pdf": {
+      "docId": 69622,
+      "technology": "Apple macOS",
+      "technologyVersion": "12.0",
+      "benchmark": 60440,
+      "version": "4.0.0",
+      "updatedAt": "2024-12-26T12:51:42.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_macOS_12.0_Monterey_Cloud-tailored_Benchmark_v1.1.0.pdf": {
+      "docId": 69646,
+      "technology": "Apple macOS",
+      "technologyVersion": "12.0 Cloud",
+      "benchmark": 65713,
+      "version": "1.1.0",
+      "updatedAt": "2025-03-31T09:16:14.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_macOS_13.0_Ventura_Benchmark_v3.1.0.pdf": {
+      "docId": 69702,
+      "technology": "Apple macOS",
+      "technologyVersion": "13.0",
+      "benchmark": 73048,
+      "version": "3.1.0",
+      "updatedAt": "2025-06-30T17:35:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_macOS_13.0_Ventura_Benchmark_v4.0.0.pdf": {
+      "docId": 69932,
+      "technology": "Apple macOS",
+      "technologyVersion": "13",
+      "benchmark": 87502,
+      "version": "4.0.0",
+      "updatedAt": "2025-11-06T10:00:53.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_macOS_13.0_Ventura_Cloud-tailored_Benchmark_v1.1.0.pdf": {
+      "docId": 69543,
+      "technology": "Apple macOS",
+      "technologyVersion": "13.0 Cloud",
+      "benchmark": 59171,
+      "version": "1.1.0",
+      "updatedAt": "2024-10-30T12:24:55.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_macOS_14.0_Sonoma_Benchmark_v3.1.0.pdf": {
+      "docId": 70075,
+      "technology": "Apple macOS",
+      "technologyVersion": "14.0",
+      "benchmark": 122024,
+      "version": "3.1.0",
+      "updatedAt": "2026-06-01T15:10:10.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_macOS_15.0_Sequoia_Benchmark_v2.1.0.pdf": {
+      "docId": 70076,
+      "technology": "Apple macOS",
+      "technologyVersion": "15.0",
+      "benchmark": 122029,
+      "version": "2.1.0",
+      "updatedAt": "2026-06-01T15:08:24.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_macOS_15.0_Sequoia_Cloud-tailored_Benchmark_v1.0.0.pdf": {
+      "docId": 69647,
+      "technology": "Apple macOS",
+      "technologyVersion": "15.0 Cloud",
+      "benchmark": 65715,
+      "version": "1.0.0",
+      "updatedAt": "2025-03-31T09:12:51.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_macOS_26_Tahoe_Benchmark_v1.1.0.pdf": {
+      "docId": 70077,
+      "technology": "Apple macOS",
+      "technologyVersion": "26",
+      "benchmark": 122052,
+      "version": "1.1.0",
+      "updatedAt": "2026-06-01T15:06:30.000000Z",
+      "status": "shipped"
+    },
+    "CIS_AKS_Optimized_Azure_Linux_2_Benchmark_v1.1.0.pdf": {
+      "docId": 69726,
+      "technology": "Azure Linux",
+      "technologyVersion": "2",
+      "benchmark": 75834,
+      "version": "1.1.0",
+      "updatedAt": "2025-08-01T13:59:29.000000Z",
+      "status": "shipped"
+    },
+    "CIS_AKS_Optimized_Azure_Linux_3_Benchmark_v1.0.0.pdf": {
+      "docId": 69727,
+      "technology": "Azure Linux",
+      "technologyVersion": "3",
+      "benchmark": 75835,
+      "version": "1.0.0",
+      "updatedAt": "2025-08-01T13:10:24.000000Z",
+      "status": "shipped"
+    },
+    "CIS BottleRocket Benchmark V1.0.0 PDF.pdf": {
+      "docId": 69461,
+      "technology": "Bottlerocket",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58749,
+      "version": "1.0.0",
+      "updatedAt": "2022-08-11T16:18:57.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Debian_Linux_10_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 68807,
+      "technology": "Debian Linux",
+      "technologyVersion": "10",
+      "benchmark": 58068,
+      "version": "1.0.0",
+      "updatedAt": "2024-11-11T14:26:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Debian_Linux_10_Benchmark_v2.0.0_ARCHIVE.pdf": {
+      "docId": 69582,
+      "technology": "Debian Linux",
+      "technologyVersion": "10 v2.0.0",
+      "benchmark": 59898,
+      "version": "2.0.0",
+      "updatedAt": "2024-11-25T11:15:40.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Debian_Linux_11_Benchmark_v2.0.0.pdf": {
+      "docId": 68798,
+      "technology": "Debian Linux",
+      "technologyVersion": "11",
+      "benchmark": 58059,
+      "version": "2.0.0",
+      "updatedAt": "2024-03-29T13:04:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Debian_Linux_11_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69583,
+      "technology": "Debian Linux",
+      "technologyVersion": "DL 11 v1.0.0",
+      "benchmark": 59899,
+      "version": "1.0.0",
+      "updatedAt": "2024-11-25T11:57:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Debian_Linux_11_STIG_Benchmark_v1.0.0_FINAL_UPDATE.pdf": {
+      "docId": 69584,
+      "technology": "Debian Linux",
+      "technologyVersion": "11STIG v1.0.0",
+      "benchmark": 59900,
+      "version": "1.0.0",
+      "updatedAt": "2025-05-27T11:37:49.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Debian_Linux_12_Benchmark_v2.0.0.pdf": {
+      "docId": 70057,
+      "technology": "Debian Linux",
+      "technologyVersion": "12",
+      "benchmark": 120194,
+      "version": "2.0.0",
+      "updatedAt": "2026-05-28T11:22:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Debian_Linux_13_Benchmark_v1.1.0.pdf": {
+      "docId": 70179,
+      "technology": "Debian Linux",
+      "technologyVersion": "13",
+      "benchmark": 135062,
+      "version": "1.1.0",
+      "updatedAt": "2026-08-26T16:09:25.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Debian_Linux_9_Benchmark_v1.0.1_ARCHIVE.pdf": {
+      "docId": 68802,
+      "technology": "Debian Linux",
+      "technologyVersion": "9",
+      "benchmark": 58063,
+      "version": "1.0.1",
+      "updatedAt": "2023-11-27T16:21:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_FreeBSD_14_Benchmark_v1.0.1.pdf": {
+      "docId": 69607,
+      "technology": "FreeBSD",
+      "technologyVersion": "14",
+      "benchmark": 59972,
+      "version": "1.0.1",
+      "updatedAt": "2024-11-25T20:48:17.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_ChromeOS_Benchmark_v1.1.0.pdf": {
+      "docId": 69742,
+      "technology": "Google ChromeOS",
+      "technologyVersion": "ChromeOS",
+      "benchmark": 78659,
+      "version": "1.1.0",
+      "updatedAt": "2025-08-29T12:31:42.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_ChromeOS_Benchmark_v1.2.0.pdf": {
+      "docId": 70151,
+      "technology": "Google ChromeOS",
+      "technologyVersion": "v150",
+      "benchmark": 132028,
+      "version": "1.2.0",
+      "updatedAt": "2026-08-05T11:52:00.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_AIX_7_Benchmark_v1.2.0.pdf": {
+      "docId": 69992,
+      "technology": "IBM AIX",
+      "technologyVersion": "7",
+      "benchmark": 109617,
+      "version": "1.2.0",
+      "updatedAt": "2026-06-25T14:57:27.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_i_V7R2M0_Benchmark_v1.0.2_Archive.pdf": {
+      "docId": 69405,
+      "technology": "IBM i",
+      "technologyVersion": "V7R2M0",
+      "benchmark": 58692,
+      "version": "1.0.2",
+      "updatedAt": "2024-04-05T13:36:06.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_i_V7R3M0_Benchmark_v1.0.0_Archive.pdf": {
+      "docId": 69407,
+      "technology": "IBM i",
+      "technologyVersion": "V7R3M0",
+      "benchmark": 58694,
+      "version": "1.0.0",
+      "updatedAt": "2024-04-05T13:23:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_i_V7R4M0_Benchmark_v2.0.0.pdf": {
+      "docId": 69402,
+      "technology": "IBM i",
+      "technologyVersion": "7R4",
+      "benchmark": 58689,
+      "version": "2.0.0",
+      "updatedAt": "2024-02-27T15:17:35.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_i_V7R4M0_Benchmark_v2.1.0.pdf": {
+      "docId": 69731,
+      "technology": "IBM i",
+      "technologyVersion": "V7R4M0",
+      "benchmark": 77014,
+      "version": "2.1.0",
+      "updatedAt": "2025-08-15T14:15:58.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_i_V7R5M0_Benchmark_v2.0.0.pdf": {
+      "docId": 69403,
+      "technology": "IBM i",
+      "technologyVersion": "7R5",
+      "benchmark": 58690,
+      "version": "2.0.0",
+      "updatedAt": "2024-02-27T15:16:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_i_V7R5M0_Benchmark_v2.1.0.pdf": {
+      "docId": 69730,
+      "technology": "IBM i",
+      "technologyVersion": "V7R5M0",
+      "benchmark": 77013,
+      "version": "2.1.0",
+      "updatedAt": "2025-08-15T14:14:15.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_CICS_Transaction_Server_6.1_Benchmark_v1.1.0.pdf": {
+      "docId": 69947,
+      "technology": "IBM Z System",
+      "technologyVersion": "TSv6.1",
+      "benchmark": 90465,
+      "version": "1.1.0",
+      "updatedAt": "2025-12-02T07:52:34.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_Db2_13_for_z_OS_Benchmark_v1.0.0.pdf": {
+      "docId": 69443,
+      "technology": "IBM Z System",
+      "technologyVersion": "Db2v13",
+      "benchmark": 58731,
+      "version": "1.0.0",
+      "updatedAt": "2022-06-24T11:37:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_z_OS_V2R5_with_RACF_Benchmark_v1.0.0.pdf": {
+      "docId": 69442,
+      "technology": "IBM Z System",
+      "technologyVersion": "2r5",
+      "benchmark": 58730,
+      "version": "1.0.0",
+      "updatedAt": "2022-05-31T15:37:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_z_OS_V2R5_with_RACF_Benchmark_v1.1.0.pdf": {
+      "docId": 69605,
+      "technology": "IBM Z System",
+      "technologyVersion": "1.1.0",
+      "benchmark": 59970,
+      "version": "1.1.0",
+      "updatedAt": "2025-04-18T13:22:21.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_z_OS_with_RACF_Benchmark_v1.0.0.pdf": {
+      "docId": 69915,
+      "technology": "IBM Z System",
+      "technologyVersion": "racf",
+      "benchmark": 84538,
+      "version": "1.0.0",
+      "updatedAt": "2025-10-09T08:15:42.000000Z",
+      "status": "shipped"
+    },
+    "CIS_RHEL8_on_IBM_Z_Linux_Benchmark_v1.0.0.pdf": {
+      "docId": 69606,
+      "technology": "IBM Z System",
+      "technologyVersion": "RHEL8 v1.0.0",
+      "benchmark": 59971,
+      "version": "1.0.0",
+      "updatedAt": "2025-04-18T13:51:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Linux_Mint_22_Benchmark_v1.0.0.pdf": {
+      "docId": 69743,
+      "technology": "Linux Mint",
+      "technologyVersion": "22",
+      "benchmark": 78827,
+      "version": "1.0.0",
+      "updatedAt": "2025-08-30T07:14:14.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_18.04_LXD_Container_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69413,
+      "technology": "LXD",
+      "technologyVersion": "1",
+      "benchmark": 58700,
+      "version": "1.0.0",
+      "updatedAt": "2024-10-14T18:35:41.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_18.04_LXD_Host_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69966,
+      "technology": "LXD",
+      "technologyVersion": "18.04LXD",
+      "benchmark": 94808,
+      "version": "1.0.0",
+      "updatedAt": "2024-11-25T20:32:30.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Intune_for_Edge_Benchmark_v1.0.0.pdf": {
+      "docId": 69970,
+      "technology": "Microsoft Intune for Microsoft Windows",
+      "technologyVersion": "Intune Edge",
+      "benchmark": 99613,
+      "version": "1.0.0",
+      "updatedAt": "2026-01-28T07:18:32.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Intune_for_Microsoft_Defender_Antivirus_Benchmark_v1.0.0.pdf": {
+      "docId": 70066,
+      "technology": "Microsoft Intune for Microsoft Windows",
+      "technologyVersion": "Intune Def",
+      "benchmark": 120931,
+      "version": "1.0.0",
+      "updatedAt": "2026-05-27T15:48:51.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Intune_for_Office_Benchmark_v1.1.0.pdf": {
+      "docId": 69629,
+      "technology": "Microsoft Intune for Microsoft Windows",
+      "technologyVersion": "OfficeIntune",
+      "benchmark": 60981,
+      "version": "1.1.0",
+      "updatedAt": "2024-12-17T09:33:59.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Intune_for_Windows_10_Benchmark_v5.0.0.pdf": {
+      "docId": 70090,
+      "technology": "Microsoft Intune for Microsoft Windows",
+      "technologyVersion": "Intune 10",
+      "benchmark": 125011,
+      "version": "5.0.0",
+      "updatedAt": "2026-06-25T10:10:20.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Intune_for_Windows_11_Benchmark_v5.0.0.pdf": {
+      "docId": 70091,
+      "technology": "Microsoft Intune for Microsoft Windows",
+      "technologyVersion": "Intune 11",
+      "benchmark": 125012,
+      "version": "5.0.0",
+      "updatedAt": "2026-06-25T09:37:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Defender_Antivirus_Benchmark_v1.0.0.pdf": {
+      "docId": 69973,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "DEF",
+      "benchmark": 104708,
+      "version": "1.0.0",
+      "updatedAt": "2026-02-20T12:28:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_10_EMS_Gateway_Benchmark_v3.0.0.pdf": {
+      "docId": 68755,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "Win10-EMS",
+      "benchmark": 58013,
+      "version": "3.0.0",
+      "updatedAt": "2024-05-20T13:14:20.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_10_Enterprise_Benchmark_v4.0.0.pdf": {
+      "docId": 69669,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "Win10",
+      "benchmark": 69828,
+      "version": "4.0.0",
+      "updatedAt": "2025-05-23T08:48:39.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_10_Enterprise_Benchmark_v2.0.0.pdf": {
+      "docId": 68765,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "Win10 1.1x",
+      "benchmark": 58025,
+      "version": "2.0.0",
+      "updatedAt": "2023-03-16T13:35:07.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_10_Enterprise_Release_1511_Benchmark_v1.1.0.pdf": {
+      "docId": 68786,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "1.1.0",
+      "benchmark": 58046,
+      "version": "1.1.0",
+      "updatedAt": "2024-08-19T11:20:40.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_10_Enterprise_Release_1607_Benchmark_v1.2.0.pdf": {
+      "docId": 68779,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "1.2.0",
+      "benchmark": 58039,
+      "version": "1.2.0",
+      "updatedAt": "2024-08-19T11:23:46.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_10_Enterprise_Release_1703_Benchmark_v1.3.0.pdf": {
+      "docId": 68778,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "1.3.0",
+      "benchmark": 58038,
+      "version": "1.3.0",
+      "updatedAt": "2024-08-19T11:26:16.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_10_Enterprise_RTM_Release_1507_Benchmark_v1.0.0.pdf": {
+      "docId": 68791,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58051,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-19T11:28:34.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_10_Stand-alone_Benchmark_v3.0.0.pdf": {
+      "docId": 68756,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "Win10-SA",
+      "benchmark": 58014,
+      "version": "3.0.0",
+      "updatedAt": "2024-04-19T08:50:25.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_10_Stand-alone_Benchmark_v4.0.0.pdf": {
+      "docId": 69694,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "10 SA",
+      "benchmark": 72503,
+      "version": "4.0.0",
+      "updatedAt": "2025-07-07T09:53:12.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_11_Enterprise_Benchmark_v5.1.0.pdf": {
+      "docId": 70133,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "Win11",
+      "benchmark": 130438,
+      "version": "5.1.0",
+      "updatedAt": "2026-07-28T15:46:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_11_Stand-alone_Benchmark_v2.0.0-ARCHIVE.pdf": {
+      "docId": 68764,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "WIN11-SA",
+      "benchmark": 58024,
+      "version": "2.0.0",
+      "updatedAt": "2026-04-07T14:09:36.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_11_Stand-alone_Benchmark_v5.0.0.pdf": {
+      "docId": 69980,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "Win11-SA",
+      "benchmark": 108868,
+      "version": "5.0.0",
+      "updatedAt": "2026-03-25T14:32:52.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_7_Workstation_Benchmark_v3.2.0_ARCHIVE.pdf": {
+      "docId": 68746,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "7",
+      "benchmark": 58004,
+      "version": "3.2.0",
+      "updatedAt": "2023-10-31T13:09:59.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_8_Benchmark__imported__v1.0.0_ARCHIVE.pdf": {
+      "docId": 68789,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "8",
+      "benchmark": 58049,
+      "version": "1.0.0",
+      "updatedAt": "2023-11-14T12:05:24.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_8.1_Workstation_Benchmark_v2.4.0_ARCHIVE.pdf": {
+      "docId": 68757,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "8.1",
+      "benchmark": 58016,
+      "version": "2.4.0",
+      "updatedAt": "2023-10-31T14:07:34.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_XP_Benchmark__imported__v3.1.0_ARCHIVE.pdf": {
+      "docId": 68747,
+      "technology": "Microsoft Windows Desktop",
+      "technologyVersion": "XP",
+      "benchmark": 58005,
+      "version": "3.1.0",
+      "updatedAt": "2024-01-05T15:49:50.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v1.0.0.pdf": {
+      "docId": 69523,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58815,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-19T11:17:31.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Azure_Compute_Microsoft_Windows_Server_2019_Benchmark_v1.0.0.-ARCHIVE.pdf": {
+      "docId": 69524,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "WinServer2019-Azure",
+      "benchmark": 58816,
+      "version": "1.0.0",
+      "updatedAt": "2025-10-27T08:37:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Azure_Compute_Microsoft_Windows_Server_2022_Benchmark_v1.0.0-ARCHIVE.pdf": {
+      "docId": 69529,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "WinServer2022-Azure",
+      "benchmark": 58821,
+      "version": "1.0.0",
+      "updatedAt": "2025-10-27T08:57:37.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2003_Benchmark__imported__v3.1.0_ARCHIVE.pdf": {
+      "docId": 69470,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2003",
+      "benchmark": 58760,
+      "version": "3.1.0",
+      "updatedAt": "2023-10-31T15:08:46.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2008_(non-R2)_Benchmark_v3.3.0_ARCHIVE.pdf": {
+      "docId": 69467,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2008 (non-R2)",
+      "benchmark": 58757,
+      "version": "3.3.0",
+      "updatedAt": "2024-11-14T15:15:49.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2008_non-R2_Benchmark_v3.0.0.pdf": {
+      "docId": 69480,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "3.0.0",
+      "benchmark": 58770,
+      "version": "3.0.0",
+      "updatedAt": "2024-08-19T11:30:44.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2008_R2_Benchmark_v3.2.0_ARCHIVE.pdf": {
+      "docId": 69468,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2008 R2",
+      "benchmark": 58758,
+      "version": "3.2.0",
+      "updatedAt": "2023-11-01T15:04:47.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2008_R2_Benchmark_v3.3.0_ARCHIVE.pdf": {
+      "docId": 69608,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2008 R2 v3.3.0",
+      "benchmark": 59975,
+      "version": "3.3.0",
+      "updatedAt": "2024-11-14T15:38:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_non-R2_Benchmark_v2.0.0.pdf": {
+      "docId": 69502,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2.0.0",
+      "benchmark": 58794,
+      "version": "2.0.0",
+      "updatedAt": "2024-08-19T11:33:38.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_(non-R2)_Benchmark_v2.4.0_ARCHIVE.pdf": {
+      "docId": 69487,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2012 (non-R2)",
+      "benchmark": 58777,
+      "version": "2.4.0",
+      "updatedAt": "2024-11-18T14:30:10.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_(non-R2)_Benchmark_v3.0.0_ARCHIVE.pdf": {
+      "docId": 69483,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2012",
+      "benchmark": 58773,
+      "version": "3.0.0",
+      "updatedAt": "2024-10-16T12:26:01.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69522,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2012 v1.0.0",
+      "benchmark": 58814,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-30T10:40:48.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.2.0.pdf": {
+      "docId": 69492,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2.2.0",
+      "benchmark": 58782,
+      "version": "2.2.0",
+      "updatedAt": "2024-08-19T11:40:40.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.3.0_ARCHIVE.pdf": {
+      "docId": 69612,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2012 R2 v2.3.0",
+      "benchmark": 59979,
+      "version": "2.3.0",
+      "updatedAt": "2024-11-18T16:04:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.4.0_ARCHIVE.pdf": {
+      "docId": 69611,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2012 R2 v2.4.0",
+      "benchmark": 59978,
+      "version": "2.4.0",
+      "updatedAt": "2024-11-18T16:54:21.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.5.0_ARCHIVE.pdf": {
+      "docId": 69610,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2012 R2 v2.5.0",
+      "benchmark": 59977,
+      "version": "2.5.0",
+      "updatedAt": "2024-11-18T16:41:07.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.6.0_ARCHIVE.pdf": {
+      "docId": 69609,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2012 R2 v2.6.0",
+      "benchmark": 59976,
+      "version": "2.6.0",
+      "updatedAt": "2024-11-18T16:23:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v3.0.0_ARCHIVE.pdf": {
+      "docId": 69481,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2012 R2",
+      "benchmark": 58771,
+      "version": "3.0.0",
+      "updatedAt": "2024-10-16T13:11:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v1.1.0.pdf": {
+      "docId": 69514,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "1.1.0",
+      "benchmark": 58806,
+      "version": "1.1.0",
+      "updatedAt": "2024-08-19T11:39:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.0.0.pdf": {
+      "docId": 69501,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2.0.0",
+      "benchmark": 58793,
+      "version": "2.0.0",
+      "updatedAt": "2024-08-19T11:37:10.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.1.0.pdf": {
+      "docId": 69495,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2.1.0",
+      "benchmark": 58786,
+      "version": "2.1.0",
+      "updatedAt": "2024-08-19T11:42:18.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.2.1_ARCHIVE.pdf": {
+      "docId": 69491,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2012 R2 v2.2.1",
+      "benchmark": 58781,
+      "version": "2.2.1",
+      "updatedAt": "2024-08-30T10:57:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2016_Benchmark_v4.0.0.pdf": {
+      "docId": 69893,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2016",
+      "benchmark": 82883,
+      "version": "4.0.0",
+      "updatedAt": "2025-09-25T09:18:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2016_STIG_Benchmark_v3.0.0.pdf": {
+      "docId": 69482,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2016 STIG",
+      "benchmark": 58772,
+      "version": "3.0.0",
+      "updatedAt": "2024-09-03T13:04:20.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2019_Benchmark_v5.0.0.pdf": {
+      "docId": 70062,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2019",
+      "benchmark": 120421,
+      "version": "5.0.0",
+      "updatedAt": "2026-05-27T12:03:58.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2019_Stand-alone_v2.0.0.pdf": {
+      "docId": 69499,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2019SA",
+      "benchmark": 58790,
+      "version": "2.0.0",
+      "updatedAt": "2024-06-24T09:23:31.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2019_Stand-alone_v3.0.0.pdf": {
+      "docId": 69721,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2019 SA",
+      "benchmark": 75580,
+      "version": "3.0.0",
+      "updatedAt": "2025-07-29T11:53:59.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2019_STIG_Benchmark_v3.0.0.pdf": {
+      "docId": 69631,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2019 STIG",
+      "benchmark": 60986,
+      "version": "3.0.0",
+      "updatedAt": "2024-12-17T10:45:47.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2022_Benchmark_v5.1.0.pdf": {
+      "docId": 70134,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2022",
+      "benchmark": 130667,
+      "version": "5.1.0",
+      "updatedAt": "2026-07-28T10:03:19.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2022_Stand-alone_Benchmark_v2.0.0.pdf": {
+      "docId": 69982,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2022 SA",
+      "benchmark": 109100,
+      "version": "2.0.0",
+      "updatedAt": "2026-03-25T10:06:13.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2022_STIG_Benchmark_v1.0.0-ARCHIVE.pdf": {
+      "docId": 69528,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2022STIG",
+      "benchmark": 58820,
+      "version": "1.0.0",
+      "updatedAt": "2025-12-22T10:58:46.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2022_STIG_Benchmark_v2.0.0.pdf": {
+      "docId": 69632,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2022 STIG",
+      "benchmark": 60988,
+      "version": "2.0.0",
+      "updatedAt": "2024-12-17T11:38:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2025_Benchmark_v2.1.0.pdf": {
+      "docId": 70135,
+      "technology": "Microsoft Windows Server",
+      "technologyVersion": "2025",
+      "benchmark": 130671,
+      "version": "2.1.0",
+      "updatedAt": "2026-07-28T15:54:08.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Linux_10_Benchmark_v1.0.0.pdf": {
+      "docId": 69897,
+      "technology": "Oracle Linux",
+      "technologyVersion": "10",
+      "benchmark": 83267,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-29T16:19:31.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Linux_6_Benchmark_v2.0.0_ARCHIVE.pdf": {
+      "docId": 68932,
+      "technology": "Oracle Linux",
+      "technologyVersion": "6",
+      "benchmark": 58198,
+      "version": "2.0.0",
+      "updatedAt": "2023-12-08T12:47:31.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Linux_7_Benchmark_v4.0.0_ARCHIVE.pdf": {
+      "docId": 69538,
+      "technology": "Oracle Linux",
+      "technologyVersion": "7",
+      "benchmark": 59010,
+      "version": "4.0.0",
+      "updatedAt": "2024-10-21T10:01:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Linux_8_Benchmark_v4.0.0.pdf": {
+      "docId": 69739,
+      "technology": "Oracle Linux",
+      "technologyVersion": "8",
+      "benchmark": 78586,
+      "version": "4.0.0",
+      "updatedAt": "2025-08-29T15:13:10.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Linux_9_Benchmark_v3.0.0.pdf": {
+      "docId": 70185,
+      "technology": "Oracle Linux",
+      "technologyVersion": "9",
+      "benchmark": 135353,
+      "version": "3.0.0",
+      "updatedAt": "2026-08-28T11:41:27.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Solaris_11_Benchmark_v1.1.0_Archive.pdf": {
+      "docId": 69252,
+      "technology": "Oracle Solaris",
+      "technologyVersion": "11",
+      "benchmark": 58533,
+      "version": "1.1.0",
+      "updatedAt": "2024-09-24T11:26:12.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Solaris_11.1_Benchmark_v1.0.0_Archive.pdf": {
+      "docId": 69255,
+      "technology": "Oracle Solaris",
+      "technologyVersion": "11.1",
+      "benchmark": 58536,
+      "version": "1.0.0",
+      "updatedAt": "2024-09-24T11:35:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Solaris_11.4_Benchmark_v1.1.0.pdf": {
+      "docId": 69253,
+      "technology": "Oracle Solaris",
+      "technologyVersion": "11.4",
+      "benchmark": 58534,
+      "version": "1.1.0",
+      "updatedAt": "2023-12-21T15:17:41.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Red_Hat_Enterprise_Linux_10_Benchmark_v1.0.1.pdf": {
+      "docId": 69899,
+      "technology": "Red Hat Enterprise Linux",
+      "technologyVersion": "10",
+      "benchmark": 83387,
+      "version": "1.0.1",
+      "updatedAt": "2025-09-30T09:50:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Red_Hat_Enterprise_Linux_8_Benchmark_v4.0.0.pdf": {
+      "docId": 69963,
+      "technology": "Red Hat Enterprise Linux",
+      "technologyVersion": "8",
+      "benchmark": 94623,
+      "version": "4.0.0",
+      "updatedAt": "2025-08-28T08:16:14.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Red_Hat_Enterprise_Linux_8_STIG_Benchmark_v2.0.0.pdf": {
+      "docId": 69586,
+      "technology": "Red Hat Enterprise Linux",
+      "technologyVersion": "8STIG",
+      "benchmark": 59911,
+      "version": "2.0.0",
+      "updatedAt": "2024-11-25T20:06:38.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Red_Hat_Enterprise_Linux_9_Benchmark_v3.0.0.pdf": {
+      "docId": 70186,
+      "technology": "Red Hat Enterprise Linux",
+      "technologyVersion": "9",
+      "benchmark": 135359,
+      "version": "3.0.0",
+      "updatedAt": "2026-08-28T17:23:05.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Red_Hat_Enterprise_Linux_9_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69658,
+      "technology": "Red Hat Enterprise Linux",
+      "technologyVersion": "9STIG",
+      "benchmark": 67962,
+      "version": "1.0.0",
+      "updatedAt": "2025-04-29T12:30:10.000000Z",
+      "status": "shipped"
+    },
+    "CIS_ROS_Melodic_Benchmark_v1.0.0._ARCHIVE.pdf": {
+      "docId": 69411,
+      "technology": "Robot Operating System (ROS)",
+      "technologyVersion": "1.0",
+      "benchmark": 58698,
+      "version": "1.0.0",
+      "updatedAt": "2023-12-08T14:46:26.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Rocky_Linux_10_Benchmark_v1.0.0.pdf": {
+      "docId": 69905,
+      "technology": "Rocky Linux",
+      "technologyVersion": "10",
+      "benchmark": 83476,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-30T12:30:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Rocky_Linux_8_Benchmark_v3.0.0.pdf": {
+      "docId": 69741,
+      "technology": "Rocky Linux",
+      "technologyVersion": "8",
+      "benchmark": 78654,
+      "version": "3.0.0",
+      "updatedAt": "2025-08-29T15:25:16.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Rocky_Linux_9_Benchmark_v3.0.0.pdf": {
+      "docId": 70189,
+      "technology": "Rocky Linux",
+      "technologyVersion": "9",
+      "benchmark": 135584,
+      "version": "3.0.0",
+      "updatedAt": "2026-08-28T17:42:30.000000Z",
+      "status": "shipped"
+    },
+    "CIS_SUSE_Linux_Enterprise_11_Benchmark_v2.1.1.pdf": {
+      "docId": 68974,
+      "technology": "SUSE Linux Enterprise Server",
+      "technologyVersion": "11",
+      "benchmark": 58243,
+      "version": "2.1.1",
+      "updatedAt": "2023-12-08T15:17:39.000000Z",
+      "status": "shipped"
+    },
+    "CIS_SUSE_Linux_Enterprise_12_Benchmark_v2.0.0.pdf": {
+      "docId": 68978,
+      "technology": "SUSE Linux Enterprise Server",
+      "technologyVersion": "2.0.0",
+      "benchmark": 58247,
+      "version": "2.0.0",
+      "updatedAt": "2024-08-19T11:51:59.000000Z",
+      "status": "shipped"
+    },
+    "CIS_SUSE_Linux_Enterprise_12_Benchmark_v3.2.0.pdf": {
+      "docId": 69535,
+      "technology": "SUSE Linux Enterprise Server",
+      "technologyVersion": "12",
+      "benchmark": 58934,
+      "version": "3.2.0",
+      "updatedAt": "2024-10-24T12:48:28.000000Z",
+      "status": "shipped"
+    },
+    "CIS_SUSE_Linux_Enterprise_12_Benchmark_v3.1.0_ARCHIVE.pdf": {
+      "docId": 69617,
+      "technology": "SUSE Linux Enterprise Server",
+      "technologyVersion": "12 v3.1.0",
+      "benchmark": 60029,
+      "version": "3.1.0",
+      "updatedAt": "2024-11-29T13:17:08.000000Z",
+      "status": "shipped"
+    },
+    "CIS_SUSE_Linux_Enterprise_12_Benchmark_v3.0.0_ARCHIVE.pdf": {
+      "docId": 69618,
+      "technology": "SUSE Linux Enterprise Server",
+      "technologyVersion": "12 v3.0.0",
+      "benchmark": 60030,
+      "version": "3.0.0",
+      "updatedAt": "2024-11-29T11:52:24.000000Z",
+      "status": "shipped"
+    },
+    "CIS_SUSE_Linux_Enterprise_12_Benchmark_v3.2.1.pdf": {
+      "docId": 69666,
+      "technology": "SUSE Linux Enterprise Server",
+      "technologyVersion": "SUSE Linux Enterprise Server 12",
+      "benchmark": 69763,
+      "version": "3.2.1",
+      "updatedAt": "2025-05-22T14:56:16.000000Z",
+      "status": "shipped"
+    },
+    "CIS_SUSE_Linux_Enterprise_15_Benchmark_v2.0.1.pdf": {
+      "docId": 69641,
+      "technology": "SUSE Linux Enterprise Server",
+      "technologyVersion": "15",
+      "benchmark": 63347,
+      "version": "2.0.1",
+      "updatedAt": "2025-02-28T12:31:19.000000Z",
+      "status": "shipped"
+    },
+    "CIS_SUSE_Linux_Enterprise_16_Benchmark_v1.0.0.pdf": {
+      "docId": 69979,
+      "technology": "SUSE Linux Enterprise Server",
+      "technologyVersion": "sles16",
+      "benchmark": 108167,
+      "version": "1.0.0",
+      "updatedAt": "2026-03-20T13:13:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_SUSE_Linux_Enterprise_Server_12_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 68982,
+      "technology": "SUSE Linux Enterprise Server",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58251,
+      "version": "1.0.0",
+      "updatedAt": "2025-02-24T08:22:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Talos_Linux_Benchmark_v1.0.0.pdf": {
+      "docId": 69465,
+      "technology": "Talos Linux",
+      "technologyVersion": "Talos",
+      "benchmark": 58753,
+      "version": "1.0.0",
+      "updatedAt": "2024-07-22T14:42:16.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_12.04_LTS_Server_Benchmark_v1.1.0 _ARCHIVE.pdf": {
+      "docId": 68821,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "12.04",
+      "benchmark": 58082,
+      "version": "1.1.0",
+      "updatedAt": "2023-10-15T11:35:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_14.04_LTS_Benchmark_v2.1.0_ARCHIVE.pdf": {
+      "docId": 68812,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "14.04",
+      "benchmark": 58073,
+      "version": "2.1.0",
+      "updatedAt": "2024-09-09T13:09:13.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_16.04_LTS_Benchmark_v2.0.0_ARCHIVE.pdf": {
+      "docId": 69960,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "16.04",
+      "benchmark": 94613,
+      "version": "2.0.0",
+      "updatedAt": "2024-11-29T13:44:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_18.04_LTS_Benchmark_v2.2.0.pdf": {
+      "docId": 68810,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "18.04",
+      "benchmark": 58071,
+      "version": "2.2.0",
+      "updatedAt": "2024-05-23T16:22:27.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_18.04_LTS_Benchmark_v2.0.1_ARCHIVE.pdf": {
+      "docId": 69958,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "18.04LTS",
+      "benchmark": 94611,
+      "version": "2.0.1",
+      "updatedAt": "2024-11-18T19:13:55.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_20.04_LTS_Benchmark_v3.0.0.pdf": {
+      "docId": 69701,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "20.04",
+      "benchmark": 73030,
+      "version": "3.0.0",
+      "updatedAt": "2025-06-30T11:18:47.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_20.04_LTS_STIG_Benchmark_v2.0.0.pdf": {
+      "docId": 68819,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "20.04STIG",
+      "benchmark": 58080,
+      "version": "2.0.0",
+      "updatedAt": "2023-10-13T14:02:29.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_22.04_LTS_Benchmark_v3.0.0.pdf": {
+      "docId": 69925,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "22.04",
+      "benchmark": 86768,
+      "version": "3.0.0",
+      "updatedAt": "2025-10-30T10:29:05.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_22.04_LTS_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69664,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "Ubuntu Linux 22.04 LTS",
+      "benchmark": 68657,
+      "version": "1.0.0",
+      "updatedAt": "2025-05-08T16:29:34.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_24.04_LTS_Benchmark_v2.0.0.pdf": {
+      "docId": 70058,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "24.04",
+      "benchmark": 120198,
+      "version": "2.0.0",
+      "updatedAt": "2026-06-23T10:50:40.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_24.04_LTS_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69686,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "Ubuntu Linux 24.04 LTS",
+      "benchmark": 71490,
+      "version": "1.0.0",
+      "updatedAt": "2025-06-12T12:08:55.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Ubuntu_Linux_26.04_LTS_Benchmark_v1.0.0.pdf": {
+      "docId": 70180,
+      "technology": "Ubuntu Linux",
+      "technologyVersion": "26.04",
+      "benchmark": 135065,
+      "version": "1.0.0",
+      "updatedAt": "2026-08-26T16:00:34.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Wind_River_eLxr_12_Benchmark_v1.2.0.pdf": {
+      "docId": 69953,
+      "technology": "Wind River Linux",
+      "technologyVersion": "eLxr12",
+      "benchmark": 93790,
+      "version": "1.2.0",
+      "updatedAt": "2025-12-29T11:02:30.000000Z",
+      "status": "shipped"
+    },
+    "CIS_APACHE_CASSANDRA_3.11_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 69121,
+      "technology": "Apache Cassandra",
+      "technologyVersion": "3.11",
+      "benchmark": 58393,
+      "version": "1.1.0",
+      "updatedAt": "2024-10-30T13:57:14.000000Z",
+      "status": "shipped"
+    },
+    "CIS Apache Cassandra 4.0 v1.1.0 PDF.pdf": {
+      "docId": 69120,
+      "technology": "Apache Cassandra",
+      "technologyVersion": "1.1.0",
+      "benchmark": 58392,
+      "version": "1.1.0",
+      "updatedAt": "2024-08-29T12:14:12.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apache_Casandra_4.0_Benchmarkv1.0.0.pdf": {
+      "docId": 69124,
+      "technology": "Apache Cassandra",
+      "technologyVersion": "4.0",
+      "benchmark": 58396,
+      "version": "1.0.0",
+      "updatedAt": "2025-04-18T08:36:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS Apache Cassandra 4.0 Benchmark v1.3.0 PDF.pdf": {
+      "docId": 69971,
+      "technology": "Apache Cassandra",
+      "technologyVersion": "Apache Cassandra 4.0",
+      "benchmark": 99733,
+      "version": "1.3.0",
+      "updatedAt": "2026-01-29T15:05:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS Apache Cassandra 4.1 v1.0.0 PDF.pdf": {
+      "docId": 69122,
+      "technology": "Apache Cassandra",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58394,
+      "version": "1.0.0",
+      "updatedAt": "2025-10-27T09:10:58.000000Z",
+      "status": "shipped"
+    },
+    "CIS Apache Cassandra 5.0 Benchmark v1.1.0 PDF.pdf": {
+      "docId": 69972,
+      "technology": "Apache Cassandra",
+      "technologyVersion": "Apache Cassandra 5.0",
+      "benchmark": 99738,
+      "version": "1.1.0",
+      "updatedAt": "2026-01-29T13:53:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apache_HTTP_Server_2.2_Benchmark_v3.6.0_ARCHIVE.pdf": {
+      "docId": 69125,
+      "technology": "Apache HTTP Server",
+      "technologyVersion": "2.2",
+      "benchmark": 58397,
+      "version": "3.6.0",
+      "updatedAt": "2024-10-31T13:53:40.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apache_HTTP_Server_2.4_Benchmark_V2.3.0.pdf": {
+      "docId": 69919,
+      "technology": "Apache HTTP Server",
+      "technologyVersion": "2.4",
+      "benchmark": 85409,
+      "version": "2.3.0",
+      "updatedAt": "2025-10-18T07:30:25.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apache_HTTP_Server_2.4_Benchmark_v2.4.0 PDF.pdf": {
+      "docId": 70197,
+      "technology": "Apache HTTP Server",
+      "technologyVersion": "2.4.0",
+      "benchmark": 135998,
+      "version": "2.4.0",
+      "updatedAt": "2026-08-31T17:04:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apache_Tomcat_10_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 68999,
+      "technology": "Apache Tomcat",
+      "technologyVersion": "Tomcat 10",
+      "benchmark": 58269,
+      "version": "1.1.0",
+      "updatedAt": "2024-11-01T12:22:41.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Aparch_Tomcat_10.1_Benchmark_v1.0.0_PDF.pdf": {
+      "docId": 69003,
+      "technology": "Apache Tomcat",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58273,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-23T13:34:53.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apache_Tomcat_7_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 69000,
+      "technology": "Apache Tomcat",
+      "technologyVersion": "7",
+      "benchmark": 58270,
+      "version": "1.1.0",
+      "updatedAt": "2024-08-26T11:39:43.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apache_Tomcat_7_Benchmark_v1.0.0.pdf": {
+      "docId": 69005,
+      "technology": "Apache Tomcat",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58275,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-16T10:56:16.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apache_Tomcat_8_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 69001,
+      "technology": "Apache Tomcat",
+      "technologyVersion": "8",
+      "benchmark": 58271,
+      "version": "1.1.0",
+      "updatedAt": "2024-11-01T18:59:29.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apache_Tomcat_8_Benchmark_v1.0.0.pdf": {
+      "docId": 69006,
+      "technology": "Apache Tomcat",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58276,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-16T10:58:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apache_Tomcat_9_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 68998,
+      "technology": "Apache Tomcat",
+      "technologyVersion": "9",
+      "benchmark": 58268,
+      "version": "1.1.0",
+      "updatedAt": "2024-11-01T19:28:16.000000Z",
+      "status": "shipped"
+    },
+    "CIS Apache Tomcat 9 Benchmark v1.2.0 PDF.pdf": {
+      "docId": 70110,
+      "technology": "Apache Tomcat",
+      "technologyVersion": "Tomcat 9",
+      "benchmark": 126136,
+      "version": "1.2.0",
+      "updatedAt": "2022-09-28T11:48:40.000000Z",
+      "status": "shipped"
+    },
+    "CIS_ISC_BIND_DNS_Server_9.11_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 68892,
+      "technology": "BIND",
+      "technologyVersion": "9.11",
+      "benchmark": 58156,
+      "version": "1.0.0",
+      "updatedAt": "2023-12-01T13:39:07.000000Z",
+      "status": "shipped"
+    },
+    "CIS_ISC_BIND_DNS_Server_9.9_Benchmark_v3.0.1_ARCHIVE.pdf": {
+      "docId": 68890,
+      "technology": "BIND",
+      "technologyVersion": "9.9",
+      "benchmark": 58154,
+      "version": "3.0.1",
+      "updatedAt": "2023-12-01T13:39:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS_CockroachDB_v25.x_Benchmark_v1.0.0.pdf": {
+      "docId": 70064,
+      "technology": "CockroachDB",
+      "technologyVersion": "CockRoachDB",
+      "benchmark": 120449,
+      "version": "1.0.0",
+      "updatedAt": "2026-05-27T09:01:29.000000Z",
+      "status": "shipped"
+    },
+    "CIS Docker Benchmark v1.7 PDF.pdf": {
+      "docId": 69194,
+      "technology": "Docker",
+      "technologyVersion": "1.7.0",
+      "benchmark": 58470,
+      "version": "1.7.0",
+      "updatedAt": "2024-07-25T10:56:52.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Docker_Benchmark_V1.6.0.PDF": {
+      "docId": 69195,
+      "technology": "Docker",
+      "technologyVersion": "Docker",
+      "benchmark": 58471,
+      "version": "1.6.0",
+      "updatedAt": "2023-06-22T11:48:37.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Docker_Benchmark_v1.8.0.pdf": {
+      "docId": 69720,
+      "technology": "Docker",
+      "technologyVersion": "1.8.0",
+      "benchmark": 75127,
+      "version": "1.8.0",
+      "updatedAt": "2025-07-24T15:52:21.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_DB2_10_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 68887,
+      "technology": "IBM Db2",
+      "technologyVersion": "10",
+      "benchmark": 58151,
+      "version": "1.1.0",
+      "updatedAt": "2023-09-05T12:01:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_Db2_11_Benchmark_v1.2.0.pdf": {
+      "docId": 69898,
+      "technology": "IBM Db2",
+      "technologyVersion": "11",
+      "benchmark": 83383,
+      "version": "1.2.0",
+      "updatedAt": "2025-09-30T15:21:29.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_DB2_9_Benchmark_v3.0.1_ARCHIVE.pdf": {
+      "docId": 68882,
+      "technology": "IBM Db2",
+      "technologyVersion": "9",
+      "benchmark": 58146,
+      "version": "3.0.1",
+      "updatedAt": "2023-09-05T11:54:55.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_DB2_Benchmark_v1.2.0-ARCHIVE.pdf": {
+      "docId": 68885,
+      "technology": "IBM Db2",
+      "technologyVersion": "DB2",
+      "benchmark": 58149,
+      "version": "1.2.0",
+      "updatedAt": "2023-12-14T10:31:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_WebSphere_Liberty_Benchmark_v1.0.0.pdf": {
+      "docId": 69394,
+      "technology": "IBM WebSphere",
+      "technologyVersion": "liberty",
+      "benchmark": 58681,
+      "version": "1.0.0",
+      "updatedAt": "2022-05-13T12:56:34.000000Z",
+      "status": "shipped"
+    },
+    "CIS Amazon Elastic Kubernetes Service (EKS) Auto Mode Benchmrk v1.0.0 PDF.pdf": {
+      "docId": 70061,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.0.0",
+      "benchmark": 120407,
+      "version": "1.0.0",
+      "updatedAt": "2026-05-28T10:08:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS Amazon Elastic Kubernetes Service (EKS) Benchmark v2.0.0 PDF.pdf": {
+      "docId": 70060,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.9.0",
+      "benchmark": 120354,
+      "version": "2.0.0",
+      "updatedAt": "2026-05-28T09:39:42.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Elastic_Kubernetes_Service_(EKS)_v.1.8.0_PDF.pdf": {
+      "docId": 69921,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.8.0",
+      "benchmark": 86378,
+      "version": "1.8.0",
+      "updatedAt": "2025-10-26T13:46:34.000000Z",
+      "status": "shipped"
+    },
+    "CIS Amazon Elastic Kubernetes Service (EKS) Benchmark v1.6.0.pdf": {
+      "docId": 69628,
+      "technology": "Kubernetes",
+      "technologyVersion": "EKS",
+      "benchmark": 60974,
+      "version": "1.6.0",
+      "updatedAt": "2025-03-14T11:14:38.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Elastic_Kubernetes_Service_(EKS)_Benchmark_v1.7.0_PDF.pdf": {
+      "docId": 69676,
+      "technology": "Kubernetes",
+      "technologyVersion": "CIS Amazone Elastic Kubernetes Service (EKS)",
+      "benchmark": 70788,
+      "version": "1.7.0",
+      "updatedAt": "2025-05-30T09:11:13.000000Z",
+      "status": "shipped"
+    },
+    "CIS Azure kubernetes Service (AKS) benchmark V2.0.0 - Draft PDF.pdf": {
+      "docId": 70028,
+      "technology": "Kubernetes",
+      "technologyVersion": "2.0.0",
+      "benchmark": 115249,
+      "version": "2.0.0",
+      "updatedAt": "2026-04-29T11:24:39.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Azure_Kubernetes_Service_(AKS)_Benchmark_V1.8.0_PDF.pdf": {
+      "docId": 69922,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.8.0",
+      "benchmark": 86379,
+      "version": "1.8.0",
+      "updatedAt": "2025-10-26T13:55:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS Azure Kubernetes Service (AKS) Benchmark v1.7.0 PDF.pdf": {
+      "docId": 69656,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.7.0",
+      "benchmark": 67926,
+      "version": "1.7.0",
+      "updatedAt": "2025-04-28T09:18:48.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Kubernetes_Engine_(GKE)_Autopilot_Benchmark_v2.0.0_PDF.pdf": {
+      "docId": 70097,
+      "technology": "Kubernetes",
+      "technologyVersion": "2.0.0",
+      "benchmark": 125465,
+      "version": "2.0.0",
+      "updatedAt": "2026-06-30T10:43:57.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Kubernetes_Engine(GKE)_AutoPilot_Benchmark_V1.2.0_PDF.pdf": {
+      "docId": 69697,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.2.0",
+      "benchmark": 72745,
+      "version": "1.2.0",
+      "updatedAt": "2025-06-26T09:01:50.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Kubernetes_Engine_(GKE)_Autopilot_Benchmark_v1.0.0 PDF.pdf": {
+      "docId": 69317,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58602,
+      "version": "1.0.0",
+      "updatedAt": "2024-07-25T08:55:44.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Kubernetes_Engine_(GKE)_Autopilot_Benchmark_v1.3.0_PDF.pdf": {
+      "docId": 69942,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.3.0",
+      "benchmark": 89643,
+      "version": "1.3.0",
+      "updatedAt": "2025-11-25T14:14:41.000000Z",
+      "status": "shipped"
+    },
+    "CIS Google Kubernetes Engine (GKE) Benchmark V1.7.0 PDF.pdf": {
+      "docId": 69640,
+      "technology": "Kubernetes",
+      "technologyVersion": "GKE",
+      "benchmark": 62725,
+      "version": "1.7.0",
+      "updatedAt": "2025-02-19T10:27:57.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Kubernetes_Engine_(GKE)_Benchmark_v1.8.0_PDF.pdf": {
+      "docId": 69696,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.8.0",
+      "benchmark": 72739,
+      "version": "1.8.0",
+      "updatedAt": "2025-06-26T14:57:00.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Kubernetes_Engine_(GKE)_Benchmark_v2.0.0_PDF.pdf": {
+      "docId": 70098,
+      "technology": "Kubernetes",
+      "technologyVersion": "2.0.0",
+      "benchmark": 125466,
+      "version": "2.0.0",
+      "updatedAt": "2026-06-30T10:09:07.000000Z",
+      "status": "shipped"
+    },
+    "CIS Kubernetes Benchmark v1.11.1_PDF.pdf": {
+      "docId": 69657,
+      "technology": "Kubernetes",
+      "technologyVersion": "11.1.1",
+      "benchmark": 67932,
+      "version": "1.11.1",
+      "updatedAt": "2025-04-28T08:42:21.000000Z",
+      "status": "shipped"
+    },
+    "CIS Kubernetes Benchmark v1.11 PDF.pdf": {
+      "docId": 69651,
+      "technology": "Kubernetes",
+      "technologyVersion": "CIS Kubernetes benchmark v1.11.0",
+      "benchmark": 65841,
+      "version": "1.11.0",
+      "updatedAt": "2025-04-01T09:47:43.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Kubernetes_Benchmark_V1.12.0_PDF.pdf": {
+      "docId": 69934,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.12.0",
+      "benchmark": 87563,
+      "version": "1.12.0",
+      "updatedAt": "2025-11-05T17:31:41.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Kubernetes_Benchmark_V2.0.1_PDF.pdf": {
+      "docId": 70059,
+      "technology": "Kubernetes",
+      "technologyVersion": "2.0.1",
+      "benchmark": 120353,
+      "version": "2.0.1",
+      "updatedAt": "2026-05-28T10:16:55.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Kubernetes_Benchmark_V2.0.0_PDF.pdf": {
+      "docId": 69994,
+      "technology": "Kubernetes",
+      "technologyVersion": "2.0.0",
+      "benchmark": 109941,
+      "version": "2.0.0",
+      "updatedAt": "2026-04-02T12:20:06.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Cloud_Infrastructure_Container_Engine_for_Kubernetes(OKE)_Benchmark_v2.0.0_PDF.pdf": {
+      "docId": 70107,
+      "technology": "Kubernetes",
+      "technologyVersion": "2.0.0",
+      "benchmark": 125735,
+      "version": "2.0.0",
+      "updatedAt": "2026-07-02T10:40:13.000000Z",
+      "status": "shipped"
+    },
+    "CIS Oracle Cloud Infrastructure (OKE) Benchmark v1.5.0 PDF.pdf": {
+      "docId": 69277,
+      "technology": "Kubernetes",
+      "technologyVersion": "OKE",
+      "benchmark": 58562,
+      "version": "1.5.0",
+      "updatedAt": "2024-05-31T09:16:06.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Cloud_Infrastructure_Container_Engine_for_Kubernetes(OKE)_Benchmark_v1.8.0_PDF.pdf": {
+      "docId": 69941,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.8.0",
+      "benchmark": 89637,
+      "version": "1.8.0",
+      "updatedAt": "2025-11-25T14:33:06.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Cloud_Infrastructure_Container_Engine_for_Kubernetes(OKE)_Benchmark_v1.7.0_PDF.pdf": {
+      "docId": 69673,
+      "technology": "Kubernetes",
+      "technologyVersion": "CIS Oracle Cloud Infrastructure Container Eng",
+      "benchmark": 70450,
+      "version": "1.7.0",
+      "updatedAt": "2025-05-30T10:23:29.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Red_Hat_Openshift_Container_Platform_Benchmark_v1.8.0_PDF.pdf": {
+      "docId": 69695,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.8.0",
+      "benchmark": 72565,
+      "version": "1.8.0",
+      "updatedAt": "2025-06-24T16:10:01.000000Z",
+      "status": "shipped"
+    },
+    "CIS Red Hat Openshift Container Platform V1.7.0 PDF.pdf": {
+      "docId": 69627,
+      "technology": "Kubernetes",
+      "technologyVersion": "OpenShift",
+      "benchmark": 60970,
+      "version": "1.7.0",
+      "updatedAt": "2024-12-23T13:06:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS Red Hat OpenShift Container Platform Benchmark V1.6.0 PDF.pdf": {
+      "docId": 69272,
+      "technology": "Kubernetes",
+      "technologyVersion": "Openshift",
+      "benchmark": 58555,
+      "version": "1.6.0",
+      "updatedAt": "2024-06-21T14:00:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS Red Hat OpenShift Container Platform Benchmark V2.0.0 PDF.pdf": {
+      "docId": 70141,
+      "technology": "Kubernetes",
+      "technologyVersion": "2.0.0",
+      "benchmark": 131405,
+      "version": "2.0.0",
+      "updatedAt": "2026-08-01T16:47:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Redhat_OpenShift_Virtual_Machine_Extension_Benchmark_V1.0.0_PDF.pdf": {
+      "docId": 69926,
+      "technology": "Kubernetes",
+      "technologyVersion": "1.0.0",
+      "benchmark": 86849,
+      "version": "1.0.0",
+      "updatedAt": "2025-10-30T13:52:42.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MariaDB_10.11_Benchmark_v1.0.0.pdf": {
+      "docId": 69393,
+      "technology": "MariaDB",
+      "technologyVersion": "10.11",
+      "benchmark": 58680,
+      "version": "1.0.0",
+      "updatedAt": "2024-03-29T10:12:18.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MariaDB_10.6_Benchmark_v1.1.0.pdf": {
+      "docId": 69391,
+      "technology": "MariaDB",
+      "technologyVersion": "10.6",
+      "benchmark": 58678,
+      "version": "1.1.0",
+      "updatedAt": "2024-03-29T10:04:40.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Exchange_Server_2010_Benchmark__imported__v1.1.0_ARCHIVE.pdf": {
+      "docId": 69337,
+      "technology": "Microsoft Exchange Server",
+      "technologyVersion": "2010",
+      "benchmark": 58622,
+      "version": "1.1.0",
+      "updatedAt": "2023-10-30T11:23:27.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Exchange_Server_2010_Benchmark_v1.0.0.pdf": {
+      "docId": 69340,
+      "technology": "Microsoft Exchange Server",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58625,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-16T11:30:03.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Exchange_Server_2013_Benchmark__imported__v1.1.0_ARCHIVE.pdf": {
+      "docId": 69338,
+      "technology": "Microsoft Exchange Server",
+      "technologyVersion": "2013",
+      "benchmark": 58623,
+      "version": "1.1.0",
+      "updatedAt": "2023-10-30T11:47:25.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Exchange_Server_2013_Benchmark_v1.0.0.pdf": {
+      "docId": 69341,
+      "technology": "Microsoft Exchange Server",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58626,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-16T11:31:48.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Exchange_Server_2016_Benchmark_v1.0.0.pdf": {
+      "docId": 69342,
+      "technology": "Microsoft Exchange Server",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58627,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-16T11:35:46.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Exchange_Server_2019_Benchmark_v1.0.0.pdf": {
+      "docId": 69339,
+      "technology": "Microsoft Exchange Server",
+      "technologyVersion": "2019",
+      "benchmark": 58624,
+      "version": "1.0.0",
+      "updatedAt": "2023-06-30T09:39:29.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_IIS_10_Benchmark_v1.2.1.pdf": {
+      "docId": 68842,
+      "technology": "Microsoft IIS",
+      "technologyVersion": "10",
+      "benchmark": 58104,
+      "version": "1.2.1",
+      "updatedAt": "2023-07-17T10:31:47.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_IIS_7_Benchmark_v1.8.0_ARCHIVE.pdf": {
+      "docId": 68832,
+      "technology": "Microsoft IIS",
+      "technologyVersion": "7",
+      "benchmark": 58093,
+      "version": "1.8.0",
+      "updatedAt": "2023-10-30T15:58:24.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_IIS_8_Benchmark_v1.5.0_ARCHIVE.pdf": {
+      "docId": 68837,
+      "technology": "Microsoft IIS",
+      "technologyVersion": "8",
+      "benchmark": 58099,
+      "version": "1.5.0",
+      "updatedAt": "2024-08-28T10:01:43.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_IIS_8_Benchmark_v1.4.0.pdf": {
+      "docId": 68839,
+      "technology": "Microsoft IIS",
+      "technologyVersion": "1.4.0",
+      "benchmark": 58101,
+      "version": "1.4.0",
+      "updatedAt": "2024-08-16T11:54:09.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_IIS_8_Benchmark_v1.3.0.pdf": {
+      "docId": 68841,
+      "technology": "Microsoft IIS",
+      "technologyVersion": "1.3.0",
+      "benchmark": 58103,
+      "version": "1.3.0",
+      "updatedAt": "2024-08-16T11:55:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_IIS_8_Benchmark_v1.2.0.pdf": {
+      "docId": 68844,
+      "technology": "Microsoft IIS",
+      "technologyVersion": "1.2.0",
+      "benchmark": 58106,
+      "version": "1.2.0",
+      "updatedAt": "2024-08-16T11:56:39.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_IIS_8_Benchmark_v1.1.0.pdf": {
+      "docId": 68846,
+      "technology": "Microsoft IIS",
+      "technologyVersion": "1.1.0",
+      "benchmark": 58109,
+      "version": "1.1.0",
+      "updatedAt": "2024-08-16T11:57:30.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_IIS_8_Benchmark_v1.0.0.pdf": {
+      "docId": 68847,
+      "technology": "Microsoft IIS",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58110,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-16T11:58:37.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SharePoint_2016_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 68867,
+      "technology": "Microsoft SharePoint",
+      "technologyVersion": "2016",
+      "benchmark": 58131,
+      "version": "1.1.0",
+      "updatedAt": "2023-10-31T15:18:46.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SharePoint_2019_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 68868,
+      "technology": "Microsoft SharePoint",
+      "technologyVersion": "2019",
+      "benchmark": 58132,
+      "version": "1.0.0",
+      "updatedAt": "2023-11-01T09:44:50.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2008_R2_Benchmark_v1.7.0_ARCHIVE.pdf": {
+      "docId": 69063,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "2008 R2",
+      "benchmark": 58334,
+      "version": "1.7.0",
+      "updatedAt": "2023-10-27T14:14:17.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2012_Benchmark_v1.5.0_ARCHIVE.pdf": {
+      "docId": 69067,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "2012",
+      "benchmark": 58338,
+      "version": "1.5.0",
+      "updatedAt": "2024-11-12T13:56:00.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2012_Benchmark_v1.2.0.pdf": {
+      "docId": 69081,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "1.2.0",
+      "benchmark": 58352,
+      "version": "1.2.0",
+      "updatedAt": "2024-08-19T11:03:37.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2012_Database_Engine_Benchmark_v1.1.0.pdf": {
+      "docId": 69087,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "1.1.0",
+      "benchmark": 58358,
+      "version": "1.1.0",
+      "updatedAt": "2024-08-19T11:08:00.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2012_Benchmark_v1.6.0_ARCHIVE.pdf": {
+      "docId": 69588,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "2012 v1.6.0",
+      "benchmark": 59931,
+      "version": "1.6.0",
+      "updatedAt": "2024-11-26T13:41:46.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2012_Database_Engine_Benchmark_v1.0.0.pdf": {
+      "docId": 69094,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58365,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-19T11:10:00.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2014_Benchmark_v1.4.0_ARCHIVE.pdf": {
+      "docId": 69072,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "2014",
+      "benchmark": 58343,
+      "version": "1.4.0",
+      "updatedAt": "2024-11-12T14:05:35.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2014_Benchmark_v1.1.0.pdf": {
+      "docId": 69088,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "1.1.0",
+      "benchmark": 58359,
+      "version": "1.1.0",
+      "updatedAt": "2024-08-19T11:13:07.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2014_Benchmark_v1.0.0.pdf": {
+      "docId": 69095,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58366,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-19T11:15:48.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2014_Benchmark_v1.5.0_ARCHIVE.pdf": {
+      "docId": 69589,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "2014 v1.5.0",
+      "benchmark": 59932,
+      "version": "1.5.0",
+      "updatedAt": "2024-11-26T13:54:41.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2016_Benchmark_v1.4.0_Archive.pdf": {
+      "docId": 69071,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "2016",
+      "benchmark": 58342,
+      "version": "1.4.0",
+      "updatedAt": "2024-10-14T19:06:59.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2017_Benchmark_v1.3.0_Archive.pdf": {
+      "docId": 69077,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "2017",
+      "benchmark": 58348,
+      "version": "1.3.0",
+      "updatedAt": "2024-10-14T19:58:06.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2019_Benchmark_v1.6.0_FINAL_UPDATE.pdf": {
+      "docId": 70106,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "2019",
+      "benchmark": 125667,
+      "version": "1.6.0",
+      "updatedAt": "2026-07-06T11:47:11.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2022_Benchmark_v1.3.0.pdf": {
+      "docId": 70071,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "2022",
+      "benchmark": 121306,
+      "version": "1.3.0",
+      "updatedAt": "2026-05-29T11:04:19.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2025_Benchmark_v1.0.0.pdf": {
+      "docId": 69990,
+      "technology": "Microsoft SQL Server",
+      "technologyVersion": "2025",
+      "benchmark": 109563,
+      "version": "1.0.0",
+      "updatedAt": "2026-03-27T11:21:01.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MongoDB_3.2_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 68878,
+      "technology": "MongoDB",
+      "technologyVersion": "3.2",
+      "benchmark": 58142,
+      "version": "1.0.0",
+      "updatedAt": "2023-12-07T14:24:53.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MongoDB_3.4_Benchmark_v1.0.0_ARCHVE.pdf": {
+      "docId": 68881,
+      "technology": "MongoDB",
+      "technologyVersion": "3.4",
+      "benchmark": 58145,
+      "version": "1.0.0",
+      "updatedAt": "2023-12-07T14:31:49.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MongoDB_3.6_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 68872,
+      "technology": "MongoDB",
+      "technologyVersion": "3.6",
+      "benchmark": 58136,
+      "version": "1.1.0",
+      "updatedAt": "2023-12-07T15:00:12.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MongoDB_4_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 68880,
+      "technology": "MongoDB",
+      "technologyVersion": "4",
+      "benchmark": 58144,
+      "version": "1.0.0",
+      "updatedAt": "2023-12-07T15:13:58.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MongoDB_5_Benchmark_v1.1.0_PDF.pdf": {
+      "docId": 68873,
+      "technology": "MongoDB",
+      "technologyVersion": "5",
+      "benchmark": 58137,
+      "version": "1.1.0",
+      "updatedAt": "2022-03-16T09:41:21.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MONGODB_5_BENCHMARK_v1.2.0_ARCHIVE.pdf": {
+      "docId": 69587,
+      "technology": "MongoDB",
+      "technologyVersion": "5.0 v1.2.0",
+      "benchmark": 59921,
+      "version": "1.2.0",
+      "updatedAt": "2024-11-26T15:34:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Mongodb_6_Benchmark_v1.1.0_PDF.pdf": {
+      "docId": 68871,
+      "technology": "MongoDB",
+      "technologyVersion": "6.0",
+      "benchmark": 58135,
+      "version": "1.1.0",
+      "updatedAt": "2023-10-25T12:54:36.000000Z",
+      "status": "shipped"
+    },
+    "CIS MongoDB 6 Benchmark v1.0.0 PDF.pdf": {
+      "docId": 68874,
+      "technology": "MongoDB",
+      "technologyVersion": "1",
+      "benchmark": 58138,
+      "version": "1.0.0",
+      "updatedAt": "2023-04-13T22:24:51.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MongoDB_7_Benchmark_v1.0.0.pdf": {
+      "docId": 68876,
+      "technology": "MongoDB",
+      "technologyVersion": "MongoDB",
+      "benchmark": 58140,
+      "version": "1.0.0",
+      "updatedAt": "2023-11-28T10:48:17.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MongoDB7_Benchmark_v1.2.0 PDF.pdf": {
+      "docId": 69745,
+      "technology": "MongoDB",
+      "technologyVersion": "7",
+      "benchmark": 79290,
+      "version": "1.2.0",
+      "updatedAt": "2025-09-04T08:43:09.000000Z",
+      "status": "shipped"
+    },
+    "CIS MongoDB 7 Benchmark v2.0.0 PDF.pdf": {
+      "docId": 70195,
+      "technology": "MongoDB",
+      "technologyVersion": "2.0.0",
+      "benchmark": 135903,
+      "version": "2.0.0",
+      "updatedAt": "2026-08-31T16:49:11.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MongoDB8_Benchmark_v1.0.0.pdf": {
+      "docId": 69746,
+      "technology": "MongoDB",
+      "technologyVersion": "8",
+      "benchmark": 79292,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-04T08:46:43.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MongoDB_8_Benchmark_v2.0.0 PDF.pdf": {
+      "docId": 70196,
+      "technology": "MongoDB",
+      "technologyVersion": "2.0.0",
+      "benchmark": 135904,
+      "version": "2.0.0",
+      "updatedAt": "2026-08-31T16:44:00.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MongoDB_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 68877,
+      "technology": "MongoDB",
+      "technologyVersion": "3.2",
+      "benchmark": 58141,
+      "version": "1.0.0",
+      "updatedAt": "2023-12-07T14:16:57.000000Z",
+      "status": "shipped"
+    },
+    "CIS_NGINX_Benchmark_v3.0.0.pdf": {
+      "docId": 69952,
+      "technology": "NGINX",
+      "technologyVersion": "Nginx",
+      "benchmark": 92931,
+      "version": "3.0.0",
+      "updatedAt": "2025-12-24T09:37:58.000000Z",
+      "status": "shipped"
+    },
+    "CIS_OceanBase_Enterprise_Edition_V4_Benchmark_v1.0.0.pdf": {
+      "docId": 70070,
+      "technology": "OceanBase",
+      "technologyVersion": "OceanBase v4",
+      "benchmark": 121209,
+      "version": "1.0.0",
+      "updatedAt": "2026-05-28T10:08:40.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Database_11g_R2_Benchmark_v2.2.0_ARCHIVE.pdf": {
+      "docId": 69237,
+      "technology": "Oracle Database",
+      "technologyVersion": "11g R2",
+      "benchmark": 58517,
+      "version": "2.2.0",
+      "updatedAt": "2023-12-07T11:49:40.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Database_12c_Benchmark_v3.0.0_ARCHIVE.pdf": {
+      "docId": 69236,
+      "technology": "Oracle Database",
+      "technologyVersion": "12c",
+      "benchmark": 58516,
+      "version": "3.0.0",
+      "updatedAt": "2023-12-27T09:47:27.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Database_18c_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 69244,
+      "technology": "Oracle Database",
+      "technologyVersion": "18c",
+      "benchmark": 58524,
+      "version": "1.1.0",
+      "updatedAt": "2024-10-16T13:42:19.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Database_19c_Benchmark_v2.0.0.pdf": {
+      "docId": 69987,
+      "technology": "Oracle Database",
+      "technologyVersion": "19c",
+      "benchmark": 109259,
+      "version": "2.0.0",
+      "updatedAt": "2026-03-26T15:11:17.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Database_23ai_Benchmark_v1.1.0.pdf": {
+      "docId": 69740,
+      "technology": "Oracle Database",
+      "technologyVersion": "23ai",
+      "benchmark": 78634,
+      "version": "1.1.0",
+      "updatedAt": "2025-08-29T12:59:41.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Database_26ai_Benchmark_v1.0.0.pdf": {
+      "docId": 69993,
+      "technology": "Oracle Database",
+      "technologyVersion": "26ai",
+      "benchmark": 109624,
+      "version": "1.0.0",
+      "updatedAt": "2026-03-27T12:16:16.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Database_Server_11_-_11g_R2_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69248,
+      "technology": "Oracle Database",
+      "technologyVersion": "11g & 11g R2",
+      "benchmark": 58528,
+      "version": "1.0.0",
+      "updatedAt": "2024-01-05T15:50:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_MySQL_Community_Server_5.6_Benchmark_v2.0.0_ARCHIVE.pdf": {
+      "docId": 69360,
+      "technology": "Oracle MySQL",
+      "technologyVersion": "5.6",
+      "benchmark": 58646,
+      "version": "2.0.0",
+      "updatedAt": "2023-08-03T11:40:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_MySQL_Community_Server_5.7_Benchmark_v2.0.0_ARCHIVE.pdf": {
+      "docId": 69358,
+      "technology": "Oracle MySQL",
+      "technologyVersion": "5.7",
+      "benchmark": 58644,
+      "version": "2.0.0",
+      "updatedAt": "2024-10-21T10:44:53.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_MySQL_Community_Server_8.4_Benchmark_v1.1.0.pdf": {
+      "docId": 69945,
+      "technology": "Oracle MySQL",
+      "technologyVersion": "8.4",
+      "benchmark": 90339,
+      "version": "1.1.0",
+      "updatedAt": "2025-12-01T10:49:41.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_MySQL_Community_Server_9.7_Benchmark_v1.0.0.pdf": {
+      "docId": 70100,
+      "technology": "Oracle MySQL",
+      "technologyVersion": "9.7",
+      "benchmark": 125525,
+      "version": "1.0.0",
+      "updatedAt": "2026-06-30T09:39:37.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_MySQL_Enterprise_Edition_5.6_Benchmark_v2.0.0_ARCHIVE.pdf": {
+      "docId": 69359,
+      "technology": "Oracle MySQL",
+      "technologyVersion": "5.6",
+      "benchmark": 58645,
+      "version": "2.0.0",
+      "updatedAt": "2023-08-03T11:32:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_MySQL_Enterprise_Edition_5.7_Benchmark_v2.0.0_ARCHIVE.pdf": {
+      "docId": 69361,
+      "technology": "Oracle MySQL",
+      "technologyVersion": "5.7",
+      "benchmark": 58647,
+      "version": "2.0.0",
+      "updatedAt": "2024-10-21T11:20:29.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_MySQL_Enterprise_Edition_8.0_Benchmark_v1.5.0_FINAL_UPDATE.pdf": {
+      "docId": 69901,
+      "technology": "Oracle MySQL",
+      "technologyVersion": "8.0",
+      "benchmark": 83462,
+      "version": "1.5.0",
+      "updatedAt": "2025-09-30T15:27:28.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_MySQL_Enterprise_Edition_8.4_Benchmark_v1.1.0.pdf": {
+      "docId": 69946,
+      "technology": "Oracle MySQL",
+      "technologyVersion": "8.4",
+      "benchmark": 90340,
+      "version": "1.1.0",
+      "updatedAt": "2025-12-01T10:49:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_MySQL_Enterprise_Edition_9.7_Benchmark_v1.0.0.pdf": {
+      "docId": 70099,
+      "technology": "Oracle MySQL",
+      "technologyVersion": "9.7",
+      "benchmark": 125524,
+      "version": "1.0.0",
+      "updatedAt": "2026-06-30T09:39:47.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_10_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69112,
+      "technology": "PostgreSQL",
+      "technologyVersion": "10",
+      "benchmark": 58383,
+      "version": "1.0.0",
+      "updatedAt": "2023-06-21T13:22:06.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_11_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69115,
+      "technology": "PostgreSQL",
+      "technologyVersion": "11",
+      "benchmark": 58386,
+      "version": "1.0.0",
+      "updatedAt": "2023-06-21T13:28:19.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_12_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 69107,
+      "technology": "PostgreSQL",
+      "technologyVersion": "12",
+      "benchmark": 58378,
+      "version": "1.1.0",
+      "updatedAt": "2024-10-26T01:08:24.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_12_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69590,
+      "technology": "PostgreSQL",
+      "technologyVersion": "12 v1.0.0",
+      "benchmark": 59933,
+      "version": "1.0.0",
+      "updatedAt": "2024-11-25T17:39:39.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_13_Benchmark_v1.3.0.pdf": {
+      "docId": 69955,
+      "technology": "PostgreSQL",
+      "technologyVersion": "13",
+      "benchmark": 94033,
+      "version": "1.3.0",
+      "updatedAt": "2025-12-31T12:25:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_14_Benchmark_v1.3.0.pdf": {
+      "docId": 69954,
+      "technology": "PostgreSQL",
+      "technologyVersion": "14",
+      "benchmark": 94032,
+      "version": "1.3.0",
+      "updatedAt": "2025-12-31T12:25:12.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_15_Benchmark_v1.2.0.pdf": {
+      "docId": 69705,
+      "technology": "PostgreSQL",
+      "technologyVersion": "15",
+      "benchmark": 73053,
+      "version": "1.2.0",
+      "updatedAt": "2025-06-30T11:12:54.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_16_Benchmark_v1.1.0.pdf": {
+      "docId": 69714,
+      "technology": "PostgreSQL",
+      "technologyVersion": "16",
+      "benchmark": 73319,
+      "version": "1.1.0",
+      "updatedAt": "2025-07-03T10:06:32.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_17_Benchmark_v1.1.0.pdf": {
+      "docId": 70143,
+      "technology": "PostgreSQL",
+      "technologyVersion": "17",
+      "benchmark": 131600,
+      "version": "1.1.0",
+      "updatedAt": "2026-08-03T11:01:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_18_Benchmark_v1.0.0.pdf": {
+      "docId": 69991,
+      "technology": "PostgreSQL",
+      "technologyVersion": "18",
+      "benchmark": 109564,
+      "version": "1.0.0",
+      "updatedAt": "2026-03-27T12:06:21.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_9.5_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 69110,
+      "technology": "PostgreSQL",
+      "technologyVersion": "9.5",
+      "benchmark": 58381,
+      "version": "1.1.0",
+      "updatedAt": "2023-06-21T11:26:42.000000Z",
+      "status": "shipped"
+    },
+    "CIS_PostgreSQL_9.6_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69119,
+      "technology": "PostgreSQL",
+      "technologyVersion": "9.6",
+      "benchmark": 58390,
+      "version": "1.0.0",
+      "updatedAt": "2023-06-21T11:36:05.000000Z",
+      "status": "shipped"
+    },
+    "CIS_SingleStore_8_Benchmark_v1.0.0.pdf": {
+      "docId": 69665,
+      "technology": "SingleStore",
+      "technologyVersion": "SingleStore-8",
+      "benchmark": 69429,
+      "version": "1.0.0",
+      "updatedAt": "2025-05-17T06:40:16.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_ESXi_5.1_Benchmark_v1.0.1 ARCHIVE.pdf": {
+      "docId": 68860,
+      "technology": "VMware",
+      "technologyVersion": "5.1",
+      "benchmark": 58124,
+      "version": "1.0.1",
+      "updatedAt": "2024-10-02T21:56:58.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_ESXi_5.5_Benchmark_v1.2.0 ARCHIVE.pdf": {
+      "docId": 68854,
+      "technology": "VMware",
+      "technologyVersion": "5.5",
+      "benchmark": 58118,
+      "version": "1.2.0",
+      "updatedAt": "2024-08-09T00:42:15.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_ESXi_6.5_Benchmark_v1.0.0 ARCHIVE PDF.pdf": {
+      "docId": 68865,
+      "technology": "VMware",
+      "technologyVersion": "6.5",
+      "benchmark": 58129,
+      "version": "1.0.0",
+      "updatedAt": "2024-08-09T00:45:34.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_ESXi_6.7_Benchmark_v1.2.0 ARCHIVE PDF.pdf": {
+      "docId": 68852,
+      "technology": "VMware",
+      "technologyVersion": "6.7",
+      "benchmark": 58116,
+      "version": "1.2.0",
+      "updatedAt": "2024-09-27T19:52:44.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_ESXi_6.7_Benchmark_V1.3.0_ARCHIVE.pdf": {
+      "docId": 69615,
+      "technology": "VMware",
+      "technologyVersion": "6.7 v1.3.0",
+      "benchmark": 60020,
+      "version": "1.3.0",
+      "updatedAt": "2024-11-29T14:49:44.000000Z",
+      "status": "shipped"
+    },
+    "CIS VMWare ESXi 7.0 Benchmark V1.4.0 PDF.pdf": {
+      "docId": 68849,
+      "technology": "VMware",
+      "technologyVersion": "7.0",
+      "benchmark": 58113,
+      "version": "1.4.0",
+      "updatedAt": "2024-12-23T11:57:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMWare_ESXi_7.0_benchmark_v1.5.0_PDF.PDF": {
+      "docId": 70174,
+      "technology": "VMware",
+      "technologyVersion": "7",
+      "benchmark": 134783,
+      "version": "1.5.0",
+      "updatedAt": "2025-05-30T07:39:09.000000Z",
+      "status": "shipped"
+    },
+    "CIS VMWare ESXi 7 Benchmark V1.6.0 PDF.pdf": {
+      "docId": 70193,
+      "technology": "VMware",
+      "technologyVersion": "1.6.0",
+      "benchmark": 135900,
+      "version": "1.6.0",
+      "updatedAt": "2026-08-31T14:49:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS VMware ESXi 8.0 Benchmark V1.3.0 PDF.pdf": {
+      "docId": 70175,
+      "technology": "VMware",
+      "technologyVersion": "8.0",
+      "benchmark": 134785,
+      "version": "1.3.0",
+      "updatedAt": "2026-03-31T19:13:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_ESXi_8.0_Benchmark_v1.4.0_PDF.pdf": {
+      "docId": 70194,
+      "technology": "VMware",
+      "technologyVersion": "1.4.0",
+      "benchmark": 135901,
+      "version": "1.4.0",
+      "updatedAt": "2026-08-31T15:41:38.000000Z",
+      "status": "shipped"
+    },
+    "CIS_YugabyteDB_Benchmark_v2.0.0.pdf": {
+      "docId": 70199,
+      "technology": "YugabyteDB",
+      "technologyVersion": "YugabyteDB",
+      "benchmark": 136137,
+      "version": "2.0.0",
+      "updatedAt": "2026-09-01T10:09:39.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_iOS_26_Benchmark_v1.0.0.pdf": {
+      "docId": 69928,
+      "technology": "Apple iOS",
+      "technologyVersion": "iOS 26",
+      "benchmark": 86923,
+      "version": "1.0.0",
+      "updatedAt": "2025-10-31T14:21:36.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_iPadOS_26_Benchmark_v1.0.0.pdf": {
+      "docId": 69927,
+      "technology": "Apple iOS",
+      "technologyVersion": "iPadOS 26",
+      "benchmark": 86922,
+      "version": "1.0.0",
+      "updatedAt": "2025-10-31T14:23:09.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Android_Benchmark_v1.5.0.pdf": {
+      "docId": 69163,
+      "technology": "Google Android",
+      "technologyVersion": "Android",
+      "benchmark": 58436,
+      "version": "1.5.0",
+      "updatedAt": "2023-09-26T13:49:54.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Android_Benchmark_v1.6.0.pdf": {
+      "docId": 69900,
+      "technology": "Google Android",
+      "technologyVersion": "1.6",
+      "benchmark": 83424,
+      "version": "1.6.0",
+      "updatedAt": "2025-09-30T15:40:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_iOS_18_and_iPadOS_18_Intune_Benchmark_v1.0.0.pdf": {
+      "docId": 69907,
+      "technology": "Microsoft Intune Apple iOS, iPadOS, macOS",
+      "technologyVersion": "1.0",
+      "benchmark": 83482,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-30T15:44:15.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_iOS_18_and_iPadOS_18_Intune_Benchmark_v2.0.0.pdf": {
+      "docId": 69996,
+      "technology": "Microsoft Intune Apple iOS, iPadOS, macOS",
+      "technologyVersion": "18",
+      "benchmark": 110011,
+      "version": "2.0.0",
+      "updatedAt": "2026-04-02T08:44:44.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_iOS_26_and_iPadOS_26_Intune_Benchmark_v1.0.0.pdf": {
+      "docId": 69997,
+      "technology": "Microsoft Intune Apple iOS, iPadOS, macOS",
+      "technologyVersion": "26",
+      "benchmark": 110012,
+      "version": "1.0.0",
+      "updatedAt": "2026-03-31T14:44:43.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_MacOS_14.0_Sonoma_Intune_Benchmark_v1.0.0.pdf": {
+      "docId": 69689,
+      "technology": "Microsoft Intune Apple iOS, iPadOS, macOS",
+      "technologyVersion": "14.0 Intune",
+      "benchmark": 72072,
+      "version": "1.0.0",
+      "updatedAt": "2025-05-30T15:07:00.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_MacOS_15.0_Sequoia_Intune_Benchmark_v1.0.0.pdf": {
+      "docId": 69688,
+      "technology": "Microsoft Intune Apple iOS, iPadOS, macOS",
+      "technologyVersion": "15.0 Intune",
+      "benchmark": 72071,
+      "version": "1.0.0",
+      "updatedAt": "2025-05-30T15:05:57.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_MacOS_15.0_Sequoia_Intune_Benchmark_v1.1.0.pdf": {
+      "docId": 70031,
+      "technology": "Microsoft Intune Apple iOS, iPadOS, macOS",
+      "technologyVersion": "Intune macOS 15",
+      "benchmark": 115572,
+      "version": "1.1.0",
+      "updatedAt": "2026-05-01T13:56:11.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_MacOS_26_Tahoe_Intune_Benchmark_v1.0.0.pdf": {
+      "docId": 70032,
+      "technology": "Microsoft Intune Apple iOS, iPadOS, macOS",
+      "technologyVersion": "Intune macOS 26",
+      "benchmark": 115573,
+      "version": "1.0.0",
+      "updatedAt": "2026-05-01T13:39:49.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Intune_for_Apple_iOS_17_and_iPadOS_17_Benchmark_v2.0.0.pdf": {
+      "docId": 69995,
+      "technology": "Microsoft Intune Apple iOS, iPadOS, macOS",
+      "technologyVersion": "17",
+      "benchmark": 110010,
+      "version": "2.0.0",
+      "updatedAt": "2026-04-02T08:45:11.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Arista_EOS_benchmark_v1.0.0.pdf": {
+      "docId": 70148,
+      "technology": "Arista Networks",
+      "technologyVersion": "1.0.0",
+      "benchmark": 131770,
+      "version": "1.0.0",
+      "updatedAt": "2026-08-03T12:12:21.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Check_Point_Firewall_Benchmark_v1.1.0.pdf": {
+      "docId": 69319,
+      "technology": "Check Point Firewall",
+      "technologyVersion": "R80.10",
+      "benchmark": 58604,
+      "version": "1.1.0",
+      "updatedAt": "2024-01-11T10:26:19.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_ASA_9.x_Firewall_Benchmark_v1.1.0.pdf": {
+      "docId": 69185,
+      "technology": "Cisco",
+      "technologyVersion": "9.x",
+      "benchmark": 58460,
+      "version": "1.1.0",
+      "updatedAt": "2024-04-18T18:29:41.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_Firepower_Threat_Defense_Benchmark_v1.0.0.pdf": {
+      "docId": 69597,
+      "technology": "Cisco",
+      "technologyVersion": "CFTD v1.0.0",
+      "benchmark": 59946,
+      "version": "1.0.0",
+      "updatedAt": "2025-04-18T15:19:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_Firewall_Benchmark_v4.1.0.pdf": {
+      "docId": 69747,
+      "technology": "Cisco",
+      "technologyVersion": "9",
+      "benchmark": 79339,
+      "version": "4.1.0",
+      "updatedAt": "2025-04-18T10:47:27.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_IOS_XE_16.x_Benchmark_v2.2.0.pdf": {
+      "docId": 69749,
+      "technology": "Cisco",
+      "technologyVersion": "16",
+      "benchmark": 79341,
+      "version": "2.2.0",
+      "updatedAt": "2025-06-27T10:46:59.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_IOS_XE_17.x_Benchmark_v2.2.1.pdf": {
+      "docId": 69748,
+      "technology": "Cisco",
+      "technologyVersion": "17",
+      "benchmark": 79340,
+      "version": "2.2.1",
+      "updatedAt": "2025-09-05T11:47:08.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_IOS_XR_7.x_v1.0.1.pdf": {
+      "docId": 69767,
+      "technology": "Cisco",
+      "technologyVersion": "XR7",
+      "benchmark": 79772,
+      "version": "1.0.1",
+      "updatedAt": "2025-05-06T13:49:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_NX-OS_Benchmark_v1.2.0.pdf": {
+      "docId": 69754,
+      "technology": "Cisco",
+      "technologyVersion": "NXOS",
+      "benchmark": 79346,
+      "version": "1.2.0",
+      "updatedAt": "2025-03-31T09:50:00.000000Z",
+      "status": "shipped"
+    },
+    "CIS_ExtremeNetworks_SLX-OS-20.X.X_Benchmark_v1.0.1.pdf": {
+      "docId": 69729,
+      "technology": "Extreme Networks",
+      "technologyVersion": "20",
+      "benchmark": 76749,
+      "version": "1.0.1",
+      "updatedAt": "2025-07-17T14:02:51.000000Z",
+      "status": "shipped"
+    },
+    "CIS_F5_Networks_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69410,
+      "technology": "F5",
+      "technologyVersion": "1.0.0",
+      "benchmark": 58697,
+      "version": "1.0.0",
+      "updatedAt": "2024-11-20T14:31:24.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Fortigate_7.0.x_Benchmark_v1.2.0_ARCHIVE.pdf": {
+      "docId": 69603,
+      "technology": "Fortinet",
+      "technologyVersion": "7.0.x V1.2.0",
+      "benchmark": 59967,
+      "version": "1.2.0",
+      "updatedAt": "2024-11-25T14:02:51.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Fortigate_7.0.x_Benchmark_v1.3.0.pdf": {
+      "docId": 69769,
+      "technology": "Fortinet",
+      "technologyVersion": "Fortigate",
+      "benchmark": 79803,
+      "version": "1.3.0",
+      "updatedAt": "2024-04-18T20:51:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Fortigate_7.0.x_Benchmark_v1.4.0.pdf": {
+      "docId": 69950,
+      "technology": "Fortinet",
+      "technologyVersion": "7.0.x",
+      "benchmark": 92209,
+      "version": "1.4.0",
+      "updatedAt": "2025-12-17T10:58:19.000000Z",
+      "status": "shipped"
+    },
+    "CIS_FortiGate_7.4.x_Benchmark_v1.0.0.pdf": {
+      "docId": 69909,
+      "technology": "Fortinet",
+      "technologyVersion": "7.4",
+      "benchmark": 83829,
+      "version": "1.0.0",
+      "updatedAt": "2025-11-06T13:23:19.000000Z",
+      "status": "shipped"
+    },
+    "CIS_FortiGate_7.4.x_Benchmark_v1.0.1.pdf": {
+      "docId": 69965,
+      "technology": "Fortinet",
+      "technologyVersion": "7.4.x",
+      "benchmark": 94807,
+      "version": "1.0.1",
+      "updatedAt": "2026-01-07T12:43:53.000000Z",
+      "status": "shipped"
+    },
+    "CIS_HPE_Aruba_Networking_CX_Switch_Benchmark_v1.0.0.pdf": {
+      "docId": 69891,
+      "technology": "HPE Aruba Networking",
+      "technologyVersion": "HPE Aruba",
+      "benchmark": 82769,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-24T12:02:28.000000Z",
+      "status": "shipped"
+    },
+    "CIS_HPE_Aruba_Networking_CX_Switch_Benchmark_v1.0.1.pdf": {
+      "docId": 69967,
+      "technology": "HPE Aruba Networking",
+      "technologyVersion": "CX",
+      "benchmark": 95055,
+      "version": "1.0.1",
+      "updatedAt": "2026-01-08T14:08:25.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Juniper_OS_Benchmark_v2.1.0 PDF.pdf": {
+      "docId": 69355,
+      "technology": "Juniper",
+      "technologyVersion": "2",
+      "benchmark": 58641,
+      "version": "2.1.0",
+      "updatedAt": "2020-12-04T12:55:54.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Palo_Alto_Firewall_10_Benchmark_v1.3.0.pdf": {
+      "docId": 69908,
+      "technology": "Palo Alto Networks",
+      "technologyVersion": "10",
+      "benchmark": 83807,
+      "version": "1.3.0",
+      "updatedAt": "2025-10-03T10:27:05.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Palo_Alto_Firewall_11_Benchmark_v1.1.0.pdf": {
+      "docId": 69258,
+      "technology": "Palo Alto Networks",
+      "technologyVersion": "11",
+      "benchmark": 58540,
+      "version": "1.1.0",
+      "updatedAt": "2024-05-31T17:43:21.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Palo_Alto_Firewall_11_Benchmark_v1.2.0.pdf": {
+      "docId": 69914,
+      "technology": "Palo Alto Networks",
+      "technologyVersion": "7.4",
+      "benchmark": 84516,
+      "version": "1.2.0",
+      "updatedAt": "2025-10-09T14:42:17.000000Z",
+      "status": "shipped"
+    },
+    "CIS_pfSense_Firewall_Benchmark_v1.1.0.pdf": {
+      "docId": 69458,
+      "technology": "pfSense Firewall",
+      "technologyVersion": "pfSence FW",
+      "benchmark": 58746,
+      "version": "1.1.0",
+      "updatedAt": "2023-07-05T11:01:12.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Sophos_Firewall_v21_Benchmark_v1.0.0.pdf": {
+      "docId": 69764,
+      "technology": "Sophos",
+      "technologyVersion": "21",
+      "benchmark": 79381,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-05T11:54:58.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Sophos_Firewall_v22_Benchmark_v1.0.0.pdf": {
+      "docId": 69981,
+      "technology": "Sophos",
+      "technologyVersion": "sophos",
+      "benchmark": 109096,
+      "version": "1.0.0",
+      "updatedAt": "2026-03-25T09:28:51.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Amazon_Linux_2023_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69998,
+      "technology": "DISA STIG",
+      "technologyVersion": "al2023_stig",
+      "benchmark": 110029,
+      "version": "1.0.0",
+      "updatedAt": "2026-03-31T16:51:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS Apache Server 2.4 Windows STIG Benchmark V1.0.0 PDF.pdf": {
+      "docId": 69886,
+      "technology": "DISA STIG",
+      "technologyVersion": "AS24-W1",
+      "benchmark": 82547,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:52:35.000000Z",
+      "status": "shipped"
+    },
+    "CIS Apache Tomcat Application Server 9 STIG Benchmark V1.0.0 PDF.pdf": {
+      "docId": 69887,
+      "technology": "DISA STIG",
+      "technologyVersion": "TCAT-AS",
+      "benchmark": 82548,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:53:05.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_iOS_iPadOS_18_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69882,
+      "technology": "DISA STIG",
+      "technologyVersion": "AIOS-18",
+      "benchmark": 82543,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:50:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS Apple macOS 14 (Sonoma) STIG  V1.0.0 PDF.pdf": {
+      "docId": 69885,
+      "technology": "DISA STIG",
+      "technologyVersion": "APPL-14",
+      "benchmark": 82546,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:52:00.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_macOS_15_(Sequoia)_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69858,
+      "technology": "DISA STIG",
+      "technologyVersion": "APPL-15",
+      "benchmark": 82511,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:55:03.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Apple_macOS_26_Tahoe_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 70103,
+      "technology": "DISA STIG",
+      "technologyVersion": "STIG macOS 26",
+      "benchmark": 125543,
+      "version": "1.0.0",
+      "updatedAt": "2026-06-30T13:33:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Arista_MLS_EOS_4.X_L2S_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69836,
+      "technology": "DISA STIG",
+      "technologyVersion": "ARST-L2",
+      "benchmark": 80746,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:17:54.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Arista_MLS_EOS_4.X_NDM_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69860,
+      "technology": "DISA STIG",
+      "technologyVersion": "ARST-ND",
+      "benchmark": 82514,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:31:06.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Arista_MLS_EOS_4.X_Router_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69837,
+      "technology": "DISA STIG",
+      "technologyVersion": "ARST-RT",
+      "benchmark": 80747,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:18:14.000000Z",
+      "status": "shipped"
+    },
+    "CIS_BIND_9.x_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69874,
+      "technology": "DISA STIG",
+      "technologyVersion": "BIND-9X",
+      "benchmark": 82535,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:47:25.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_ACI_Layer_2_Switch_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69804,
+      "technology": "DISA STIG",
+      "technologyVersion": "CACI-L2",
+      "benchmark": 80711,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T15:55:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_ACI_NDM_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69805,
+      "technology": "DISA STIG",
+      "technologyVersion": "CACI-ND",
+      "benchmark": 80712,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T15:56:15.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_ACI_Router_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69813,
+      "technology": "DISA STIG",
+      "technologyVersion": "CACI-RT",
+      "benchmark": 80723,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:08:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_IOS_Router_NDM_STIG_Benchmark_v1.1.0.pdf": {
+      "docId": 70041,
+      "technology": "DISA STIG",
+      "technologyVersion": "CISC-ND",
+      "benchmark": 117360,
+      "version": "1.1.0",
+      "updatedAt": "2026-05-11T13:34:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_IOS_Router_RTR_STIG_Benchmark_v1.1.0.pdf": {
+      "docId": 70018,
+      "technology": "DISA STIG",
+      "technologyVersion": "CISC-RT",
+      "benchmark": 114052,
+      "version": "1.1.0",
+      "updatedAt": "2026-04-24T12:22:26.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_IOS_Switch_L2S_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69803,
+      "technology": "DISA STIG",
+      "technologyVersion": "CISC-L2",
+      "benchmark": 80710,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:09:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_IOS_Switch_NDM_STIG_Benchmark_v1.1.0.pdf": {
+      "docId": 70019,
+      "technology": "DISA STIG",
+      "technologyVersion": "CISC-RT",
+      "benchmark": 114053,
+      "version": "1.1.0",
+      "updatedAt": "2026-04-24T14:44:26.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_IOS_Switch_RTR_STIG_Benchmark_v1.1.0.pdf": {
+      "docId": 70042,
+      "technology": "DISA STIG",
+      "technologyVersion": "CISC-RT",
+      "benchmark": 117361,
+      "version": "1.1.0",
+      "updatedAt": "2026-05-11T13:22:16.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_IOS_XE_Router_RTR_STIG_Benchmark_v1.1.0.pdf": {
+      "docId": 70012,
+      "technology": "DISA STIG",
+      "technologyVersion": "CISC-RT",
+      "benchmark": 112791,
+      "version": "1.1.0",
+      "updatedAt": "2026-04-20T13:09:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_IOS_XE_Switch_L2S_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69781,
+      "technology": "DISA STIG",
+      "technologyVersion": "CISC-L2",
+      "benchmark": 80669,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:49:09.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_IOS_XE_Switch_RTR_STIG_Benchmark_v1.1.0.pdf": {
+      "docId": 70011,
+      "technology": "DISA STIG",
+      "technologyVersion": "CISC-RT",
+      "benchmark": 112790,
+      "version": "1.1.0",
+      "updatedAt": "2026-04-24T12:15:39.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_NX_OS_Switch_L2S_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69812,
+      "technology": "DISA STIG",
+      "technologyVersion": "CISC-L2",
+      "benchmark": 80721,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:08:09.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_NX_OS_Switch_NDM_STIG_Benchmark_v1.1.0.pdf": {
+      "docId": 70102,
+      "technology": "DISA STIG",
+      "technologyVersion": "CISC-ND",
+      "benchmark": 125542,
+      "version": "1.1.0",
+      "updatedAt": "2026-07-01T12:46:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cisco_NX_OS_Switch_RTR_STIG_Benchmark_v1.1.0.pdf": {
+      "docId": 70093,
+      "technology": "DISA STIG",
+      "technologyVersion": "CISC-RT",
+      "benchmark": 125023,
+      "version": "1.1.0",
+      "updatedAt": "2026-06-25T15:49:53.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Cloud_Linux_AlmaLinux_OS_9_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 70104,
+      "technology": "DISA STIG",
+      "technologyVersion": "Alma9_STIG",
+      "benchmark": 125544,
+      "version": "1.0.0",
+      "updatedAt": "2026-06-29T13:37:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Dragos_Platform_2.x_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69884,
+      "technology": "DISA STIG",
+      "technologyVersion": "DRAG-OT",
+      "benchmark": 82545,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:51:30.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Forescout_Network_Access_Control_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69807,
+      "technology": "DISA STIG",
+      "technologyVersion": "FORE-NC",
+      "benchmark": 80715,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:06:52.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Forescout_Network_Device_Management_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69808,
+      "technology": "DISA STIG",
+      "technologyVersion": "FORE-NM",
+      "benchmark": 80716,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:07:10.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Android_13_COBO_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69785,
+      "technology": "DISA STIG",
+      "technologyVersion": "GOOG-13",
+      "benchmark": 80684,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:50:12.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Android_13_COPE_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69787,
+      "technology": "DISA STIG",
+      "technologyVersion": "GOOG-13",
+      "benchmark": 80686,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:50:37.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Android_14_COBO_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69823,
+      "technology": "DISA STIG",
+      "technologyVersion": "GOOG-14",
+      "benchmark": 80733,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:13:51.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Android_14_COPE_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69824,
+      "technology": "DISA STIG",
+      "technologyVersion": "GOOG-14",
+      "benchmark": 80734,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:14:14.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Android_15_COBO_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69841,
+      "technology": "DISA STIG",
+      "technologyVersion": "Google",
+      "benchmark": 82489,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:45:21.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Android_15_COPE_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69842,
+      "technology": "DISA STIG",
+      "technologyVersion": "Android",
+      "benchmark": 82490,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:45:52.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Honeywell_Android_13_COBO_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69834,
+      "technology": "DISA STIG",
+      "technologyVersion": "HONW-13",
+      "benchmark": 80744,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:17:13.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Honeywell_Android_13_COPE_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69835,
+      "technology": "DISA STIG",
+      "technologyVersion": "HONW-13",
+      "benchmark": 80745,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:17:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_WebSphere_Liberty_Server_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69822,
+      "technology": "DISA STIG",
+      "technologyVersion": "IBMW-LS",
+      "benchmark": 80732,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:13:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_z:OS_ACF2_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69867,
+      "technology": "DISA STIG",
+      "technologyVersion": "ACF2",
+      "benchmark": 82525,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:41:39.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_z:OS_RACF_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69868,
+      "technology": "DISA STIG",
+      "technologyVersion": "RACF",
+      "benchmark": 82526,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:42:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_z:OS_TSS_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69869,
+      "technology": "DISA STIG",
+      "technologyVersion": "TSS0",
+      "benchmark": 82530,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:42:42.000000Z",
+      "status": "shipped"
+    },
+    "CIS_IBM_zSecure_Suite_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69771,
+      "technology": "DISA STIG",
+      "technologyVersion": "ZSEC-00",
+      "benchmark": 80657,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:46:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Infoblox_8.x_DNS_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69856,
+      "technology": "DISA STIG",
+      "technologyVersion": "IDNS-8X",
+      "benchmark": 82506,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:52:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Juniper_Router_NDM_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69821,
+      "technology": "DISA STIG",
+      "technologyVersion": "JUNI-ND",
+      "benchmark": 80731,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:10:26.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Juniper_Router_RTR_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69826,
+      "technology": "DISA STIG",
+      "technologyVersion": "JUNI",
+      "benchmark": 80736,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:14:50.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Juniper_SRX_Services_Gateway_ALG_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69830,
+      "technology": "DISA STIG",
+      "technologyVersion": "JUSX-AG",
+      "benchmark": 80740,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:16:07.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Juniper_SRX_Services_Gateway_VPN_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69833,
+      "technology": "DISA STIG",
+      "technologyVersion": "JUSX-VN",
+      "benchmark": 80743,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:16:59.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Juniper_SRX_SG_IDPS_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69831,
+      "technology": "DISA STIG",
+      "technologyVersion": "JUSX-IP",
+      "benchmark": 80741,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:16:25.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Juniper_SRX_SG_NDM_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69832,
+      "technology": "DISA STIG",
+      "technologyVersion": "JUSX-DM",
+      "benchmark": 80742,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:16:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS Kubernetes STIG Benchmark v1.1.0 PDF.pdf": {
+      "docId": 70067,
+      "technology": "DISA STIG",
+      "technologyVersion": "1.1.0",
+      "benchmark": 120941,
+      "version": "1.1.0",
+      "updatedAt": "2026-05-28T16:45:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MariaDB_Enterprise_10.x_STIG_Benchmark_v1.1.0.pdf": {
+      "docId": 70087,
+      "technology": "DISA STIG",
+      "technologyVersion": "MADB-10",
+      "benchmark": 124761,
+      "version": "1.1.0",
+      "updatedAt": "2026-06-22T11:38:38.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_DotNet_Framework_4.0_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69855,
+      "technology": "DISA STIG",
+      "technologyVersion": "APPNET",
+      "benchmark": 82505,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:52:11.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Entra_ID_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69780,
+      "technology": "DISA STIG",
+      "technologyVersion": "ENTR-ID",
+      "benchmark": 80668,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:48:55.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Exchange_2016_Edge_Transport_Server_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69870,
+      "technology": "DISA STIG",
+      "technologyVersion": "EX16",
+      "benchmark": 82531,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:45:29.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Exchange_2016_Mailbox_Server_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69875,
+      "technology": "DISA STIG",
+      "technologyVersion": "EX16",
+      "benchmark": 82536,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:47:57.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Exchange_2019_Edge_Server_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69784,
+      "technology": "DISA STIG",
+      "technologyVersion": "EX19-ED",
+      "benchmark": 80683,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:49:53.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Exchange_2019_Mailbox_Server_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69786,
+      "technology": "DISA STIG",
+      "technologyVersion": "EX19-MB",
+      "benchmark": 80685,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:50:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Intune_MDM_Service_Desktop_&_Mobile_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69864,
+      "technology": "DISA STIG",
+      "technologyVersion": "MSIN",
+      "benchmark": 82518,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:37:11.000000Z",
+      "status": "shipped"
+    },
+    "CIS Microsoft Office 365 ProPlus STIG Benchmark V1.0.0 PDF.pdf": {
+      "docId": 69888,
+      "technology": "DISA STIG",
+      "technologyVersion": "O365-XX",
+      "benchmark": 82549,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:53:43.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Office_365_ProPlus_STIG_Benchmark_v1.1.0.pdf": {
+      "docId": 70024,
+      "technology": "DISA STIG",
+      "technologyVersion": "Office STIG",
+      "benchmark": 115059,
+      "version": "1.1.0",
+      "updatedAt": "2026-04-28T12:17:51.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Office_System_2016_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69857,
+      "technology": "DISA STIG",
+      "technologyVersion": "DTOO",
+      "benchmark": 82510,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:54:14.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2022_Database_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69862,
+      "technology": "DISA STIG",
+      "technologyVersion": "SQLD",
+      "benchmark": 82516,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:32:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_SQL_Server_2022_Instance_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 70052,
+      "technology": "DISA STIG",
+      "technologyVersion": "SQLI-22",
+      "benchmark": 119159,
+      "version": "1.0.0",
+      "updatedAt": "2026-05-19T15:34:21.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_10_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69861,
+      "technology": "DISA STIG",
+      "technologyVersion": "WN10",
+      "benchmark": 82515,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:31:44.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_11_STIG_Benchmark_v1.2.0.pdf": {
+      "docId": 70183,
+      "technology": "DISA STIG",
+      "technologyVersion": "WIN11-00",
+      "benchmark": 135306,
+      "version": "1.2.0",
+      "updatedAt": "2026-08-25T11:10:46.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2016_STIG_Benchmark_v4.0.0.pdf": {
+      "docId": 69732,
+      "technology": "DISA STIG",
+      "technologyVersion": "WIN16-00",
+      "benchmark": 77691,
+      "version": "4.0.0",
+      "updatedAt": "2025-08-22T12:36:15.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2019_STIG_Benchmark_v4.0.0 .pdf": {
+      "docId": 69724,
+      "technology": "DISA STIG",
+      "technologyVersion": "2019 STIG",
+      "benchmark": 75585,
+      "version": "4.0.0",
+      "updatedAt": "2025-07-29T16:40:25.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_2022_STIG_Benchmark_v3.0.0.pdf": {
+      "docId": 69733,
+      "technology": "DISA STIG",
+      "technologyVersion": "2022 STIG",
+      "benchmark": 77692,
+      "version": "3.0.0",
+      "updatedAt": "2025-08-22T09:54:13.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Windows_Server_Domain_Name_System_(DNS)_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69818,
+      "technology": "DISA STIG",
+      "technologyVersion": "WDNS-22",
+      "benchmark": 80728,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:09:29.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Motorola_Solutions_Android_13_COBO_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69825,
+      "technology": "DISA STIG",
+      "technologyVersion": "MOTS-13",
+      "benchmark": 80735,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:14:29.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Motorola_Solutions_Android_13_COPE_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69827,
+      "technology": "DISA STIG",
+      "technologyVersion": "MOTS-13",
+      "benchmark": 80737,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:15:10.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Mozilla_Firefox_STIG_Benchmark_v1.1.0.pdf": {
+      "docId": 70025,
+      "technology": "DISA STIG",
+      "technologyVersion": "FFOX-00",
+      "benchmark": 115063,
+      "version": "1.1.0",
+      "updatedAt": "2026-04-28T11:18:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MS_SQL_Server_2016_Database_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69878,
+      "technology": "DISA STIG",
+      "technologyVersion": "SQL6-D0",
+      "benchmark": 82539,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:49:05.000000Z",
+      "status": "shipped"
+    },
+    "CIS_MS_SQL_Server_2016_Instance_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69883,
+      "technology": "DISA STIG",
+      "technologyVersion": "SQL6-D0",
+      "benchmark": 82544,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:51:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Okta_Identity_as_a_Service_(IDaaS)_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69800,
+      "technology": "DISA STIG",
+      "technologyVersion": "OKTA-APP",
+      "benchmark": 80703,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T15:54:19.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Database_12c_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69876,
+      "technology": "DISA STIG",
+      "technologyVersion": "O121",
+      "benchmark": 82537,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:39:01.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Linux_7_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69816,
+      "technology": "DISA STIG",
+      "technologyVersion": "OL07-00",
+      "benchmark": 80726,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:09:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Oracle_Linux_8_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69817,
+      "technology": "DISA STIG",
+      "technologyVersion": "OL08-00",
+      "benchmark": 80727,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:09:13.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Palo_Alto_Networks_ALG_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69871,
+      "technology": "DISA STIG",
+      "technologyVersion": "PANW-AG",
+      "benchmark": 82532,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:46:06.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Palo_Alto_Networks_IDPS_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69872,
+      "technology": "DISA STIG",
+      "technologyVersion": "PANW-IP",
+      "benchmark": 82533,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:46:30.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Palo_Alto_Networks_NDM_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69873,
+      "technology": "DISA STIG",
+      "technologyVersion": "PANW-NM",
+      "benchmark": 82534,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:46:55.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Palo_Alto_Networks_Prisma_Cloud_Compute_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69814,
+      "technology": "DISA STIG",
+      "technologyVersion": "CNTR-PC",
+      "benchmark": 80724,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:08:35.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Red_Hat_Enterprise_Linux_10_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 70030,
+      "technology": "DISA STIG",
+      "technologyVersion": "10Stig",
+      "benchmark": 115335,
+      "version": "1.0.0",
+      "updatedAt": "2026-04-30T19:47:32.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Samsung_Android_15_BYOAD_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69840,
+      "technology": "DISA STIG",
+      "technologyVersion": "Samsung",
+      "benchmark": 82488,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:41:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Samsung_Android_OS_13_with_Knox_3.x_COBO_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69828,
+      "technology": "DISA STIG",
+      "technologyVersion": "KNOX-13",
+      "benchmark": 80738,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:15:26.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Samsung_Android_OS_13_with_Knox_3.x_COPE_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69829,
+      "technology": "DISA STIG",
+      "technologyVersion": "KNOX-13",
+      "benchmark": 80739,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:15:42.000000Z",
+      "status": "shipped"
+    },
+    "CIS Samsung Android OS 14 Knox 3.x STIG PDF.pdf": {
+      "docId": 69889,
+      "technology": "DISA STIG",
+      "technologyVersion": "KNOX-14",
+      "benchmark": 82550,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:44:18.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Samsung_Android_OS_15_with_Knox_3.x_COBO_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69879,
+      "technology": "DISA STIG",
+      "technologyVersion": "KNOX-15",
+      "benchmark": 82540,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:43:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Samsung_Android_OS_15_with_Knox_3.x_COPE_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69880,
+      "technology": "DISA STIG",
+      "technologyVersion": "KNOX-15",
+      "benchmark": 82541,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:43:46.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Solaris_11_SPARC_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69809,
+      "technology": "DISA STIG",
+      "technologyVersion": "SOL-11.1",
+      "benchmark": 80717,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:07:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Solaris_11_X86_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69863,
+      "technology": "DISA STIG",
+      "technologyVersion": "SOL-11.1",
+      "benchmark": 82517,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:36:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_SUSE_Linux_Enterprise_Server_15_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69815,
+      "technology": "DISA STIG",
+      "technologyVersion": "SLES-15",
+      "benchmark": 80725,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:08:46.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Tanium_7.x_Application_on_TanOS_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69810,
+      "technology": "DISA STIG",
+      "technologyVersion": "TANS-AP",
+      "benchmark": 80718,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:07:39.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Tanium_7.x_Operating_System_on_TanOS_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69811,
+      "technology": "DISA STIG",
+      "technologyVersion": "TANS-OS",
+      "benchmark": 80719,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T16:07:56.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Tanium_7.x_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69881,
+      "technology": "DISA STIG",
+      "technologyVersion": "TANS",
+      "benchmark": 82542,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:49:46.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_NSX_4.x_Distributed_Firewall_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69778,
+      "technology": "DISA STIG",
+      "technologyVersion": "vmware",
+      "benchmark": 80665,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:48:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_NSX_4.x_Manager_NDM_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69777,
+      "technology": "DISA STIG",
+      "technologyVersion": "VMware",
+      "benchmark": 80664,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:48:11.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_NSX_4.x_Tier-0_Gateway_Firewall_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69776,
+      "technology": "DISA STIG",
+      "technologyVersion": "VMware NSX",
+      "benchmark": 80663,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:47:52.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_NSX_4.x_Tier-0_Gateway_Router_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69775,
+      "technology": "DISA STIG",
+      "technologyVersion": "NTOR-4X",
+      "benchmark": 80662,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:47:38.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_NSX_4.x_Tier-1_Gateway_Firewall_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69774,
+      "technology": "DISA STIG",
+      "technologyVersion": "NT1F-4X",
+      "benchmark": 80661,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:47:16.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_NSX_4.x_Tier-1_Gateway_Router_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69773,
+      "technology": "DISA STIG",
+      "technologyVersion": "NT1R-4X",
+      "benchmark": 80660,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:46:58.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_ESXi_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69788,
+      "technology": "DISA STIG",
+      "technologyVersion": "ESXI-70",
+      "benchmark": 80688,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:51:04.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_VAMI_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69789,
+      "technology": "DISA STIG",
+      "technologyVersion": "VCLD-70",
+      "benchmark": 80689,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:51:17.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_vCenter_Appliance_EAM_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69790,
+      "technology": "DISA STIG",
+      "technologyVersion": "VCEM-70",
+      "benchmark": 80690,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:51:28.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_vCenter_Appliance_Lookup_Service_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69791,
+      "technology": "DISA STIG",
+      "technologyVersion": "VCLU-70",
+      "benchmark": 80691,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:51:38.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_vCenter_Appliance_Perfcharts_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69792,
+      "technology": "DISA STIG",
+      "technologyVersion": "VCPF-70",
+      "benchmark": 80692,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T10:51:53.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_vCenter_Appliance_Photon_OS_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69793,
+      "technology": "DISA STIG",
+      "technologyVersion": "PHTN-30",
+      "benchmark": 80693,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T15:49:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_vCenter_Appliance_PostgreSQL_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69794,
+      "technology": "DISA STIG",
+      "technologyVersion": "VCPG-70",
+      "benchmark": 80694,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T15:49:55.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_vCenter_Appliance_RhttpProxy_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69795,
+      "technology": "DISA STIG",
+      "technologyVersion": "VCRP-70",
+      "benchmark": 80695,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T15:50:09.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_vCenter_Appliance_STS_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69796,
+      "technology": "DISA STIG",
+      "technologyVersion": "VCST-70",
+      "benchmark": 80696,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T15:50:25.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_vCenter_Appliance_UI_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69797,
+      "technology": "DISA STIG",
+      "technologyVersion": "VCUI-70",
+      "benchmark": 80697,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T15:50:39.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_vCenter_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69798,
+      "technology": "DISA STIG",
+      "technologyVersion": "VCSA-70",
+      "benchmark": 80698,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T15:50:57.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_7.0_Virtual_Machine_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69799,
+      "technology": "DISA STIG",
+      "technologyVersion": "VMCH-70",
+      "benchmark": 80699,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-10T15:51:15.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_ESXi_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69845,
+      "technology": "DISA STIG",
+      "technologyVersion": "VMware",
+      "benchmark": 82493,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:48:31.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_vCenter_Appliance_Envoy_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69848,
+      "technology": "DISA STIG",
+      "technologyVersion": "VMware",
+      "benchmark": 82496,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:49:48.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_vCenter_Appliance_ESX_Agent_Manager_(EAM)_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69844,
+      "technology": "DISA STIG",
+      "technologyVersion": "VMware",
+      "benchmark": 82492,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:48:02.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_vCenter_Appliance_Lookup_Service_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69843,
+      "technology": "DISA STIG",
+      "technologyVersion": "VMware",
+      "benchmark": 82491,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:47:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_vCenter_Appliance_Management_Interface_(VAMI)_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69849,
+      "technology": "DISA STIG",
+      "technologyVersion": "VMware",
+      "benchmark": 82497,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:50:34.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_vCenter_Appliance_Perfcharts_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69850,
+      "technology": "DISA STIG",
+      "technologyVersion": "VMware",
+      "benchmark": 82498,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:51:09.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_vCenter_Appliance_Photon_OS_4.0_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69851,
+      "technology": "DISA STIG",
+      "technologyVersion": "vmware",
+      "benchmark": 82499,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T15:08:17.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_vCenter_Appliance_PostgreSQL_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69852,
+      "technology": "DISA STIG",
+      "technologyVersion": "vmware",
+      "benchmark": 82500,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T15:08:51.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_vCenter_Appliance_Secure_Token_Service_(STS)_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69853,
+      "technology": "DISA STIG",
+      "technologyVersion": "vmware",
+      "benchmark": 82501,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T15:09:26.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_vCenter_Appliance_User_Interface_(UI)_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69854,
+      "technology": "DISA STIG",
+      "technologyVersion": "vmware",
+      "benchmark": 82502,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T15:09:58.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_vCenter_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69847,
+      "technology": "DISA STIG",
+      "technologyVersion": "VMware",
+      "benchmark": 82495,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:49:24.000000Z",
+      "status": "shipped"
+    },
+    "CIS_VMware_vSphere_8.0_Virtual_Machine_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69846,
+      "technology": "DISA STIG",
+      "technologyVersion": "VMware",
+      "benchmark": 82494,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T10:48:55.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Xylok_Security_Suite_20.x_STIG_Benchmark_v1.0.0.pdf": {
+      "docId": 69877,
+      "technology": "DISA STIG",
+      "technologyVersion": "XYLK",
+      "benchmark": 82538,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-22T11:48:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Everpure_FlashArray_Purity_6.9.x_Benchmark_v1.0.0.pdf": {
+      "docId": 70153,
+      "technology": "Everpure",
+      "technologyVersion": "FlashArray",
+      "benchmark": 132053,
+      "version": "1.0.0",
+      "updatedAt": "2026-08-10T07:30:26.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Chrome_Benchmark_v3.0.0.pdf": {
+      "docId": 69677,
+      "technology": "Google Chrome",
+      "technologyVersion": "Chrome GPO",
+      "benchmark": 70795,
+      "version": "3.0.0",
+      "updatedAt": "2024-01-29T13:55:44.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Chrome_Browser_Cloud_Management_Benchmark_v1.0.0.pdf": {
+      "docId": 69684,
+      "technology": "Google Chrome",
+      "technologyVersion": "Chrome Cloud",
+      "benchmark": 70802,
+      "version": "1.0.0",
+      "updatedAt": "2024-03-29T15:16:05.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Chrome_Enterprise_Core_Browser_Benchmark_v1.0.0.pdf": {
+      "docId": 69709,
+      "technology": "Google Chrome",
+      "technologyVersion": "Chrome Cloud",
+      "benchmark": 73102,
+      "version": "1.0.0",
+      "updatedAt": "2025-07-01T12:38:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Chrome_Enterprise_Core_Browser_Benchmark_v1.1.0.pdf": {
+      "docId": 70146,
+      "technology": "Google Chrome",
+      "technologyVersion": "Chrome v150 Enterprise Core",
+      "benchmark": 131735,
+      "version": "1.1.0",
+      "updatedAt": "2026-08-03T12:44:17.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Google_Chrome_Group_Policy_Benchmark_v1.1.0.pdf": {
+      "docId": 70145,
+      "technology": "Google Chrome",
+      "technologyVersion": "Chrome v150 GPO",
+      "benchmark": 131734,
+      "version": "1.1.0",
+      "updatedAt": "2026-08-03T12:43:24.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Office_2013_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 69216,
+      "technology": "Microsoft Office",
+      "technologyVersion": "Last Disp and Older",
+      "benchmark": 58495,
+      "version": "1.1.0",
+      "updatedAt": "2023-11-03T15:14:22.000000Z",
+      "status": "shipped"
+    },
+    "CIS Microsoft Office 2016 Benchmark v1.1.0_ARCHIVE.pdf": {
+      "docId": 69215,
+      "technology": "Microsoft Office",
+      "technologyVersion": "Last Disp and Older",
+      "benchmark": 58494,
+      "version": "1.1.0",
+      "updatedAt": "2023-11-09T11:35:32.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Office_Enterprise_Benchmark_v1.2.0.pdf": {
+      "docId": 69209,
+      "technology": "Microsoft Office",
+      "technologyVersion": "Enterprise",
+      "benchmark": 58488,
+      "version": "1.2.0",
+      "updatedAt": "2024-07-19T14:44:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Office_Excel_2016_Benchmark_v1.0.1.pdf": {
+      "docId": 69219,
+      "technology": "Microsoft Office",
+      "technologyVersion": "1.0.1",
+      "benchmark": 58498,
+      "version": "1.0.1",
+      "updatedAt": "2024-08-16T11:59:43.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Office_Outlook_2013_Benchmark__imported__v1.1.0_ARCHIVE.pdf": {
+      "docId": 69211,
+      "technology": "Microsoft Office",
+      "technologyVersion": "Last Disp and Older",
+      "benchmark": 58490,
+      "version": "1.1.0",
+      "updatedAt": "2023-10-31T11:58:41.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Office_Outlook_2016_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 69212,
+      "technology": "Microsoft Office",
+      "technologyVersion": "Last Disp and Older",
+      "benchmark": 58491,
+      "version": "1.1.0",
+      "updatedAt": "2023-11-09T11:25:59.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Office_Word_2013_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 69214,
+      "technology": "Microsoft Office",
+      "technologyVersion": "Last Disp and Older",
+      "benchmark": 58493,
+      "version": "1.1.0",
+      "updatedAt": "2023-11-03T14:56:20.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Office_Word_2016_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 69213,
+      "technology": "Microsoft Office",
+      "technologyVersion": "Last Disp and Older",
+      "benchmark": 58492,
+      "version": "1.1.0",
+      "updatedAt": "2023-11-06T10:26:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Edge_Benchmark_v4.0.0.pdf": {
+      "docId": 69923,
+      "technology": "Microsoft Web Browser",
+      "technologyVersion": "Edge",
+      "benchmark": 86501,
+      "version": "4.0.0",
+      "updatedAt": "2025-10-27T18:46:44.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Internet_Explorer_10_Benchmark_v1.1.0_ARCHIVE.pdf": {
+      "docId": 69346,
+      "technology": "Microsoft Web Browser",
+      "technologyVersion": "v1.1.0",
+      "benchmark": 58631,
+      "version": "1.1.0",
+      "updatedAt": "2023-10-31T16:04:59.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Internet_Explorer_10_Benchmark _v1.0.0_ARCHIVE.pdf": {
+      "docId": 69348,
+      "technology": "Microsoft Web Browser",
+      "technologyVersion": "10",
+      "benchmark": 58633,
+      "version": "1.0.0",
+      "updatedAt": "2023-10-30T14:26:14.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Internet_Explorer_11_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69350,
+      "technology": "Microsoft Web Browser",
+      "technologyVersion": "11",
+      "benchmark": 58635,
+      "version": "1.0.0",
+      "updatedAt": "2023-10-31T16:58:06.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Microsoft_Internet_Explorer_9_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69349,
+      "technology": "Microsoft Web Browser",
+      "technologyVersion": "v1.0.0",
+      "benchmark": 58634,
+      "version": "1.0.0",
+      "updatedAt": "2023-11-02T10:09:45.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Mozilla_Firefox_102_ESR_Benchmark_v1.0.0.ARCHIVE.pdf": {
+      "docId": 69352,
+      "technology": "Mozilla Firefox",
+      "technologyVersion": "Firefox",
+      "benchmark": 58637,
+      "version": "1.0.0",
+      "updatedAt": "2024-11-26T17:18:28.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Mozilla_Firefox_38_ESR_Benchmark_v1.0.0_ARCHIVE.pdf": {
+      "docId": 69354,
+      "technology": "Mozilla Firefox",
+      "technologyVersion": "Firefox",
+      "benchmark": 58640,
+      "version": "1.0.0",
+      "updatedAt": "2023-12-12T09:42:23.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Mozilla_Firefox_ESR_GPO_Benchmark_v1.0.0.pdf": {
+      "docId": 69353,
+      "technology": "Mozilla Firefox",
+      "technologyVersion": "Firefox GPO",
+      "benchmark": 58638,
+      "version": "1.0.0",
+      "updatedAt": "2026-01-20T16:17:07.000000Z",
+      "status": "shipped"
+    },
+    "CIS_macOS_Safari_Benchmark_v2.0.0_Archive.pdf": {
+      "docId": 69374,
+      "technology": "Safari Browser",
+      "technologyVersion": "11",
+      "benchmark": 58661,
+      "version": "2.0.0",
+      "updatedAt": "2024-04-05T14:11:25.000000Z",
+      "status": "shipped"
+    },
+    "CIS_OPNsense_Benchmark_v1.0.0.pdf": {
+      "docId": 69999,
+      "technology": "OPNsense",
+      "technologyVersion": "1",
+      "benchmark": 110030,
+      "version": "1.0.0",
+      "updatedAt": "2026-03-26T12:53:37.000000Z",
+      "status": "shipped"
+    },
+    "CIS Github Benchmark V1.1.0.PDF": {
+      "docId": 69765,
+      "technology": "Software Supply Chain Security",
+      "technologyVersion": "GitHub",
+      "benchmark": 79382,
+      "version": "1.1.0",
+      "updatedAt": "2025-09-04T08:39:37.000000Z",
+      "status": "shipped"
+    },
+    "CIS_GitHub_Benchmark_v1.2.0_PDF.pdf": {
+      "docId": 69977,
+      "technology": "Software Supply Chain Security",
+      "technologyVersion": "1.2.0",
+      "benchmark": 105419,
+      "version": "1.2.0",
+      "updatedAt": "2026-02-27T09:31:39.000000Z",
+      "status": "shipped"
+    },
+    "CIS_GitLab_Benchmark_v1.0.1.pdf": {
+      "docId": 69450,
+      "technology": "Software Supply Chain Security",
+      "technologyVersion": "GitLab",
+      "benchmark": 58738,
+      "version": "1.0.1",
+      "updatedAt": "2024-04-19T15:31:33.000000Z",
+      "status": "shipped"
+    },
+    "CIS_Visual_Studio_Code_GPO_Benchmark_v1.0.0.pdf": {
+      "docId": 69895,
+      "technology": "Visual Studio",
+      "technologyVersion": "VSC GPO",
+      "benchmark": 82902,
+      "version": "1.0.0",
+      "updatedAt": "2025-09-25T08:17:49.000000Z",
+      "status": "shipped"
+    }
+  }
+}
