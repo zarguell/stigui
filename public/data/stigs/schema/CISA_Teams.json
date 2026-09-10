@@ -1,0 +1,1125 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CISA_Teams",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2026-05-07"
+    },
+    "title": "CISA M365 Secure Configuration Baseline for Teams",
+    "description": "Microsoft 365 (M365) Teams is a cloud-based text and live chat workspace that supports video calls, chat messaging, screen sharing, and file sharing. This secure configuration baseline (SCB) provides specific policies to strengthen Microsoft Teams' security.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://github.com/cisagov/ScubaGear/tree/v1.8.0/PowerShell/ScubaGear/baselines/teams.md",
+      "dc:publisher": "CISA",
+      "dc:source": "CISA ScuBA M365 Secure Configuration Baselines"
+    },
+    "plain-text": {
+      "+content": "Release: 1.8.0 Baseline Date: 2026-05-07",
+      "+@id": "release-info"
+    },
+    "version": "1.8.0",
+    "Profile": [
+      {
+        "+@id": "1-Meeting-Policies_Public",
+        "title": "1. Meeting Policies",
+        "description": "This section helps reduce security risks posed by the external participants during meetings. In this instance, the term \"external participants\" includes external users, B2B guest users, unmanaged users, and anonymous users. This section helps reduce security risks related to the user permissions for recording Teams meetings and events. These policies and user permissions apply to meetings hosted by a user, as well as during one-on-one calls and group calls started by a user. Agencies should comply with any other applicable policies or legislation in addition to this guidance.",
+        "select": [
+          {
+            "+@idref": "V-E571BF0E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4800E682",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4E96A2A0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DA7659A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-128EAE7E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D27EAB1F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-29602AD4",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "1-Meeting-Policies_Classified",
+        "title": "1. Meeting Policies",
+        "description": "This section helps reduce security risks posed by the external participants during meetings. In this instance, the term \"external participants\" includes external users, B2B guest users, unmanaged users, and anonymous users. This section helps reduce security risks related to the user permissions for recording Teams meetings and events. These policies and user permissions apply to meetings hosted by a user, as well as during one-on-one calls and group calls started by a user. Agencies should comply with any other applicable policies or legislation in addition to this guidance.",
+        "select": [
+          {
+            "+@idref": "V-E571BF0E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4800E682",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4E96A2A0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DA7659A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-128EAE7E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D27EAB1F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-29602AD4",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "1-Meeting-Policies_Sensitive",
+        "title": "1. Meeting Policies",
+        "description": "This section helps reduce security risks posed by the external participants during meetings. In this instance, the term \"external participants\" includes external users, B2B guest users, unmanaged users, and anonymous users. This section helps reduce security risks related to the user permissions for recording Teams meetings and events. These policies and user permissions apply to meetings hosted by a user, as well as during one-on-one calls and group calls started by a user. Agencies should comply with any other applicable policies or legislation in addition to this guidance.",
+        "select": [
+          {
+            "+@idref": "V-E571BF0E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4800E682",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4E96A2A0",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DA7659A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-128EAE7E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D27EAB1F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-29602AD4",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "2-External-User-Access_Public",
+        "title": "2. External User Access",
+        "description": "This section helps reduce security risks related to external and unmanaged user access. In this instance, external users refer to members of a different M365 tenant, and unmanaged users refer to users who are not members of any M365 tenant or organization. External access allows external users to look up internal users by their email address to initiate chats and calls entirely within Teams. Blocking external access prevents external users from using Teams as an avenue for reconnaissance or phishing. Even with external access disabled, external users will still be able to join Teams calls, assuming anonymous join is enabled. Depending on agency need, if both external access and anonymous join are blocked—neither required nor recommended by this baseline—external collaborators would only be able to attend meetings if added as B2B guest users. External access may be granted on a per-domain basis. This may be desirable in some cases (e.g., for agency-to-agency collaboration). See the Chief Information Officer Council's [Interagency Collaboration Program](https://community.max.gov/display/Egov/Interagency+Collaboration+Program) Office of Management and Budget MA site for a list of .gov domains for sharing. Similar to external users, blocking contact with unmanaged Teams users prevents these users from looking up internal users by their email address and initiating chats and calls within Teams. These users would still be able to join calls, assuming anonymous join is enabled. Additionally, unmanaged users may be added to Teams chats if the internal user initiates the contact.",
+        "select": [
+          {
+            "+@idref": "V-CB001A11",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2A6DC9C2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AD78953F",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "2-External-User-Access_Classified",
+        "title": "2. External User Access",
+        "description": "This section helps reduce security risks related to external and unmanaged user access. In this instance, external users refer to members of a different M365 tenant, and unmanaged users refer to users who are not members of any M365 tenant or organization. External access allows external users to look up internal users by their email address to initiate chats and calls entirely within Teams. Blocking external access prevents external users from using Teams as an avenue for reconnaissance or phishing. Even with external access disabled, external users will still be able to join Teams calls, assuming anonymous join is enabled. Depending on agency need, if both external access and anonymous join are blocked—neither required nor recommended by this baseline—external collaborators would only be able to attend meetings if added as B2B guest users. External access may be granted on a per-domain basis. This may be desirable in some cases (e.g., for agency-to-agency collaboration). See the Chief Information Officer Council's [Interagency Collaboration Program](https://community.max.gov/display/Egov/Interagency+Collaboration+Program) Office of Management and Budget MA site for a list of .gov domains for sharing. Similar to external users, blocking contact with unmanaged Teams users prevents these users from looking up internal users by their email address and initiating chats and calls within Teams. These users would still be able to join calls, assuming anonymous join is enabled. Additionally, unmanaged users may be added to Teams chats if the internal user initiates the contact.",
+        "select": [
+          {
+            "+@idref": "V-CB001A11",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2A6DC9C2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AD78953F",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "2-External-User-Access_Sensitive",
+        "title": "2. External User Access",
+        "description": "This section helps reduce security risks related to external and unmanaged user access. In this instance, external users refer to members of a different M365 tenant, and unmanaged users refer to users who are not members of any M365 tenant or organization. External access allows external users to look up internal users by their email address to initiate chats and calls entirely within Teams. Blocking external access prevents external users from using Teams as an avenue for reconnaissance or phishing. Even with external access disabled, external users will still be able to join Teams calls, assuming anonymous join is enabled. Depending on agency need, if both external access and anonymous join are blocked—neither required nor recommended by this baseline—external collaborators would only be able to attend meetings if added as B2B guest users. External access may be granted on a per-domain basis. This may be desirable in some cases (e.g., for agency-to-agency collaboration). See the Chief Information Officer Council's [Interagency Collaboration Program](https://community.max.gov/display/Egov/Interagency+Collaboration+Program) Office of Management and Budget MA site for a list of .gov domains for sharing. Similar to external users, blocking contact with unmanaged Teams users prevents these users from looking up internal users by their email address and initiating chats and calls within Teams. These users would still be able to join calls, assuming anonymous join is enabled. Additionally, unmanaged users may be added to Teams chats if the internal user initiates the contact.",
+        "select": [
+          {
+            "+@idref": "V-CB001A11",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2A6DC9C2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AD78953F",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "4-Teams-Email-Integration_Public",
+        "title": "4. Teams Email Integration",
+        "description": "This section helps reduce security risks related to Teams email integration. Teams provides an optional feature allowing channels to have an email address and receive email.",
+        "select": {
+          "+@idref": "V-15F709A3",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "4-Teams-Email-Integration_Classified",
+        "title": "4. Teams Email Integration",
+        "description": "This section helps reduce security risks related to Teams email integration. Teams provides an optional feature allowing channels to have an email address and receive email.",
+        "select": {
+          "+@idref": "V-15F709A3",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "4-Teams-Email-Integration_Sensitive",
+        "title": "4. Teams Email Integration",
+        "description": "This section helps reduce security risks related to Teams email integration. Teams provides an optional feature allowing channels to have an email address and receive email.",
+        "select": {
+          "+@idref": "V-15F709A3",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "5-App-Management_Public",
+        "title": "5. App Management",
+        "description": "This section helps reduce security risks related to app integration with Microsoft Teams. Teams can integrate with the following classes of apps: - *Microsoft apps*: apps published by Microsoft. - *Third-party apps*: apps not authored by Microsoft, published to the Teams store. - *Custom apps*: apps not published to the Teams store, such as apps under development, that users sideload into Teams.",
+        "select": [
+          {
+            "+@idref": "V-273F4E5E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9B7A73CF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-42EBC2AD",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "5-App-Management_Classified",
+        "title": "5. App Management",
+        "description": "This section helps reduce security risks related to app integration with Microsoft Teams. Teams can integrate with the following classes of apps: - *Microsoft apps*: apps published by Microsoft. - *Third-party apps*: apps not authored by Microsoft, published to the Teams store. - *Custom apps*: apps not published to the Teams store, such as apps under development, that users sideload into Teams.",
+        "select": [
+          {
+            "+@idref": "V-273F4E5E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9B7A73CF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-42EBC2AD",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "5-App-Management_Sensitive",
+        "title": "5. App Management",
+        "description": "This section helps reduce security risks related to app integration with Microsoft Teams. Teams can integrate with the following classes of apps: - *Microsoft apps*: apps published by Microsoft. - *Third-party apps*: apps not authored by Microsoft, published to the Teams store. - *Custom apps*: apps not published to the Teams store, such as apps under development, that users sideload into Teams.",
+        "select": [
+          {
+            "+@idref": "V-273F4E5E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9B7A73CF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-42EBC2AD",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "6-Data-Loss-Prevention_Public",
+        "title": "6. Data Loss Prevention",
+        "description": "Data loss prevention (DLP) helps prevent both accidental leakage of sensitive information as well as intentional exfiltration of data. DLP forms an integral part of securing Microsoft Teams. There are several commercial DLP solutions available documenting support for M365. Microsoft itself offers DLP services, controlled within the Microsoft Purview compliance portal. Agencies may select any service that fits their needs and meets the requirements outlined in this baseline setting. The DLP solution selected by an agency should offer services comparable to those offered by Microsoft. Though using Microsoft's DLP solution is not strictly required, guidance for configuring Microsoft's DLP solution can be found in following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Data Loss Prevention \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#4-data-loss-prevention)",
+        "select": [
+          {
+            "+@idref": "V-F8570BAF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-980244FD",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "6-Data-Loss-Prevention_Classified",
+        "title": "6. Data Loss Prevention",
+        "description": "Data loss prevention (DLP) helps prevent both accidental leakage of sensitive information as well as intentional exfiltration of data. DLP forms an integral part of securing Microsoft Teams. There are several commercial DLP solutions available documenting support for M365. Microsoft itself offers DLP services, controlled within the Microsoft Purview compliance portal. Agencies may select any service that fits their needs and meets the requirements outlined in this baseline setting. The DLP solution selected by an agency should offer services comparable to those offered by Microsoft. Though using Microsoft's DLP solution is not strictly required, guidance for configuring Microsoft's DLP solution can be found in following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Data Loss Prevention \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#4-data-loss-prevention)",
+        "select": [
+          {
+            "+@idref": "V-F8570BAF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-980244FD",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "6-Data-Loss-Prevention_Sensitive",
+        "title": "6. Data Loss Prevention",
+        "description": "Data loss prevention (DLP) helps prevent both accidental leakage of sensitive information as well as intentional exfiltration of data. DLP forms an integral part of securing Microsoft Teams. There are several commercial DLP solutions available documenting support for M365. Microsoft itself offers DLP services, controlled within the Microsoft Purview compliance portal. Agencies may select any service that fits their needs and meets the requirements outlined in this baseline setting. The DLP solution selected by an agency should offer services comparable to those offered by Microsoft. Though using Microsoft's DLP solution is not strictly required, guidance for configuring Microsoft's DLP solution can be found in following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Data Loss Prevention \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#4-data-loss-prevention)",
+        "select": [
+          {
+            "+@idref": "V-F8570BAF",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-980244FD",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "7-Malware-Scanning_Public",
+        "title": "7. Malware Scanning",
+        "description": "Malware scanning protects M365 Teams assets from malicious software. Several commercial anti-malware solutions detect and prevent computer viruses, malware, and other malicious software from being introduced into M365 Teams. Agencies may select any product that meets the requirements outlined in this baseline policy group. If the agency is using Microsoft Defender to implement malware scanning, see the following policies of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.3.1v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender31v1) - Safe attachments SHOULD be enabled for SharePoint, OneDrive, and Microsoft Teams.",
+        "select": [
+          {
+            "+@idref": "V-28142516",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A3868DBF",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "7-Malware-Scanning_Classified",
+        "title": "7. Malware Scanning",
+        "description": "Malware scanning protects M365 Teams assets from malicious software. Several commercial anti-malware solutions detect and prevent computer viruses, malware, and other malicious software from being introduced into M365 Teams. Agencies may select any product that meets the requirements outlined in this baseline policy group. If the agency is using Microsoft Defender to implement malware scanning, see the following policies of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.3.1v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender31v1) - Safe attachments SHOULD be enabled for SharePoint, OneDrive, and Microsoft Teams.",
+        "select": [
+          {
+            "+@idref": "V-28142516",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A3868DBF",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "7-Malware-Scanning_Sensitive",
+        "title": "7. Malware Scanning",
+        "description": "Malware scanning protects M365 Teams assets from malicious software. Several commercial anti-malware solutions detect and prevent computer viruses, malware, and other malicious software from being introduced into M365 Teams. Agencies may select any product that meets the requirements outlined in this baseline policy group. If the agency is using Microsoft Defender to implement malware scanning, see the following policies of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.3.1v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender31v1) - Safe attachments SHOULD be enabled for SharePoint, OneDrive, and Microsoft Teams.",
+        "select": [
+          {
+            "+@idref": "V-28142516",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A3868DBF",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "8-Link-Protection_Public",
+        "title": "8. Link Protection",
+        "description": "Several technologies exist for protecting users from malicious links included in emails. For example, Microsoft Defender accomplishes this by prepending `https://*.safelinks.protection.outlook.com/?url=` to any URLs included in emails. By prepending the safe links URL, Microsoft can proxy the initial URL through their scanning service. Their proxy can perform the following actions: - Compare the URL with a block list. - Compare the URL with a list of know malicious sites. - If the URL points to a downloadable file, apply real-time file scanning. If all checks pass, the user is redirected to the original URL. Microsoft Defender includes link-scanning capabilities. Using Microsoft Defender is not strictly required for this purpose; any product fulfilling the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft Defender to meet this baseline policy group, see the following policy of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.1.3v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender13v1). - All users SHALL be added to Defender for Office 365 Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-EB116C21",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AD4ACB1D",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "8-Link-Protection_Classified",
+        "title": "8. Link Protection",
+        "description": "Several technologies exist for protecting users from malicious links included in emails. For example, Microsoft Defender accomplishes this by prepending `https://*.safelinks.protection.outlook.com/?url=` to any URLs included in emails. By prepending the safe links URL, Microsoft can proxy the initial URL through their scanning service. Their proxy can perform the following actions: - Compare the URL with a block list. - Compare the URL with a list of know malicious sites. - If the URL points to a downloadable file, apply real-time file scanning. If all checks pass, the user is redirected to the original URL. Microsoft Defender includes link-scanning capabilities. Using Microsoft Defender is not strictly required for this purpose; any product fulfilling the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft Defender to meet this baseline policy group, see the following policy of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.1.3v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender13v1). - All users SHALL be added to Defender for Office 365 Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-EB116C21",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AD4ACB1D",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "8-Link-Protection_Sensitive",
+        "title": "8. Link Protection",
+        "description": "Several technologies exist for protecting users from malicious links included in emails. For example, Microsoft Defender accomplishes this by prepending `https://*.safelinks.protection.outlook.com/?url=` to any URLs included in emails. By prepending the safe links URL, Microsoft can proxy the initial URL through their scanning service. Their proxy can perform the following actions: - Compare the URL with a block list. - Compare the URL with a list of know malicious sites. - If the URL points to a downloadable file, apply real-time file scanning. If all checks pass, the user is redirected to the original URL. Microsoft Defender includes link-scanning capabilities. Using Microsoft Defender is not strictly required for this purpose; any product fulfilling the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft Defender to meet this baseline policy group, see the following policy of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.1.3v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender13v1). - All users SHALL be added to Defender for Office 365 Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-EB116C21",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-AD4ACB1D",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-E571BF0E",
+        "title": "1. Meeting Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E571BF0ErF6283C_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.1.1v1",
+          "title": "External meeting participants SHOULD NOT be enabled to request control of shared desktops or windows.",
+          "description": "<VulnDiscussion>External meeting participants SHOULD NOT be enabled to request control of shared desktops or windows.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: An external participant with control of a shared screen could potentially perform unauthorized actions on the shared screen. This policy reduces that risk by removing an external participant's ability to request control. However, if an agency has a legitimate use case to grant this control, it may be done on a case-by-case basis.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy, as well as custom meeting policies.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-17a</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.1.1v1"
+          },
+          "fixtext": {
+            "+content": "To help ensure external participants do not have the ability to request\ncontrol of the shared desktop or window in the meeting:\n1.  Sign in to the Microsoft Teams admin center.\n2.  Select Meetings > Meeting policies.\n3.  Select the Global (Org-wide default) policy.\n4.  Under the Content sharing section, set **External\nparticipants can give or request control to Off**.\n5.  If custom policies were created, repeat these steps for each\npolicy, selecting the appropriate policy in step 3.",
+            "+@fixref": "F-E571BF0ErF6283C_fix"
+          },
+          "fix": {
+            "+@id": "F-E571BF0ErF6283C_fix"
+          },
+          "check": {
+            "+@system": "C-E571BF0ErF6283C_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "External meeting participants SHOULD NOT be enabled to request control of shared desktops or windows.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Manage who can present and request control in Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/meeting-who-present-request-control)\n- Meeting policy settings | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference#meetings)\n- Teams cloud meeting recording | Microsoft Learn  (https://learn.microsoft.com/en-us/microsoftteams/cloud-recording)\n- Assign policies in Teams – getting started | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview)\n- Live Event Recording Policies | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/teams-live-events/live-events-recording-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-4800E682",
+        "title": "1. Meeting Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4800E682r806CFA_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.TEAMS.1.2v2",
+          "title": "Anonymous users SHALL NOT be enabled to start meetings.",
+          "description": "<VulnDiscussion>Anonymous users SHALL NOT be enabled to start meetings.\n\nCriticality: SHALL.\nLast modified: August 2025.\n\nRationale: This policy protects against anonymous users starting Microsoft Teams meetings to scrape internal contacts. The policy is beneficial for agencies that have implemented custom policies, providing flexibility for some users to automatically admit “everyone” to a Microsoft Teams meeting.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy, and custom meeting policies if they exist.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-15a\n\nMITRE ATT&CK: T1078: Valid Accounts; T1078.001: Default Accounts</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.1.2v2"
+          },
+          "fixtext": {
+            "+content": "To configure settings for anonymous users:\n1.\tSign in to the Microsoft Teams admin center.\n2.\tSelect Meetings > Meeting policies.\n3.\tSelect the Global (Org-wide default) policy.\n4.\tUnder the Meeting join & lobby section, ensure the Anonymous users and dial-in callers can start a meeting setting remains at the default position of Off.\n5.\tIf custom policies were created, repeat these steps for each policy, selecting the appropriate policy in step 3.",
+            "+@fixref": "F-4800E682r806CFA_fix"
+          },
+          "fix": {
+            "+@id": "F-4800E682r806CFA_fix"
+          },
+          "check": {
+            "+@system": "C-4800E682r806CFA_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Anonymous users SHALL NOT be enabled to start meetings.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Manage who can present and request control in Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/meeting-who-present-request-control)\n- Meeting policy settings | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference#meetings)\n- Teams cloud meeting recording | Microsoft Learn  (https://learn.microsoft.com/en-us/microsoftteams/cloud-recording)\n- Assign policies in Teams – getting started | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview)\n- Live Event Recording Policies | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/teams-live-events/live-events-recording-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-4E96A2A0",
+        "title": "1. Meeting Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4E96A2A0r23C389_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.1.3v1",
+          "title": "Anonymous users and dial-in callers SHOULD NOT be admitted automatically.",
+          "description": "<VulnDiscussion>Anonymous users and dial-in callers SHOULD NOT be admitted automatically.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Automatically allowing admittance to anonymous and dial-in users diminishes control of meeting participation and invites potential data breach. This policy reduces that risk by requiring all anonymous and dial-in users to wait in a lobby until admitted by an authorized meeting participant. If the agency has a use case to admit members of specific trusted organizations and/or B2B guests automatically, custom policies may be created and assigned to authorized meeting organizers.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy. Custom meeting policies MAY be created to allow specific users more flexibility. For example, B2B guest users and trusted partner members may be admitted automatically into meetings organized by authorized users.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-15a</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.1.3v1"
+          },
+          "fixtext": {
+            "+content": "1.\tSign in to the Microsoft Teams admin center.\n2.\tSelect Meetings > Meeting policies.\n3.\tSelect the Global (Org-wide default) policy.\n4.\tUnder the Meeting join & lobby section, ensure Who can bypass the lobby is not set to Everyone. Bypassing the lobby should be set to People in my org, though other options may be used if needed.\n5.\tIn the same section, set People dialing in can bypass the lobby to Off.",
+            "+@fixref": "F-4E96A2A0r23C389_fix"
+          },
+          "fix": {
+            "+@id": "F-4E96A2A0r23C389_fix"
+          },
+          "check": {
+            "+@system": "C-4E96A2A0r23C389_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Anonymous users and dial-in callers SHOULD NOT be admitted automatically.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Manage who can present and request control in Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/meeting-who-present-request-control)\n- Meeting policy settings | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference#meetings)\n- Teams cloud meeting recording | Microsoft Learn  (https://learn.microsoft.com/en-us/microsoftteams/cloud-recording)\n- Assign policies in Teams – getting started | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview)\n- Live Event Recording Policies | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/teams-live-events/live-events-recording-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-6DA7659A",
+        "title": "1. Meeting Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6DA7659ArFD0BA9_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.1.4v1",
+          "title": "Internal users SHOULD be admitted automatically.",
+          "description": "<VulnDiscussion>Internal users SHOULD be admitted automatically.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Requiring internal users to wait in the lobby for explicit admission can lead to admission fatigue. This policy enables internal users to be automatically admitted to the meeting through global policy.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy. Custom meeting policies MAY be created to allow specific users more flexibility.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.1.4v1"
+          },
+          "fixtext": {
+            "+content": "1.\tSign in to the Microsoft Teams admin center.\n2.\tSelect Meetings > Meeting policies.\n3.\tSelect the Global (Org-wide default) policy.\n4.\tUnder the Meeting join & lobby section, ensure Who can bypass the lobby is set to People in my org.\n5.\tIn the same section, set People dialing in can bypass the lobby to Off.",
+            "+@fixref": "F-6DA7659ArFD0BA9_fix"
+          },
+          "fix": {
+            "+@id": "F-6DA7659ArFD0BA9_fix"
+          },
+          "check": {
+            "+@system": "C-6DA7659ArFD0BA9_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Internal users SHOULD be admitted automatically.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Manage who can present and request control in Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/meeting-who-present-request-control)\n- Meeting policy settings | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference#meetings)\n- Teams cloud meeting recording | Microsoft Learn  (https://learn.microsoft.com/en-us/microsoftteams/cloud-recording)\n- Assign policies in Teams – getting started | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview)\n- Live Event Recording Policies | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/teams-live-events/live-events-recording-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-128EAE7E",
+        "title": "1. Meeting Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-128EAE7Er717A5D_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.1.5v1",
+          "title": "Dial-in users SHOULD NOT be enabled to bypass the lobby.",
+          "description": "<VulnDiscussion>Dial-in users SHOULD NOT be enabled to bypass the lobby.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Automatically admitting dial-in users reduces control over who can participate in a meeting and increases potential for data breaches. This policy reduces the risk by requiring all dial-in users to wait in a lobby until they are admitted by an authorized meeting participant.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy, as well as custom meeting policies.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-15a</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.1.5v1"
+          },
+          "fixtext": {
+            "+content": "1.\tSign in to the Microsoft Teams admin center.\n2.\tSelect Meetings > Meeting policies.\n3.\tSelect the Global (Org-wide default) policy.\n4.\tUnder the Meeting join & lobby section, set People dialing in can bypass the lobby to Off.",
+            "+@fixref": "F-128EAE7Er717A5D_fix"
+          },
+          "fix": {
+            "+@id": "F-128EAE7Er717A5D_fix"
+          },
+          "check": {
+            "+@system": "C-128EAE7Er717A5D_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Dial-in users SHOULD NOT be enabled to bypass the lobby.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Manage who can present and request control in Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/meeting-who-present-request-control)\n- Meeting policy settings | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference#meetings)\n- Teams cloud meeting recording | Microsoft Learn  (https://learn.microsoft.com/en-us/microsoftteams/cloud-recording)\n- Assign policies in Teams – getting started | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview)\n- Live Event Recording Policies | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/teams-live-events/live-events-recording-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-D27EAB1F",
+        "title": "1. Meeting Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D27EAB1FrEB6B4C_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.1.6v1",
+          "title": "Meeting recording SHOULD be disabled.",
+          "description": "<VulnDiscussion>Meeting recording SHOULD be disabled.\n\nCriticality: SHOULD.\nLast modified: March 2025.\n\nRationale: Allowing any user to record a Teams meeting or group call may lead to unauthorized disclosure of shared information, including audio, video, and shared screens. By disabling the meeting recording setting in the Global (Org-wide default) meeting policy, an agency limits information exposure.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy. Custom policies MAY be created to allow more flexibility for specific users.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.1.6v1"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the Microsoft Teams admin center.\n2.  Select Meetings > Meeting policies.\n3.  Select the Global (Org-wide default) policy.\n4.  Under the Recording & transcription section, set **Meeting\nrecording to Off**.\n5.  Select Save.",
+            "+@fixref": "F-D27EAB1FrEB6B4C_fix"
+          },
+          "fix": {
+            "+@id": "F-D27EAB1FrEB6B4C_fix"
+          },
+          "check": {
+            "+@system": "C-D27EAB1FrEB6B4C_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Meeting recording SHOULD be disabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Manage who can present and request control in Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/meeting-who-present-request-control)\n- Meeting policy settings | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference#meetings)\n- Teams cloud meeting recording | Microsoft Learn  (https://learn.microsoft.com/en-us/microsoftteams/cloud-recording)\n- Assign policies in Teams – getting started | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview)\n- Live Event Recording Policies | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/teams-live-events/live-events-recording-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-29602AD4",
+        "title": "1. Meeting Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-29602AD4rE08EF5_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.1.7v2",
+          "title": "Record an event SHOULD NOT be set to Always record.",
+          "description": "<VulnDiscussion>Record an event SHOULD NOT be set to Always record.\n\nCriticality: SHOULD.\nLast modified: March 2025.\n\nRationale: Limiting recording permissions to only the organizer minimizes the security risk to the organizer's discretion for these Live Events, reducing data leakage and other security risks. Administrators can also disable recording for all live events.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy. Custom policies MAY be created to allow more flexibility for specific users.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-21a</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.1.7v2"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the **Microsoft Teams admin\ncenter**.\n2.  Select Meetings > Live events policies.\n3.  Select Global (Org-wide default) policy.\n4.  Set Record an event to either  Organizer can record or Never record\n5.  Click Save.\n6.  If custom policies were created, repeat these steps for each\npolicy, selecting the appropriate policy in step 3.\nSteps for the unmanaged users are outlined in Manage chat with external Teams users not managed by an organization (https://learn.microsoft.com/en-us/microsoftteams/manage-external-access#manage-chat-with-external-teams-users-not-managed-by-an-organization).",
+            "+@fixref": "F-29602AD4rE08EF5_fix"
+          },
+          "fix": {
+            "+@id": "F-29602AD4rE08EF5_fix"
+          },
+          "check": {
+            "+@system": "C-29602AD4rE08EF5_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Record an event SHOULD NOT be set to Always record.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Manage who can present and request control in Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/meeting-who-present-request-control)\n- Meeting policy settings | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference#meetings)\n- Teams cloud meeting recording | Microsoft Learn  (https://learn.microsoft.com/en-us/microsoftteams/cloud-recording)\n- Assign policies in Teams – getting started | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview)\n- Live Event Recording Policies | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/teams-live-events/live-events-recording-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-CB001A11",
+        "title": "2. External User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CB001A11rF49E74_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.TEAMS.2.1v2",
+          "title": "External access for users SHALL only be enabled on a per-domain basis.",
+          "description": "<VulnDiscussion>External access for users SHALL only be enabled on a per-domain basis.\n\nCriticality: SHALL.\nLast modified: August 2025.\n\nRationale: The default configuration allows members to communicate with all external users with similar access permissions. Unrestricted access can lead to data breaches and other security threats. This policy provides protection against threats posed by unrestricted access by allowing communication with only trusted domains.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3\n\nMITRE ATT&CK: T1199: Trusted Relationship; T1204: User Execution; T1204.001: Malicious Link</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.2.1v2"
+          },
+          "fixtext": {
+            "+content": "To enable external access for only specific domains:\n1.  Sign in to the Microsoft Teams admin center.\n2.  Select Users > External access > Organization settings.\n3.  Next to Teams and Skype for Business users in external organizations,\nselect Allow only specific external domains\n4.  Select Add external domains. Enter domains allowed, and then select Done\nNOTE: Domains will need to be added in this step in order for users to communicate with them.\n5.  Click Save.",
+            "+@fixref": "F-CB001A11rF49E74_fix"
+          },
+          "fix": {
+            "+@id": "F-CB001A11rF49E74_fix"
+          },
+          "check": {
+            "+@system": "C-CB001A11rF49E74_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "External access for users SHALL only be enabled on a per-domain basis.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- IT Admins - Manage external meetings and chat with people and organizations using Microsoft identities | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/manage-external-access)\n- Teams settings and policies reference | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/meeting-settings-in-teams#allow-anonymous-users-to-join-meetings)\n- Use guest access and external access to collaborate with people outside your organization | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/communicate-with-users-from-other-organizations)\n- Manage chat with external Teams users not managed by an organization | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/manage-external-access#manage-chat-with-external-teams-users-not-managed-by-an-organization)"
+          }
+        }
+      },
+      {
+        "+@id": "V-2A6DC9C2",
+        "title": "2. External User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2A6DC9C2r407092_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.TEAMS.2.2v2",
+          "title": "Unmanaged users SHALL NOT be enabled to initiate contact with internal users.",
+          "description": "<VulnDiscussion>Unmanaged users SHALL NOT be enabled to initiate contact with internal users.\n\nCriticality: SHALL.\nLast modified: August 2025.\n\nRationale: Allowing contact from unmanaged users can expose users to email and contact address harvesting. This policy provides protection against this type of harvesting.\n\nNote: This policy is not applicable to Government Community Cloud (GCC), GCC High, and Department of Defense (DoD) tenants.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7, SI-8\n\nMITRE ATT&CK: T1204: User Execution; T1204.001: Malicious Link</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.2.2v2"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the Microsoft Teams admin center.\n2.  Select Users > External access.\n3.  Select Policies.\n4.  Select Global (Org-wide Default).\n5. Under Edit policy details, toggle People in my organization can communicate with unmanaged Teams accounts to one of the following:\n1. To completely block contact with unmanaged users, toggle the setting to Off.\n2. To allow contact with unmanaged users only if the internal user initiates the contact:\n- Toggle the setting to On.\n- Clear the check next to External users with Teams accounts not managed by an organization can contact users in my organization.",
+            "+@fixref": "F-2A6DC9C2r407092_fix"
+          },
+          "fix": {
+            "+@id": "F-2A6DC9C2r407092_fix"
+          },
+          "check": {
+            "+@system": "C-2A6DC9C2r407092_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Unmanaged users SHALL NOT be enabled to initiate contact with internal users.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- IT Admins - Manage external meetings and chat with people and organizations using Microsoft identities | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/manage-external-access)\n- Teams settings and policies reference | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/meeting-settings-in-teams#allow-anonymous-users-to-join-meetings)\n- Use guest access and external access to collaborate with people outside your organization | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/communicate-with-users-from-other-organizations)\n- Manage chat with external Teams users not managed by an organization | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/manage-external-access#manage-chat-with-external-teams-users-not-managed-by-an-organization)"
+          }
+        }
+      },
+      {
+        "+@id": "V-AD78953F",
+        "title": "2. External User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AD78953Fr1A452C_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.2.3v2",
+          "title": "Internal users SHOULD NOT be enabled to initiate contact with unmanaged users.",
+          "description": "<VulnDiscussion>Internal users SHOULD NOT be enabled to initiate contact with unmanaged users.\n\nCriticality: SHOULD.\nLast modified: August 2025.\n\nRationale: Contact with unmanaged users can pose the risk of data leakage and other security threats. This policy provides protection by disabling internal user access to unmanaged users.\n\nNote: This policy is not applicable to Government Community Cloud (GCC), GCC High, and Department of Defense (DoD) tenants.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7, SC-7(10)(a)\n\nMITRE ATT&CK: T1204: User Execution; T1204.001: Malicious Link</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.2.3v2"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the Microsoft Teams admin center.\n2.  Select Users > External access.\n3.  Select Policies.\n4.  Select Global (Org-wide Default).\n4.  To completely block contact with unmanaged users, under Edit policy details, set People in my organization can communicate with unmanaged Teams accounts to Off.",
+            "+@fixref": "F-AD78953Fr1A452C_fix"
+          },
+          "fix": {
+            "+@id": "F-AD78953Fr1A452C_fix"
+          },
+          "check": {
+            "+@system": "C-AD78953Fr1A452C_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Internal users SHOULD NOT be enabled to initiate contact with unmanaged users.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- IT Admins - Manage external meetings and chat with people and organizations using Microsoft identities | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/manage-external-access)\n- Teams settings and policies reference | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/meeting-settings-in-teams#allow-anonymous-users-to-join-meetings)\n- Use guest access and external access to collaborate with people outside your organization | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/communicate-with-users-from-other-organizations)\n- Manage chat with external Teams users not managed by an organization | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/manage-external-access#manage-chat-with-external-teams-users-not-managed-by-an-organization)"
+          }
+        }
+      },
+      {
+        "+@id": "V-15F709A3",
+        "title": "4. Teams Email Integration",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-15F709A3r118FAF_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.TEAMS.4.1v1",
+          "title": "Teams email integration SHALL be disabled.",
+          "description": "<VulnDiscussion>Teams email integration SHALL be disabled.\n\nCriticality: SHALL.\nLast modified: July 2023.\n\nRationale: Microsoft Teams email integration associates a Microsoft, not tenant domain, email address with a Teams channel. Channel emails are addressed using the Microsoft-owned domain <code>&lt;teams.ms&gt;</code>. By disabling Teams email integration, an agency prevents potentially sensitive Teams messages from being sent through external email gateways.\n\nNote: Teams email integration is not applicable to Government Community Cloud (GCC), GCC High, and Department of Defense (DoD) tenants.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8, SC-7(10)(a), AC-4\n\nMITRE ATT&CK: T1204: User Execution; T1204.001: Malicious Link; T1204.002: Malicious File</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.4.1v1"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the **Microsoft Teams admin\ncenter**.\n2.  Select Teams > Teams Settings.\n3.  Under the Email integration section, set **Users can send\nemails to a channel email address to Off**.",
+            "+@fixref": "F-15F709A3r118FAF_fix"
+          },
+          "fix": {
+            "+@id": "F-15F709A3r118FAF_fix"
+          },
+          "check": {
+            "+@system": "C-15F709A3r118FAF_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Teams email integration SHALL be disabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Email Integration | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference#email-integration)"
+          }
+        }
+      },
+      {
+        "+@id": "V-273F4E5E",
+        "title": "5. App Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-273F4E5ErD1C9B2_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.5.1v2",
+          "title": "Agencies SHOULD only allow installation of Microsoft apps approved by the agency.",
+          "description": "<VulnDiscussion>Agencies SHOULD only allow installation of Microsoft apps approved by the agency.\n\nCriticality: SHOULD.\nLast modified: August 2025.\n\nRationale: Allowing Teams integration with all Microsoft apps can expose the agency to potential vulnerabilities present in those apps. By only allowing specific apps and blocking all others, the agency can better manage app integration and potential exposure points.\n\nNote: This policy applies to the Global (Org-wide default) policy, all custom policies, and the org-wide app settings. Custom policies MAY be created to allow more flexibility for specific users.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-11\n\nMITRE ATT&CK: T1195: Supply Chain Compromise</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.5.1v2"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the Microsoft Teams admin center.\n2.  Select Teams apps > Manage apps.\n3.  In the upper right-hand corner select Actions\n4.  Select Org-wide app settings.\n5.  Under Microsoft apps > Select On\n6.  Click Save.\nNOTE: This will make Microsoft apps in the application list available to \"Everyone.\" If adjustments are needed follow the remaining instructions\n7. Select Teams apps > Manage apps.\n8. Select each individual app.\n9. Select Users and groups > Edit availability\n10. Change Available to to the appropriate setting for your organization. (Everyone, Specific users or groups, or No one)\n11. Repeat steps 7 to 10 for each application",
+            "+@fixref": "F-273F4E5ErD1C9B2_fix"
+          },
+          "fix": {
+            "+@id": "F-273F4E5ErD1C9B2_fix"
+          },
+          "check": {
+            "+@system": "C-273F4E5ErD1C9B2_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Agencies SHOULD only allow installation of Microsoft apps approved by the agency.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Use app permission policies to control user access to apps | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/teams-app-permission-policies)\n- Upload your app in Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload)"
+          }
+        }
+      },
+      {
+        "+@id": "V-9B7A73CF",
+        "title": "5. App Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9B7A73CFr588635_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.5.2v2",
+          "title": "Agencies SHOULD only allow installation of third-party apps approved by the agency.",
+          "description": "<VulnDiscussion>Agencies SHOULD only allow installation of third-party apps approved by the agency.\n\nCriticality: SHOULD.\nLast modified: August 2025.\n\nRationale: Allowing Teams integration with third-party apps can expose the agency to potential vulnerabilities present in an app not managed by the agency. By allowing only specific apps approved by the agency and blocking all others, the agency can limit its exposure to third-party app vulnerabilities.\n\nNote: This policy applies to the Global (Org-wide default) policy, all custom policies if they exist, and the org-wide settings. Custom policies MAY be created to allow more flexibility for specific users. Third-party apps are not available in GCC, GCC High, or DoD regions.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-11\n\nMITRE ATT&CK: T1195: Supply Chain Compromise; T1528: Steal Application Access Token</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.5.2v2"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the Microsoft Teams admin center.\n2.  Select Teams apps > Manage apps.\n3.  In the upper right-hand corner select Actions\n4.  Select Org-wide app settings.\n5.  Under Third-party apps > Select Off\n6.  Click Save.\nNOTE: This will make third party apps in the application list available to \"No one.\" If adjustments are needed follow the remaining                     instructions\n7.  Select Teams apps > Manage apps.\n8.  Select each individual app.\n9.  Select Users and groups > Edit availability\n10.  Change Available to to the appropriate setting for your organization. (Everyone, Specific users or groups, or No one)\n11.  Repeat steps 7 to 10 for each application",
+            "+@fixref": "F-9B7A73CFr588635_fix"
+          },
+          "fix": {
+            "+@id": "F-9B7A73CFr588635_fix"
+          },
+          "check": {
+            "+@system": "C-9B7A73CFr588635_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Agencies SHOULD only allow installation of third-party apps approved by the agency.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Use app permission policies to control user access to apps | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/teams-app-permission-policies)\n- Upload your app in Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload)"
+          }
+        }
+      },
+      {
+        "+@id": "V-42EBC2AD",
+        "title": "5. App Management",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-42EBC2ADrCFBB27_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.5.3v2",
+          "title": "Agencies SHOULD only allow installation of custom apps approved by the agency.",
+          "description": "<VulnDiscussion>Agencies SHOULD only allow installation of custom apps approved by the agency.\n\nCriticality: SHOULD.\nLast modified: August 2025.\n\nRationale: Allowing custom apps integration can expose the agency to potential vulnerabilities present in an app not managed by the agency. By allowing only specific apps approved by the agency and blocking all others, the agency can limit its exposure to custom app vulnerabilities.\n\nNote: This policy applies to the Global (Org-wide default) policy, all custom policies if they exist, and the org-wide settings. Custom policies MAY be created to allow more flexibility for specific users. Custom apps are not available in GCC, GCC High, or DoD regions.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-11\n\nMITRE ATT&CK: T1195: Supply Chain Compromise; T1528: Steal Application Access Token</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.5.3v2"
+          },
+          "fixtext": {
+            "+content": "1.  Sign in to the Microsoft Teams admin center.\n2.  Select Teams apps > Manage apps.\n3.  In the upper right-hand corner select Actions\n4.  Select Org-wide app settings.\n5.  Under Custom apps > Select Off\n6.  Click Save.\nNOTE: This will make Custom apps in the application list available to \"No one.\" If adjustments are needed follow the remaining                     instructions\n7.  Select Teams apps > Manage apps.\n8.  Select each individual app.\n9.  Select Users and groups > Edit availability\n10.  Change Available to to the appropriate setting for your organization. (Everyone, Specific users or groups, or No one)\n11.  Repeat steps 7 to 10 for each application",
+            "+@fixref": "F-42EBC2ADrCFBB27_fix"
+          },
+          "fix": {
+            "+@id": "F-42EBC2ADrCFBB27_fix"
+          },
+          "check": {
+            "+@system": "C-42EBC2ADrCFBB27_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Agencies SHOULD only allow installation of custom apps approved by the agency.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Use app permission policies to control user access to apps | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/teams-app-permission-policies)\n- Upload your app in Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload)"
+          }
+        }
+      },
+      {
+        "+@id": "V-F8570BAF",
+        "title": "6. Data Loss Prevention",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F8570BAFr2C398B_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.TEAMS.6.1v1",
+          "title": "A DLP solution SHALL be enabled and SHOULD offer services comparable to the native DLP solution offered by Microsoft.",
+          "description": "<VulnDiscussion>A DLP solution SHALL be enabled and SHOULD offer services comparable to the native DLP solution offered by Microsoft.\n\nCriticality: SHALL.\nLast modified: July 2023.\n\nRationale: Teams users may inadvertently disclose sensitive information to unauthorized individuals. DLP policies provide a way for agencies to detect and prevent unauthorized disclosures.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\nMITRE ATT&CK: T1213: Data from Information Repositories; T1530: Data from Cloud Storage</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.6.1v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be used. If the agency uses Microsoft Defender, see the following implementation steps for DLP (./defender.md#implementation-3) for additional guidance.",
+            "+@fixref": "F-F8570BAFr2C398B_fix"
+          },
+          "fix": {
+            "+@id": "F-F8570BAFr2C398B_fix"
+          },
+          "check": {
+            "+@system": "C-F8570BAFr2C398B_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "A DLP solution SHALL be enabled and SHOULD offer services comparable to the native DLP solution offered by Microsoft.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Plan for data loss prevention (DLP) | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/compliance/dlp-overview-plan-for-dlp?view=o365-worldwide)\n- Personally identifiable information (PII) | NIST (https://csrc.nist.gov/glossary/term/personally_identifiable_information#:~:text=NISTIR%208259,2%20under%20PII%20from%20EGovAct)\n- Sensitive information | NIST (https://csrc.nist.gov/glossary/term/sensitive_information)"
+          }
+        }
+      },
+      {
+        "+@id": "V-980244FD",
+        "title": "6. Data Loss Prevention",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-980244FDr5FC7B4_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.TEAMS.6.2v1",
+          "title": "The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency. At a minimum, sharing credit card numbers, taxpayer identification numbers (TINs), and Social Security numbers (SSNs) via email SHALL be restricted.",
+          "description": "<VulnDiscussion>The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency. At a minimum, sharing credit card numbers, taxpayer identification numbers (TINs), and Social Security numbers (SSNs) via email SHALL be restricted.\n\nCriticality: SHALL.\nLast modified: July 2023.\n\nRationale: Teams users may inadvertently share sensitive information with others who should not have access to it. DLP policies provide a way for agencies to detect and prevent unauthorized sharing of sensitive information.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\nMITRE ATT&CK: T1213: Data from Information Repositories; T1530: Data from Cloud Storage</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.6.2v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be used. If the agency uses Microsoft Defender, see the following implementation steps for DLP (./defender.md#implementation-3) for additional guidance.",
+            "+@fixref": "F-980244FDr5FC7B4_fix"
+          },
+          "fix": {
+            "+@id": "F-980244FDr5FC7B4_fix"
+          },
+          "check": {
+            "+@system": "C-980244FDr5FC7B4_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency. At a minimum, sharing credit card numbers, taxpayer identification numbers (TINs), and Social Security numbers (SSNs) via email SHALL be restricted.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Plan for data loss prevention (DLP) | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/compliance/dlp-overview-plan-for-dlp?view=o365-worldwide)\n- Personally identifiable information (PII) | NIST (https://csrc.nist.gov/glossary/term/personally_identifiable_information#:~:text=NISTIR%208259,2%20under%20PII%20from%20EGovAct)\n- Sensitive information | NIST (https://csrc.nist.gov/glossary/term/sensitive_information)"
+          }
+        }
+      },
+      {
+        "+@id": "V-28142516",
+        "title": "7. Malware Scanning",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-28142516r75D2BD_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.7.1v1",
+          "title": "Attachments included with Teams messages SHOULD be scanned for malware.",
+          "description": "<VulnDiscussion>Attachments included with Teams messages SHOULD be scanned for malware.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Teams can be used as a mechanism for delivering malware. In many cases, malware can be detected through scanning, reducing the risk for end users.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3a\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.7.1v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be used. If the agency uses Microsoft Defender, see the following implementation steps for Safe Attachments (./defender.md#implementation-2) for additional guidance.",
+            "+@fixref": "F-28142516r75D2BD_fix"
+          },
+          "fix": {
+            "+@id": "F-28142516r75D2BD_fix"
+          },
+          "check": {
+            "+@system": "C-28142516r75D2BD_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Attachments included with Teams messages SHOULD be scanned for malware.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Safe Attachments in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-about?view=o365-worldwide#safe-attachments-policy-settings)\n- Turn on Safe Attachments for SharePoint, OneDrive, and Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-A3868DBF",
+        "title": "7. Malware Scanning",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A3868DBFrEE67F9_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.7.2v1",
+          "title": "Users SHOULD be prevented from opening or downloading files detected as malware.",
+          "description": "<VulnDiscussion>Users SHOULD be prevented from opening or downloading files detected as malware.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Teams can be used as a mechanism for delivering malware. In many cases, malware can be detected through scanning, reducing the risk for end users.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3a\n\nMITRE ATT&CK: T1204: User Execution; T1204.002: Malicious File</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.7.2v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be used. If the agency uses Microsoft Defender, see the following implementation steps for Safe Attachments (./defender.md#implementation-2) for additional guidance.",
+            "+@fixref": "F-A3868DBFrEE67F9_fix"
+          },
+          "fix": {
+            "+@id": "F-A3868DBFrEE67F9_fix"
+          },
+          "check": {
+            "+@system": "C-A3868DBFrEE67F9_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "Users SHOULD be prevented from opening or downloading files detected as malware.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Safe Attachments in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-about?view=o365-worldwide#safe-attachments-policy-settings)\n- Turn on Safe Attachments for SharePoint, OneDrive, and Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-EB116C21",
+        "title": "8. Link Protection",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-EB116C21rAF5087_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.8.1v1",
+          "title": "URL comparison with a blocklist SHOULD be enabled.",
+          "description": "<VulnDiscussion>URL comparison with a blocklist SHOULD be enabled.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Users may be directed to malicious websites via links in Teams. Blocking access to known malicious URLs can help prevent users from accessing known malicious websites.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3a\n\nMITRE ATT&CK: T1204: User Execution; T1204.001: Malicious Link; T1204.002: Malicious File; T1566: Phishing; T1566.001: Spearphishing Attachment; T1189: Drive-by Compromise</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.8.1v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be used. If the agency uses Microsoft Defender, see the following implementation steps for standard or strict preset security policy (defender.md#msdefender13v1-instructions) for additional guidance.",
+            "+@fixref": "F-EB116C21rAF5087_fix"
+          },
+          "fix": {
+            "+@id": "F-EB116C21rAF5087_fix"
+          },
+          "check": {
+            "+@system": "C-EB116C21rAF5087_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "URL comparison with a blocklist SHOULD be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Recommended settings for EOP and Microsoft Defender for Office 365 security | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/recommended-settings-for-eop-and-office365)\n- Set up Safe Links policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-AD4ACB1D",
+        "title": "8. Link Protection",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-AD4ACB1Dr08F6AD_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.TEAMS.8.2v1",
+          "title": "User click tracking SHOULD be enabled.",
+          "description": "<VulnDiscussion>User click tracking SHOULD be enabled.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Users may click on malicious links in Teams, leading to compromise or authorized data disclosure. Enabling user click tracking lets agencies know if a malicious link may have been visited after the fact to help tailor a response to a potential incident.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-12c\n\nMITRE ATT&CK: T1204: User Execution; T1204.001: Malicious Link; T1204.002: Malicious File; T1566: Phishing; T1566.001: Spearphishing Attachment; T1189: Drive-by Compromise</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Teams",
+            "dc:identifier": "MS.TEAMS.8.2v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be used. If the agency uses Microsoft Defender, see the following implementation steps for standard or strict preset security policy (defender.md#msdefender13v1-instructions) for additional guidance.\n[^1]: Note that B2B guest users and all anonymous users except for\nexternal users appear in Teams calls as _John Doe (Guest)_. To avoid\npotential confusion, true guest users are always referred to as B2B guest users in this document.",
+            "+@fixref": "F-AD4ACB1Dr08F6AD_fix"
+          },
+          "fix": {
+            "+@id": "F-AD4ACB1Dr08F6AD_fix"
+          },
+          "check": {
+            "+@system": "C-AD4ACB1Dr08F6AD_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Teams.xml",
+              "+@name": "M"
+            },
+            "check-content": "User click tracking SHOULD be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Recommended settings for EOP and Microsoft Defender for Office 365 security | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/recommended-settings-for-eop-and-office365)\n- Set up Safe Links policies in Microsoft Defender for Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide)"
+          }
+        }
+      }
+    ]
+  }
+}

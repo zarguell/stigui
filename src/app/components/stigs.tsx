@@ -282,14 +282,15 @@ export const Stigs = () => {
                     </h1>
                     <p className="text-sm text-muted mt-1">
                         Browse the catalog of DISA Security Technical
-                        Implementation Guides and SRGs, and CIS Benchmarks —
-                        the configuration standards used to harden systems
-                        against security risks. Search, filter, and sort the
-                        list below, then open a guide to review its
-                        requirements by severity and classification, or
-                        export it as XML, JSON, or CSV to build a checklist.
-                        Have a STIG that isn&apos;t listed? Import an XCCDF
-                        file or a DISA library zip with{" "}
+                        Implementation Guides and SRGs, CIS Benchmarks, and
+                        CISA ScubaGear M365 baselines — the configuration
+                        standards used to harden systems against security
+                        risks. Search, filter, and sort the list below, then
+                        open a guide to review its requirements by severity
+                        and classification, or export it as XML, JSON, or CSV
+                        to build a checklist. Have a STIG that isn&apos;t
+                        listed? Import an XCCDF file or a DISA library zip
+                        with{" "}
                         <span className="whitespace-nowrap">
                             Upload STIG ⬆️
                         </span>

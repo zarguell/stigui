@@ -1,0 +1,500 @@
+{
+  "id": "CISA_SharePoint_Online_and_OneDrive",
+  "from_version": "1.5.0",
+  "to_version": "1.6.0",
+  "date": "2025-07-09",
+  "counts": {
+    "unchanged": 3,
+    "updated": 5,
+    "added": 0,
+    "removed": 1
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-0AE8B2FF",
+      "rule_id": "SV-0AE8B2FFr1BC570",
+      "rule_title": "External sharing for OneDrive SHALL be limited to Existing guests or Only people in your organization.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 54,
+              "added": false,
+              "removed": false,
+              "value": "External sharing for OneDrive SHALL be limited to Existing guests or Only people in your organization.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Sharing files outside the organization via OneDrive increases the risk of unauthorized access. By limiting external sharing, administrators decrease the risk of unauthorized "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "unauthorized "
+            },
+            {
+              "count": 35,
+              "added": false,
+              "removed": false,
+              "value": "access to information.\n\nMITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-1C2F5EF0",
+      "rule_id": "SV-1C2F5EF0rEE2281",
+      "rule_title": "External sharing SHALL be restricted to approved external domains and/or users in approved security groups per interagency collaboration needs.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 29,
+              "added": false,
+              "removed": false,
+              "value": "External sharing SHALL be restricted to approved external domains and/or users in approved security groups per interagency collaboration needs.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "June 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "March 2025"
+            },
+            {
+              "count": 19,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: By limiting sharing to domains or approved security groups used for interagency collaboration purposes, administrators "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "can "
+            },
+            {
+              "count": 21,
+              "added": false,
+              "removed": false,
+              "value": "help prevent sharing with unknown organizations and individuals.\n\nNote: This policy is only applicable if the external sharing slider "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "on"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "in"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " the "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "SharePoint "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "admin "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "page"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "center"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " is "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "not "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "set to "
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": true,
+              "value": "any value other than "
+            },
+            {
+              "count": 41,
+              "added": false,
+              "removed": false,
+              "value": "**Only people in your organization**.\n\nMITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-35F1C330",
+      "rule_id": "SV-35F1C330r6D182A",
+      "rule_title": "Reauthentication days for people who use a verification code SHALL be set to 30 days or less.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": "Reauthentication days for people who use a verification code SHALL be set to 30 days or less.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "June 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "March 2025"
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: A verification code may be "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "given out"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "issued"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": " to provide access to information for a short period"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": " of time"
+            },
+            {
+              "count": 11,
+              "added": false,
+              "removed": false,
+              "value": ". By setting expiration timers for verification code access, administrators "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "can "
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "prevent unintended sustained access to "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "information"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "documents"
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nNote: This policy is only applicable if the external sharing slider "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "on"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "in"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " the "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "SharePoint "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "admin center "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "sharing page "
+            },
+            {
+              "count": 41,
+              "added": false,
+              "removed": false,
+              "value": "is set to **Anyone** or **New and existing guests**.\n\nMITRE ATT&CK: T1080: Taint Shared Content; T1565: Data Manipulation; T1565.001: Stored Data Manipulation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-95B14660",
+      "rule_id": "SV-95B14660r39254C",
+      "rule_title": "The allowable file and folder permissions for links SHALL be set to View only.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": "The allowable file and folder permissions for links SHALL be set to View only.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "June 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "March 2025"
+            },
+            {
+              "count": 48,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Unauthorized changes to files can be made if permissions allow editing by anyone.  By restricting permissions on links to **View** only, administrators prevent anonymous file changes.\n\nNote: This policy is only applicable if the external sharing slider "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "on"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "in"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " the "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "SharePoint "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "admin center "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "sharing page "
+            },
+            {
+              "count": 32,
+              "added": false,
+              "removed": false,
+              "value": "is set to **Anyone**.\n\nMITRE ATT&CK: T1080: Taint Shared Content; T1565: Data Manipulation; T1565.001: Stored Data Manipulation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-EDB2DB45",
+      "rule_id": "SV-EDB2DB45r85E6A8",
+      "rule_title": "Expiration days for Anyone links SHALL be set to 30 days or less.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 21,
+              "added": false,
+              "removed": false,
+              "value": "Expiration days for Anyone links SHALL be set to 30 days or less.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "June 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "March 2025"
+            },
+            {
+              "count": 36,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Links may be used to provide access to information for a short period of time. Without expiration, however, access is indefinite. By setting expiration timers for links, administrators "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "can "
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "prevent unintended sustained access to "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "information"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "the link"
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nNote: This policy is only applicable if the external sharing slider "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "on"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "in"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " the "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "SharePoint "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "admin center "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "sharing page "
+            },
+            {
+              "count": 40,
+              "added": false,
+              "removed": false,
+              "value": "is set to **Anyone**.\n\nMITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "removed",
+      "group_id": "V-A3AD5DE9",
+      "rule_id": "SV-A3AD5DE9r71F31E",
+      "rule_title": "Guest access SHALL be limited to the email the invitation was sent to.",
+      "fieldDiffs": []
+    }
+  ]
+}

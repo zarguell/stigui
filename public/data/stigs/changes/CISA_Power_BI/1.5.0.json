@@ -1,0 +1,340 @@
+{
+  "id": "CISA_Power_BI",
+  "from_version": "1.5.0",
+  "to_version": "1.7.0",
+  "date": "2026-02-11",
+  "counts": {
+    "unchanged": 0,
+    "updated": 8,
+    "added": 0,
+    "removed": 0
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-008D2E16",
+      "rule_id": "SV-008D2E16rA395E7",
+      "rule_title": "ResourceKey-based authentication SHOULD be blocked unless a specific use case (e.g., streaming and/or PUSH datasets) merits its use.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 82,
+              "added": false,
+              "removed": false,
+              "value": "ResourceKey-based authentication SHOULD be blocked unless a specific use case (e.g., streaming and/or PUSH datasets) merits its use.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: If resource keys are allowed, someone can move data without Microsoft Entra ID OAuth bearer token, causing possibly malicious or junk data to be stored. Disabling resource keys reduces risk that an unauthorized individual will make changes.\n\n"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7, IA-5g\n\n"
+            },
+            {
+              "count": 28,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1134: Access Token Manipulation; T1134.001: Token Impersonation/Theft; T1134.003: Make and Impersonate Token"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-08943AE5",
+      "rule_id": "SV-08943AE5r0FD18C",
+      "rule_title": "Guest user access to the Power BI tenant SHOULD be disabled unless the agency mission requires the capability.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 77,
+              "added": false,
+              "removed": false,
+              "value": "Guest user access to the Power BI tenant SHOULD be disabled unless the agency mission requires the capability.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Disabling external access to Power BI helps keep guest users from accessing potentially risky data and application programming interfaces (APIs). If an agency needs to allow guest access, this can be limited to users in specific security groups to curb risk.\n\n"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7, AC-6\n\n"
+            },
+            {
+              "count": 34,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1485: Data Destruction; T1565: Data Manipulation; T1565.001: Stored Data Manipulation; T1078: Valid Accounts; T1078.001: Default Accounts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-27CEC0D9",
+      "rule_id": "SV-27CEC0D9r3FD116",
+      "rule_title": "The Invite external users to your organization feature SHOULD be disabled unless agency mission requires the capability.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 129,
+              "added": false,
+              "removed": false,
+              "value": "The Invite external users to your organization feature SHOULD be disabled unless agency mission requires the capability.\n\nCriticality: SHOULD.\nLast modified: June 2023 > Note: > If this feature is disabled, existing guest users in the tenant continue to have access to Power BI items they already had access to and continue to be listed in user picker experiences. After it is disabled, an external user who is not already a guest user cannot be added to the tenant through Power BI..\n\nRationale: Disabling this feature keeps internal users from inviting guest users. Therefore guest users can be limited from accessing potentially risky data/APIs. If an agency needs to allow guest access, the "
+            },
+            {
+              "count": 4,
+              "added": true,
+              "removed": false,
+              "value": "agency can limit the "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "invitation feature "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "can be limited "
+            },
+            {
+              "count": 11,
+              "added": false,
+              "removed": false,
+              "value": "to users in specific security groups to help limit risk.\n\n"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7, AC-6\n\n"
+            },
+            {
+              "count": 39,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1485: Data Destruction; T1565: Data Manipulation; T1565.001: Stored Data Manipulation; T1078: Valid Accounts; T1078.001: Default Accounts; T1199: Trusted Relationship"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-46A7467E",
+      "rule_id": "SV-46A7467Er4327CE",
+      "rule_title": "The Publish to Web feature SHOULD be disabled unless the agency mission requires the capability.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 61,
+              "added": false,
+              "removed": false,
+              "value": "The Publish to Web feature SHOULD be disabled unless the agency mission requires the capability.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: A publicly accessible web URL can be accessed by everyone, including malicious actors. This policy limits information available on the public web that is not specifically allowed to be published.\n\n"
+            },
+            {
+              "count": 26,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7, SC-7(10)(a)\n\n"
+            },
+            {
+              "count": 11,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1530: Data from Cloud Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-9A3C922E",
+      "rule_id": "SV-9A3C922Er006E9A",
+      "rule_title": "Service principals creating and using profiles SHOULD be restricted to specific security groups.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 63,
+              "added": false,
+              "removed": false,
+              "value": "Service principals creating and using profiles SHOULD be restricted to specific security groups.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: With unrestricted service principals creating/using profiles, there is risk of an unauthorized user using a profile with more permissions than they have. Allowing service principals through security groups will mitigate that risk.\n\n"
+            },
+            {
+              "count": 23,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-4, AC-6(5)\n\n"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-A15036E6",
+      "rule_id": "SV-A15036E6r2094A5",
+      "rule_title": "Python and R interactions SHOULD be disabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 36,
+              "added": false,
+              "removed": false,
+              "value": "Python and R interactions SHOULD be disabled.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: External code poses a security and privacy risk as there is no good way to regulate "
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": true,
+              "value": "what is done with the"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "use of "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": " data or integrations. Disabling this "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "will reduce"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "feature reduces"
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": false,
+              "value": " the risk of a data leak or malicious "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "actor"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "threat activity"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".\n\n"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7, SI-3\n\n"
+            },
+            {
+              "count": 32,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1059: Command and Scripting Interpreter; T1059.009: Cloud API; T1048: Exfiltration Over Alternative Protocol; T1567: Exfiltration Over Web Service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-CE2E6495",
+      "rule_id": "SV-CE2E6495r481755",
+      "rule_title": "Sensitivity labels SHOULD be enabled for Power BI and employed for sensitive data per enterprise data protection policies.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 77,
+              "added": false,
+              "removed": false,
+              "value": "Sensitivity labels SHOULD be enabled for Power BI and employed for sensitive data per enterprise data protection policies.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: A document without sensitivity labels may be opened unknowingly, potentially exposing data to someone who is not supposed to have access to it. This policy will help organize and classify data, making it easier to keep data out of the wrong hands.\n\n"
+            },
+            {
+              "count": 26,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-21b, SC-7(10)(a)\n\n"
+            },
+            {
+              "count": 38,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage; T1567: Exfiltration Over Web Service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-CFBAC00A",
+      "rule_id": "SV-CFBAC00ArF4F246",
+      "rule_title": "Service principals with access to APIs SHOULD be restricted to specific security groups.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 54,
+              "added": false,
+              "removed": false,
+              "value": "Service principals with access to APIs SHOULD be restricted to specific security groups.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: With unrestricted service principals, unwanted access to APIs is possible. Allowing service principals through security groups, and only where necessary, mitigates this risk.\n\n"
+            },
+            {
+              "count": 23,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-4, AC-6(5)\n\n"
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1059: Command and Scripting Interpreter; T1059.009: Cloud API"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

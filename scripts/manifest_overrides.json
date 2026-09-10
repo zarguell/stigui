@@ -1,0 +1,30 @@
+{
+  "CISA_Entra_ID": {
+    "category": "Cloud Providers",
+    "tags": ["Microsoft", "Cloud"]
+  },
+  "CISA_Defender": {
+    "category": "Cloud Providers",
+    "tags": ["Microsoft", "Cloud"]
+  },
+  "CISA_Exchange_Online": {
+    "category": "Cloud Providers",
+    "tags": ["Microsoft", "Cloud"]
+  },
+  "CISA_Power_BI": {
+    "category": "Cloud Providers",
+    "tags": ["Microsoft", "Cloud"]
+  },
+  "CISA_Power_Platform": {
+    "category": "Cloud Providers",
+    "tags": ["Microsoft", "Cloud"]
+  },
+  "CISA_SharePoint_Online_and_OneDrive": {
+    "category": "Cloud Providers",
+    "tags": ["Microsoft", "Cloud"]
+  },
+  "CISA_Teams": {
+    "category": "Cloud Providers",
+    "tags": ["Microsoft", "Cloud"]
+  }
+}

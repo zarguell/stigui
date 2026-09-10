@@ -49,3 +49,7 @@ jobs:
             - name: Run the CIS converter test suite
               working-directory: scripts/cis
               run: python3 -m pytest tests/ -q
+
+            - name: Run the ScubaGear converter test suite
+              working-directory: scripts/scuba
+              run: python3 -m pytest tests/ -q

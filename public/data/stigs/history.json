@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T15:19:13.011198+00:00",
+  "generated": "2026-09-10T22:02:38.774617+00:00",
   "benchmarks": {
     "AAA_Services": {
       "first_seen": "2026-09-09",
@@ -7438,6 +7438,151 @@
           "version": "7",
           "date": "2025-09-28",
           "recorded_at": "2026-09-09"
+        }
+      ]
+    },
+    "CISA_Defender": {
+      "first_seen": "2026-09-10",
+      "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2025-02-28",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.6.0",
+          "date": "2025-07-09",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.7.0",
+          "date": "2026-02-11",
+          "recorded_at": "2026-09-10"
+        }
+      ]
+    },
+    "CISA_Entra_ID": {
+      "first_seen": "2026-09-10",
+      "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2025-02-28",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.6.0",
+          "date": "2025-07-09",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.7.0",
+          "date": "2026-02-11",
+          "recorded_at": "2026-09-10"
+        }
+      ]
+    },
+    "CISA_Exchange_Online": {
+      "first_seen": "2026-09-10",
+      "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2025-02-28",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.6.0",
+          "date": "2025-07-09",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.7.0",
+          "date": "2026-02-11",
+          "recorded_at": "2026-09-10"
+        }
+      ]
+    },
+    "CISA_Power_BI": {
+      "first_seen": "2026-09-10",
+      "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2025-02-28",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.7.0",
+          "date": "2026-02-11",
+          "recorded_at": "2026-09-10"
+        }
+      ]
+    },
+    "CISA_Power_Platform": {
+      "first_seen": "2026-09-10",
+      "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2025-02-28",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.6.0",
+          "date": "2025-07-09",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.7.0",
+          "date": "2026-02-11",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.8.0",
+          "date": "2026-05-07",
+          "recorded_at": "2026-09-10"
+        }
+      ]
+    },
+    "CISA_SharePoint_Online_and_OneDrive": {
+      "first_seen": "2026-09-10",
+      "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2025-02-28",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.6.0",
+          "date": "2025-07-09",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.7.0",
+          "date": "2026-02-11",
+          "recorded_at": "2026-09-10"
+        }
+      ]
+    },
+    "CISA_Teams": {
+      "first_seen": "2026-09-10",
+      "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2025-02-28",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.6.0",
+          "date": "2025-07-09",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.7.0",
+          "date": "2026-02-11",
+          "recorded_at": "2026-09-10"
+        },
+        {
+          "version": "1.8.0",
+          "date": "2026-05-07",
+          "recorded_at": "2026-09-10"
         }
       ]
     }

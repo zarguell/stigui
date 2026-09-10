@@ -1,0 +1,2340 @@
+{
+  "id": "CISA_Teams",
+  "from_version": "1.6.0",
+  "to_version": "1.7.0",
+  "date": "2026-02-11",
+  "counts": {
+    "unchanged": 0,
+    "updated": 20,
+    "added": 0,
+    "removed": 1
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-128EAE7E",
+      "rule_id": "SV-128EAE7Er717A5D",
+      "rule_title": "Dial-in users SHOULD NOT be enabled to bypass the lobby.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 98,
+              "added": false,
+              "removed": false,
+              "value": "Dial-in users SHOULD NOT be enabled to bypass the lobby.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Automatically admitting dial-in users reduces control over who can participate in a meeting and increases potential for data breaches. This policy reduces the risk by requiring all dial-in users to wait in a lobby until they are admitted by an authorized meeting participant.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy, as well as custom meeting policies.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-15a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-15F709A3",
+      "rule_id": "SV-15F709A3r84F044",
+      "rule_title": "Teams email integration SHALL be disabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 104,
+              "added": false,
+              "removed": false,
+              "value": "Teams email integration SHALL be disabled.\n\nCriticality: SHALL.\nLast modified: July 2023.\n\nRationale: Microsoft Teams email integration associates a Microsoft, not tenant domain, email address with a Teams channel. Channel emails are addressed using the Microsoft-owned domain <code>&lt;teams.ms&gt;</code>. By disabling Teams email integration, an agency prevents potentially sensitive Teams messages from being sent through external email gateways.\n\nNote: Teams email integration is not available in GCC, GCC High, or DoD regions.\n\n"
+            },
+            {
+              "count": 30,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8, SC-7(10)(a), AC-4\n\n"
+            },
+            {
+              "count": 23,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1204: User Execution; T1204.001: Malicious Link; T1204.002: Malicious File"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-273F4E5E",
+      "rule_id": "SV-273F4E5ErD1C9B2",
+      "rule_title": "Agencies SHOULD only allow installation of Microsoft apps approved by the agency.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 20,
+              "added": false,
+              "removed": false,
+              "value": "Agencies SHOULD only allow installation of Microsoft apps approved by the agency.\n\nCriticality: SHOULD.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "July 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "August 2025"
+            },
+            {
+              "count": 34,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Allowing Teams integration with all Microsoft apps can expose the agency to potential vulnerabilities present in those apps. By only allowing specific apps and blocking all others, the agency "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "will"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "can"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": " better manage "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "its "
+            },
+            {
+              "count": 48,
+              "added": false,
+              "removed": false,
+              "value": "app integration and potential exposure points.\n\nNote: This policy applies to the Global (Org-wide default) policy, all custom policies, and the org-wide app settings. Custom policies MAY be created to allow more flexibility for specific users.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-11\n\n"
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1195: Supply Chain Compromise"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "1.  Sign in to the Microsoft Teams admin center.\n2.  Select Teams apps > "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Permission policies"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "Manage apps"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": ".\n3.  "
+            },
+            {
+              "count": 11,
+              "added": true,
+              "removed": false,
+              "value": "In the upper right-hand corner select Actions\n4.  "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "Select "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Global ("
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": "Org-wide "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "default)"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "app settings"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "4"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "5"
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": ".  Under Microsoft apps"
+            },
+            {
+              "count": 20,
+              "added": false,
+              "removed": true,
+              "value": ", select Allow specific apps and block all others or Block all apps.\n5.  Click Allow apps."
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": " > Select On"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "\n6.  "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Search and "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "Click "
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": true,
+              "value": "Add to all appropriate"
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "Save.\nNOTE: This will make"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Microsoft "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "Apps"
+            },
+            {
+              "count": 9,
+              "added": true,
+              "removed": false,
+              "value": "apps in the application list available to \"Everyone"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            },
+            {
+              "count": 9,
+              "added": true,
+              "removed": false,
+              "value": "\" If adjustments are needed follow the remaining instructions\n"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "7. "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": " Click Allow"
+            },
+            {
+              "count": 6,
+              "added": true,
+              "removed": false,
+              "value": "Select Teams apps > Manage apps"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": ".\n8. "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": " Click Save"
+            },
+            {
+              "count": 4,
+              "added": true,
+              "removed": false,
+              "value": "Select each individual app"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": ".\n9. "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": true,
+              "value": " If custom policies have been created"
+            },
+            {
+              "count": 22,
+              "added": true,
+              "removed": false,
+              "value": "Select Users and groups > Edit availability\n10. Change Available to to the appropriate setting for your organization. (Everyone"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ", "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "repeat these"
+            },
+            {
+              "count": 12,
+              "added": true,
+              "removed": false,
+              "value": "Specific users or groups, or No one)\n11. Repeat"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " steps "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "7 to 10 "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "for each"
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": true,
+              "value": "\npolicy, selecting the appropriate policy in step 3."
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": " application"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-28142516",
+      "rule_id": "SV-28142516r75D2BD",
+      "rule_title": "Attachments included with Teams messages SHOULD be scanned for malware.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 52,
+              "added": false,
+              "removed": false,
+              "value": "Attachments included with Teams messages SHOULD be scanned for malware.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Teams can be used as a mechanism for delivering malware. In many cases, malware can be detected through scanning, reducing the risk for end users.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3a\n\n"
+            },
+            {
+              "count": 15,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-29602AD4",
+      "rule_id": "SV-29602AD4rE08EF5",
+      "rule_title": "Record an event SHOULD NOT be set to Always record.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 23,
+              "added": false,
+              "removed": false,
+              "value": "Record an event SHOULD NOT be set to Always record.\n\nCriticality: SHOULD.\nLast modified: March 2025.\n\nRationale: "
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": true,
+              "value": "Allowing to always record Live Events can pose data and video recording leakage and other security risks. "
+            },
+            {
+              "count": 21,
+              "added": false,
+              "removed": false,
+              "value": "Limiting recording permissions to only the organizer minimizes the security risk to the organizer's discretion for these Live Events"
+            },
+            {
+              "count": 8,
+              "added": true,
+              "removed": false,
+              "value": ", reducing data leakage and other security risks"
+            },
+            {
+              "count": 41,
+              "added": false,
+              "removed": false,
+              "value": ". Administrators can also disable recording for all live events.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy. Custom policies MAY be created to allow more flexibility for specific users.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-21a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-2A6DC9C2",
+      "rule_id": "SV-2A6DC9C2r407092",
+      "rule_title": "Unmanaged users SHALL NOT be enabled to initiate contact with internal users.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 20,
+              "added": false,
+              "removed": false,
+              "value": "Unmanaged users SHALL NOT be enabled to initiate contact with internal users.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "July 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "August 2025"
+            },
+            {
+              "count": 55,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Allowing contact from unmanaged users can expose users to email and contact address harvesting. This policy provides protection against this type of harvesting.\n\nNote: This policy is not applicable to Government Community Cloud (GCC), GCC High, and Department of Defense (DoD) tenants.\n\n"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7, SI-8\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1204: User Execution; T1204.001: Malicious Link"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 21,
+              "added": false,
+              "removed": false,
+              "value": "1.  Sign in to the Microsoft Teams admin center.\n2.  Select Users > External access.\n3.  "
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "Select Policies.\n4.  Select Global (Org-wide Default).\n5. "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "Under "
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": "Teams accounts not managed by an organization"
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "Edit policy details"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": ", toggle People in my organization can communicate with "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "unmanaged "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "Teams "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "users whose "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "accounts "
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": "aren't managed by an organization "
+            },
+            {
+              "count": 69,
+              "added": false,
+              "removed": false,
+              "value": "to one of the following:\n1. To completely block contact with unmanaged users, toggle the setting to Off.\n2. To allow contact with unmanaged users only if the internal user initiates the contact:\n- Toggle the setting to On.\n- Clear the check next to External users with Teams accounts not managed by an organization can contact users in my organization."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-42EBC2AD",
+      "rule_id": "SV-42EBC2ADrCFBB27",
+      "rule_title": "Agencies SHOULD only allow installation of custom apps approved by the agency.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 20,
+              "added": false,
+              "removed": false,
+              "value": "Agencies SHOULD only allow installation of custom apps approved by the agency.\n\nCriticality: SHOULD.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "July 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "August 2025"
+            },
+            {
+              "count": 107,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Allowing custom apps integration can expose the agency to potential vulnerabilities present in an app not managed by the agency. By allowing only specific apps approved by the agency and blocking all others, the agency can limit its exposure to custom app vulnerabilities.\n\nNote: This policy applies to the Global (Org-wide default) policy, all custom policies if they exist, and the org-wide settings. Custom policies MAY be created to allow more flexibility for specific users. Custom apps are not available in GCC, GCC High, or DoD regions.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-11\n\n"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1195: Supply Chain Compromise; T1528: Steal Application Access Token"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": "1.  Sign in to the Microsoft Teams admin center.\n2.  Select Teams apps > Manage apps.\n3.  "
+            },
+            {
+              "count": 11,
+              "added": true,
+              "removed": false,
+              "value": "In the upper right-hand corner select Actions\n4.  "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": "Select Org-wide app settings"
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": " button to access pop-up options"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "-"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "5. "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " Under Custom apps "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": true,
+              "value": "turn off Interaction with custom apps"
+            },
+            {
+              "count": 4,
+              "added": true,
+              "removed": false,
+              "value": "> Select Off\n6"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ". "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "\n-"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " Click Save.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "4"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NOTE: This will make Custom apps in the application list available to \"No one"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            },
+            {
+              "count": 11,
+              "added": true,
+              "removed": false,
+              "value": "\" If adjustments are needed follow the remaining                     instructions\n7.  "
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": "Select Teams apps > "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Permission policies"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "Manage apps"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "5"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "8"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": ".  Select "
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": "Global (Org-wide default)"
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "each individual app"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "6"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "9"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".  "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "Set Custom apps"
+            },
+            {
+              "count": 11,
+              "added": true,
+              "removed": false,
+              "value": "Select Users and groups > Edit availability\n10.  Change Available"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " to "
+            },
+            {
+              "count": 11,
+              "added": false,
+              "removed": true,
+              "value": "Block all apps, unless specific apps have\nbeen approved by"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "to"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " the "
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": true,
+              "value": "agency, in which case select Allow specific apps and block all others"
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "appropriate setting for your organization"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": true,
+              "value": "\n7.  Click Save.\n8.  If custom policies have been created"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": " (Everyone"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ", "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "repeat"
+            },
+            {
+              "count": 12,
+              "added": true,
+              "removed": false,
+              "value": "Specific users or groups, or No one)\n11.  Repeat"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " steps "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "4 to "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "7 "
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "to 10 "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "for each"
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": true,
+              "value": "\npolicy, selecting the appropriate policy in step 5."
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": " application"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-4800E682",
+      "rule_id": "SV-4800E682r806CFA",
+      "rule_title": "Anonymous users SHALL NOT be enabled to start meetings.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "Anonymous users SHALL NOT be enabled to start meetings.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "July 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "August 2025"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "For"
+            },
+            {
+              "count": 20,
+              "added": true,
+              "removed": false,
+              "value": "This policy protects against anonymous users starting Microsoft Teams meetings to scrape internal contacts. The policy is beneficial for"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": " agencies that "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "have "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": "implemented custom policies"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": ", "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "providing "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "more "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "flexibility "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "to"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "for"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": " some users to automatically admit "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "\""
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "“"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "everyone"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "\""
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "”"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": " to a "
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "Microsoft Teams "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "meeting"
+            },
+            {
+              "count": 14,
+              "added": false,
+              "removed": true,
+              "value": " - this policy provides protection from anonymous users starting meeting to scrape internal contacts"
+            },
+            {
+              "count": 26,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nNote: This policy applies to the Global (Org-wide default) meeting policy, and custom meeting policies if they exist.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-15a\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1078: Valid Accounts; T1078.001: Default Accounts"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 49,
+              "added": false,
+              "removed": false,
+              "value": "To configure settings for anonymous users:\n1.\tSign in to the Microsoft Teams admin center.\n2.\tSelect Meetings > Meeting policies.\n3.\tSelect the Global (Org-wide default) policy.\n4.\tUnder the Meeting join & lobby section, "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "set"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "ensure the"
+            },
+            {
+              "count": 11,
+              "added": false,
+              "removed": false,
+              "value": " Anonymous users and dial-in callers can start a meeting "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "to"
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "setting remains at the default position of"
+            },
+            {
+              "count": 25,
+              "added": false,
+              "removed": false,
+              "value": " Off.\n5.\tIf custom policies were created, repeat these steps for each policy, selecting the appropriate policy in step 3."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-4E96A2A0",
+      "rule_id": "SV-4E96A2A0r23C389",
+      "rule_title": "Anonymous users and dial-in callers SHOULD NOT be admitted automatically.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 157,
+              "added": false,
+              "removed": false,
+              "value": "Anonymous users and dial-in callers SHOULD NOT be admitted automatically.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Automatically allowing admittance to anonymous and dial-in users diminishes control of meeting participation and invites potential data breach. This policy reduces that risk by requiring all anonymous and dial-in users to wait in a lobby until admitted by an authorized meeting participant. If the agency has a use case to admit members of specific trusted organizations and/or B2B guests automatically, custom policies may be created and assigned to authorized meeting organizers.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy. Custom meeting policies MAY be created to allow specific users more flexibility. For example, B2B guest users and trusted partner members may be admitted automatically into meetings organized by authorized users.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-15a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-6DA7659A",
+      "rule_id": "SV-6DA7659ArFD0BA9",
+      "rule_title": "Internal users SHOULD be admitted automatically.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 82,
+              "added": false,
+              "removed": false,
+              "value": "Internal users SHOULD be admitted automatically.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Requiring internal users to wait in the lobby for explicit admission can lead to admission fatigue. This policy enables internal users to be automatically admitted to the meeting through global policy.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy. Custom meeting policies MAY be created to allow specific users more flexibility.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-980244FD",
+      "rule_id": "SV-980244FDr5FC7B4",
+      "rule_title": "The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency. At a minimum, sharing credit card numbers, taxpayer identification numbers (TINs), and Social Security numbers (SSNs) via email SHALL be restricted.",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 26,
+              "added": false,
+              "removed": false,
+              "value": "The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency. At a minimum, sharing "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "of "
+            },
+            {
+              "count": 24,
+              "added": false,
+              "removed": false,
+              "value": "credit card numbers, taxpayer identification numbers (TINs), and Social Security numbers (SSNs) via email SHALL be restricted."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 26,
+              "added": false,
+              "removed": false,
+              "value": "The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency. At a minimum, sharing "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "of "
+            },
+            {
+              "count": 53,
+              "added": false,
+              "removed": false,
+              "value": "credit card numbers, taxpayer identification numbers (TINs), and Social Security numbers (SSNs) via email SHALL be restricted.\n\nCriticality: SHALL.\nLast modified: July 2023.\n\nRationale: Teams users may inadvertently share sensitive information with others who should not have access to it. "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "Data loss prevention"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "DLP"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": " policies provide a way for agencies to detect and prevent unauthorized sharing of sensitive information.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\n"
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1213: Data from Information Repositories; T1530: Data from Cloud Storage"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 26,
+              "added": false,
+              "removed": false,
+              "value": "The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency. At a minimum, sharing "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "of "
+            },
+            {
+              "count": 168,
+              "added": false,
+              "removed": false,
+              "value": "credit card numbers, taxpayer identification numbers (TINs), and Social Security numbers (SSNs) via email SHALL be restricted.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Plan for data loss prevention (DLP) | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/compliance/dlp-overview-plan-for-dlp?view=o365-worldwide)\n- Personally identifiable information (PII) | NIST (https://csrc.nist.gov/glossary/term/personally_identifiable_information#:~:text=NISTIR%208259,2%20under%20PII%20from%20EGovAct)\n- Sensitive information | NIST (https://csrc.nist.gov/glossary/term/sensitive_information)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-9B7A73CF",
+      "rule_id": "SV-9B7A73CFr588635",
+      "rule_title": "Agencies SHOULD only allow installation of third-party apps approved by the agency.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": "Agencies SHOULD only allow installation of third-party apps approved by the agency.\n\nCriticality: SHOULD.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "July 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "August 2025"
+            },
+            {
+              "count": 115,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Allowing Teams integration with third-party apps can expose the agency to potential vulnerabilities present in an app not managed by the agency. By allowing only specific apps approved by the agency and blocking all others, the agency can limit its exposure to third-party app vulnerabilities.\n\nNote: This policy applies to the Global (Org-wide default) policy, all custom policies if they exist, and the org-wide settings. Custom policies MAY be created to allow more flexibility for specific users. Third-party apps are not available in GCC, GCC High, or DoD regions.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-11\n\n"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1195: Supply Chain Compromise; T1528: Steal Application Access Token"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": "1.  Sign in to the Microsoft Teams admin center.\n2.  Select Teams apps > Manage apps.\n3.  "
+            },
+            {
+              "count": 11,
+              "added": true,
+              "removed": false,
+              "value": "In the upper right-hand corner select Actions\n4.  "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": "Select Org-wide app settings"
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": " button to access pop-up options"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "-"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "5. "
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": " Under Third-party apps "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": true,
+              "value": "turn off Third-party apps"
+            },
+            {
+              "count": 4,
+              "added": true,
+              "removed": false,
+              "value": "> Select Off\n6"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ". "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "\n-"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " Click Save.\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "4"
+            },
+            {
+              "count": 17,
+              "added": true,
+              "removed": false,
+              "value": "NOTE: This will make third party apps in the application list available to \"No one"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            },
+            {
+              "count": 11,
+              "added": true,
+              "removed": false,
+              "value": "\" If adjustments are needed follow the remaining                     instructions\n7.  "
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": "Select Teams apps > "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Permission policies"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "Manage apps"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "5"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "8"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": ".  Select "
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": "Global (Org-wide default)"
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "each individual app"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "6"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "9"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ".  "
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": true,
+              "value": "Set Third-party apps"
+            },
+            {
+              "count": 11,
+              "added": true,
+              "removed": false,
+              "value": "Select Users and groups > Edit availability\n10.  Change Available"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " to "
+            },
+            {
+              "count": 11,
+              "added": false,
+              "removed": true,
+              "value": "Block all apps, unless specific apps\nhave been approved by"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "to"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " the "
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": true,
+              "value": "agency, in which case select **Allow\nspecific apps and block all others**"
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "appropriate setting for your organization"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": true,
+              "value": "\n7.  Click Save.\n8.   If custom policies have been created"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": " (Everyone"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": ", "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "repeat"
+            },
+            {
+              "count": 12,
+              "added": true,
+              "removed": false,
+              "value": "Specific users or groups, or No one)\n11.  Repeat"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " steps "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "4 to "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "7 "
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "to 10 "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "for each"
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": true,
+              "value": "\npolicy, selecting the appropriate policy in step 5."
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": " application"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-A3868DBF",
+      "rule_id": "SV-A3868DBFrEE67F9",
+      "rule_title": "Users SHOULD be prevented from opening or downloading files detected as malware.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 54,
+              "added": false,
+              "removed": false,
+              "value": "Users SHOULD be prevented from opening or downloading files detected as malware.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Teams can be used as a mechanism for delivering malware. In many cases, malware can be detected through scanning, reducing the risk for end users.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3a\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1204: User Execution; T1204.002: Malicious File"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-AD4ACB1D",
+      "rule_id": "SV-AD4ACB1Dr08F6AD",
+      "rule_title": "User click tracking SHOULD be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 64,
+              "added": false,
+              "removed": false,
+              "value": "User click tracking SHOULD be enabled.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Users may click on malicious links in Teams, leading to compromise or authorized data disclosure. Enabling user click tracking lets agencies know if a malicious link may have been visited after the fact to help tailor a response to a potential incident.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-12c\n\n"
+            },
+            {
+              "count": 41,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1204: User Execution; T1204.001: Malicious Link; T1204.002: Malicious File; T1566: Phishing; T1566.001: Spearphishing Attachment; T1189: Drive-by Compromise"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-AD78953F",
+      "rule_id": "SV-AD78953Fr1A452C",
+      "rule_title": "Internal users SHOULD NOT be enabled to initiate contact with unmanaged users.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 20,
+              "added": false,
+              "removed": false,
+              "value": "Internal users SHOULD NOT be enabled to initiate contact with unmanaged users.\n\nCriticality: SHOULD.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "July 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "August 2025"
+            },
+            {
+              "count": 59,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Contact with unmanaged users can pose the risk of data leakage and other security threats. This policy provides protection by disabling internal user access to unmanaged users.\n\nNote: This policy is not applicable to Government Community Cloud (GCC), GCC High, and Department of Defense (DoD) tenants.\n\n"
+            },
+            {
+              "count": 26,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7, SC-7(10)(a)\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1204: User Execution; T1204.001: Malicious Link"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 21,
+              "added": false,
+              "removed": false,
+              "value": "1.  Sign in to the Microsoft Teams admin center.\n2.  Select Users > External access.\n3.  "
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "Select Policies.\n4.  Select Global (Org-wide Default).\n4.  "
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": "To completely block contact with unmanaged users, under "
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": true,
+              "value": "**Teams\naccounts not managed by an organization"
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "Edit policy details"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": ", set People in my organization can communicate with "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "unmanaged "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "Teams "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "users whose "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "accounts "
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": "aren't\nmanaged by an organization "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "to Off"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "**"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-CB001A11",
+      "rule_id": "SV-CB001A11rF49E74",
+      "rule_title": "External access for users SHALL only be enabled on a per-domain basis.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 22,
+              "added": false,
+              "removed": false,
+              "value": "External access for users SHALL only be enabled on a per-domain basis.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "July 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "August 2025"
+            },
+            {
+              "count": 19,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: The default configuration allows members to communicate with all external users with similar access permissions. "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "This unrestricted"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Unrestricted"
+            },
+            {
+              "count": 29,
+              "added": false,
+              "removed": false,
+              "value": " access can lead to data breaches and other security threats. This policy provides protection against threats posed by unrestricted access by allowing communication with only trusted domains.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3\n\n"
+            },
+            {
+              "count": 21,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1199: Trusted Relationship; T1204: User Execution; T1204.001: Malicious Link"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 27,
+              "added": false,
+              "removed": false,
+              "value": "To enable external access for only specific domains:\n1.  Sign in to the Microsoft Teams admin center.\n2.  Select Users > External access "
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "> Organization settings"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": ".\n3.  "
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": true,
+              "value": "Under Choose which external domains your users have access"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Next"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " to "
+            },
+            {
+              "count": 9,
+              "added": true,
+              "removed": false,
+              "value": "Teams and Skype for Business users in external organizations"
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": false,
+              "value": ",\nselect Allow only specific external domains"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "."
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "\n4.  "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": true,
+              "value": "Click Allow domains to add allowed"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "Select Add"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": " external domains. "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "All"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Enter"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " domains"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "\nnot"
+            },
+            {
+              "count": 13,
+              "added": true,
+              "removed": false,
+              "value": " allowed, and then select Done\nNOTE: Domains will need to be"
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": " added in this step "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "will be blocked"
+            },
+            {
+              "count": 8,
+              "added": true,
+              "removed": false,
+              "value": "in order for users to communicate with them"
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": ".\n5.  Click Save."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-D27EAB1F",
+      "rule_id": "SV-D27EAB1FrEB6B4C",
+      "rule_title": "Meeting recording SHOULD be disabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 101,
+              "added": false,
+              "removed": false,
+              "value": "Meeting recording SHOULD be disabled.\n\nCriticality: SHOULD.\nLast modified: March 2025.\n\nRationale: Allowing any user to record a Teams meeting or group call may lead to unauthorized disclosure of shared information, including audio, video, and shared screens. By disabling the meeting recording setting in the Global (Org-wide default) meeting policy, an agency limits information exposure.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy. Custom policies MAY be created to allow more flexibility for specific users.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-E571BF0E",
+      "rule_id": "SV-E571BF0ErF6283C",
+      "rule_title": "External meeting participants SHOULD NOT be enabled to request control of shared desktops or windows.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 116,
+              "added": false,
+              "removed": false,
+              "value": "External meeting participants SHOULD NOT be enabled to request control of shared desktops or windows.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: An external participant with control of a shared screen could potentially perform unauthorized actions on the shared screen. This policy reduces that risk by removing an external participant's ability to request control. However, if an agency has a legitimate use case to grant this control, it may be done on a case-by-case basis.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy, as well as custom meeting policies.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-17a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-EB116C21",
+      "rule_id": "SV-EB116C21rAF5087",
+      "rule_title": "URL comparison with a blocklist SHOULD be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 49,
+              "added": false,
+              "removed": false,
+              "value": "URL comparison with a blocklist SHOULD be enabled.\n\nCriticality: SHOULD.\nLast modified: July 2023.\n\nRationale: Users may be directed to malicious websites via links in Teams. Blocking access to known malicious URLs can help prevent users from accessing known malicious websites.\n\n"
+            },
+            {
+              "count": 16,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3a\n\n"
+            },
+            {
+              "count": 41,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1204: User Execution; T1204.001: Malicious Link; T1204.002: Malicious File; T1566: Phishing; T1566.001: Spearphishing Attachment; T1189: Drive-by Compromise"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-F8570BAF",
+      "rule_id": "SV-F8570BAFr2C398B",
+      "rule_title": "A DLP solution SHALL be enabled and SHOULD offer services comparable to the native DLP solution offered by Microsoft.",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": "A DLP solution SHALL be enabled"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": true,
+              "value": ". The selected DLP solution"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": " and"
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": " SHOULD offer services comparable to the native DLP solution offered by Microsoft."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": "A DLP solution SHALL be enabled"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": true,
+              "value": ". The selected DLP solution"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": " and"
+            },
+            {
+              "count": 36,
+              "added": false,
+              "removed": false,
+              "value": " SHOULD offer services comparable to the native DLP solution offered by Microsoft.\n\nCriticality: SHALL.\nLast modified: July 2023.\n\nRationale: Teams users may inadvertently disclose sensitive information to unauthorized individuals. "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "Data loss prevention"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "DLP"
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": " policies provide a way for agencies to detect and prevent unauthorized disclosures.\n\n"
+            },
+            {
+              "count": 19,
+              "added": true,
+              "removed": false,
+              "value": "NIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\n"
+            },
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1213: Data from Information Repositories; T1530: Data from Cloud Storage"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": "A DLP solution SHALL be enabled"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": true,
+              "value": ". The selected DLP solution"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": " and"
+            },
+            {
+              "count": 157,
+              "added": false,
+              "removed": false,
+              "value": " SHOULD offer services comparable to the native DLP solution offered by Microsoft.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Plan for data loss prevention (DLP) | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/compliance/dlp-overview-plan-for-dlp?view=o365-worldwide)\n- Personally identifiable information (PII) | NIST (https://csrc.nist.gov/glossary/term/personally_identifiable_information#:~:text=NISTIR%208259,2%20under%20PII%20from%20EGovAct)\n- Sensitive information | NIST (https://csrc.nist.gov/glossary/term/sensitive_information)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "removed",
+      "group_id": "V-03B2BB89",
+      "rule_id": "SV-03B2BB89rC90368",
+      "rule_title": "Contact with Skype users SHALL be blocked.",
+      "fieldDiffs": []
+    }
+  ]
+}

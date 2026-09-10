@@ -1,0 +1,421 @@
+{
+  "id": "CISA_Exchange_Online",
+  "from_version": "1.5.0",
+  "to_version": "1.6.0",
+  "date": "2025-07-09",
+  "counts": {
+    "unchanged": 37,
+    "updated": 3,
+    "added": 0,
+    "removed": 1
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-1A24B887",
+      "rule_id": "SV-1A24B887r5EEF66",
+      "rule_title": "Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31 (Appendix C).",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 99,
+              "added": false,
+              "removed": false,
+              "value": "Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31 (Appendix C).\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Audit logs may no longer be available when needed if they are not retained for a sufficient time.  Increased log retention time gives an agency the necessary visibility to investigate incidents that occurred some time ago. OMB M-21-13, Appendix C, Table 5 specifically calls out Unified Audit Logs in the Cloud Azure log category.\n\n"
+            },
+            {
+              "count": 71,
+              "added": true,
+              "removed": false,
+              "value": "Note: Microsoft 365 Purview (Premium) provides a default audit log retention policy, retaining Exchange Online, SharePoint Online, OneDrive for Business, and Microsoft Entra ID audit records for one year. Additional record types require custom audit retention policies. Agencies may also consider alternate storage locations and services to meet audit log retention needs.\n\nMITRE ATT&CK: T1070: Indicator Removal"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 18,
+              "added": false,
+              "removed": false,
+              "value": "See the following implementation steps to\ncreate an audit retention policy (./defender.md#"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "msdefender62v1"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "msdefender63v1"
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": false,
+              "value": "-instructions)\nfor additional guidance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-9CAD38CE",
+      "rule_id": "SV-9CAD38CErCDF9D5",
+      "rule_title": "Unified Audit logging SHALL be enabled.",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft Purview"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Unified"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Audit "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "(Standard) "
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "logging SHALL be enabled."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft Purview"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Unified"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Audit "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "(Standard) "
+            },
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": "logging SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "June 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "March 2025"
+            },
+            {
+              "count": 19,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Responding to incidents without detailed information about activities that took place slows response actions. Enabling "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft Purview"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Unified"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Audit "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "(Standard)"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "logging"
+            },
+            {
+              "count": 11,
+              "added": false,
+              "removed": false,
+              "value": " helps ensure agencies have visibility into user actions. Furthermore, "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft Purview"
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "enabling the Unified"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Audit "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "(Standard)"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "log"
+            },
+            {
+              "count": 12,
+              "added": false,
+              "removed": false,
+              "value": " is required for government agencies by OMB M-21-31"
+            },
+            {
+              "count": 13,
+              "added": false,
+              "removed": true,
+              "value": " (referred to therein by its former name, Unified Audit Logs)"
+            },
+            {
+              "count": 20,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nMITRE ATT&CK: T1562: Impair Defenses; T1562.008: Disable or Modify Cloud Logs"
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft Purview"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Unified"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " Audit "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "(Standard) "
+            },
+            {
+              "count": 223,
+              "added": false,
+              "removed": false,
+              "value": "logging SHALL be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Expanding cloud logging to give customers deeper security visibility | Microsoft Security Blog (https://www.microsoft.com/en-us/security/blog/2023/07/19/expanding-cloud-logging-to-give-customers-deeper-security-visibility/)\n- Export, configure, and view audit log records | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-export-records)\n- Untitled Goose Tool Fact Sheet | CISA. (https://www.cisa.gov/resources-tools/resources/untitled-goose-tool-fact-sheet)\n- Manage audit log retention policies | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?tabs=microsoft-purview-portal#before-you-create-an-audit-log-retention-policy)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 7,
+              "added": false,
+              "removed": false,
+              "value": "See the following implementation steps for enabling "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Microsoft Purview"
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": "Unified Audit logging"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": " ("
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "Standard) ("
+            },
+            {
+              "count": 14,
+              "added": false,
+              "removed": false,
+              "value": "./defender.md#msdefender61v1-instructions) for additional\nguidance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-A98F599F",
+      "rule_id": "SV-A98F599Fr01017B",
+      "rule_title": "Automatic forwarding to external domains SHALL be disabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "Automatic forwarding to external domains SHALL be disabled.\n\nCriticality: SHALL.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "June 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "March 2025"
+            },
+            {
+              "count": 43,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Adversaries can use automatic forwarding to gain persistent access to a victim's email. Disabling forwarding to external domains prevents this technique when the adversary is external to the organization but does not impede legitimate internal forwarding.\n\n"
+            },
+            {
+              "count": 59,
+              "added": true,
+              "removed": false,
+              "value": "Note: Automatic forwarding MAY be enabled with specific, agency-approved domains. There may be cases where an external domain is operationally needed and has an acceptable degree of risk, e.g., a domain controlled by the same agency that hasn't been added as an accepted domain in M365.\n\n"
+            },
+            {
+              "count": 29,
+              "added": false,
+              "removed": false,
+              "value": "MITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol; T1566: Phishing; T1566.001: Spearphishing Attachment"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 67,
+              "added": false,
+              "removed": false,
+              "value": "To disallow automatic forwarding to external domains:\n1.  Sign in to the Exchange admin center.\n2.  Select Mail flow, then Remote domains.\n3.  Select Default.\n4.  Under Email reply types, select Edit reply types.\n5.  Clear the checkbox next to Allow automatic forwarding, then\nclick Save.\n6.  Return to Remote domains and "
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": true,
+              "value": "repeat steps 4 and 5 for"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "review"
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": false,
+              "value": " each\nadditional remote domain in the list"
+            },
+            {
+              "count": 11,
+              "added": true,
+              "removed": false,
+              "value": ", ensuring that automatic forwarding\nis only allowed for approved domains"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "removed",
+      "group_id": "V-2588F8E4",
+      "rule_id": "SV-2588F8E4r355FE4",
+      "rule_title": "Microsoft Purview Audit (Premium) logging SHALL be enabled.",
+      "fieldDiffs": []
+    }
+  ]
+}

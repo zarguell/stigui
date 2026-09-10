@@ -10,7 +10,8 @@ the discovery fields the UI filters on, beyond source + title:
              derived from the title keyword classifier below — for CIS
              and DISA alike, replacing the flat "DISA STIG" bucket
 - type       document kind: DISA "STIG" vs "SRG" (Security Requirements
-             Guide); CIS documents are "Benchmark"
+             Guide); CIS documents are "Benchmark"; CISA ScubaGear
+             documents are "Baseline"
 - tags       free-form technology/vendor labels (Windows, VMware, z/OS,
              ...) — multiple can match one title
 - rules_count  number of Rules in the benchmark, for dashboards
@@ -199,6 +200,8 @@ def derive_tags(title: str) -> list[str]:
 def derive_type(source: str, title: str) -> str:
     if source == "CIS":
         return "Benchmark"
+    if source == "CISA":
+        return "Baseline"
     return "SRG" if SRG_SUFFIX in title else "STIG"
 
 
@@ -224,6 +227,8 @@ def build_entry(benchmark: dict, overrides: dict) -> dict:
     if title.endswith(STIG_SUFFIX):
         title = title[: -len(STIG_SUFFIX)]
     source = "CIS" if benchmark["+@id"].startswith("CIS_") else "DISA"
+    if benchmark["+@id"].startswith("CISA_"):
+        source = "CISA"
     entry = {
         "id": benchmark["+@id"],
         "title": title,

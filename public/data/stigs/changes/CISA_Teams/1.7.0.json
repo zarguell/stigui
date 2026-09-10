@@ -1,0 +1,99 @@
+{
+  "id": "CISA_Teams",
+  "from_version": "1.7.0",
+  "to_version": "1.8.0",
+  "date": "2026-05-07",
+  "counts": {
+    "unchanged": 19,
+    "updated": 1,
+    "added": 0,
+    "removed": 0
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-15F709A3",
+      "rule_id": "SV-15F709A3r118FAF",
+      "rule_title": "Teams email integration SHALL be disabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 93,
+              "added": false,
+              "removed": false,
+              "value": "Teams email integration SHALL be disabled.\n\nCriticality: SHALL.\nLast modified: July 2023.\n\nRationale: Microsoft Teams email integration associates a Microsoft, not tenant domain, email address with a Teams channel. Channel emails are addressed using the Microsoft-owned domain <code>&lt;teams.ms&gt;</code>. By disabling Teams email integration, an agency prevents potentially sensitive Teams messages from being sent through external email gateways.\n\nNote: Teams email integration is not "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "available in "
+            },
+            {
+              "count": 6,
+              "added": true,
+              "removed": false,
+              "value": "applicable to Government Community Cloud ("
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "GCC"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": ")"
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": ", GCC High, "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "or "
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "and Department of Defense ("
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "DoD"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": " regions"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": ") tenants"
+            },
+            {
+              "count": 54,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8, SC-7(10)(a), AC-4\n\nMITRE ATT&CK: T1204: User Execution; T1204.001: Malicious Link; T1204.002: Malicious File"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

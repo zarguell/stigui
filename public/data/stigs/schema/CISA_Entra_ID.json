@@ -1,0 +1,1604 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CISA_Entra_ID",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2026-02-11"
+    },
+    "title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+    "description": "Microsoft Entra ID is a cloud-based identity and access control service that provides security and functional capabilities. This Secure Configuration Baseline (SCB) provides specific policies to help secure Microsoft Entra ID.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://github.com/cisagov/ScubaGear/tree/v1.7.0/PowerShell/ScubaGear/baselines/aad.md",
+      "dc:publisher": "CISA",
+      "dc:source": "CISA ScuBA M365 Secure Configuration Baselines"
+    },
+    "plain-text": {
+      "+content": "Release: 1.7.0 Baseline Date: 2026-02-11",
+      "+@id": "release-info"
+    },
+    "version": "1.7.0",
+    "Profile": [
+      {
+        "+@id": "1-Legacy-Authentication_Public",
+        "title": "1. Legacy Authentication",
+        "description": "This section provides policies that reduce security risks related to legacy authentication protocols that do not support multifactor authentication (MFA).",
+        "select": {
+          "+@idref": "V-7E1F2810",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "1-Legacy-Authentication_Classified",
+        "title": "1. Legacy Authentication",
+        "description": "This section provides policies that reduce security risks related to legacy authentication protocols that do not support multifactor authentication (MFA).",
+        "select": {
+          "+@idref": "V-7E1F2810",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "1-Legacy-Authentication_Sensitive",
+        "title": "1. Legacy Authentication",
+        "description": "This section provides policies that reduce security risks related to legacy authentication protocols that do not support multifactor authentication (MFA).",
+        "select": {
+          "+@idref": "V-7E1F2810",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "2-Risk-Based-Policies_Public",
+        "title": "2. Risk Based Policies",
+        "description": "This section provides policies that reduce security risks related to potentially compromised user accounts. These policies combine Microsoft Entra ID Protection and Microsoft Entra ID Conditional Access. Microsoft Entra ID Protection uses numerous signals to detect the risk level for each user or sign-in and determine if an account may have been compromised. - _Additional mitigations to reduce risks associated with the authentication of workload identities:_ Although not covered in this baseline due to the need for an additional non-standard license, Microsoft provides support for mitigating risks related to workload identities (Microsoft Entra ID applications or service principals). Agencies should strongly consider implementing this feature because workload identities present many of the same risks as interactive user access and are commonly used in modern systems. CISA urges organizations to [apply Conditional Access policies to workload identities](https://learn.microsoft.com/en-us/entra/identity/conditional-access/workload-identity). - _Note:_ In this section, the term [\"high risk\"](https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks) denotes the risk level applied by the Microsoft Entra ID Protection service to a user account or sign-in event.",
+        "select": [
+          {
+            "+@idref": "V-B0B21F20",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-63E35030",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0318C860",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "2-Risk-Based-Policies_Classified",
+        "title": "2. Risk Based Policies",
+        "description": "This section provides policies that reduce security risks related to potentially compromised user accounts. These policies combine Microsoft Entra ID Protection and Microsoft Entra ID Conditional Access. Microsoft Entra ID Protection uses numerous signals to detect the risk level for each user or sign-in and determine if an account may have been compromised. - _Additional mitigations to reduce risks associated with the authentication of workload identities:_ Although not covered in this baseline due to the need for an additional non-standard license, Microsoft provides support for mitigating risks related to workload identities (Microsoft Entra ID applications or service principals). Agencies should strongly consider implementing this feature because workload identities present many of the same risks as interactive user access and are commonly used in modern systems. CISA urges organizations to [apply Conditional Access policies to workload identities](https://learn.microsoft.com/en-us/entra/identity/conditional-access/workload-identity). - _Note:_ In this section, the term [\"high risk\"](https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks) denotes the risk level applied by the Microsoft Entra ID Protection service to a user account or sign-in event.",
+        "select": [
+          {
+            "+@idref": "V-B0B21F20",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-63E35030",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0318C860",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "2-Risk-Based-Policies_Sensitive",
+        "title": "2. Risk Based Policies",
+        "description": "This section provides policies that reduce security risks related to potentially compromised user accounts. These policies combine Microsoft Entra ID Protection and Microsoft Entra ID Conditional Access. Microsoft Entra ID Protection uses numerous signals to detect the risk level for each user or sign-in and determine if an account may have been compromised. - _Additional mitigations to reduce risks associated with the authentication of workload identities:_ Although not covered in this baseline due to the need for an additional non-standard license, Microsoft provides support for mitigating risks related to workload identities (Microsoft Entra ID applications or service principals). Agencies should strongly consider implementing this feature because workload identities present many of the same risks as interactive user access and are commonly used in modern systems. CISA urges organizations to [apply Conditional Access policies to workload identities](https://learn.microsoft.com/en-us/entra/identity/conditional-access/workload-identity). - _Note:_ In this section, the term [\"high risk\"](https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks) denotes the risk level applied by the Microsoft Entra ID Protection service to a user account or sign-in event.",
+        "select": [
+          {
+            "+@idref": "V-B0B21F20",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-63E35030",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0318C860",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "3-Strong-Authentication-and-a-Secure-Registration-Process_Public",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "This section provides policies that help reduce security risks related to user authentication and registration. Phishing-resistant MFA is required per [Office of Management and Budget Memorandum 22-09](https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf), but for a variety of reasons, implementing it for all users may be challenging. This section provides additional backup security policies to mitigate risk associated with lesser forms of MFA. For example, Policy MS.AAD.3.2v1 below enforces MFA without stipulating the specific MFA method. <img src=\"/images/aad-mfa.png\" alt=\"Weak MFA methods are SMS and Voice. Stronger MFA are Authenticator Push Notifications, Authenticator Phone Sign-in, Software Tokens OTP, and Hardware Tokens OTP. Strongest MFA methods are FIDO2 (preferred), Windows Hello (preferred), Microsoft Entra certificate-based authentication (preferred) and federated PIV card.\" /> Figure 1: Depiction of MFA methods from weakest to strongest. _Adapted from [Microsoft Page](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)_",
+        "select": [
+          {
+            "+@idref": "V-60F601F6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B5A44595",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FD76ED89",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C368F11F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4ADCBC01",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-ADF78205",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-604D3F0E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A61D2A98",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A564E063",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "3-Strong-Authentication-and-a-Secure-Registration-Process_Classified",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "This section provides policies that help reduce security risks related to user authentication and registration. Phishing-resistant MFA is required per [Office of Management and Budget Memorandum 22-09](https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf), but for a variety of reasons, implementing it for all users may be challenging. This section provides additional backup security policies to mitigate risk associated with lesser forms of MFA. For example, Policy MS.AAD.3.2v1 below enforces MFA without stipulating the specific MFA method. <img src=\"/images/aad-mfa.png\" alt=\"Weak MFA methods are SMS and Voice. Stronger MFA are Authenticator Push Notifications, Authenticator Phone Sign-in, Software Tokens OTP, and Hardware Tokens OTP. Strongest MFA methods are FIDO2 (preferred), Windows Hello (preferred), Microsoft Entra certificate-based authentication (preferred) and federated PIV card.\" /> Figure 1: Depiction of MFA methods from weakest to strongest. _Adapted from [Microsoft Page](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)_",
+        "select": [
+          {
+            "+@idref": "V-60F601F6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B5A44595",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FD76ED89",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C368F11F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4ADCBC01",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-ADF78205",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-604D3F0E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A61D2A98",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A564E063",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "3-Strong-Authentication-and-a-Secure-Registration-Process_Sensitive",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "This section provides policies that help reduce security risks related to user authentication and registration. Phishing-resistant MFA is required per [Office of Management and Budget Memorandum 22-09](https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf), but for a variety of reasons, implementing it for all users may be challenging. This section provides additional backup security policies to mitigate risk associated with lesser forms of MFA. For example, Policy MS.AAD.3.2v1 below enforces MFA without stipulating the specific MFA method. <img src=\"/images/aad-mfa.png\" alt=\"Weak MFA methods are SMS and Voice. Stronger MFA are Authenticator Push Notifications, Authenticator Phone Sign-in, Software Tokens OTP, and Hardware Tokens OTP. Strongest MFA methods are FIDO2 (preferred), Windows Hello (preferred), Microsoft Entra certificate-based authentication (preferred) and federated PIV card.\" /> Figure 1: Depiction of MFA methods from weakest to strongest. _Adapted from [Microsoft Page](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)_",
+        "select": [
+          {
+            "+@idref": "V-60F601F6",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B5A44595",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FD76ED89",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C368F11F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-4ADCBC01",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-ADF78205",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-604D3F0E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A61D2A98",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A564E063",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "4-Centralized-Log-Collection_Public",
+        "title": "4. Centralized Log Collection",
+        "description": "This section provides policies to reduce security risks related to the lack of security logs, which hampers security visibility.",
+        "select": {
+          "+@idref": "V-8CC65392",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "4-Centralized-Log-Collection_Classified",
+        "title": "4. Centralized Log Collection",
+        "description": "This section provides policies to reduce security risks related to the lack of security logs, which hampers security visibility.",
+        "select": {
+          "+@idref": "V-8CC65392",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "4-Centralized-Log-Collection_Sensitive",
+        "title": "4. Centralized Log Collection",
+        "description": "This section provides policies to reduce security risks related to the lack of security logs, which hampers security visibility.",
+        "select": {
+          "+@idref": "V-8CC65392",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "5-Application-Registration-and-Consent_Public",
+        "title": "5. Application Registration and Consent",
+        "description": "This section provides policies that help reduce security risk of malicious applications or service principals added to the tenant by non-privileged users. Malicious applications can perform many of the same operations as interactive users and can access data on behalf of compromised users. These policies apply to custom-developed applications and applications published by third-party vendors.",
+        "select": [
+          {
+            "+@idref": "V-ED925A18",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E109F725",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DB049EA",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "5-Application-Registration-and-Consent_Classified",
+        "title": "5. Application Registration and Consent",
+        "description": "This section provides policies that help reduce security risk of malicious applications or service principals added to the tenant by non-privileged users. Malicious applications can perform many of the same operations as interactive users and can access data on behalf of compromised users. These policies apply to custom-developed applications and applications published by third-party vendors.",
+        "select": [
+          {
+            "+@idref": "V-ED925A18",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E109F725",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DB049EA",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "5-Application-Registration-and-Consent_Sensitive",
+        "title": "5. Application Registration and Consent",
+        "description": "This section provides policies that help reduce security risk of malicious applications or service principals added to the tenant by non-privileged users. Malicious applications can perform many of the same operations as interactive users and can access data on behalf of compromised users. These policies apply to custom-developed applications and applications published by third-party vendors.",
+        "select": [
+          {
+            "+@idref": "V-ED925A18",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E109F725",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6DB049EA",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "6-Passwords_Public",
+        "title": "6. Passwords",
+        "description": "This section provides policies that reduce security risks associated with legacy password practices.",
+        "select": {
+          "+@idref": "V-BA54ECCE",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "6-Passwords_Classified",
+        "title": "6. Passwords",
+        "description": "This section provides policies that reduce security risks associated with legacy password practices.",
+        "select": {
+          "+@idref": "V-BA54ECCE",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "6-Passwords_Sensitive",
+        "title": "6. Passwords",
+        "description": "This section provides policies that reduce security risks associated with legacy password practices.",
+        "select": {
+          "+@idref": "V-BA54ECCE",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "7-Highly-Privileged-User-Access_Public",
+        "title": "7. Highly Privileged User Access",
+        "description": "This section provides policies that help reduce security risks related to the usage of [highly privileged Microsoft Entra ID built-in roles](#highly-privileged-roles). Privileged administrative users have access to operations that can undermine the security of the tenant by changing configurations and security policies. Special protections are necessary to secure this level of access. Some of the policy implementations in this section reference specific features of the Microsoft Entra ID Privileged Identity Management (PIM) service that provides Privileged Access Management (PAM) capabilities. As an alternative to Microsoft Entra ID PIM, third-party products and services with equivalent PAM capabilities can be leveraged.",
+        "select": [
+          {
+            "+@idref": "V-42B22E5E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC49039F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-563B8177",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9D7D8065",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FCA5774B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E8642D34",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9341752",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-352F9EB3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E205D5B4",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "7-Highly-Privileged-User-Access_Classified",
+        "title": "7. Highly Privileged User Access",
+        "description": "This section provides policies that help reduce security risks related to the usage of [highly privileged Microsoft Entra ID built-in roles](#highly-privileged-roles). Privileged administrative users have access to operations that can undermine the security of the tenant by changing configurations and security policies. Special protections are necessary to secure this level of access. Some of the policy implementations in this section reference specific features of the Microsoft Entra ID Privileged Identity Management (PIM) service that provides Privileged Access Management (PAM) capabilities. As an alternative to Microsoft Entra ID PIM, third-party products and services with equivalent PAM capabilities can be leveraged.",
+        "select": [
+          {
+            "+@idref": "V-42B22E5E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC49039F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-563B8177",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9D7D8065",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FCA5774B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E8642D34",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9341752",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-352F9EB3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E205D5B4",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "7-Highly-Privileged-User-Access_Sensitive",
+        "title": "7. Highly Privileged User Access",
+        "description": "This section provides policies that help reduce security risks related to the usage of [highly privileged Microsoft Entra ID built-in roles](#highly-privileged-roles). Privileged administrative users have access to operations that can undermine the security of the tenant by changing configurations and security policies. Special protections are necessary to secure this level of access. Some of the policy implementations in this section reference specific features of the Microsoft Entra ID Privileged Identity Management (PIM) service that provides Privileged Access Management (PAM) capabilities. As an alternative to Microsoft Entra ID PIM, third-party products and services with equivalent PAM capabilities can be leveraged.",
+        "select": [
+          {
+            "+@idref": "V-42B22E5E",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FC49039F",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-563B8177",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-9D7D8065",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-FCA5774B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E8642D34",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9341752",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-352F9EB3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-E205D5B4",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "8-Guest-User-Access_Public",
+        "title": "8. Guest User Access",
+        "description": "This section provides policies that help reduce security risks related to integrating M365 guest users. A guest user is a specific type of external user who belongs to a separate organization but can access files, meetings, Teams, and other data in the target tenant. It is common to invite guest users to a tenant for cross-agency collaboration purposes.",
+        "select": [
+          {
+            "+@idref": "V-CF1807C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-39C7EF76",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1AFCDF56",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "8-Guest-User-Access_Classified",
+        "title": "8. Guest User Access",
+        "description": "This section provides policies that help reduce security risks related to integrating M365 guest users. A guest user is a specific type of external user who belongs to a separate organization but can access files, meetings, Teams, and other data in the target tenant. It is common to invite guest users to a tenant for cross-agency collaboration purposes.",
+        "select": [
+          {
+            "+@idref": "V-CF1807C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-39C7EF76",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1AFCDF56",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "8-Guest-User-Access_Sensitive",
+        "title": "8. Guest User Access",
+        "description": "This section provides policies that help reduce security risks related to integrating M365 guest users. A guest user is a specific type of external user who belongs to a separate organization but can access files, meetings, Teams, and other data in the target tenant. It is common to invite guest users to a tenant for cross-agency collaboration purposes.",
+        "select": [
+          {
+            "+@idref": "V-CF1807C7",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-39C7EF76",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1AFCDF56",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-7E1F2810",
+        "title": "1. Legacy Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7E1F2810rAC850C_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.1.1v1",
+          "title": "Legacy authentication SHALL be blocked.",
+          "description": "<VulnDiscussion>Legacy authentication SHALL be blocked.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: The security risk of allowing legacy authentication protocols is they do not support MFA. Blocking legacy protocols reduces the impact of user credential theft.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7\n\nMITRE ATT&CK: T1110: Brute Force; T1110.001: Password Guessing; T1110.002: Password Cracking; T1110.003: Password Spraying; T1078: Valid Accounts; T1078.004: Cloud Accounts</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.1.1v1"
+          },
+          "fixtext": {
+            "+content": "1. Determine if an agency’s existing applications use legacy authentication (https://learn.microsoft.com/en-us/entra/identity/conditional-access/block-legacy-authentication#identify-legacy-authentication-use) before blocking legacy authentication across the entire application base.\n2. Create a Conditional Access policy to block legacy authentication\nUsers > Include > <b>All users</b>\nTarget resources > Include > <b>All resources (formerly 'All cloud apps') </b>\nConditions > Client apps > Configure > <b>Yes</b> > Legacy authentication clients > Select only <b>Exchange ActiveSync clients</b> and <b>Other clients</b>\nAccess controls > Grant > <b>Block Access</b>",
+            "+@fixref": "F-7E1F2810rAC850C_fix"
+          },
+          "fix": {
+            "+@id": "F-7E1F2810rAC850C_fix"
+          },
+          "check": {
+            "+@system": "C-7E1F2810rAC850C_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Legacy authentication SHALL be blocked.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Block legacy authentication with Conditional Access (https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-block-legacy)\n- Five steps to securing your identity infrastructure (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity)"
+          }
+        }
+      },
+      {
+        "+@id": "V-B0B21F20",
+        "title": "2. Risk Based Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B0B21F20rF04870_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.2.1v1",
+          "title": "Users detected as high risk SHALL be blocked.",
+          "description": "<VulnDiscussion>Users detected as high risk SHALL be blocked.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Blocking high-risk users may prevent compromised accounts from accessing the tenant.\n\nNote: Users identified as high risk by Microsoft Entra ID Identity Protection can be blocked from accessing the system via a Microsoft Entra ID Conditional Access policy. A high-risk user will be blocked until an administrator remediates their account.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2(12), AC-2(13)\n\nMITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.2.1v1"
+          },
+          "fixtext": {
+            "+content": "1.  Create a conditional access policy blocking users categorized as high risk by the Identity Protection service. Configure the following policy settings in the new conditional access policy as per the values below:\nUsers > Include > <b>All users</b>\nTarget resources > Include > <b>All resources (formerly 'All cloud apps') </b>\nConditions > User risk > <b>High</b>\nAccess controls > Grant > <b>Block Access</b>",
+            "+@fixref": "F-B0B21F20rF04870_fix"
+          },
+          "fix": {
+            "+@id": "F-B0B21F20rF04870_fix"
+          },
+          "check": {
+            "+@system": "C-B0B21F20rF04870_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Users detected as high risk SHALL be blocked.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What are risk detections? (https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks)\n- Simulating risk detections in Identity Protection (https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-simulate-risk)\n- Self-remediation experience with Microsoft Entra ID Protection and Conditional Access (https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-user-experience)"
+          }
+        }
+      },
+      {
+        "+@id": "V-63E35030",
+        "title": "2. Risk Based Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-63E35030r42F52E_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.AAD.2.2v1",
+          "title": "A notification SHOULD be sent to the administrator when high-risk users are detected.",
+          "description": "<VulnDiscussion>A notification SHOULD be sent to the administrator when high-risk users are detected.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Notification enables the admin to monitor the event and remediate the risk. This helps the organization proactively respond to cyber intrusions as they occur.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2(12)\n\nMITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.2.2v1"
+          },
+          "fixtext": {
+            "+content": "1.  Configure Microsoft Entra ID Protection to send a regularly monitored security mailbox email notification (https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-notifications#configure-users-at-risk-detected-alerts) when user accounts are determined to be high risk.",
+            "+@fixref": "F-63E35030r42F52E_fix"
+          },
+          "fix": {
+            "+@id": "F-63E35030r42F52E_fix"
+          },
+          "check": {
+            "+@system": "C-63E35030r42F52E_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "A notification SHOULD be sent to the administrator when high-risk users are detected.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What are risk detections? (https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks)\n- Simulating risk detections in Identity Protection (https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-simulate-risk)\n- Self-remediation experience with Microsoft Entra ID Protection and Conditional Access (https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-user-experience)"
+          }
+        }
+      },
+      {
+        "+@id": "V-0318C860",
+        "title": "2. Risk Based Policies",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0318C860rB7363A_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.2.3v1",
+          "title": "Sign-ins detected as high risk SHALL be blocked.",
+          "description": "<VulnDiscussion>Sign-ins detected as high risk SHALL be blocked.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: This prevents compromised accounts from accessing the tenant.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2(12), AC-2(13)\n\nMITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.2.3v1"
+          },
+          "fixtext": {
+            "+content": "1.  Create a Conditional Access policy blocking sign-ins determined high risk by the Identity Protection service. Configure the following policy settings in the new Conditional Access policy as per the values below:\nUsers > Include > <b>All users</b>\nTarget resources > Include > <b>All resources (formerly 'All cloud apps') </b>\nConditions > Sign-in risk > <b>High</b>\nAccess controls > Grant > <b>Block Access</b>",
+            "+@fixref": "F-0318C860rB7363A_fix"
+          },
+          "fix": {
+            "+@id": "F-0318C860rB7363A_fix"
+          },
+          "check": {
+            "+@system": "C-0318C860rB7363A_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Sign-ins detected as high risk SHALL be blocked.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What are risk detections? (https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks)\n- Simulating risk detections in Identity Protection (https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-simulate-risk)\n- Self-remediation experience with Microsoft Entra ID Protection and Conditional Access (https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-user-experience)"
+          }
+        }
+      },
+      {
+        "+@id": "V-60F601F6",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-60F601F6r95A5CD_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.3.1v1",
+          "title": "Phishing-resistant MFA SHALL be enforced for all users.",
+          "description": "<VulnDiscussion>Phishing-resistant MFA SHALL be enforced for all users.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Weaker forms of MFA do not protect against sophisticated phishing attacks. By enforcing methods resistant to phishing, those risks are minimized.\n\nThe phishing-resistant methods **Microsoft Entra ID certificate-based authentication (CBA)**, **FIDO2 Security Key**, **Windows Hello for Business**, and **device-bound passkeys** (in the authenticator app of choice) are the recommended authentication options since they offer forms of MFA with the least weaknesses. For federal agencies, Microsoft Entra ID CBA supports federal PIV card authentication directly to Microsoft Entra ID.\n\nIf on-premises PIV authentication and federation to Microsoft Entra ID is used, [enforce PIV logon via Microsoft Active Directory group policy](https://www.idmanagement.gov/implement/scl-windows/).\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-2(1), IA-2(2), IA-5c, IA-5g, IA-2(8)\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.3.1v1"
+          },
+          "fixtext": {
+            "+content": "1. Create a conditional access policy enforcing phishing-resistant MFA for all users. Configure the following policy settings in the new conditional access policy, per the values below:\nUsers > Include > <b>All users</b>\nTarget resources > Include > <b>All resources (formerly 'All cloud apps') </b>\nAccess controls > Grant > Grant Access > Require authentication strength > <b>Phishing-resistant MFA</b>",
+            "+@fixref": "F-60F601F6r95A5CD_fix"
+          },
+          "fix": {
+            "+@id": "F-60F601F6r95A5CD_fix"
+          },
+          "check": {
+            "+@system": "C-60F601F6r95A5CD_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Phishing-resistant MFA SHALL be enforced for all users.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- Use additional context in Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-B5A44595",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B5A44595r3C4E98_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.3.2v1",
+          "title": "If phishing-resistant MFA has not been enforced, an alternative MFA method SHALL be enforced for all users.",
+          "description": "<VulnDiscussion>If phishing-resistant MFA has not been enforced, an alternative MFA method SHALL be enforced for all users.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: This is a stopgap security policy to help protect the tenant if phishing-resistant MFA has not been enforced. This policy requires MFA enforcement, thus reducing single-form authentication risk.\n\nNote: If a conditional access policy enforces phishing-resistant MFA, then this policy is not necessary. This policy does not dictate the specific MFA method.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-2(1), IA-2(2)\n\nMITRE ATT&CK: T1110: Brute Force; T1110.001: Password Guessing; T1110.002: Password Cracking; T1110.003: Password Spraying</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.3.2v1"
+          },
+          "fixtext": {
+            "+content": "1. If phishing-resistant MFA has not been enforced for all users yet, create a conditional access policy that enforces MFA but does not dictate MFA method. Configure the following policy settings in the new conditional access policy, per the values below:\nUsers > Include > <b>All users</b>\nTarget resources > Include > <b>All resources (formerly 'All cloud apps') </b>\nAccess controls > Grant > Grant Access > <b>Require multifactor authentication</b>",
+            "+@fixref": "F-B5A44595r3C4E98_fix"
+          },
+          "fix": {
+            "+@id": "F-B5A44595r3C4E98_fix"
+          },
+          "check": {
+            "+@system": "C-B5A44595r3C4E98_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "If phishing-resistant MFA has not been enforced, an alternative MFA method SHALL be enforced for all users.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- Use additional context in Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-FD76ED89",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FD76ED89r9BB931_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.3.3v2",
+          "title": "If Microsoft Authenticator is enabled, it SHALL be configured to show login context information.",
+          "description": "<VulnDiscussion>If Microsoft Authenticator is enabled, it SHALL be configured to show login context information.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: This policy helps protect the tenant when Microsoft Authenticator is used by showing user context information, which helps reduce MFA phishing compromises.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-2(1), IA-2(2), IA-5c, IA-5g, IA-2(8), IA-2(13)\n\nMITRE ATT&CK: T1110: Brute Force; T1110.001: Password Guessing; T1110.002: Password Cracking; T1110.003: Password Spraying</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.3.3v2"
+          },
+          "fixtext": {
+            "+content": "If Microsoft Authenticator is in use, configure Authenticator to display context information to users when they log in.\n1. In Microsoft Entra admin center, click Protection > Authentication methods > Microsoft Authenticator.\n2. Click the Configure tab.\n3. For Allow use of Microsoft Authenticator OTP select *No*.\n4. Under Show application name in push and passwordless notifications select Status > Enabled and Target > Include > All users.\n5. Under Show geographic location in push and passwordless notifications select Status > Enabled and Target > Include > All users.\n6. Select Save",
+            "+@fixref": "F-FD76ED89r9BB931_fix"
+          },
+          "fix": {
+            "+@id": "F-FD76ED89r9BB931_fix"
+          },
+          "check": {
+            "+@system": "C-FD76ED89r9BB931_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "If Microsoft Authenticator is enabled, it SHALL be configured to show login context information.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- Use additional context in Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-C368F11F",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C368F11Fr9B3739_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.3.4v1",
+          "title": "The Authentication Methods Manage Migration feature SHALL be set to Migration Complete.",
+          "description": "<VulnDiscussion>The Authentication Methods Manage Migration feature SHALL be set to Migration Complete.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: To disable the legacy authentication methods screen for the tenant, configure the Manage Migration feature to Migration Complete. The MFA and Self-Service Password Reset (SSPR) authentication methods are both managed from a central admin page, thereby reducing administrative complexity and potential security misconfigurations.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.3.4v1"
+          },
+          "fixtext": {
+            "+content": "1. Go through the process of How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-methods-manage).\n2. Once ready to finish the migration, set the Manage Migration option to Migration Complete (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-methods-manage#finish-the-migration).",
+            "+@fixref": "F-C368F11Fr9B3739_fix"
+          },
+          "fix": {
+            "+@id": "F-C368F11Fr9B3739_fix"
+          },
+          "check": {
+            "+@system": "C-C368F11Fr9B3739_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "The Authentication Methods Manage Migration feature SHALL be set to Migration Complete.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- Use additional context in Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-4ADCBC01",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-4ADCBC01rA84982_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.3.5v1",
+          "title": "The authentication methods SMS, Voice Call, and Email One-Time Passcode (OTP) SHALL be disabled.",
+          "description": "<VulnDiscussion>The authentication methods SMS, Voice Call, and Email One-Time Passcode (OTP) SHALL be disabled.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: SMS, voice call, and email OTP are the weakest authenticators. This policy forces users to use stronger MFA methods.\n\nNote: This policy is only applicable if the tenant has their Manage Migration feature set to Migration Complete.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7b, IA-5c\n\nMITRE ATT&CK: T1621: Multi-Factor Authentication Request Generation; T1566: Phishing; T1566.002: Spearphishing Link</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.3.5v1"
+          },
+          "fixtext": {
+            "+content": "1. In Microsoft Entra admin center , click Protection > Authentication methods\n2. Click on the SMS, Voice Call, and Email OTP authentication methods and disable each of them. Their statuses should be Enabled > No on the Authentication methods > Policies page.",
+            "+@fixref": "F-4ADCBC01rA84982_fix"
+          },
+          "fix": {
+            "+@id": "F-4ADCBC01rA84982_fix"
+          },
+          "check": {
+            "+@system": "C-4ADCBC01rA84982_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "The authentication methods SMS, Voice Call, and Email One-Time Passcode (OTP) SHALL be disabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- Use additional context in Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-ADF78205",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-ADF78205rE6DB43_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.3.6v1",
+          "title": "Phishing-resistant MFA SHALL be required for highly privileged roles.",
+          "description": "<VulnDiscussion>Phishing-resistant MFA SHALL be required for highly privileged roles.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: This is a backup security policy to help protect privileged access to the tenant if the conditional access policy, which requires MFA for all users, is disabled or misconfigured.\n\nNote: Refer to the Highly Privileged Roles section at the top of this document for a reference list of roles considered highly privileged.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-2(1), IA-5c, IA-5g, IA-2(8)\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566.002: Spearphishing Link; T1078: Valid Accounts; T1078.004: Cloud Accounts</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.3.6v1"
+          },
+          "fixtext": {
+            "+content": "1. Create a conditional access policy enforcing phishing-resistant MFA for highly privileged roles.  Configure the following policy settings in the new conditional access policy, per the values below:\nUsers > Include > Select users and groups > Directory roles > <b>select each of the roles listed in the Highly Privileged Roles section at the top of this document</b>\nTarget resources > Include > <b>All resources (formerly 'All cloud apps') </b>\nAccess controls > Grant > Grant Access > Require authentication strength > <b>Phishing-resistant MFA</b>",
+            "+@fixref": "F-ADF78205rE6DB43_fix"
+          },
+          "fix": {
+            "+@id": "F-ADF78205rE6DB43_fix"
+          },
+          "check": {
+            "+@system": "C-ADF78205rE6DB43_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Phishing-resistant MFA SHALL be required for highly privileged roles.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- Use additional context in Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-604D3F0E",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-604D3F0Er00D2D2_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.AAD.3.7v1",
+          "title": "Managed devices SHOULD be required for authentication.",
+          "description": "<VulnDiscussion>Managed devices SHOULD be required for authentication.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: The security risk of an adversary authenticating to the tenant from their own device is reduced by requiring a managed device to authenticate. Managed devices are under the provisioning and control of the agency. [OMB-22-09](https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf) states, \"When authorizing users to access resources, agencies must consider at least one device-level signal alongside identity information about the authenticated user.\"\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-20b, IA-3\n\nMITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.3.7v1"
+          },
+          "fixtext": {
+            "+content": "1. Create a conditional access policy requiring a user's device to be either Microsoft Entra ID hybrid joined or compliant during authentication. Configure the following policy settings in the new conditional access policy, per the values below:\nUsers > Include > <b>All users</b>\nTarget resources > Include > <b>All resources (formerly 'All cloud apps') </b>\nAccess controls > Grant > Grant Access > <b>Require device to be marked as compliant</b> and <b>Require Microsoft Entra ID hybrid joined device</b> > For multiple controls > <b>Require one of the selected controls</b>",
+            "+@fixref": "F-604D3F0Er00D2D2_fix"
+          },
+          "fix": {
+            "+@id": "F-604D3F0Er00D2D2_fix"
+          },
+          "check": {
+            "+@system": "C-604D3F0Er00D2D2_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Managed devices SHOULD be required for authentication.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- Use additional context in Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-A61D2A98",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A61D2A98r066DD2_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.AAD.3.8v1",
+          "title": "Managed Devices SHOULD be required to register MFA.",
+          "description": "<VulnDiscussion>Managed Devices SHOULD be required to register MFA.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Reduce risk of an adversary using stolen user credentials and then registering their own MFA device to access the tenant by requiring a managed device provisioned and controlled by the agency to perform registration actions. This prevents the adversary from using their own unmanaged device to perform the registration.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-20b, IA-3\n\nMITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts; T1098: Account Manipulation; T1098.005: Device Registration</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.3.8v1"
+          },
+          "fixtext": {
+            "+content": "1. Create a conditional access policy requiring a user to be on a managed device when registering for MFA. Configure the following policy settings in the new conditional access policy, per the values below:\nUsers > Include > <b>All users</b>\nTarget resources > User actions > <b>Register security information</b>\nAccess controls > Grant > Grant Access > <b>Require device to be marked as compliant</b> and <b>Require Microsoft Entra ID hybrid joined device</b> > For multiple controls > <b>Require one of the selected controls</b>",
+            "+@fixref": "F-A61D2A98r066DD2_fix"
+          },
+          "fix": {
+            "+@id": "F-A61D2A98r066DD2_fix"
+          },
+          "check": {
+            "+@system": "C-A61D2A98r066DD2_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Managed Devices SHOULD be required to register MFA.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- Use additional context in Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-A564E063",
+        "title": "3. Strong Authentication and a Secure Registration Process",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A564E063rDE3C71_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.AAD.3.9v1",
+          "title": "Device code authentication SHOULD be blocked.",
+          "description": "<VulnDiscussion>Device code authentication SHOULD be blocked.\n\nCriticality: SHOULD.\nLast modified: February 2025.\n\nRationale: The device code authentication flow has been abused to compromise user accounts via phishing. Since most organizations using M365 don't need device code authentication, blocking it mitigates the risk.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7\n\nMITRE ATT&CK: T1528: Steal Application Access Token; T1078: Valid Accounts; T1078.004: Cloud Accounts</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.3.9v1"
+          },
+          "fixtext": {
+            "+content": "1. Create a Conditional Access policy to block device code flow\nUsers > Include > <b>All users</b>\nTarget resources > Include > <b>All resources (formerly 'All cloud apps') </b>\nConditions > Authentication Flows > Configure > <b>Yes</b> > Select <b>Device code flow</b>\nAccess controls > Grant > <b>Block Access</b>",
+            "+@fixref": "F-A564E063rDE3C71_fix"
+          },
+          "fix": {
+            "+@id": "F-A564E063rDE3C71_fix"
+          },
+          "check": {
+            "+@system": "C-A564E063rDE3C71_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Device code authentication SHOULD be blocked.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- What authentication and verification methods are available in Microsoft Entra ID? (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)\n- Use additional context in Authenticator notifications - Authentication methods policy (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context#enable-additional-context-in-the-portal)\n- M-22-09 Federal Zero Trust Architecture Strategy (https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf)\n- Configure Microsoft Entra hybrid join (https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join)\n- Microsoft Entra joined devices (https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)\n- Set up automatic enrollment for Windows devices (for Intune) (https://learn.microsoft.com/en-us/mem/intune/enrollment/windows-enroll)\n- Enable passkeys (FIDO2) for your organization (https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)\n- Storm-2372 conducts device code phishing campaign (https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/)\n- Microsoft 365 Device Code Phishing Cyber Attack – Demonstration, Analysis and Mitigation (https://github.com/cisagov/ScubaGear/issues/1599)\n- Block device code flow (https://learn.microsoft.com/en-us/entra/identity/conditional-access/managed-policies#block-device-code-flow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-8CC65392",
+        "title": "4. Centralized Log Collection",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-8CC65392r1CC8AC_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.4.1v1",
+          "title": "Security logs SHALL be sent to the agency's security operations center for monitoring.",
+          "description": "<VulnDiscussion>Security logs SHALL be sent to the agency's security operations center for monitoring.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: The security risk of not having visibility into cyber attacks is reduced by collecting logs in the agency’s centralized security detection infrastructure. This makes security events available for auditing, query, and incident response.\n\nNote: The following Microsoft Entra ID logs (configured in diagnostic settings), are required: `AuditLogs, SignInLogs, RiskyUsers, UserRiskEvents, NonInteractiveUserSignInLogs, ServicePrincipalSignInLogs, ADFSSignInLogs, RiskyServicePrincipals, ServicePrincipalRiskEvents, EnrichedOffice365AuditLogs, MicrosoftGraphActivityLogs`. If managed identities are used for Azure resources, also send the `ManagedIdentitySignInLogs` log type. If the Microsoft Entra ID Provisioning Service is used to provision users to software-as-a-service (SaaS) apps or other systems, also send the `ProvisioningLogs` log type.\n\nNote: Agencies can benefit from security detection capabilities offered by the CISA Cloud Log Aggregation Warehouse (CLAW) system. Agencies are urged to send the logs to CLAW. Contact CISA at cyberliason@cisa.dhs.gov to request integration instructions.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-4\n\nMITRE ATT&CK: T1562: Impair Defenses; T1562.008: Disable or Modify Cloud Logs</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.4.1v1"
+          },
+          "fixtext": {
+            "+content": "Follow the configuration instructions unique to the products and integration patterns at your organization to send the security logs to the security operations center for monitoring.",
+            "+@fixref": "F-8CC65392r1CC8AC_fix"
+          },
+          "fix": {
+            "+@id": "F-8CC65392r1CC8AC_fix"
+          },
+          "check": {
+            "+@system": "C-8CC65392r1CC8AC_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Security logs SHALL be sent to the agency's security operations center for monitoring.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Everything you wanted to know about Security and Audit Logging in Office 365 (https://thecloudtechnologist.com/2021/10/15/everything-you-wanted-to-know-about-security-and-audit-logging-in-office-365/)\n- What are Microsoft Entra sign-in logs?? (https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins)\n- National Cybersecurity Protection System-Cloud Interface Reference Architecture Volume One: General Guidance (https://www.cisa.gov/sites/default/files/publications/NCPS%20Cloud%20Interface%20RA%20Volume%20One%20%282021-05-14%29.pdf)"
+          }
+        }
+      },
+      {
+        "+@id": "V-ED925A18",
+        "title": "5. Application Registration and Consent",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-ED925A18r2FBBF6_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.5.1v1",
+          "title": "Only administrators SHALL be allowed to register applications.",
+          "description": "<VulnDiscussion>Only administrators SHALL be allowed to register applications.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Application access for the tenant presents a heightened security risk compared to interactive user access because applications are typically not subject to critical security protections, such as MFA policies. Reduce risk of unauthorized users installing malicious applications into the tenant by ensuring that only specific privileged users can register applications.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(10), CM-5\n\nMITRE ATT&CK: T1098: Account Manipulation; T1098.001: Additional Cloud Credentials; T1098.003: Additional Cloud Roles</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.5.1v1"
+          },
+          "fixtext": {
+            "+content": "1.  In Microsoft Entra admin center, select Users.\n2. Select User settings.\n3. For Users can register applications, select No.\n4. Click Save.",
+            "+@fixref": "F-ED925A18r2FBBF6_fix"
+          },
+          "fix": {
+            "+@id": "F-ED925A18r2FBBF6_fix"
+          },
+          "check": {
+            "+@system": "C-ED925A18r2FBBF6_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Only administrators SHALL be allowed to register applications.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Restrict Application Registration for Non-Privileged Users (https://www.trendmicro.com/cloudoneconformity/knowledge-base/azure/ActiveDirectory/users-can-register-applications.html)\n- Enforce Administrators to Provide Consent for Apps Before Use (https://www.trendmicro.com/cloudoneconformity/knowledge-base/azure/ActiveDirectory/users-can-consent-to-apps-accessing-company-data-on-their-behalf.html)\n- Configure the admin consent workflow (https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-E109F725",
+        "title": "5. Application Registration and Consent",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E109F725r4C58E7_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.5.2v1",
+          "title": "Only administrators SHALL be allowed to consent to applications.",
+          "description": "<VulnDiscussion>Only administrators SHALL be allowed to consent to applications.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Limiting applications consent to only specific privileged users reduces risk of users giving insecure applications access to their data via [consent grant attacks](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide).\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(10), CM-5\n\nMITRE ATT&CK: T1098: Account Manipulation; T1098.001: Additional Cloud Credentials; T1098.003: Additional Cloud Roles</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.5.2v1"
+          },
+          "fixtext": {
+            "+content": "1.  In Microsoft Entra admin center select Enterprise Applications.\n2. Under Security, select Consent and permissions. Then select User Consent Settings.\n3. Under User consent for applications, select Do not allow user consent.\n4. Click Save.",
+            "+@fixref": "F-E109F725r4C58E7_fix"
+          },
+          "fix": {
+            "+@id": "F-E109F725r4C58E7_fix"
+          },
+          "check": {
+            "+@system": "C-E109F725r4C58E7_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Only administrators SHALL be allowed to consent to applications.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Restrict Application Registration for Non-Privileged Users (https://www.trendmicro.com/cloudoneconformity/knowledge-base/azure/ActiveDirectory/users-can-register-applications.html)\n- Enforce Administrators to Provide Consent for Apps Before Use (https://www.trendmicro.com/cloudoneconformity/knowledge-base/azure/ActiveDirectory/users-can-consent-to-apps-accessing-company-data-on-their-behalf.html)\n- Configure the admin consent workflow (https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-6DB049EA",
+        "title": "5. Application Registration and Consent",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6DB049EAr542F18_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.5.3v1",
+          "title": "An admin consent workflow SHALL be configured for applications.",
+          "description": "<VulnDiscussion>An admin consent workflow SHALL be configured for applications.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Configuring an admin consent workflow reduces the risk of the previous policy by setting up a process for users to securely request access to applications necessary for business purposes. Administrators have the opportunity to review the permissions requested by new applications and approve or deny access based on a risk assessment.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-4\n\nMITRE ATT&CK: T1098: Account Manipulation; T1098.001: Additional Cloud Credentials; T1098.003: Additional Cloud Roles</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.5.3v1"
+          },
+          "fixtext": {
+            "+content": "1.  In Microsoft Entra admin center  create a new Microsoft Entra ID Group that contains admin users responsible for reviewing and adjudicating application consent requests. Group members will be notified when users request consent for new applications.\n2. Then in Microsoft Entra admin center  under Applications, select Enterprise Applications.\n3. Under Security, select Consent and permissions. Then select Admin consent settings.\n4. Under Admin consent requests navigate to Users can request admin consent to apps they are unable to consent to and select Yes.\n5. Under Who can review admin consent requests, select + Add groups and select the group responsible for reviewing and adjudicating app requests (created in step one above).\n6. Click Save.",
+            "+@fixref": "F-6DB049EAr542F18_fix"
+          },
+          "fix": {
+            "+@id": "F-6DB049EAr542F18_fix"
+          },
+          "check": {
+            "+@system": "C-6DB049EAr542F18_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "An admin consent workflow SHALL be configured for applications.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Restrict Application Registration for Non-Privileged Users (https://www.trendmicro.com/cloudoneconformity/knowledge-base/azure/ActiveDirectory/users-can-register-applications.html)\n- Enforce Administrators to Provide Consent for Apps Before Use (https://www.trendmicro.com/cloudoneconformity/knowledge-base/azure/ActiveDirectory/users-can-consent-to-apps-accessing-company-data-on-their-behalf.html)\n- Configure the admin consent workflow (https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow)"
+          }
+        }
+      },
+      {
+        "+@id": "V-BA54ECCE",
+        "title": "6. Passwords",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BA54ECCEr86214F_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.6.1v1",
+          "title": "User passwords SHALL NOT expire.",
+          "description": "<VulnDiscussion>User passwords SHALL NOT expire.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: The National Institute of Standards and Technology (NIST), OMB, and Microsoft have published guidance indicating mandated periodic password changes make user accounts less secure. For example, OMB-22-09 states, \"Password policies must not require use of special characters or regular rotation.\"\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: IA-5(1)</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.6.1v1"
+          },
+          "fixtext": {
+            "+content": "1. Configure the Password expiration policy to Set passwords to never expire (https://learn.microsoft.com/en-us/microsoft-365/admin/manage/set-password-expiration-policy?view=o365-worldwide#set-password-expiration-policy).\nThe following implementation instructions that reference the Microsoft Entra ID PIM service will vary if using a third-party PAM system instead.",
+            "+@fixref": "F-BA54ECCEr86214F_fix"
+          },
+          "fix": {
+            "+@id": "F-BA54ECCEr86214F_fix"
+          },
+          "check": {
+            "+@system": "C-BA54ECCEr86214F_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "User passwords SHALL NOT expire.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Password expiration requirements for users (https://learn.microsoft.com/en-us/microsoft-365/admin/misc/password-policy-recommendations?view=o365-worldwide#password-expiration-requirements-for-users)\n- Eliminate bad passwords using Microsoft Entra Password Protection (https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad)\n- NIST Special Publication 800-63B - Digital Identity Guidelines (https://pages.nist.gov/800-63-3/sp800-63b.html)"
+          }
+        }
+      },
+      {
+        "+@id": "V-42B22E5E",
+        "title": "7. Highly Privileged User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-42B22E5ErBC85B9_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.7.1v1",
+          "title": "A minimum of two users and a maximum of eight users SHALL be provisioned with the Global Administrator role.",
+          "description": "<VulnDiscussion>A minimum of two users and a maximum of eight users SHALL be provisioned with the Global Administrator role.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: The Global Administrator role provides unfettered access to the tenant. Limiting the number of users with this level of access makes tenant compromise more challenging. Microsoft recommends fewer than five users in the Global Administrator role. However, additional user accounts, up to eight, may be necessary to support emergency access and some operational scenarios.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(5)\n\nMITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.7.1v1"
+          },
+          "fixtext": {
+            "+content": "When counting the number of users assigned to the Global Administrator role, count each user only once.\n1. In Microsoft Entra admin center  count the number of users assigned to the Global Administrator role. Count users that are assigned directly to the role and users assigned via group membership. If you have Microsoft Entra ID PIM, count both the Eligible assignments and Active assignments. If any of the groups assigned to Global Administrator are enrolled in PIM for Groups, also count the number of group members from the PIM for Groups portal Eligible assignments.\n2. Validate that there are a total of two to eight users assigned to the Global Administrator role.",
+            "+@fixref": "F-42B22E5ErBC85B9_fix"
+          },
+          "fix": {
+            "+@id": "F-42B22E5ErBC85B9_fix"
+          },
+          "check": {
+            "+@system": "C-42B22E5ErBC85B9_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "A minimum of two users and a maximum of eight users SHALL be provisioned with the Global Administrator role.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Limit number of Global Administrators to less than 5 (https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)\n- Implement Privilege Access Management (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management)\n- Assign Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user)\n- Privileged Identity Management (PIM) for Groups (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups)\n- Approve or deny requests for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow)\n- Configure security alerts for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts)"
+          }
+        }
+      },
+      {
+        "+@id": "V-FC49039F",
+        "title": "7. Highly Privileged User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FC49039FrA72C75_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.7.2v1",
+          "title": "Privileged users SHALL be provisioned with finer-grained roles instead of Global Administrator.",
+          "description": "<VulnDiscussion>Privileged users SHALL be provisioned with finer-grained roles instead of Global Administrator.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Many privileged administrative users do not need unfettered access to the tenant to perform their duties. By assigning them to roles based on least privilege, the risks associated with having their accounts compromised are reduced.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-5\n\nMITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles; T1651: Cloud Administration Command; T1136: Create Account; T1136.003: Cloud Account</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.7.2v1"
+          },
+          "fixtext": {
+            "+content": "This policy is based on the ratio below:\nX = (Number of users assigned to the Global Administrator role) / (Number of users assigned to other highly privileged roles)\n1. Follow the instructions for policy MS.AAD.7.1v1 above to get a count of users assigned to the Global Administrator role.\n2. Follow the instructions for policy MS.AAD.7.1v1 above but get a count of users assigned to the other highly privileged roles (not Global Administrator). If a user is assigned to both Global Administrator and other roles, only count that user for the Global Administrator assignment.\n3. Divide the value from step 2 from the value from step 1 to calculate X. If X is less than or equal to 1 then the tenant is compliant with the policy.",
+            "+@fixref": "F-FC49039FrA72C75_fix"
+          },
+          "fix": {
+            "+@id": "F-FC49039FrA72C75_fix"
+          },
+          "check": {
+            "+@system": "C-FC49039FrA72C75_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Privileged users SHALL be provisioned with finer-grained roles instead of Global Administrator.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Limit number of Global Administrators to less than 5 (https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)\n- Implement Privilege Access Management (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management)\n- Assign Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user)\n- Privileged Identity Management (PIM) for Groups (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups)\n- Approve or deny requests for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow)\n- Configure security alerts for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts)"
+          }
+        }
+      },
+      {
+        "+@id": "V-563B8177",
+        "title": "7. Highly Privileged User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-563B8177rC57387_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.7.3v1",
+          "title": "Privileged users SHALL be provisioned cloud-only accounts separate from an on-premises directory or other federated identity providers.",
+          "description": "<VulnDiscussion>Privileged users SHALL be provisioned cloud-only accounts separate from an on-premises directory or other federated identity providers.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: By provisioning cloud-only Microsoft Entra ID user accounts to privileged users, the risks associated with a compromise of on-premises federation infrastructure are reduced. It is more challenging for the adversary to pivot from the compromised environment to the cloud with privileged access.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(5)\n\nMITRE ATT&CK: T1556: Modify Authentication Process; T1556.007: Hybrid Identity</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.7.3v1"
+          },
+          "fixtext": {
+            "+content": "1. Perform the steps below for each highly privileged role. We reference the Global Administrator role as an example.\n2. Create a list of all the users assigned to the Global Administrator role. Include users that are assigned directly to the role and users assigned via group membership. If you have Microsoft Entra ID PIM, include both the Eligible assignments and Active assignments. If any of the groups assigned to Global Administrator are enrolled in PIM for Groups, also include group members from the PIM for Groups portal Eligible assignments.\n3. For each highly privileged user in the list, execute the Powershell code below but replace the username@somedomain.com with the principal name of the user who is specific to your environment. You can get the data value from the Principal name field displayed in the Microsoft Entra ID portal.\n    Connect-MgGraph\n    Get-MgBetaUser -Filter \"userPrincipalName eq 'username@somedomain.com'\" | FL\n6. Review the output field named OnPremisesImmutableId. If this field contains a data value, it means that the  user is not cloud-only. If the user is not cloud-only, create a cloud-only account for that user, assign the user to their respective roles and then remove the account that is not cloud-only from Microsoft Entra ID.",
+            "+@fixref": "F-563B8177rC57387_fix"
+          },
+          "fix": {
+            "+@id": "F-563B8177rC57387_fix"
+          },
+          "check": {
+            "+@system": "C-563B8177rC57387_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Privileged users SHALL be provisioned cloud-only accounts separate from an on-premises directory or other federated identity providers.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Limit number of Global Administrators to less than 5 (https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)\n- Implement Privilege Access Management (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management)\n- Assign Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user)\n- Privileged Identity Management (PIM) for Groups (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups)\n- Approve or deny requests for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow)\n- Configure security alerts for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts)"
+          }
+        }
+      },
+      {
+        "+@id": "V-9D7D8065",
+        "title": "7. Highly Privileged User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9D7D8065rAE0AEF_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.7.4v1",
+          "title": "Permanent active role assignments SHALL NOT be allowed for highly privileged roles.",
+          "description": "<VulnDiscussion>Permanent active role assignments SHALL NOT be allowed for highly privileged roles.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Instead of giving users permanent assignments to privileged roles, provisioning access just in time lessens exposure if those accounts become compromised. In Microsoft Entra ID PIM or an alternative PAM system, just in time access can be provisioned by assigning users to roles as eligible instead of perpetually active.\n\nNote: Exceptions to this policy are:\n\nNote: Emergency access accounts that need perpetual access to the tenant in the rare event of system degradation or other scenarios.\n\nNote: Some types of service accounts that require a user account with privileged roles; since these accounts are used by software programs, they cannot perform role activation.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2\n\nMITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.7.4v1"
+          },
+          "fixtext": {
+            "+content": "1. In Microsoft Entra admin center  select Roles and admins. Perform the steps below for each highly privileged role. We reference the Global Administrator role as an example.\n2. Select the Global Administrator role.\n3. Under Manage, select Assignments and click the Active assignments tab.\n4. Verify there are no users or groups with a value of Permanent in the End time column. If there are any, recreate those assignments to have an expiration date using Microsoft Entra ID PIM or an alternative PAM system. If a group is identified and it is enrolled in PIM for Groups, see the exception cases below for details.\nException cases:\n- Emergency access accounts that require perpetual active assignment.\n- Service accounts that require perpetual active assignment.\n- If using PIM for Groups, a group that is enrolled in PIM is allowed to have a perpetual active assignment to a role because activation is handled by PIM for Groups.",
+            "+@fixref": "F-9D7D8065rAE0AEF_fix"
+          },
+          "fix": {
+            "+@id": "F-9D7D8065rAE0AEF_fix"
+          },
+          "check": {
+            "+@system": "C-9D7D8065rAE0AEF_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Permanent active role assignments SHALL NOT be allowed for highly privileged roles.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Limit number of Global Administrators to less than 5 (https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)\n- Implement Privilege Access Management (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management)\n- Assign Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user)\n- Privileged Identity Management (PIM) for Groups (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups)\n- Approve or deny requests for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow)\n- Configure security alerts for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts)"
+          }
+        }
+      },
+      {
+        "+@id": "V-FCA5774B",
+        "title": "7. Highly Privileged User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-FCA5774Br421C65_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.7.5v1",
+          "title": "Provisioning users to highly privileged roles SHALL NOT occur outside of a PAM system.",
+          "description": "<VulnDiscussion>Provisioning users to highly privileged roles SHALL NOT occur outside of a PAM system.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Provisioning users to privileged roles within a PAM system enables enforcement of numerous privileged access policies and monitoring. If privileged users are assigned directly to roles in the M365 admin center or via PowerShell outside of the context of a PAM system, a significant set of critical security capabilities are bypassed.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2\n\nMITRE ATT&CK: T1651: Cloud Administration Command</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.7.5v1"
+          },
+          "fixtext": {
+            "+content": "1. Perform the steps below for each highly privileged role. We reference the Global Administrator role as an example.\n2. In Microsoft Entra admin center  select Roles and Admins.\n3. Select the Global Administrator role.\n4. Under Manage, select Assignments and click the Active assignments tab.\n5. For each user or group listed, examine the value in the Start time column. If it contains a value of -, this indicates the respective user/group was assigned to that role outside of Microsoft Entra ID PIM. If the role was assigned outside of Microsoft Entra ID PIM, delete the assignment and recreate it using Microsoft Entra ID PIM.",
+            "+@fixref": "F-FCA5774Br421C65_fix"
+          },
+          "fix": {
+            "+@id": "F-FCA5774Br421C65_fix"
+          },
+          "check": {
+            "+@system": "C-FCA5774Br421C65_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Provisioning users to highly privileged roles SHALL NOT occur outside of a PAM system.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Limit number of Global Administrators to less than 5 (https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)\n- Implement Privilege Access Management (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management)\n- Assign Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user)\n- Privileged Identity Management (PIM) for Groups (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups)\n- Approve or deny requests for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow)\n- Configure security alerts for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts)"
+          }
+        }
+      },
+      {
+        "+@id": "V-E8642D34",
+        "title": "7. Highly Privileged User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E8642D34r16AADD_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.7.6v1",
+          "title": "Activation of the Global Administrator role SHALL require approval.",
+          "description": "<VulnDiscussion>Activation of the Global Administrator role SHALL require approval.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Requiring approval for a user to activate Global Administrator, which provides unfettered access, makes it more challenging for an attacker to compromise the tenant with stolen credentials, and it provides visibility of activities indicating a compromise is taking place.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(1)\n\nMITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.7.6v1"
+          },
+          "fixtext": {
+            "+content": "1. In the Microsoft Entra Portal, under Identity Governance, select Privileged Identity Management (PIM), and then under Manage, select Microsoft Entra roles.\n2. Under Manage, select Roles.\n1.  Select the Global Administrator role in the list.\n2.  Click Settings.\n3.  Click Edit.\n4.  Select the Require approval to activate option.\n5.  Click Update.\n3. Review the list of groups that are actively assigned to the Global Administrator role. If any of the groups are enrolled in PIM for Groups, also apply the same configurations as steps 2-7 above to each PIM group's Member settings.",
+            "+@fixref": "F-E8642D34r16AADD_fix"
+          },
+          "fix": {
+            "+@id": "F-E8642D34r16AADD_fix"
+          },
+          "check": {
+            "+@system": "C-E8642D34r16AADD_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Activation of the Global Administrator role SHALL require approval.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Limit number of Global Administrators to less than 5 (https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)\n- Implement Privilege Access Management (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management)\n- Assign Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user)\n- Privileged Identity Management (PIM) for Groups (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups)\n- Approve or deny requests for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow)\n- Configure security alerts for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts)"
+          }
+        }
+      },
+      {
+        "+@id": "V-F9341752",
+        "title": "7. Highly Privileged User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F9341752r028B5A_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.7.7v1",
+          "title": "Eligible and active highly privileged role assignments SHALL trigger an alert.",
+          "description": "<VulnDiscussion>Eligible and active highly privileged role assignments SHALL trigger an alert.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Closely monitor assignment of the highest privileged roles for signs of compromise. Send assignment alerts to enable the security monitoring team to detect compromise attempts.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2(1)\n\nMITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.7.7v1"
+          },
+          "fixtext": {
+            "+content": "1.  In the Microsoft Entra Portal, under Identity Governance, select Privileged Identity Management (PIM), and then under Manage, select Microsoft Entra roles.\n2. Under Manage, select Roles. Perform the steps below for each highly privileged role. We reference the Global Administrator role as an example:\n1. Click the Global Administrator role.\n2. Click Settings and then click Edit.\n3. Click the Notification tab.\n4. Under Send notifications when members are assigned as eligible to this role, in the Role assignment alert > Additional recipients textbox, enter the email address of the security monitoring mailbox configured to receive privileged role assignment alerts.\n5. Under Send notifications when members are assigned as active to this role, in the Role assignment alert > Additional recipients textbox, enter the email address of the security monitoring mailbox configured to receive privileged role assignment alerts.\n6. Click Update.\n3. For each of the highly privileged roles, if they have any PIM groups actively assigned to them, apply the same configurations as steps 2-8 above to each PIM group's Member settings.",
+            "+@fixref": "F-F9341752r028B5A_fix"
+          },
+          "fix": {
+            "+@id": "F-F9341752r028B5A_fix"
+          },
+          "check": {
+            "+@system": "C-F9341752r028B5A_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Eligible and active highly privileged role assignments SHALL trigger an alert.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Limit number of Global Administrators to less than 5 (https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)\n- Implement Privilege Access Management (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management)\n- Assign Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user)\n- Privileged Identity Management (PIM) for Groups (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups)\n- Approve or deny requests for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow)\n- Configure security alerts for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts)"
+          }
+        }
+      },
+      {
+        "+@id": "V-352F9EB3",
+        "title": "7. Highly Privileged User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-352F9EB3r1B70FC_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.AAD.7.8v1",
+          "title": "User activation of the Global Administrator role SHALL trigger an alert.",
+          "description": "<VulnDiscussion>User activation of the Global Administrator role SHALL trigger an alert.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Closely monitor activation of the Global Administrator role for signs of compromise. Send activation alerts to enable the security monitoring team to detect compromise attempts.\n\nNote: It is recommended to prioritize user activation of Global Administrator as one of the most important events to monitor and respond to.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(9)\n\nMITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.7.8v1"
+          },
+          "fixtext": {
+            "+content": "1. In the Microsoft Entra Portal, under Identity Governance, select Privileged Identity Management (PIM). Under Manage, select Microsoft Entra roles.\n2. Click the Global Administrator role.\n3. Click Settings then click Edit.\n4. Click the Notification tab.\n5. Under Send notifications when eligible members activate this role, in the Role activation alert select the  Additional recipients textbox and enter the email address of the security monitoring mailbox configured to receive Global Administrator activation alerts.\n6. Click Update.\n7. If the Global Administrator role has any PIM groups actively assigned to it, then also apply the same configurations per the steps above to each PIM group's Member settings.",
+            "+@fixref": "F-352F9EB3r1B70FC_fix"
+          },
+          "fix": {
+            "+@id": "F-352F9EB3r1B70FC_fix"
+          },
+          "check": {
+            "+@system": "C-352F9EB3r1B70FC_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "User activation of the Global Administrator role SHALL trigger an alert.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Limit number of Global Administrators to less than 5 (https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)\n- Implement Privilege Access Management (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management)\n- Assign Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user)\n- Privileged Identity Management (PIM) for Groups (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups)\n- Approve or deny requests for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow)\n- Configure security alerts for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts)"
+          }
+        }
+      },
+      {
+        "+@id": "V-E205D5B4",
+        "title": "7. Highly Privileged User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E205D5B4r6C4632_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.AAD.7.9v1",
+          "title": "User activation of other highly privileged roles SHOULD trigger an alert.",
+          "description": "<VulnDiscussion>User activation of other highly privileged roles SHOULD trigger an alert.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Closely monitor activation of high-risk roles for signs of compromise. Send activation alerts to enable the security monitoring team to detect compromise attempts. In some environments, activating privileged roles can generate a significant number of alerts.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(9)\n\nMITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles; T1136: Create Account; T1136.003: Cloud Account</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.7.9v1"
+          },
+          "fixtext": {
+            "+content": "1. Follow the same instructions as MS.AAD.7.8v1 for each of the highly privileged roles (other than Global Administrator) but enter a security monitoring mailbox different from the one used to monitor Global Administrator activations.\n2. For each of the highly privileged roles, if they have any PIM groups actively assigned to them, then also apply the same configurations per step 1 to each PIM group's Member settings.",
+            "+@fixref": "F-E205D5B4r6C4632_fix"
+          },
+          "fix": {
+            "+@id": "F-E205D5B4r6C4632_fix"
+          },
+          "check": {
+            "+@system": "C-E205D5B4r6C4632_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "User activation of other highly privileged roles SHOULD trigger an alert.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Limit number of Global Administrators to less than 5 (https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)\n- Implement Privilege Access Management (https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management)\n- Assign Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user)\n- Privileged Identity Management (PIM) for Groups (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups)\n- Approve or deny requests for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow)\n- Configure security alerts for Microsoft Entra roles in Privileged Identity Management (https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts)"
+          }
+        }
+      },
+      {
+        "+@id": "V-CF1807C7",
+        "title": "8. Guest User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-CF1807C7r9554B8_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.AAD.8.1v1",
+          "title": "Guest users SHOULD have limited or restricted access to Microsoft Entra ID directory objects.",
+          "description": "<VulnDiscussion>Guest users SHOULD have limited or restricted access to Microsoft Entra ID directory objects.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Limiting the amount of object information available to guest users in the tenant, reduces malicious reconnaissance exposure if a guest account is compromised or created by an adversary.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6\n\nMITRE ATT&CK: T1087: Account Discovery; T1087.003: Email Account; T1087.004: Cloud Account; T1526: Cloud Service Discovery</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.8.1v1"
+          },
+          "fixtext": {
+            "+content": "1. In Microsoft Entra admin center  select External Identities > External collaboration settings.\n2. Under Guest user access, select either Guest users have limited access to properties and memberships of directory objects or Guest user access is restricted to properties and memberships of their own directory objects (most restrictive).\n3. Click Save.",
+            "+@fixref": "F-CF1807C7r9554B8_fix"
+          },
+          "fix": {
+            "+@id": "F-CF1807C7r9554B8_fix"
+          },
+          "check": {
+            "+@system": "C-CF1807C7r9554B8_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Guest users SHOULD have limited or restricted access to Microsoft Entra ID directory objects.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Configure external collaboration settings for B2B in Microsoft Entra External ID (https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure)\n- Compare member and guest default permissions (https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions#compare-member-and-guest-default-permissions)"
+          }
+        }
+      },
+      {
+        "+@id": "V-39C7EF76",
+        "title": "8. Guest User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-39C7EF76rF5DD4F_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.AAD.8.2v1",
+          "title": "Only users with the Guest Inviter role SHOULD be able to invite guest users.",
+          "description": "<VulnDiscussion>Only users with the Guest Inviter role SHOULD be able to invite guest users.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: By only allowing an authorized group of individuals to invite external users to create accounts in the tenant, an agency can enforce a guest user account approval process, reducing the risk of unauthorized account creation.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-6(10)\n\nMITRE ATT&CK: T1098: Account Manipulation; T1098.003: Additional Cloud Roles</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.8.2v1"
+          },
+          "fixtext": {
+            "+content": "1. In Microsoft Entra admin center  select External Identities > External collaboration settings.\n2.  Under Guest invite settings, select Only users assigned to specific admin roles can invite guest users.\n3. Click Save.",
+            "+@fixref": "F-39C7EF76rF5DD4F_fix"
+          },
+          "fix": {
+            "+@id": "F-39C7EF76rF5DD4F_fix"
+          },
+          "check": {
+            "+@system": "C-39C7EF76rF5DD4F_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Only users with the Guest Inviter role SHOULD be able to invite guest users.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Configure external collaboration settings for B2B in Microsoft Entra External ID (https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure)\n- Compare member and guest default permissions (https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions#compare-member-and-guest-default-permissions)"
+          }
+        }
+      },
+      {
+        "+@id": "V-1AFCDF56",
+        "title": "8. Guest User Access",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1AFCDF56rF1DA36_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.AAD.8.3v1",
+          "title": "Guest invites SHOULD only be allowed to specific external domains that have been authorized by the agency for legitimate business purposes.",
+          "description": "<VulnDiscussion>Guest invites SHOULD only be allowed to specific external domains that have been authorized by the agency for legitimate business purposes.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Limiting which domains can be invited to create guest accounts in the tenant helps reduce the risk of users from unauthorized external organizations getting access.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3\n\nMITRE ATT&CK: T1078: Valid Accounts; T1078.001: Default Accounts</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Microsoft Entra ID",
+            "dc:identifier": "MS.AAD.8.3v1"
+          },
+          "fixtext": {
+            "+content": "1. In Microsoft Entra admin center  select External Identities > External collaboration settings.\n2. Under Collaboration restrictions, select **Allow invitations\nonly to the specified domains (most restrictive)**.\n3. Select Target domains and enter the names of the external domains authorized by the agency for guest user access.\n4. Click Save.",
+            "+@fixref": "F-1AFCDF56rF1DA36_fix"
+          },
+          "fix": {
+            "+@id": "F-1AFCDF56rF1DA36_fix"
+          },
+          "check": {
+            "+@system": "C-1AFCDF56rF1DA36_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Entra_ID.xml",
+              "+@name": "M"
+            },
+            "check-content": "Guest invites SHOULD only be allowed to specific external domains that have been authorized by the agency for legitimate business purposes.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Configure external collaboration settings for B2B in Microsoft Entra External ID (https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure)\n- Compare member and guest default permissions (https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions#compare-member-and-guest-default-permissions)"
+          }
+        }
+      }
+    ]
+  }
+}

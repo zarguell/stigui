@@ -1,0 +1,325 @@
+{
+  "id": "CISA_Teams",
+  "from_version": "1.5.0",
+  "to_version": "1.6.0",
+  "date": "2025-07-09",
+  "counts": {
+    "unchanged": 19,
+    "updated": 2,
+    "added": 0,
+    "removed": 0
+  },
+  "entries": [
+    {
+      "outcome": "updated",
+      "group_id": "V-29602AD4",
+      "rule_id": "SV-29602AD4r154DBD",
+      "rule_title": "Record an event SHOULD NOT be set to Always record.",
+      "fieldDiffs": [
+        {
+          "field": "rule_title",
+          "parts": [
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": "Record an event SHOULD "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "NOT "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": "be set to "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Organizer can"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Always"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": " record."
+            }
+          ]
+        },
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": "Record an event SHOULD "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "NOT "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": "be set to "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Organizer can"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Always"
+            },
+            {
+              "count": 9,
+              "added": false,
+              "removed": false,
+              "value": " record.\n\nCriticality: SHOULD.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "July 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "March 2025"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: "
+            },
+            {
+              "count": 8,
+              "added": false,
+              "removed": true,
+              "value": "The security risk of the default settings for"
+            },
+            {
+              "count": 4,
+              "added": true,
+              "removed": false,
+              "value": "Allowing to always record"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": " Live Events "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "is Live Events "
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "can "
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": "be recorded by all participants by default"
+            },
+            {
+              "count": 10,
+              "added": true,
+              "removed": false,
+              "value": "pose data and video recording leakage and other security risks"
+            },
+            {
+              "count": 23,
+              "added": false,
+              "removed": false,
+              "value": ". Limiting recording permissions to only the organizer minimizes the security risk to the organizer's discretion for these Live Events. "
+            },
+            {
+              "count": 10,
+              "added": true,
+              "removed": false,
+              "value": "Administrators can also disable recording for all live events.\n\n"
+            },
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "Note: This policy applies to the Global (Org-wide default) meeting policy"
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": ", as well as custom meeting policies"
+            },
+            {
+              "count": 14,
+              "added": false,
+              "removed": false,
+              "value": ". Custom policies MAY be created to allow more flexibility for specific users."
+            }
+          ]
+        },
+        {
+          "field": "check_content",
+          "parts": [
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": "Record an event SHOULD "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "NOT "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": "be set to "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "Organizer can"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "Always"
+            },
+            {
+              "count": 205,
+              "added": false,
+              "removed": false,
+              "value": " record.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Manage who can present and request control in Microsoft Teams | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/meeting-who-present-request-control)\n- Meeting policy settings | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference#meetings)\n- Teams cloud meeting recording | Microsoft Learn  (https://learn.microsoft.com/en-us/microsoftteams/cloud-recording)\n- Assign policies in Teams – getting started | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview)\n- Live Event Recording Policies | Microsoft Learn (https://learn.microsoft.com/en-us/microsoftteams/teams-live-events/live-events-recording-policies)"
+            }
+          ]
+        },
+        {
+          "field": "fix_text",
+          "parts": [
+            {
+              "count": 43,
+              "added": false,
+              "removed": false,
+              "value": "1.  Sign in to the **Microsoft Teams admin\ncenter**.\n2.  Select Meetings > Live events policies.\n3.  Select Global (Org-wide default) policy.\n4.  Set Record an event to "
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "either  "
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": "Organizer can record"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "."
+            },
+            {
+              "count": 3,
+              "added": true,
+              "removed": false,
+              "value": " or Never record"
+            },
+            {
+              "count": 93,
+              "added": false,
+              "removed": false,
+              "value": "\n5.  Click Save.\n6.  If custom policies were created, repeat these steps for each\npolicy, selecting the appropriate policy in step 3.\nSteps for the unmanaged users are outlined in Manage chat with external Teams users not managed by an organization (https://learn.microsoft.com/en-us/microsoftteams/manage-external-access#manage-chat-with-external-teams-users-not-managed-by-an-organization)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outcome": "updated",
+      "group_id": "V-D27EAB1F",
+      "rule_id": "SV-D27EAB1Fr793125",
+      "rule_title": "Meeting recording SHOULD be disabled.",
+      "fieldDiffs": [
+        {
+          "field": "discussion",
+          "parts": [
+            {
+              "count": 13,
+              "added": false,
+              "removed": false,
+              "value": "Meeting recording SHOULD be disabled.\n\nCriticality: SHOULD.\nLast modified: "
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "July 2023"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "March 2025"
+            },
+            {
+              "count": 72,
+              "added": false,
+              "removed": false,
+              "value": ".\n\nRationale: Allowing any user to record a Teams meeting or group call may lead to unauthorized disclosure of shared information, including audio, video, and shared screens. By disabling the meeting recording setting in the Global (Org-wide default) meeting policy, an agency limits information exposure.\n\nNote: This policy applies to the Global (Org-wide default) meeting policy"
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": ", as well as custom meeting policies"
+            },
+            {
+              "count": 14,
+              "added": false,
+              "removed": false,
+              "value": ". Custom policies MAY be created to allow more flexibility for specific users."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -10,6 +10,7 @@ data/stigs.zip
 # the documents themselves, so only the converted STIG-format output in
 # public/data/stigs/ is committed. Drop downloaded PDFs here.
 data/cis/
+data/scuba/
 scripts/cis/.venv/
 scripts/cis/.cache/
 __pycache__/

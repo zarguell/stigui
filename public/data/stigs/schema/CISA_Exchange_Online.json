@@ -1,0 +1,2245 @@
+{
+  "+p_xml": "version=\"1.0\" encoding=\"utf-8\"",
+  "Benchmark": {
+    "+@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "+@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "+@xmlns:cpe": "http://cpe.mitre.org/language/2.0",
+    "+@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+    "+@xmlns:dsig": "http://www.w3.org/2000/09/xmldsig#",
+    "+@xsi:schemaLocation": "http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd",
+    "+@id": "CISA_Exchange_Online",
+    "+@xml:lang": "en",
+    "+@xmlns": "http://checklists.nist.gov/xccdf/1.1",
+    "status": {
+      "+content": "accepted",
+      "+@date": "2026-02-11"
+    },
+    "title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+    "description": "Microsoft 365 (M365) Exchange Online is a cloud-based messaging platform that gives users easy access to their email and supports organizational meetings, contacts, and calendars. This Secure Configuration Baseline (SCB) provides specific policies to strengthen Exchange Online security.",
+    "notice": {
+      "+@id": "terms-of-use",
+      "+@xml:lang": "en"
+    },
+    "front-matter": {
+      "+@xml:lang": "en"
+    },
+    "rear-matter": {
+      "+@xml:lang": "en"
+    },
+    "reference": {
+      "+@href": "https://github.com/cisagov/ScubaGear/tree/v1.7.0/PowerShell/ScubaGear/baselines/exo.md",
+      "dc:publisher": "CISA",
+      "dc:source": "CISA ScuBA M365 Secure Configuration Baselines"
+    },
+    "plain-text": {
+      "+content": "Release: 1.7.0 Baseline Date: 2026-02-11",
+      "+@id": "release-info"
+    },
+    "version": "1.7.0",
+    "Profile": [
+      {
+        "+@id": "1-Automatic-Forwarding-to-External-Domains_Public",
+        "title": "1. Automatic Forwarding to External Domains",
+        "description": "This control is intended to prevent bad actors from using client-side forwarding rules to exfiltrate data to external recipients.",
+        "select": {
+          "+@idref": "V-A98F599F",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "1-Automatic-Forwarding-to-External-Domains_Classified",
+        "title": "1. Automatic Forwarding to External Domains",
+        "description": "This control is intended to prevent bad actors from using client-side forwarding rules to exfiltrate data to external recipients.",
+        "select": {
+          "+@idref": "V-A98F599F",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "1-Automatic-Forwarding-to-External-Domains_Sensitive",
+        "title": "1. Automatic Forwarding to External Domains",
+        "description": "This control is intended to prevent bad actors from using client-side forwarding rules to exfiltrate data to external recipients.",
+        "select": {
+          "+@idref": "V-A98F599F",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "2-Sender-Policy-Framework_Public",
+        "title": "2. Sender Policy Framework",
+        "description": "The Sender Policy Framework (SPF) is a mechanism allowing domain administrators to specify which IP addresses are explicitly approved to send email on behalf of the domain, facilitating detection of spoofed emails. SPF is not configured through the Exchange admin center, but rather via Domain Name System (DNS) records hosted by the agency's domain. Thus, the exact steps needed to set up SPF vary from agency to agency, but Microsoft's documentation provides some helpful starting points.",
+        "select": {
+          "+@idref": "V-C26EAFD9",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "2-Sender-Policy-Framework_Classified",
+        "title": "2. Sender Policy Framework",
+        "description": "The Sender Policy Framework (SPF) is a mechanism allowing domain administrators to specify which IP addresses are explicitly approved to send email on behalf of the domain, facilitating detection of spoofed emails. SPF is not configured through the Exchange admin center, but rather via Domain Name System (DNS) records hosted by the agency's domain. Thus, the exact steps needed to set up SPF vary from agency to agency, but Microsoft's documentation provides some helpful starting points.",
+        "select": {
+          "+@idref": "V-C26EAFD9",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "2-Sender-Policy-Framework_Sensitive",
+        "title": "2. Sender Policy Framework",
+        "description": "The Sender Policy Framework (SPF) is a mechanism allowing domain administrators to specify which IP addresses are explicitly approved to send email on behalf of the domain, facilitating detection of spoofed emails. SPF is not configured through the Exchange admin center, but rather via Domain Name System (DNS) records hosted by the agency's domain. Thus, the exact steps needed to set up SPF vary from agency to agency, but Microsoft's documentation provides some helpful starting points.",
+        "select": {
+          "+@idref": "V-C26EAFD9",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "3-DomainKeys-Identified-Mail_Public",
+        "title": "3. DomainKeys Identified Mail",
+        "description": "DomainKeys Identified Mail (DKIM) allows digital signatures to be added to email messages in the message header, providing a layer of both authenticity and integrity to emails. As with SPF, DKIM relies on DNS records; thus, its deployment depends on how an agency manages its DNS. Exchange Online Protection (EOP) features include DKIM signing capabilities.",
+        "select": {
+          "+@idref": "V-050DDDC1",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "3-DomainKeys-Identified-Mail_Classified",
+        "title": "3. DomainKeys Identified Mail",
+        "description": "DomainKeys Identified Mail (DKIM) allows digital signatures to be added to email messages in the message header, providing a layer of both authenticity and integrity to emails. As with SPF, DKIM relies on DNS records; thus, its deployment depends on how an agency manages its DNS. Exchange Online Protection (EOP) features include DKIM signing capabilities.",
+        "select": {
+          "+@idref": "V-050DDDC1",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "3-DomainKeys-Identified-Mail_Sensitive",
+        "title": "3. DomainKeys Identified Mail",
+        "description": "DomainKeys Identified Mail (DKIM) allows digital signatures to be added to email messages in the message header, providing a layer of both authenticity and integrity to emails. As with SPF, DKIM relies on DNS records; thus, its deployment depends on how an agency manages its DNS. Exchange Online Protection (EOP) features include DKIM signing capabilities.",
+        "select": {
+          "+@idref": "V-050DDDC1",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "4-Domain-Based-Message-Authentication-Reporting-and-Conformance-DMARC_Public",
+        "title": "4. Domain-Based Message Authentication, Reporting, and Conformance (DMARC)",
+        "description": "Domain-based Message Authentication, Reporting, and Conformance (DMARC) works with SPF and DKIM to authenticate mail senders and helps ensure destination email systems can validate messages sent from your domain. DMARC helps receiving mail systems determine what to do with messages sent from your domain that fail SPF and DKIM checks.",
+        "select": [
+          {
+            "+@idref": "V-7A445C1C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7B9001BD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-36068C30",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DB980A01",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "4-Domain-Based-Message-Authentication-Reporting-and-Conformance-DMARC_Classified",
+        "title": "4. Domain-Based Message Authentication, Reporting, and Conformance (DMARC)",
+        "description": "Domain-based Message Authentication, Reporting, and Conformance (DMARC) works with SPF and DKIM to authenticate mail senders and helps ensure destination email systems can validate messages sent from your domain. DMARC helps receiving mail systems determine what to do with messages sent from your domain that fail SPF and DKIM checks.",
+        "select": [
+          {
+            "+@idref": "V-7A445C1C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7B9001BD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-36068C30",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DB980A01",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "4-Domain-Based-Message-Authentication-Reporting-and-Conformance-DMARC_Sensitive",
+        "title": "4. Domain-Based Message Authentication, Reporting, and Conformance (DMARC)",
+        "description": "Domain-based Message Authentication, Reporting, and Conformance (DMARC) works with SPF and DKIM to authenticate mail senders and helps ensure destination email systems can validate messages sent from your domain. DMARC helps receiving mail systems determine what to do with messages sent from your domain that fail SPF and DKIM checks.",
+        "select": [
+          {
+            "+@idref": "V-7A445C1C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7B9001BD",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-36068C30",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DB980A01",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "5-Simple-Mail-Transfer-Protocol-Authentication_Public",
+        "title": "5. Simple Mail Transfer Protocol Authentication",
+        "description": "Modern email clients that connect to Exchange Online mailboxes—including Outlook, Outlook on the web, iOS Mail, and Outlook for iOS and Android—do not use Simple Mail Transfer Protocol Authentication (SMTP AUTH) to send email messages. SMTP AUTH is only needed for applications outside of Outlook that send email messages. Multi-factor authentication (MFA) cannot be enforced while using SMTP Auth. Proceed with caution if SMTP Auth needs to be enabled for any use case.",
+        "select": {
+          "+@idref": "V-08FC3478",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "5-Simple-Mail-Transfer-Protocol-Authentication_Classified",
+        "title": "5. Simple Mail Transfer Protocol Authentication",
+        "description": "Modern email clients that connect to Exchange Online mailboxes—including Outlook, Outlook on the web, iOS Mail, and Outlook for iOS and Android—do not use Simple Mail Transfer Protocol Authentication (SMTP AUTH) to send email messages. SMTP AUTH is only needed for applications outside of Outlook that send email messages. Multi-factor authentication (MFA) cannot be enforced while using SMTP Auth. Proceed with caution if SMTP Auth needs to be enabled for any use case.",
+        "select": {
+          "+@idref": "V-08FC3478",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "5-Simple-Mail-Transfer-Protocol-Authentication_Sensitive",
+        "title": "5. Simple Mail Transfer Protocol Authentication",
+        "description": "Modern email clients that connect to Exchange Online mailboxes—including Outlook, Outlook on the web, iOS Mail, and Outlook for iOS and Android—do not use Simple Mail Transfer Protocol Authentication (SMTP AUTH) to send email messages. SMTP AUTH is only needed for applications outside of Outlook that send email messages. Multi-factor authentication (MFA) cannot be enforced while using SMTP Auth. Proceed with caution if SMTP Auth needs to be enabled for any use case.",
+        "select": {
+          "+@idref": "V-08FC3478",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "6-Calendar-and-Contact-Sharing_Public",
+        "title": "6. Calendar and Contact Sharing",
+        "description": "Exchange Online allows creation of sharing polices that soften default restrictions on contact and calendar details sharing. These policies should be enabled with caution and only after considering the following policies.",
+        "select": [
+          {
+            "+@idref": "V-91B66353",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-60998EC1",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "6-Calendar-and-Contact-Sharing_Classified",
+        "title": "6. Calendar and Contact Sharing",
+        "description": "Exchange Online allows creation of sharing polices that soften default restrictions on contact and calendar details sharing. These policies should be enabled with caution and only after considering the following policies.",
+        "select": [
+          {
+            "+@idref": "V-91B66353",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-60998EC1",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "6-Calendar-and-Contact-Sharing_Sensitive",
+        "title": "6. Calendar and Contact Sharing",
+        "description": "Exchange Online allows creation of sharing polices that soften default restrictions on contact and calendar details sharing. These policies should be enabled with caution and only after considering the following policies.",
+        "select": [
+          {
+            "+@idref": "V-91B66353",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-60998EC1",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "7-External-Sender-Warnings_Public",
+        "title": "7. External Sender Warnings",
+        "description": "Mail flow rules allow incoming email modification, such that email from external users can be easily identified (e.g., by prepending the subject line with \"\\[External\\]\").",
+        "select": {
+          "+@idref": "V-C359185D",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "7-External-Sender-Warnings_Classified",
+        "title": "7. External Sender Warnings",
+        "description": "Mail flow rules allow incoming email modification, such that email from external users can be easily identified (e.g., by prepending the subject line with \"\\[External\\]\").",
+        "select": {
+          "+@idref": "V-C359185D",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "7-External-Sender-Warnings_Sensitive",
+        "title": "7. External Sender Warnings",
+        "description": "Mail flow rules allow incoming email modification, such that email from external users can be easily identified (e.g., by prepending the subject line with \"\\[External\\]\").",
+        "select": {
+          "+@idref": "V-C359185D",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "8-Data-Loss-Prevention-Solutions_Public",
+        "title": "8. Data Loss Prevention Solutions",
+        "description": "Data loss prevention (DLP) helps prevent both accidental leakage of sensitive information as well as intentional exfiltration of data. DLP forms an integral part of securing Microsoft Exchange Online. There are several commercial DLP solutions available that document support for M365. Microsoft itself offer DLP services, controlled within the Microsoft Purview compliance portal. Agencies may select any service that fits their needs and meets the requirements outlined in this baseline setting. The DLP solution selected by an agency should offer services comparable to those offered by Microsoft. Though use of Microsoft's DLP solution is not strictly required, guidance for configuring Microsoft's DLP solution can be found in the following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Data Loss Prevention \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#4-data-loss-prevention)",
+        "select": [
+          {
+            "+@idref": "V-89CB770C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A88E58F2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F06A2EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6D5832C5",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "8-Data-Loss-Prevention-Solutions_Classified",
+        "title": "8. Data Loss Prevention Solutions",
+        "description": "Data loss prevention (DLP) helps prevent both accidental leakage of sensitive information as well as intentional exfiltration of data. DLP forms an integral part of securing Microsoft Exchange Online. There are several commercial DLP solutions available that document support for M365. Microsoft itself offer DLP services, controlled within the Microsoft Purview compliance portal. Agencies may select any service that fits their needs and meets the requirements outlined in this baseline setting. The DLP solution selected by an agency should offer services comparable to those offered by Microsoft. Though use of Microsoft's DLP solution is not strictly required, guidance for configuring Microsoft's DLP solution can be found in the following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Data Loss Prevention \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#4-data-loss-prevention)",
+        "select": [
+          {
+            "+@idref": "V-89CB770C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A88E58F2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F06A2EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6D5832C5",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "8-Data-Loss-Prevention-Solutions_Sensitive",
+        "title": "8. Data Loss Prevention Solutions",
+        "description": "Data loss prevention (DLP) helps prevent both accidental leakage of sensitive information as well as intentional exfiltration of data. DLP forms an integral part of securing Microsoft Exchange Online. There are several commercial DLP solutions available that document support for M365. Microsoft itself offer DLP services, controlled within the Microsoft Purview compliance portal. Agencies may select any service that fits their needs and meets the requirements outlined in this baseline setting. The DLP solution selected by an agency should offer services comparable to those offered by Microsoft. Though use of Microsoft's DLP solution is not strictly required, guidance for configuring Microsoft's DLP solution can be found in the following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Data Loss Prevention \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#4-data-loss-prevention)",
+        "select": [
+          {
+            "+@idref": "V-89CB770C",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-A88E58F2",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-7F06A2EC",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-6D5832C5",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "9-Attachment-File-Type_Public",
+        "title": "9. Attachment File Type",
+        "description": "For some types of files (e.g., executable files), the dangers of allowing them to be sent via email outweigh any potential benefits. Some services, such as the Common Attachment Filter of Microsoft Defender, filter emails based on the attachment file types. Using Microsoft Defender for this purpose is not required. However, the solution selected by an agency should offer services comparable to those offered by Microsoft. Though using Microsoft Defender's solution is not strictly required for this purpose, guidance for configuring the Common Attachment Filter in Microsoft Defender can be found in the follow section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Preset Security Policies \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#1-preset-security-profiles)",
+        "select": [
+          {
+            "+@idref": "V-6B3888F3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-289EFD1B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D1DE2A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2654122A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BEBEE401",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "9-Attachment-File-Type_Classified",
+        "title": "9. Attachment File Type",
+        "description": "For some types of files (e.g., executable files), the dangers of allowing them to be sent via email outweigh any potential benefits. Some services, such as the Common Attachment Filter of Microsoft Defender, filter emails based on the attachment file types. Using Microsoft Defender for this purpose is not required. However, the solution selected by an agency should offer services comparable to those offered by Microsoft. Though using Microsoft Defender's solution is not strictly required for this purpose, guidance for configuring the Common Attachment Filter in Microsoft Defender can be found in the follow section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Preset Security Policies \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#1-preset-security-profiles)",
+        "select": [
+          {
+            "+@idref": "V-6B3888F3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-289EFD1B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D1DE2A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2654122A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BEBEE401",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "9-Attachment-File-Type_Sensitive",
+        "title": "9. Attachment File Type",
+        "description": "For some types of files (e.g., executable files), the dangers of allowing them to be sent via email outweigh any potential benefits. Some services, such as the Common Attachment Filter of Microsoft Defender, filter emails based on the attachment file types. Using Microsoft Defender for this purpose is not required. However, the solution selected by an agency should offer services comparable to those offered by Microsoft. Though using Microsoft Defender's solution is not strictly required for this purpose, guidance for configuring the Common Attachment Filter in Microsoft Defender can be found in the follow section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Preset Security Policies \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#1-preset-security-profiles)",
+        "select": [
+          {
+            "+@idref": "V-6B3888F3",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-289EFD1B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D1DE2A08",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-2654122A",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-BEBEE401",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "10-Malware-Scanning_Public",
+        "title": "10. Malware Scanning",
+        "description": "Email messages may include attachments that contain malware. Therefore, email messages should be scanned for malware to prevent infections. Once malware has been identified, the scanner should drop or quarantine the associated messages. Because malware detections may be updated, it is also important that emails that were already delivered to users are also scanned and removed. Using Microsoft Defender for this purpose is not required. However, the solution selected by an agency should offer services comparable to those offered by Microsoft. If the agency uses Microsoft Defender to implement malware scanning, see the following policies of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.1.2v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender12v1) - All users SHALL be added to Exchange Online Protection in either the standard or strict preset security policy. - [MS.DEFENDER.1.3v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender13v1) - All users SHALL be added to Defender for Office 365 Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-EE2B6B65",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D779FF04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0355FB7C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "10-Malware-Scanning_Classified",
+        "title": "10. Malware Scanning",
+        "description": "Email messages may include attachments that contain malware. Therefore, email messages should be scanned for malware to prevent infections. Once malware has been identified, the scanner should drop or quarantine the associated messages. Because malware detections may be updated, it is also important that emails that were already delivered to users are also scanned and removed. Using Microsoft Defender for this purpose is not required. However, the solution selected by an agency should offer services comparable to those offered by Microsoft. If the agency uses Microsoft Defender to implement malware scanning, see the following policies of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.1.2v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender12v1) - All users SHALL be added to Exchange Online Protection in either the standard or strict preset security policy. - [MS.DEFENDER.1.3v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender13v1) - All users SHALL be added to Defender for Office 365 Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-EE2B6B65",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D779FF04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0355FB7C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "10-Malware-Scanning_Sensitive",
+        "title": "10. Malware Scanning",
+        "description": "Email messages may include attachments that contain malware. Therefore, email messages should be scanned for malware to prevent infections. Once malware has been identified, the scanner should drop or quarantine the associated messages. Because malware detections may be updated, it is also important that emails that were already delivered to users are also scanned and removed. Using Microsoft Defender for this purpose is not required. However, the solution selected by an agency should offer services comparable to those offered by Microsoft. If the agency uses Microsoft Defender to implement malware scanning, see the following policies of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.1.2v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender12v1) - All users SHALL be added to Exchange Online Protection in either the standard or strict preset security policy. - [MS.DEFENDER.1.3v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender13v1) - All users SHALL be added to Defender for Office 365 Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-EE2B6B65",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-D779FF04",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-0355FB7C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "11-Phishing-Protections_Public",
+        "title": "11. Phishing Protections",
+        "description": "Several techniques exist for protecting against phishing attacks, including the following: - Impersonation protection checks, wherein a tool compares the sender's address to the addresses of known senders to flag look-alike addresses, such as `user@exmple.com` and `user@example.com`. - User warnings, such as displaying a notice the first time a user receives an email from a new sender. - Artificial intelligence (AI)-based tools. Any product meeting the requirements outlined in this baseline policy group may be used. If the agency uses Exchange Online Protection (EOP), which is included in all Microsoft 365 subscriptions containing Exchange Online mailboxes, see the following policy and section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [MS.DEFENDER.1.2v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender12v1). - All users SHALL be added to Exchange Online Protection in either the standard or strict preset security policy. EOP alone does not support impersonation protection, but this is provided through Defender for Office 365. If using Defender for Office 365 for impersonation protection, see the following policy and section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Impersonation Protection \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#2-impersonation-protection)",
+        "select": [
+          {
+            "+@idref": "V-093337DB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3A7909B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5A186269",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "11-Phishing-Protections_Classified",
+        "title": "11. Phishing Protections",
+        "description": "Several techniques exist for protecting against phishing attacks, including the following: - Impersonation protection checks, wherein a tool compares the sender's address to the addresses of known senders to flag look-alike addresses, such as `user@exmple.com` and `user@example.com`. - User warnings, such as displaying a notice the first time a user receives an email from a new sender. - Artificial intelligence (AI)-based tools. Any product meeting the requirements outlined in this baseline policy group may be used. If the agency uses Exchange Online Protection (EOP), which is included in all Microsoft 365 subscriptions containing Exchange Online mailboxes, see the following policy and section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [MS.DEFENDER.1.2v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender12v1). - All users SHALL be added to Exchange Online Protection in either the standard or strict preset security policy. EOP alone does not support impersonation protection, but this is provided through Defender for Office 365. If using Defender for Office 365 for impersonation protection, see the following policy and section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Impersonation Protection \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#2-impersonation-protection)",
+        "select": [
+          {
+            "+@idref": "V-093337DB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3A7909B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5A186269",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "11-Phishing-Protections_Sensitive",
+        "title": "11. Phishing Protections",
+        "description": "Several techniques exist for protecting against phishing attacks, including the following: - Impersonation protection checks, wherein a tool compares the sender's address to the addresses of known senders to flag look-alike addresses, such as `user@exmple.com` and `user@example.com`. - User warnings, such as displaying a notice the first time a user receives an email from a new sender. - Artificial intelligence (AI)-based tools. Any product meeting the requirements outlined in this baseline policy group may be used. If the agency uses Exchange Online Protection (EOP), which is included in all Microsoft 365 subscriptions containing Exchange Online mailboxes, see the following policy and section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [MS.DEFENDER.1.2v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender12v1). - All users SHALL be added to Exchange Online Protection in either the standard or strict preset security policy. EOP alone does not support impersonation protection, but this is provided through Defender for Office 365. If using Defender for Office 365 for impersonation protection, see the following policy and section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Impersonation Protection \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#2-impersonation-protection)",
+        "select": [
+          {
+            "+@idref": "V-093337DB",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-B3A7909B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5A186269",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "12-IP-Allow-Lists_Public",
+        "title": "12. IP Allow Lists",
+        "description": "Microsoft Defender supports creating IP allow lists intended to prevent blocking emails from *specific* senders. However, as a result, emails from these senders bypass important security mechanisms, such as spam filtering, SPF, DKIM, DMARC, and [FROM address enforcement](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-from-email-address-validation?view=o365-worldwide#override-from-address-enforcement). IP block lists block email from listed IP addresses. Although we have no specific guidance on which IP addresses to add, block lists can be used to block mail from known spammers. IP safe lists are dynamic lists of \"known, good senders,\" which Microsoft sources from various third-party subscriptions. As with senders in the allow list, emails from these senders bypass important security mechanisms.",
+        "select": [
+          {
+            "+@idref": "V-C1DE9912",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C83C8A83",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "12-IP-Allow-Lists_Classified",
+        "title": "12. IP Allow Lists",
+        "description": "Microsoft Defender supports creating IP allow lists intended to prevent blocking emails from *specific* senders. However, as a result, emails from these senders bypass important security mechanisms, such as spam filtering, SPF, DKIM, DMARC, and [FROM address enforcement](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-from-email-address-validation?view=o365-worldwide#override-from-address-enforcement). IP block lists block email from listed IP addresses. Although we have no specific guidance on which IP addresses to add, block lists can be used to block mail from known spammers. IP safe lists are dynamic lists of \"known, good senders,\" which Microsoft sources from various third-party subscriptions. As with senders in the allow list, emails from these senders bypass important security mechanisms.",
+        "select": [
+          {
+            "+@idref": "V-C1DE9912",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C83C8A83",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "12-IP-Allow-Lists_Sensitive",
+        "title": "12. IP Allow Lists",
+        "description": "Microsoft Defender supports creating IP allow lists intended to prevent blocking emails from *specific* senders. However, as a result, emails from these senders bypass important security mechanisms, such as spam filtering, SPF, DKIM, DMARC, and [FROM address enforcement](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-from-email-address-validation?view=o365-worldwide#override-from-address-enforcement). IP block lists block email from listed IP addresses. Although we have no specific guidance on which IP addresses to add, block lists can be used to block mail from known spammers. IP safe lists are dynamic lists of \"known, good senders,\" which Microsoft sources from various third-party subscriptions. As with senders in the allow list, emails from these senders bypass important security mechanisms.",
+        "select": [
+          {
+            "+@idref": "V-C1DE9912",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C83C8A83",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "13-Mailbox-Auditing_Public",
+        "title": "13. Mailbox Auditing",
+        "description": "Mailbox auditing helps users investigate compromised accounts or discover illicit access to Exchange Online. As a feature of Exchange Online, mailbox auditing is enabled by default for all organizations. Microsoft defines a default audit policy that logs certain actions performed by administrators, delegates, and owners. While mailbox auditing is enabled by default, this policy helps avoid inadvertent disabling.",
+        "select": {
+          "+@idref": "V-F1877F8D",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "13-Mailbox-Auditing_Classified",
+        "title": "13. Mailbox Auditing",
+        "description": "Mailbox auditing helps users investigate compromised accounts or discover illicit access to Exchange Online. As a feature of Exchange Online, mailbox auditing is enabled by default for all organizations. Microsoft defines a default audit policy that logs certain actions performed by administrators, delegates, and owners. While mailbox auditing is enabled by default, this policy helps avoid inadvertent disabling.",
+        "select": {
+          "+@idref": "V-F1877F8D",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "13-Mailbox-Auditing_Sensitive",
+        "title": "13. Mailbox Auditing",
+        "description": "Mailbox auditing helps users investigate compromised accounts or discover illicit access to Exchange Online. As a feature of Exchange Online, mailbox auditing is enabled by default for all organizations. Microsoft defines a default audit policy that logs certain actions performed by administrators, delegates, and owners. While mailbox auditing is enabled by default, this policy helps avoid inadvertent disabling.",
+        "select": {
+          "+@idref": "V-F1877F8D",
+          "+@selected": "true"
+        }
+      },
+      {
+        "+@id": "14-Inbound-Anti-Spam-Protections_Public",
+        "title": "14. Inbound Anti-Spam Protections",
+        "description": "Junk email, or spam, can clutter user mailboxes and hamper communications across an agency. Implementing a spam filter helps to identify inbound spam and quarantine or move those messages. Microsoft Defender includes several capabilities for protecting against inbound spam emails. Using Microsoft Defender is not strictly required for this purpose; any product that fulfills the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft Defender to meet this baseline policy group, see the following policy of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [MS.DEFENDER.1.2v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender12v1) - All users SHALL be added to Exchange Online Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-E613B6D1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5FF30762",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9D9C974",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DE9A0701",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "14-Inbound-Anti-Spam-Protections_Classified",
+        "title": "14. Inbound Anti-Spam Protections",
+        "description": "Junk email, or spam, can clutter user mailboxes and hamper communications across an agency. Implementing a spam filter helps to identify inbound spam and quarantine or move those messages. Microsoft Defender includes several capabilities for protecting against inbound spam emails. Using Microsoft Defender is not strictly required for this purpose; any product that fulfills the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft Defender to meet this baseline policy group, see the following policy of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [MS.DEFENDER.1.2v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender12v1) - All users SHALL be added to Exchange Online Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-E613B6D1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5FF30762",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9D9C974",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DE9A0701",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "14-Inbound-Anti-Spam-Protections_Sensitive",
+        "title": "14. Inbound Anti-Spam Protections",
+        "description": "Junk email, or spam, can clutter user mailboxes and hamper communications across an agency. Implementing a spam filter helps to identify inbound spam and quarantine or move those messages. Microsoft Defender includes several capabilities for protecting against inbound spam emails. Using Microsoft Defender is not strictly required for this purpose; any product that fulfills the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft Defender to meet this baseline policy group, see the following policy of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [MS.DEFENDER.1.2v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender12v1) - All users SHALL be added to Exchange Online Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-E613B6D1",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-5FF30762",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-F9D9C974",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-DE9A0701",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "15-Link-Protection_Public",
+        "title": "15. Link Protection",
+        "description": "Several technologies exist for protecting users from malicious links included in emails. For example, Microsoft Defender accomplishes this by prepending: `https://*.safelinks.protection.outlook.com/?url=` to any URLs included in emails. By prepending the safe links URL, Microsoft can proxy the initial URL through their scanning service. Their proxy can perform the following actions: - Compare the URL with a block list. - Compare the URL with a list of know malicious sites. - If the URL points to a downloadable file, apply real-time file scanning. If all checks pass, the user is redirected to the original URL. Microsoft Defender for Office 365 includes link scanning capabilities. Using Microsoft Defender is not strictly required for this purpose; any product fulfilling the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft Defender for Office 365 to meet this baseline policy group, see the following policy of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.1.3v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender13v1). - All users SHALL be added to Defender for Office 365 Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-B07B2BC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C6AC6688",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-050CCD2C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "15-Link-Protection_Classified",
+        "title": "15. Link Protection",
+        "description": "Several technologies exist for protecting users from malicious links included in emails. For example, Microsoft Defender accomplishes this by prepending: `https://*.safelinks.protection.outlook.com/?url=` to any URLs included in emails. By prepending the safe links URL, Microsoft can proxy the initial URL through their scanning service. Their proxy can perform the following actions: - Compare the URL with a block list. - Compare the URL with a list of know malicious sites. - If the URL points to a downloadable file, apply real-time file scanning. If all checks pass, the user is redirected to the original URL. Microsoft Defender for Office 365 includes link scanning capabilities. Using Microsoft Defender is not strictly required for this purpose; any product fulfilling the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft Defender for Office 365 to meet this baseline policy group, see the following policy of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.1.3v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender13v1). - All users SHALL be added to Defender for Office 365 Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-B07B2BC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C6AC6688",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-050CCD2C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "15-Link-Protection_Sensitive",
+        "title": "15. Link Protection",
+        "description": "Several technologies exist for protecting users from malicious links included in emails. For example, Microsoft Defender accomplishes this by prepending: `https://*.safelinks.protection.outlook.com/?url=` to any URLs included in emails. By prepending the safe links URL, Microsoft can proxy the initial URL through their scanning service. Their proxy can perform the following actions: - Compare the URL with a block list. - Compare the URL with a list of know malicious sites. - If the URL points to a downloadable file, apply real-time file scanning. If all checks pass, the user is redirected to the original URL. Microsoft Defender for Office 365 includes link scanning capabilities. Using Microsoft Defender is not strictly required for this purpose; any product fulfilling the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft Defender for Office 365 to meet this baseline policy group, see the following policy of the CISA M365 Secure Configuration Baseline for Defender for Office 365 for additional guidance. - [MS.DEFENDER.1.3v1 \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#msdefender13v1). - All users SHALL be added to Defender for Office 365 Protection in either the standard or strict preset security policy.",
+        "select": [
+          {
+            "+@idref": "V-B07B2BC5",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-C6AC6688",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-050CCD2C",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "16-Alerts_Public",
+        "title": "16. Alerts",
+        "description": "Managing and monitoring Exchange mailboxes and user activity requires a means to define activity of concern and notify administrators.  Alerts can be generated to help identify suspicious or malicious activity in Exchange Online. These alerts give administrators better real-time insight into possible security incidents. Using Microsoft 365 alert policies is not strictly required for this purpose; any product fulfilling the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft 365 alert policies, this includes several prebuilt alert policies, many of which pertain to Exchange Online. Guidance for configuring alerts in Microsoft 365 is given in the following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Alerts \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#5-alerts)",
+        "select": [
+          {
+            "+@idref": "V-5510B27B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-723BDBB0",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "16-Alerts_Classified",
+        "title": "16. Alerts",
+        "description": "Managing and monitoring Exchange mailboxes and user activity requires a means to define activity of concern and notify administrators.  Alerts can be generated to help identify suspicious or malicious activity in Exchange Online. These alerts give administrators better real-time insight into possible security incidents. Using Microsoft 365 alert policies is not strictly required for this purpose; any product fulfilling the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft 365 alert policies, this includes several prebuilt alert policies, many of which pertain to Exchange Online. Guidance for configuring alerts in Microsoft 365 is given in the following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Alerts \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#5-alerts)",
+        "select": [
+          {
+            "+@idref": "V-5510B27B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-723BDBB0",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "16-Alerts_Sensitive",
+        "title": "16. Alerts",
+        "description": "Managing and monitoring Exchange mailboxes and user activity requires a means to define activity of concern and notify administrators.  Alerts can be generated to help identify suspicious or malicious activity in Exchange Online. These alerts give administrators better real-time insight into possible security incidents. Using Microsoft 365 alert policies is not strictly required for this purpose; any product fulfilling the requirements outlined in this baseline policy group may be used. If the agency uses Microsoft 365 alert policies, this includes several prebuilt alert policies, many of which pertain to Exchange Online. Guidance for configuring alerts in Microsoft 365 is given in the following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Alerts \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#5-alerts)",
+        "select": [
+          {
+            "+@idref": "V-5510B27B",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-723BDBB0",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "17-Audit-Logging_Public",
+        "title": "17. Audit Logging",
+        "description": "User activity from M365 services is captured in the organization's unified audit log. These logs are essential for conducting incident response and threat detection activity. By default, Microsoft retains the audit logs for 180 days. Activity by users with E5 licenses assigned is retained for one year. However, in accordance with Office of Management and Budget (OMB) Memorandum 21-31, _Improving the Federal Government's Investigative and Remediation Capabilities Related to Cybersecurity Incidents_, Microsoft 365 audit logs are to be retained at least 12 months in active storage and an additional 18 months in cold storage. This can be accomplished by offloading the logs out of the cloud environment or natively through Microsoft by creating an [audit log retention policy](https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?view=o365-worldwide#create-an-audit-log-retention-policy). OMB M-21-31 also requires Advanced Audit be configured in M365. Advanced Audit, now Microsoft Purview Audit (Premium), adds additional event types to the Unified Audit Log. Audit logging is managed from the Microsoft Purview compliance portal. For implementation guidance for configuring audit logging, see the following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Audit Logging \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#6-audit-logging)",
+        "select": [
+          {
+            "+@idref": "V-9CAD38CE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1A24B887",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "17-Audit-Logging_Classified",
+        "title": "17. Audit Logging",
+        "description": "User activity from M365 services is captured in the organization's unified audit log. These logs are essential for conducting incident response and threat detection activity. By default, Microsoft retains the audit logs for 180 days. Activity by users with E5 licenses assigned is retained for one year. However, in accordance with Office of Management and Budget (OMB) Memorandum 21-31, _Improving the Federal Government's Investigative and Remediation Capabilities Related to Cybersecurity Incidents_, Microsoft 365 audit logs are to be retained at least 12 months in active storage and an additional 18 months in cold storage. This can be accomplished by offloading the logs out of the cloud environment or natively through Microsoft by creating an [audit log retention policy](https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?view=o365-worldwide#create-an-audit-log-retention-policy). OMB M-21-31 also requires Advanced Audit be configured in M365. Advanced Audit, now Microsoft Purview Audit (Premium), adds additional event types to the Unified Audit Log. Audit logging is managed from the Microsoft Purview compliance portal. For implementation guidance for configuring audit logging, see the following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Audit Logging \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#6-audit-logging)",
+        "select": [
+          {
+            "+@idref": "V-9CAD38CE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1A24B887",
+            "+@selected": "true"
+          }
+        ]
+      },
+      {
+        "+@id": "17-Audit-Logging_Sensitive",
+        "title": "17. Audit Logging",
+        "description": "User activity from M365 services is captured in the organization's unified audit log. These logs are essential for conducting incident response and threat detection activity. By default, Microsoft retains the audit logs for 180 days. Activity by users with E5 licenses assigned is retained for one year. However, in accordance with Office of Management and Budget (OMB) Memorandum 21-31, _Improving the Federal Government's Investigative and Remediation Capabilities Related to Cybersecurity Incidents_, Microsoft 365 audit logs are to be retained at least 12 months in active storage and an additional 18 months in cold storage. This can be accomplished by offloading the logs out of the cloud environment or natively through Microsoft by creating an [audit log retention policy](https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?view=o365-worldwide#create-an-audit-log-retention-policy). OMB M-21-31 also requires Advanced Audit be configured in M365. Advanced Audit, now Microsoft Purview Audit (Premium), adds additional event types to the Unified Audit Log. Audit logging is managed from the Microsoft Purview compliance portal. For implementation guidance for configuring audit logging, see the following section of the CISA M365 Secure Configuration Baseline for Defender for Office 365. - [Audit Logging \\| CISA M365 Secure Configuration Baseline for Defender for Office 365](./defender.md#6-audit-logging)",
+        "select": [
+          {
+            "+@idref": "V-9CAD38CE",
+            "+@selected": "true"
+          },
+          {
+            "+@idref": "V-1A24B887",
+            "+@selected": "true"
+          }
+        ]
+      }
+    ],
+    "Group": [
+      {
+        "+@id": "V-A98F599F",
+        "title": "1. Automatic Forwarding to External Domains",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A98F599FrB201D7_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.1.1v2",
+          "title": "Automatic forwarding to external domains SHALL be disabled.",
+          "description": "<VulnDiscussion>Automatic forwarding to external domains SHALL be disabled.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: Adversaries can use automatic forwarding to gain persistent access to a victim's email. Disabling forwarding to external domains prevents this technique when the adversary is external to the organization but does not impede legitimate internal forwarding.\n\nNote: Automatic forwarding MAY be enabled with specific, agency-approved domains. There may be cases where an external domain is operationally needed and has an acceptable degree of risk, e.g., a domain controlled by the same agency that hasn't been added as an accepted domain in M365.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-4\n\nMITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol; T1566: Phishing; T1566.001: Spearphishing Attachment</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.1.1v2"
+          },
+          "fixtext": {
+            "+content": "To disallow automatic forwarding to external domains:\n1.  Sign in to the Exchange admin center.\n2.  Select Mail flow, then Remote domains.\n3.  Select Default.\n4.  Under Email reply types, select Edit reply types.\n5.  Clear the checkbox next to Allow automatic forwarding, then\nclick Save.\n6.  Return to Remote domains and review each\nadditional remote domain in the list, ensuring that automatic forwarding\nis only allowed for approved domains.",
+            "+@fixref": "F-A98F599FrB201D7_fix"
+          },
+          "fix": {
+            "+@id": "F-A98F599FrB201D7_fix"
+          },
+          "check": {
+            "+@system": "C-A98F599FrB201D7_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Automatic forwarding to external domains SHALL be disabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Reducing or increasing information flow to another company | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/remote-domains/remote-domains#reducing-or-increasing-information-flow-to-another-company)"
+          }
+        }
+      },
+      {
+        "+@id": "V-C26EAFD9",
+        "title": "2. Sender Policy Framework",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C26EAFD9r48FDE7_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.2.2v2",
+          "title": "An SPF policy SHALL be published for each domain that fails all non-approved senders.",
+          "description": "<VulnDiscussion>An SPF policy SHALL be published for each domain that fails all non-approved senders.\n\nCriticality: SHALL.\nLast modified: March 2024.\n\nRationale: An adversary may modify the `FROM` field of an email such that it appears to be a legitimate email sent by an agency, facilitating phishing attacks. Publishing an SPF policy for each agency domain mitigates forged `FROM` fields by providing a means for recipients to detect emails spoofed in this way.  SPF is required for FCEB departments and agencies by Binding Operational Directive (BOD) 18-01, \"Enhance Email and Web Security\".\n\nNote: SPF defines two different \"fail\" mechanisms: fail (indicated by `-`, sometimes referred to as hardfail) and softfail (indicated by `~`). Fail, as used in this baseline policy, refers to hardfail (i.e., `-`).\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-2d\n\nMITRE ATT&CK: T1656: Impersonation; T1566: Phishing</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.2.2v2"
+          },
+          "fixtext": {
+            "+content": "First, identify any approved senders specific to your agency, e.g., any on-premises mail servers. SPF allows you to indicate approved senders by IP address or CIDR range. However, note that SPF allows you to include (https://www.rfc-editor.org/rfc/rfc7208#section-5.2) the IP addresses indicated by a separate SPF policy, referred to by domain name. See External DNS records required for SPF (https://learn.microsoft.com/en-us/microsoft-365/enterprise/external-domain-name-system-records?view=o365-worldwide#external-dns-records-required-for-spf) for inclusions required for M365 to send email on behalf of your domain.\nSPF is not configured through the Exchange admin center, but rather via\nDNS records hosted by the agency's domain. Thus, the exact steps needed\nto set up SPF varies from agency to agency. See Add or edit an SPF TXT record to help prevent email spam (Outlook, Exchange Online) | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider?view=o365-worldwide#add-or-edit-an-spf-txt-record-to-help-prevent-email-spam-outlook-exchange-online) for more details.\nTo test your SPF configuration, consider using a web-based tool, such as\nthose listed under How can I validate SPF records for my domain? | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/admin/setup/domains-faq?view=o365-worldwide#how-can-i-validate-spf-records-for-my-domain).\nAdditionally, SPF records can be requested using the\nPowerShell tool Resolve-DnsName. For example:\nResolve-DnsName example.onmicrosoft.com txt\nIf SPF is configured, you will see a response resembling v=spf1 include:spf.protection.outlook.com -all\nreturned; though by necessity, the contents of the SPF\npolicy may vary by agency. In this example, the SPF policy indicates\nthe IP addresses listed by the policy for \"spf.protection.outlook.com\" are\nthe only approved senders for \"example.onmicrosoft.com.\" These IPs can be determined\nvia an additional SPF lookup, this time for \"spf.protection.outlook.com.\" Ensure the IP addresses listed as approved senders for your domains are correct. Additionally, ensure that each policy either ends in -all or redirects (https://www.rfc-editor.org/rfc/rfc7208#section-6.1) to one that does; this directive indicates that all IPs that don't match the policy should fail. See SPF TXT record syntax for Microsoft 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-anti-spoofing?view=o365-worldwide#spf-txt-record-syntax-for-microsoft-365) for a more in-depth discussion\nof SPF record syntax.",
+            "+@fixref": "F-C26EAFD9r48FDE7_fix"
+          },
+          "fix": {
+            "+@id": "F-C26EAFD9r48FDE7_fix"
+          },
+          "check": {
+            "+@system": "C-C26EAFD9r48FDE7_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "An SPF policy SHALL be published for each domain that fails all non-approved senders.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Binding Operational Directive 18-01 - Enhance Email and Web Security | DHS (https://cyber.dhs.gov/bod/18-01/)\n- Trustworthy Email | NIST 800-177 Rev. 1 (https://csrc.nist.gov/publications/detail/sp/800-177/rev-1/final)\n- Set up SPF to help prevent spoofing | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-spf-configure?view=o365-worldwide)\n- How Microsoft 365 uses Sender Policy Framework (SPF) to prevent spoofing | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-anti-spoofing?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-050DDDC1",
+        "title": "3. DomainKeys Identified Mail",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-050DDDC1rCB6EA7_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.3.1v1",
+          "title": "DKIM SHOULD be enabled for all domains.",
+          "description": "<VulnDiscussion>DKIM SHOULD be enabled for all domains.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: An adversary may modify the `FROM` field of an email such that it appears to be a legitimate email sent by an agency, facilitating phishing attacks. Enabling DKIM is another means for recipients to detect spoofed emails and verify the integrity of email content.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-8\n\nMITRE ATT&CK: T1598: Phishing for Information; T1656: Impersonation; T1566: Phishing</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.3.1v1"
+          },
+          "fixtext": {
+            "+content": "1. To enable DKIM, follow the instructions listed on Steps to Create, enable and disable DKIM from Microsoft 365 Defender portal | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dkim-configure?view=o365-worldwide#steps-to-create-enable-and-disable-dkim-from-microsoft-365-defender-portal).",
+            "+@fixref": "F-050DDDC1rCB6EA7_fix"
+          },
+          "fix": {
+            "+@id": "F-050DDDC1rCB6EA7_fix"
+          },
+          "check": {
+            "+@system": "C-050DDDC1rCB6EA7_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "DKIM SHOULD be enabled for all domains.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Binding Operational Directive 18-01 - Enhance Email and Web Security | DHS (https://cyber.dhs.gov/bod/18-01/)\n- Trustworthy Email | NIST 800-177 Rev. 1 (https://csrc.nist.gov/publications/detail/sp/800-177/rev-1/final)\n- Use DKIM to validate outbound email sent from your custom domain | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dkim-configure?view=o365-worldwide)\n- Support for validation of DKIM signed messages | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dkim-support-about?view=o365-worldwide)\n- What is EOP? | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/eop-faq?view=o365-worldwide#what-is-eop-)"
+          }
+        }
+      },
+      {
+        "+@id": "V-7A445C1C",
+        "title": "4. Domain-Based Message Authentication, Reporting, and Conformance (DMARC)",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7A445C1CrB1A331_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.4.1v1",
+          "title": "A DMARC policy SHALL be published for every second-level domain.",
+          "description": "<VulnDiscussion>A DMARC policy SHALL be published for every second-level domain.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Without a DMARC policy available for each domain, recipients may improperly handle SPF and DKIM failures, possibly enabling spoofed emails to reach end users' mailboxes. Publishing DMARC records at the second-level domain protects the second-level domains and all subdomains.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1598: Phishing for Information; T1656: Impersonation; T1566: Phishing</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.4.1v1"
+          },
+          "fixtext": {
+            "+content": "DMARC is not configured through the Exchange admin center, but rather via\nDNS records hosted by the agency's domain. As such, implementation varies\ndepending on how an agency manages its DNS records. See Form the DMARC TXT record for your domain | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dmarc-configure?view=o365-worldwide#step-4-form-the-dmarc-txt-record-for-your-domain)\nfor Microsoft guidance.\nA DMARC record published at the second-level domain will protect all subdomains.\nIn other words, a DMARC record published for example.com will protect both\na.example.com and b.example.com, but a separate record would need to be\npublished for c.example.gov.\nTo test your DMARC configuration, consider using one of many publicly available\nweb-based tools. Additionally, DMARC records can be requested using the\nPowerShell tool Resolve-DnsName. For example:\nResolve-DnsName _dmarc.example.com txt\nIf DMARC is configured, a response resembling v=DMARC1; p=reject; pct=100; rua=mailto:reports@dmarc.cyber.dhs.gov, mailto:reports@example.com; ruf=mailto:reports@example.com\nwill be returned, though by necessity, the contents of the record will vary\nby agency. In this example, the policy indicates all emails failing the\nSPF/DKIM checks are to be rejected and aggregate reports sent to\nreports@dmarc.cyber.dhs.gov and reports@example.com. Failure reports will be\nsent to reports@example.com.",
+            "+@fixref": "F-7A445C1CrB1A331_fix"
+          },
+          "fix": {
+            "+@id": "F-7A445C1CrB1A331_fix"
+          },
+          "check": {
+            "+@system": "C-7A445C1CrB1A331_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "A DMARC policy SHALL be published for every second-level domain.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Binding Operational Directive 18-01 - Enhance Email and Web Security | DHS (https://cyber.dhs.gov/bod/18-01/)\n- Trustworthy Email | NIST 800-177 Rev. 1 (https://csrc.nist.gov/publications/detail/sp/800-177/rev-1/final)\n- Domain-based Message Authentication, Reporting, and Conformance (DMARC) | RFC 7489 (https://datatracker.ietf.org/doc/html/rfc7489)\n- Best practices for implementing DMARC in Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dmarc-configure?view=o365-worldwide#best-practices-for-implementing-dmarc-in-microsoft-365)\n- How Office 365 handles outbound email that fails DMARC | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dmarc-configure?view=o365-worldwide#how-microsoft-365-handles-inbound-email-that-fails-dmarc)"
+          }
+        }
+      },
+      {
+        "+@id": "V-7B9001BD",
+        "title": "4. Domain-Based Message Authentication, Reporting, and Conformance (DMARC)",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7B9001BDrB56D63_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.4.2v1",
+          "title": "The DMARC message rejection option SHALL be p=reject.",
+          "description": "<VulnDiscussion>The DMARC message rejection option SHALL be p=reject.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Of the three policy options (i.e., none, quarantine, and reject), reject provides the strongest protection. Reject is the level of protection required by BOD 18-01 for FCEB departments and agencies.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1598: Phishing for Information; T1656: Impersonation; T1566: Phishing</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.4.2v1"
+          },
+          "fixtext": {
+            "+content": "See MS.EXO.4.1v1 Instructions (#msexo41v1-instructions) for an overview of how to publish and check a DMARC record. Ensure the record published includes p=reject.",
+            "+@fixref": "F-7B9001BDrB56D63_fix"
+          },
+          "fix": {
+            "+@id": "F-7B9001BDrB56D63_fix"
+          },
+          "check": {
+            "+@system": "C-7B9001BDrB56D63_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "The DMARC message rejection option SHALL be p=reject.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Binding Operational Directive 18-01 - Enhance Email and Web Security | DHS (https://cyber.dhs.gov/bod/18-01/)\n- Trustworthy Email | NIST 800-177 Rev. 1 (https://csrc.nist.gov/publications/detail/sp/800-177/rev-1/final)\n- Domain-based Message Authentication, Reporting, and Conformance (DMARC) | RFC 7489 (https://datatracker.ietf.org/doc/html/rfc7489)\n- Best practices for implementing DMARC in Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dmarc-configure?view=o365-worldwide#best-practices-for-implementing-dmarc-in-microsoft-365)\n- How Office 365 handles outbound email that fails DMARC | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dmarc-configure?view=o365-worldwide#how-microsoft-365-handles-inbound-email-that-fails-dmarc)"
+          }
+        }
+      },
+      {
+        "+@id": "V-36068C30",
+        "title": "4. Domain-Based Message Authentication, Reporting, and Conformance (DMARC)",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-36068C30r6774AD_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.4.3v1",
+          "title": "The DMARC point of contact for aggregate reports SHALL include `reports@dmarc.cyber.dhs.gov`.",
+          "description": "<VulnDiscussion>The DMARC point of contact for aggregate reports SHALL include `reports@dmarc.cyber.dhs.gov`.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Email spoofing attempts are not inherently visible to domain owners. DMARC provides a mechanism to receive reports of spoofing attempts. Including <reports@dmarc.cyber.dhs.gov> as a point of contact for these reports gives CISA insight into spoofing attempts and is required by BOD 18-01 for FCEB departments and agencies.\n\nNote: Only federal, executive branch, departments and agencies should include this email address in their DMARC record.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(5)\n\nMITRE ATT&CK: T1562: Impair Defenses</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.4.3v1"
+          },
+          "fixtext": {
+            "+content": "See MS.EXO.4.1v1 Instructions (#msexo41v1-instructions) for an overview of how to publish and check a DMARC record. Ensure the record published includes <reports@dmarc.cyber.dhs.gov>\nas one of the emails for the RUA field.",
+            "+@fixref": "F-36068C30r6774AD_fix"
+          },
+          "fix": {
+            "+@id": "F-36068C30r6774AD_fix"
+          },
+          "check": {
+            "+@system": "C-36068C30r6774AD_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "The DMARC point of contact for aggregate reports SHALL include `reports@dmarc.cyber.dhs.gov`.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Binding Operational Directive 18-01 - Enhance Email and Web Security | DHS (https://cyber.dhs.gov/bod/18-01/)\n- Trustworthy Email | NIST 800-177 Rev. 1 (https://csrc.nist.gov/publications/detail/sp/800-177/rev-1/final)\n- Domain-based Message Authentication, Reporting, and Conformance (DMARC) | RFC 7489 (https://datatracker.ietf.org/doc/html/rfc7489)\n- Best practices for implementing DMARC in Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dmarc-configure?view=o365-worldwide#best-practices-for-implementing-dmarc-in-microsoft-365)\n- How Office 365 handles outbound email that fails DMARC | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dmarc-configure?view=o365-worldwide#how-microsoft-365-handles-inbound-email-that-fails-dmarc)"
+          }
+        }
+      },
+      {
+        "+@id": "V-DB980A01",
+        "title": "4. Domain-Based Message Authentication, Reporting, and Conformance (DMARC)",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-DB980A01r2097CC_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.4.4v1",
+          "title": "An agency point of contact SHOULD be included for aggregate and failure reports.",
+          "description": "<VulnDiscussion>An agency point of contact SHOULD be included for aggregate and failure reports.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Email spoofing attempts are not inherently visible to domain owners. DMARC provides a mechanism to receive reports of spoofing attempts. Including an agency point of contact gives the agency insight into attempts to spoof their domains.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(5)\n\nMITRE ATT&CK: T1562: Impair Defenses</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.4.4v1"
+          },
+          "fixtext": {
+            "+content": "See MS.EXO.4.1v1 Instructions (#msexo41v1-instructions) for an overview of how to publish and check a DMARC record. Ensure the record published includes:\n- A point of contact specific to your agency in the RUA field.\n- <reports@dmarc.cyber.dhs.gov> as one of the emails in the RUA field.\n- One or more agency-defined points of contact in the RUF field.",
+            "+@fixref": "F-DB980A01r2097CC_fix"
+          },
+          "fix": {
+            "+@id": "F-DB980A01r2097CC_fix"
+          },
+          "check": {
+            "+@system": "C-DB980A01r2097CC_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "An agency point of contact SHOULD be included for aggregate and failure reports.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Binding Operational Directive 18-01 - Enhance Email and Web Security | DHS (https://cyber.dhs.gov/bod/18-01/)\n- Trustworthy Email | NIST 800-177 Rev. 1 (https://csrc.nist.gov/publications/detail/sp/800-177/rev-1/final)\n- Domain-based Message Authentication, Reporting, and Conformance (DMARC) | RFC 7489 (https://datatracker.ietf.org/doc/html/rfc7489)\n- Best practices for implementing DMARC in Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dmarc-configure?view=o365-worldwide#best-practices-for-implementing-dmarc-in-microsoft-365)\n- How Office 365 handles outbound email that fails DMARC | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-dmarc-configure?view=o365-worldwide#how-microsoft-365-handles-inbound-email-that-fails-dmarc)"
+          }
+        }
+      },
+      {
+        "+@id": "V-08FC3478",
+        "title": "5. Simple Mail Transfer Protocol Authentication",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-08FC3478rDA49CB_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.5.1v1",
+          "title": "SMTP AUTH SHALL be disabled.",
+          "description": "<VulnDiscussion>SMTP AUTH SHALL be disabled.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: SMTP AUTH is not used or needed by modern email clients. Therefore, disabling it as the global default conforms to the principle of least functionality.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: CM-7</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.5.1v1"
+          },
+          "fixtext": {
+            "+content": "To disable SMTP AUTH for the organization:\n1. Sign in to the Exchange admin center.\n2. On the left hand pane, select Settings; then from the settings list, select Mail Flow.\n3. Make sure the setting Turn off SMTP AUTH protocol for your organization is checked.",
+            "+@fixref": "F-08FC3478rDA49CB_fix"
+          },
+          "fix": {
+            "+@id": "F-08FC3478rDA49CB_fix"
+          },
+          "check": {
+            "+@system": "C-08FC3478rDA49CB_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "SMTP AUTH SHALL be disabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Enable or disable authenticated client SMTP submission (SMTP AUTH) in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/authenticated-client-smtp-submission)"
+          }
+        }
+      },
+      {
+        "+@id": "V-91B66353",
+        "title": "6. Calendar and Contact Sharing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-91B66353rB92D3B_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.6.1v1",
+          "title": "Contact folders SHALL NOT be shared with all domains.",
+          "description": "<VulnDiscussion>Contact folders SHALL NOT be shared with all domains.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Contact folders may contain information that should not be shared by default with all domains. Disabling sharing with all domains closes an avenue for data exfiltration while still allowing for specific legitimate use as needed.\n\nNote: Contact folders MAY be shared with specific domains.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, SC-7(10)(a)\n\nMITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.6.1v1"
+          },
+          "fixtext": {
+            "+content": "To restrict sharing with all domains:\n1. Sign in to the Exchange admin center.\n2. On the left-hand pane under Organization, select Sharing.\n3. Select Individual Sharing.\n4. For all existing policies, select the policy, then select Manage domains.\n5. For all sharing rules under all existing policies, ensure Sharing with all domains is not selected.",
+            "+@fixref": "F-91B66353rB92D3B_fix"
+          },
+          "fix": {
+            "+@id": "F-91B66353rB92D3B_fix"
+          },
+          "check": {
+            "+@system": "C-91B66353rB92D3B_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Contact folders SHALL NOT be shared with all domains.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Sharing in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/sharing/sharing)\n- Organization relationships in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/sharing/organization-relationships/organization-relationships)\n- Sharing policies in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/sharing/sharing-policies/sharing-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-60998EC1",
+        "title": "6. Calendar and Contact Sharing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-60998EC1r709A55_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.6.2v1",
+          "title": "Calendar details SHALL NOT be shared with all domains.",
+          "description": "<VulnDiscussion>Calendar details SHALL NOT be shared with all domains.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Calendar details may contain information that should not be shared by default with all domains. Disabling sharing with all domains closes an avenue for data exfiltration while still allowing for legitimate use as needed.\n\nNote: Calendar details MAY be shared with specific domains.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-3, SC-7(10)(a)\n\nMITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.6.2v1"
+          },
+          "fixtext": {
+            "+content": "To restrict sharing calendar details with all domains:\n1. Refer to step 5 in MS.EXO.6.1v1 Instructions (#msexo61v1-instructions) to implement\nthis policy.",
+            "+@fixref": "F-60998EC1r709A55_fix"
+          },
+          "fix": {
+            "+@id": "F-60998EC1r709A55_fix"
+          },
+          "check": {
+            "+@system": "C-60998EC1r709A55_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Calendar details SHALL NOT be shared with all domains.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Sharing in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/sharing/sharing)\n- Organization relationships in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/sharing/organization-relationships/organization-relationships)\n- Sharing policies in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/sharing/sharing-policies/sharing-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-C359185D",
+        "title": "7. External Sender Warnings",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C359185Dr33F69C_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.7.1v1",
+          "title": "External sender warnings SHALL be implemented.",
+          "description": "<VulnDiscussion>External sender warnings SHALL be implemented.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Alerting users when email originates from outside their organization can encourage them to exercise increased caution, especially if an email is one they expected from an internal sender.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1566: Phishing</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.7.1v1"
+          },
+          "fixtext": {
+            "+content": "To create a mail flow rule to produce external sender warnings:\n1.  Sign in to the Exchange admin center.\n2.  Under Mail flow, select Rules.\n3.  Click the plus (+) button to create a new rule.\n4.  Select Modify messages….\n5.  Give the rule an appropriate name.\n6.  Under Apply this rule if…, select The sender is external/internal.\n7.  Under select sender location, select Outside the organization, then click OK.\n8.  Under Do the following…, select Prepend the subject of the message with….\n9.  Under specify subject prefix, enter a message such as\n\"\\[External\\]\" (without the quotation marks), then click OK.\n10. Click Next.\n11. Under Choose a mode for this rule, select Enforce.\n12. Leave the Severity as Not Specified.\n13. Leave the Match sender address in message as Header and click Next.\n14. Click Finish and then Done.\n15. The new rule will be disabled.  Re-select the new rule to show its\nsettings and slide the Enable or disable rule slider to the right\nuntil it shows as Enabled.",
+            "+@fixref": "F-C359185Dr33F69C_fix"
+          },
+          "fix": {
+            "+@id": "F-C359185Dr33F69C_fix"
+          },
+          "check": {
+            "+@system": "C-C359185Dr33F69C_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "External sender warnings SHALL be implemented.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Mail flow rules (transport rules) in Exchange Online | Microsoft Learn (https://learn.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/mail-flow-rules)\n- Capacity Enhancement Guide: Counter-Phishing Recommendations for Federal Agencies | CISA (https://www.cisa.gov/sites/default/files/publications/Capacity_Enhancement_Guide-Counter-Phishing_Recommendations_for_Federal_Agencies.pdf)\n- Actions To Counter Email-Based Attacks On Election-Related Entities | CISA (https://www.cisa.gov/sites/default/files/publications/CISA_Insights_Actions_to_Counter_Email-Based_Attacks_on_Election-Related_S508C.pdf)"
+          }
+        }
+      },
+      {
+        "+@id": "V-89CB770C",
+        "title": "8. Data Loss Prevention Solutions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-89CB770Cr704D79_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.8.1v2",
+          "title": "A DLP solution SHALL be used.",
+          "description": "<VulnDiscussion>A DLP solution SHALL be used.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: Users may inadvertently disclose sensitive information to unauthorized individuals. A DLP solution may detect the presence of sensitive information in Exchange Online and block access to unauthorized entities.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\nMITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol; T1530: Data from Cloud Storage</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.8.1v2"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be used. If the agency uses Microsoft Defender, see the following implementation steps for DLP (./defender.md#implementation-3) for additional guidance.",
+            "+@fixref": "F-89CB770Cr704D79_fix"
+          },
+          "fix": {
+            "+@id": "F-89CB770Cr704D79_fix"
+          },
+          "check": {
+            "+@system": "C-89CB770Cr704D79_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "A DLP solution SHALL be used.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-A88E58F2",
+        "title": "8. Data Loss Prevention Solutions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-A88E58F2r76A9F6_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.8.2v2",
+          "title": "The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency.",
+          "description": "<VulnDiscussion>The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: Users may inadvertently share sensitive information with others who should not have access to it. Data loss prevention (DLP) policies provide a way for agencies to detect and prevent unauthorized disclosures.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\nMITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.8.2v2"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be used. If the agency uses Microsoft Defender, see the following implementation steps for protecting PII (./defender.md#msdefender41v2-instructions) for additional guidance.",
+            "+@fixref": "F-A88E58F2r76A9F6_fix"
+          },
+          "fix": {
+            "+@id": "F-A88E58F2r76A9F6_fix"
+          },
+          "check": {
+            "+@system": "C-A88E58F2r76A9F6_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "The DLP solution SHALL protect personally identifiable information (PII) and sensitive information, as defined by the agency.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-7F06A2EC",
+        "title": "8. Data Loss Prevention Solutions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-7F06A2ECrD6A813_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.8.3v1",
+          "title": "The selected DLP solution SHOULD offer services comparable to the native DLP solution offered by Microsoft.",
+          "description": "<VulnDiscussion>The selected DLP solution SHOULD offer services comparable to the native DLP solution offered by Microsoft.\n\nCriticality: SHOULD.\nLast modified: May 2024.\n\nRationale: Any alternative DLP solution should be able to detect sensitive information in Exchange Online and block access to unauthorized entities.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\nMITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol; T1530: Data from Cloud Storage</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.8.3v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be used. If the agency uses Microsoft Defender, see the following implementation steps for DLP (./defender.md#implementation-3) for additional guidance.",
+            "+@fixref": "F-7F06A2ECrD6A813_fix"
+          },
+          "fix": {
+            "+@id": "F-7F06A2ECrD6A813_fix"
+          },
+          "check": {
+            "+@system": "C-7F06A2ECrD6A813_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "The selected DLP solution SHOULD offer services comparable to the native DLP solution offered by Microsoft.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-6D5832C5",
+        "title": "8. Data Loss Prevention Solutions",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6D5832C5r12E516_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.8.4v1",
+          "title": "At a minimum, the DLP solution SHALL restrict sharing credit card numbers, U.S. Individual Taxpayer Identification Numbers (ITIN), and U.S. Social Security numbers (SSN) via email.",
+          "description": "<VulnDiscussion>At a minimum, the DLP solution SHALL restrict sharing credit card numbers, U.S. Individual Taxpayer Identification Numbers (ITIN), and U.S. Social Security numbers (SSN) via email.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: Users may inadvertently share sensitive information with others who should not have access to it. Data loss prevention (DLP) policies provide a way for agencies to detect and prevent unauthorized disclosures.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SC-7(10)\n\nMITRE ATT&CK: T1567: Exfiltration Over Web Service; T1048: Exfiltration Over Alternative Protocol; T1213: Data from Information Repositories; T1213.002: Sharepoint; T1530: Data from Cloud Storage</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.8.4v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be used. If the agency uses Microsoft Defender, see the following implementation steps for protecting PII (./defender.md#msdefender41v2-instructions) for additional guidance.",
+            "+@fixref": "F-6D5832C5r12E516_fix"
+          },
+          "fix": {
+            "+@id": "F-6D5832C5r12E516_fix"
+          },
+          "check": {
+            "+@system": "C-6D5832C5r12E516_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "At a minimum, the DLP solution SHALL restrict sharing credit card numbers, U.S. Individual Taxpayer Identification Numbers (ITIN), and U.S. Social Security numbers (SSN) via email.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-6B3888F3",
+        "title": "9. Attachment File Type",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-6B3888F3r112EC5_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.9.1v2",
+          "title": "Emails SHALL be filtered by attachment file types.",
+          "description": "<VulnDiscussion>Emails SHALL be filtered by attachment file types.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: Malicious attachments often take the form of click-to-run files. Sharing high risk file types, when necessary, is better left to a means other than email; the dangers of allowing them to be sent over email outweigh any potential benefits. Filtering email attachments based on file types can prevent spread of malware distributed via click-to-run email attachments.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.9.1v2"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#implementation), which\ninclude email filtering based on attachment file type.",
+            "+@fixref": "F-6B3888F3r112EC5_fix"
+          },
+          "fix": {
+            "+@id": "F-6B3888F3r112EC5_fix"
+          },
+          "check": {
+            "+@system": "C-6B3888F3r112EC5_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Emails SHALL be filtered by attachment file types.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Common attachments filter in anti-malware policies | Microsoft Learn (https://learn.microsoft.com/en-us/defender-office-365/anti-malware-protection-about#common-attachments-filter-in-anti-malware-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-289EFD1B",
+        "title": "9. Attachment File Type",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-289EFD1Br40C331_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.9.2v1",
+          "title": "The attachment filter SHOULD attempt to determine the true file type and assess the file extension.",
+          "description": "<VulnDiscussion>The attachment filter SHOULD attempt to determine the true file type and assess the file extension.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Users can change a file extension at the end of a file name (e.g., notepad.exe to notepad.txt) to obscure the actual file type. Verifying the file type and checking that this matches the designated file extension can help detect instances where the file extension was changed.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\nMITRE ATT&CK: T1036: Masquerading; T1036.006: Space after Filename; T1036.007: Double File Extension; T1036.008: Masquerade File Type</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.9.2v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#implementation), which\nattempt to determine the true file type and assess the file extension.",
+            "+@fixref": "F-289EFD1Br40C331_fix"
+          },
+          "fix": {
+            "+@id": "F-289EFD1Br40C331_fix"
+          },
+          "check": {
+            "+@system": "C-289EFD1Br40C331_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "The attachment filter SHOULD attempt to determine the true file type and assess the file extension.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Common attachments filter in anti-malware policies | Microsoft Learn (https://learn.microsoft.com/en-us/defender-office-365/anti-malware-protection-about#common-attachments-filter-in-anti-malware-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-D1DE2A08",
+        "title": "9. Attachment File Type",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D1DE2A08rBDC3C3_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.9.3v2",
+          "title": "Disallowed file types SHALL be determined and enforced.",
+          "description": "<VulnDiscussion>Disallowed file types SHALL be determined and enforced.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: Malicious attachments often take the form of click-to-run files, though other file types can contain malicious content as well. As such, determining the full list of file types to block is left to each organization, to be made in accordance with their risk tolerance.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.9.3v2"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#implementation), which\ndisallow click-to-run file types.",
+            "+@fixref": "F-D1DE2A08rBDC3C3_fix"
+          },
+          "fix": {
+            "+@id": "F-D1DE2A08rBDC3C3_fix"
+          },
+          "check": {
+            "+@system": "C-D1DE2A08rBDC3C3_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Disallowed file types SHALL be determined and enforced.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Common attachments filter in anti-malware policies | Microsoft Learn (https://learn.microsoft.com/en-us/defender-office-365/anti-malware-protection-about#common-attachments-filter-in-anti-malware-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-2654122A",
+        "title": "9. Attachment File Type",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-2654122Ar37AB45_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.9.4v1",
+          "title": "If a third-party filtering solution is used, it SHOULD offer services comparable to Microsoft Defender's Common Attachment Filter.",
+          "description": "<VulnDiscussion>If a third-party filtering solution is used, it SHOULD offer services comparable to Microsoft Defender's Common Attachment Filter.\n\nCriticality: SHOULD.\nLast modified: May 2024.\n\nRationale: Malicious attachments often take the form of click-to-run files. Sharing high risk file types, when necessary, is better left to a means other than email; the dangers of allowing them to be sent over email outweigh any potential benefits. Filtering email attachments based on file types can prevent spread of malware distributed via click-to-run email attachments.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.9.4v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#implementation), which\ndisallow click-to-run file types.",
+            "+@fixref": "F-2654122Ar37AB45_fix"
+          },
+          "fix": {
+            "+@id": "F-2654122Ar37AB45_fix"
+          },
+          "check": {
+            "+@system": "C-2654122Ar37AB45_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "If a third-party filtering solution is used, it SHOULD offer services comparable to Microsoft Defender's Common Attachment Filter.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Common attachments filter in anti-malware policies | Microsoft Learn (https://learn.microsoft.com/en-us/defender-office-365/anti-malware-protection-about#common-attachments-filter-in-anti-malware-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-BEBEE401",
+        "title": "9. Attachment File Type",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-BEBEE401rCA02CE_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.9.5v1",
+          "title": "At a minimum, click-to-run files SHOULD be blocked (e.g., .exe, .cmd, and .vbe).",
+          "description": "<VulnDiscussion>At a minimum, click-to-run files SHOULD be blocked (e.g., .exe, .cmd, and .vbe).\n\nCriticality: SHOULD.\nLast modified: May 2024.\n\nRationale: Malicious attachments often take the form of click-to-run files. Blocking a list of common executable files helps mitigate the risk of adversarial exploitation.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.9.5v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#implementation), which\ndisallow click-to-run file types.",
+            "+@fixref": "F-BEBEE401rCA02CE_fix"
+          },
+          "fix": {
+            "+@id": "F-BEBEE401rCA02CE_fix"
+          },
+          "check": {
+            "+@system": "C-BEBEE401rCA02CE_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "At a minimum, click-to-run files SHOULD be blocked (e.g., .exe, .cmd, and .vbe).\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Common attachments filter in anti-malware policies | Microsoft Learn (https://learn.microsoft.com/en-us/defender-office-365/anti-malware-protection-about#common-attachments-filter-in-anti-malware-policies)"
+          }
+        }
+      },
+      {
+        "+@id": "V-EE2B6B65",
+        "title": "10. Malware Scanning",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-EE2B6B65rD0F71D_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.10.1v1",
+          "title": "Emails SHALL be scanned for malware.",
+          "description": "<VulnDiscussion>Emails SHALL be scanned for malware.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Threat actors can use email as a mechanism for delivering malware. In many cases, scanning can detect malware, reducing the risk for end users.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.10.1v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#implementation), which\ninclude anti-malware protection.",
+            "+@fixref": "F-EE2B6B65rD0F71D_fix"
+          },
+          "fix": {
+            "+@id": "F-EE2B6B65rD0F71D_fix"
+          },
+          "check": {
+            "+@system": "C-EE2B6B65rD0F71D_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Emails SHALL be scanned for malware.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-D779FF04",
+        "title": "10. Malware Scanning",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-D779FF04r3F3591_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.10.2v1",
+          "title": "Emails identified as containing malware SHALL be quarantined or dropped.",
+          "description": "<VulnDiscussion>Emails identified as containing malware SHALL be quarantined or dropped.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Email can be used as a mechanism for delivering malware. Preventing emails with known malware from reaching user mailboxes helps ensure users cannot interact with those emails.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment; T1566: Phishing; T1566.001: Spearphishing Attachment</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.10.2v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#implementation), which\ninclude anti-malware protection to quarantine malware in email.",
+            "+@fixref": "F-D779FF04r3F3591_fix"
+          },
+          "fix": {
+            "+@id": "F-D779FF04r3F3591_fix"
+          },
+          "check": {
+            "+@system": "C-D779FF04r3F3591_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Emails identified as containing malware SHALL be quarantined or dropped.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-0355FB7C",
+        "title": "10. Malware Scanning",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-0355FB7CrF2A336_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.10.3v1",
+          "title": "Email scanning SHALL be capable of reviewing emails after delivery.",
+          "description": "<VulnDiscussion>Email scanning SHALL be capable of reviewing emails after delivery.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: As known malware signatures are updated, it is possible for an email to be retroactively identified as containing malware after delivery. Scanning emails can reduce the number of malware-infected emails in users' mailboxes.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\nMITRE ATT&CK: T1566: Phishing; T1566.001: Spearphishing Attachment</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.10.3v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#implementation), which\ninclude zero-hour auto purge (ZAP) to retroactively detect malware in messages\nalready delivered to mailboxes and removes them.",
+            "+@fixref": "F-0355FB7CrF2A336_fix"
+          },
+          "fix": {
+            "+@id": "F-0355FB7CrF2A336_fix"
+          },
+          "check": {
+            "+@system": "C-0355FB7CrF2A336_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Email scanning SHALL be capable of reviewing emails after delivery.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-093337DB",
+        "title": "11. Phishing Protections",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-093337DBr49B22B_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.11.1v1",
+          "title": "Impersonation protection checks SHOULD be used.",
+          "description": "<VulnDiscussion>Impersonation protection checks SHOULD be used.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Users might not be able to reliably identify phishing emails, especially if the `FROM` address is nearly indistinguishable from that of a known entity. By automatically identifying senders who appear to be impersonating known senders, the risk of a successful phishing attempt can be reduced.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1566: Phishing; T1656: Impersonation</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.11.1v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling impersonation protection (./defender.md#msdefender21v1-instructions).",
+            "+@fixref": "F-093337DBr49B22B_fix"
+          },
+          "fix": {
+            "+@id": "F-093337DBr49B22B_fix"
+          },
+          "check": {
+            "+@system": "C-093337DBr49B22B_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Impersonation protection checks SHOULD be used.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-B3A7909B",
+        "title": "11. Phishing Protections",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B3A7909Br6F6044_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.11.2v1",
+          "title": "User warnings, comparable to the user safety tips included with EOP, SHOULD be displayed.",
+          "description": "<VulnDiscussion>User warnings, comparable to the user safety tips included with EOP, SHOULD be displayed.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Many tasks are better suited for automated processes, such as identifying unusual characters in the `FROM` address or identifying a first-time sender. User warnings can handle these tasks, reducing the burden on end users and the risk of successful phishing attempts.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AT-2b, SI-8\n\nMITRE ATT&CK: T1566: Phishing; T1656: Impersonation</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.11.2v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#msdefender12v1) which\ninclude user safety tips to warn users.",
+            "+@fixref": "F-B3A7909Br6F6044_fix"
+          },
+          "fix": {
+            "+@id": "F-B3A7909Br6F6044_fix"
+          },
+          "check": {
+            "+@system": "C-B3A7909Br6F6044_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "User warnings, comparable to the user safety tips included with EOP, SHOULD be displayed.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-5A186269",
+        "title": "11. Phishing Protections",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5A186269r698336_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.11.3v1",
+          "title": "The phishing protection solution SHOULD include an AI-based phishing detection tool comparable to EOP Mailbox Intelligence.",
+          "description": "<VulnDiscussion>The phishing protection solution SHOULD include an AI-based phishing detection tool comparable to EOP Mailbox Intelligence.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Phishing attacks can result in unauthorized data disclosure and unauthorized access. Using AI-based phishing detection tools to improve the detection rate of phishing attempts helps reduce the risk of successful phishing attacks.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1566: Phishing; T1656: Impersonation</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.11.3v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#msdefender13v1) which\ninclude mailbox intelligence for detecting phishing attacks using AI.",
+            "+@fixref": "F-5A186269r698336_fix"
+          },
+          "fix": {
+            "+@id": "F-5A186269r698336_fix"
+          },
+          "check": {
+            "+@system": "C-5A186269r698336_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "The phishing protection solution SHOULD include an AI-based phishing detection tool comparable to EOP Mailbox Intelligence.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-C1DE9912",
+        "title": "12. IP Allow Lists",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C1DE9912rC331AC_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.12.1v1",
+          "title": "IP allow lists SHOULD NOT be created.",
+          "description": "<VulnDiscussion>IP allow lists SHOULD NOT be created.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Messages sent from IP addresses on an allow list bypass important security mechanisms, including spam filtering and sender authentication checks.  Avoiding use of IP allow lists prevents potential threats from circumventing security mechanisms.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-4</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.12.1v1"
+          },
+          "fixtext": {
+            "+content": "To modify the connection filters, follow the instructions found in Use the Microsoft 365 Defender portal to modify the default connection filter policy (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/connection-filter-policies-configure?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-modify-the-default-connection-filter-policy).\n1. Sign in to Microsoft 365 Defender portal.\n2. From the left-hand menu, find Email & collaboration and select Policies and Rules.\n3. Select Threat Policies from the list of policy names.\n4. Under Policies, select Anti-spam.\n5. Select Connection filter policy (Default).\n6. Click Edit connection filter policy.\n7. Ensure no addresses are specified under **Always allow messages from\nthe following IP addresses or address range**.\n8. Ensure Turn on safe list is not selected.",
+            "+@fixref": "F-C1DE9912rC331AC_fix"
+          },
+          "fix": {
+            "+@id": "F-C1DE9912rC331AC_fix"
+          },
+          "check": {
+            "+@system": "C-C1DE9912rC331AC_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "IP allow lists SHOULD NOT be created.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Use the IP Allow List | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/create-safe-sender-lists-in-office-365?view=o365-worldwide#use-the-ip-allow-list)\n- Configure connection filtering | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/connection-filter-policies-configure?view=o365-worldwide)\n- Use the Microsoft 365 Defender portal to modify the default connection filter policy | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/connection-filter-policies-configure?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-modify-the-default-connection-filter-policy)"
+          }
+        }
+      },
+      {
+        "+@id": "V-C83C8A83",
+        "title": "12. IP Allow Lists",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C83C8A83rD45703_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.12.2v1",
+          "title": "Safe lists SHOULD NOT be enabled.",
+          "description": "<VulnDiscussion>Safe lists SHOULD NOT be enabled.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Messages sent from allowed safe list addresses bypass important security mechanisms, including spam filtering and sender authentication checks. Avoiding use of safe lists prevents potential threats from circumventing security mechanisms. While blocking all malicious senders is not feasible, blocking specific known, malicious IP addresses may reduce the threat from specific senders.\n\nNote: A connection filter MAY be implemented to create an IP block list.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AC-4</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.12.2v1"
+          },
+          "fixtext": {
+            "+content": "1. Sign in to Microsoft 365 Defender portal.\n2. From the left-hand menu, find Email & collaboration and select Policies and Rules.\n3. Select Threat Policies from the list of policy names.\n4. Under Policies, select Anti-spam.\n5. Select Connection filter policy (Default).\n6. Click Edit connection filter policy.\n7. (Optional) Enter addresses under **Always block messages from the following\nIP addresses or address range** as needed.\n8. Ensure Turn on safe list is not selected.",
+            "+@fixref": "F-C83C8A83rD45703_fix"
+          },
+          "fix": {
+            "+@id": "F-C83C8A83rD45703_fix"
+          },
+          "check": {
+            "+@system": "C-C83C8A83rD45703_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Safe lists SHOULD NOT be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Use the IP Allow List | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/create-safe-sender-lists-in-office-365?view=o365-worldwide#use-the-ip-allow-list)\n- Configure connection filtering | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/connection-filter-policies-configure?view=o365-worldwide)\n- Use the Microsoft 365 Defender portal to modify the default connection filter policy | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/connection-filter-policies-configure?view=o365-worldwide#use-the-microsoft-365-defender-portal-to-modify-the-default-connection-filter-policy)"
+          }
+        }
+      },
+      {
+        "+@id": "V-F1877F8D",
+        "title": "13. Mailbox Auditing",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F1877F8Dr67E511_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.13.1v1",
+          "title": "Mailbox auditing SHALL be enabled.",
+          "description": "<VulnDiscussion>Mailbox auditing SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Exchange Online user accounts can be compromised or misused. Enabling mailbox auditing provides a valuable source of information to detect and respond to mailbox misuse.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-12c\n\nMITRE ATT&CK: T1070: Indicator Removal; T1070.008: Clear Mailbox Data; T1098: Account Manipulation; T1098.002: Additional Email Delegate Permissions; T1562: Impair Defenses; T1562.008: Disable or Modify Cloud Logs; T1586: Compromise Accounts; T1586.002: Email Accounts; T1564: Hide Artifacts; T1564.008: Email Hiding Rules</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.13.1v1"
+          },
+          "fixtext": {
+            "+content": "Mailbox auditing can be managed from the Exchange Online PowerShell.\nFollow the instructions listed on Manage mailbox auditing in Office 365 (https://learn.microsoft.com/en-us/microsoft-365/compliance/audit-mailboxes?view=o365-worldwide).\nTo check the current mailbox auditing status for your organization via PowerShell:\n1.  Connect to the Exchange Online PowerShell.\n2.  Run the following command:\nGet-OrganizationConfig | Format-List AuditDisabled\n3.  An AuditDisabled : False result indicates mailbox auditing is enabled.\nTo enable mailbox auditing by default for your organization via PowerShell:\n1.  Connect to the Exchange Online PowerShell.\n2.  Run the following command:\nSet-OrganizationConfig –AuditDisabled $false",
+            "+@fixref": "F-F1877F8Dr67E511_fix"
+          },
+          "fix": {
+            "+@id": "F-F1877F8Dr67E511_fix"
+          },
+          "check": {
+            "+@system": "C-F1877F8Dr67E511_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Mailbox auditing SHALL be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Manage mailbox auditing in Office 365 | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/compliance/audit-mailboxes?view=o365-worldwide)\n- Supported mailbox types | Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/compliance/audit-mailboxes?view=o365-worldwide&viewFallbackFrom=o365-worldwide%22%20%5Cl%20%22supported-mailbox-types)\n- Microsoft Purview Compliance Manager - Microsoft 365 Compliance |Microsoft Learn (https://learn.microsoft.com/en-us/microsoft-365/compliance/compliance-manager?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-E613B6D1",
+        "title": "14. Inbound Anti-Spam Protections",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-E613B6D1rDE889B_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.14.1v2",
+          "title": "A spam filter SHALL be enabled.",
+          "description": "<VulnDiscussion>A spam filter SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: May 2024.\n\nRationale: Filtering out spam reduces user workload burden, prevents junk mail congestion, and reduces potentially malicious content exposure.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1566: Phishing</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.14.1v2"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#msdefender12v1), which\ninclude spam filtering.",
+            "+@fixref": "F-E613B6D1rDE889B_fix"
+          },
+          "fix": {
+            "+@id": "F-E613B6D1rDE889B_fix"
+          },
+          "check": {
+            "+@system": "C-E613B6D1rDE889B_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "A spam filter SHALL be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Configure anti-spam policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/defender-office-365/anti-spam-policies-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-5FF30762",
+        "title": "14. Inbound Anti-Spam Protections",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5FF30762r8E9219_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.14.2v1",
+          "title": "Spam and high confidence spam SHALL be moved to either the junk email folder or the quarantine folder.",
+          "description": "<VulnDiscussion>Spam and high confidence spam SHALL be moved to either the junk email folder or the quarantine folder.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Moving spam messages to a separate junk or quarantine folder helps users filter out spam while still giving them the ability to review messages, as needed, in case a message is filtered incorrectly.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1566: Phishing</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.14.2v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#msdefender12v1), which\ninclude spam filtering that moves high confidence spam to either the junk\nor quarantine folder.",
+            "+@fixref": "F-5FF30762r8E9219_fix"
+          },
+          "fix": {
+            "+@id": "F-5FF30762r8E9219_fix"
+          },
+          "check": {
+            "+@system": "C-5FF30762r8E9219_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Spam and high confidence spam SHALL be moved to either the junk email folder or the quarantine folder.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Configure anti-spam policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/defender-office-365/anti-spam-policies-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-F9D9C974",
+        "title": "14. Inbound Anti-Spam Protections",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-F9D9C974r16E899_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.14.3v1",
+          "title": "Allowed domains SHALL NOT be added to inbound anti-spam protection policies.",
+          "description": "<VulnDiscussion>Allowed domains SHALL NOT be added to inbound anti-spam protection policies.\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Legitimate emails may be incorrectly filtered by spam protections. Adding allowed senders is an acceptable method of combating these false positives. However, allowing an entire domain, especially a common domain like office.com, provides for a large number of potentially unknown users to bypass spam protections.\n\nNote: Allowed senders MAY be added.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1566: Phishing</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.14.3v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#msdefender12v1), which do not\ninclude any allowed sender domains by default.",
+            "+@fixref": "F-F9D9C974r16E899_fix"
+          },
+          "fix": {
+            "+@id": "F-F9D9C974r16E899_fix"
+          },
+          "check": {
+            "+@system": "C-F9D9C974r16E899_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Allowed domains SHALL NOT be added to inbound anti-spam protection policies.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Configure anti-spam policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/defender-office-365/anti-spam-policies-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-DE9A0701",
+        "title": "14. Inbound Anti-Spam Protections",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-DE9A0701rBCAF7C_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.14.4v1",
+          "title": "If a third-party party filtering solution is used, the solution SHOULD offer services comparable to the native spam filtering offered by Microsoft.",
+          "description": "<VulnDiscussion>If a third-party party filtering solution is used, the solution SHOULD offer services comparable to the native spam filtering offered by Microsoft.\n\nCriticality: SHOULD.\nLast modified: May 2024.\n\nRationale: Filtering out spam reduces user workload burden, prevents junk mail congestion, and reduces potentially malicious content exposure.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-8\n\nMITRE ATT&CK: T1566: Phishing</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.14.4v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#msdefender12v1), which\ninclude spam filtering.",
+            "+@fixref": "F-DE9A0701rBCAF7C_fix"
+          },
+          "fix": {
+            "+@id": "F-DE9A0701rBCAF7C_fix"
+          },
+          "check": {
+            "+@system": "C-DE9A0701rBCAF7C_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "If a third-party party filtering solution is used, the solution SHOULD offer services comparable to the native spam filtering offered by Microsoft.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Configure anti-spam policies in EOP | Microsoft Learn (https://learn.microsoft.com/en-us/defender-office-365/anti-spam-policies-configure?view=o365-worldwide)"
+          }
+        }
+      },
+      {
+        "+@id": "V-B07B2BC5",
+        "title": "15. Link Protection",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-B07B2BC5r0D1BD4_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.15.1v1",
+          "title": "URL comparison with a block-list SHOULD be enabled.",
+          "description": "<VulnDiscussion>URL comparison with a block-list SHOULD be enabled.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Users may be directed to malicious websites via links in email. Blocking access to known, malicious URLs can prevent users from accessing known malicious websites.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\nMITRE ATT&CK: T1566: Phishing; T1566.002: Spearphishing Link</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.15.1v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender for Office 365, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#msdefender13v1), which\ninclude Safe Links protections to scan URLs in email messages against a list\nof known, malicious links.",
+            "+@fixref": "F-B07B2BC5r0D1BD4_fix"
+          },
+          "fix": {
+            "+@id": "F-B07B2BC5r0D1BD4_fix"
+          },
+          "check": {
+            "+@system": "C-B07B2BC5r0D1BD4_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "URL comparison with a block-list SHOULD be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-C6AC6688",
+        "title": "15. Link Protection",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-C6AC6688rD03446_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.15.2v1",
+          "title": "Direct download links SHOULD be scanned for malware.",
+          "description": "<VulnDiscussion>Direct download links SHOULD be scanned for malware.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: URLs in emails may direct users to download and run malware. Scanning direct download links in real-time for known malware and blocking access can prevent users from infecting their devices.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3\n\nMITRE ATT&CK: T1566: Phishing; T1566.002: Spearphishing Link</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.15.2v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender for Office 365, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#msdefender13v1), which\ninclude Safe Links protections to scan links to files for malware.",
+            "+@fixref": "F-C6AC6688rD03446_fix"
+          },
+          "fix": {
+            "+@id": "F-C6AC6688rD03446_fix"
+          },
+          "check": {
+            "+@system": "C-C6AC6688rD03446_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Direct download links SHOULD be scanned for malware.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-050CCD2C",
+        "title": "15. Link Protection",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-050CCD2Cr4C2AD5_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.15.3v1",
+          "title": "User click tracking SHOULD be enabled.",
+          "description": "<VulnDiscussion>User click tracking SHOULD be enabled.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Users may click on malicious links in emails, leading to compromise or unauthorized data disclosure. Enabling user click tracking lets agencies know if a malicious link may have been visited after the fact to help tailor a response to a potential incident.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-3, AU-12c\n\nMITRE ATT&CK: T1566: Phishing; T1566.002: Spearphishing Link</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.15.3v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft Defender for Office 365, see the following\nimplementation steps for\nenabling preset security policies (./defender.md#msdefender13v1), which\ninclude Safe Links click protections to track user clicks on links in email.",
+            "+@fixref": "F-050CCD2Cr4C2AD5_fix"
+          },
+          "fix": {
+            "+@id": "F-050CCD2Cr4C2AD5_fix"
+          },
+          "check": {
+            "+@system": "C-050CCD2Cr4C2AD5_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "User click tracking SHOULD be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-5510B27B",
+        "title": "16. Alerts",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-5510B27BrE68073_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.16.1v1",
+          "title": "At a minimum, the following alerts SHALL be enabled:",
+          "description": "<VulnDiscussion>At a minimum, the following alerts SHALL be enabled:\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Potentially malicious or service impacting events may go undetected without a means of detecting these events. Setting up a mechanism to alert administrators to events listed above draws attention to them to help minimize impact to users and the agency.\n\na. **Suspicious email sending patterns detected.**\n\nb. **Suspicious Connector Activity.**\n\nc. **Suspicious Email Forwarding Activity.**\n\nd. **Messages have been delayed.**\n\ne. **Tenant restricted from sending unprovisioned email.**\n\nf. **Tenant restricted from sending email.**\n\ng. **A potentially malicious URL click was detected.**\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(5)\n\nMITRE ATT&CK: T1078: Valid Accounts; T1078.004: Cloud Accounts; T1562: Impair Defenses; T1566: Phishing; T1566.002: Spearphishing Link; T1562: Impair Defenses; T1562.006: Indicator Blocking</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.16.1v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft 365 alert policies, see the following implementation steps for\nenabling alerts (./defender.md#msdefender51v1-instructions) for additional\nguidance.",
+            "+@fixref": "F-5510B27BrE68073_fix"
+          },
+          "fix": {
+            "+@id": "F-5510B27BrE68073_fix"
+          },
+          "check": {
+            "+@system": "C-5510B27BrE68073_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "At a minimum, the following alerts SHALL be enabled:\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-723BDBB0",
+        "title": "16. Alerts",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-723BDBB0r734F23_rule",
+          "+@weight": "10.0",
+          "+@severity": "medium",
+          "version": "MS.EXO.16.2v1",
+          "title": "The alerts SHOULD be sent to a monitored address or incorporated into a security information and event management (SIEM) system.",
+          "description": "<VulnDiscussion>The alerts SHOULD be sent to a monitored address or incorporated into a security information and event management (SIEM) system.\n\nCriticality: SHOULD.\nLast modified: June 2023.\n\nRationale: Suspicious or malicious events, if not resolved promptly, may have a greater impact to users and the agency. Sending alerts to a monitored email address or SIEM system helps ensure these suspicious or malicious events are acted upon in a timely manner to limit overall impact.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: SI-4(12)\n\nMITRE ATT&CK: T1562: Impair Defenses; T1562.006: Indicator Blocking</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.16.2v1"
+          },
+          "fixtext": {
+            "+content": "Any product meeting the requirements outlined in this baseline policy may be\nused. If the agency uses Microsoft 365 alert policies, see the following implementation steps to\nadd email recipients to an alert (./defender.md#msdefender51v1-instructions)\nfor additional guidance.",
+            "+@fixref": "F-723BDBB0r734F23_fix"
+          },
+          "fix": {
+            "+@id": "F-723BDBB0r734F23_fix"
+          },
+          "check": {
+            "+@system": "C-723BDBB0r734F23_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "The alerts SHOULD be sent to a monitored address or incorporated into a security information and event management (SIEM) system.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- None"
+          }
+        }
+      },
+      {
+        "+@id": "V-9CAD38CE",
+        "title": "17. Audit Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-9CAD38CEr1D1C3F_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.17.1v1",
+          "title": "Unified Audit logging SHALL be enabled.",
+          "description": "<VulnDiscussion>Unified Audit logging SHALL be enabled.\n\nCriticality: SHALL.\nLast modified: March 2025.\n\nRationale: Responding to incidents without detailed information about activities that took place slows response actions. Enabling Unified Audit logging helps ensure agencies have visibility into user actions. Furthermore, enabling the Unified Audit log is required for government agencies by OMB M-21-31.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-12\n\nMITRE ATT&CK: T1562: Impair Defenses; T1562.008: Disable or Modify Cloud Logs</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.17.1v1"
+          },
+          "fixtext": {
+            "+content": "See the following implementation steps for enabling Unified Audit logging (./defender.md#msdefender61v1-instructions) for additional\nguidance.",
+            "+@fixref": "F-9CAD38CEr1D1C3F_fix"
+          },
+          "fix": {
+            "+@id": "F-9CAD38CEr1D1C3F_fix"
+          },
+          "check": {
+            "+@system": "C-9CAD38CEr1D1C3F_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Unified Audit logging SHALL be enabled.\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Expanding cloud logging to give customers deeper security visibility | Microsoft Security Blog (https://www.microsoft.com/en-us/security/blog/2023/07/19/expanding-cloud-logging-to-give-customers-deeper-security-visibility/)\n- Export, configure, and view audit log records | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-export-records)\n- Untitled Goose Tool Fact Sheet | CISA. (https://www.cisa.gov/resources-tools/resources/untitled-goose-tool-fact-sheet)\n- Manage audit log retention policies | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?tabs=microsoft-purview-portal#before-you-create-an-audit-log-retention-policy)"
+          }
+        }
+      },
+      {
+        "+@id": "V-1A24B887",
+        "title": "17. Audit Logging",
+        "description": "<GroupDescription></GroupDescription>",
+        "Rule": {
+          "+@id": "SV-1A24B887rDF724B_rule",
+          "+@weight": "10.0",
+          "+@severity": "high",
+          "version": "MS.EXO.17.3v1",
+          "title": "Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31 (Appendix C).",
+          "description": "<VulnDiscussion>Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31 (Appendix C).\n\nCriticality: SHALL.\nLast modified: June 2023.\n\nRationale: Increased log retention time gives an agency the necessary visibility to investigate incidents that occurred some time ago. OMB M-21-13, Appendix C, Table 5 specifically calls out Unified Audit Logs in the Cloud Azure log category.\n\nNote: Microsoft 365 Purview (Premium) provides a default audit log retention policy, retaining Exchange Online, SharePoint Online, OneDrive for Business, and Microsoft Entra ID audit records for one year. Additional record types require custom audit retention policies. Agencies may also consider alternate storage locations and services to meet audit log retention needs.\n\nNIST SP 800-53 Rev. 5 FedRAMP High Baseline Mapping: AU-11\n\nMITRE ATT&CK: T1070: Indicator Removal</VulnDiscussion>",
+          "reference": {
+            "dc:title": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:publisher": "CISA",
+            "dc:type": "Baseline",
+            "dc:subject": "CISA M365 Secure Configuration Baseline for Exchange Online",
+            "dc:identifier": "MS.EXO.17.3v1"
+          },
+          "fixtext": {
+            "+content": "See the following implementation steps to\ncreate an audit retention policy (./defender.md#msdefender63v1-instructions)\nfor additional guidance.",
+            "+@fixref": "F-1A24B887rDF724B_fix"
+          },
+          "fix": {
+            "+@id": "F-1A24B887rDF724B_fix"
+          },
+          "check": {
+            "+@system": "C-1A24B887rDF724B_chk",
+            "check-content-ref": {
+              "+@href": "CISA_Exchange_Online.xml",
+              "+@name": "M"
+            },
+            "check-content": "Audit logs SHALL be maintained for at least the minimum duration dictated by OMB M-21-31 (Appendix C).\n\nConfirm the Microsoft 365 tenant configuration satisfies this CISA SCuBA Secure Configuration Baseline policy. See the CISA baseline document and its Resources section for verification guidance:\n\n- Expanding cloud logging to give customers deeper security visibility | Microsoft Security Blog (https://www.microsoft.com/en-us/security/blog/2023/07/19/expanding-cloud-logging-to-give-customers-deeper-security-visibility/)\n- Export, configure, and view audit log records | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-export-records)\n- Untitled Goose Tool Fact Sheet | CISA. (https://www.cisa.gov/resources-tools/resources/untitled-goose-tool-fact-sheet)\n- Manage audit log retention policies | Microsoft Learn (https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?tabs=microsoft-purview-portal#before-you-create-an-audit-log-retention-policy)"
+          }
+        }
+      }
+    ]
+  }
+}
