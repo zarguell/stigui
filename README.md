@@ -72,6 +72,13 @@ code the checklist migration uses, run at build time. Note the bootstrap
 caveat: benchmarks added before history tracking shipped have a baseline
 `first_seen` and no diffs until their next tracked refresh.
 
+The same timeline is also published as an **RSS feed** at `/rss.xml`: every
+tracked release — a benchmark entering the catalog or a version update — is an
+item dated by its publish date, newest first, so the feed can be watched in any
+reader. It is prerendered into the static export at build time
+(`src/app/rss.xml/`), and the site advertises it via head autodiscovery plus a
+subscribe link on What's new and in the footer.
+
 XML downloads are generated **in the browser** from the benchmark JSON
 (`src/api/xccdf.ts`), so no parallel `.xml` copy of every benchmark ships.
 

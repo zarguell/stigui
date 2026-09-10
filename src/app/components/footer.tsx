@@ -50,6 +50,14 @@ export const Footer = () => (
                 >
                     Editor
                 </a>
+                <a
+                    href={`${BASE_PATH}/rss.xml`}
+                    className="ml-3 text-muted hover:text-foreground transition-colors"
+                    aria-label="Subscribe to library releases via RSS"
+                    tabIndex={100}
+                >
+                    RSS
+                </a>
             </span>
         </div>
     </footer>

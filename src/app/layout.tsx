@@ -75,6 +75,17 @@ export default function RootLayout({
         <html lang="en">
             <head>
                 <script src={`${BASE_PATH}/theme.js`} />
+                {/*
+                    RSS autodiscovery. Kept out of `metadata.alternates`
+                    because page-level alternates (canonicals) replace the
+                    layout's object instead of merging with it.
+                */}
+                <link
+                    rel="alternate"
+                    type="application/rss+xml"
+                    title={`${APPNAME} library releases`}
+                    href={`${SITE_URL}/rss.xml`}
+                />
                 <Script id="service-worker">{`"serviceWorker" in navigator && navigator.serviceWorker.register("${BASE_PATH}/sw.js", { scope: "${BASE_PATH}/" });`}</Script>
             </head>
             <body

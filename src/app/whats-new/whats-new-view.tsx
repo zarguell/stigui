@@ -1,4 +1,5 @@
 "use client";
+import { BASE_PATH } from "@/app/constants";
 import { useManifestContext } from "@/app/context/manifest";
 import { fetchHistory, type BenchmarkHistory } from "@/api/entities/history";
 import Link from "next/link";
@@ -202,6 +203,21 @@ const WhatsNewView = () => {
                         updates. Version updates link to a diff view of
                         exactly what changed.
                     </p>
+                    <a
+                        href={`${BASE_PATH}/rss.xml`}
+                        className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:underline transition-colors"
+                        title="Subscribe to library releases via RSS"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            className="h-3.5 w-3.5"
+                            fill="currentColor"
+                            aria-hidden="true"
+                        >
+                            <path d="M6.18 17.82a2.18 2.18 0 1 1-4.36 0 2.18 2.18 0 0 1 4.36 0zM2 8.73v3.09c5.06 0 9.18 4.12 9.18 9.18h3.09c0-6.77-5.5-12.27-12.27-12.27zM2 2v3.09C10.4 5.09 17.91 12.6 17.91 21H21C21 10.5 12.5 2 2 2z" />
+                        </svg>
+                        Subscribe via RSS
+                    </a>
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
                     <select
