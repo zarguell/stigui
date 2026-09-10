@@ -26,8 +26,8 @@ Invariants pinned by tests — change them together with the tests:
 
 - Every conversion's XML/JSON pair round-trips through the app's
   `convertXccdf` identically (`upload.spec.ts`, `cis.spec.ts`).
-- Manifest entries carry `source` (DISA/CIS), `category`, `type`
-  (STIG/SRG/Benchmark), `tags`, `rules_count` — used by the library
+- Manifest entries carry `source` (DISA/CIS/CISA), `category`, `type`
+  (STIG/SRG/Benchmark/Baseline), `tags`, `rules_count` — used by the library
   filters/dashboard.
 - Rule ids are unique **within** a benchmark. SV/V ids are reused
   *across* benchmarks by DISA/CIS; that is normal, do not "fix" it.
@@ -59,11 +59,22 @@ enriched shape and will clobber it.
 Deltas surface at `/stigs/diff` and "Changes in Vx → Vy" links; the
 timeline powers `/whats-new` and `/dashboard`.
 
-## The two ingest pipelines
+## The three ingest pipelines
 
 ### DISA (quarterly, manual)
 `scripts/fetch-stigs.sh` → `scripts/create-json-stigs.sh` (also runs
 track_history + rebuild_manifest).
+
+### ScubaGear (daily, automated)
+`.github/workflows/scubagear-update.yml`, 06:37 UTC + manual dispatch:
+`scripts/scuba/run.py convert --tag <release>` fetches the baselines at
+the latest cisagov/ScubaGear release tag, parses them
+(full-coverage Markdown grammar), and stages a product **only when its
+converted content differs** from the schema — so no-op releases commit
+nothing and What's-new stays quiet. Each benchmark's `version` is the
+release whose content it holds; group ids hash the version-less policy
+number (v1 → v2 policy bumps diff as modified rules), and rule ids
+carry a content digest in place of DISA's revision letter.
 
 ### CIS (daily, automated)
 `.github/workflows/cis-update.yml`, 06:30 UTC + manual dispatch:
