@@ -97,20 +97,13 @@ jobs:
             - name: Publish clean conversions to main
               if: steps.detect.outputs.updated == 'true' && steps.tier.outputs.clean != '0'
               run: |
+                  # Real conversion into public/data: run.py diffs each
+                  # staged benchmark against the current schema and
+                  # precomputes the version delta (changes/<id>/<from>)
+                  # before overwriting, then regenerates the manifest.
                   while IFS= read -r base; do
-                      cp "/tmp/stage/$base.json" public/data/stigs/schema/
-                      cp "/tmp/stage/$base.xml" public/data/stigs/schema/
+                      python3 scripts/cis/run.py convert                           "data/cis/bulk/$base.pdf"                           --out public/data                           --cache .cache
                   done < clean-list.txt
-                  python3 -c "
-                      import sys
-                      from pathlib import Path
-                      sys.path.insert(0, 'scripts/cis')
-                      from cis_converter import emit
-                      emit.regenerate_manifest(
-                          Path('public/data/stigs/schema'),
-                          Path('public/data'),
-                      )
-                  "
                   git config user.name 'github-actions[bot]'
                   git config user.email 'github-actions[bot]@users.noreply.github.com'
                   git add public/data/stigs scripts/cis/catalog-state.json
@@ -125,15 +118,17 @@ jobs:
                   BRANCH="cis-review-$DATE"
                   git checkout -b "$BRANCH"
                   while IFS= read -r base; do
-                      if [ -f "/tmp/stage/$base.json" ]; then
-                          cp "/tmp/stage/$base.json" public/data/stigs/schema/
-                          cp "/tmp/stage/$base.xml" public/data/stigs/schema/
+                      if [ -f "/tmp/stage/stigs/schema/$base.json" ]; then
+                          cp "/tmp/stage/stigs/schema/$base.json"                               public/data/stigs/schema/
                       fi
                       mkdir -p "data/cis/reviews/$DATE"
                       cp "data/cis/reports/cis-update-$DATE/$base.txt" \
                           "data/cis/reviews/$DATE/" 2>/dev/null || true
                   done < dirty-list.txt
                   # state lands with the PR so daily runs don't re-fire
+                  python3 scripts/cis/rebuild_manifest.py \
+                      --schema-dir public/data/stigs/schema \
+                      --data-dir public/data
                   git add public/data/stigs data/cis/reviews scripts/cis/catalog-state.json
                   git commit -m "CIS catalog update: ${{ steps.tier.outputs.dirty }} conversions need review ($DATE)" || true
                   git push -u origin "$BRANCH"
