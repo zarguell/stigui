@@ -7,7 +7,7 @@ import { BASE_PATH } from "@/app/constants";
 import { Sidebar } from "@/app/components/sidebar";
 import { buttonClasses } from "@/app/components/ui/button";
 import { TableCard } from "@/app/components/ui/card";
-import { RecentChangesLink } from "@/app/components/client/recent_changes";
+import { ReleaseHistory } from "@/app/components/client/release_history";
 import { useStigContext } from "@/app/context/stig";
 import { IDB } from "@/app/db";
 import { download , ruleHref } from "@/app/utils";
@@ -20,8 +20,8 @@ import { GroupInfo } from "./group";
 import { bySeverity, SeverityBadge } from "./severity";
 import { defaultFilter, defaultSort, Order, Table } from "./table";
 
-const sorters = [defaultSort, bySeverity, defaultSort, null];
-const filters = [null, null, defaultFilter, defaultFilter];
+const sorters = [defaultSort, bySeverity, defaultSort, defaultSort, null];
+const filters = [null, null, defaultFilter, defaultFilter, null];
 const tableHeaders = [
     {
         text: "Group ID",
@@ -32,6 +32,10 @@ const tableHeaders = [
     },
     {
         text: "Title",
+    },
+    {
+        text: "Vendor ID",
+        className: "max-md:hidden",
     },
     {
         text: "Description",
@@ -45,6 +49,7 @@ const toCSV = (stig: StigWrapper) => {
             "Group ID",
             "Severity",
             "Title",
+            "Vendor ID",
             "Description",
             "Rule ID",
             "Fix ID",
@@ -57,6 +62,7 @@ const toCSV = (stig: StigWrapper) => {
                 group.id,
                 group.rule.severity,
                 `"${group.rule.title.replaceAll('"', "'")}"`,
+                group.rule.version,
                 `"${group.rule.description.replaceAll('"', "'")}"`,
                 group.rule.id,
                 group.rule.fix,
@@ -227,6 +233,7 @@ export const StigView = ({
                         group.id,
                         group.rule.severity,
                         group.rule.title,
+                        group.rule.version,
                         group.rule.description,
                     ],
                     columns: [
@@ -252,9 +259,15 @@ export const StigView = ({
                             severity={group.rule.severity}
                         />,
                         group.rule.title,
+                        <span
+                            key="vendor-id"
+                            className="whitespace-nowrap font-mono text-xs"
+                        >
+                            {group.rule.version}
+                        </span>,
                         group.rule.description,
                     ],
-                    classNames: [null, null, null, "max-lg:hidden"],
+                    classNames: [null, null, null, "max-md:hidden", "max-lg:hidden"],
                 })),
         [groups, stigId, severities, setRowIdx, uploaded]
     );
@@ -330,7 +343,7 @@ export const StigView = ({
                 <div className="text-muted text-xs flex flex-col items-end text-end">
                     <span>Date: {stig.date}</span>
                     <span>Version: {stig.version}</span>
-                    <RecentChangesLink stigId={stig.id} version={stig.version} />
+                    <ReleaseHistory stigId={stig.id} version={stig.version} />
                 </div>
             </section>
 

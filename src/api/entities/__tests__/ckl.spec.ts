@@ -3,7 +3,14 @@ import os from 'os';
 import path from 'path';
 import Checklist from '../Checklist';
 import { Convert } from '../../generated/Checklist';
-import { checklistToCkl, cklToChecklist, InvalidCklError } from '../ckl';
+import {
+    checklistToCkl,
+    cklToChecklist,
+    echoVendorIds,
+    InvalidCklError,
+    isVendorSourced,
+    withVendorIdComment,
+} from '../ckl';
 
 const fixturePath = path.join(
     __dirname,
@@ -262,6 +269,59 @@ describe('CKL export / round trip', () => {
             const original = stripVolatile(cklToChecklist(xml));
             const exported = checklistToCkl(cklToChecklist(xml));
             expect(stripVolatile(cklToChecklist(exported))).toEqual(original);
+        });
+    });
+
+    describe('vendor id echo for CIS/CISA sources', () => {
+        // Same synthetic checklist, rebranded as a CISA baseline: the
+        // V-/SV- ids are synthesized, so the Rule_Ver policy id is the
+        // only vendor identity.
+        const CISA_CKL = SYNTHETIC_CKL.replaceAll(
+            'Test_STIG',
+            'CISA_Entra_ID'
+        )
+            .replaceAll('APP-0001', 'MS.AAD.1.1v1')
+            .replaceAll('APP-0002', 'MS.AAD.1.2v1');
+
+        it('detects vendor-sourced stig ids', () => {
+            expect(isVendorSourced('CISA Entra ID')).toBe(true);
+            expect(isVendorSourced('CIS Microsoft 365 Foundations')).toBe(true);
+            expect(isVendorSourced('CISA_ENTRA_ID')).toBe(true);
+            expect(isVendorSourced('Test_STIG')).toBe(false);
+            expect(isVendorSourced('Cisco IOS Router NDM STIG')).toBe(false);
+        });
+
+        it('prepends the vendor id to comments on export', () => {
+            const checklist = cklToChecklist(CISA_CKL);
+            const xml = checklistToCkl(checklist);
+            expect(xml).toContain(
+                '<COMMENTS>Vendor ID: MS.AAD.1.1v1\na comment</COMMENTS>'
+            );
+            expect(xml).toContain('<COMMENTS>Vendor ID: MS.AAD.1.2v1</COMMENTS>');
+        });
+
+        it('is idempotent across export/import cycles', () => {
+            const once = checklistToCkl(cklToChecklist(CISA_CKL));
+            const twice = checklistToCkl(cklToChecklist(once));
+            expect(twice).toBe(once);
+            expect(twice.match(/Vendor ID: MS\.AAD\.1\.1v1/g) ?? []).toHaveLength(1);
+        });
+
+        it('leaves DISA checklists untouched', () => {
+            const checklist = cklToChecklist(SYNTHETIC_CKL);
+            const xml = checklistToCkl(checklist);
+            expect(xml).toContain('<COMMENTS>a comment</COMMENTS>');
+            expect(xml).not.toContain('Vendor ID:');
+        });
+
+        it('keeps existing vendor id lines without duplicating', () => {
+            expect(withVendorIdComment('MS.AAD.1.1v1', 'Vendor ID: MS.AAD.1.1v1')).toBe(
+                'Vendor ID: MS.AAD.1.1v1'
+            );
+            expect(withVendorIdComment('', 'existing')).toBe('existing');
+            expect(withVendorIdComment('MS.AAD.1.1v1', '')).toBe(
+                'Vendor ID: MS.AAD.1.1v1'
+            );
         });
     });
 });

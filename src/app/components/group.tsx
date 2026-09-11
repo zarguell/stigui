@@ -1,8 +1,10 @@
 "use client";
 import { GroupWrapper } from "@/api/entities/Stig";
 import { ContentNavigation } from "@/app/components/content_navigation";
+import { RichText } from "@/app/components/rich-text";
 import { SeverityBadge } from "@/app/components/severity";
 import { TableCard } from "@/app/components/ui/card";
+import { useManifestContext } from "@/app/context/manifest";
 import { useStigContext } from "@/app/context/stig";
 import { Suspense } from "react";
 import { Breadcrumbs } from "./breadcrumbs";
@@ -21,7 +23,11 @@ const InfoPanel = ({
                 {title}
             </h3>
             <div className="px-6 py-4 text-sm text-foreground whitespace-pre-line">
-                {children}
+                {typeof children === "string" ? (
+                    <RichText text={children} />
+                ) : (
+                    children
+                )}
             </div>
         </div>
     </section>
@@ -35,6 +41,22 @@ export const GroupInfo = ({ group }: { group: GroupWrapper }) => (
     </>
 );
 
+/**
+ * How the rule's vendor-supplied id (rule `version`) is labelled, by
+ * publishing source. DISA rules don't get the badge: their V-/SV- ids
+ * *are* the vendor ids, and the "Version" cell is DISA's own tracking
+ * string.
+ */
+export const vendorIdLabel = (source?: string): string | null => {
+    if (source === "CISA") {
+        return "CISA Policy ID";
+    }
+    if (source === "CIS") {
+        return "CIS Recommendation";
+    }
+    return null;
+};
+
 export const GroupView = ({
     stigId,
     groupId,
@@ -45,6 +67,8 @@ export const GroupView = ({
     classification?: string;
 }) => {
     const stig = useStigContext();
+    const manifest = useManifestContext();
+    const vendorLabel = vendorIdLabel(manifest.maybeById(stigId)?.source);
     const idx = stig.groups.findIndex((group) => group.id === groupId);
     const group = stig.groups[idx];
 
@@ -60,6 +84,16 @@ export const GroupView = ({
                 <h1 className="text-3xl font-semibold tracking-tight my-6 text-foreground">
                     {group.rule.title}
                 </h1>
+                {vendorLabel && (
+                    <p className="text-sm text-muted -mt-4 mb-4">
+                        <span className="uppercase tracking-wide text-[10px] font-semibold">
+                            {vendorLabel}
+                        </span>
+                        <span className="ml-2 font-mono text-foreground">
+                            {group.rule.version}
+                        </span>
+                    </p>
+                )}
                 <TableCard>
                     <Table
                         tableHeaders={[
@@ -74,7 +108,7 @@ export const GroupView = ({
                                 className: "max-md:hidden",
                             },
                             {
-                                text: "Version",
+                                text: vendorLabel ?? "Version",
                             },
                             {
                                 text: "Rule ID",
@@ -111,11 +145,17 @@ export const GroupView = ({
                                 ],
                                 columns: [
                                     <SeverityBadge
+                                        key="severity"
                                         severity={group.rule.severity}
                                     />,
                                     group.id,
                                     group.title,
-                                    group.rule.version,
+                                    <span
+                                        key="vendor-id"
+                                        className="font-mono text-xs"
+                                    >
+                                        {group.rule.version}
+                                    </span>,
                                     group.rule.id,
                                     stig.date,
                                     stig.version,

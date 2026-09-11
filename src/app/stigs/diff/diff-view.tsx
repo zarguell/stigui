@@ -3,8 +3,11 @@ import { DiffEntryList, OUTCOME_LABEL, OUTCOME_STYLE } from "@/app/components/di
 import { useManifestContext } from "@/app/context/manifest";
 import {
     fetchChange,
+    fetchHistory,
+    releaseHops,
     type ChangeCounts,
     type ChangeFile,
+    type ReleaseHop,
 } from "@/api/entities/history";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -53,6 +56,32 @@ const DiffView = () => {
     const [change, setChange] = useState<ChangeFile | null | undefined>(
         stigId && from ? undefined : null
     );
+
+    // Recorded release hops for this benchmark, so any version pair —
+    // not just the latest — is switchable in place.
+    const [hops, setHops] = useState<ReleaseHop[]>([]);
+    useEffect(() => {
+        if (!stigId) {
+            setHops([]);
+            return;
+        }
+        let cancelled = false;
+        fetchHistory().then((all) => {
+            if (!cancelled) {
+                setHops(releaseHops(all?.benchmarks[stigId]?.releases ?? []));
+            }
+        });
+        return () => {
+            cancelled = true;
+        };
+    }, [stigId]);
+
+    const selectHop = (fromVersion: string) => {
+        const next = new URLSearchParams(window.location.search);
+        next.set("from", fromVersion);
+        window.history.pushState(null, "", `?${next.toString()}`);
+        setParams(new URLSearchParams(window.location.search));
+    };
 
     useEffect(() => {
         if (!stigId || !from) {
@@ -116,7 +145,7 @@ const DiffView = () => {
                 <h1 className="text-2xl font-semibold tracking-tight text-foreground">
                     {title ?? change.id}: what changed
                 </h1>
-                <p className="text-sm text-muted mt-1">
+                <p className="text-sm text-muted mt-1 flex flex-wrap items-center gap-x-2">
                     Release{" "}
                     <span className="text-foreground">
                         V{change.from_version}
@@ -129,6 +158,25 @@ const DiffView = () => {
                     Matching is by vulnerability id, then by base rule id when
                     requirements are renumbered.
                 </p>
+                {hops.length > 1 && (
+                    <label className="text-sm text-muted mt-2 inline-flex items-center gap-2">
+                        Compare release
+                        <select
+                            className="rounded-md border border-border bg-surface px-2 py-1 text-sm text-foreground"
+                            value={change.from_version}
+                            onChange={(event) => selectHop(event.target.value)}
+                        >
+                            {hops.map((hop) => (
+                                <option
+                                    key={hop.from.version}
+                                    value={hop.from.version}
+                                >
+                                    V{hop.from.version} → V{hop.to.version}
+                                </option>
+                            ))}
+                        </select>
+                    </label>
+                )}
             </div>
             <Counts counts={change.counts} />
             <DiffEntryList entries={change.entries} />

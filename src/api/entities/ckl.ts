@@ -332,6 +332,52 @@ const stigData = (attribute: string, data: string): string =>
         data
     )}</ATTRIBUTE_DATA></STIG_DATA>`;
 
+/**
+ * CIS and CISA benchmarks get synthesized V-/SV- ids (stable identity
+ * for checklists, migration, and diffs), so their vendor-supplied ids
+ * — the CIS recommendation number / CISA policy id in the rule's
+ * `version` field — would otherwise be invisible in STIG Viewer and
+ * eMASS. Echo it into the reviewer comments on export. Idempotent (an
+ * already-present line is not duplicated) and DISA checklists are
+ * untouched, preserving corpus round-trip fidelity.
+ */
+export const isVendorSourced = (stigId: string): boolean => {
+    const id = stigId.toUpperCase().replaceAll(" ", "_");
+    return id.startsWith("CIS_") || id.startsWith("CISA_");
+};
+
+export const withVendorIdComment = (
+    vendorId: string,
+    comments: string
+): string => {
+    if (!vendorId) {
+        return comments;
+    }
+    const line = `Vendor ID: ${vendorId}`;
+    if (comments.includes(line)) {
+        return comments;
+    }
+    return comments ? `${line}\n${comments}` : line;
+};
+
+export const echoVendorIds = (checklist: Checklist): Checklist => ({
+    ...checklist,
+    stigs: checklist.stigs.map((stig) =>
+        isVendorSourced(stig.stig_id)
+            ? {
+                  ...stig,
+                  rules: stig.rules.map((rule) => ({
+                      ...rule,
+                      comments: withVendorIdComment(
+                          rule.rule_version,
+                          rule.comments
+                      ),
+                  })),
+              }
+            : stig
+    ),
+});
+
 const ruleToCkl = (rule: Rule): string => {
     const overrideSeverity = rule.overrides?.severity?.severity;
     const overrideReason = rule.overrides?.severity?.reason ?? "";
@@ -401,7 +447,8 @@ const stigToCkl = (stig: Stig): string => {
 };
 
 /** Asset + checklist wrapper, mirroring the DISA STIG Viewer 2 layout */
-export const checklistToCkl = (checklist: Checklist): string => {
+export const checklistToCkl = (input: Checklist): string => {
+    const checklist = echoVendorIds(input);
     const target = checklist.target_data;
     const asset =
         `<ASSET>` +
