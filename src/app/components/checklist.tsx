@@ -24,7 +24,7 @@ import { Sidebar } from "@/app/components/sidebar";
 import { buttonClasses } from "@/app/components/ui/button";
 import { IDB, IDBChecklist } from "@/app/db";
 import { debounce, download, ruleMatchesSearch } from "@/app/utils";
-import { checklistToCkl } from "@/api/entities/ckl";
+import { checklistToCkl, echoVendorIds } from "@/api/entities/ckl";
 import { findingsToCsv } from "@/api/entities/report";
 import type { LibraryStig } from "@/api/entities/upload";
 import type { Stig as ChecklistStig } from "@/api/generated/Checklist";
@@ -76,7 +76,7 @@ interface FormChecklistChanges {
 }
 
 const toCKLB = (checklist: Checklist) => {
-    const blob = new Blob([Convert.checklistToJson(checklist)], {
+    const blob = new Blob([Convert.checklistToJson(echoVendorIds(checklist))], {
         type: "application/json",
     });
     const url = URL.createObjectURL(blob);

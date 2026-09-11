@@ -108,3 +108,16 @@ export async function hasChange(
 ): Promise<boolean> {
     return (await fetchChange(stigId, fromVersion)) !== null;
 }
+
+export interface ReleaseHop {
+    from: ReleaseEvent;
+    to: ReleaseEvent;
+}
+
+/**
+ * Consecutive recorded releases. History only records releases whose
+ * content changed, so every hop has a precomputed delta file — a
+ * version missing from the list means "no change at that release".
+ */
+export const releaseHops = (releases: ReleaseEvent[]): ReleaseHop[] =>
+    releases.slice(1).map((to, index) => ({ from: releases[index], to }));
